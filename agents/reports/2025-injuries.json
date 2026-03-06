@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "description": "Known pre-tournament injuries/suspensions for 2025 NCAA Tournament teams",
+    "data_status": "APPROXIMATE - must verify against RotoWire/247Sports before tournament",
+    "impact_scale": "1=minimal (bench), 2=minor (rotation), 3=moderate (key starter), 4=major (star), 5=devastating (best player)",
+    "power_index_adjustment": {
+      "impact_1": -2,
+      "impact_2": -4,
+      "impact_3": -8,
+      "impact_4": -12,
+      "impact_5": -15
+    }
+  },
+  "injuries": [
+    {
+      "team": "Iowa State",
+      "player": "Curtis Jones",
+      "role": "Starting guard",
+      "ppg": 13.4,
+      "status": "Questionable",
+      "injury": "Ankle",
+      "impact": 3,
+      "note": "If OUT, Iowa State loses primary ball-handler. AdjEM drops ~3-5 pts."
+    },
+    {
+      "team": "Kansas",
+      "player": "Hunter Dickinson",
+      "role": "Starting center",
+      "ppg": 15.2,
+      "status": "Probable",
+      "injury": "Back soreness",
+      "impact": 2,
+      "note": "Played through but not 100%. Monitor game-time status."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Multiple contributors",
+      "role": "Various",
+      "ppg": 0,
+      "status": "Available",
+      "injury": "General fatigue/inconsistency",
+      "impact": 1,
+      "note": "UNC's 19-14 record reflects full-season struggles, not a specific injury. Already captured in AdjEM."
+    }
+  ],
+  "clean_teams_note": "Most 2025 tournament teams entered relatively healthy. The 2025 field was notably injury-free compared to typical years. Verify late-breaking injury reports 24-48 hours before tournament games.",
+  "monitoring_sources": [
+    "RotoWire College Basketball Injury Report",
+    "247Sports team pages",
+    "Team beat reporters on Twitter/X",
+    "Pre-game press conferences (day before each game)"
+  ]
+}

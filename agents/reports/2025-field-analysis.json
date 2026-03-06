@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "description": "2025 Field Strength Gap analysis and year-adaptive parameters",
+    "computed_from": "2025-team-stats.json approximate values"
+  },
+  "field_strength_gap": {
+    "one_seed_adjEM": {
+      "Auburn": 36.2,
+      "Duke": 39.6,
+      "Houston": 36.8,
+      "Florida": 35.5,
+      "mean": 37.025
+    },
+    "five_to_eight_seed_adjEM": {
+      "Michigan": 18.5,
+      "Clemson": 19.0,
+      "Oregon": 19.5,
+      "Memphis": 20.0,
+      "Louisville": 14.0,
+      "UConn": 14.5,
+      "Gonzaga": 15.0,
+      "Texas": 13.5,
+      "Ole Miss": 17.5,
+      "BYU": 18.0,
+      "Illinois": 17.0,
+      "Missouri": 16.5,
+      "Marquette": 16.0,
+      "Kansas": 15.5,
+      "UCLA": 15.0,
+      "Cincinnati": 15.5,
+      "mean": 16.5625
+    },
+    "field_gap": 20.4625,
+    "AVG_FIELD_GAP": 16.0,
+    "gap_ratio": 1.279,
+    "year_profile": "chalk_heavy",
+    "interpretation": "gap_ratio > 1.0 indicates 1-seeds are more dominant than historical average. Upset probabilities for top-seed matchups should be reduced by factor of 1/1.279 = 0.782"
+  },
+  "futures_concentration_index": {
+    "note": "Must be verified by betting-agent with actual 2025 futures data",
+    "estimated_top4_implied_prob": 0.62,
+    "estimated_teams": ["Duke", "Auburn", "Houston", "Florida"],
+    "year_profile_from_FCI": "chalk_heavy",
+    "historical_comparison": {
+      "2025": {"FCI": 0.62, "profile": "chalk_heavy"},
+      "2024": {"FCI": 0.42, "profile": "normal"},
+      "2023": {"FCI": 0.45, "profile": "normal"},
+      "2022": {"FCI": 0.30, "profile": "upset_heavy"},
+      "2021": {"FCI": 0.38, "profile": "normal"}
+    }
+  },
+  "seed_matchup_base_rates": {
+    "description": "Historical upset rates by seed matchup (1985-2024, ~40 years)",
+    "1v16": 0.013,
+    "2v15": 0.065,
+    "3v14": 0.150,
+    "4v13": 0.210,
+    "5v12": 0.385,
+    "6v11": 0.370,
+    "7v10": 0.390,
+    "8v9": 0.487
+  },
+  "adjusted_upset_rates_2025": {
+    "description": "Base rates adjusted by gap_ratio for top-seed matchups only",
+    "1v16": 0.010,
+    "2v15": 0.051,
+    "3v14": 0.117,
+    "4v13": 0.164,
+    "5v12": 0.385,
+    "6v11": 0.370,
+    "7v10": 0.390,
+    "8v9": 0.487,
+    "note": "5v12 through 8v9 are NOT adjusted — structural parity persists regardless of year"
+  }
+}

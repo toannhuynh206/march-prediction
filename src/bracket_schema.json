@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "March Madness Bracket",
+  "description": "JSON representation of a 63-game bracket for March Madness simulation engine",
+  "type": "object",
+  "required": ["bracket_id", "bracket_int", "regions", "final_four", "metadata"],
+  "properties": {
+    "bracket_id": {
+      "type": "integer",
+      "description": "Unique identifier for this bracket"
+    },
+    "bracket_int": {
+      "type": "integer",
+      "description": "63-bit integer encoding of all game outcomes"
+    },
+    "regions": {
+      "type": "object",
+      "required": ["South", "East", "West", "Midwest"],
+      "additionalProperties": false,
+      "properties": {
+        "South": { "$ref": "#/$defs/regional_bracket" },
+        "East": { "$ref": "#/$defs/regional_bracket" },
+        "West": { "$ref": "#/$defs/regional_bracket" },
+        "Midwest": { "$ref": "#/$defs/regional_bracket" }
+      }
+    },
+    "final_four": {
+      "type": "object",
+      "required": ["semi1", "semi2", "championship"],
+      "properties": {
+        "semi1": { "$ref": "#/$defs/game_outcome" },
+        "semi2": { "$ref": "#/$defs/game_outcome" },
+        "championship": { "$ref": "#/$defs/game_outcome" }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "probability": { "type": "number", "minimum": 0, "maximum": 1 },
+        "expected_score": { "type": "number", "minimum": 0 },
+        "actual_score": { "type": "integer", "minimum": 0 },
+        "scenario_id": { "type": "integer" },
+        "alive": { "type": "boolean" },
+        "weight_tier": {
+          "type": "string",
+          "enum": ["game_lines", "futures_only", "no_market", "live_tournament"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "regional_bracket": {
+      "type": "object",
+      "required": ["bracket_int", "champion", "games"],
+      "properties": {
+        "bracket_int": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 32767,
+          "description": "15-bit encoding of regional outcomes"
+        },
+        "champion": {
+          "type": "object",
+          "required": ["seed", "team_id"],
+          "properties": {
+            "seed": { "type": "integer", "minimum": 1, "maximum": 16 },
+            "team_id": { "type": "integer" },
+            "name": { "type": "string" }
+          }
+        },
+        "games": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/game_outcome" },
+          "minItems": 15,
+          "maxItems": 15
+        }
+      }
+    },
+    "game_outcome": {
+      "type": "object",
+      "required": ["game_index", "round", "winner_seed"],
+      "properties": {
+        "game_index": { "type": "integer" },
+        "round": {
+          "type": "string",
+          "enum": ["R64", "R32", "S16", "E8", "F4", "Championship"]
+        },
+        "team_a": {
+          "type": "object",
+          "properties": {
+            "seed": { "type": "integer" },
+            "team_id": { "type": "integer" },
+            "name": { "type": "string" }
+          }
+        },
+        "team_b": {
+          "type": "object",
+          "properties": {
+            "seed": { "type": "integer" },
+            "team_id": { "type": "integer" },
+            "name": { "type": "string" }
+          }
+        },
+        "winner_seed": { "type": "integer" },
+        "winner_id": { "type": "integer" },
+        "upset": { "type": "boolean" },
+        "p_winner": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

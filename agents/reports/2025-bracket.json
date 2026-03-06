@@ -1,0 +1,100 @@
+{
+  "tournament_year": 2025,
+  "format": "68-team bracket (First Four + 64-team main bracket)",
+  "note": "Data compiled from publicly known 2025 NCAA Tournament bracket. Stats are approximate pre-tournament values from KenPom/Torvik-equivalent sources. Values flagged with _approx=true should be verified against official sources.",
+  "regions": {
+    "South": {
+      "location": "Charlotte, NC (R1/R2); Atlanta, GA (Sweet 16/Elite 8)",
+      "seeds": {
+        "1": {"team": "Auburn", "conference": "SEC", "record": "30-2"},
+        "2": {"team": "Michigan State", "conference": "Big Ten", "record": "22-12"},
+        "3": {"team": "Iowa State", "conference": "Big 12", "record": "25-8"},
+        "4": {"team": "Texas A&M", "conference": "SEC", "record": "23-10"},
+        "5": {"team": "Michigan", "conference": "Big Ten", "record": "21-13"},
+        "6": {"team": "Ole Miss", "conference": "SEC", "record": "22-11"},
+        "7": {"team": "Marquette", "conference": "Big East", "record": "22-11"},
+        "8": {"team": "Louisville", "conference": "ACC", "record": "23-10"},
+        "9": {"team": "Creighton", "conference": "Big East", "record": "22-12"},
+        "10": {"team": "New Mexico", "conference": "MWC", "record": "27-6"},
+        "11": {"team": "Drake", "conference": "MVC", "record": "28-6"},
+        "12": {"team": "UC San Diego", "conference": "Big West", "record": "27-6"},
+        "13": {"team": "Yale", "conference": "Ivy", "record": "23-7"},
+        "14": {"team": "Lipscomb", "conference": "ASUN", "record": "26-8"},
+        "15": {"team": "Bryant", "conference": "AEC", "record": "22-12"},
+        "16": {"team": "Alabama State", "conference": "SWAC", "record": "17-17"}
+      }
+    },
+    "West": {
+      "location": "Denver, CO (R1/R2); San Francisco, CA (Sweet 16/Elite 8)",
+      "seeds": {
+        "1": {"team": "Florida", "conference": "SEC", "record": "28-4"},
+        "2": {"team": "St. John's", "conference": "Big East", "record": "25-7"},
+        "3": {"team": "Texas Tech", "conference": "Big 12", "record": "23-9"},
+        "4": {"team": "Arizona", "conference": "Big 12", "record": "24-10"},
+        "5": {"team": "Clemson", "conference": "ACC", "record": "24-9"},
+        "6": {"team": "Illinois", "conference": "Big Ten", "record": "20-13"},
+        "7": {"team": "UCLA", "conference": "Big Ten", "record": "21-11"},
+        "8": {"team": "Gonzaga", "conference": "WCC", "record": "25-8"},
+        "9": {"team": "Georgia", "conference": "SEC", "record": "20-13"},
+        "10": {"team": "Arkansas", "conference": "SEC", "record": "21-12"},
+        "11": {"team": "Vanderbilt", "conference": "SEC", "record": "20-14"},
+        "12": {"team": "McNeese", "conference": "Southland", "record": "29-4"},
+        "13": {"team": "High Point", "conference": "Big South", "record": "26-7"},
+        "14": {"team": "Grand Canyon", "conference": "WAC", "record": "25-8"},
+        "15": {"team": "Omaha", "conference": "Summit", "record": "23-11"},
+        "16": {"team": "SIU Edwardsville", "conference": "OVC", "record": "20-13"}
+      }
+    },
+    "East": {
+      "location": "Newark, NJ (R1/R2); Philadelphia, PA (Sweet 16/Elite 8)",
+      "seeds": {
+        "1": {"team": "Duke", "conference": "ACC", "record": "29-4"},
+        "2": {"team": "Alabama", "conference": "SEC", "record": "24-8"},
+        "3": {"team": "Wisconsin", "conference": "Big Ten", "record": "24-9"},
+        "4": {"team": "Purdue", "conference": "Big Ten", "record": "24-10"},
+        "5": {"team": "Oregon", "conference": "Big Ten", "record": "23-10"},
+        "6": {"team": "BYU", "conference": "Big 12", "record": "23-10"},
+        "7": {"team": "Kansas", "conference": "Big 12", "record": "21-12"},
+        "8": {"team": "UConn", "conference": "Big East", "record": "21-12"},
+        "9": {"team": "Baylor", "conference": "Big 12", "record": "21-12"},
+        "10": {"team": "Dayton", "conference": "A-10", "record": "24-8"},
+        "11": {"team": "VCU", "conference": "A-10", "record": "23-10"},
+        "12": {"team": "Colorado State", "conference": "MWC", "record": "24-9"},
+        "13": {"team": "Vermont", "conference": "AE", "record": "28-5"},
+        "14": {"team": "Troy", "conference": "Sun Belt", "record": "25-8"},
+        "15": {"team": "Robert Morris", "conference": "Horizon", "record": "25-9"},
+        "16": {"team": "American", "conference": "Patriot", "record": "21-12"}
+      }
+    },
+    "Midwest": {
+      "location": "Wichita, KS (R1/R2); Detroit, MI (Sweet 16/Elite 8)",
+      "seeds": {
+        "1": {"team": "Houston", "conference": "Big 12", "record": "30-3"},
+        "2": {"team": "Tennessee", "conference": "SEC", "record": "27-7"},
+        "3": {"team": "Kentucky", "conference": "SEC", "record": "23-9"},
+        "4": {"team": "Maryland", "conference": "Big Ten", "record": "25-8"},
+        "5": {"team": "Memphis", "conference": "AAC", "record": "24-8"},
+        "6": {"team": "Missouri", "conference": "SEC", "record": "22-11"},
+        "7": {"team": "Cincinnati", "conference": "Big 12", "record": "22-11"},
+        "8": {"team": "Texas", "conference": "SEC", "record": "20-13"},
+        "9": {"team": "Mississippi State", "conference": "SEC", "record": "22-11"},
+        "10": {"team": "San Diego State", "conference": "MWC", "record": "23-10"},
+        "11": {"team": "North Carolina", "conference": "ACC", "record": "19-14"},
+        "12": {"team": "Liberty", "conference": "CUSA", "record": "28-5"},
+        "13": {"team": "Akron", "conference": "MAC", "record": "25-8"},
+        "14": {"team": "Montana", "conference": "Big Sky", "record": "25-7"},
+        "15": {"team": "Wofford", "conference": "SoCon", "record": "25-9"},
+        "16": {"team": "Norfolk State", "conference": "MEAC", "record": "20-12"}
+      }
+    }
+  },
+  "first_four": {
+    "note": "First Four games played in Dayton, OH before main bracket",
+    "games": [
+      {"seeds": "16v16", "teams": ["Alabama State", "SIU Edwardsville"], "winner_plays_in": "South 16 / West 16"},
+      {"seeds": "11v11", "teams": ["VCU", "North Carolina"], "winner_plays_in": "East 11"},
+      {"seeds": "10v10", "teams": ["Arkansas", "San Diego State"], "winner_plays_in": "West 10 / Midwest 10"},
+      {"seeds": "11v11", "teams": ["Drake", "Vanderbilt"], "winner_plays_in": "South 11 / West 11"}
+    ]
+  }
+}
