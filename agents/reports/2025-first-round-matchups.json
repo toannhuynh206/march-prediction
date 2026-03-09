@@ -1,234 +1,204 @@
 {
   "metadata": {
-    "description": "All 32 first-round matchups with computed matchup factors",
-    "note": "Tempo differential, height differential, and matchup adjustments pre-computed"
+    "description": "All 32 first-round matchups with verified spreads from multiple sportsbooks",
+    "sources": ["Yahoo Sports", "CBS Sports", "FOX Sports", "FanDuel", "Action Network"],
+    "note": "Spreads are consensus opening lines. Negative = that team favored."
   },
   "matchups": [
     {
       "region": "South", "game": 1,
-      "higher_seed": {"team": "Auburn", "seed": 1, "adjEM": 36.2},
-      "lower_seed": {"team": "Alabama State", "seed": 16, "adjEM": -10.0},
-      "em_diff": 46.2, "tempo_diff": 1.2, "height_diff": 0.7,
-      "matchup_adj": 0, "base_upset_rate": 0.013, "adj_upset_rate": 0.010
+      "higher_seed": {"team": "Auburn", "seed": 1},
+      "lower_seed": {"team": "Alabama State", "seed": 16},
+      "spread": -32.5, "spread_team": "Auburn"
     },
     {
       "region": "South", "game": 2,
-      "higher_seed": {"team": "Michigan State", "seed": 2, "adjEM": 26.8},
-      "lower_seed": {"team": "Bryant", "seed": 15, "adjEM": 0.5},
-      "em_diff": 26.3, "tempo_diff": 1.0, "height_diff": 2.0,
-      "matchup_adj": 0, "base_upset_rate": 0.065, "adj_upset_rate": 0.051
+      "higher_seed": {"team": "Michigan State", "seed": 2},
+      "lower_seed": {"team": "Bryant", "seed": 15},
+      "spread": -18.5, "spread_team": "Michigan State"
     },
     {
       "region": "South", "game": 3,
-      "higher_seed": {"team": "Iowa State", "seed": 3, "adjEM": 25.0},
-      "lower_seed": {"team": "Lipscomb", "seed": 14, "adjEM": 3.0},
-      "em_diff": 22.0, "tempo_diff": 1.5, "height_diff": 0.3,
-      "matchup_adj": 0, "base_upset_rate": 0.150, "adj_upset_rate": 0.117
+      "higher_seed": {"team": "Iowa State", "seed": 3},
+      "lower_seed": {"team": "Lipscomb", "seed": 14},
+      "spread": -13.5, "spread_team": "Iowa State"
     },
     {
       "region": "South", "game": 4,
-      "higher_seed": {"team": "Texas A&M", "seed": 4, "adjEM": 22.5},
-      "lower_seed": {"team": "Yale", "seed": 13, "adjEM": 6.0},
-      "em_diff": 16.5, "tempo_diff": 0.5, "height_diff": 1.7,
-      "matchup_adj": 0, "base_upset_rate": 0.210, "adj_upset_rate": 0.164
+      "higher_seed": {"team": "Texas A&M", "seed": 4},
+      "lower_seed": {"team": "Yale", "seed": 13},
+      "spread": -7.5, "spread_team": "Texas A&M"
     },
     {
       "region": "South", "game": 5,
-      "higher_seed": {"team": "Michigan", "seed": 5, "adjEM": 18.5},
-      "lower_seed": {"team": "UC San Diego", "seed": 12, "adjEM": 8.5},
-      "em_diff": 10.0, "tempo_diff": 1.0, "height_diff": 1.3,
-      "matchup_adj": 0, "base_upset_rate": 0.385, "adj_upset_rate": 0.385
+      "higher_seed": {"team": "Michigan", "seed": 5},
+      "lower_seed": {"team": "UC San Diego", "seed": 12},
+      "spread": -3.5, "spread_team": "Michigan"
     },
     {
       "region": "South", "game": 6,
-      "higher_seed": {"team": "Ole Miss", "seed": 6, "adjEM": 17.5},
-      "lower_seed": {"team": "Drake", "seed": 11, "adjEM": 11.0},
-      "em_diff": 6.5, "tempo_diff": 2.5, "height_diff": 1.0,
-      "matchup_adj": 0, "base_upset_rate": 0.370, "adj_upset_rate": 0.370
+      "higher_seed": {"team": "Ole Miss", "seed": 6},
+      "lower_seed": {"team": "UNC", "seed": 11},
+      "spread": 1.5, "spread_team": "UNC",
+      "note": "11-seed UNC favored by 1.5"
     },
     {
       "region": "South", "game": 7,
-      "higher_seed": {"team": "Marquette", "seed": 7, "adjEM": 16.0},
-      "lower_seed": {"team": "New Mexico", "seed": 10, "adjEM": 12.5},
-      "em_diff": 3.5, "tempo_diff": 0.5, "height_diff": 0.3,
-      "matchup_adj": 0, "base_upset_rate": 0.390, "adj_upset_rate": 0.390
+      "higher_seed": {"team": "Marquette", "seed": 7},
+      "lower_seed": {"team": "New Mexico", "seed": 10},
+      "spread": -3.5, "spread_team": "Marquette"
     },
     {
       "region": "South", "game": 8,
-      "higher_seed": {"team": "Louisville", "seed": 8, "adjEM": 14.0},
-      "lower_seed": {"team": "Creighton", "seed": 9, "adjEM": 13.0},
-      "em_diff": 1.0, "tempo_diff": 0.5, "height_diff": 0.5,
-      "matchup_adj": 0, "base_upset_rate": 0.487, "adj_upset_rate": 0.487
+      "higher_seed": {"team": "Louisville", "seed": 8},
+      "lower_seed": {"team": "Creighton", "seed": 9},
+      "spread": -1.5, "spread_team": "Louisville"
     },
     {
       "region": "East", "game": 1,
-      "higher_seed": {"team": "Duke", "seed": 1, "adjEM": 39.6},
-      "lower_seed": {"team": "American", "seed": 16, "adjEM": -8.5},
-      "em_diff": 48.1, "tempo_diff": 4.0, "height_diff": 2.5,
-      "matchup_adj": 0, "base_upset_rate": 0.013, "adj_upset_rate": 0.010
+      "higher_seed": {"team": "Duke", "seed": 1},
+      "lower_seed": {"team": "Mount St. Mary's", "seed": 16},
+      "spread": -32.5, "spread_team": "Duke"
     },
     {
       "region": "East", "game": 2,
-      "higher_seed": {"team": "Alabama", "seed": 2, "adjEM": 28.5},
-      "lower_seed": {"team": "Robert Morris", "seed": 15, "adjEM": 1.0},
-      "em_diff": 27.5, "tempo_diff": 6.0, "height_diff": 1.0,
-      "matchup_adj": 0, "base_upset_rate": 0.065, "adj_upset_rate": 0.051
+      "higher_seed": {"team": "Alabama", "seed": 2},
+      "lower_seed": {"team": "Robert Morris", "seed": 15},
+      "spread": -22.5, "spread_team": "Alabama"
     },
     {
       "region": "East", "game": 3,
-      "higher_seed": {"team": "Wisconsin", "seed": 3, "adjEM": 25.8},
-      "lower_seed": {"team": "Troy", "seed": 14, "adjEM": 3.5},
-      "em_diff": 22.3, "tempo_diff": 5.5, "height_diff": 0.5,
-      "matchup_adj": 0, "base_upset_rate": 0.150, "adj_upset_rate": 0.117
+      "higher_seed": {"team": "Wisconsin", "seed": 3},
+      "lower_seed": {"team": "Montana", "seed": 14},
+      "spread": -17.5, "spread_team": "Wisconsin"
     },
     {
       "region": "East", "game": 4,
-      "higher_seed": {"team": "Purdue", "seed": 4, "adjEM": 23.0},
-      "lower_seed": {"team": "Vermont", "seed": 13, "adjEM": 5.5},
-      "em_diff": 17.5, "tempo_diff": 3.0, "height_diff": 2.8,
-      "matchup_adj": 0.3, "base_upset_rate": 0.210, "adj_upset_rate": 0.164,
-      "matchup_note": "Purdue height advantage + slower tempo = +0.3 adj"
+      "higher_seed": {"team": "Arizona", "seed": 4},
+      "lower_seed": {"team": "Akron", "seed": 13},
+      "spread": -15.5, "spread_team": "Arizona"
     },
     {
       "region": "East", "game": 5,
-      "higher_seed": {"team": "Oregon", "seed": 5, "adjEM": 19.5},
-      "lower_seed": {"team": "Colorado State", "seed": 12, "adjEM": 9.0},
-      "em_diff": 10.5, "tempo_diff": 1.5, "height_diff": 0.2,
-      "matchup_adj": 0, "base_upset_rate": 0.385, "adj_upset_rate": 0.385
+      "higher_seed": {"team": "Oregon", "seed": 5},
+      "lower_seed": {"team": "Liberty", "seed": 12},
+      "spread": -4.5, "spread_team": "Oregon"
     },
     {
       "region": "East", "game": 6,
-      "higher_seed": {"team": "BYU", "seed": 6, "adjEM": 18.0},
-      "lower_seed": {"team": "VCU", "seed": 11, "adjEM": 10.5},
-      "em_diff": 7.5, "tempo_diff": 3.5, "height_diff": 1.0,
-      "matchup_adj": 0, "base_upset_rate": 0.370, "adj_upset_rate": 0.370
+      "higher_seed": {"team": "BYU", "seed": 6},
+      "lower_seed": {"team": "VCU", "seed": 11},
+      "spread": -3.5, "spread_team": "BYU"
     },
     {
       "region": "East", "game": 7,
-      "higher_seed": {"team": "Kansas", "seed": 7, "adjEM": 15.5},
-      "lower_seed": {"team": "Dayton", "seed": 10, "adjEM": 13.0},
-      "em_diff": 2.5, "tempo_diff": 3.5, "height_diff": 1.5,
-      "matchup_adj": 0, "base_upset_rate": 0.390, "adj_upset_rate": 0.390
+      "higher_seed": {"team": "St. Mary's", "seed": 7},
+      "lower_seed": {"team": "Vanderbilt", "seed": 10},
+      "spread": -5.5, "spread_team": "St. Mary's"
     },
     {
       "region": "East", "game": 8,
-      "higher_seed": {"team": "UConn", "seed": 8, "adjEM": 14.5},
-      "lower_seed": {"team": "Baylor", "seed": 9, "adjEM": 13.5},
-      "em_diff": 1.0, "tempo_diff": 0.5, "height_diff": 0.2,
-      "matchup_adj": 0, "base_upset_rate": 0.487, "adj_upset_rate": 0.487
-    },
-    {
-      "region": "West", "game": 1,
-      "higher_seed": {"team": "Florida", "seed": 1, "adjEM": 35.5},
-      "lower_seed": {"team": "SIU Edwardsville", "seed": 16, "adjEM": -9.0},
-      "em_diff": 44.5, "tempo_diff": 1.2, "height_diff": 0.8,
-      "matchup_adj": 0, "base_upset_rate": 0.013, "adj_upset_rate": 0.010
-    },
-    {
-      "region": "West", "game": 2,
-      "higher_seed": {"team": "St. John's", "seed": 2, "adjEM": 27.5},
-      "lower_seed": {"team": "Omaha", "seed": 15, "adjEM": 0.0},
-      "em_diff": 27.5, "tempo_diff": 2.0, "height_diff": 1.3,
-      "matchup_adj": 0, "base_upset_rate": 0.065, "adj_upset_rate": 0.051
-    },
-    {
-      "region": "West", "game": 3,
-      "higher_seed": {"team": "Texas Tech", "seed": 3, "adjEM": 25.2},
-      "lower_seed": {"team": "Grand Canyon", "seed": 14, "adjEM": 2.5},
-      "em_diff": 22.7, "tempo_diff": 1.5, "height_diff": 0.6,
-      "matchup_adj": 0, "base_upset_rate": 0.150, "adj_upset_rate": 0.117
-    },
-    {
-      "region": "West", "game": 4,
-      "higher_seed": {"team": "Arizona", "seed": 4, "adjEM": 23.5},
-      "lower_seed": {"team": "High Point", "seed": 13, "adjEM": 5.0},
-      "em_diff": 18.5, "tempo_diff": 1.5, "height_diff": 1.5,
-      "matchup_adj": 0, "base_upset_rate": 0.210, "adj_upset_rate": 0.164
-    },
-    {
-      "region": "West", "game": 5,
-      "higher_seed": {"team": "Clemson", "seed": 5, "adjEM": 19.0},
-      "lower_seed": {"team": "McNeese", "seed": 12, "adjEM": 7.5},
-      "em_diff": 11.5, "tempo_diff": 2.0, "height_diff": 0.5,
-      "matchup_adj": 0, "base_upset_rate": 0.385, "adj_upset_rate": 0.385
-    },
-    {
-      "region": "West", "game": 6,
-      "higher_seed": {"team": "Illinois", "seed": 6, "adjEM": 17.0},
-      "lower_seed": {"team": "Vanderbilt", "seed": 11, "adjEM": 10.0},
-      "em_diff": 7.0, "tempo_diff": 1.0, "height_diff": 0.3,
-      "matchup_adj": 0, "base_upset_rate": 0.370, "adj_upset_rate": 0.370
-    },
-    {
-      "region": "West", "game": 7,
-      "higher_seed": {"team": "UCLA", "seed": 7, "adjEM": 15.0},
-      "lower_seed": {"team": "Arkansas", "seed": 10, "adjEM": 11.5},
-      "em_diff": 3.5, "tempo_diff": 3.5, "height_diff": 0.0,
-      "matchup_adj": 0, "base_upset_rate": 0.390, "adj_upset_rate": 0.390
-    },
-    {
-      "region": "West", "game": 8,
-      "higher_seed": {"team": "Gonzaga", "seed": 8, "adjEM": 15.0},
-      "lower_seed": {"team": "Georgia", "seed": 9, "adjEM": 12.5},
-      "em_diff": 2.5, "tempo_diff": 3.5, "height_diff": 0.7,
-      "matchup_adj": 0, "base_upset_rate": 0.487, "adj_upset_rate": 0.487
+      "higher_seed": {"team": "Mississippi State", "seed": 8},
+      "lower_seed": {"team": "Baylor", "seed": 9},
+      "spread": 1.5, "spread_team": "Baylor",
+      "note": "9-seed Baylor favored by 1.5"
     },
     {
       "region": "Midwest", "game": 1,
-      "higher_seed": {"team": "Houston", "seed": 1, "adjEM": 36.8},
-      "lower_seed": {"team": "Norfolk State", "seed": 16, "adjEM": -9.5},
-      "em_diff": 46.3, "tempo_diff": 4.0, "height_diff": 1.0,
-      "matchup_adj": 0, "base_upset_rate": 0.013, "adj_upset_rate": 0.010
+      "higher_seed": {"team": "Houston", "seed": 1},
+      "lower_seed": {"team": "SIU Edwardsville", "seed": 16},
+      "spread": -27.5, "spread_team": "Houston"
     },
     {
       "region": "Midwest", "game": 2,
-      "higher_seed": {"team": "Tennessee", "seed": 2, "adjEM": 29.2},
-      "lower_seed": {"team": "Wofford", "seed": 15, "adjEM": 0.5},
-      "em_diff": 28.7, "tempo_diff": 3.0, "height_diff": 2.0,
-      "matchup_adj": 0.3, "base_upset_rate": 0.065, "adj_upset_rate": 0.051,
-      "matchup_note": "Tennessee height + slower tempo = +0.3 adj"
+      "higher_seed": {"team": "Tennessee", "seed": 2},
+      "lower_seed": {"team": "Wofford", "seed": 15},
+      "spread": -19.5, "spread_team": "Tennessee"
     },
     {
       "region": "Midwest", "game": 3,
-      "higher_seed": {"team": "Kentucky", "seed": 3, "adjEM": 24.5},
-      "lower_seed": {"team": "Montana", "seed": 14, "adjEM": 3.0},
-      "em_diff": 21.5, "tempo_diff": 1.5, "height_diff": 1.5,
-      "matchup_adj": 0, "base_upset_rate": 0.150, "adj_upset_rate": 0.117
+      "higher_seed": {"team": "Kentucky", "seed": 3},
+      "lower_seed": {"team": "Troy", "seed": 14},
+      "spread": -10.5, "spread_team": "Kentucky"
     },
     {
       "region": "Midwest", "game": 4,
-      "higher_seed": {"team": "Maryland", "seed": 4, "adjEM": 22.0},
-      "lower_seed": {"team": "Akron", "seed": 13, "adjEM": 5.5},
-      "em_diff": 16.5, "tempo_diff": 1.5, "height_diff": 0.7,
-      "matchup_adj": 0, "base_upset_rate": 0.210, "adj_upset_rate": 0.164
+      "higher_seed": {"team": "Purdue", "seed": 4},
+      "lower_seed": {"team": "High Point", "seed": 13},
+      "spread": -10.5, "spread_team": "Purdue"
     },
     {
       "region": "Midwest", "game": 5,
-      "higher_seed": {"team": "Memphis", "seed": 5, "adjEM": 20.0},
-      "lower_seed": {"team": "Liberty", "seed": 12, "adjEM": 8.0},
-      "em_diff": 12.0, "tempo_diff": 4.5, "height_diff": 1.2,
-      "matchup_adj": 0, "base_upset_rate": 0.385, "adj_upset_rate": 0.385
+      "higher_seed": {"team": "Clemson", "seed": 5},
+      "lower_seed": {"team": "McNeese", "seed": 12},
+      "spread": -7.5, "spread_team": "Clemson"
     },
     {
       "region": "Midwest", "game": 6,
-      "higher_seed": {"team": "Missouri", "seed": 6, "adjEM": 16.5},
-      "lower_seed": {"team": "North Carolina", "seed": 11, "adjEM": 11.5},
-      "em_diff": 5.0, "tempo_diff": 1.5, "height_diff": 0.5,
-      "matchup_adj": 0, "base_upset_rate": 0.370, "adj_upset_rate": 0.370
+      "higher_seed": {"team": "Illinois", "seed": 6},
+      "lower_seed": {"team": "Xavier", "seed": 11},
+      "spread": -4.0, "spread_team": "Illinois"
     },
     {
       "region": "Midwest", "game": 7,
-      "higher_seed": {"team": "Cincinnati", "seed": 7, "adjEM": 15.5},
-      "lower_seed": {"team": "San Diego State", "seed": 10, "adjEM": 12.0},
-      "em_diff": 3.5, "tempo_diff": 1.5, "height_diff": 0.3,
-      "matchup_adj": 0, "base_upset_rate": 0.390, "adj_upset_rate": 0.390
+      "higher_seed": {"team": "UCLA", "seed": 7},
+      "lower_seed": {"team": "Utah State", "seed": 10},
+      "spread": -5.5, "spread_team": "UCLA"
     },
     {
       "region": "Midwest", "game": 8,
-      "higher_seed": {"team": "Texas", "seed": 8, "adjEM": 13.5},
-      "lower_seed": {"team": "Mississippi State", "seed": 9, "adjEM": 12.0},
-      "em_diff": 1.5, "tempo_diff": 0.0, "height_diff": 1.0,
-      "matchup_adj": 0, "base_upset_rate": 0.487, "adj_upset_rate": 0.487
+      "higher_seed": {"team": "Gonzaga", "seed": 8},
+      "lower_seed": {"team": "Georgia", "seed": 9},
+      "spread": -4.5, "spread_team": "Gonzaga"
+    },
+    {
+      "region": "West", "game": 1,
+      "higher_seed": {"team": "Florida", "seed": 1},
+      "lower_seed": {"team": "Norfolk State", "seed": 16},
+      "spread": -28.5, "spread_team": "Florida"
+    },
+    {
+      "region": "West", "game": 2,
+      "higher_seed": {"team": "St. John's", "seed": 2},
+      "lower_seed": {"team": "Omaha", "seed": 15},
+      "spread": -17.5, "spread_team": "St. John's"
+    },
+    {
+      "region": "West", "game": 3,
+      "higher_seed": {"team": "Texas Tech", "seed": 3},
+      "lower_seed": {"team": "UNC Wilmington", "seed": 14},
+      "spread": -15.5, "spread_team": "Texas Tech"
+    },
+    {
+      "region": "West", "game": 4,
+      "higher_seed": {"team": "Maryland", "seed": 4},
+      "lower_seed": {"team": "Grand Canyon", "seed": 13},
+      "spread": -11.5, "spread_team": "Maryland"
+    },
+    {
+      "region": "West", "game": 5,
+      "higher_seed": {"team": "Memphis", "seed": 5},
+      "lower_seed": {"team": "Colorado State", "seed": 12},
+      "spread": 3.5, "spread_team": "Colorado State",
+      "note": "12-seed Colorado State favored by 3.5"
+    },
+    {
+      "region": "West", "game": 6,
+      "higher_seed": {"team": "Missouri", "seed": 6},
+      "lower_seed": {"team": "Drake", "seed": 11},
+      "spread": -6.5, "spread_team": "Missouri"
+    },
+    {
+      "region": "West", "game": 7,
+      "higher_seed": {"team": "Kansas", "seed": 7},
+      "lower_seed": {"team": "Arkansas", "seed": 10},
+      "spread": -5.5, "spread_team": "Kansas"
+    },
+    {
+      "region": "West", "game": 8,
+      "higher_seed": {"team": "UConn", "seed": 8},
+      "lower_seed": {"team": "Oklahoma", "seed": 9},
+      "spread": -4.5, "spread_team": "UConn"
     }
   ]
 }

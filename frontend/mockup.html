@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>March Madness Survivor - 10 Million Bracket Challenge</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1E3A5F;--navy-light:#2C5282;--navy-dark:#152A45;
+  --orange:#E8611A;--orange-light:#F5944D;--orange-warm:#D4510F;
+  --gold:#D4A843;--gold-light:#F0D68A;
+  --court:#C8A96E;--court-light:#E8D5B5;
+  --green:#2D7A3A;--green-light:#E6F4EA;
+  --red:#B33030;--red-light:#FDE8E8;
+  --g50:#FAF9F7;--g100:#F3F1EE;--g200:#E8E5E0;--g300:#D6D2CC;
+  --g400:#B8B3AC;--g500:#8F8A83;--g700:#5A5650;--g900:#2D2926;
+  --font:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --mono:'SF Mono',Monaco,Consolas,monospace;
+}
+body{font-family:var(--font);background:linear-gradient(180deg,#F7F5F2 0%,#EDE9E3 100%);color:var(--g900);line-height:1.4;min-height:100vh}
+
+/* Hero Banner */
+.hero-banner{
+  background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-light) 70%,#3B6B9E 100%);
+  color:#fff;padding:28px 32px 22px;position:relative;overflow:hidden;
+}
+.hero-banner::before{
+  content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(232,97,26,.15) 0%,transparent 70%);pointer-events:none;
+}
+.hero-banner::after{
+  content:'';position:absolute;bottom:-60%;left:5%;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(212,168,67,.1) 0%,transparent 70%);pointer-events:none;
+}
+.hero-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.hero-brand{display:flex;align-items:center;gap:14px}
+.hero-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--orange),var(--orange-warm));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 16px rgba(232,97,26,.35)}
+.hero-title{font-size:28px;font-weight:800;letter-spacing:-1px;line-height:1.1}
+.hero-title .mm{color:var(--orange-light)}
+.hero-title .surv{color:var(--gold-light);font-weight:600}
+.hero-sub{font-size:11px;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.hstats{display:flex;gap:24px;font-size:11px;position:relative;z-index:1}
+.hstats>div{text-align:center;padding:6px 14px;background:rgba(255,255,255,.06);border-radius:8px;backdrop-filter:blur(4px)}
+.hstats .v{font-size:16px;font-weight:700;color:var(--gold-light)}
+.hstats .l{opacity:.5;font-size:9px;letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+
+/* Header (sticky nav) */
+.header{background:linear-gradient(90deg,var(--navy-dark),var(--navy));color:#fff;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15);height:44px}
+.header h1{font-size:14px;font-weight:600;letter-spacing:-.2px;opacity:.9}
+.header h1 span{color:var(--orange-light)}
+
+/* Tabs */
+.tabs{display:flex;background:transparent;padding:0 24px;gap:2px}
+.tab{padding:10px 20px;color:var(--g500);font-size:11px;font-weight:600;cursor:pointer;border:none;background:var(--g100);text-transform:uppercase;letter-spacing:.6px;transition:.2s;border-radius:8px 8px 0 0}
+.tab:hover{color:var(--navy);background:var(--g200)}
+.tab.active{color:var(--navy);background:#fff;font-weight:700;box-shadow:0 -2px 8px rgba(0,0,0,.04)}
+.panel{display:none}.panel.active{display:block}
+
+/* ===== BRACKET ===== */
+.bracket-outer{overflow-x:auto;padding:16px;background:#fff;border-radius:0 8px 8px 8px;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+.bracket-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;min-width:1500px;align-items:start}
+.side{display:flex;flex-direction:column;gap:16px}
+.center-col{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:800px;padding:0 8px}
+
+.region-hdr{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.8px;padding:6px 10px;margin-bottom:6px;background:linear-gradient(90deg,rgba(30,58,95,.06),transparent);border-left:3px solid var(--orange);border-radius:0 4px 4px 0;display:flex;justify-content:space-between;align-items:center}
+.region-hdr .loc{font-size:9px;font-weight:400;color:var(--g500);text-transform:none;letter-spacing:0}
+
+.region-rounds{display:flex}
+.region-rounds.rtl{flex-direction:row-reverse}
+.rd-col{display:flex;flex-direction:column;justify-content:center;min-width:155px}
+.rd-lbl{font-size:8px;font-weight:600;text-transform:uppercase;color:var(--g500);letter-spacing:.4px;text-align:center;margin-bottom:3px}
+
+/* Matchup */
+.mu{margin:1px 0;position:relative}
+.rd1 .mu{margin:1px 0}
+.rd2 .mu{margin:15px 0}
+.rd3 .mu{margin:43px 0}
+.rd4 .mu{margin:99px 0}
+
+/* Team cell */
+.tm{display:flex;align-items:center;height:26px;padding:0 6px;font-size:11px;background:#FEFEFE;border:1px solid var(--g200);min-width:148px;transition:.15s}
+.tm:first-child{border-bottom:none;border-radius:4px 4px 0 0}
+.tm:last-child{border-radius:0 0 4px 4px}
+.tm .sd{font-weight:700;color:var(--navy);min-width:17px;font-size:10px;text-align:center;opacity:.6}
+.tm .nm{flex:1;padding:0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.tm .sc{font-weight:700;font-size:11px;min-width:18px;text-align:right;color:var(--g700)}
+.tm:hover{background:var(--g50);border-color:var(--g300)}
+
+.tm.w{background:linear-gradient(90deg,var(--green-light),#F4FAF5);border-color:#B8DFB8}
+.tm.w .nm{font-weight:700;color:var(--green)}
+.tm.w .sc{color:var(--green)}
+.tm.w::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);border-radius:2px 0 0 2px}
+.tm.lo{background:var(--red-light);border-color:#F0CCCC;opacity:.5}
+.tm.lo .nm{text-decoration:line-through;color:var(--g500)}
+.tm.lo .sc{color:var(--red)}
+.tm.tbd{opacity:.25;font-style:italic}
+
+.upset{position:absolute;right:-7px;top:50%;transform:translateY(-50%);background:linear-gradient(135deg,var(--orange),var(--orange-warm));color:#fff;font-size:7px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;font-weight:800;box-shadow:0 1px 4px rgba(232,97,26,.35)}
+
+/* Connectors */
+.conn{width:14px;min-width:14px;position:relative}
+
+/* Final Four */
+.ff-box{background:linear-gradient(180deg,#FDFCFA,#F5F0E8);border:1px solid var(--g200);border-radius:12px;padding:16px;color:var(--g900);width:220px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.ff-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px}
+.ff-title::before,.ff-title::after{content:'';height:1px;width:20px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.ff-mu{margin:6px 0;padding:6px;background:rgba(30,58,95,.04);border:1px solid var(--g200);border-radius:6px}
+.ff-tm{display:flex;align-items:center;height:26px;padding:0 7px;font-size:11px;border-radius:3px;margin:2px 0}
+.ff-tm .sd{font-weight:700;color:var(--navy);min-width:18px}
+.ff-tm .nm{flex:1;padding:0 5px;font-weight:500}
+.ff-tm.tbd{opacity:.4;font-style:italic;color:var(--g500)}
+.champ{margin-top:12px;padding:12px;background:linear-gradient(135deg,rgba(212,168,67,.08),rgba(212,168,67,.15));border:1px solid rgba(212,168,67,.35);border-radius:8px}
+.champ-lbl{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:4px}
+
+/* ===== EXPLORER ===== */
+.explorer{padding:20px;max-width:1200px;margin:0 auto}
+.ex-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.ex-toolbar .fgrp{display:flex;gap:3px}
+.fbtn{padding:4px 9px;border:1px solid var(--g300);background:#fff;border-radius:4px;cursor:pointer;font-size:10px;transition:.15s}
+.fbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.fbtn:hover:not(.on){background:var(--g100)}
+.srt{padding:5px 7px;border:1px solid var(--g300);border-radius:4px;font-size:10px;background:#fff}
+.ex-jump{display:flex;gap:4px;margin-left:auto}
+.ex-jump input{padding:5px 10px;border:1px solid var(--g300);border-radius:4px;font-size:11px;width:120px}
+.ex-jump button{padding:5px 12px;background:var(--navy);color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer;font-weight:600}
+.ex-jump button:hover{background:var(--navy-light)}
+.ex-showing{font-size:11px;color:var(--g500);font-weight:500}
+
+/* Bracket list table */
+.blist{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden;margin-bottom:14px}
+.blist-hdr{display:grid;grid-template-columns:80px 90px 1fr 120px 100px 110px 50px;padding:8px 14px;background:var(--g50);border-bottom:2px solid var(--g200);font-size:10px;font-weight:700;color:var(--g500);text-transform:uppercase;letter-spacing:.4px}
+.brow-item{display:grid;grid-template-columns:80px 90px 1fr 120px 100px 110px 50px;padding:8px 14px;border-bottom:1px solid var(--g100);font-size:11px;cursor:pointer;transition:.1s;align-items:center}
+.brow-item:hover{background:var(--g50)}
+.brow-item.expanded{background:linear-gradient(90deg,rgba(30,58,95,.03),transparent);border-bottom-color:transparent}
+.brow-item .b-id{font-weight:700;color:var(--navy);font-size:12px}
+.bstatus{display:inline-block;padding:2px 9px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:.4px}
+.bstatus.alive{background:var(--green-light);color:var(--green)}
+.bstatus.busted{background:var(--red-light);color:var(--red)}
+.b-champ{font-weight:600;color:var(--navy)}
+.b-weight{font-family:var(--mono);font-size:10px;color:var(--g500)}
+.b-score{font-weight:700;color:var(--orange)}
+.b-stratum{font-size:9px;color:var(--g400);font-family:var(--mono)}
+.b-expand{color:var(--g400);font-size:14px;transition:.2s}
+.brow-item.expanded .b-expand{transform:rotate(180deg);color:var(--navy)}
+
+/* Expanded bracket detail */
+.brow-detail{display:none;padding:14px;background:linear-gradient(180deg,rgba(30,58,95,.02),#fff);border-bottom:2px solid var(--g200)}
+.brow-detail.open{display:block}
+.bmini{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mini-r{padding:10px;background:var(--g50);border-radius:6px;border:1px solid var(--g200)}
+.mini-r h4{font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.mp{display:flex;align-items:center;font-size:10px;padding:2px 0;border-bottom:1px solid var(--g100)}
+.mp:last-child{border:none}
+.mp .mrd{font-size:8px;color:var(--g500);width:22px}
+.mp .msd{font-weight:700;color:var(--g500);width:14px;font-size:9px}
+.mp .mnm{flex:1}
+.mp.ok .mnm{color:var(--green);font-weight:600}
+.mp.bad .mnm{color:var(--red);text-decoration:line-through}
+.brow-ff{font-size:10px;color:var(--g500);margin-top:10px;padding-top:8px;border-top:1px solid var(--g200);display:flex;gap:12px;flex-wrap:wrap}
+.brow-ff strong{color:var(--navy)}
+
+/* Pagination bar */
+.pager{display:flex;align-items:center;justify-content:center;gap:4px;padding:12px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.05);flex-wrap:wrap;margin-bottom:14px}
+#pager-bottom{position:sticky;bottom:0;z-index:10;margin-bottom:0}
+.pg-btn{min-width:34px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid var(--g300);background:#fff;border-radius:6px;cursor:pointer;font-size:11px;font-weight:600;color:var(--g700);transition:.15s}
+.pg-btn:hover{background:var(--g100);border-color:var(--g400)}
+.pg-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pg-btn.nav{padding:0 14px;font-size:12px;font-weight:700;background:var(--g50)}
+.pg-btn:disabled{opacity:.35;cursor:not-allowed}
+.pg-dots{font-size:12px;color:var(--g400);padding:0 2px;letter-spacing:1px;user-select:none}
+.pg-info{font-size:11px;color:var(--g500);margin-left:12px}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero-banner{padding:18px 14px 14px}
+  .hero-top{flex-direction:column;align-items:flex-start;gap:10px}
+  .hero-title{font-size:20px}
+  .hero-icon{width:38px;height:38px;font-size:18px}
+  .hstats{gap:8px;flex-wrap:wrap}
+  .hstats>div{padding:5px 10px}
+  .hstats .v{font-size:13px}
+
+  /* Header / Tabs */
+  .header{padding:0 12px;height:38px}
+  .header h1{font-size:12px}
+  .tabs{padding:0 10px;gap:1px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tab{padding:8px 12px;font-size:9px;white-space:nowrap;min-width:fit-content}
+
+  /* Bracket view — horizontal scroll */
+  .bracket-outer{padding:8px}
+  .bracket-grid{min-width:1200px}
+
+  /* Explorer — mobile layout */
+  .explorer{padding:10px}
+  .ex-toolbar{flex-direction:column;align-items:stretch;gap:8px;padding:10px}
+  .ex-toolbar .fgrp{justify-content:center}
+  .ex-jump{margin-left:0;justify-content:center}
+  .ex-jump input{flex:1}
+  .ex-showing{text-align:center}
+
+  /* Bracket list — card layout on mobile */
+  .blist-hdr{display:none}
+  .brow-item{display:flex;flex-wrap:wrap;gap:4px 10px;padding:10px 12px;position:relative}
+  .brow-item .b-id{font-size:13px;order:1}
+  .brow-item .bstatus{order:2}
+  .brow-item .b-champ{order:3;width:100%;font-size:12px}
+  .brow-item .b-score{order:4}
+  .brow-item .b-weight{order:5}
+  .brow-item .b-stratum{order:6;font-size:9px}
+  .brow-item .b-expand{order:0;position:absolute;right:10px;top:10px}
+
+  /* Detail region grid stacks on mobile */
+  .bmini{grid-template-columns:repeat(2,1fr);gap:8px}
+  .brow-ff{flex-direction:column;gap:4px}
+
+  /* Pagination — compact on mobile */
+  .pager{gap:3px;padding:10px 6px}
+  .pg-btn{min-width:28px;height:28px;font-size:10px}
+  .pg-btn.nav{padding:0 8px;font-size:10px}
+  .pg-info{margin-left:0;width:100%;text-align:center;margin-top:4px}
+
+  /* Stats */
+  .stats{padding:10px}
+  .scards{grid-template-columns:repeat(2,1fr);gap:8px}
+  .scard .sv{font-size:20px}
+  .ttbl{font-size:10px}
+  .ttbl th,.ttbl td{padding:4px 5px}
+  .pbar{width:50px}
+
+  /* Admin */
+  .admin{padding:10px}
+  .gres{flex-direction:column;align-items:flex-start;gap:4px}
+  .gtr{flex-wrap:wrap}
+  .alock input{width:100%}
+}
+
+@media (max-width: 480px) {
+  .hero-title{font-size:17px}
+  .hero-sub{font-size:9px}
+  .hstats{gap:4px}
+  .hstats>div{padding:4px 6px;font-size:9px}
+  .hstats .v{font-size:11px}
+
+  .bmini{grid-template-columns:1fr}
+  .brow-item{grid-template-columns:auto 1fr;gap:3px 6px}
+
+  .scards{grid-template-columns:1fr 1fr}
+  .scard{padding:12px}
+  .scard .sv{font-size:18px}
+
+  .ttbl th:nth-child(4),.ttbl td:nth-child(4),
+  .ttbl th:nth-child(5),.ttbl td:nth-child(5){display:none}
+}
+
+/* ===== STATISTICS ===== */
+.stats{padding:20px;max-width:1100px;margin:0 auto}
+.scards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.scard{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.05);text-align:center;border-top:3px solid var(--navy-light)}
+.scard .sv{font-size:26px;font-weight:800;color:var(--navy);margin:6px 0}
+.scard .sl{font-size:10px;color:var(--g500);text-transform:uppercase;letter-spacing:.4px}
+.scard.hi{border-top-color:var(--gold)}.scard.hi .sv{color:var(--orange)}
+
+.ssec{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.05);margin-bottom:16px}
+.ssec h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+
+.bchart{display:flex;flex-direction:column;gap:7px}
+.brow{display:flex;align-items:center;gap:7px}
+.blbl{width:70px;font-size:11px;font-weight:600;color:var(--g700);text-align:right}
+.btrk{flex:1;height:26px;background:var(--g100);border-radius:4px;overflow:hidden}
+.bfill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:10px;font-weight:700;color:#fff}
+.bfill.s{background:linear-gradient(90deg,var(--navy),var(--navy-light));border-radius:4px}
+.bfill.e{background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:4px}
+.bfill.m{background:linear-gradient(90deg,#2C6FAC,#5B9BD5);border-radius:4px}
+.bfill.w{background:linear-gradient(90deg,var(--green),#5AAD5A);border-radius:4px}
+.bval{font-size:11px;font-weight:600;color:var(--g700);min-width:70px}
+
+.ttbl{width:100%;border-collapse:collapse;font-size:11px}
+.ttbl th{text-align:left;padding:7px;border-bottom:2px solid var(--g300);font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--g500)}
+.ttbl td{padding:6px 7px;border-bottom:1px solid var(--g100)}
+.ttbl tr:hover td{background:var(--g50)}
+.ttbl .sc{font-weight:700;color:var(--g500);width:36px;text-align:center}
+.pbar{height:5px;background:var(--g200);border-radius:3px;overflow:hidden;width:70px;display:inline-block;vertical-align:middle;margin-right:5px}
+.pfill{height:100%;background:var(--navy);border-radius:3px}
+.sta{color:var(--green);font-weight:600}
+.ste{color:var(--red);font-weight:600}
+
+/* ===== ADMIN ===== */
+.admin{padding:20px;max-width:750px;margin:0 auto}
+.alock{background:#fff;border-radius:8px;padding:36px;box-shadow:0 1px 4px rgba(0,0,0,.05);text-align:center}
+.alock h3{font-size:15px;color:var(--navy);margin-bottom:12px}
+.alock input{padding:9px 14px;border:1px solid var(--g300);border-radius:4px;font-size:13px;width:260px;text-align:center}
+.alock button{display:block;margin:10px auto 0;padding:9px 28px;background:var(--navy);color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer}
+.apanel{display:none}.apanel.on{display:block}
+.asec{background:#fff;border-radius:8px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.05);margin-bottom:16px}
+.asec h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.gres{display:flex;align-items:center;gap:10px;padding:8px;margin:4px 0;background:var(--g50);border-radius:5px;border:1px solid var(--g200)}
+.gres .glbl{font-size:9px;color:var(--g500);width:52px}
+.gtr{display:flex;align-items:center;gap:5px;flex:1}
+.gtr label{font-size:11px;cursor:pointer;padding:3px 7px;border-radius:3px;transition:.12s}
+.gtr input:checked+label{background:var(--navy);color:#fff;font-weight:600}
+.gtr input{display:none}
+.gfinal{font-size:9px;color:var(--green);font-weight:600}
+.subbtn{display:block;margin:14px auto 0;padding:10px 28px;background:linear-gradient(135deg,var(--orange),var(--orange-warm));color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.4px;box-shadow:0 2px 8px rgba(232,97,26,.25)}
+.subbtn:hover{background:linear-gradient(135deg,var(--orange-warm),#C0440A)}
+
+.rlog{margin-top:10px}
+.le{display:flex;align-items:center;gap:7px;padding:5px 0;font-size:11px;border-bottom:1px solid var(--g100)}
+.le .lt{color:var(--g500);font-size:9px;min-width:40px;font-family:var(--mono)}
+.le .lr{background:var(--navy);color:#fff;padding:1px 5px;border-radius:3px;font-size:8px;font-weight:600}
+.le .lx{flex:1}
+.le .lx strong{color:var(--green)}
+
+@media(max-width:768px){.scards{grid-template-columns:repeat(2,1fr)}.bmini{grid-template-columns:repeat(2,1fr)}.tab{padding:7px 10px;font-size:10px}}
+</style>
+</head>
+<body>
+
+<div class="hero-banner">
+  <div class="hero-top">
+    <div class="hero-brand">
+      <div class="hero-icon">&#127936;</div>
+      <div>
+        <div class="hero-title"><span class="mm">March Madness</span> <span class="surv">Survivor</span></div>
+        <div class="hero-sub">10 Million Bracket Challenge &bull; 2025 NCAA Tournament</div>
+      </div>
+    </div>
+    <div class="hstats">
+      <div><div class="v">10,000,000</div><div class="l">Total Brackets</div></div>
+      <div><div class="v">7,234,891</div><div class="l">Alive</div></div>
+      <div><div class="v">72.3%</div><div class="l">Survival Rate</div></div>
+      <div><div class="v">R64</div><div class="l">Current Round</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+  <h1>March Madness <span>Survivor</span></h1>
+</div>
+
+<div class="tabs" style="background:transparent;padding-top:8px">
+  <button class="tab active" onclick="stab('bracket',this)">Bracket</button>
+  <button class="tab" onclick="stab('explorer',this)">Bracket Explorer</button>
+  <button class="tab" onclick="stab('stats',this)">Statistics</button>
+  <button class="tab" onclick="stab('admin',this)">Admin</button>
+</div>
+
+<!-- ========== BRACKET ========== -->
+<div id="p-bracket" class="panel active">
+<div class="bracket-outer">
+<div class="bracket-grid">
+
+<!-- LEFT SIDE -->
+<div class="side">
+
+<!-- SOUTH -->
+<div>
+  <div class="region-hdr">South Region <span class="loc">Dallas, TX</span></div>
+  <div class="region-rounds">
+    <div class="rd-col rd1">
+      <div class="rd-lbl">Round of 64</div>
+      <div class="mu"><div class="tm w"><span class="sd">1</span><span class="nm">Auburn</span><span class="sc">85</span></div><div class="tm lo"><span class="sd">16</span><span class="nm">Alabama State</span><span class="sc">52</span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">8</span><span class="nm">Louisville</span><span class="sc"></span></div><div class="tm"><span class="sd">9</span><span class="nm">Creighton</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">5</span><span class="nm">Michigan</span><span class="sc"></span></div><div class="tm"><span class="sd">12</span><span class="nm">UC San Diego</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">4</span><span class="nm">Texas A&amp;M</span><span class="sc"></span></div><div class="tm"><span class="sd">13</span><span class="nm">Yale</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">6</span><span class="nm">Ole Miss</span><span class="sc"></span></div><div class="tm"><span class="sd">11</span><span class="nm">UNC</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm w"><span class="sd">3</span><span class="nm">Iowa State</span><span class="sc">74</span></div><div class="tm lo"><span class="sd">14</span><span class="nm">Lipscomb</span><span class="sc">55</span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">7</span><span class="nm">Marquette</span><span class="sc"></span></div><div class="tm"><span class="sd">10</span><span class="nm">New Mexico</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">2</span><span class="nm">Michigan State</span><span class="sc"></span></div><div class="tm"><span class="sd">15</span><span class="nm">Bryant</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd2">
+      <div class="rd-lbl">Round of 32</div>
+      <div class="mu"><div class="tm"><span class="sd">1</span><span class="nm">Auburn</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm"><span class="sd">3</span><span class="nm">Iowa State</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd3">
+      <div class="rd-lbl">Sweet 16</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd4">
+      <div class="rd-lbl">Elite 8</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EAST -->
+<div>
+  <div class="region-hdr">East Region <span class="loc">Newark, NJ</span></div>
+  <div class="region-rounds">
+    <div class="rd-col rd1">
+      <div class="rd-lbl">Round of 64</div>
+      <div class="mu"><div class="tm w"><span class="sd">1</span><span class="nm">Duke</span><span class="sc">78</span></div><div class="tm lo"><span class="sd">16</span><span class="nm">Mount St. Mary's</span><span class="sc">44</span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">8</span><span class="nm">Mississippi State</span><span class="sc"></span></div><div class="tm"><span class="sd">9</span><span class="nm">Baylor</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">5</span><span class="nm">Oregon</span><span class="sc"></span></div><div class="tm"><span class="sd">12</span><span class="nm">Liberty</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">4</span><span class="nm">Arizona</span><span class="sc"></span></div><div class="tm"><span class="sd">13</span><span class="nm">Akron</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">6</span><span class="nm">BYU</span><span class="sc"></span></div><div class="tm"><span class="sd">11</span><span class="nm">VCU</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">3</span><span class="nm">Wisconsin</span><span class="sc"></span></div><div class="tm"><span class="sd">14</span><span class="nm">Montana</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm lo"><span class="sd">7</span><span class="nm">St. Mary's</span><span class="sc">61</span></div><div class="tm w"><span class="sd">10</span><span class="nm">Vanderbilt</span><span class="sc">68</span></div><div class="upset" title="Upset!">!</div></div>
+      <div class="mu"><div class="tm"><span class="sd">2</span><span class="nm">Alabama</span><span class="sc"></span></div><div class="tm"><span class="sd">15</span><span class="nm">Robert Morris</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd2">
+      <div class="rd-lbl">Round of 32</div>
+      <div class="mu"><div class="tm"><span class="sd">1</span><span class="nm">Duke</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">10</span><span class="nm">Vanderbilt</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd3">
+      <div class="rd-lbl">Sweet 16</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd4">
+      <div class="rd-lbl">Elite 8</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /left side -->
+
+<!-- CENTER -->
+<div class="center-col">
+  <div class="ff-box">
+    <div class="ff-title">Final Four</div>
+    <div class="ff-mu">
+      <div class="ff-tm tbd"><span class="sd"></span><span class="nm">South Champion</span></div>
+      <div class="ff-tm tbd"><span class="sd"></span><span class="nm">East Champion</span></div>
+    </div>
+    <div class="ff-mu">
+      <div class="ff-tm tbd"><span class="sd"></span><span class="nm">Midwest Champion</span></div>
+      <div class="ff-tm tbd"><span class="sd"></span><span class="nm">West Champion</span></div>
+    </div>
+    <div class="champ">
+      <div class="champ-lbl">National Championship</div>
+      <div class="ff-mu" style="margin:0">
+        <div class="ff-tm tbd"><span class="sd"></span><span class="nm">Semifinal 1</span></div>
+        <div class="ff-tm tbd"><span class="sd"></span><span class="nm">Semifinal 2</span></div>
+      </div>
+      <div style="font-size:22px;margin-top:4px">&#127942;</div>
+    </div>
+  </div>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="side">
+
+<!-- MIDWEST -->
+<div>
+  <div class="region-hdr">Midwest Region <span class="loc">Memphis, TN</span></div>
+  <div class="region-rounds rtl">
+    <div class="rd-col rd1">
+      <div class="rd-lbl">Round of 64</div>
+      <div class="mu"><div class="tm w"><span class="sd">1</span><span class="nm">Houston</span><span class="sc">82</span></div><div class="tm lo"><span class="sd">16</span><span class="nm">SIU Edwardsville</span><span class="sc">48</span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">8</span><span class="nm">Gonzaga</span><span class="sc"></span></div><div class="tm"><span class="sd">9</span><span class="nm">Georgia</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">5</span><span class="nm">Clemson</span><span class="sc"></span></div><div class="tm"><span class="sd">12</span><span class="nm">McNeese</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">4</span><span class="nm">Purdue</span><span class="sc"></span></div><div class="tm"><span class="sd">13</span><span class="nm">High Point</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">6</span><span class="nm">Illinois</span><span class="sc"></span></div><div class="tm"><span class="sd">11</span><span class="nm">Xavier</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">3</span><span class="nm">Kentucky</span><span class="sc"></span></div><div class="tm"><span class="sd">14</span><span class="nm">Troy</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">7</span><span class="nm">UCLA</span><span class="sc"></span></div><div class="tm"><span class="sd">10</span><span class="nm">Utah State</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">2</span><span class="nm">Tennessee</span><span class="sc"></span></div><div class="tm"><span class="sd">15</span><span class="nm">Wofford</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd2">
+      <div class="rd-lbl">Round of 32</div>
+      <div class="mu"><div class="tm"><span class="sd">1</span><span class="nm">Houston</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd3">
+      <div class="rd-lbl">Sweet 16</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd4">
+      <div class="rd-lbl">Elite 8</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WEST -->
+<div>
+  <div class="region-hdr">West Region <span class="loc">San Francisco, CA</span></div>
+  <div class="region-rounds rtl">
+    <div class="rd-col rd1">
+      <div class="rd-lbl">Round of 64</div>
+      <div class="mu"><div class="tm w"><span class="sd">1</span><span class="nm">Florida</span><span class="sc">91</span></div><div class="tm lo"><span class="sd">16</span><span class="nm">Norfolk State</span><span class="sc">57</span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">8</span><span class="nm">UConn</span><span class="sc"></span></div><div class="tm"><span class="sd">9</span><span class="nm">Oklahoma</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">5</span><span class="nm">Memphis</span><span class="sc"></span></div><div class="tm"><span class="sd">12</span><span class="nm">Colorado State</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">4</span><span class="nm">Maryland</span><span class="sc"></span></div><div class="tm"><span class="sd">13</span><span class="nm">Grand Canyon</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">6</span><span class="nm">Missouri</span><span class="sc"></span></div><div class="tm"><span class="sd">11</span><span class="nm">Drake</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">3</span><span class="nm">Texas Tech</span><span class="sc"></span></div><div class="tm"><span class="sd">14</span><span class="nm">UNC Wilmington</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm lo"><span class="sd">7</span><span class="nm">Kansas</span><span class="sc">63</span></div><div class="tm w"><span class="sd">10</span><span class="nm">Arkansas</span><span class="sc">72</span></div><div class="upset" title="Upset!">!</div></div>
+      <div class="mu"><div class="tm"><span class="sd">2</span><span class="nm">St. John's</span><span class="sc"></span></div><div class="tm"><span class="sd">15</span><span class="nm">Omaha</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd2">
+      <div class="rd-lbl">Round of 32</div>
+      <div class="mu"><div class="tm"><span class="sd">1</span><span class="nm">Florida</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm"><span class="sd">10</span><span class="nm">Arkansas</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd3">
+      <div class="rd-lbl">Sweet 16</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+    <div class="conn"></div>
+    <div class="rd-col rd4">
+      <div class="rd-lbl">Elite 8</div>
+      <div class="mu"><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div><div class="tm tbd"><span class="sd"></span><span class="nm">TBD</span><span class="sc"></span></div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /right side -->
+
+</div>
+</div>
+</div>
+
+<!-- ========== EXPLORER ========== -->
+<div id="p-explorer" class="panel">
+<div class="explorer">
+  <!-- Toolbar: filters, sort, jump -->
+  <div class="ex-toolbar">
+    <div class="fgrp">
+      <button class="fbtn on" onclick="sf(this)">All</button>
+      <button class="fbtn" onclick="sf(this)">Alive Only</button>
+      <button class="fbtn" onclick="sf(this)">Busted Only</button>
+    </div>
+    <select class="srt"><option>Sort: Bracket #</option><option>Sort: Survival Prob.</option><option>Sort: Bracket Score</option><option>Sort: Weight (desc)</option></select>
+    <span class="ex-showing">Showing <strong>1&ndash;50</strong> of <strong>10,000,000</strong> brackets</span>
+    <div class="ex-jump">
+      <input type="number" id="bjump" placeholder="Go to bracket #..." min="1" max="10000000">
+      <button onclick="jumpToBracket()">Go</button>
+    </div>
+  </div>
+
+  <!-- Top Pagination -->
+  <div class="pager" id="pager-top"></div>
+
+  <!-- Bracket list table -->
+  <div class="blist">
+    <div class="blist-hdr">
+      <span>#</span><span>Status</span><span>Champion</span><span>Score</span><span>Weight</span><span>Stratum</span><span></span>
+    </div>
+    <div id="bracket-rows"></div>
+  </div>
+
+  <!-- Bottom Pagination -->
+  <div class="pager" id="pager-bottom"></div>
+</div>
+</div>
+
+<!-- ========== STATISTICS ========== -->
+<div id="p-stats" class="panel">
+<div class="stats">
+  <div class="scards">
+    <div class="scard"><div class="sl">Total Alive</div><div class="sv">7,234,891</div></div>
+    <div class="scard"><div class="sl">Total Busted</div><div class="sv">2,765,109</div></div>
+    <div class="scard hi"><div class="sl">Survival Rate</div><div class="sv">72.3%</div></div>
+    <div class="scard"><div class="sl">Current Round</div><div class="sv" style="font-size:18px">Round of 64</div></div>
+  </div>
+
+  <div class="ssec">
+    <h3>Survival by Region</h3>
+    <div class="bchart">
+      <div class="brow"><span class="blbl">South</span><div class="btrk"><div class="bfill s" style="width:78%">78%</div></div><span class="bval">1,950,000</span></div>
+      <div class="brow"><span class="blbl">East</span><div class="btrk"><div class="bfill e" style="width:65%">65%</div></div><span class="bval">1,625,000</span></div>
+      <div class="brow"><span class="blbl">Midwest</span><div class="btrk"><div class="bfill m" style="width:80%">80%</div></div><span class="bval">2,000,000</span></div>
+      <div class="brow"><span class="blbl">West</span><div class="btrk"><div class="bfill w" style="width:66%">66%</div></div><span class="bval">1,659,891</span></div>
+    </div>
+  </div>
+
+  <div class="ssec">
+    <h3>Team Win Probabilities &amp; Bracket Share</h3>
+    <table class="ttbl">
+      <thead><tr><th>Seed</th><th>Team</th><th>Region</th><th>Next Rd Win %</th><th>Brackets Containing (%)</th><th>Status</th></tr></thead>
+      <tbody id="ttbody"></tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ========== ADMIN ========== -->
+<div id="p-admin" class="panel">
+<div class="admin">
+  <div class="alock" id="alock">
+    <h3>Admin Access Required</h3>
+    <p style="color:var(--g500);font-size:12px;margin-bottom:14px">Enter the admin API key to manage results.</p>
+    <input type="password" id="akey" placeholder="Enter Admin Key...">
+    <button onclick="unlock()">Unlock</button>
+  </div>
+  <div class="apanel" id="apanel">
+    <div class="asec">
+      <h3>Enter Today's Results &mdash; Round of 64</h3>
+      <div id="agames">
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin:10px 0 3px;text-transform:uppercase;letter-spacing:.4px">South Region</div>
+        <div class="gres"><span class="glbl">Game S1</span><div class="gtr"><input type="radio" name="s1" id="s1a" checked><label for="s1a">(1) Auburn</label><input type="radio" name="s1" id="s1b"><label for="s1b">(16) Alabama St</label></div><span class="gfinal">FINAL</span></div>
+        <div class="gres"><span class="glbl">Game S2</span><div class="gtr"><input type="radio" name="s2" id="s2a"><label for="s2a">(8) Louisville</label><input type="radio" name="s2" id="s2b"><label for="s2b">(9) Creighton</label></div></div>
+        <div class="gres"><span class="glbl">Game S3</span><div class="gtr"><input type="radio" name="s3" id="s3a"><label for="s3a">(5) Michigan</label><input type="radio" name="s3" id="s3b"><label for="s3b">(12) UC San Diego</label></div></div>
+        <div class="gres"><span class="glbl">Game S4</span><div class="gtr"><input type="radio" name="s4" id="s4a"><label for="s4a">(4) Texas A&amp;M</label><input type="radio" name="s4" id="s4b"><label for="s4b">(13) Yale</label></div></div>
+
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin:10px 0 3px;text-transform:uppercase;letter-spacing:.4px">East Region</div>
+        <div class="gres"><span class="glbl">Game E1</span><div class="gtr"><input type="radio" name="e1" id="e1a" checked><label for="e1a">(1) Duke</label><input type="radio" name="e1" id="e1b"><label for="e1b">(16) Mt St Mary's</label></div><span class="gfinal">FINAL</span></div>
+        <div class="gres"><span class="glbl">Game E7</span><div class="gtr"><input type="radio" name="e7" id="e7a"><label for="e7a">(7) St. Mary's</label><input type="radio" name="e7" id="e7b" checked><label for="e7b">(10) Vanderbilt</label></div><span class="gfinal">FINAL</span></div>
+
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin:10px 0 3px;text-transform:uppercase;letter-spacing:.4px">Midwest Region</div>
+        <div class="gres"><span class="glbl">Game M1</span><div class="gtr"><input type="radio" name="m1" id="m1a" checked><label for="m1a">(1) Houston</label><input type="radio" name="m1" id="m1b"><label for="m1b">(16) SIU Edw.</label></div><span class="gfinal">FINAL</span></div>
+
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin:10px 0 3px;text-transform:uppercase;letter-spacing:.4px">West Region</div>
+        <div class="gres"><span class="glbl">Game W1</span><div class="gtr"><input type="radio" name="w1" id="w1a" checked><label for="w1a">(1) Florida</label><input type="radio" name="w1" id="w1b"><label for="w1b">(16) Norfolk St</label></div><span class="gfinal">FINAL</span></div>
+        <div class="gres"><span class="glbl">Game W7</span><div class="gtr"><input type="radio" name="w7" id="w7a"><label for="w7a">(7) Kansas</label><input type="radio" name="w7" id="w7b" checked><label for="w7b">(10) Arkansas</label></div><span class="gfinal">FINAL</span></div>
+      </div>
+      <button class="subbtn" onclick="subRes()">Submit Results &amp; Prune Brackets</button>
+    </div>
+
+    <div class="asec">
+      <h3>Results History</h3>
+      <div class="rlog">
+        <div class="le"><span class="lt">18:32</span><span class="lr">R64</span><span class="lx"><strong>Auburn (1)</strong> def. Alabama State (16) &mdash; 85-52</span></div>
+        <div class="le"><span class="lt">18:45</span><span class="lr">R64</span><span class="lx"><strong>Duke (1)</strong> def. Mount St. Mary's (16) &mdash; 78-44</span></div>
+        <div class="le"><span class="lt">19:10</span><span class="lr">R64</span><span class="lx"><strong>Iowa State (3)</strong> def. Lipscomb (14) &mdash; 74-55</span></div>
+        <div class="le"><span class="lt">19:22</span><span class="lr">R64</span><span class="lx"><strong>Houston (1)</strong> def. SIU Edwardsville (16) &mdash; 82-48</span></div>
+        <div class="le"><span class="lt">20:05</span><span class="lr">R64</span><span class="lx"><strong>Florida (1)</strong> def. Norfolk State (16) &mdash; 91-57</span></div>
+        <div class="le"><span class="lt">20:18</span><span class="lr">R64</span><span class="lx" style="color:var(--orange)"><strong>Vanderbilt (10)</strong> def. St. Mary's (7) &mdash; 68-61 UPSET</span></div>
+        <div class="le"><span class="lt">21:30</span><span class="lr">R64</span><span class="lx" style="color:var(--orange)"><strong>Arkansas (10)</strong> def. Kansas (7) &mdash; 72-63 UPSET</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function stab(n,el){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('p-'+n).classList.add('active');
+  el.classList.add('active');
+}
+/* ===== Bracket Explorer Engine ===== */
+var TOTAL_BRACKETS = 10000000;
+var PER_PAGE = 50;
+var TOTAL_PAGES = Math.ceil(TOTAL_BRACKETS / PER_PAGE);
+var currentPage = 1;
+
+var champions = ['Auburn','Duke','Houston','Florida','Michigan State','Alabama','Tennessee','St. John\'s','Iowa State','Wisconsin','Kentucky','Texas Tech','Texas A&M','Arizona','Purdue','Maryland','Marquette','Oregon','Clemson','Kansas','Gonzaga','UConn','Michigan','BYU','Illinois','UCLA','Memphis','Missouri'];
+var strata = ['S1-C1-U0','S2-C1-U1','S1-C2-U0','E1-C1-U0','E2-C1-U1','M1-C1-U0','M1-C2-U1','W1-C1-U0','W1-C3-U2','S3-C1-U2','E3-C2-U1','M2-C1-U1','W2-C1-U0'];
+var r64south = [['1','Auburn'],['9','Creighton'],['5','Michigan'],['4','Texas A&M'],['6','Ole Miss'],['3','Iowa State'],['7','Marquette'],['2','Michigan St']];
+var r64east = [['1','Duke'],['8','Mississippi St'],['5','Oregon'],['4','Arizona'],['11','VCU'],['3','Wisconsin'],['7','St. Mary\'s'],['2','Alabama']];
+var r64mw = [['1','Houston'],['8','Gonzaga'],['5','Clemson'],['4','Purdue'],['6','Illinois'],['3','Kentucky'],['7','UCLA'],['2','Tennessee']];
+var r64west = [['1','Florida'],['8','UConn'],['5','Memphis'],['4','Maryland'],['6','Missouri'],['3','Texas Tech'],['7','Kansas'],['2','St. John\'s']];
+
+function seededRand(seed) {
+  var x = Math.sin(seed * 9301 + 49297) * 49297;
+  return x - Math.floor(x);
+}
+
+function genBracket(id) {
+  var r = seededRand(id);
+  var alive = r > 0.273;
+  var champIdx = Math.floor(seededRand(id * 3 + 7) * champions.length);
+  var weight = (seededRand(id * 5 + 13) * 0.0004 + 0.00001).toFixed(6);
+  var score = alive ? (seededRand(id * 7 + 19) * 42 + 58).toFixed(1) : (seededRand(id * 7 + 19) * 35 + 10).toFixed(1);
+  var stratIdx = Math.floor(seededRand(id * 11 + 23) * strata.length);
+
+  // Determine which picks are ok/bad based on played games
+  var played = [0, 5]; // indices of "played" R64 games for demo
+  var badPicks = alive ? [] : [Math.floor(seededRand(id * 13 + 29) * 8)];
+
+  return {
+    id: id, alive: alive, champion: champions[champIdx],
+    weight: weight, score: score, stratum: strata[stratIdx],
+    played: played, badPicks: badPicks
+  };
+}
+
+function renderBracketRow(b) {
+  var statusCls = b.alive ? 'alive' : 'busted';
+  var statusTxt = b.alive ? 'ALIVE' : 'BUSTED';
+  return '<div class="brow-item" onclick="toggleDetail(this)" data-bid="' + b.id + '">' +
+    '<span class="b-id">#' + b.id.toLocaleString() + '</span>' +
+    '<span><span class="bstatus ' + statusCls + '">' + statusTxt + '</span></span>' +
+    '<span class="b-champ">' + b.champion + '</span>' +
+    '<span class="b-score">' + b.score + ' pts</span>' +
+    '<span class="b-weight">' + b.weight + '</span>' +
+    '<span class="b-stratum">' + b.stratum + '</span>' +
+    '<span class="b-expand">&#9662;</span>' +
+  '</div>' +
+  '<div class="brow-detail" id="detail-' + b.id + '">' + renderDetail(b) + '</div>';
+}
+
+function pickClass(idx, b) {
+  if (b.badPicks.indexOf(idx) >= 0) return 'mp bad';
+  if (b.played.indexOf(idx) >= 0) return 'mp ok';
+  return 'mp';
+}
+
+function renderRegion(name, picks, b) {
+  var h = '<div class="mini-r"><h4>' + name + '</h4>';
+  for (var i = 0; i < picks.length; i++) {
+    h += '<div class="' + pickClass(i, b) + '"><span class="mrd">R64</span><span class="msd">' + picks[i][0] + '</span><span class="mnm">' + picks[i][1] + '</span></div>';
+  }
+  // Later rounds
+  var e8 = picks[Math.floor(seededRand(b.id * 17 + name.length) * picks.length)];
+  h += '<div class="mp"><span class="mrd">R32</span><span class="msd">' + picks[0][0] + '</span><span class="mnm">' + picks[0][1] + '</span></div>';
+  h += '<div class="mp"><span class="mrd">S16</span><span class="msd">' + e8[0] + '</span><span class="mnm">' + e8[1] + '</span></div>';
+  h += '<div class="mp"><span class="mrd">E8</span><span class="msd">' + e8[0] + '</span><span class="mnm">' + e8[1] + '</span></div>';
+  h += '</div>';
+  return h;
+}
+
+function renderDetail(b) {
+  var h = '<div class="bmini">';
+  h += renderRegion('South', r64south, b);
+  h += renderRegion('East', r64east, b);
+  h += renderRegion('Midwest', r64mw, b);
+  h += renderRegion('West', r64west, b);
+  h += '</div>';
+  h += '<div class="brow-ff">';
+  h += '<span>Final Four: Auburn vs Duke</span>';
+  h += '<span>Final Four: Houston vs Florida</span>';
+  h += '<span>Champion: <strong>' + b.champion + '</strong></span>';
+  h += '</div>';
+  return h;
+}
+
+function toggleDetail(row) {
+  var bid = row.getAttribute('data-bid');
+  var detail = document.getElementById('detail-' + bid);
+  var isOpen = detail.classList.contains('open');
+  // Close all open
+  document.querySelectorAll('.brow-detail.open').forEach(function(d) { d.classList.remove('open'); });
+  document.querySelectorAll('.brow-item.expanded').forEach(function(r) { r.classList.remove('expanded'); });
+  if (!isOpen) {
+    detail.classList.add('open');
+    row.classList.add('expanded');
+  }
+}
+
+function renderPage(page) {
+  currentPage = page;
+  var start = (page - 1) * PER_PAGE + 1;
+  var end = Math.min(page * PER_PAGE, TOTAL_BRACKETS);
+  var container = document.getElementById('bracket-rows');
+  var html = '';
+  for (var i = start; i <= end; i++) {
+    html += renderBracketRow(genBracket(i));
+  }
+  container.innerHTML = html;
+  document.querySelector('.ex-showing').innerHTML = 'Showing <strong>' + start.toLocaleString() + '&ndash;' + end.toLocaleString() + '</strong> of <strong>' + TOTAL_BRACKETS.toLocaleString() + '</strong> brackets';
+  renderPager();
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildPagerHtml() {
+  var html = '';
+  // Prev
+  html += '<button class="pg-btn nav" onclick="goPage(' + (currentPage - 1) + ')" ' + (currentPage <= 1 ? 'disabled' : '') + '>&laquo; Prev</button>';
+
+  // Page numbers with smart ellipsis
+  var pages = [];
+  pages.push(1);
+  if (currentPage > 4) pages.push('...');
+  for (var i = Math.max(2, currentPage - 2); i <= Math.min(TOTAL_PAGES - 1, currentPage + 2); i++) {
+    pages.push(i);
+  }
+  if (currentPage < TOTAL_PAGES - 3) pages.push('...');
+  if (TOTAL_PAGES > 1) pages.push(TOTAL_PAGES);
+
+  for (var j = 0; j < pages.length; j++) {
+    if (pages[j] === '...') {
+      html += '<span class="pg-dots">...</span>';
+    } else {
+      html += '<button class="pg-btn' + (pages[j] === currentPage ? ' active' : '') + '" onclick="goPage(' + pages[j] + ')">' + pages[j].toLocaleString() + '</button>';
+    }
+  }
+
+  // Next
+  html += '<button class="pg-btn nav" onclick="goPage(' + (currentPage + 1) + ')" ' + (currentPage >= TOTAL_PAGES ? 'disabled' : '') + '>Next &raquo;</button>';
+
+  // Page info
+  html += '<span class="pg-info">Page ' + currentPage.toLocaleString() + ' of ' + TOTAL_PAGES.toLocaleString() + '</span>';
+  return html;
+}
+
+function renderPager() {
+  var html = buildPagerHtml();
+  document.getElementById('pager-top').innerHTML = html;
+  document.getElementById('pager-bottom').innerHTML = html;
+}
+
+function goPage(p) {
+  if (p < 1 || p > TOTAL_PAGES) return;
+  renderPage(p);
+}
+
+function jumpToBracket() {
+  var v = parseInt(document.getElementById('bjump').value);
+  if (v >= 1 && v <= TOTAL_BRACKETS) {
+    var targetPage = Math.ceil(v / PER_PAGE);
+    renderPage(targetPage);
+    // Highlight the target row after render
+    setTimeout(function() {
+      var row = document.querySelector('[data-bid="' + v + '"]');
+      if (row) {
+        row.style.background = 'rgba(212,168,67,.12)';
+        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function() { row.style.background = ''; }, 2000);
+      }
+    }, 50);
+  }
+}
+
+function sf(b){document.querySelectorAll('.fbtn').forEach(function(x){x.classList.remove('on')});b.classList.add('on')}
+function unlock(){var k=document.getElementById('akey').value;if(k.length>0){document.getElementById('alock').style.display='none';document.getElementById('apanel').classList.add('on');localStorage.setItem('admin_key',k)}}
+function subRes(){alert('Results submitted! Bracket pruning initiated.\n\nIn production this calls POST /api/results.')}
+if(localStorage.getItem('admin_key')){document.getElementById('alock').style.display='none';document.getElementById('apanel').classList.add('on')}
+
+var teams=[
+  {s:1,n:'Auburn',r:'South',w:96.2,b:94.1,st:'a'},
+  {s:1,n:'Duke',r:'East',w:94.8,b:93.5,st:'a'},
+  {s:1,n:'Houston',r:'Midwest',w:97.1,b:95.8,st:'a'},
+  {s:1,n:'Florida',r:'West',w:95.5,b:93.2,st:'a'},
+  {s:2,n:'Michigan State',r:'South',w:88.4,b:85.2,st:'a'},
+  {s:2,n:'Alabama',r:'East',w:91.3,b:88.7,st:'a'},
+  {s:2,n:'Tennessee',r:'Midwest',w:92.6,b:90.1,st:'a'},
+  {s:2,n:"St. John's",r:'West',w:89.7,b:86.4,st:'a'},
+  {s:3,n:'Iowa State',r:'South',w:87.2,b:84.1,st:'a'},
+  {s:3,n:'Wisconsin',r:'East',w:85.9,b:82.6,st:'a'},
+  {s:3,n:'Kentucky',r:'Midwest',w:86.5,b:83.8,st:'a'},
+  {s:3,n:'Texas Tech',r:'West',w:84.1,b:81.3,st:'a'},
+  {s:4,n:'Texas A&M',r:'South',w:82.3,b:78.9,st:'a'},
+  {s:4,n:'Arizona',r:'East',w:83.7,b:80.4,st:'a'},
+  {s:4,n:'Purdue',r:'Midwest',w:81.8,b:79.2,st:'a'},
+  {s:4,n:'Maryland',r:'West',w:80.5,b:77.1,st:'a'},
+  {s:5,n:'Michigan',r:'South',w:68.4,b:64.2,st:'a'},
+  {s:5,n:'Oregon',r:'East',w:67.1,b:63.8,st:'a'},
+  {s:5,n:'Clemson',r:'Midwest',w:66.9,b:62.5,st:'a'},
+  {s:5,n:'Memphis',r:'West',w:65.2,b:61.7,st:'a'},
+  {s:10,n:'Vanderbilt',r:'East',w:55.3,b:38.4,st:'a'},
+  {s:10,n:'Arkansas',r:'West',w:52.8,b:35.7,st:'a'},
+  {s:7,n:"St. Mary's",r:'East',w:0,b:61.6,st:'e'},
+  {s:7,n:'Kansas',r:'West',w:0,b:64.3,st:'e'},
+  {s:16,n:'Alabama State',r:'South',w:0,b:5.9,st:'e'},
+  {s:16,n:"Mount St. Mary's",r:'East',w:0,b:6.5,st:'e'},
+  {s:16,n:'SIU Edwardsville',r:'Midwest',w:0,b:4.2,st:'e'},
+  {s:16,n:'Norfolk State',r:'West',w:0,b:6.8,st:'e'},
+  {s:14,n:'Lipscomb',r:'South',w:0,b:15.9,st:'e'}
+];
+var tb=document.getElementById('ttbody');
+teams.forEach(function(t){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td class="sc">'+t.s+'</td><td><strong>'+t.n+'</strong></td><td>'+t.r+'</td><td>'+(t.w>0?t.w+'%':'&mdash;')+'</td><td><span class="pbar"><span class="pfill" style="width:'+t.b+'%"></span></span>'+t.b+'%</td><td class="'+(t.st==='a'?'sta':'ste')+'">'+(t.st==='a'?'ALIVE':'ELIMINATED')+'</td>';
+  tb.appendChild(tr);
+});
+
+// Initialize bracket explorer
+renderPage(1);
+</script>
+</body>
+</html>

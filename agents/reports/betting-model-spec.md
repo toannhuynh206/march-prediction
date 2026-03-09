@@ -443,7 +443,7 @@ P_final = sigmoid(2.083) = 1 / (1 + e^(-2.083)) = 1 / (1 + 0.124) = 0.889 (88.9%
 - **De-vig formulas** are in Section 1 (multiplicative for games, Shin for futures)
 - **The blend formula** is `P_final = sigmoid(0.55*logit(P_market) + 0.25*logit(P_stats) + 0.12*logit(P_matchup) + 0.08*logit(P_factors))` (baseline tier)
 - **P_market** comes from closing moneylines (de-vigged) during the tournament, or from futures-derived probabilities pre-tournament
-- **Spread-to-probability** conversion uses `P = 1 / (1 + 10^(-spread/8.0))` for NCAA tournament games
+- **Spread-to-probability** (fallback when moneyline unavailable): `P = Phi(spread / 11.0)` where Phi is the standard normal CDF and 11.0 is the empirical NCAA tournament scoring margin std dev. Aligned with math-model-spec.md.
 - **Blue-blood deflator** applies only to futures, not game lines
 
 ### For Sports-Analyst
@@ -647,11 +647,11 @@ For 5-seeds through 8-seeds:
 
 The CTO notes the 2025 four 1-seeds are significantly better than the rest. The betting market confirms this:
 
-- **FCI ~ 55%** (estimated from pre-tournament futures)
-- chalk_factor = 1.375
-- 1-seeds should reach Final Four at higher rates than the historical 60% baseline
-- Model prediction: 3 of 4 one-seeds make Final Four (75% probability for each)
-- But in the 5-12 and 6-11 range, expect the usual 30-35% upset rate
+- **FCI = 61.1%** (Shin de-vigged from post-bracket futures: Duke 18.8%, Florida 17.3%, Auburn 14.6%, Houston 10.4%)
+- chalk_factor = 1.528
+- 1-seeds reached Final Four at higher rates than the historical 60% baseline — all 4 made it
+- Actual result: 4 of 4 one-seeds made Final Four (validates the model)
+- In the 5-12 range, the usual structural chaos persisted: 2 of 4 five-seeds lost (50% upset rate)
 
 ### Integration with P_market
 

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --midnight: #1E3A5F;
+  --orange: #E8611A;
+  --gold: #D4A843;
+  --cream: #FFF8F0;
+  --light-gray: #F5F0EB;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: #1a1a1a;
+  margin: 0;
+}
