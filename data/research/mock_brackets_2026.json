@@ -1,0 +1,713 @@
+{
+  "tournament_year": 2026,
+  "generated_date": "2026-03-11",
+  "status": "PROJECTED — actual bracket releases March 15, 2026",
+  "notes": "Based on de-vigged championship odds, injury reports, coaching records, and historical upset rates as of March 11, 2026.",
+  "projected_seedings": {
+    "south": {
+      "1": "Duke", "2": "Houston", "3": "Gonzaga", "4": "Kansas",
+      "5": "Michigan State", "6": "UNC", "7": "Kentucky", "8": "Georgia",
+      "9": "TCU", "10": "UCLA", "11": "VCU", "12": "Grand Canyon",
+      "13": "McNeese", "14": "Northern Iowa", "15": "Tennessee State", "16": "High Point"
+    },
+    "east": {
+      "1": "Michigan", "2": "Arkansas", "3": "UConn", "4": "Alabama",
+      "5": "Tennessee", "6": "Wisconsin", "7": "Miami FL", "8": "Saint Mary's",
+      "9": "Utah State", "10": "NC State", "11": "Stanford", "12": "Seton Hall",
+      "13": "Yale", "14": "Akron", "15": "Belmont", "16": "Queens"
+    },
+    "west": {
+      "1": "Arizona", "2": "Purdue", "3": "Illinois", "4": "Iowa State",
+      "5": "St. John's", "6": "BYU", "7": "Vanderbilt", "8": "Clemson",
+      "9": "San Diego State", "10": "Cincinnati", "11": "Texas A&M", "12": "Miami OH",
+      "13": "Tulsa", "14": "Boise State", "15": "Santa Clara", "16": "South Florida"
+    },
+    "midwest": {
+      "1": "Florida", "2": "Nebraska", "3": "Virginia", "4": "Louisville",
+      "5": "Texas Tech", "6": "Ohio State", "7": "Oregon", "8": "SMU",
+      "9": "Xavier", "10": "Creighton", "11": "Colorado", "12": "Drake",
+      "13": "Liberty", "14": "Vermont", "15": "Norfolk State", "16": "Grambling"
+    }
+  },
+  "brackets": [
+    {
+      "id": 1,
+      "name": "Chalk",
+      "strategy": "Favorites win. All 1-seeds to Final Four. Duke championship. Minimal upsets — only 8/9 coin flips and one 12-over-5. Represents ~15% of public bracket archetypes.",
+      "champion": "Duke",
+      "runner_up": "Florida",
+      "final_four": ["Duke", "Michigan", "Arizona", "Florida"],
+      "elite_eight": ["Duke", "Houston", "Michigan", "UConn", "Arizona", "Purdue", "Florida", "Virginia"],
+      "regions": {
+        "south": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Duke", "lower_seed": "High Point", "winner": "Duke"},
+            {"game": 2, "higher_seed": "Georgia", "lower_seed": "TCU", "winner": "TCU", "upset": true, "note": "TCU dangerous 9-seed, 8v9 coin flip"},
+            {"game": 3, "higher_seed": "Michigan State", "lower_seed": "Grand Canyon", "winner": "Michigan State"},
+            {"game": 4, "higher_seed": "Kansas", "lower_seed": "McNeese", "winner": "Kansas"},
+            {"game": 5, "higher_seed": "UNC", "lower_seed": "VCU", "winner": "UNC"},
+            {"game": 6, "higher_seed": "Gonzaga", "lower_seed": "Northern Iowa", "winner": "Gonzaga"},
+            {"game": 7, "higher_seed": "Kentucky", "lower_seed": "UCLA", "winner": "Kentucky"},
+            {"game": 8, "higher_seed": "Houston", "lower_seed": "Tennessee State", "winner": "Houston"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Duke", "TCU"], "winner": "Duke"},
+            {"game": 10, "matchup": ["Kansas", "Michigan State"], "winner": "Kansas"},
+            {"game": 11, "matchup": ["UNC", "Gonzaga"], "winner": "Gonzaga"},
+            {"game": 12, "matchup": ["Houston", "Kentucky"], "winner": "Houston"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Duke", "Kansas"], "winner": "Duke"},
+            {"game": 14, "matchup": ["Houston", "Gonzaga"], "winner": "Houston"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Duke", "Houston"], "winner": "Duke"}
+          ]
+        },
+        "east": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Michigan", "lower_seed": "Queens", "winner": "Michigan"},
+            {"game": 2, "higher_seed": "Saint Mary's", "lower_seed": "Utah State", "winner": "Saint Mary's"},
+            {"game": 3, "higher_seed": "Tennessee", "lower_seed": "Seton Hall", "winner": "Tennessee"},
+            {"game": 4, "higher_seed": "Alabama", "lower_seed": "Yale", "winner": "Alabama"},
+            {"game": 5, "higher_seed": "Wisconsin", "lower_seed": "Stanford", "winner": "Wisconsin"},
+            {"game": 6, "higher_seed": "UConn", "lower_seed": "Akron", "winner": "UConn"},
+            {"game": 7, "higher_seed": "Miami FL", "lower_seed": "NC State", "winner": "Miami FL"},
+            {"game": 8, "higher_seed": "Arkansas", "lower_seed": "Belmont", "winner": "Arkansas"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Michigan", "Saint Mary's"], "winner": "Michigan"},
+            {"game": 10, "matchup": ["Alabama", "Tennessee"], "winner": "Alabama"},
+            {"game": 11, "matchup": ["UConn", "Wisconsin"], "winner": "UConn"},
+            {"game": 12, "matchup": ["Arkansas", "Miami FL"], "winner": "Arkansas"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Michigan", "Alabama"], "winner": "Michigan"},
+            {"game": 14, "matchup": ["UConn", "Arkansas"], "winner": "UConn"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan", "UConn"], "winner": "Michigan"}
+          ]
+        },
+        "west": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Arizona", "lower_seed": "South Florida", "winner": "Arizona"},
+            {"game": 2, "higher_seed": "Clemson", "lower_seed": "San Diego State", "winner": "San Diego State", "upset": true, "note": "SDSU 8v9 coin flip"},
+            {"game": 3, "higher_seed": "St. John's", "lower_seed": "Miami OH", "winner": "St. John's"},
+            {"game": 4, "higher_seed": "Iowa State", "lower_seed": "Tulsa", "winner": "Iowa State"},
+            {"game": 5, "higher_seed": "BYU", "lower_seed": "Texas A&M", "winner": "BYU"},
+            {"game": 6, "higher_seed": "Illinois", "lower_seed": "Boise State", "winner": "Illinois"},
+            {"game": 7, "higher_seed": "Vanderbilt", "lower_seed": "Cincinnati", "winner": "Vanderbilt"},
+            {"game": 8, "higher_seed": "Purdue", "lower_seed": "Santa Clara", "winner": "Purdue"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Arizona", "San Diego State"], "winner": "Arizona"},
+            {"game": 10, "matchup": ["Iowa State", "St. John's"], "winner": "Iowa State"},
+            {"game": 11, "matchup": ["Illinois", "BYU"], "winner": "Illinois"},
+            {"game": 12, "matchup": ["Purdue", "Vanderbilt"], "winner": "Purdue"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Arizona", "Iowa State"], "winner": "Arizona"},
+            {"game": 14, "matchup": ["Purdue", "Illinois"], "winner": "Purdue"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Arizona", "Purdue"], "winner": "Arizona"}
+          ]
+        },
+        "midwest": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Florida", "lower_seed": "Grambling", "winner": "Florida"},
+            {"game": 2, "higher_seed": "SMU", "lower_seed": "Xavier", "winner": "Xavier", "upset": true, "note": "8v9 coin flip"},
+            {"game": 3, "higher_seed": "Texas Tech", "lower_seed": "Drake", "winner": "Texas Tech"},
+            {"game": 4, "higher_seed": "Louisville", "lower_seed": "Liberty", "winner": "Louisville"},
+            {"game": 5, "higher_seed": "Ohio State", "lower_seed": "Colorado", "winner": "Ohio State"},
+            {"game": 6, "higher_seed": "Virginia", "lower_seed": "Vermont", "winner": "Virginia"},
+            {"game": 7, "higher_seed": "Oregon", "lower_seed": "Creighton", "winner": "Oregon"},
+            {"game": 8, "higher_seed": "Nebraska", "lower_seed": "Norfolk State", "winner": "Nebraska"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Florida", "Xavier"], "winner": "Florida"},
+            {"game": 10, "matchup": ["Louisville", "Texas Tech"], "winner": "Louisville"},
+            {"game": 11, "matchup": ["Virginia", "Ohio State"], "winner": "Virginia"},
+            {"game": 12, "matchup": ["Nebraska", "Oregon"], "winner": "Nebraska"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Florida", "Louisville"], "winner": "Florida"},
+            {"game": 14, "matchup": ["Virginia", "Nebraska"], "winner": "Virginia"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Florida", "Virginia"], "winner": "Florida"}
+          ]
+        },
+        "final_four": [
+          {"game": 1, "matchup": ["Duke", "Michigan"], "winner": "Duke", "note": "South champ vs East champ"},
+          {"game": 2, "matchup": ["Arizona", "Florida"], "winner": "Florida", "note": "West champ vs Midwest champ"}
+        ],
+        "championship": {
+          "matchup": ["Duke", "Florida"],
+          "winner": "Duke",
+          "note": "Duke's talent prevails despite Foster injury; Ngongba returns by Final Four"
+        }
+      },
+      "upset_count": {
+        "round_of_64": 3,
+        "round_of_32": 0,
+        "sweet_16": 0,
+        "elite_8": 0,
+        "total": 3
+      }
+    },
+
+    {
+      "id": 2,
+      "name": "Sharp Money",
+      "strategy": "Follow Vegas odds and analytics. Duke or Michigan champion. Value plays on Illinois deep run, Florida defending title. Smart upsets based on historical rates: 12-over-5 (Grand Canyon), dangerous 9-seeds (TCU), injured teams fade (UNC, BYU). ~20% archetype.",
+      "champion": "Michigan",
+      "runner_up": "Duke",
+      "final_four": ["Duke", "Michigan", "Illinois", "Florida"],
+      "elite_eight": ["Duke", "Houston", "Michigan", "Arkansas", "Illinois", "Iowa State", "Florida", "Nebraska"],
+      "regions": {
+        "south": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Duke", "lower_seed": "High Point", "winner": "Duke"},
+            {"game": 2, "higher_seed": "Georgia", "lower_seed": "TCU", "winner": "TCU", "upset": true, "note": "TCU dangerous 9-seed, 8/9 upset rate ~49%"},
+            {"game": 3, "higher_seed": "Michigan State", "lower_seed": "Grand Canyon", "winner": "Grand Canyon", "upset": true, "note": "12-over-5 upset (~35%). Bryce Drew premier Cinderella coach."},
+            {"game": 4, "higher_seed": "Kansas", "lower_seed": "McNeese", "winner": "Kansas"},
+            {"game": 5, "higher_seed": "UNC", "lower_seed": "VCU", "winner": "VCU", "upset": true, "note": "11-over-6 upset. UNC without Caleb Wilson (19.8 PPG, broken thumb). VCU rated 8/10 danger."},
+            {"game": 6, "higher_seed": "Gonzaga", "lower_seed": "Northern Iowa", "winner": "Gonzaga"},
+            {"game": 7, "higher_seed": "Kentucky", "lower_seed": "UCLA", "winner": "UCLA", "upset": true, "note": "10-over-7 (~39%). Kentucky 19-12, lost 5 of 7 — team to fade."},
+            {"game": 8, "higher_seed": "Houston", "lower_seed": "Tennessee State", "winner": "Houston"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Duke", "TCU"], "winner": "Duke"},
+            {"game": 10, "matchup": ["Kansas", "Grand Canyon"], "winner": "Kansas"},
+            {"game": 11, "matchup": ["Gonzaga", "VCU"], "winner": "Gonzaga"},
+            {"game": 12, "matchup": ["Houston", "UCLA"], "winner": "Houston"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Duke", "Kansas"], "winner": "Duke"},
+            {"game": 14, "matchup": ["Houston", "Gonzaga"], "winner": "Houston", "note": "Houston's elite defense vs Gonzaga missing Braden Huff"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Duke", "Houston"], "winner": "Duke", "note": "Duke talent advantage; Ngongba returns"}
+          ]
+        },
+        "east": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Michigan", "lower_seed": "Queens", "winner": "Michigan"},
+            {"game": 2, "higher_seed": "Saint Mary's", "lower_seed": "Utah State", "winner": "Utah State", "upset": true, "note": "8v9 coin flip"},
+            {"game": 3, "higher_seed": "Tennessee", "lower_seed": "Seton Hall", "winner": "Seton Hall", "upset": true, "note": "12-over-5. Holloway coached 15-seed Saint Peter's to Elite Eight. Seton Hall rated 8/10 danger."},
+            {"game": 4, "higher_seed": "Alabama", "lower_seed": "Yale", "winner": "Alabama"},
+            {"game": 5, "higher_seed": "Wisconsin", "lower_seed": "Stanford", "winner": "Wisconsin"},
+            {"game": 6, "higher_seed": "UConn", "lower_seed": "Akron", "winner": "UConn"},
+            {"game": 7, "higher_seed": "Miami FL", "lower_seed": "NC State", "winner": "NC State", "upset": true, "note": "10-over-7 (~39%). NC State rated 8/10 upset danger."},
+            {"game": 8, "higher_seed": "Arkansas", "lower_seed": "Belmont", "winner": "Arkansas"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Michigan", "Utah State"], "winner": "Michigan"},
+            {"game": 10, "matchup": ["Alabama", "Seton Hall"], "winner": "Alabama"},
+            {"game": 11, "matchup": ["UConn", "Wisconsin"], "winner": "UConn"},
+            {"game": 12, "matchup": ["Arkansas", "NC State"], "winner": "Arkansas", "note": "Calipari tournament experience prevails; Acuff PROBABLE"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Michigan", "Alabama"], "winner": "Michigan"},
+            {"game": 14, "matchup": ["UConn", "Arkansas"], "winner": "Arkansas", "note": "Calipari vs Hurley — Calipari's 59-23 tournament record, Arkansas fully healthy if Acuff returns"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan", "Arkansas"], "winner": "Michigan"}
+          ]
+        },
+        "west": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Arizona", "lower_seed": "South Florida", "winner": "Arizona"},
+            {"game": 2, "higher_seed": "Clemson", "lower_seed": "San Diego State", "winner": "San Diego State", "upset": true, "note": "SDSU 8v9 coin flip, SDSU rated 8/10 upset danger"},
+            {"game": 3, "higher_seed": "St. John's", "lower_seed": "Miami OH", "winner": "St. John's"},
+            {"game": 4, "higher_seed": "Iowa State", "lower_seed": "Tulsa", "winner": "Iowa State"},
+            {"game": 5, "higher_seed": "BYU", "lower_seed": "Texas A&M", "winner": "Texas A&M", "upset": true, "note": "11-over-6 (~37%). BYU missing 6 players including Saunders (18.8 PPG, ACL). Texas A&M rated 8/10 danger."},
+            {"game": 6, "higher_seed": "Illinois", "lower_seed": "Boise State", "winner": "Illinois"},
+            {"game": 7, "higher_seed": "Vanderbilt", "lower_seed": "Cincinnati", "winner": "Cincinnati", "upset": true, "note": "10-over-7. Cincinnati rated 8/10 upset danger."},
+            {"game": 8, "higher_seed": "Purdue", "lower_seed": "Santa Clara", "winner": "Purdue"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Arizona", "San Diego State"], "winner": "Arizona"},
+            {"game": 10, "matchup": ["Iowa State", "St. John's"], "winner": "Iowa State", "note": "Iowa State healthy contender, strong analytics profile"},
+            {"game": 11, "matchup": ["Illinois", "Texas A&M"], "winner": "Illinois", "note": "Illinois deep run value play — healthy, strong analytically"},
+            {"game": 12, "matchup": ["Purdue", "Cincinnati"], "winner": "Purdue"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Arizona", "Iowa State"], "winner": "Iowa State", "note": "Iowa State upset — healthy team, strong defensive metrics"},
+            {"game": 14, "matchup": ["Illinois", "Purdue"], "winner": "Illinois", "note": "Illinois deep run continues — value play"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Iowa State", "Illinois"], "winner": "Illinois", "note": "Illinois to Final Four as 3-seed value pick"}
+          ]
+        },
+        "midwest": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Florida", "lower_seed": "Grambling", "winner": "Florida"},
+            {"game": 2, "higher_seed": "SMU", "lower_seed": "Xavier", "winner": "SMU"},
+            {"game": 3, "higher_seed": "Texas Tech", "lower_seed": "Drake", "winner": "Drake", "upset": true, "note": "12-over-5. Texas Tech without JT Toppin (21.8 PPG, ACL)."},
+            {"game": 4, "higher_seed": "Louisville", "lower_seed": "Liberty", "winner": "Louisville"},
+            {"game": 5, "higher_seed": "Ohio State", "lower_seed": "Colorado", "winner": "Ohio State"},
+            {"game": 6, "higher_seed": "Virginia", "lower_seed": "Vermont", "winner": "Virginia"},
+            {"game": 7, "higher_seed": "Oregon", "lower_seed": "Creighton", "winner": "Creighton", "upset": true, "note": "10-over-7"},
+            {"game": 8, "higher_seed": "Nebraska", "lower_seed": "Norfolk State", "winner": "Nebraska"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Florida", "SMU"], "winner": "Florida"},
+            {"game": 10, "matchup": ["Louisville", "Drake"], "winner": "Louisville"},
+            {"game": 11, "matchup": ["Virginia", "Ohio State"], "winner": "Virginia"},
+            {"game": 12, "matchup": ["Nebraska", "Creighton"], "winner": "Nebraska"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Florida", "Louisville"], "winner": "Florida", "note": "Defending champ, Todd Golden 12-1 tournament record"},
+            {"game": 14, "matchup": ["Virginia", "Nebraska"], "winner": "Nebraska"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Florida", "Nebraska"], "winner": "Florida"}
+          ]
+        },
+        "final_four": [
+          {"game": 1, "matchup": ["Duke", "Michigan"], "winner": "Michigan", "note": "Michigan healthier; Duke without Foster at PG"},
+          {"game": 2, "matchup": ["Illinois", "Florida"], "winner": "Florida", "note": "Defending champ experience edge"}
+        ],
+        "championship": {
+          "matchup": ["Michigan", "Florida"],
+          "winner": "Michigan",
+          "note": "Michigan (22.7% implied odds) edges Florida. Only lost backup — healthiest top contender."
+        }
+      },
+      "upset_count": {
+        "round_of_64": 10,
+        "round_of_32": 0,
+        "sweet_16": 1,
+        "elite_8": 0,
+        "total": 11
+      }
+    },
+
+    {
+      "id": 3,
+      "name": "Cinderella / Chaos",
+      "strategy": "Maximum chaos. A double-digit seed (Grand Canyon 12) makes Final Four. 5+ first-round upsets beyond 8/9 games. Injured teams all lose early. Champion is NOT a 1-seed — UConn (3-seed) three-peat. ~8% archetype but highest upside in pools.",
+      "champion": "UConn",
+      "runner_up": "Iowa State",
+      "final_four": ["Grand Canyon", "UConn", "Iowa State", "Nebraska"],
+      "elite_eight": ["Grand Canyon", "Gonzaga", "UConn", "Arkansas", "Iowa State", "Illinois", "Florida", "Nebraska"],
+      "regions": {
+        "south": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Duke", "lower_seed": "High Point", "winner": "Duke"},
+            {"game": 2, "higher_seed": "Georgia", "lower_seed": "TCU", "winner": "TCU", "upset": true},
+            {"game": 3, "higher_seed": "Michigan State", "lower_seed": "Grand Canyon", "winner": "Grand Canyon", "upset": true, "note": "Bryce Drew Cinderella magic. 12-over-5."},
+            {"game": 4, "higher_seed": "Kansas", "lower_seed": "McNeese", "winner": "McNeese", "upset": true, "note": "13-over-4 chaos pick"},
+            {"game": 5, "higher_seed": "UNC", "lower_seed": "VCU", "winner": "VCU", "upset": true, "note": "Wilson out. VCU 8/10 upset danger."},
+            {"game": 6, "higher_seed": "Gonzaga", "lower_seed": "Northern Iowa", "winner": "Gonzaga"},
+            {"game": 7, "higher_seed": "Kentucky", "lower_seed": "UCLA", "winner": "UCLA", "upset": true, "note": "Kentucky fading — lost 5 of 7"},
+            {"game": 8, "higher_seed": "Houston", "lower_seed": "Tennessee State", "winner": "Houston"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Duke", "TCU"], "winner": "TCU", "upset": true, "note": "Duke without Foster. TCU dangerous. 9-over-1 mega upset."},
+            {"game": 10, "matchup": ["McNeese", "Grand Canyon"], "winner": "Grand Canyon", "note": "Cinderella bracket — GCU over fellow upset winner"},
+            {"game": 11, "matchup": ["Gonzaga", "VCU"], "winner": "Gonzaga"},
+            {"game": 12, "matchup": ["Houston", "UCLA"], "winner": "Houston"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Grand Canyon", "TCU"], "winner": "Grand Canyon", "note": "12-seed Grand Canyon in Elite Eight! Bryce Drew channeling 2023 FAU energy."},
+            {"game": 14, "matchup": ["Houston", "Gonzaga"], "winner": "Gonzaga", "note": "Gonzaga's tournament pedigree; Huff returns barely"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Grand Canyon", "Gonzaga"], "winner": "Grand Canyon", "note": "12-seed to Final Four. Historic Cinderella run."}
+          ]
+        },
+        "east": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Michigan", "lower_seed": "Queens", "winner": "Michigan"},
+            {"game": 2, "higher_seed": "Saint Mary's", "lower_seed": "Utah State", "winner": "Utah State", "upset": true},
+            {"game": 3, "higher_seed": "Tennessee", "lower_seed": "Seton Hall", "winner": "Seton Hall", "upset": true, "note": "Holloway upset magic. 12-over-5."},
+            {"game": 4, "higher_seed": "Alabama", "lower_seed": "Yale", "winner": "Yale", "upset": true, "note": "13-over-4 chaos pick. Yale Ivy League pedigree."},
+            {"game": 5, "higher_seed": "Wisconsin", "lower_seed": "Stanford", "winner": "Stanford", "upset": true, "note": "11-over-6"},
+            {"game": 6, "higher_seed": "UConn", "lower_seed": "Akron", "winner": "UConn"},
+            {"game": 7, "higher_seed": "Miami FL", "lower_seed": "NC State", "winner": "NC State", "upset": true, "note": "NC State 8/10 upset danger, channeling 2024 run"},
+            {"game": 8, "higher_seed": "Arkansas", "lower_seed": "Belmont", "winner": "Arkansas"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Michigan", "Utah State"], "winner": "Michigan"},
+            {"game": 10, "matchup": ["Yale", "Seton Hall"], "winner": "Seton Hall", "note": "Seton Hall Cinderella continues"},
+            {"game": 11, "matchup": ["UConn", "Stanford"], "winner": "UConn"},
+            {"game": 12, "matchup": ["Arkansas", "NC State"], "winner": "Arkansas"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Michigan", "Seton Hall"], "winner": "Michigan"},
+            {"game": 14, "matchup": ["UConn", "Arkansas"], "winner": "UConn"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan", "UConn"], "winner": "UConn", "note": "Hurley back-to-back-to-back champ bid. UConn's tournament DNA."}
+          ]
+        },
+        "west": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Arizona", "lower_seed": "South Florida", "winner": "Arizona"},
+            {"game": 2, "higher_seed": "Clemson", "lower_seed": "San Diego State", "winner": "San Diego State", "upset": true, "note": "SDSU 8/10 danger rating"},
+            {"game": 3, "higher_seed": "St. John's", "lower_seed": "Miami OH", "winner": "Miami OH", "upset": true, "note": "12-over-5 chaos. Miami OH potential Cinderella."},
+            {"game": 4, "higher_seed": "Iowa State", "lower_seed": "Tulsa", "winner": "Iowa State"},
+            {"game": 5, "higher_seed": "BYU", "lower_seed": "Texas A&M", "winner": "Texas A&M", "upset": true, "note": "BYU missing 6 players. Automatic fade."},
+            {"game": 6, "higher_seed": "Illinois", "lower_seed": "Boise State", "winner": "Illinois"},
+            {"game": 7, "higher_seed": "Vanderbilt", "lower_seed": "Cincinnati", "winner": "Cincinnati", "upset": true, "note": "Cincinnati 8/10 danger"},
+            {"game": 8, "higher_seed": "Purdue", "lower_seed": "Santa Clara", "winner": "Purdue"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Arizona", "San Diego State"], "winner": "San Diego State", "upset": true, "note": "SDSU over 1-seed! Chaos bracket."},
+            {"game": 10, "matchup": ["Iowa State", "Miami OH"], "winner": "Iowa State"},
+            {"game": 11, "matchup": ["Illinois", "Texas A&M"], "winner": "Illinois"},
+            {"game": 12, "matchup": ["Purdue", "Cincinnati"], "winner": "Purdue"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Iowa State", "San Diego State"], "winner": "Iowa State"},
+            {"game": 14, "matchup": ["Illinois", "Purdue"], "winner": "Illinois"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Iowa State", "Illinois"], "winner": "Iowa State", "note": "Iowa State healthy contender makes Final Four as 4-seed"}
+          ]
+        },
+        "midwest": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Florida", "lower_seed": "Grambling", "winner": "Florida"},
+            {"game": 2, "higher_seed": "SMU", "lower_seed": "Xavier", "winner": "Xavier", "upset": true},
+            {"game": 3, "higher_seed": "Texas Tech", "lower_seed": "Drake", "winner": "Drake", "upset": true, "note": "Toppin ACL — Texas Tech auto-fade"},
+            {"game": 4, "higher_seed": "Louisville", "lower_seed": "Liberty", "winner": "Louisville"},
+            {"game": 5, "higher_seed": "Ohio State", "lower_seed": "Colorado", "winner": "Colorado", "upset": true, "note": "11-over-6 chaos"},
+            {"game": 6, "higher_seed": "Virginia", "lower_seed": "Vermont", "winner": "Virginia"},
+            {"game": 7, "higher_seed": "Oregon", "lower_seed": "Creighton", "winner": "Creighton", "upset": true},
+            {"game": 8, "higher_seed": "Nebraska", "lower_seed": "Norfolk State", "winner": "Nebraska"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Florida", "Xavier"], "winner": "Florida"},
+            {"game": 10, "matchup": ["Louisville", "Drake"], "winner": "Louisville"},
+            {"game": 11, "matchup": ["Virginia", "Colorado"], "winner": "Virginia"},
+            {"game": 12, "matchup": ["Nebraska", "Creighton"], "winner": "Nebraska"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Florida", "Louisville"], "winner": "Florida"},
+            {"game": 14, "matchup": ["Virginia", "Nebraska"], "winner": "Nebraska"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Florida", "Nebraska"], "winner": "Nebraska", "note": "Nebraska upset of defending champ Florida. Nebraska's deepest run in decades."}
+          ]
+        },
+        "final_four": [
+          {"game": 1, "matchup": ["Grand Canyon", "UConn"], "winner": "UConn", "note": "Cinderella run ends in Final Four. GCU made history."},
+          {"game": 2, "matchup": ["Iowa State", "Nebraska"], "winner": "Iowa State", "note": "Big 12 vs Big Ten. Iowa State's defensive identity prevails."}
+        ],
+        "championship": {
+          "matchup": ["UConn", "Iowa State"],
+          "winner": "UConn",
+          "note": "Dan Hurley three-peat attempt! UConn's tournament DNA is unmatched. 3-seed champion."
+        }
+      },
+      "upset_count": {
+        "round_of_64": 16,
+        "round_of_32": 2,
+        "sweet_16": 0,
+        "elite_8": 1,
+        "total": 19
+      }
+    },
+
+    {
+      "id": 4,
+      "name": "Mr. March / Coaching Edge",
+      "strategy": "Prioritize elite tournament coaches. Izzo (MSU) deep run to Final Four. Pitino (St. John's) Sweet 16+. Hurley (UConn) Final Four. Calipari (Arkansas) Elite Eight. Holloway (Seton Hall) first-round upset. Champion is Izzo's MSU or Hurley's UConn. ~10% archetype.",
+      "champion": "Michigan State",
+      "runner_up": "UConn",
+      "final_four": ["Michigan State", "UConn", "St. John's", "Florida"],
+      "elite_eight": ["Michigan State", "Houston", "UConn", "Arkansas", "St. John's", "Illinois", "Florida", "Virginia"],
+      "regions": {
+        "south": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Duke", "lower_seed": "High Point", "winner": "Duke"},
+            {"game": 2, "higher_seed": "Georgia", "lower_seed": "TCU", "winner": "TCU", "upset": true},
+            {"game": 3, "higher_seed": "Michigan State", "lower_seed": "Grand Canyon", "winner": "Michigan State", "note": "Izzo's tournament prep is legendary — no 12-over-5 here"},
+            {"game": 4, "higher_seed": "Kansas", "lower_seed": "McNeese", "winner": "Kansas", "note": "Bill Self 57-24 tournament record"},
+            {"game": 5, "higher_seed": "UNC", "lower_seed": "VCU", "winner": "VCU", "upset": true, "note": "UNC without Wilson; VCU's Rhoades is a strong mid-major coach"},
+            {"game": 6, "higher_seed": "Gonzaga", "lower_seed": "Northern Iowa", "winner": "Gonzaga"},
+            {"game": 7, "higher_seed": "Kentucky", "lower_seed": "UCLA", "winner": "UCLA", "upset": true, "note": "Kentucky fading late; Calipari gone, new coach adjustment"},
+            {"game": 8, "higher_seed": "Houston", "lower_seed": "Tennessee State", "winner": "Houston"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Duke", "TCU"], "winner": "Duke"},
+            {"game": 10, "matchup": ["Kansas", "Michigan State"], "winner": "Michigan State", "note": "Izzo over Self. MSU peaks in March — 8 Final Fours."},
+            {"game": 11, "matchup": ["Gonzaga", "VCU"], "winner": "Gonzaga"},
+            {"game": 12, "matchup": ["Houston", "UCLA"], "winner": "Houston"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Duke", "Michigan State"], "winner": "Michigan State", "note": "Izzo vs Duke. Without Foster, Duke can't run half-court offense. Izzo masterclass."},
+            {"game": 14, "matchup": ["Houston", "Gonzaga"], "winner": "Houston"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan State", "Houston"], "winner": "Michigan State", "note": "Izzo to Final Four. Mr. March strikes again. 9th Final Four."}
+          ]
+        },
+        "east": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Michigan", "lower_seed": "Queens", "winner": "Michigan"},
+            {"game": 2, "higher_seed": "Saint Mary's", "lower_seed": "Utah State", "winner": "Saint Mary's"},
+            {"game": 3, "higher_seed": "Tennessee", "lower_seed": "Seton Hall", "winner": "Seton Hall", "upset": true, "note": "Shaheen Holloway — coached 15-seed Saint Peter's to Elite Eight. This is his signature."},
+            {"game": 4, "higher_seed": "Alabama", "lower_seed": "Yale", "winner": "Alabama"},
+            {"game": 5, "higher_seed": "Wisconsin", "lower_seed": "Stanford", "winner": "Wisconsin"},
+            {"game": 6, "higher_seed": "UConn", "lower_seed": "Akron", "winner": "UConn", "note": "Hurley 15-5 tournament, back-to-back champ"},
+            {"game": 7, "higher_seed": "Miami FL", "lower_seed": "NC State", "winner": "NC State", "upset": true, "note": "NC State tournament pedigree"},
+            {"game": 8, "higher_seed": "Arkansas", "lower_seed": "Belmont", "winner": "Arkansas", "note": "Calipari 59-23 tournament record, 1 title"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Michigan", "Saint Mary's"], "winner": "Michigan"},
+            {"game": 10, "matchup": ["Alabama", "Seton Hall"], "winner": "Seton Hall", "upset": true, "note": "Holloway's Seton Hall to Sweet 16. 12-seed run continues."},
+            {"game": 11, "matchup": ["UConn", "Wisconsin"], "winner": "UConn"},
+            {"game": 12, "matchup": ["Arkansas", "NC State"], "winner": "Arkansas", "note": "Calipari's experience prevails"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Michigan", "Seton Hall"], "winner": "Michigan", "note": "Seton Hall's run ends. Holloway coached heroics can't overcome talent gap."},
+            {"game": 14, "matchup": ["UConn", "Arkansas"], "winner": "UConn", "note": "Hurley vs Calipari. Battle of coaching titans. Hurley's system wins."}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan", "UConn"], "winner": "UConn", "note": "Hurley to Final Four. Three-peat bid alive. 3-seed over 1-seed."}
+          ]
+        },
+        "west": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Arizona", "lower_seed": "South Florida", "winner": "Arizona"},
+            {"game": 2, "higher_seed": "Clemson", "lower_seed": "San Diego State", "winner": "San Diego State", "upset": true},
+            {"game": 3, "higher_seed": "St. John's", "lower_seed": "Miami OH", "winner": "St. John's", "note": "Rick Pitino 55-22 tournament, 7 Final Fours, 2 titles"},
+            {"game": 4, "higher_seed": "Iowa State", "lower_seed": "Tulsa", "winner": "Iowa State"},
+            {"game": 5, "higher_seed": "BYU", "lower_seed": "Texas A&M", "winner": "Texas A&M", "upset": true, "note": "BYU decimated by injuries"},
+            {"game": 6, "higher_seed": "Illinois", "lower_seed": "Boise State", "winner": "Illinois"},
+            {"game": 7, "higher_seed": "Vanderbilt", "lower_seed": "Cincinnati", "winner": "Cincinnati", "upset": true},
+            {"game": 8, "higher_seed": "Purdue", "lower_seed": "Santa Clara", "winner": "Purdue"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Arizona", "San Diego State"], "winner": "Arizona"},
+            {"game": 10, "matchup": ["Iowa State", "St. John's"], "winner": "St. John's", "note": "Pitino over Iowa State. Pitino's tournament pedigree is unmatched at the 5-seed level."},
+            {"game": 11, "matchup": ["Illinois", "Texas A&M"], "winner": "Illinois"},
+            {"game": 12, "matchup": ["Purdue", "Cincinnati"], "winner": "Purdue"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Arizona", "St. John's"], "winner": "St. John's", "note": "Pitino knocks off 1-seed Arizona! 5-over-1. Rick Pitino masterclass."},
+            {"game": 14, "matchup": ["Illinois", "Purdue"], "winner": "Illinois"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["St. John's", "Illinois"], "winner": "St. John's", "note": "Pitino to Final Four with St. John's. 8th Final Four. Coaching GOAT argument strengthened."}
+          ]
+        },
+        "midwest": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Florida", "lower_seed": "Grambling", "winner": "Florida", "note": "Todd Golden 12-1 tournament record, defending champ"},
+            {"game": 2, "higher_seed": "SMU", "lower_seed": "Xavier", "winner": "Xavier", "upset": true},
+            {"game": 3, "higher_seed": "Texas Tech", "lower_seed": "Drake", "winner": "Drake", "upset": true, "note": "Toppin ACL"},
+            {"game": 4, "higher_seed": "Louisville", "lower_seed": "Liberty", "winner": "Louisville"},
+            {"game": 5, "higher_seed": "Ohio State", "lower_seed": "Colorado", "winner": "Ohio State"},
+            {"game": 6, "higher_seed": "Virginia", "lower_seed": "Vermont", "winner": "Virginia", "note": "Tony Bennett's pack-line defense tournament tested"},
+            {"game": 7, "higher_seed": "Oregon", "lower_seed": "Creighton", "winner": "Oregon"},
+            {"game": 8, "higher_seed": "Nebraska", "lower_seed": "Norfolk State", "winner": "Nebraska"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Florida", "Xavier"], "winner": "Florida"},
+            {"game": 10, "matchup": ["Louisville", "Drake"], "winner": "Louisville"},
+            {"game": 11, "matchup": ["Virginia", "Ohio State"], "winner": "Virginia"},
+            {"game": 12, "matchup": ["Nebraska", "Oregon"], "winner": "Nebraska"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Florida", "Louisville"], "winner": "Florida"},
+            {"game": 14, "matchup": ["Virginia", "Nebraska"], "winner": "Virginia"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Florida", "Virginia"], "winner": "Florida", "note": "Defending champ Todd Golden gets back to Final Four"}
+          ]
+        },
+        "final_four": [
+          {"game": 1, "matchup": ["Michigan State", "UConn"], "winner": "Michigan State", "note": "Izzo vs Hurley. Mr. March wins the coaching showdown. MSU's defense smothers UConn."},
+          {"game": 2, "matchup": ["St. John's", "Florida"], "winner": "Florida", "note": "Pitino's run ends vs defending champ. Golden's system too strong."}
+        ],
+        "championship": {
+          "matchup": ["Michigan State", "Florida"],
+          "winner": "Michigan State",
+          "note": "Tom Izzo wins his 2nd national title. 'Mr. March' cements his legacy. 5-seed champion — tied for lowest seed to win it all. Izzo's tournament record: 61-26."
+        }
+      },
+      "upset_count": {
+        "round_of_64": 9,
+        "round_of_32": 2,
+        "sweet_16": 1,
+        "elite_8": 1,
+        "total": 13
+      }
+    },
+
+    {
+      "id": 5,
+      "name": "Injury-Adjusted Contrarian",
+      "strategy": "Biggest contrarian pick: Duke loses early without Caleb Foster (PG crisis). UNC first-round exit (Wilson out). BYU first-round exit (6 players out). Texas Tech early exit (Toppin ACL). Healthy teams thrive: Florida (fully healthy, defending champ) wins title. Michigan Final Four. Houston deep run. ~12% archetype but huge edge if injuries matter as much as data suggests.",
+      "champion": "Florida",
+      "runner_up": "Michigan",
+      "final_four": ["Houston", "Michigan", "Arizona", "Florida"],
+      "elite_eight": ["Houston", "Gonzaga", "Michigan", "Arkansas", "Arizona", "Iowa State", "Florida", "Nebraska"],
+      "regions": {
+        "south": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Duke", "lower_seed": "High Point", "winner": "Duke"},
+            {"game": 2, "higher_seed": "Georgia", "lower_seed": "TCU", "winner": "TCU", "upset": true, "note": "TCU dangerous 9-seed"},
+            {"game": 3, "higher_seed": "Michigan State", "lower_seed": "Grand Canyon", "winner": "Grand Canyon", "upset": true, "note": "12-over-5, Bryce Drew"},
+            {"game": 4, "higher_seed": "Kansas", "lower_seed": "McNeese", "winner": "Kansas"},
+            {"game": 5, "higher_seed": "UNC", "lower_seed": "VCU", "winner": "VCU", "upset": true, "note": "UNC without Caleb Wilson (19.8 PPG). Season-ending broken thumb. VCU 8/10 danger."},
+            {"game": 6, "higher_seed": "Gonzaga", "lower_seed": "Northern Iowa", "winner": "Gonzaga"},
+            {"game": 7, "higher_seed": "Kentucky", "lower_seed": "UCLA", "winner": "UCLA", "upset": true, "note": "Kentucky fading, 19-12, lost 5 of 7"},
+            {"game": 8, "higher_seed": "Houston", "lower_seed": "Tennessee State", "winner": "Houston"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Duke", "TCU"], "winner": "TCU", "upset": true, "note": "THE contrarian pick. Duke without Caleb Foster (PG, foot fracture). Ngongba II status uncertain. TCU's physicality exploits Duke's guard crisis."},
+            {"game": 10, "matchup": ["Kansas", "Grand Canyon"], "winner": "Kansas"},
+            {"game": 11, "matchup": ["Gonzaga", "VCU"], "winner": "Gonzaga"},
+            {"game": 12, "matchup": ["Houston", "UCLA"], "winner": "Houston"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["TCU", "Kansas"], "winner": "Kansas", "note": "TCU's run ends. Self's experience too much."},
+            {"game": 14, "matchup": ["Houston", "Gonzaga"], "winner": "Houston", "note": "Houston healthy. Gonzaga without Huff (17.8 PPG, tight timeline)."}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Kansas", "Houston"], "winner": "Houston", "note": "Houston fully healthy. Elite defense carries them. 2-seed to Final Four."}
+          ]
+        },
+        "east": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Michigan", "lower_seed": "Queens", "winner": "Michigan", "note": "Michigan only lost backup — healthiest top contender"},
+            {"game": 2, "higher_seed": "Saint Mary's", "lower_seed": "Utah State", "winner": "Saint Mary's"},
+            {"game": 3, "higher_seed": "Tennessee", "lower_seed": "Seton Hall", "winner": "Seton Hall", "upset": true, "note": "Holloway 12-seed upset magic"},
+            {"game": 4, "higher_seed": "Alabama", "lower_seed": "Yale", "winner": "Alabama"},
+            {"game": 5, "higher_seed": "Wisconsin", "lower_seed": "Stanford", "winner": "Wisconsin"},
+            {"game": 6, "higher_seed": "UConn", "lower_seed": "Akron", "winner": "UConn"},
+            {"game": 7, "higher_seed": "Miami FL", "lower_seed": "NC State", "winner": "NC State", "upset": true, "note": "10-over-7"},
+            {"game": 8, "higher_seed": "Arkansas", "lower_seed": "Belmont", "winner": "Arkansas", "note": "Acuff Jr. PROBABLE — returns from ankle. Calipari's tournament prep."}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Michigan", "Saint Mary's"], "winner": "Michigan"},
+            {"game": 10, "matchup": ["Alabama", "Seton Hall"], "winner": "Alabama"},
+            {"game": 11, "matchup": ["UConn", "Wisconsin"], "winner": "UConn"},
+            {"game": 12, "matchup": ["Arkansas", "NC State"], "winner": "Arkansas"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Michigan", "Alabama"], "winner": "Michigan"},
+            {"game": 14, "matchup": ["UConn", "Arkansas"], "winner": "Arkansas", "note": "Acuff healthy, Calipari's experience edge. UConn fatigue from three-peat chase."}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Michigan", "Arkansas"], "winner": "Michigan", "note": "Michigan healthiest 1-seed. Depth advantage shows in second weekend."}
+          ]
+        },
+        "west": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Arizona", "lower_seed": "South Florida", "winner": "Arizona"},
+            {"game": 2, "higher_seed": "Clemson", "lower_seed": "San Diego State", "winner": "San Diego State", "upset": true, "note": "SDSU 8/10 upset danger"},
+            {"game": 3, "higher_seed": "St. John's", "lower_seed": "Miami OH", "winner": "St. John's"},
+            {"game": 4, "higher_seed": "Iowa State", "lower_seed": "Tulsa", "winner": "Iowa State", "note": "Iowa State fully healthy, strong analytics"},
+            {"game": 5, "higher_seed": "BYU", "lower_seed": "Texas A&M", "winner": "Texas A&M", "upset": true, "note": "BYU AUTOMATIC FADE — 6 players out including Richie Saunders (18.8 PPG, ACL). Texas A&M 8/10 danger."},
+            {"game": 6, "higher_seed": "Illinois", "lower_seed": "Boise State", "winner": "Illinois", "note": "Illinois healthy contender"},
+            {"game": 7, "higher_seed": "Vanderbilt", "lower_seed": "Cincinnati", "winner": "Cincinnati", "upset": true, "note": "Cincinnati 8/10 danger"},
+            {"game": 8, "higher_seed": "Purdue", "lower_seed": "Santa Clara", "winner": "Purdue"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Arizona", "San Diego State"], "winner": "Arizona"},
+            {"game": 10, "matchup": ["Iowa State", "St. John's"], "winner": "Iowa State"},
+            {"game": 11, "matchup": ["Illinois", "Texas A&M"], "winner": "Illinois"},
+            {"game": 12, "matchup": ["Purdue", "Cincinnati"], "winner": "Purdue"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Arizona", "Iowa State"], "winner": "Arizona"},
+            {"game": 14, "matchup": ["Illinois", "Purdue"], "winner": "Illinois"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Arizona", "Illinois"], "winner": "Arizona", "note": "Arizona healthy 1-seed advances"}
+          ]
+        },
+        "midwest": {
+          "round_of_64": [
+            {"game": 1, "higher_seed": "Florida", "lower_seed": "Grambling", "winner": "Florida", "note": "Florida FULLY HEALTHY. Defending champion. Todd Golden 12-1 tournament."},
+            {"game": 2, "higher_seed": "SMU", "lower_seed": "Xavier", "winner": "Xavier", "upset": true},
+            {"game": 3, "higher_seed": "Texas Tech", "lower_seed": "Drake", "winner": "Drake", "upset": true, "note": "Texas Tech without JT Toppin (21.8 PPG, ACL, season over). AUTOMATIC FADE."},
+            {"game": 4, "higher_seed": "Louisville", "lower_seed": "Liberty", "winner": "Louisville"},
+            {"game": 5, "higher_seed": "Ohio State", "lower_seed": "Colorado", "winner": "Ohio State"},
+            {"game": 6, "higher_seed": "Virginia", "lower_seed": "Vermont", "winner": "Virginia"},
+            {"game": 7, "higher_seed": "Oregon", "lower_seed": "Creighton", "winner": "Creighton", "upset": true},
+            {"game": 8, "higher_seed": "Nebraska", "lower_seed": "Norfolk State", "winner": "Nebraska"}
+          ],
+          "round_of_32": [
+            {"game": 9, "matchup": ["Florida", "Xavier"], "winner": "Florida"},
+            {"game": 10, "matchup": ["Louisville", "Drake"], "winner": "Louisville"},
+            {"game": 11, "matchup": ["Virginia", "Ohio State"], "winner": "Virginia"},
+            {"game": 12, "matchup": ["Nebraska", "Creighton"], "winner": "Nebraska"}
+          ],
+          "sweet_16": [
+            {"game": 13, "matchup": ["Florida", "Louisville"], "winner": "Florida"},
+            {"game": 14, "matchup": ["Virginia", "Nebraska"], "winner": "Nebraska"}
+          ],
+          "elite_8": [
+            {"game": 15, "matchup": ["Florida", "Nebraska"], "winner": "Florida", "note": "Defending champ Florida to Final Four. Fully healthy advantage decisive."}
+          ]
+        },
+        "final_four": [
+          {"game": 1, "matchup": ["Houston", "Michigan"], "winner": "Michigan", "note": "Michigan's balanced offense vs Houston's elite defense. Michigan's health edge at this stage of tournament."},
+          {"game": 2, "matchup": ["Arizona", "Florida"], "winner": "Florida", "note": "Defending champ experience. Todd Golden's system peaks in April. Florida's depth wears down Arizona."}
+        ],
+        "championship": {
+          "matchup": ["Michigan", "Florida"],
+          "winner": "Florida",
+          "note": "Florida back-to-back champion! Todd Golden joins Dan Hurley in the repeat club. The healthiest team won the tournament — every major injury we identified proved decisive. Florida 14-1 in their last two tournament runs."
+        }
+      },
+      "upset_count": {
+        "round_of_64": 11,
+        "round_of_32": 1,
+        "sweet_16": 1,
+        "elite_8": 0,
+        "total": 13
+      }
+    }
+  ],
+  "summary": {
+    "champions_across_brackets": {
+      "Duke": 1,
+      "Michigan": 1,
+      "UConn": 1,
+      "Michigan State": 1,
+      "Florida": 1
+    },
+    "championship_odds_alignment": {
+      "Duke": "24.1% implied, champion in Bracket 1 (Chalk)",
+      "Michigan": "22.7% implied, champion in Bracket 2 (Sharp Money)",
+      "UConn": "5.3% implied, champion in Bracket 3 (Cinderella) — 3-seed contrarian value, three-peat bid",
+      "Michigan State": "not in top 8 odds, champion in Bracket 4 (Coaching Edge) — extreme contrarian, Izzo factor",
+      "Florida": "12.5% implied, champion in Bracket 5 (Injury-Adjusted) — defending champ, fully healthy"
+    },
+    "key_injury_fades_applied": [
+      "Duke (Foster OUT) — faded in brackets 3, 5",
+      "UNC (Wilson OUT, 19.8 PPG) — first-round exit in brackets 2, 3, 4, 5",
+      "BYU (6 players OUT including Saunders 18.8 PPG) — first-round exit in brackets 2, 3, 4, 5",
+      "Texas Tech (Toppin OUT, 21.8 PPG ACL) — first-round exit in brackets 2, 3, 4, 5",
+      "Gonzaga (Huff OUT, 17.8 PPG) — faded in later rounds in brackets 2, 5",
+      "Kentucky (19-12, lost 5 of 7) — first-round exit in brackets 2, 3, 4, 5"
+    ],
+    "cinderella_picks_across_brackets": [
+      "Grand Canyon (12-seed): Sweet 16 in B2, Final Four in B3",
+      "Seton Hall (12-seed): Sweet 16 in B2/B4",
+      "VCU (11-seed): first-round upset in B2/B3/B4/B5",
+      "TCU (9-seed): Round of 32 upset of Duke in B3/B5",
+      "San Diego State (9-seed): consistent 8/9 flip winner"
+    ],
+    "coaching_edge_picks": [
+      "Tom Izzo (MSU): Final Four in B4, champion",
+      "Rick Pitino (St. John's): Final Four in B4",
+      "Dan Hurley (UConn): Final Four in B3/B4",
+      "John Calipari (Arkansas): Elite Eight in B2/B4/B5",
+      "Shaheen Holloway (Seton Hall): first-round upset in B2/B3/B4/B5",
+      "Bryce Drew (Grand Canyon): Cinderella runs in B2/B3",
+      "Todd Golden (Florida): champion in B5, Final Four in B1/B2/B4"
+    ]
+  }
+}

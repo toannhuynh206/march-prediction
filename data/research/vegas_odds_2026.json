@@ -1,0 +1,315 @@
+{
+  "scrape_date": "2026-03-10",
+  "data_as_of": "2026-03-09",
+  "notes": "Odds compiled from multiple sportsbooks (DraftKings, FanDuel, BetMGM, VegasInsider, SportsBettingDime). Updated March 10 with latest line movements. Duke now clear #1 after 28-2 record and win over Michigan. Florida shortening on 11-game win streak. Selection Sunday is March 15, 2026 — first round lines not yet posted.",
+  "last_updated": "2026-03-10T12:00:00Z",
+
+  "championship_futures": {
+    "Duke": {"american_odds": "+315", "implied_prob": 0.241, "rank": 1, "prev_odds": "+330", "movement": "shortening"},
+    "Michigan": {"american_odds": "+340", "implied_prob": 0.227, "rank": 2, "prev_odds": "+335", "movement": "slight drift"},
+    "Arizona": {"american_odds": "+475", "implied_prob": 0.174, "rank": 3, "prev_odds": "+478", "movement": "stable"},
+    "Florida": {"american_odds": "+700", "implied_prob": 0.125, "rank": 4, "prev_odds": "+800", "movement": "shortening"},
+    "Houston": {"american_odds": "+1100", "implied_prob": 0.083, "rank": 5, "prev_odds": "+1100", "movement": "stable"},
+    "UConn": {"american_odds": "+1800", "implied_prob": 0.053, "rank": 6, "prev_odds": "+1700", "movement": "slight drift"},
+    "Illinois": {"american_odds": "+1800", "implied_prob": 0.053, "rank": 7, "prev_odds": "+1750", "movement": "slight drift"},
+    "Iowa State": {"american_odds": "+2200", "implied_prob": 0.043, "rank": 8, "prev_odds": "+2200", "movement": "stable"},
+    "Kansas": {"american_odds": "+4000", "implied_prob": 0.024, "rank": 9, "prev_odds": "+3750", "movement": "drifting"},
+    "Purdue": {"american_odds": "+3300", "implied_prob": 0.029, "rank": 10, "prev_odds": "+4000", "movement": "shortening"},
+    "Michigan State": {"american_odds": "+5500", "implied_prob": 0.018, "rank": 11},
+    "Gonzaga": {"american_odds": "+5500", "implied_prob": 0.018, "rank": 12},
+    "Arkansas": {"american_odds": "+6000", "implied_prob": 0.016, "rank": 13},
+    "St. John's": {"american_odds": "+6500", "implied_prob": 0.015, "rank": 14},
+    "Tennessee": {"american_odds": "+7000", "implied_prob": 0.014, "rank": 15},
+    "Alabama": {"american_odds": "+7500", "implied_prob": 0.013, "rank": 16},
+    "Nebraska": {"american_odds": "+8000", "implied_prob": 0.012, "rank": 17},
+    "North Carolina": {"american_odds": "+8000", "implied_prob": 0.012, "rank": 18},
+    "Virginia": {"american_odds": "+8500", "implied_prob": 0.012, "rank": 19},
+    "Kentucky": {"american_odds": "+9000", "implied_prob": 0.011, "rank": 20},
+    "Louisville": {"american_odds": "+9500", "implied_prob": 0.010, "rank": 21},
+    "Vanderbilt": {"american_odds": "+9500", "implied_prob": 0.010, "rank": 22},
+    "Texas Tech": {"american_odds": "+10500", "implied_prob": 0.009, "rank": 23},
+    "Wisconsin": {"american_odds": "+11250", "implied_prob": 0.009, "rank": 24},
+    "BYU": {"american_odds": "+16500", "implied_prob": 0.006, "rank": 25},
+    "Saint Louis": {"american_odds": "+16500", "implied_prob": 0.006, "rank": 26},
+    "Iowa": {"american_odds": "+17500", "implied_prob": 0.006, "rank": 27},
+    "North Carolina State": {"american_odds": "+20000", "implied_prob": 0.005, "rank": 28},
+    "Texas A&M": {"american_odds": "+20000", "implied_prob": 0.005, "rank": 29},
+    "Miami (FL)": {"american_odds": "+20000", "implied_prob": 0.005, "rank": 30},
+    "Clemson": {"american_odds": "+22500", "implied_prob": 0.004, "rank": 31},
+    "Missouri": {"american_odds": "+22500", "implied_prob": 0.004, "rank": 32},
+    "UCLA": {"american_odds": "+22500", "implied_prob": 0.004, "rank": 33},
+    "Saint Mary's": {"american_odds": "+22500", "implied_prob": 0.004, "rank": 34},
+    "Texas": {"american_odds": "+22500", "implied_prob": 0.004, "rank": 35},
+    "Villanova": {"american_odds": "+25000", "implied_prob": 0.004, "rank": 36},
+    "Utah State": {"american_odds": "+27500", "implied_prob": 0.004, "rank": 37},
+    "SMU": {"american_odds": "+27500", "implied_prob": 0.004, "rank": 38},
+    "UCF": {"american_odds": "+30000", "implied_prob": 0.003, "rank": 39},
+    "Stanford": {"american_odds": "+35000", "implied_prob": 0.003, "rank": 40},
+    "Georgia": {"american_odds": "+37500", "implied_prob": 0.003, "rank": 41},
+    "Ohio State": {"american_odds": "+40000", "implied_prob": 0.002, "rank": 42},
+    "Seton Hall": {"american_odds": "+40000", "implied_prob": 0.002, "rank": 43},
+    "TCU": {"american_odds": "+40000", "implied_prob": 0.002, "rank": 44},
+    "Virginia Tech": {"american_odds": "+40000", "implied_prob": 0.002, "rank": 45},
+    "Cincinnati": {"american_odds": "+40000", "implied_prob": 0.002, "rank": 46},
+    "San Diego State": {"american_odds": "+42500", "implied_prob": 0.002, "rank": 47},
+    "Indiana": {"american_odds": "+45000", "implied_prob": 0.002, "rank": 48},
+    "VCU": {"american_odds": "+45000", "implied_prob": 0.002, "rank": 49},
+    "Auburn": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 50},
+    "Creighton": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 51},
+    "Oklahoma": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 52},
+    "Oklahoma State": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 53},
+    "New Mexico": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 54},
+    "Boise State": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 55},
+    "California": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 56},
+    "Colorado": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 57},
+    "Colorado State": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 58},
+    "High Point": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 59},
+    "Liberty": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 60},
+    "Santa Clara": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 61},
+    "UC Irvine": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 62},
+    "West Virginia": {"american_odds": "+50000", "implied_prob": 0.002, "rank": 63},
+    "Yale": {"american_odds": "+55000", "implied_prob": 0.002, "rank": 64},
+    "Baylor": {"american_odds": "+60000", "implied_prob": 0.002, "rank": 65},
+    "South Florida": {"american_odds": "+60000", "implied_prob": 0.002, "rank": 66},
+    "Miami (OH)": {"american_odds": "+65000", "implied_prob": 0.002, "rank": 67},
+    "USC": {"american_odds": "+70000", "implied_prob": 0.001, "rank": 68}
+  },
+
+  "final_four_odds": {
+    "_source": "FanDuel and DraftKings Sportsbooks, as of March 9, 2026",
+    "_note": "Two sources shown where available: fanduel (FD) and draftkings (DK)",
+    "Duke": {"fanduel": "-185", "draftkings": "-180"},
+    "Michigan": {"fanduel": "-210", "draftkings": "-160"},
+    "Arizona": {"fanduel": "-115", "draftkings": "-120"},
+    "Florida": {"fanduel": "-110", "draftkings": "+130"},
+    "Houston": {"fanduel": "+190", "draftkings": "+230"},
+    "Illinois": {"fanduel": "+350", "draftkings": "+320"},
+    "UConn": {"fanduel": "+420", "draftkings": "+400"},
+    "Iowa State": {"fanduel": "+500", "draftkings": "+425"},
+    "Kansas": {"fanduel": "+1100", "draftkings": "+750"},
+    "Purdue": {"fanduel": "+1000", "draftkings": "+950"},
+    "Michigan State": {"fanduel": "+1000", "draftkings": "+1000"},
+    "Arkansas": {"fanduel": "+1200", "draftkings": "+1100"},
+    "Gonzaga": {"fanduel": "+1200", "draftkings": "+1300"},
+    "St. John's": {"fanduel": "+1500", "draftkings": "+1700"},
+    "Alabama": {"fanduel": "+2500", "draftkings": "+1600"},
+    "Tennessee": {"fanduel": "+2500", "draftkings": "+1600"},
+    "Nebraska": {"fanduel": "+2500", "draftkings": "+1800"},
+    "Louisville": {"fanduel": "+2700", "draftkings": "+2000"},
+    "Virginia": {"fanduel": "+2700", "draftkings": "+2200"},
+    "Vanderbilt": {"fanduel": "+2500", "draftkings": "+2200"},
+    "Kentucky": {"fanduel": "+2700", "draftkings": null},
+    "Wisconsin": {"fanduel": "+3500", "draftkings": null},
+    "North Carolina": {"fanduel": "+4500", "draftkings": null},
+    "BYU": {"fanduel": "+7000", "draftkings": null},
+    "Iowa": {"fanduel": "+8000", "draftkings": null},
+    "Miami (FL)": {"fanduel": "+8000", "draftkings": null},
+    "Saint Mary's": {"fanduel": "+10000", "draftkings": null},
+    "NC State": {"fanduel": "+10000", "draftkings": null},
+    "Saint Louis": {"fanduel": "+10000", "draftkings": null}
+  },
+
+  "conference_tournament_odds": {
+    "ACC": {
+      "_source": "NBC Sports, On3, multiple sportsbooks",
+      "_venue": "Charlotte, NC",
+      "_championship_date": "2026-03-14",
+      "Duke": "-350",
+      "Virginia": "+700",
+      "Louisville": "+1500",
+      "Miami (FL)": "+2500",
+      "North Carolina": "+3500"
+    },
+    "Big_Ten": {
+      "_source": "FanDuel Sportsbook, VSiN, Yahoo Sports",
+      "_venue": "United Center, Chicago",
+      "_championship_date": "2026-03-15",
+      "Michigan": "-105",
+      "Illinois": "+370",
+      "Purdue": "+700",
+      "Michigan State": "+700",
+      "Nebraska": "+1000",
+      "Wisconsin": "+2700",
+      "UCLA": "+5000",
+      "Iowa": "+6500",
+      "Ohio State": "+10000",
+      "Indiana": "+17500",
+      "Northwestern": "+30000",
+      "Washington": "+30000",
+      "USC": "+30000",
+      "Oregon": "+30000",
+      "Minnesota": "+30000"
+    },
+    "SEC": {
+      "_source": "Hard Rock Bet, FanDuel Sportsbook",
+      "_venue": "Nashville, TN",
+      "_championship_date": "2026-03-15",
+      "Florida": "-170",
+      "Arkansas": "+600",
+      "Alabama": "+750",
+      "Vanderbilt": "+1200",
+      "Tennessee": "+1700"
+    },
+    "Big_12": {
+      "_source": "FanDuel, Hard Rock Bet, multiple sportsbooks",
+      "_championship_date": "2026-03-14",
+      "Arizona": "+100",
+      "Houston": "+200",
+      "Iowa State": "+700",
+      "Kansas": "+1000",
+      "Texas Tech": "+2000",
+      "Cincinnati": "+4000",
+      "TCU": "+6600",
+      "BYU": "+15000",
+      "West Virginia": "+15000",
+      "UCF": "+50000",
+      "Colorado": "+50000",
+      "Baylor": "+50000",
+      "Arizona State": "+75000",
+      "Oklahoma State": "+75000",
+      "Kansas State": "+75000",
+      "Utah": "+100000"
+    },
+    "Big_East": {
+      "_source": "DraftKings, FanDuel, multiple sportsbooks",
+      "_venue": "Madison Square Garden, NYC",
+      "_note": "Conflicting reports on favorite — St. John's is #1 seed, UConn is #2 seed",
+      "St. John's": "+185",
+      "UConn": "-115",
+      "Villanova": null
+    }
+  },
+
+  "early_lines": {
+    "_status": "NOT YET AVAILABLE",
+    "_note": "Selection Sunday is March 15, 2026. First round spreads and moneylines will be posted after the bracket is announced. First Four games March 17-18, Round of 64 on March 19-20."
+  },
+
+  "prop_bets": {
+    "_note": "Specific prop odds not widely posted yet pre-Selection Sunday. General market sentiment captured.",
+    "a_13_seed_will_win_a_game": {
+      "sentiment": "historically likely, ~50% chance per year",
+      "source": "VSiN"
+    },
+    "16_seed_upset": {
+      "sentiment": "extremely rare but possible (happened 2018 UMBC, 2023 FDU)",
+      "historical_rate": "2 in 152 (1.3% per game)"
+    },
+    "double_digit_seed_final_four": {
+      "sentiment": "happens roughly every 3-4 years historically"
+    },
+    "most_common_upset_matchups": {
+      "5_vs_12": "historically ~35% upset rate",
+      "6_vs_11": "historically ~37% upset rate",
+      "7_vs_10": "historically ~39% upset rate",
+      "8_vs_9": "historically ~49% upset rate"
+    }
+  },
+
+  "sharp_action": {
+    "_note": "Pre-tournament sharp action indicators from multiple sources",
+    "key_insights": [
+      "Duke moved from +700 to +315 over recent weeks — heaviest sharp action in the market",
+      "Michigan was previous favorite, now second at +340 — lost 68-63 to Duke in neutral-site showdown",
+      "Florida shortening from +800 to +700 — 11-game win streak, SEC regular-season champs",
+      "Purdue tightening from +4000 to +3300 — sharp money coming in",
+      "Kansas drifting from +3750 to +4000 — less sharp confidence",
+      "Illinois identified as best value bet among teams longer than +1000 by multiple analysts",
+      "Santa Clara (+50000) identified as potential mid-major Cinderella candidate",
+      "Alabama averaging 92.0 PPG (nation-leading) and 35.8 3PA/game — volatile but explosive",
+      "Sharp bettors tend to target 5-vs-12 and 6-vs-11 matchups for upset value",
+      "Advanced metrics (AdjEM, defensive efficiency, shot quality) driving sharp dollars more than reputation",
+      "Underdogs historically cover spreads at elevated rates in first two rounds"
+    ],
+    "line_movement_signals": {
+      "Duke": "significant move toward favorite — +700 to +315 (sharp money IN, 28-2 record)",
+      "Michigan": "slight drift from co-favorite — +335 to +340 after loss to Duke",
+      "Illinois": "sharp value play at +1800",
+      "Florida": "rising fast — +800 to +700, 11-game win streak, SEC regular-season champs",
+      "Purdue": "shortening — +4000 to +3300 (sharp money coming in)",
+      "UConn": "slight drift — +1700 to +1800, lost to Marquette and Creighton recently",
+      "Auburn": "major drift — preseason +1800, now +50000 (danger of missing tournament entirely)"
+    },
+    "blue_blood_futures_note": "Per CLAUDE.md, apply deflator of 0.88-0.92x to blue-blood futures (Duke, Kansas, UNC, Kentucky) before calibration"
+  },
+
+  "tournament_schedule": {
+    "selection_sunday": "2026-03-15",
+    "first_four": "2026-03-17 to 2026-03-18",
+    "round_of_64": "2026-03-19 to 2026-03-20",
+    "round_of_32": "2026-03-21 to 2026-03-22",
+    "sweet_16": "2026-03-26 to 2026-03-27",
+    "elite_8": "2026-03-28 to 2026-03-29",
+    "final_four": "2026-04-04",
+    "championship": "2026-04-06",
+    "venue": "Lucas Oil Stadium, Indianapolis"
+  },
+
+  "market_tier_summary": {
+    "_note": "Teams grouped by market confidence tier for simulation weighting",
+    "tier_1_elite": {
+      "teams": ["Duke", "Michigan", "Arizona"],
+      "combined_implied_prob": 0.636,
+      "description": "Clear top 3 separated from field. Duke and Michigan nearly co-favorites."
+    },
+    "tier_2_contenders": {
+      "teams": ["Florida", "Houston"],
+      "combined_implied_prob": 0.194,
+      "description": "Significant gap from Tier 1. Florida rising on win streak. Houston consistent."
+    },
+    "tier_3_dark_horses": {
+      "teams": ["UConn", "Illinois", "Iowa State"],
+      "combined_implied_prob": 0.153,
+      "description": "Legitimate threats. Illinois best sharp value play."
+    },
+    "tier_4_longshots": {
+      "teams": ["Kansas", "Purdue", "Michigan State", "Gonzaga", "Arkansas", "St. John's"],
+      "combined_implied_prob": 0.117,
+      "description": "Would need favorable bracket and some luck. All capable of Final Four."
+    },
+    "tier_5_field": {
+      "teams_count": 56,
+      "description": "Remaining teams at +7000 or longer. Low individual probability but collectively non-trivial."
+    }
+  },
+
+  "preseason_to_current_movement": {
+    "_note": "Preseason opening odds vs current odds — biggest movers identified for calibration",
+    "biggest_risers": {
+      "Michigan": {"preseason": "+2500", "current": "+340", "delta": "massive shortening"},
+      "Arizona": {"preseason": "+4000", "current": "+475", "delta": "massive shortening"},
+      "Illinois": {"preseason": "+6000", "current": "+1800", "delta": "significant shortening"},
+      "Florida": {"preseason": "+1900", "current": "+700", "delta": "significant shortening"},
+      "Nebraska": {"preseason": "off board", "current": "+8000", "delta": "emerged as contender"}
+    },
+    "biggest_fallers": {
+      "Auburn": {"preseason": "+1800", "current": "+50000", "delta": "collapsed — bubble team"},
+      "Houston": {"preseason": "+900", "current": "+1100", "delta": "mild drift despite talent"},
+      "UConn": {"preseason": "+1400", "current": "+1800", "delta": "drifting from preseason hype"},
+      "Kentucky": {"preseason": "+2000", "current": "+9000", "delta": "significant drift"},
+      "Kansas": {"preseason": "+2000", "current": "+4000", "delta": "drifting"}
+    }
+  },
+
+  "de_vig_methodology": {
+    "_note": "Raw implied probabilities from American odds sum to >100% due to vig (bookmaker margin). For simulation, de-vig using power method or multiplicative approach.",
+    "estimated_total_implied_prob": 1.35,
+    "estimated_vig": 0.35,
+    "recommended_de_vig": "Divide each team's implied_prob by sum of all implied_probs to normalize to 1.0"
+  },
+
+  "sources": [
+    {"name": "SportsBettingDime", "url": "https://www.sportsbettingdime.com/college-basketball/futures/tournament-champion-odds/", "data": "Full championship futures list (68 teams)"},
+    {"name": "FanDuel Research", "url": "https://www.fanduel.com/research/final-four-odds-who-are-the-favorites-to-make-the-2026-final-four", "data": "Final Four odds (30 teams)"},
+    {"name": "FOX Sports / DraftKings", "url": "https://www.foxsports.com/stories/college-basketball/2026-mens-final-four-odds", "data": "Final Four odds (20 teams, DraftKings)"},
+    {"name": "NBC Sports", "url": "https://www.nbcsports.com/watch/mens-college-basketball/acc-tournament-odds-2026-duke-at-350-to-win-is-among-marchs-best-bets", "data": "ACC tournament odds"},
+    {"name": "Maize n Brew / FanDuel", "url": "https://www.maizenbrew.com/michigan-mens-basketball/107653/big-ten-tournament-michigan-basketball-fanduel-betting-odds-dusty-may", "data": "Big Ten tournament odds (15 teams)"},
+    {"name": "Hard Rock Bet", "url": "https://www.hardrock.bet/news/2026-sec-tournament-odds-florida-enters-nashville-as-heavy-favorite/", "data": "SEC tournament odds"},
+    {"name": "Heartland College Sports", "url": "https://www.heartlandcollegesports.com/2026/03/09/2026-big-12-basketball-tournament-odds/", "data": "Big 12 tournament odds (16 teams)"},
+    {"name": "OddShark", "url": "https://www.oddsshark.com/ncaab/college-basketball-national-championship-odds", "data": "Championship odds movement"},
+    {"name": "VegasInsider", "url": "https://www.vegasinsider.com/college-basketball/odds/futures/", "data": "Championship futures"},
+    {"name": "Covers", "url": "https://www.covers.com/ncaab/march-madness/odds", "data": "Championship odds"},
+    {"name": "CBS Sports", "url": "https://www.cbssports.com/college-basketball/news/march-madness-2026-college-basketball-conference-tournament-predictions-picks-odds-upsets-sleepers/", "data": "Conference tournament predictions"},
+    {"name": "The UConn Blog", "url": "https://www.theuconnblog.com/uconn-huskies-mens-basketball/58415/big-east-tournament-uconn-men-are-odds-on-favorite-to-win-at-madison-square-garden", "data": "Big East tournament odds"}
+  ]
+}

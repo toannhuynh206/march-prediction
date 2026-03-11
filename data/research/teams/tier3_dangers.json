@@ -1,0 +1,1080 @@
+{
+  "tier": "tier3_dangers",
+  "description": "Projected 9-12 seeds and bubble teams — the most dangerous upset candidates in the 2026 NCAA Tournament",
+  "research_date": "2026-03-10",
+  "selection_sunday": "2026-03-15",
+  "teams": [
+    {
+      "name": "Villanova Wildcats",
+      "conference": "Big East",
+      "coach": "Kevin Willard",
+      "record": {
+        "overall": "24-7",
+        "conference": "15-5",
+        "conference_finish": "3rd in Big East"
+      },
+      "rankings": {
+        "NET": 33,
+        "KenPom_approx": 29,
+        "SRS": 17.12,
+        "SRS_rank": 36,
+        "SOS": 10.09,
+        "SOS_rank": 47
+      },
+      "efficiency": {
+        "offensive_rating": 115.3,
+        "offensive_rating_rank": 74,
+        "defensive_rating": 104.8,
+        "defensive_rating_rank": 127,
+        "points_per_game": null,
+        "points_allowed_per_game": null
+      },
+      "shooting": {
+        "fg_pct": 0.459,
+        "three_pt_pct": 0.357,
+        "ft_pct": 0.692
+      },
+      "key_players": [
+        {"name": "Tyler Perkins", "position": "G", "ppg": 13.7, "rpg": null, "apg": null, "fg_pct": 0.442, "note": "Only returning player from last year's roster"},
+        {"name": "Acaden Lewis", "position": "G", "ppg": 12.5, "rpg": null, "apg": 5.3, "fg_pct": null, "note": "Primary playmaker"},
+        {"name": "Duke Brennan", "position": "F", "ppg": 12.3, "rpg": 10.5, "apg": null, "fg_pct": null, "note": "Double-double machine"},
+        {"name": "Bryce Lindsay", "position": "G", "ppg": 11.9, "rpg": null, "apg": null, "fg_pct": null, "note": ""},
+        {"name": "Devin Askew", "position": "G", "ppg": 10.1, "rpg": null, "apg": null, "fg_pct": null, "note": ""}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Playing in Big East Tournament",
+      "projected_seed": "9-10",
+      "strengths": [
+        "Deep, balanced scoring — five players averaging 10+ PPG",
+        "Strong rebounding presence with Brennan (10.5 RPG)",
+        "Kevin Willard is an experienced tournament coach",
+        "Villanova brand carries tournament pedigree (2016, 2018 champions)",
+        "Solid overall efficiency on both ends"
+      ],
+      "weaknesses": [
+        "Poor free throw shooting (69.2%) — worst among projected tournament teams",
+        "Entirely new roster under first-year coach — chemistry questions",
+        "Middle-of-pack defense (127th DRtg)",
+        "Three-point shooting inconsistent (35.7%)"
+      ],
+      "upset_factors": {
+        "rating": 7,
+        "rationale": "Villanova has deep tournament DNA and five double-digit scorers. Willard knows how to prepare for March. The poor FT shooting is a concern in close games but the balanced attack makes them hard to defend with a single game plan."
+      },
+      "matchup_style": {
+        "tempo": "moderate",
+        "defensive_style": "man-to-man heavy",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "above average"
+      },
+      "hot_cold_streak": "Strong season overall at 24-7; finished 3rd in Big East",
+      "historical_tournament": "Elite program — 2 national titles (2016, 2018), multiple Final Fours. Always dangerous in March."
+    },
+    {
+      "name": "UCLA Bruins",
+      "conference": "Big Ten",
+      "coach": "Mick Cronin",
+      "record": {
+        "overall": "21-10",
+        "conference": "13-7",
+        "conference_finish": "6th in Big Ten"
+      },
+      "rankings": {
+        "NET": 34,
+        "KenPom_approx": 32,
+        "SRS": 18.28,
+        "SRS_rank": 32,
+        "SOS": 11.21,
+        "SOS_rank": 25
+      },
+      "efficiency": {
+        "offensive_rating": 117.1,
+        "offensive_rating_rank": 49,
+        "defensive_rating": 106.5,
+        "defensive_rating_rank": 173,
+        "points_per_game": 78.0,
+        "points_allowed_per_game": 70.9
+      },
+      "shooting": {
+        "fg_pct": 0.472,
+        "three_pt_pct": 0.382,
+        "ft_pct": 0.763
+      },
+      "key_players": [
+        {"name": "Tyler Bilodeau", "position": "F", "ppg": 18.0, "rpg": 5.8, "apg": null, "fg_pct": 0.518, "note": "Team's go-to scorer, very efficient"},
+        {"name": "Donovan Dent", "position": "G", "ppg": 13.6, "rpg": null, "apg": 7.5, "fg_pct": null, "note": "Elite playmaker, former MWC Player of Year"},
+        {"name": "Trent Perry", "position": "G", "ppg": 12.4, "rpg": null, "apg": null, "fg_pct": null, "note": ""},
+        {"name": "Skyy Clark", "position": "G", "ppg": 11.9, "rpg": null, "apg": null, "fg_pct": null, "note": "Appeared in 21 games — possible injury concerns"}
+      ],
+      "injury_concerns": "Skyy Clark appeared in only 21 of 31 games — availability uncertain",
+      "conference_tournament_status": "Playing in Big Ten Tournament",
+      "projected_seed": "8-9",
+      "strengths": [
+        "Elite SRS (18.28, 32nd) — underlying metrics better than record suggests",
+        "Very tough schedule (SOS 25th nationally) — battle-tested",
+        "Strong 3-point shooting (38.2%) and FT shooting (76.3%)",
+        "Donovan Dent is an elite floor general (7.5 APG)",
+        "Bilodeau is a matchup nightmare at 18 PPG on 51.8% shooting",
+        "Hold opponents to 31.2% from three",
+        "Cronin teams are defensively sound and tough in March"
+      ],
+      "weaknesses": [
+        "Interior defensive thump lacking — DRtg 173rd",
+        "10 losses suggest inconsistency",
+        "Depth concerns if Clark is limited",
+        "Personnel more good than great defensively"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "UCLA's SRS is actually top-32 nationally despite the 21-10 record, meaning they've played one of the toughest schedules in the country. Dent + Bilodeau is a lethal 1-2 punch. Cronin teams grind and execute in March. The 10 losses were against elite competition. This team is MUCH better than a 9-seed. Very dangerous."
+      },
+      "matchup_style": {
+        "tempo": "slow-moderate (Cronin teams grind)",
+        "defensive_style": "aggressive man-to-man, takes ball away, forces jumpers",
+        "three_point_variance": "low — consistent 38.2% shooting",
+        "rebounding_strength": "average"
+      },
+      "hot_cold_streak": "17-1 at home including wins over top-10 Purdue, Illinois, Nebraska. Road/neutral court is the concern.",
+      "historical_tournament": "11 national championships — most iconic program in college basketball history. Always draw attention in March."
+    },
+    {
+      "name": "NC State Wolfpack",
+      "conference": "ACC",
+      "coach": "Will Wade",
+      "record": {
+        "overall": "19-12",
+        "conference": "10-8",
+        "conference_finish": "7th in ACC"
+      },
+      "rankings": {
+        "NET": 35,
+        "KenPom_approx": 31,
+        "SRS": 18.30,
+        "SRS_rank": 31,
+        "SOS": 10.75,
+        "SOS_rank": 32
+      },
+      "efficiency": {
+        "offensive_rating": 118.5,
+        "offensive_rating_rank": 41,
+        "defensive_rating": 107.8,
+        "defensive_rating_rank": 213,
+        "points_per_game": 83.5,
+        "points_allowed_per_game": 76.0
+      },
+      "shooting": {
+        "fg_pct": 0.467,
+        "three_pt_pct": 0.380,
+        "ft_pct": 0.760
+      },
+      "key_players": [
+        {"name": "Darrion Williams", "position": "F", "ppg": 14.0, "rpg": 4.8, "apg": 2.8, "fg_pct": null, "note": "Transfer addition, versatile scorer"},
+        {"name": "Quadir Copeland", "position": "G", "ppg": 13.7, "rpg": 3.5, "apg": 6.6, "fg_pct": null, "note": "Elite playmaker — 6.6 APG"},
+        {"name": "Ven-Allen Lubin", "position": "F", "ppg": 13.7, "rpg": 7.1, "apg": null, "fg_pct": 0.684, "note": "Interior force — 68.4% FG"},
+        {"name": "Paul McNeil Jr.", "position": "G", "ppg": 13.5, "rpg": 3.6, "apg": null, "fg_pct": null, "note": ""},
+        {"name": "Tre Holloman", "position": "G", "ppg": 9.3, "rpg": null, "apg": 2.1, "fg_pct": null, "note": "Michigan State transfer"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Playing in ACC Tournament — win-and-in scenario",
+      "projected_seed": "8-10",
+      "strengths": [
+        "FOUR players averaging 13.5+ PPG — extremely balanced and hard to game-plan",
+        "Elite SRS (18.30, 31st) — metrics say this is a top-30 team",
+        "Strong 3-point shooting (38.0%)",
+        "Lubin is unstoppable inside (68.4% FG)",
+        "Copeland is an elite passer (6.6 APG)",
+        "2024 Cinderella Final Four run provides invaluable tournament experience for program"
+      ],
+      "weaknesses": [
+        "Terrible defense (DRtg 213th) — gives up 76 PPG",
+        "Limped into postseason, losing momentum late",
+        "Will Wade's coaching reputation is controversial",
+        "Bubble team — may not make tournament if ACC Tournament goes poorly"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "NC State made the Final Four in 2024 as an 11-seed — the program knows how to win in March. Four balanced scorers at 13.5+ PPG is a nightmare for opponents. The SRS says they're a top-31 team. If the offense is clicking, they can outscore anyone. The defense is the Achilles heel — they need shootouts to win."
+      },
+      "matchup_style": {
+        "tempo": "fast — 83.5 PPG",
+        "defensive_style": "below average — relies on offense",
+        "three_point_variance": "moderate-high (38% but high volume)",
+        "rebounding_strength": "average — Lubin provides inside presence"
+      },
+      "hot_cold_streak": "Cold — limped into ACC Tournament after late-season slide",
+      "historical_tournament": "2 national championships (1974, 1983). 2024 Cinderella Final Four run as 11-seed. March magic is real at NC State."
+    },
+    {
+      "name": "Clemson Tigers",
+      "conference": "ACC",
+      "coach": "Brad Brownell",
+      "record": {
+        "overall": "22-9",
+        "conference": "12-6",
+        "conference_finish": "4th in ACC"
+      },
+      "rankings": {
+        "NET": 36,
+        "KenPom_approx": 40,
+        "SRS": 16.93,
+        "SRS_rank": 40,
+        "SOS": null,
+        "SOS_rank": 66
+      },
+      "efficiency": {
+        "offensive_rating": 112.6,
+        "offensive_rating_rank": 115,
+        "defensive_rating": 100.2,
+        "defensive_rating_rank": 45,
+        "points_per_game": 74.5,
+        "points_allowed_per_game": 66.3
+      },
+      "shooting": {
+        "fg_pct": 0.458,
+        "three_pt_pct": 0.341,
+        "ft_pct": 0.726
+      },
+      "key_players": [
+        {"name": "RJ Godfrey", "position": "F", "ppg": 11.7, "rpg": 5.3, "apg": 1.6, "fg_pct": null, "note": "Senior leader"},
+        {"name": "Carter Welling", "position": "C", "ppg": 10.4, "rpg": 5.5, "apg": 1.1, "fg_pct": null, "note": "Interior anchor"},
+        {"name": "Jestin Porter", "position": "G", "ppg": 9.7, "rpg": 1.8, "apg": 1.4, "fg_pct": null, "note": ""},
+        {"name": "Nick Davidson", "position": "F", "ppg": 9.1, "rpg": 3.7, "apg": 1.1, "fg_pct": null, "note": ""},
+        {"name": "Dillon Hunter", "position": "G", "ppg": 7.4, "rpg": null, "apg": 3.0, "fg_pct": null, "note": "Floor general"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Playing in ACC Tournament as likely 4-5 seed",
+      "projected_seed": "8-9",
+      "strengths": [
+        "ELITE defense — DRtg 45th, allows only 66.3 PPG (24th nationally)",
+        "Opponent FG% very low — suffocating half-court defense",
+        "Strong rebounding with Godfrey and Welling",
+        "Tournament experience — program has been in March conversation recently",
+        "Brownell is an experienced tournament coach"
+      ],
+      "weaknesses": [
+        "Offense is limited (ORtg 115th) — no dominant scorer",
+        "No player averages more than 11.7 PPG",
+        "Three-point shooting below average (34.1%)",
+        "Can be beaten if opponent gets hot from three against the zone",
+        "Low scoring ceiling limits comeback ability"
+      ],
+      "upset_factors": {
+        "rating": 7,
+        "rationale": "Clemson is the classic 'defense-first grinder' that causes upsets. Their elite defense (24th in PPG allowed) can strangle higher-seeded teams that rely on offensive firepower. If Clemson can keep games in the 60s, they have a chance against anyone. The concern is they don't have the offensive explosiveness to come back if they fall behind."
+      },
+      "matchup_style": {
+        "tempo": "slow — grind-it-out (66.3 PPG allowed)",
+        "defensive_style": "elite half-court defense, forces turnovers",
+        "three_point_variance": "low on offense, forces opponents into jumpers",
+        "rebounding_strength": "strong — multiple bigs"
+      },
+      "hot_cold_streak": "Solid — 22-9 with a strong ACC finish at 12-6",
+      "historical_tournament": "Limited tournament history. Lost to McNeese in 2025 first round as 5-seed — upset history works both ways."
+    },
+    {
+      "name": "Indiana Hoosiers",
+      "conference": "Big Ten",
+      "coach": "Darian DeVries",
+      "record": {
+        "overall": "18-13",
+        "conference": "9-11",
+        "conference_finish": "10th in Big Ten"
+      },
+      "rankings": {
+        "NET": 37,
+        "KenPom_approx": 35,
+        "SRS": 17.47,
+        "SRS_rank": 35,
+        "SOS": null,
+        "SOS_rank": null
+      },
+      "efficiency": {
+        "offensive_rating": 116.4,
+        "offensive_rating_rank": 59,
+        "defensive_rating": 106.6,
+        "defensive_rating_rank": 182,
+        "points_per_game": 78.7,
+        "points_allowed_per_game": 72.1
+      },
+      "shooting": {
+        "fg_pct": 0.474,
+        "three_pt_pct": 0.346,
+        "ft_pct": 0.783
+      },
+      "key_players": [
+        {"name": "Lamar Wilkerson", "position": "G", "ppg": 21.0, "rpg": 3.5, "apg": 2.4, "fg_pct": 0.464, "note": "DOMINANT scorer — 21 PPG is elite"},
+        {"name": "Tucker DeVries", "position": "G", "ppg": 13.9, "rpg": 5.2, "apg": 3.2, "fg_pct": null, "note": "Coach's son, versatile do-everything player"},
+        {"name": "Tayton Conerway", "position": "G", "ppg": 9.4, "rpg": 2.7, "apg": 3.4, "fg_pct": null, "note": "Playmaker"}
+      ],
+      "injury_concerns": "Entirely new roster — first year under DeVries. Chemistry may be a question.",
+      "conference_tournament_status": "On the bubble — average projected seed of 9.54. Lost to Ohio State in regular season finale.",
+      "projected_seed": "9-10 (bubble team)",
+      "strengths": [
+        "Lamar Wilkerson is a 21 PPG scorer — can take over a game single-handedly",
+        "Elite 2-point shooting (60.7%, 11th nationally) — efficient inside",
+        "Strong free throw shooting (78.3%, 11th) — clutch in close games",
+        "SRS 35th nationally suggests they're better than 18-13 record",
+        "Played brutal Big Ten schedule — battle-tested"
+      ],
+      "weaknesses": [
+        "13 losses — worst record among projected tournament teams",
+        "Defense is poor (DRtg 182nd)",
+        "Entirely new roster — zero returning players from last year",
+        "Three-point shooting mediocre (34.6%)",
+        "Lost momentum — fell to Ohio State in finale"
+      ],
+      "upset_factors": {
+        "rating": 6,
+        "rationale": "Wilkerson at 21 PPG is the kind of star who can carry a team through one or two games. But 13 losses and a brand-new roster under a first-year coach make consistency a concern. If Wilkerson gets hot, they can beat anyone on a given night. But they're just as likely to lose in the first round."
+      },
+      "matchup_style": {
+        "tempo": "moderate-fast",
+        "defensive_style": "below average — relies on offense",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "average"
+      },
+      "hot_cold_streak": "Cold — lost regular season finale to Ohio State 91-78. Bubble status uncertain.",
+      "historical_tournament": "5 national championships — storied program. But recent tournament history has been shaky."
+    },
+    {
+      "name": "Santa Clara Broncos",
+      "conference": "WCC",
+      "coach": "Herb Sendek",
+      "record": {
+        "overall": "25-7",
+        "conference": "15-3",
+        "conference_finish": "3rd in WCC"
+      },
+      "rankings": {
+        "NET": 38,
+        "KenPom_approx": 42,
+        "SRS": 15.98,
+        "SRS_rank": 42,
+        "SOS": 5.34,
+        "SOS_rank": 90
+      },
+      "efficiency": {
+        "offensive_rating": 119.0,
+        "offensive_rating_rank": 34,
+        "defensive_rating": 103.0,
+        "defensive_rating_rank": 81,
+        "points_per_game": 83.5,
+        "points_allowed_per_game": 72.3
+      },
+      "shooting": {
+        "fg_pct": 0.470,
+        "three_pt_pct": 0.347,
+        "ft_pct": 0.743
+      },
+      "key_players": [
+        {"name": "Christian Hammond", "position": "G", "ppg": 15.9, "rpg": null, "apg": 2.4, "fg_pct": 0.491, "note": "Team's go-to scorer, very efficient"},
+        {"name": "Elijah Mahi", "position": "F", "ppg": 14.0, "rpg": 4.7, "apg": 2.8, "fg_pct": null, "note": "Versatile forward"},
+        {"name": "Allen Graves", "position": "F", "ppg": 11.7, "rpg": 6.4, "apg": null, "fg_pct": 0.522, "note": "Efficient scorer and rebounder"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Reached WCC championship game — first time since 2007. Playing Gonzaga for the title.",
+      "projected_seed": "10-12 (at-large dependent on WCC title game)",
+      "strengths": [
+        "Elite offensive rating (34th nationally, 119.0)",
+        "Excellent steals rate (9.1 per game, 14th nationally) — creates turnovers",
+        "Balanced scoring — three players at 11.7+ PPG",
+        "25-7 record — win games consistently",
+        "Sendek named WCC Coach of the Year",
+        "In WCC championship game — playing with momentum"
+      ],
+      "weaknesses": [
+        "Weak schedule (SOS 90th) — haven't been tested against top competition",
+        "Mid-major stigma — selection committee may undervalue",
+        "Three-point shooting below average (34.7%)",
+        "WCC doesn't prepare teams for the physicality of power conference opponents"
+      ],
+      "upset_factors": {
+        "rating": 7,
+        "rationale": "Santa Clara is the classic mid-major upset candidate. Elite offense (34th ORtg), aggressive defense that forces turnovers, and 25 wins. If they beat Gonzaga for the WCC title, they enter with massive momentum. Even without it, they may get an at-large. The question is whether WCC competition has prepared them for the jump in physicality."
+      },
+      "matchup_style": {
+        "tempo": "fast — 83.5 PPG with turnover-forcing defense",
+        "defensive_style": "aggressive — 9.1 steals/game, pressure defense",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "above average with Graves"
+      },
+      "hot_cold_streak": "HOT — in WCC championship game, won 5th consecutive top-4 WCC finish",
+      "historical_tournament": "Limited recent tournament history. Steve Nash era was the high point. Making the WCC title game is a program milestone."
+    },
+    {
+      "name": "SMU Mustangs",
+      "conference": "ACC",
+      "coach": "Andy Enfield",
+      "record": {
+        "overall": "19-12",
+        "conference": "8-10",
+        "conference_finish": "11th in ACC"
+      },
+      "rankings": {
+        "NET": 39,
+        "KenPom_approx": 37,
+        "SRS": 17.10,
+        "SRS_rank": 37,
+        "SOS": 10.48,
+        "SOS_rank": 41
+      },
+      "efficiency": {
+        "offensive_rating": 118.5,
+        "offensive_rating_rank": 40,
+        "defensive_rating": 109.3,
+        "defensive_rating_rank": 239,
+        "points_per_game": null,
+        "points_allowed_per_game": null
+      },
+      "shooting": {
+        "fg_pct": 0.493,
+        "three_pt_pct": 0.378,
+        "ft_pct": 0.742
+      },
+      "key_players": [
+        {"name": "Kevin Miller", "position": "G", "ppg": 19.4, "rpg": 3.1, "apg": 6.6, "fg_pct": 0.475, "note": "Elite scorer AND playmaker — 19.4/6.6 is a rare combo"},
+        {"name": "Jaron Pierre Jr.", "position": "G", "ppg": 17.5, "rpg": 5.0, "apg": null, "fg_pct": null, "note": "2.3 steals/game — defensive menace"},
+        {"name": "B.J. Edwards", "position": "G", "ppg": 12.7, "rpg": null, "apg": 4.9, "fg_pct": null, "note": "Secondary playmaker"},
+        {"name": "Samet Yigitoglu", "position": "C", "ppg": 11.0, "rpg": 7.8, "apg": null, "fg_pct": 0.632, "note": "Interior force — 63.2% FG"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Playing in ACC Tournament — bubble team",
+      "projected_seed": "10-11 (bubble)",
+      "strengths": [
+        "Kevin Miller is ELITE — 19.4 PPG, 6.6 APG on 47.5% shooting",
+        "Outstanding team FG% (.493) — most efficient shooting team in this tier",
+        "Strong 3-point shooting (37.8%)",
+        "Went 11-2 in non-conference — can beat mid-tier opponents",
+        "Pierre Jr. provides defensive intensity with 2.3 steals/game",
+        "Yigitoglu dominates inside at 63.2% FG"
+      ],
+      "weaknesses": [
+        "TERRIBLE defense (DRtg 239th) — biggest weakness",
+        "8-10 in ACC play — struggled against top competition",
+        "Bubble team — may not even make the tournament",
+        "Over-reliance on perimeter play"
+      ],
+      "upset_factors": {
+        "rating": 7,
+        "rationale": "If SMU makes the tournament, Kevin Miller (19.4/6.6) can single-handedly carry them through a game. The offense is lethal (40th ORtg). Andy Enfield made a famous FGCU Sweet 16 run — he knows upset basketball. But the defense is a disaster. They're a boom-or-bust pick: could beat anyone or lose to anyone."
+      },
+      "matchup_style": {
+        "tempo": "fast — high-scoring, offensive-minded",
+        "defensive_style": "poor — gives up easy baskets",
+        "three_point_variance": "moderate-high",
+        "rebounding_strength": "average — Yigitoglu anchors inside"
+      },
+      "hot_cold_streak": "Mixed — strong non-conference (11-2) but inconsistent in ACC (8-10)",
+      "historical_tournament": "Limited recent tournament history. Enfield's FGCU 2013 Sweet 16 run as 15-seed is legendary."
+    },
+    {
+      "name": "Auburn Tigers",
+      "conference": "SEC",
+      "coach": "Steven Pearl",
+      "record": {
+        "overall": "16-15",
+        "conference": "7-11",
+        "conference_finish": "11th in SEC"
+      },
+      "rankings": {
+        "NET": 40,
+        "KenPom_approx": 38,
+        "SRS": 17.08,
+        "SRS_rank": 38,
+        "SOS": 13.79,
+        "SOS_rank": 5
+      },
+      "efficiency": {
+        "offensive_rating": 119.5,
+        "offensive_rating_rank": 26,
+        "defensive_rating": 114.8,
+        "defensive_rating_rank": 336,
+        "points_per_game": 84.2,
+        "points_allowed_per_game": 77.8
+      },
+      "shooting": {
+        "fg_pct": 0.462,
+        "three_pt_pct": 0.339,
+        "ft_pct": 0.749
+      },
+      "key_players": [
+        {"name": "Keyshawn Hall", "position": "G", "ppg": 20.4, "rpg": 6.9, "apg": 2.7, "fg_pct": null, "note": "ELITE scorer — 20.4 PPG with 6.9 RPG"},
+        {"name": "Tahaad Pettiford", "position": "G", "ppg": 15.2, "rpg": 2.9, "apg": 3.6, "fg_pct": null, "note": "Dynamic guard"},
+        {"name": "Kevin Overton", "position": "G", "ppg": 13.3, "rpg": 3.3, "apg": 1.1, "fg_pct": null, "note": "Third scoring option"}
+      ],
+      "injury_concerns": "No specific injuries, but 2-8 in last 10 games suggests team may be broken",
+      "conference_tournament_status": "Must win SEC Tournament to make NCAA Tournament. At-large chances ~20%.",
+      "projected_seed": "Not projected to make tournament unless SEC Tournament run",
+      "strengths": [
+        "ELITE offense (ORtg 26th nationally) — can score on anyone",
+        "Keyshawn Hall at 20.4/6.9 is a legitimate NBA prospect",
+        "Hardest schedule in America (SOS 5th) — every game was brutal",
+        "Three-headed scoring attack",
+        "Free throw shooting strong (74.9%, 2nd nationally)"
+      ],
+      "weaknesses": [
+        "CATASTROPHIC defense (DRtg 336th out of 365 teams) — bottom 10% nationally",
+        "16-15 record with 2-8 in last 10 — in complete freefall",
+        "15 losses essentially eliminates at-large chances",
+        "Gives up 77.8 PPG — cannot stop anyone",
+        "Team chemistry appears to have imploded"
+      ],
+      "upset_factors": {
+        "rating": 4,
+        "rationale": "Auburn is unlikely to make the tournament. If they somehow win the SEC Tournament (very unlikely at 2-8 in last 10), they'd be an extremely dangerous low seed because the offense is genuinely elite. But the defense is so bad they'd need to outscore opponents by 10+ points. High-risk, low-probability scenario."
+      },
+      "matchup_style": {
+        "tempo": "very fast — 84.2 PPG, wants to run",
+        "defensive_style": "non-existent — gives up everything",
+        "three_point_variance": "high",
+        "rebounding_strength": "above average with Hall's 6.9 RPG"
+      },
+      "hot_cold_streak": "ICE COLD — 2-8 in last 10 games. Lost regular season finale at Alabama. Complete collapse.",
+      "historical_tournament": "2019 Final Four under Bruce Pearl. Recent pedigree exists but program is in turmoil under Steven Pearl."
+    },
+    {
+      "name": "TCU Horned Frogs",
+      "conference": "Big 12",
+      "coach": "Jamie Dixon",
+      "record": {
+        "overall": "21-10",
+        "conference": "11-7",
+        "conference_finish": "6th in Big 12"
+      },
+      "rankings": {
+        "NET": 41,
+        "KenPom_approx": 44,
+        "SRS": 15.89,
+        "SRS_rank": 44,
+        "SOS": null,
+        "SOS_rank": null
+      },
+      "efficiency": {
+        "offensive_rating": 110.8,
+        "offensive_rating_rank": 153,
+        "defensive_rating": 101.4,
+        "defensive_rating_rank": 56,
+        "points_per_game": 77.9,
+        "points_allowed_per_game": 71.4
+      },
+      "shooting": {
+        "fg_pct": 0.448,
+        "three_pt_pct": 0.329,
+        "ft_pct": 0.706
+      },
+      "key_players": [
+        {"name": "David Punch", "position": "F", "ppg": 13.6, "rpg": 6.6, "apg": null, "fg_pct": 0.508, "note": "Double-double threat"},
+        {"name": "Xavier Edmonds", "position": "F", "ppg": 12.8, "rpg": 6.6, "apg": null, "fg_pct": 0.576, "note": "Ultra-efficient scorer — 57.6% FG"},
+        {"name": "Micah Robinson", "position": "F", "ppg": 10.6, "rpg": 4.7, "apg": null, "fg_pct": null, "note": ""},
+        {"name": "Jayden Pierre", "position": "G", "ppg": 10.4, "rpg": null, "apg": 2.6, "fg_pct": null, "note": "Primary ball-handler"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "6th seed in Big 12 Tournament — has second-round bye. Won 8 of last 9 games. Projected 9-seed in NCAA Tournament.",
+      "projected_seed": "9",
+      "strengths": [
+        "ELITE defense (DRtg 56th) — Dixon teams always defend",
+        "Won 8 of last 9 games — surging into March",
+        "Interior dominance — Punch and Edmonds are physical bigs at 57.6% and 50.8% FG",
+        "Strong ball movement (15.8 APG)",
+        "Big 12 schedule is one of the toughest in the nation — battle-tested",
+        "Dixon has extensive NCAA Tournament coaching experience"
+      ],
+      "weaknesses": [
+        "Poor 3-point shooting (32.9%) — can be packed in against",
+        "Offense is limited (ORtg 153rd) — struggles to score against elite defenses",
+        "Free throw shooting below average (70.6%)",
+        "Relies heavily on interior scoring — matchup-dependent"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "TCU is the most DANGEROUS team in this tier right now. Won 8 of last 9 with elite defense. Dixon knows how to win in March. Their physical, defense-first style is exactly what causes upsets in the tournament. The biggest concern is the 3-point shooting — if an opponent packs the paint, TCU struggles. But against teams that rely on dribble-drive or half-court offense, TCU is a nightmare matchup."
+      },
+      "matchup_style": {
+        "tempo": "moderate — controlled pace, half-court oriented",
+        "defensive_style": "elite — physical, low-post oriented defense",
+        "three_point_variance": "low — poor shooting but don't rely on it",
+        "rebounding_strength": "excellent — Punch (6.6) and Edmonds (6.6) dominate the glass"
+      },
+      "hot_cold_streak": "SCORCHING HOT — 8-1 in last 9 games. Peaking at the perfect time.",
+      "historical_tournament": "Dixon took Pitt to multiple Sweet 16s. TCU itself has limited tournament history but the coaching pedigree is strong."
+    },
+    {
+      "name": "Texas Longhorns",
+      "conference": "SEC",
+      "coach": "Sean Miller",
+      "record": {
+        "overall": "18-13",
+        "conference": "9-9",
+        "conference_finish": "10th in SEC"
+      },
+      "rankings": {
+        "NET": 42,
+        "KenPom_approx": null,
+        "SRS": null,
+        "SRS_rank": null,
+        "SOS": 10.52,
+        "SOS_rank": 38
+      },
+      "efficiency": {
+        "offensive_rating": 120.9,
+        "offensive_rating_rank": 15,
+        "defensive_rating": 110.2,
+        "defensive_rating_rank": 258,
+        "points_per_game": 84.4,
+        "points_allowed_per_game": 76.8
+      },
+      "shooting": {
+        "fg_pct": 0.490,
+        "three_pt_pct": 0.353,
+        "ft_pct": 0.749
+      },
+      "key_players": [
+        {"name": "Dailyn Swain", "position": "F", "ppg": 17.7, "rpg": 7.5, "apg": 3.4, "fg_pct": null, "note": "Do-everything forward — near triple-double threat"},
+        {"name": "Matas Vokietaitis", "position": "C", "ppg": 15.7, "rpg": 6.9, "apg": null, "fg_pct": null, "note": "Interior scorer and rebounder"},
+        {"name": "Tramon Mark", "position": "G", "ppg": 13.7, "rpg": 3.4, "apg": 1.9, "fg_pct": null, "note": "Perimeter scorer"},
+        {"name": "Jordan Pope", "position": "G", "ppg": 13.3, "rpg": 2.1, "apg": 1.9, "fg_pct": null, "note": ""}
+      ],
+      "injury_concerns": "First year under Sean Miller — brand new roster construction",
+      "conference_tournament_status": "Playing Ole Miss in SEC Tournament. Bubble team.",
+      "projected_seed": "10-11 (bubble)",
+      "strengths": [
+        "TOP-15 offense nationally (ORtg 15th, 120.9) — can outscore anyone",
+        "Four players averaging 13.3+ PPG — extremely balanced",
+        "Swain is a near triple-double threat (17.7/7.5/3.4)",
+        "Strong FG% (.490) and inside scoring (.567 2PT%)",
+        "Played in SEC — schedule was brutal",
+        "Sean Miller has extensive tournament experience"
+      ],
+      "weaknesses": [
+        "Defense is terrible (DRtg 258th) — gives up 76.8 PPG",
+        "18-13 record is uninspiring",
+        "First year under Miller — roster chemistry unknown",
+        "Three-point shooting is inconsistent (35.3%)",
+        "May not make the tournament"
+      ],
+      "upset_factors": {
+        "rating": 6,
+        "rationale": "Texas has a top-15 offense but a bottom-third defense. If they make the tournament, Swain could carry them through a game. But the 13 losses and defensive liability make them unreliable. Similar to Auburn — they need shootouts to win, and tournament games often become grind-fests."
+      },
+      "matchup_style": {
+        "tempo": "very fast — 84.4 PPG, wants to run",
+        "defensive_style": "poor — gives up easy buckets",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "strong — Swain (7.5) and Vokietaitis (6.9)"
+      },
+      "hot_cold_streak": "Mixed — 9-9 in SEC play, no clear trajectory",
+      "historical_tournament": "Limited recent tournament success despite brand name. Miller made Final Four at Arizona (vacated)."
+    },
+    {
+      "name": "Texas A&M Aggies",
+      "conference": "SEC",
+      "coach": "Bucky McMillan",
+      "record": {
+        "overall": "21-10",
+        "conference": "11-7",
+        "conference_finish": "4th in SEC"
+      },
+      "rankings": {
+        "NET": 43,
+        "KenPom_approx": 34,
+        "SRS": 17.57,
+        "SRS_rank": 34,
+        "SOS": null,
+        "SOS_rank": null
+      },
+      "efficiency": {
+        "offensive_rating": 118.8,
+        "offensive_rating_rank": 37,
+        "defensive_rating": 106.6,
+        "defensive_rating_rank": 178,
+        "points_per_game": 88.5,
+        "points_allowed_per_game": 79.5
+      },
+      "shooting": {
+        "fg_pct": 0.460,
+        "three_pt_pct": 0.365,
+        "ft_pct": 0.740
+      },
+      "key_players": [
+        {"name": "Rashaun Agee", "position": "F", "ppg": 14.7, "rpg": 8.8, "apg": 2.4, "fg_pct": null, "note": "Double-double machine — 14.7/8.8"},
+        {"name": "Rylan Griffen", "position": "G", "ppg": 11.6, "rpg": 2.9, "apg": 2.7, "fg_pct": null, "note": "Alabama transfer — tournament experience"},
+        {"name": "Marcus Hill", "position": "G", "ppg": 10.9, "rpg": 3.2, "apg": 1.6, "fg_pct": null, "note": "Third scoring option"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Won regular season finale vs LSU in triple OT. Won 4 of last 5. SEC Tournament bound.",
+      "projected_seed": "8-9",
+      "strengths": [
+        "Highest-scoring team in this tier (88.5 PPG, 8th nationally)",
+        "Strong 3-point shooting (36.5%, 14th nationally) — can catch fire from deep",
+        "Agee is a dominant interior presence (14.7/8.8)",
+        "Won 4 of last 5 — building momentum",
+        "SRS 34th suggests they're underseeded",
+        "Triple OT win vs LSU shows resilience and grit"
+      ],
+      "weaknesses": [
+        "Defense is a weakness (DRtg 178th, allows 79.5 PPG)",
+        "First-year coach (McMillan) — tournament coaching experience unknown",
+        "High-scoring style is volatile — can blow leads",
+        "Three losses recently show inconsistency"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "Texas A&M at 88.5 PPG with 36.5% 3PT shooting is a team that can catch fire and beat anyone in a single game. Agee provides inside-out balance. Won 4 of 5 entering postseason. The triple OT win shows they don't quit. If they draw a 1-seed that relies on half-court defense, A&M's pace and shooting can overwhelm them. VERY dangerous 8/9 seed."
+      },
+      "matchup_style": {
+        "tempo": "very fast — 88.5 PPG, fastest pace in this tier",
+        "defensive_style": "below average — gives up a lot but creates turnovers",
+        "three_point_variance": "HIGH — 36.5% on high volume means huge upside and downside",
+        "rebounding_strength": "strong — Agee dominates the glass at 8.8 RPG"
+      },
+      "hot_cold_streak": "HOT — won 4 of last 5 including triple OT thriller. Momentum entering SEC Tournament.",
+      "historical_tournament": "Limited tournament pedigree. But SEC schedule and recent momentum make them scary."
+    },
+    {
+      "name": "VCU Rams",
+      "conference": "Atlantic 10",
+      "coach": "Phil Martelli",
+      "record": {
+        "overall": "24-7",
+        "conference": "15-3",
+        "conference_finish": "A-10 Champions"
+      },
+      "rankings": {
+        "NET": 44,
+        "KenPom_approx": 54,
+        "SRS": 13.33,
+        "SRS_rank": 54,
+        "SOS": 3.10,
+        "SOS_rank": 105
+      },
+      "efficiency": {
+        "offensive_rating": 118.1,
+        "offensive_rating_rank": 44,
+        "defensive_rating": 103.4,
+        "defensive_rating_rank": 95,
+        "points_per_game": 82.4,
+        "points_allowed_per_game": 72.2
+      },
+      "shooting": {
+        "fg_pct": 0.462,
+        "three_pt_pct": 0.364,
+        "ft_pct": 0.740
+      },
+      "key_players": [
+        {"name": "Terrence Hill Jr.", "position": "G", "ppg": 14.1, "rpg": null, "apg": 2.8, "fg_pct": null, "note": "Leading scorer"},
+        {"name": "Lazar Djokovic", "position": "F", "ppg": 13.8, "rpg": 5.6, "apg": null, "fg_pct": null, "note": "Inside-out threat"},
+        {"name": "Jadrian Tracey", "position": "F", "ppg": 10.1, "rpg": 2.9, "apg": null, "fg_pct": null, "note": ""}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "WON A-10 championship. NCAA Tournament berth secured via autobid.",
+      "projected_seed": "11-12",
+      "strengths": [
+        "Conference champions — won A-10 tournament",
+        "Strong on both ends — ORtg 44th, DRtg 95th",
+        "24-7 record — winners find ways to win",
+        "Havoc-style defense (VCU trademark) creates chaos and turnovers",
+        "Won 13 of 14 games recently — massive momentum",
+        "VCU has iconic Cinderella tournament history (2011 Final Four)"
+      ],
+      "weaknesses": [
+        "Weak schedule (SOS 105th) — haven't played power conference gauntlet",
+        "SRS only 54th — gap between record and underlying metrics",
+        "A-10 competition doesn't prepare for Big Ten/SEC level athleticism",
+        "No dominant go-to scorer"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "VCU is the quintessential Cinderella pick. Conference champions, 13 of 14 wins, Havoc defense that creates turnovers. VCU's 2011 Final Four as an 11-seed is one of the greatest upset runs ever. This program THRIVES as an underdog. The balanced offense and strong defense on both ends make them dangerous against any opponent. The schedule concern is real, but VCU has proven they can handle the jump."
+      },
+      "matchup_style": {
+        "tempo": "fast — aggressive, turnover-forcing Havoc defense",
+        "defensive_style": "elite pressure defense — Havoc system, creates chaos",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "above average with Djokovic"
+      },
+      "hot_cold_streak": "SCORCHING — won 13 of 14 and A-10 championship. Playing their best basketball at the right time.",
+      "historical_tournament": "2011 Final Four as 11-seed (one of greatest Cinderella runs ever). 20th all-time NCAA Tournament appearance. This program knows how to upset."
+    },
+    {
+      "name": "New Mexico Lobos",
+      "conference": "Mountain West",
+      "coach": "Richard Pitino",
+      "record": {
+        "overall": "22-9",
+        "conference": "13-7",
+        "conference_finish": "3rd in Mountain West"
+      },
+      "rankings": {
+        "NET": 45,
+        "KenPom_approx": 49,
+        "SRS": 13.84,
+        "SRS_rank": 49,
+        "SOS": 5.27,
+        "SOS_rank": 90
+      },
+      "efficiency": {
+        "offensive_rating": 114.1,
+        "offensive_rating_rank": 112,
+        "defensive_rating": 100.1,
+        "defensive_rating_rank": 43,
+        "points_per_game": 80.7,
+        "points_allowed_per_game": 70.8
+      },
+      "shooting": {
+        "fg_pct": 0.460,
+        "three_pt_pct": 0.362,
+        "ft_pct": null
+      },
+      "key_players": [
+        {"name": "Jake Hall", "position": "G", "ppg": 16.3, "rpg": 3.3, "apg": 1.6, "fg_pct": 0.487, "note": "MWC Freshman of the Year — 16.3 PPG as a freshman is elite"},
+        {"name": "Tomislav Buljan", "position": "F", "ppg": 12.2, "rpg": 10.3, "apg": 1.3, "fg_pct": null, "note": "LED MWC in rebounding (10.95 RPG), 10 double-doubles in conference play"},
+        {"name": "Deyton Albury", "position": "G", "ppg": 11.5, "rpg": 3.6, "apg": 3.0, "fg_pct": null, "note": "Versatile scorer and passer"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Playing in Mountain West Tournament",
+      "projected_seed": "10-12",
+      "strengths": [
+        "ELITE defense (DRtg 43rd, 100.1) — allows only 70.8 PPG",
+        "Jake Hall is MWC Freshman of the Year — star potential",
+        "Buljan dominates the glass (10.3 RPG, led conference)",
+        "The Pit (home court) is one of the most hostile environments in college basketball",
+        "Pitino has tournament coaching experience",
+        "22-9 record with strong conference showing"
+      ],
+      "weaknesses": [
+        "Weak schedule (SOS 90th) — mid-major concern",
+        "Offense is only average (ORtg 112th)",
+        "Freshman-dependent — Hall is a freshman, may face tournament pressure",
+        "Mountain West has lost credibility in recent tournaments"
+      ],
+      "upset_factors": {
+        "rating": 7,
+        "rationale": "New Mexico's elite defense (43rd DRtg) and dominant rebounding (Buljan at 10.3 RPG) make them a grind-it-out upset candidate. If they can slow the game down and control the glass against a higher seed, they're tough to beat. Hall as a freshman is the wild card — he could go off for 25+ or struggle with the moment. The Pit crowd is irrelevant in neutral-site tournament games."
+      },
+      "matchup_style": {
+        "tempo": "moderate — defensive-minded",
+        "defensive_style": "elite — physical, rebounding-focused",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "ELITE — Buljan at 10.3 RPG anchors the glass"
+      },
+      "hot_cold_streak": "Steady — 22-9 with consistent performance throughout",
+      "historical_tournament": "Limited recent tournament success. The Pit advantage doesn't travel. But Pitino's experience matters."
+    },
+    {
+      "name": "Cincinnati Bearcats",
+      "conference": "Big 12",
+      "coach": "Wes Miller",
+      "record": {
+        "overall": "17-14",
+        "conference": "9-9",
+        "conference_finish": "7th in Big 12"
+      },
+      "rankings": {
+        "NET": 46,
+        "KenPom_approx": 43,
+        "SRS": 15.94,
+        "SRS_rank": 43,
+        "SOS": 10.23,
+        "SOS_rank": 45
+      },
+      "efficiency": {
+        "offensive_rating": 105.9,
+        "offensive_rating_rank": 261,
+        "defensive_rating": 97.6,
+        "defensive_rating_rank": 22,
+        "points_per_game": 73.4,
+        "points_allowed_per_game": 67.7
+      },
+      "shooting": {
+        "fg_pct": 0.433,
+        "three_pt_pct": 0.335,
+        "ft_pct": 0.681
+      },
+      "key_players": [
+        {"name": "Baba Miller", "position": "F", "ppg": 13.4, "rpg": 10.1, "apg": 3.6, "fg_pct": null, "note": "TRIPLE-DOUBLE threat — 13.4/10.1/3.6 is insane stat line. Big 12 Newcomer Team + 2nd Team All-Big 12"},
+        {"name": "Moustapha Thiam", "position": "C", "ppg": 12.6, "rpg": 6.7, "apg": null, "fg_pct": null, "note": "14 PPG in conference play — clutch scorer"},
+        {"name": "Day Day Thomas", "position": "G", "ppg": 11.6, "rpg": 3.2, "apg": 3.5, "fg_pct": null, "note": "Lone returning player — veteran leader"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "Bubble team — 48.6% chance per Bart Torvik. Playing like a top-5 team since Feb 6. Beat Kansas at Allen Fieldhouse.",
+      "projected_seed": "10-11 (bubble)",
+      "strengths": [
+        "TOP-22 defense nationally (DRtg 22nd, 97.6) — suffocating",
+        "Baba Miller is a FREAK athlete — near triple-double average",
+        "Beat Kansas at Allen Fieldhouse — can beat anyone",
+        "Playing like a top-5 team since Feb 6 — peaking at right time",
+        "Physical, tough Big 12 schedule — battle-tested",
+        "Opponent FG% held to .416 — opponents can't score"
+      ],
+      "weaknesses": [
+        "TERRIBLE offense (ORtg 261st) — can't score consistently",
+        "Poor shooting across the board (43.3% FG, 33.5% 3PT, 68.1% FT)",
+        "17-14 record — 14 losses is a lot",
+        "May not make the tournament despite late surge"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "Cincinnati is the ULTIMATE grinder upset pick. Top-22 defense nationally with Baba Miller as a triple-double threat. They beat Kansas at Allen Fieldhouse. If Cincinnati makes the tournament, their defense can shut down any offense in a single game. The problem is scoring — they need games in the 60s to win. Against up-tempo teams, they struggle. But against half-court offenses? Cincinnati is a nightmare. Playing their best basketball right now."
+      },
+      "matchup_style": {
+        "tempo": "very slow — wants to grind games into the 60s",
+        "defensive_style": "ELITE — suffocating, physical, Big 12 tough",
+        "three_point_variance": "low on offense — relies on defense and rebounding",
+        "rebounding_strength": "ELITE — Miller (10.1) and Thiam (6.7) dominate the glass"
+      },
+      "hot_cold_streak": "RED HOT since Feb 6 — playing like a top-5 team. Beat Kansas. Late surge may save their season.",
+      "historical_tournament": "Strong tournament program historically. Cincinnati's defensive DNA fits the tournament format perfectly."
+    },
+    {
+      "name": "San Diego State Aztecs",
+      "conference": "Mountain West",
+      "coach": "Brian Dutcher",
+      "record": {
+        "overall": "20-10",
+        "conference": "14-6",
+        "conference_finish": "2nd in Mountain West"
+      },
+      "rankings": {
+        "NET": 47,
+        "KenPom_approx": 48,
+        "SRS": 14.00,
+        "SRS_rank": 48,
+        "SOS": null,
+        "SOS_rank": null
+      },
+      "efficiency": {
+        "offensive_rating": 111.6,
+        "offensive_rating_rank": 133,
+        "defensive_rating": 100.5,
+        "defensive_rating_rank": 47,
+        "points_per_game": 79.4,
+        "points_allowed_per_game": 71.5
+      },
+      "shooting": {
+        "fg_pct": 0.478,
+        "three_pt_pct": 0.357,
+        "ft_pct": 0.748
+      },
+      "key_players": [
+        {"name": "Reese Dixon-Waters", "position": "G", "ppg": 13.2, "rpg": 3.7, "apg": 1.3, "fg_pct": null, "note": "MWC Player of the Year candidate"},
+        {"name": "BJ Davis", "position": "G", "ppg": 10.9, "rpg": 3.0, "apg": 2.2, "fg_pct": null, "note": "Secondary scorer"},
+        {"name": "Miles Byrd", "position": "G", "ppg": 10.6, "rpg": 4.5, "apg": 2.7, "fg_pct": null, "note": "Versatile wing"}
+      ],
+      "injury_concerns": "No major injuries reported",
+      "conference_tournament_status": "2nd seed in Mountain West Tournament. Dutcher named MWC Coach of the Year.",
+      "projected_seed": "10-12",
+      "strengths": [
+        "ELITE defense (DRtg 47th) — SDSU trademark",
+        "Hold opponents to .402 FG% (12th nationally) — stifling",
+        "Brian Dutcher named MWC Coach of the Year",
+        "2023 national championship game appearance — tournament DNA",
+        "Dixon-Waters named MWC Player of the Year",
+        "Strong FG% (.478, 45th nationally) — efficient scoring"
+      ],
+      "weaknesses": [
+        "Offense is average (ORtg 133rd) — can't always generate scoring",
+        "Mountain West schedule concern — mid-major stigma",
+        "No dominant scorer — max is 13.2 PPG",
+        "20-10 record is solid but not spectacular"
+      ],
+      "upset_factors": {
+        "rating": 8,
+        "rationale": "San Diego State is arguably the MOST dangerous mid-major in the country. Made the 2023 national championship game. Dutcher knows how to prepare for March. Their defense (.402 opponent FG%) is suffocating. They play slow, physical, and smart. This is the mid-major that power conference teams DO NOT want to draw. SDSU has proven they belong on the biggest stage."
+      },
+      "matchup_style": {
+        "tempo": "slow — grinds games down, controls pace",
+        "defensive_style": "ELITE — holds opponents to 40.2% FG, physical, disciplined",
+        "three_point_variance": "low — not dependent on threes",
+        "rebounding_strength": "above average — physical inside"
+      },
+      "hot_cold_streak": "Strong — MWC Player and Coach of the Year indicate dominant conference performance",
+      "historical_tournament": "2023 National Championship Game appearance. Multiple Sweet 16s. Dutcher and SDSU are tournament-proven."
+    },
+    {
+      "name": "Baylor Bears",
+      "conference": "Big 12",
+      "coach": "Scott Drew",
+      "record": {
+        "overall": "16-15",
+        "conference": "6-12",
+        "conference_finish": "13th in Big 12"
+      },
+      "rankings": {
+        "NET": 48,
+        "KenPom_approx": 45,
+        "SRS": null,
+        "SRS_rank": null,
+        "SOS": 11.97,
+        "SOS_rank": 15
+      },
+      "efficiency": {
+        "offensive_rating": 118.1,
+        "offensive_rating_rank": 45,
+        "defensive_rating": 109.9,
+        "defensive_rating_rank": 252,
+        "points_per_game": 82.7,
+        "points_allowed_per_game": 77.0
+      },
+      "shooting": {
+        "fg_pct": 0.481,
+        "three_pt_pct": 0.350,
+        "ft_pct": 0.732
+      },
+      "key_players": [
+        {"name": "Cameron Carr", "position": "G", "ppg": 19.0, "rpg": 5.5, "apg": 2.7, "fg_pct": 0.517, "note": "Elite scorer — 19 PPG on 51.7% FG"},
+        {"name": "Tounde Yessoufou", "position": "G", "ppg": 18.0, "rpg": 5.8, "apg": 1.6, "fg_pct": 0.473, "note": "Second elite scorer — two 18+ PPG players is rare"}
+      ],
+      "injury_concerns": "Returned 0% of scoring from last year — entirely new roster",
+      "conference_tournament_status": "ELIMINATED — lost to Arizona State in Big 12 Tournament first round (83-79). Season over. Did NOT make NCAA Tournament.",
+      "projected_seed": "NOT IN TOURNAMENT",
+      "strengths": [
+        "Two elite scorers (Carr 19.0, Yessoufou 18.0) — rare offensive firepower",
+        "Hardest schedule in America (SOS 15th) — losses came against elite competition",
+        "Strong FG% (.481) — efficient when they get shots",
+        "Scott Drew is a national championship coach (2021)"
+      ],
+      "weaknesses": [
+        "16-15 record — missed tournament for first time since 2018",
+        "Defense is abysmal (DRtg 252nd)",
+        "Entirely new roster — zero returning players",
+        "Already eliminated from Big 12 Tournament",
+        "6-12 in conference — couldn't compete in Big 12"
+      ],
+      "upset_factors": {
+        "rating": 0,
+        "rationale": "Baylor is NOT in the 2026 NCAA Tournament. Season is over. Lost to Arizona State in Big 12 Tournament first round. Despite having two elite scorers, the team lost 15 games and returned zero players from last season. Not a factor in March 2026."
+      },
+      "matchup_style": {
+        "tempo": "fast — 82.7 PPG",
+        "defensive_style": "poor — gives up 77 PPG",
+        "three_point_variance": "moderate",
+        "rebounding_strength": "above average with Carr (5.5) and Yessoufou (5.8)"
+      },
+      "hot_cold_streak": "DONE — eliminated from Big 12 Tournament. Season over.",
+      "historical_tournament": "2021 National Champions under Drew. But this season was a rebuilding year with no tournament appearance."
+    }
+  ],
+  "tier_summary": {
+    "most_dangerous_upset_teams": [
+      "TCU — won 8 of last 9, elite defense, Dixon knows March",
+      "VCU — A-10 champions, 13 of 14 wins, Havoc defense, 2011 Final Four DNA",
+      "San Diego State — 2023 title game, elite defense (.402 opponent FG%), Dutcher is tournament-proven",
+      "Texas A&M — 88.5 PPG with 36.5% 3PT, surging with 4 of 5 wins",
+      "Cincinnati — top-22 defense, Baba Miller near triple-double, beat Kansas, surging since Feb 6",
+      "UCLA — SRS 32nd (better than record), Dent + Bilodeau lethal, Cronin grinds in March",
+      "NC State — 2024 Final Four program, four 13.5+ PPG scorers, SRS 31st"
+    ],
+    "bubble_teams_may_not_make_it": [
+      "Auburn (16-15, 2-8 in last 10 — ~20% chance)",
+      "Indiana (18-13, lost finale — ~40% chance)",
+      "SMU (19-12, 8-10 ACC — bubble)",
+      "Texas (18-13, 9-9 SEC — bubble)",
+      "Cincinnati (17-14, surging but 48.6% chance)",
+      "Santa Clara (25-7, needs WCC title or at-large)"
+    ],
+    "eliminated": [
+      "Baylor (16-15, lost in Big 12 Tournament first round — season over)"
+    ],
+    "key_insight": "The most dangerous 9-12 seeds in 2026 are defense-first teams (TCU, Cincinnati, SDSU, Clemson) and hot teams entering March (VCU, TCU, Texas A&M, Cincinnati). Teams with elite offenses but poor defense (Auburn, Texas, SMU) are boom-or-bust — they can win any single game but are unreliable. The classic upset formula remains: elite defense + momentum + tournament experience."
+  }
+}

@@ -274,3 +274,4 @@ cd frontend && npm run dev
 | Math Agent | Sampling algorithm, statistics | agents/reports/math-agent-report.md |
 | Stats Agent | Power index, historical data | agents/reports/stats-agent-report.md |
 | Betting Agent | Market odds, upset factors | agents/reports/betting-agent-report.md |
+| Research Validator | Fact-check, cross-reference all research | agents/research-validator-agent.md |

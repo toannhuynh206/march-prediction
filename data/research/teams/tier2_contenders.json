@@ -1,0 +1,1183 @@
+{
+  "metadata": {
+    "tier": "tier2_contenders",
+    "description": "Projected 5-8 seeds for 2026 NCAA Tournament",
+    "last_updated": "2026-03-10",
+    "tournament_year": 2026,
+    "selection_sunday": "2026-03-15"
+  },
+  "teams": [
+    {
+      "name": "Alabama",
+      "record": "23-8",
+      "conference": "SEC",
+      "conference_record": "11-4",
+      "net_ranking": 17,
+      "ap_ranking": 17,
+      "kenpom": {
+        "overall_rank": 15,
+        "adj_o_rank": 3,
+        "adj_d_rank": 67,
+        "adj_o": 122.5,
+        "adj_d": 110.2,
+        "adj_em": 12.3,
+        "tempo": null,
+        "notes": "Explosive offense (3rd nationally), defensively exposed (67th)"
+      },
+      "projected_seed": 4,
+      "projected_region": "Midwest",
+      "projected_matchup": "vs. 13 Utah Valley",
+      "championship_odds": "+8000",
+      "coach": {
+        "name": "Nate Oats",
+        "years_at_school": 7,
+        "tournament_experience": "Multiple NCAA appearances, Final Four 2024",
+        "notes": "Best coaching job at Alabama per analysts"
+      },
+      "key_players": [
+        {
+          "name": "Aiden Sherrell",
+          "position": "F/C",
+          "stats": "Notable 8-block game vs Clemson, 5 pts, 10 reb",
+          "notes": "Interior presence and shot blocking"
+        },
+        {
+          "name": "Taylor Bol Bowen",
+          "position": "F",
+          "stats": null,
+          "notes": "Florida State transfer, dealing with numerous injuries all season"
+        }
+      ],
+      "injuries": [
+        "Davion Hannah — OUT for rest of year",
+        "Keitenn Bristow — OUT for rest of year",
+        "Collins Onyejiaka — OUT (heart condition), not cleared for full workouts",
+        "Taylor Bol Bowen — injury concerns, health for March critical"
+      ],
+      "strengths": [
+        "Elite offense — 92.9 PPG (1st nationally), 122.5 AdjO (11th)",
+        "Strength of schedule rating 14.16 (2nd nationally)",
+        "Won 6 straight and 9-1 stretch to close regular season",
+        "Finished 2nd in SEC"
+      ],
+      "weaknesses": [
+        "Worst defense among top teams — 83.6 PPG allowed (355th nationally)",
+        "Defensive rating 110.2 (277th nationally)",
+        "Multiple key injuries — Oats calls it 'most random unlucky injuries' ever",
+        "Defensive inconsistency makes them volatile in tournament"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering SEC Tournament",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Any team with strong halfcourt offense can exploit poor defense",
+        "three_point_variance": "High — offense relies on volume shooting",
+        "notes": "Floor/ceiling team: could lose Round 1 or reach Elite 8"
+      }
+    },
+    {
+      "name": "Arkansas",
+      "record": "23-8",
+      "conference": "SEC",
+      "conference_record": null,
+      "net_ranking": 18,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 18,
+        "adj_o_rank": 6,
+        "adj_d_rank": 44,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Dynamic scoring (6th AdjO), unstable stops (44th AdjD)"
+      },
+      "projected_seed": 5,
+      "projected_region": "South",
+      "projected_matchup": "vs. 12 High Point",
+      "championship_odds": "+10000",
+      "coach": {
+        "name": "John Calipari",
+        "years_at_school": 2,
+        "tournament_experience": "National Champion (2012 Kentucky), 4 Final Fours, 900+ career wins (5th all-time)",
+        "notes": "Reached 900th Division I win in 2026 regular season finale vs Missouri"
+      },
+      "key_players": [
+        {
+          "name": "Darius Acuff Jr.",
+          "position": "G",
+          "stats": "SEC Player of the Year, Freshman of the Year, First Team All-SEC",
+          "notes": "Projected top-10 NBA Draft pick, one-and-done expected"
+        },
+        {
+          "name": "Thomas",
+          "position": null,
+          "stats": null,
+          "notes": "Key contributor alongside Acuff"
+        },
+        {
+          "name": "Knox",
+          "position": null,
+          "stats": null,
+          "notes": "Important supporting cast member"
+        },
+        {
+          "name": "Ewin",
+          "position": null,
+          "stats": null,
+          "notes": "Supporting cast"
+        },
+        {
+          "name": "Brazile",
+          "position": null,
+          "stats": null,
+          "notes": "Supporting cast"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "SEC Player of the Year (Acuff) — franchise player",
+        "Calipari's tournament pedigree (4 Final Fours, 1 title)",
+        "Dynamic scoring ability with top-6 offense nationally",
+        "2025 tournament experience (Sweet Sixteen run as 10 seed)"
+      ],
+      "weaknesses": [
+        "Defensive inconsistency — unstable stops",
+        "Heavy reliance on Acuff — supporting cast needs to step up",
+        "Calipari Year 2 at Arkansas still building culture"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [
+        "Beat Tennessee (SEC)"
+      ],
+      "conference_tournament_status": "Entering SEC Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Can be beaten by disciplined defensive teams",
+        "three_point_variance": null,
+        "notes": "Calipari has historically underperformed seeds in tournament — but also has upset DNA"
+      }
+    },
+    {
+      "name": "Kansas",
+      "record": "22-9",
+      "conference": "Big 12",
+      "conference_record": "12-6",
+      "net_ranking": 19,
+      "ap_ranking": 8,
+      "kenpom": {
+        "overall_rank": 19,
+        "adj_o_rank": 53,
+        "adj_d_rank": 10,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Elite defense (10th nationally), middling offense (53rd)"
+      },
+      "projected_seed": 4,
+      "projected_region": "South",
+      "projected_matchup": "vs. 13 Stephen F. Austin",
+      "championship_odds": "+4000",
+      "coach": {
+        "name": "Bill Self",
+        "years_at_school": 22,
+        "tournament_experience": "2 National Championships (2008, 2022), 4 Final Fours, all-time great tournament coach",
+        "notes": "Managing Darryn Peterson's health and availability has been season storyline"
+      },
+      "key_players": [
+        {
+          "name": "Darryn Peterson",
+          "position": "G",
+          "stats": "20.0 PPG, 3.7 RPG, 1.5 APG, 1.2 SPG, 48.5/43.1/79.5 shooting",
+          "notes": "No. 1 overall 2025 recruit, projected No. 1 pick in 2026 NBA Draft. Missed 11 games + multiple midgame exits due to cramping. 27.2 MPG avg."
+        },
+        {
+          "name": "Tre White",
+          "position": "G",
+          "stats": "23 pts in key game, 6-of-9 FG, 3-of-4 from 3",
+          "notes": "Picks up slack when Peterson is out"
+        }
+      ],
+      "injuries": [
+        "Darryn Peterson — recurring cramping issues, midgame exits throughout season. Bill Self: 'It's a concern'"
+      ],
+      "strengths": [
+        "Elite defense — 10th in AdjD nationally",
+        "Darryn Peterson generational talent when healthy",
+        "Bill Self's tournament coaching pedigree",
+        "Finished 3rd in Big 12 (behind Arizona and Houston)",
+        "Beat Kansas State 104-85 in senior night blowout"
+      ],
+      "weaknesses": [
+        "Peterson health is massive question mark — missed 11 games",
+        "Offense middling (53rd AdjO) when Peterson is limited",
+        "Inconsistency due to lineup disruptions",
+        "Self admitted he's unsure if he's truly coached Peterson through sustained stretch"
+      ],
+      "notable_wins": [
+        "Kansas State 104-85 (Peterson 27 pts)"
+      ],
+      "notable_losses": [
+        "Arizona (blowout loss)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering Big 12 Tournament",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "If Peterson goes down or has cramping, offense can stall",
+        "three_point_variance": "Peterson shoots 43.1% from 3 — high upside",
+        "notes": "Seth Greenberg says Kansas is THE team to watch in March. Upside of a 1-seed, downside of a second round exit."
+      }
+    },
+    {
+      "name": "Tennessee",
+      "record": "21-10",
+      "conference": "SEC",
+      "conference_record": "11-6",
+      "net_ranking": 20,
+      "ap_ranking": 23,
+      "kenpom": {
+        "overall_rank": 14,
+        "adj_o_rank": 36,
+        "adj_d_rank": 15,
+        "adj_o": 117.3,
+        "adj_d": 101.0,
+        "adj_em": 16.3,
+        "tempo": null,
+        "notes": "Elite defense (15th AdjD), solid offense (36th AdjO). Balanced profile."
+      },
+      "projected_seed": 5,
+      "projected_region": "West",
+      "projected_matchup": "vs. 12 Yale",
+      "championship_odds": "+7000",
+      "coach": {
+        "name": "Rick Barnes",
+        "years_at_school": 11,
+        "tournament_experience": "7 consecutive NCAA appearances (2018-2025), 9th on all-time D1 wins list, 836 career wins. 2 Elite Eights in last 2 years.",
+        "notes": "First among active coaches in career wins"
+      },
+      "key_players": [
+        {
+          "name": "Nate Ament",
+          "position": "F",
+          "stats": null,
+          "notes": "Five-star 2025 recruit, freshman star"
+        },
+        {
+          "name": "Gillespie",
+          "position": "G",
+          "stats": null,
+          "notes": "Ball control and floor general"
+        },
+        {
+          "name": "Bishop Boswell",
+          "position": "G",
+          "stats": null,
+          "notes": "Returning player, praised for offseason development"
+        },
+        {
+          "name": "Amaree Abram",
+          "position": "G",
+          "stats": null,
+          "notes": "SEC and CUSA experience"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite defense — 68.9 PPG allowed (55th nationally), AdjD rank 15",
+        "Strong SRS: 22.44 (17th nationally)",
+        "Excellent coaching pedigree — Barnes has 2 Elite Eights in last 2 years",
+        "Versatile roster built on defense and upside",
+        "Strong transition game — 16-4 fast-break points edge vs Louisville"
+      ],
+      "weaknesses": [
+        "Shooting guard position light on proven production",
+        "10 losses — most among this tier",
+        "Newcomer integration questions",
+        "Not as explosive offensively as other SEC teams"
+      ],
+      "notable_wins": [
+        "Louisville 83-62 (21-10 points off turnovers edge)"
+      ],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering SEC Tournament, 4th in SEC",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Teams with elite shooting can stress their offense",
+        "three_point_variance": null,
+        "notes": "Rick Barnes' tournament track record is strong — back-to-back Elite Eights. Defense-first identity travels well in March."
+      }
+    },
+    {
+      "name": "Saint John's",
+      "record": "25-6",
+      "conference": "Big East",
+      "conference_record": null,
+      "net_ranking": 21,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 21,
+        "adj_o_rank": 51,
+        "adj_d_rank": 14,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Elite defense (14th AdjD), offense can stall (51st AdjO). Controls tempo and suppresses efficiency."
+      },
+      "projected_seed": 5,
+      "projected_region": "East",
+      "projected_matchup": "vs. 12 Northern Iowa",
+      "championship_odds": "+2500",
+      "coach": {
+        "name": "Rick Pitino",
+        "years_at_school": 3,
+        "tournament_experience": "2 National Championships (1996 Kentucky, 2013 Louisville), multiple Final Fours. Hall of Famer.",
+        "notes": "Led St. John's to first outright regular season title since 1985. No. 1 ranked transfer class."
+      },
+      "key_players": [
+        {
+          "name": "Zuby Ejiofor",
+          "position": "F",
+          "stats": "Big East Preseason Player of the Year",
+          "notes": "6-9 senior, one of only 2 returnees from 2023-24 roster"
+        },
+        {
+          "name": "Ian Jackson",
+          "position": "G",
+          "stats": "Nearly 40% from 3-pt range at UNC",
+          "notes": "6-5 guard, UNC transfer, second-leading scorer as freshman"
+        },
+        {
+          "name": "Joson Sanon",
+          "position": "G",
+          "stats": "12 PPG, 37% from 3 at Arizona State",
+          "notes": "6-5 sophomore transfer"
+        },
+        {
+          "name": "Oziyah Sellers",
+          "position": "G",
+          "stats": "13.7 PPG, 40% from 3 at Stanford",
+          "notes": "6-5 catch-and-shoot senior"
+        },
+        {
+          "name": "Dylan Darling",
+          "position": "PG",
+          "stats": "Big Sky Player of the Year at Idaho State",
+          "notes": "6-1, only true point guard on roster"
+        },
+        {
+          "name": "Sadiku Ibine Ayo",
+          "position": "F",
+          "stats": null,
+          "notes": "6-7 senior, one of 2 returnees"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite defense — 14th nationally in AdjD",
+        "Rick Pitino's tournament pedigree — 2 national titles",
+        "Depth of shooting: Jackson (40%), Sellers (40%), Sanon (37%)",
+        "Won Big East regular season and tournament last year (31-5)",
+        "Top-ranked transfer class built for March"
+      ],
+      "weaknesses": [
+        "Offense can stall — 51st in AdjO",
+        "Only 2 returnees from prior roster — chemistry concerns",
+        "Heavy reliance on transfers finding cohesion",
+        "Lost to 10-seed Arkansas in 2025 Round of 32 — early exit baggage"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering Big East Tournament",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Teams that can break their tempo and force up-and-down pace",
+        "three_point_variance": "Multiple 37-40% shooters — consistent but not explosive",
+        "notes": "Legitimate Final Four contender. Pitino's teams historically peak in March. Defense-first identity travels well."
+      }
+    },
+    {
+      "name": "Saint Mary's",
+      "record": "26-5",
+      "conference": "WCC",
+      "conference_record": "15-1",
+      "net_ranking": 22,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 22,
+        "adj_o_rank": 43,
+        "adj_d_rank": 17,
+        "adj_o": 117.6,
+        "adj_d": 96.5,
+        "adj_em": 21.1,
+        "tempo": null,
+        "notes": "Strong defense (17th AdjD), solid offense (43rd AdjO). High AdjEM due to elite defense."
+      },
+      "projected_seed": 7,
+      "projected_region": "West",
+      "projected_matchup": "vs. 10 NC State",
+      "championship_odds": null,
+      "coach": {
+        "name": "Randy Bennett",
+        "years_at_school": 25,
+        "tournament_experience": "Multiple NCAA appearances, consistent WCC contender alongside Gonzaga",
+        "notes": "Known for disciplined, well-coached teams"
+      },
+      "key_players": [
+        {
+          "name": "Mikey Lewis",
+          "position": "G",
+          "stats": "13.0 PPG, 38.6% FG",
+          "notes": "Leading scorer"
+        },
+        {
+          "name": "Joshua Dent",
+          "position": "G",
+          "stats": "5.5 APG (3rd in WCC)",
+          "notes": "Floor general"
+        },
+        {
+          "name": "Andrew McKeever",
+          "position": "F",
+          "stats": "9.5 RPG",
+          "notes": "Dominant rebounder"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite defense — 64.5 PPG allowed (12th nationally), AdjD rank 17",
+        "Strong rebounding (McKeever 9.5 RPG)",
+        "Disciplined, well-coached program under Bennett",
+        "26-5 record with dominant WCC performance (15-1)"
+      ],
+      "weaknesses": [
+        "Weak strength of schedule — SOS 4.01 (87th), WCC not a power conference",
+        "Leading scorer Lewis shooting only 38.6% from field",
+        "May struggle against elite athletic teams from power conferences",
+        "Limited marquee wins to prove tournament readiness"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering WCC Tournament as top seed",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Athletic, fast-paced teams can overwhelm deliberate style",
+        "three_point_variance": null,
+        "notes": "Classic mid-major that can grind out wins. Randy Bennett teams historically play well in first-round upsets but struggle in later rounds."
+      }
+    },
+    {
+      "name": "North Carolina",
+      "record": "24-7",
+      "conference": "ACC",
+      "conference_record": null,
+      "net_ranking": 23,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 30,
+        "adj_o_rank": 35,
+        "adj_d_rank": 34,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Balanced profile — 35th offense, 34th defense. No elite strength."
+      },
+      "projected_seed": 6,
+      "projected_region": "East",
+      "projected_matchup": "vs. 11 Miami (OH)",
+      "championship_odds": null,
+      "coach": {
+        "name": "Hubert Davis",
+        "years_at_school": 5,
+        "tournament_experience": "National Championship Game (2022), multiple NCAA appearances",
+        "notes": "Lost virtually entire core from 2024-25 — massive roster turnover"
+      },
+      "key_players": [
+        {
+          "name": "Seth Trimble",
+          "position": "G",
+          "stats": null,
+          "notes": "Only main rotation player who returned from 2024-25"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "24-7 record despite massive roster turnover — impressive coaching",
+        "Blue-blood program with championship pedigree",
+        "Balanced offensive and defensive profile",
+        "Strong non-conference schedule with Kansas and Kentucky"
+      ],
+      "weaknesses": [
+        "Lost all 5 starters from 2024-25 (RJ Davis, Withers, Cadeau, Jackson, Washington, Lubin all gone)",
+        "KenPom rank (30th) lower than NET rank (23rd) — may be slightly overrated",
+        "No proven go-to scorer in crunch time",
+        "2025 tournament: early exit as 11 seed (lost to Ole Miss in Round of 64)"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering ACC Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Teams with dominant individual scorers can exploit lack of go-to player",
+        "three_point_variance": null,
+        "notes": "Blue-blood deflator applies. UNC historically gets favorable treatment in seeding. Hubert Davis has mixed March results."
+      }
+    },
+    {
+      "name": "BYU",
+      "record": "21-10",
+      "conference": "Big 12",
+      "conference_record": "8-9",
+      "net_ranking": 24,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 25,
+        "adj_o_rank": 11,
+        "adj_d_rank": 68,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Offensive powerhouse (11th AdjO), defensive liability (68th AdjD). Similar profile to Alabama."
+      },
+      "projected_seed": 6,
+      "projected_region": "South",
+      "projected_matchup": "vs. 11 VCU/Stanford",
+      "championship_odds": null,
+      "coach": {
+        "name": "Kevin Young",
+        "years_at_school": 2,
+        "tournament_experience": "2025 Sweet Sixteen in first year as HC",
+        "notes": "Former NBA assistant, building program quickly"
+      },
+      "key_players": [],
+      "injuries": [],
+      "strengths": [
+        "Elite offense — 84.4 PPG, 11th in AdjO nationally",
+        "Big 12 conference battle-tested (though 8-9 in league)",
+        "Made Sweet Sixteen in 2025 (beat VCU and Wisconsin)",
+        "Kevin Young's NBA coaching background"
+      ],
+      "weaknesses": [
+        "Poor defense — 75.8 PPG allowed, 68th in AdjD",
+        "Below .500 in Big 12 play (8-9)",
+        "Got blown out by Alabama 113-88 in 2025 Sweet Sixteen",
+        "10 losses suggest inconsistency"
+      ],
+      "notable_wins": [
+        "VCU 80-71 (2025 NCAA R1)",
+        "Wisconsin 91-89 (2025 NCAA R2)"
+      ],
+      "notable_losses": [
+        "Alabama 113-88 (2025 Sweet Sixteen)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering Big 12 Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Elite offensive teams can outscore them; defensive teams can stifle them",
+        "three_point_variance": "Offense-dependent, high variance",
+        "notes": "Dangerous first-round opponent — can score with anyone. But defensive issues limit ceiling."
+      }
+    },
+    {
+      "name": "Iowa",
+      "record": "20-11",
+      "conference": "Big Ten",
+      "conference_record": null,
+      "net_ranking": 25,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 24,
+        "adj_o_rank": 32,
+        "adj_d_rank": 28,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Balanced profile — solid on both ends (32nd O, 28th D)"
+      },
+      "projected_seed": 9,
+      "projected_region": "East",
+      "projected_matchup": "vs. 8 TCU",
+      "championship_odds": null,
+      "coach": {
+        "name": "Ben McCollum",
+        "years_at_school": 1,
+        "tournament_experience": "First year at major D1 level — came from Northwest Missouri State (4 D2 titles)",
+        "notes": "12 newcomers on 14-player roster. Preseason All-American Bennett Stirtz."
+      },
+      "key_players": [
+        {
+          "name": "Bennett Stirtz",
+          "position": "G",
+          "stats": "Preseason All-American",
+          "notes": "Senior leader, primary offensive catalyst"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Balanced efficiency — solid on both ends",
+        "Bennett Stirtz is a proven scorer and leader",
+        "Big Ten schedule provides tournament preparation",
+        "KenPom rank (24th) better than NET (25th)"
+      ],
+      "weaknesses": [
+        "First-year head coach at D1 level — steep learning curve",
+        "12 newcomers out of 14 players — roster chemistry unknown",
+        "20-11 record — bubble team, not a lock (ESPN: 96% chance)",
+        "Lost to Nebraska 84-75 OT in regular season finale"
+      ],
+      "notable_wins": [],
+      "notable_losses": [
+        "Nebraska 84-75 OT (regular season finale)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "No. 9 seed in Big Ten Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": true,
+        "matchup_vulnerabilities": "New coach and roster may not handle tournament pressure well",
+        "three_point_variance": null,
+        "notes": "Classic 8/9 seed that could go either way. First-year coach at this level is a concern."
+      }
+    },
+    {
+      "name": "Wisconsin",
+      "record": "22-9",
+      "conference": "Big Ten",
+      "conference_record": "14-6",
+      "net_ranking": 26,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 23,
+        "adj_o_rank": 16,
+        "adj_d_rank": 53,
+        "adj_o": 119.1,
+        "adj_d": 108.2,
+        "adj_em": 10.9,
+        "tempo": null,
+        "notes": "Strong offense (16th AdjO), average defense (53rd AdjD)"
+      },
+      "projected_seed": 6,
+      "projected_region": "West",
+      "projected_matchup": "vs. 11 Santa Clara/SMU",
+      "championship_odds": null,
+      "coach": {
+        "name": "Greg Gard",
+        "years_at_school": 10,
+        "tournament_experience": "Multiple NCAA appearances, consistent Big Ten contender",
+        "notes": "Known for developing players and grinding out wins"
+      },
+      "key_players": [
+        {
+          "name": "John Blackwell",
+          "position": "G",
+          "stats": "20.3 PPG in January",
+          "notes": "Go-to scorer, especially in clutch moments"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Strong offense — 83.3 PPG (36th nationally), AdjO rank 16",
+        "SRS: 19.17 (27th nationally) — quality wins",
+        "Multiple Top 10 road upsets — 2 among 5 most improbable wins of season",
+        "5th in Big Ten (14-6) — battle-tested",
+        "Strong SOS: 11.49 (20th nationally)"
+      ],
+      "weaknesses": [
+        "Average defense — 75.6 PPG allowed (230th), AdjD 53rd",
+        "9 losses — inconsistency at times",
+        "Lost to BYU 91-89 in 2025 NCAA tournament"
+      ],
+      "notable_wins": [
+        "Multiple Top 10 road upsets"
+      ],
+      "notable_losses": [
+        "BYU 91-89 (2025 NCAA R2)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering Big Ten Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Can be outscored by elite offenses due to defensive gaps",
+        "three_point_variance": null,
+        "notes": "Classic Wisconsin — well-coached, plays above their talent level. Blackwell is a potential breakout March performer."
+      }
+    },
+    {
+      "name": "Saint Louis",
+      "record": "26-4",
+      "conference": "Atlantic 10",
+      "conference_record": "15-2",
+      "net_ranking": 27,
+      "ap_ranking": 25,
+      "kenpom": {
+        "overall_rank": 40,
+        "adj_o_rank": 47,
+        "adj_d_rank": 41,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Balanced but not elite on either end. 40th KenPom despite 26-4 record — SOS concerns."
+      },
+      "projected_seed": 9,
+      "projected_region": "West",
+      "projected_matchup": "vs. 8 UCLA",
+      "championship_odds": null,
+      "coach": {
+        "name": null,
+        "years_at_school": null,
+        "tournament_experience": null,
+        "notes": null
+      },
+      "key_players": [],
+      "injuries": [],
+      "strengths": [
+        "Dominant A-10 regular season — 26-4, 15-2 in conference",
+        "Ranked 25th in AP Poll",
+        "Strong record suggests team chemistry and consistency"
+      ],
+      "weaknesses": [
+        "Lost A-10 tournament quarterfinal to Loyola Chicago 64-72",
+        "Ended up in NIT, lost to Arkansas State 78-103 in first round",
+        "KenPom rank (40th) FAR below record — classic A-10 bubble team",
+        "Weak strength of schedule — wins not impressive to committee",
+        "NIT loss by 25 points raises serious questions about competitiveness vs NCAA-level teams"
+      ],
+      "notable_wins": [
+        "Davidson 83-75 (A-10 tournament R2)"
+      ],
+      "notable_losses": [
+        "Loyola Chicago 64-72 (A-10 tournament QF)",
+        "Arkansas State 78-103 (NIT R1 — 25-point loss)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "ELIMINATED — Lost A-10 QF, placed in NIT, lost R1",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": true,
+        "matchup_vulnerabilities": "Cannot compete with power conference teams (NIT blowout loss)",
+        "three_point_variance": null,
+        "notes": "WARNING: Did NOT make NCAA Tournament. NIT team only. 26-4 record was misleading — weak schedule inflated record. Remove from bracket consideration."
+      }
+    },
+    {
+      "name": "Kentucky",
+      "record": "19-12",
+      "conference": "SEC",
+      "conference_record": "10-8",
+      "net_ranking": 28,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 27,
+        "adj_o_rank": 38,
+        "adj_d_rank": 31,
+        "adj_o": 116.6,
+        "adj_d": 105.8,
+        "adj_em": 10.8,
+        "tempo": null,
+        "notes": "Balanced but unspectacular — 38th O, 31st D"
+      },
+      "projected_seed": 7,
+      "projected_region": "East",
+      "projected_matchup": "vs. 10 Ohio State",
+      "championship_odds": "+10000",
+      "coach": {
+        "name": "Mark Pope",
+        "years_at_school": 2,
+        "tournament_experience": "Sweet 16 in Year 1 (2025). Former BYU coach.",
+        "notes": "Built roster primarily via transfer portal. Year 2 should be less chaotic."
+      },
+      "key_players": [
+        {
+          "name": "Jayden Quaintance",
+          "position": "C",
+          "stats": null,
+          "notes": "Transfer from Arizona State, projected top-5 pick in 2026 NBA Draft"
+        },
+        {
+          "name": "Jaland Lowe",
+          "position": "PG",
+          "stats": "16.8 PPG, 4.2 RPG, 5.5 APG (at Pittsburgh)",
+          "notes": "Floor general, former Top 100 prospect"
+        },
+        {
+          "name": "Otega Oweh",
+          "position": "G",
+          "stats": null,
+          "notes": "Transfer from Oklahoma, one of Pope's best players in Year 1"
+        },
+        {
+          "name": "Kam Williams",
+          "position": "G",
+          "stats": "Started all 36 games in 2024-25",
+          "notes": "Lights-out shooter"
+        },
+        {
+          "name": "Jasper Johnson",
+          "position": "G",
+          "stats": null,
+          "notes": "Strong shooter"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite talent — Quaintance (projected top-5 pick), Lowe (16.8/4.2/5.5)",
+        "Deep shooting — Williams, Jelavic, Johnson, Lowe, Chandler all lights-out",
+        "Sweet 16 experience from 2025",
+        "Mark Pope's roster continuity better in Year 2",
+        "Blue-blood program with championship DNA"
+      ],
+      "weaknesses": [
+        "12 losses — most on this entire list",
+        "19-12 record underwhelming for Kentucky standards",
+        "Transfer-heavy roster still gelling",
+        "Lost to Tennessee 78-65 in 2025 Sweet Sixteen"
+      ],
+      "notable_wins": [
+        "Troy 76-57 (2025 NCAA R1)",
+        "Illinois 84-75 (2025 NCAA R2)"
+      ],
+      "notable_losses": [
+        "Tennessee 78-65 (2025 Sweet Sixteen)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering SEC Tournament",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Inconsistency — capable of beating anyone or losing to anyone",
+        "three_point_variance": "Multiple shooters but volume can be streaky",
+        "notes": "Blue-blood deflator applies (0.88-0.92 multiplier per CLAUDE.md). Kentucky always dangerous in March but 12 losses is concerning. Quaintance is a game-changer if he's locked in."
+      }
+    },
+    {
+      "name": "Utah State",
+      "record": "24-6",
+      "conference": "Mountain West",
+      "conference_record": "15-5",
+      "net_ranking": 29,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 35,
+        "adj_o_rank": 25,
+        "adj_d_rank": 63,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Solid offense (25th AdjO), weak defense (63rd AdjD). Classic mid-major scorer."
+      },
+      "projected_seed": 9,
+      "projected_region": "Midwest",
+      "projected_matchup": "vs. 8 Georgia",
+      "championship_odds": null,
+      "coach": {
+        "name": "Jerrod Calhoun",
+        "years_at_school": null,
+        "tournament_experience": "4 consecutive NCAA tournament appearances (through 2025-26)",
+        "notes": "Won outright Mountain West regular season title — 3rd all-time MW championship"
+      },
+      "key_players": [],
+      "injuries": [],
+      "strengths": [
+        "Mountain West regular season champions (outright, 15-5)",
+        "12th 25-win season in program history",
+        "First time winning 25+ games in 4 straight seasons",
+        "Strong offense — 25th in AdjO",
+        "Consistent program — 4 straight NCAA appearances"
+      ],
+      "weaknesses": [
+        "Lost MW Tournament semifinal to Colorado State",
+        "Weak defense — 63rd in AdjD",
+        "KenPom rank (35th) well below NET (29th) — SOS concerns",
+        "Mid-major ceiling — may lack talent for deep run"
+      ],
+      "notable_wins": [
+        "UNLV (MW Tournament R1)"
+      ],
+      "notable_losses": [
+        "Colorado State (MW Tournament SF)"
+      ],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Lost MW Tournament semifinal",
+      "upset_factors": {
+        "hot_streak": false,
+        "cold_streak": true,
+        "matchup_vulnerabilities": "Defensive weakness can be exploited by high-powered offenses",
+        "three_point_variance": null,
+        "notes": "Consistent program but not a deep-run threat. 8/9 game is a coin flip. Conference tournament loss hurts momentum."
+      }
+    },
+    {
+      "name": "Ohio State",
+      "record": "20-11",
+      "conference": "Big Ten",
+      "conference_record": "11-8",
+      "net_ranking": 30,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 26,
+        "adj_o_rank": 18,
+        "adj_d_rank": 52,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Strong offense (18th AdjO), below-average defense (52nd AdjD)"
+      },
+      "projected_seed": 10,
+      "projected_region": "East",
+      "projected_matchup": "vs. 7 Kentucky",
+      "championship_odds": null,
+      "coach": {
+        "name": "Jake Diebler",
+        "years_at_school": 2,
+        "tournament_experience": "First NCAA tournament berth in 4 years if they make it",
+        "notes": "Entering pivotal second season with upperclassman-laden lineup"
+      },
+      "key_players": [
+        {
+          "name": "Bruce Thornton",
+          "position": "G",
+          "stats": "25 pts, 7 ast in finale vs Indiana",
+          "notes": "Primary scorer and facilitator"
+        },
+        {
+          "name": "John Mobley Jr.",
+          "position": "G/F",
+          "stats": "18 pts in finale vs Indiana",
+          "notes": "Secondary scorer"
+        },
+        {
+          "name": "Amare Bynum",
+          "position": "G",
+          "stats": "18 pts in finale vs Indiana",
+          "notes": "Third scoring option"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Strong offense — 18th in AdjO nationally",
+        "Multiple scorers (Thornton, Mobley, Bynum all scored 18+ vs Indiana)",
+        "Beat Indiana 91-78 in regular season finale — strong finish",
+        "KenPom (26th) better than NET (30th)",
+        "Upperclassman-laden lineup — experience"
+      ],
+      "weaknesses": [
+        "11 losses — inconsistent season",
+        "Defense below average — 52nd in AdjD",
+        "No NCAA tournament in 4 years — rust",
+        "8th in Big Ten — middle of the pack"
+      ],
+      "notable_wins": [
+        "Indiana 91-78 (regular season finale)"
+      ],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering Big Ten Tournament (March 12)",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Defensive weaknesses can be exposed by elite offenses",
+        "three_point_variance": null,
+        "notes": "7/10 matchup vs Kentucky is a classic coin-flip game. Both teams have similar profiles. Ohio State's offense could carry them."
+      }
+    },
+    {
+      "name": "Georgia",
+      "record": "22-9",
+      "conference": "SEC",
+      "conference_record": null,
+      "net_ranking": 31,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 31,
+        "adj_o_rank": 12,
+        "adj_d_rank": 87,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Elite offense (12th AdjO), terrible defense (87th AdjD). Most offense-skewed profile on this list."
+      },
+      "projected_seed": 8,
+      "projected_region": "Midwest",
+      "projected_matchup": "vs. 9 Utah State",
+      "championship_odds": null,
+      "coach": {
+        "name": "Mike White",
+        "years_at_school": 4,
+        "tournament_experience": "2 consecutive NCAA tournament appearances (first time since 2001-02). Coach of the Year in 3 conferences (SEC, CUSA, WAC).",
+        "notes": "Ranked 11th in SEC pay but overperforming. Building historic program."
+      },
+      "key_players": [
+        {
+          "name": "Blue Cain",
+          "position": "G",
+          "stats": null,
+          "notes": "Key returning player"
+        },
+        {
+          "name": "Somto Cyril",
+          "position": "F/C",
+          "stats": null,
+          "notes": "Key returning player"
+        },
+        {
+          "name": "Dylan James",
+          "position": "F",
+          "stats": null,
+          "notes": "Key returning player"
+        },
+        {
+          "name": "Justin Abson",
+          "position": "F",
+          "stats": null,
+          "notes": "Key returning player"
+        },
+        {
+          "name": "Jordan Ross",
+          "position": "G",
+          "stats": null,
+          "notes": "Transfer from Saint Mary's — sure-fire impact player"
+        },
+        {
+          "name": "Kanon Catchings",
+          "position": "F",
+          "stats": null,
+          "notes": "Transfer from BYU"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite offense — 12th in AdjO nationally",
+        "22 wins is program record for regular season",
+        "Back-to-back NCAA appearances (first time in 24 years)",
+        "Mike White overperforming relative to resources",
+        "Four-guard lineups create matchup problems",
+        "Improved 3-pt shooting and assist-turnover ratio"
+      ],
+      "weaknesses": [
+        "Worst defense on this list — 87th in AdjD",
+        "Lost Asa Newell (projected first-rounder) and Silas Demary Jr. (to UConn)",
+        "Smaller, faster lineup may get bullied inside",
+        "SEC schedule doesn't forgive defensive lapses"
+      ],
+      "notable_wins": [
+        "Mississippi State (regular season finale — 22nd win, program record)"
+      ],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering SEC Tournament",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "Any physical team with interior presence can exploit small lineup",
+        "three_point_variance": "Four-guard lineup is 3-pt dependent",
+        "notes": "House money team — playing with nothing to lose. Program in historic territory. But 87th defense is alarming for tournament play."
+      }
+    },
+    {
+      "name": "Miami FL",
+      "record": "24-7",
+      "conference": "ACC",
+      "conference_record": "13-4",
+      "net_ranking": 32,
+      "ap_ranking": null,
+      "kenpom": {
+        "overall_rank": 29,
+        "adj_o_rank": 33,
+        "adj_d_rank": 35,
+        "adj_o": null,
+        "adj_d": null,
+        "adj_em": null,
+        "tempo": null,
+        "notes": "Well-balanced — 33rd O, 35th D. No glaring weakness."
+      },
+      "projected_seed": 7,
+      "projected_region": "South",
+      "projected_matchup": "vs. 10 Texas A&M",
+      "championship_odds": null,
+      "coach": {
+        "name": "Jai Lucas",
+        "years_at_school": 1,
+        "tournament_experience": "First year as head coach. Former assistant at Duke and Kentucky.",
+        "notes": "17-win improvement over last season — largest turnaround in D1. 24 wins matches program record for regular season."
+      },
+      "key_players": [
+        {
+          "name": "Malik Reneau",
+          "position": "F",
+          "stats": "20.4 PPG (5th ACC), 6.8 RPG, 2.2 APG, 1 BPG, 56.8% FG, 35% 3PT",
+          "notes": "Senior, primary scorer"
+        },
+        {
+          "name": "Tre Donaldson",
+          "position": "G",
+          "stats": "23 pts in key game, 5 AST, 3 STL, surpassed 1000 career pts",
+          "notes": "Senior, secondary scorer and playmaker"
+        },
+        {
+          "name": "Ernest Udeh Jr.",
+          "position": "C",
+          "stats": "6.9 PPG, 9.9 RPG (3rd ACC), 1.1 STL, 1.1 BPG, 71.7% FG",
+          "notes": "Senior, interior anchor"
+        },
+        {
+          "name": "Tru Washington",
+          "position": "G",
+          "stats": "12.8 PPG, 4.2 RPG, 2.0 SPG (3rd ACC), 49.3% FG",
+          "notes": "Junior, defensive menace"
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Biggest turnaround in D1 — 17-win improvement",
+        "Balanced offense and defense — no glaring weakness",
+        "Strong interior — Udeh (9.9 RPG, 71.7% FG) + Reneau (20.4 PPG)",
+        "Won 7 of 8 in February — peaking at right time",
+        "13-4 in ACC — strong conference record",
+        "Multiple senior leaders (Reneau, Donaldson, Udeh)"
+      ],
+      "weaknesses": [
+        "First-year head coach in tournament — no HC postseason track record",
+        "KenPom (29th) lower than NET (32nd) inverted — may be fairly rated",
+        "ACC strength of schedule questions",
+        "No recent tournament pedigree for program"
+      ],
+      "notable_wins": [],
+      "notable_losses": [],
+      "head_to_head_vs_tournament_teams": [],
+      "conference_tournament_status": "Entering ACC Tournament",
+      "upset_factors": {
+        "hot_streak": true,
+        "cold_streak": false,
+        "matchup_vulnerabilities": "First-time HC in pressure situations is unknown variable",
+        "three_point_variance": "Reneau at 35% from 3, Washington at 33.9% — decent but not elite",
+        "notes": "Fascinating team — enormous turnaround, senior-laden, peaking in March. Jai Lucas has Duke/UK pedigree as assistant. Could be this year's Cinderella story or could flame out early."
+      }
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "blue_blood_bias": {
+    "description": "Blue-blood programs (Duke, Kentucky, Kansas, UNC, UCLA) attract disproportionate public betting volume due to brand recognition. Sportsbooks shade lines against these teams to balance liability, creating inflated lines. When 70-80% of bets land on a blue-blood favorite, the spread moves beyond the team's true probability. Sharp bettors exploit this by fading blue-blood favorites, especially in futures markets where the premium is most pronounced.",
+    "adjustment_factor": 0.90,
+    "adjustment_range": [0.88, 0.92],
+    "affected_teams": ["Duke", "Kentucky", "Kansas", "North Carolina", "UCLA"],
+    "mechanism": "Public money inflates futures odds and point spreads. Books shade lines toward public teams, creating value on opponents. The effect is strongest in early rounds where casual bettors are most active.",
+    "evidence": [
+      "Teams getting less than 40% of spread bets have gone 14-7 ATS in tournament games",
+      "Sharp money consistently fades blue-blood favorites, especially when public bet percentage exceeds 70%",
+      "ACC teams historically cover the spread less than expected in opening rounds, partially attributed to public overvaluation"
+    ],
+    "sources": [
+      "https://www.offshoresportsbooks.com/blog/how-march-madness-betting-odds-move-during-the-tournament-public-vs-sharp-money/",
+      "https://www.sportsbettingace.com/march-madness-2026-betting-guide-top-strategies-odds-trends-and-sleeper-picks/",
+      "https://www.sportsinsights.com/blog/bettors-are-all-over-duke-today-but-are-the-blue-devils-the-smart-bet/"
+    ]
+  },
+  "seed_bias": {
+    "description": "The betting market exhibits a favorite-longshot bias: heavy favorites (20+ point spreads) are systematically overvalued, and large underdogs cover the spread at slightly above 50%. The 5-12 and 6-11 seed matchups represent the sweet spot where public money overvalues the higher seed but the actual upset probability is 35-40%.",
+    "historical_cover_rates_ats": {
+      "all_underdogs_r64": {
+        "record": "610-595-25",
+        "percentage": 50.6,
+        "note": "All-time Round of 64"
+      },
+      "underdogs_since_2015": {
+        "record": "149-133-3",
+        "percentage": 52.8,
+        "note": "Since 2015, underdogs cover at higher rate"
+      },
+      "double_digit_underdogs_r64": {
+        "record": "244-243-7",
+        "percentage": 50.1
+      },
+      "twenty_plus_point_underdogs_r64": {
+        "record": "91-85-3",
+        "percentage": 51.7,
+        "note": "Big underdogs actually cover at slightly ABOVE average rate"
+      }
+    },
+    "straight_up_win_rates_by_seed_matchup": {
+      "1_vs_16": { "higher_seed_wins": 139, "lower_seed_wins": 1, "higher_seed_pct": 99.3 },
+      "2_vs_15": { "higher_seed_wins": 132, "lower_seed_wins": 8, "higher_seed_pct": 94.3 },
+      "3_vs_14": { "higher_seed_wins": 119, "lower_seed_wins": 21, "higher_seed_pct": 85.0 },
+      "4_vs_13": { "higher_seed_wins": 111, "lower_seed_wins": 28, "higher_seed_pct": 79.3 },
+      "5_vs_12": { "higher_seed_wins": 90, "lower_seed_wins": 47, "higher_seed_pct": 64.3 },
+      "6_vs_11": { "higher_seed_wins": 88, "lower_seed_wins": 51, "higher_seed_pct": 62.9 },
+      "7_vs_10": { "higher_seed_wins": 85, "lower_seed_wins": 52, "higher_seed_pct": 60.7 },
+      "8_vs_9": { "higher_seed_wins": 69, "lower_seed_wins": 71, "higher_seed_pct": 49.3 }
+    },
+    "key_inefficiency": "The 5-12 matchup is the most mispriced: public assumes ~75% win rate for the 5-seed, but actual rate is 64.3%. The 8-9 matchup is essentially a coin flip (49.3%) but public still favors the 8-seed.",
+    "sources": [
+      "https://www.foxsports.com/stories/college-basketball/2025-march-madness-first-round-betting-trends-ncaa-tournament-odds",
+      "https://sports.betmgm.com/en/blog/ncaab/how-often-do-underdogs-win-ncaa-tournament-mens-college-basketball-bm06/",
+      "https://www.printyourbrackets.com/ncaa-tournament-records-by-seed.html",
+      "https://www.sciencedirect.com/science/article/abs/pii/S1062976916000041"
+    ]
+  },
+  "market_inefficiencies": [
+    {
+      "name": "Favorite-Longshot Bias",
+      "description": "Academic research confirms a statistically significant favorite-longshot bias in NCAA basketball betting. Big favorites (20+ point spreads) cover less often than implied, while big underdogs cover slightly more often. A strategy of betting big underdogs, especially in the Round of 64, rejects the null hypothesis of market efficiency.",
+      "magnitude": "1.1-2.7% edge on 20+ point underdogs",
+      "source": "https://www.sciencedirect.com/science/article/abs/pii/S1062976916000041"
+    },
+    {
+      "name": "Committee Seeding Bias",
+      "description": "The selection committee itself exhibits measurable bias when seeding teams. Using a decade of data, researchers found evidence that committee seeding does not perfectly reflect team quality, which creates downstream pricing inefficiencies in the betting market.",
+      "source": "https://ideas.repec.org/a/mve/journl/v40y2014i2p1-17.html"
+    },
+    {
+      "name": "ACC Conference Cover Deficit",
+      "description": "ACC teams historically cover the spread less than expected in an efficient market, particularly in opening rounds. This may be partially driven by the blue-blood effect (Duke, UNC) inflating public expectations.",
+      "source": "https://ideas.repec.org/a/spr/jecfin/v44y2020i3d10.1007_s12197-020-09507-7.html"
+    },
+    {
+      "name": "Sharp-Public Divergence Signal",
+      "description": "When bet percentage is high on one side but money percentage is high on the other side (low bets, high dollars), this signals sharp money disagreeing with the public. This divergence pattern is a reliable indicator of mispriced lines, especially in tournament games with high casual betting volume.",
+      "source": "https://www.offshoresportsbooks.com/blog/how-march-madness-betting-odds-move-during-the-tournament-public-vs-sharp-money/"
+    },
+    {
+      "name": "Overall Market Semi-Efficiency",
+      "description": "Academic literature shows mixed results: some studies reject market efficiency in 13 out of 24 bins analyzed, while others find the market reasonably efficient overall. The consensus is that the market is semi-efficient — broadly correct but with exploitable edges at the extremes (very large spreads, blue-blood matchups, specific seed matchups).",
+      "sources": [
+        "https://ideas.repec.org/a/spr/jecfin/v44y2020i3d10.1007_s12197-020-09507-7.html",
+        "https://link.springer.com/article/10.1007/BF02761584"
+      ]
+    }
+  ],
+  "conference_tournament_fatigue": {
+    "description": "Conference tournament fatigue is acknowledged as a factor but not well-quantified in academic literature. Teams playing 4-5 games in their conference tournament within a week may show diminished defensive intensity, rebounding, and late-game execution in early NCAA tournament rounds. The market does not appear to fully price this in, creating a small edge on opponents of fatigued teams.",
+    "estimated_impact": "1-3 point adjustment for teams playing 4+ conference tournament games",
+    "caveat": "Counter-argument: deep conference tournament runs may signal a team 'hitting its stride' with positive momentum, partially offsetting fatigue effects.",
+    "quantified_data_available": false,
+    "sources": [
+      "https://www.predictem.com/college-basketball/tips/march-madness-tips/"
+    ]
+  },
+  "closing_line_value": {
+    "description": "Sharp money typically moves lines early, while public money moves lines late. The closing line is generally considered the most accurate reflection of true probability, but during March Madness, the massive influx of casual bettors in the final hours before tip-off can push closing lines away from the 'true' number that sharps established earlier.",
+    "sharp_timing": "Sharp money arrives early, often within the first few hours of line release",
+    "public_timing": "Public money floods in 2-6 hours before game time, especially for nationally televised games",
+    "implication_for_model": "Opening lines may be MORE accurate than closing lines during March Madness due to public money distortion at close. Consider using a blend: weight opening lines slightly higher than closing lines for de-vig purposes.",
+    "sources": [
+      "https://www.offshoresportsbooks.com/blog/how-march-madness-betting-odds-move-during-the-tournament-public-vs-sharp-money/",
+      "https://www.sportsbettingace.com/mastering-march-madness-ats-betting-trends-top-picks-line-movement-insights/"
+    ]
+  },
+  "sharp_vs_public_splits": {
+    "description": "Sharp bettors systematically fade public favorites during the NCAA tournament. The signal is strongest when bet percentage diverges from money percentage — high bet% on one side with high money% on the other indicates sharp disagreement with the public.",
+    "key_patterns": [
+      "Teams with <40% of spread bets have gone 14-7 ATS (66.7%) in tournament games",
+      "Sharp counter-money typically arrives as a 'second wave' after initial public action",
+      "The biggest sharp-public divergences occur on blue-blood favorites and 1/2 seeds in early rounds",
+      "Sharps tend to bet underdogs more in the first round and favorites more in the Final Four"
+    ],
+    "actionable_signal": "When a team receives >70% of bets but <50% of money, the line is likely inflated by public bias. Apply a 2-4% probability deflation to that team's win probability.",
+    "sources": [
+      "https://vsin.com/college-basketball/betting-splits-and-march-madness-sharp-money-picks-for-friday-march-22nd/",
+      "https://www.actionnetwork.com/public-betting",
+      "https://rg.org/guides/sportsbetting-guides/betting-splits"
+    ]
+  },
+  "key_findings": [
+    "Blue-blood teams (Duke, Kentucky, Kansas, UNC, UCLA) have systematically inflated lines due to public money. Apply 0.88-0.92 deflator to their market-implied probabilities.",
+    "The favorite-longshot bias is real and academically confirmed: big underdogs (20+ pts) cover at 51.7%, creating a small but consistent edge.",
+    "The 5-12 seed matchup is the most mispriced by the public: actual upset rate is 35.7% vs public-implied ~25%.",
+    "The 8-9 matchup is a near-perfect coin flip (49.3% for the 8-seed) but the market often prices it as 55-60% for the 8-seed.",
+    "Opening lines may be more accurate than closing lines during March Madness because closing lines are distorted by public money.",
+    "Conference tournament fatigue is a real but under-quantified factor. Estimate 1-3 point impact for teams with 4+ conference tournament games.",
+    "Sharp-public divergence (high bet%, low money%) is the strongest single signal for identifying mispriced lines.",
+    "The NCAA selection committee itself exhibits seeding bias, which cascades into market pricing errors.",
+    "Overall market is semi-efficient: broadly correct but with exploitable edges at extremes (large spreads, blue-blood matchups, 5-12/8-9 seeds)."
+  ],
+  "model_recommendations": {
+    "blue_blood_deflator": {
+      "teams": ["Duke", "Kentucky", "Kansas", "North Carolina", "UCLA"],
+      "futures_multiplier_range": [0.88, 0.92],
+      "default_multiplier": 0.90,
+      "note": "Apply to P_market before blending. Stronger deflation (0.88) for teams with heavy public exposure in a given year."
+    },
+    "seed_matchup_adjustments": {
+      "5_vs_12": "Increase 12-seed win probability by 5-8% over market-implied",
+      "6_vs_11": "Increase 11-seed win probability by 3-5% over market-implied",
+      "8_vs_9": "Set baseline at 50/50, adjust only on power index differential",
+      "1_vs_16": "No adjustment needed — market is accurate here"
+    },
+    "closing_line_blend": "Weight opening line at 55%, closing line at 45% for de-vig calculation during March Madness",
+    "sharp_divergence_threshold": "When bet% > 70% and money% < 50% on a team, apply 2-4% deflation to that team's probability"
+  },
+  "academic_references": [
+    {
+      "title": "Committee Bias and Market Inefficiency: Evidence from the NCAA Men's Basketball Tournament",
+      "url": "https://ideas.repec.org/a/mve/journl/v40y2014i2p1-17.html",
+      "finding": "Selection committee exhibits measurable bias in seeding"
+    },
+    {
+      "title": "Efficiency in the Madness? Examining the Betting Market for the NCAA Men's Basketball Tournament",
+      "url": "https://ideas.repec.org/a/spr/jecfin/v44y2020i3d10.1007_s12197-020-09507-7.html",
+      "finding": "Market efficiency rejected in 13/24 bins; ACC teams cover less than expected"
+    },
+    {
+      "title": "A Favorite-Longshot Bias in Fixed-Odds Betting Markets",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1062976916000041",
+      "finding": "Statistically significant favorite-longshot bias in college basketball"
+    },
+    {
+      "title": "Market Efficiency and NCAA College Basketball Gambling",
+      "url": "https://link.springer.com/article/10.1007/BF02761584",
+      "finding": "Mixed evidence on overall market efficiency"
+    },
+    {
+      "title": "Understanding Price Movements in Point Spread Betting Markets",
+      "url": "https://www.researchgate.net/publication/228934319_Understanding_Price_Movements_in_Point_Spread_Betting_Markets_Evidence_from_NCAA_Basketball",
+      "finding": "Sentiment measures create pricing inefficiencies"
+    }
+  ],
+  "metadata": {
+    "research_date": "2026-03-10",
+    "tournament_year": 2026,
+    "data_coverage": "1985-2025 historical, 2026 current market"
+  }
+}

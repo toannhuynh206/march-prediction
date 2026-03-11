@@ -1,0 +1,571 @@
+{
+  "research_date": "2026-03-10",
+  "models_compared": [
+    {
+      "name": "KenPom (Ken Pomeroy)",
+      "type": "Adjusted Efficiency Metrics",
+      "methodology": "Adjusted offensive and defensive efficiency per 100 possessions, adjusted for opponent quality. Uses tempo-free statistics to compare teams regardless of pace.",
+      "accuracy": {
+        "overall_winner_prediction": "70.4% during regular season",
+        "close_games_7pts_or_fewer": "60.5% (250/413)",
+        "close_games_3pts_or_fewer": "52.7% (98/186)",
+        "championship_profile": "All but 2 champions since 2002 were top-20 in both AdjO and AdjD"
+      },
+      "strengths": [
+        "Gold standard for efficiency metrics",
+        "Excellent at identifying elite teams",
+        "Adjusts for strength of schedule",
+        "Tempo-free analysis removes pace bias"
+      ],
+      "weaknesses": [
+        "Drops to near coin-flip on close games",
+        "Doesn't account for roster changes mid-season well",
+        "Statistical darlings underperformed in 2022"
+      ]
+    },
+    {
+      "name": "FiveThirtyEight (Nate Silver / ABC News)",
+      "type": "Multi-source Blend with Elo",
+      "methodology": "Blends 6 computer power ratings (KenPom, Sagarin, Sonny Moore, LRMC, ESPN BPI, own Elo) at 75% weight + human rankings (AP poll, coaches poll, NCAA S-curve) at 25% weight. Win probability formula: P = 1/(1+10^(-travel_adjusted_diff * 30.464/400)). Adjusts for travel distance, injuries (via Win Shares), preseason rankings.",
+      "accuracy": {
+        "notes": "Refined since 2011 launch, adopted live-updating in 2016. Multiple validation studies referenced but specific Brier scores not published."
+      },
+      "strengths": [
+        "Multi-source blend smooths out individual model errors",
+        "Travel distance adjustment is unique and valuable",
+        "Injury adjustment uses Win Shares methodology",
+        "Season initialization reverts Elo to conference mean",
+        "Accounts for fewer upsets in tournament vs regular season"
+      ],
+      "weaknesses": [
+        "No longer actively maintained after FiveThirtyEight dissolution",
+        "Human ranking component may introduce bias",
+        "Doesn't account for in-game personnel changes"
+      ]
+    },
+    {
+      "name": "ESPN BPI (Basketball Power Index)",
+      "type": "Predictive Rating System",
+      "methodology": "Proprietary model using game-by-game results, schedule strength, and opponent quality. One of six systems used in FiveThirtyEight blend.",
+      "accuracy": {
+        "notes": "Used in ESPN bubble watch and bracketology projections"
+      },
+      "strengths": ["Large data pipeline", "Integrated with ESPN coverage"],
+      "weaknesses": ["Proprietary/opaque methodology"]
+    },
+    {
+      "name": "Bart Torvik (T-Rank)",
+      "type": "Adjusted Efficiency with Experience Metrics",
+      "methodology": "Similar to KenPom but adds experience/returning production metrics. Used in BartTorvik bracketology consensus.",
+      "accuracy": {
+        "notes": "Commonly used alongside KenPom in consensus models"
+      },
+      "strengths": ["Experience factor captures roster continuity", "Free and accessible"],
+      "weaknesses": ["Less established than KenPom"]
+    },
+    {
+      "name": "Sagarin Ratings",
+      "type": "Elo-style Rating System",
+      "methodology": "Rating system that produces predicted point spreads between any two teams. Agreed with picking highest seeds on 152/188 games.",
+      "accuracy": {
+        "seed_agreement": "Agreed with highest seed 152/188 games (80.9%)"
+      },
+      "strengths": ["Long historical track record", "Simple interpretability"],
+      "weaknesses": ["Heavily seed-correlated"]
+    },
+    {
+      "name": "TeamRankings",
+      "type": "Multi-factor Predictive Model",
+      "methodology": "Combines multiple rating systems. Offers pool optimization via PoolGenius bracket builder. Subscribers win 3.1x more often than expected.",
+      "accuracy": {
+        "pool_optimization": "53% of subscribers won at least one prize across recent tournaments"
+      },
+      "strengths": ["Pool optimization built in", "Public pick ownership data"],
+      "weaknesses": ["Paid service"]
+    },
+    {
+      "name": "LRMC (Logistic Regression Markov Chain)",
+      "type": "Mathematical Rating",
+      "methodology": "Joel Sokol's model using logistic regression combined with Markov chain techniques to rate teams. Part of FiveThirtyEight blend.",
+      "accuracy": {
+        "notes": "Academic model with solid theoretical foundation"
+      },
+      "strengths": ["Rigorous mathematical foundation"],
+      "weaknesses": ["Less known publicly"]
+    },
+    {
+      "name": "EvanMiya CBB Analytics",
+      "type": "Player-level Advanced Metrics",
+      "methodology": "Modern analytics platform with team, player, and lineup metrics. Focus on player-level impact data.",
+      "accuracy": {
+        "notes": "Growing reputation for player-level insights"
+      },
+      "strengths": ["Player-level granularity", "Lineup analysis"],
+      "weaknesses": ["Newer, less historical data"]
+    }
+  ],
+  "best_features": [
+    {
+      "feature": "Adjusted Efficiency Margin (AEM / Net Rating)",
+      "importance": "HIGHEST",
+      "details": "Teams with top-10 AEM have won 28 of 39 national championships. The single most powerful predictor of tournament success.",
+      "how_to_use": "AdjO - AdjD per 100 possessions, opponent-adjusted"
+    },
+    {
+      "feature": "Adjusted Defensive Efficiency",
+      "importance": "VERY HIGH",
+      "details": "75% of national champions since 2000 ranked top-20 nationally. 35 of 40 Final Four teams in top-25 defensive efficiency. Defense doesn't go cold the way shooting does.",
+      "how_to_use": "Points allowed per 100 possessions, adjusted for opponent offensive quality"
+    },
+    {
+      "feature": "Adjusted Offensive Efficiency",
+      "importance": "HIGH",
+      "details": "Strong offense is the most predictive indicator for team success overall. But 9 of 10 tournament teams with top-10 offense but outside top-100 defense lost in Round 1.",
+      "how_to_use": "Points scored per 100 possessions, adjusted for opponent defensive quality"
+    },
+    {
+      "feature": "Regular Season Wins / Win Percentage",
+      "importance": "HIGH",
+      "details": "Most influential feature in ML models (65.9% feature importance in one study). Previous season win record also significant.",
+      "how_to_use": "Total wins, conference wins, win% against tournament-caliber opponents"
+    },
+    {
+      "feature": "Strength of Schedule",
+      "importance": "HIGH",
+      "details": "Normalizes records by opponent quality. A 25-5 record in Big 12 is not same as 25-5 in Patriot League.",
+      "how_to_use": "Simple Rating System (SRS) or KenPom SOS metric"
+    },
+    {
+      "feature": "Tempo / Pace of Play",
+      "importance": "MEDIUM-HIGH",
+      "details": "Big X-factor in upsets. Understanding style-of-play clashes is important. Controlled tempo reduces game variance. Key variable in 10-variable predictive model.",
+      "how_to_use": "Possessions per 40 minutes, adjusted for opponent"
+    },
+    {
+      "feature": "Three-Point Shooting Percentage",
+      "importance": "MEDIUM",
+      "details": "Consistent 3PT shooting (above 36%) is an upset predictor. Hot shooting beyond the arc has fueled notable upsets. But high variance makes it risky to rely on.",
+      "how_to_use": "Season 3PT%, 3PT attempt rate, 3PT defense"
+    },
+    {
+      "feature": "Free Throw Rate / Free Throw Shooting",
+      "importance": "MEDIUM",
+      "details": "Critical in close tournament games. Solid free throw shooting correlates with late-game success.",
+      "how_to_use": "FT%, FT rate (FTA/FGA), opponent FT rate"
+    },
+    {
+      "feature": "Turnover Rate",
+      "importance": "MEDIUM",
+      "details": "Included in key predictive models. Both offensive turnover rate and defensive steal/forced turnover rate matter.",
+      "how_to_use": "Turnovers per 100 possessions on both ends"
+    },
+    {
+      "feature": "Rebounding",
+      "importance": "MEDIUM",
+      "details": "Defensive rebounds identified as noteworthy feature in ML analysis. Offensive rebounding percentage gives second-chance points.",
+      "how_to_use": "Offensive and defensive rebound rate"
+    },
+    {
+      "feature": "Experience / Senior Leadership",
+      "importance": "MEDIUM",
+      "details": "3+ experienced rotation players is an upset predictor trait. College basketball stars can account for 30%+ of team offensive production.",
+      "how_to_use": "Years of experience in rotation, minutes by upperclassmen"
+    },
+    {
+      "feature": "Coaching Tournament Record",
+      "importance": "LOW-MEDIUM",
+      "details": "Historical performance in high-stress tournament situations matters. Coaching tactical decisions are upset factor.",
+      "how_to_use": "Tournament wins, Final Four appearances, years of tournament coaching experience"
+    },
+    {
+      "feature": "Conference Strength",
+      "importance": "LOW-MEDIUM",
+      "details": "Power conference membership matters. Mid-major underseeding is systematic — these teams may be undervalued.",
+      "how_to_use": "Power 6 conference flag, conference KenPom average"
+    },
+    {
+      "feature": "Recent Form (Last 10 Games)",
+      "importance": "LOW-MEDIUM (CONTROVERSIAL)",
+      "details": "One model weights at 30% of projection. Captures momentum and injury impacts. But conference tournament performance may be noise.",
+      "how_to_use": "Win%, efficiency metrics over last 10 games. NOTE: Our CLAUDE.md explicitly excludes this — may want to reconsider."
+    },
+    {
+      "feature": "Location / Travel Distance",
+      "importance": "LOW",
+      "details": "FiveThirtyEight found travel distance effects tantamount to home/road advantage despite neutral court. Coast-to-coast vs nearby matters.",
+      "how_to_use": "Distance from team campus to game site"
+    }
+  ],
+  "kaggle_insights": [
+    {
+      "finding": "Algorithm Comparison Results",
+      "details": "Gradient Boosted Trees achieved 76.37% accuracy across 100 train/test splits. Neural networks: 67%, SVM: 65%, KNN: 63%, Logistic Regression: 63%, Random Forest: 61%. However, logistic regression shows most consistent results with lowest standard deviation.",
+      "source": "Multiple Kaggle March Mania entries"
+    },
+    {
+      "finding": "Logistic Regression Often Wins",
+      "details": "Despite being simpler, logistic regression frequently outperforms complex models. This is likely because: (1) limited training data favors simpler models, (2) tournament outcomes have inherent randomness that complex models overfit to, (3) neural networks essentially learn logistic regression internally.",
+      "source": "Multiple studies"
+    },
+    {
+      "finding": "LSTM with Brier Loss is State-of-Art",
+      "details": "LSTM model trained with Brier loss achieved lowest Brier score of 0.1589 for NCAA basketball outcomes. Transformer architecture achieved higher discriminative power but worse calibration.",
+      "source": "arxiv.org paper 2508.02725"
+    },
+    {
+      "finding": "XGBoost Can Achieve 90% Training Accuracy But Overfits",
+      "details": "XGBoost models perform very well in training but tend to perform middle-of-pack when generating actual tournament brackets. Overfitting to training data is the main risk.",
+      "source": "Kaggle competitions"
+    },
+    {
+      "finding": "Feature Engineering > Algorithm Choice",
+      "details": "Team representation as 16-dimensional vector with matchup encoded as difference between vectors outperforms raw stats. Efficiency Ratio (AdjO/AdjD) and Upset Propensity metrics improve predictions.",
+      "source": "Deshpande ML March Madness project"
+    },
+    {
+      "finding": "115K+ Games Training Set",
+      "details": "Best performing model used 115,113 games from 1993-2016. Larger historical datasets help, sourced from Kaggle and Sports-Reference.",
+      "source": "Deshpande project"
+    },
+    {
+      "finding": "Simple Beats Complex for Small Datasets",
+      "details": "In some analyses, simple linear regression outperformed all other ML algorithms. With limited tournament games per year (63-67), complex models lack sufficient data to generalize.",
+      "source": "Multiple Kaggle entries"
+    },
+    {
+      "finding": "Twitter Sentiment as Feature",
+      "details": "One winning team added Twitter sentiment analysis data to measure game excitement, combined with leaderboard switches and suspense metrics.",
+      "source": "Berkeley MEng Kaggle winning team"
+    }
+  ],
+  "vegas_vs_models": {
+    "key_finding": "Vegas and computer models perform comparably — neither dramatically outperforms the other or simple seed-based predictions",
+    "vegas_accuracy": {
+      "seed_agreement": "Vegas agreed with picking highest seeds on 156/188 games (83%)",
+      "notes": "Vegas relies heavily on seeds but adds market-derived adjustments"
+    },
+    "model_accuracy": {
+      "sagarin_seed_agreement": "Sagarin agreed with highest seed on 152/188 games (80.9%)",
+      "ml_vs_seed_baseline": "There is not a great increase in ML accuracy against simply choosing highest seed",
+      "kenpom_tournament": "70.4% winner prediction overall, drops to ~53% on close games"
+    },
+    "when_models_beat_vegas": [
+      "When models identify systematic mid-major underseeding",
+      "When models capture recent injuries before lines adjust",
+      "When models use tempo/style matchup analysis Vegas ignores",
+      "Early-season odds before market has full information"
+    ],
+    "when_vegas_beats_models": [
+      "Vegas has more information sources (insider info, injury reports, money flows)",
+      "Vegas self-corrects through market efficiency",
+      "Close games where statistical edge is minimal",
+      "High-profile matchups where public attention drives accuracy"
+    ],
+    "de_vigging_methodology": {
+      "problem": "Sportsbook moneyline odds don't sum to 100% — the excess is the vig (juice). Example: -180/+155 sums to 103.5%, meaning 3.5% is vig.",
+      "solution": "Remove vig by proportionally reducing both sides so implied probabilities sum to 100%.",
+      "formula": "For each side: true_prob = implied_prob / sum_of_implied_probs",
+      "example": "Ohio State -180 (implied 64.3%) vs Utah +155 (implied 39.2%). Sum = 103.5%. True probs: OSU = 64.3/103.5 = 62.1%, Utah = 39.2/103.5 = 37.9%",
+      "tools": ["Unabated No-Vig Calculator", "OddsJam Fair Odds Calculator"],
+      "advanced": "Power method and Shin method provide more accurate de-vigging than simple proportional method for heavy favorites"
+    },
+    "recommendation": "Our blend of 40% stats + 45% market + 15% factors is well-supported. Market odds capture collective wisdom efficiently, but stats models add value on matchup-specific insights and systematic biases."
+  },
+  "upset_factors": [
+    {
+      "factor": "Elite Defensive Efficiency (Top 50 nationally)",
+      "importance": "HIGHEST",
+      "details": "The #1 predictor of upsets. Teams with elite defense can contain superior offensive teams through controlled possessions."
+    },
+    {
+      "factor": "Controlled Tempo",
+      "importance": "HIGH",
+      "details": "Slower pace reduces variance in game outcomes, giving underdogs more chances. Tempo mismatch is a key X-factor in upsets."
+    },
+    {
+      "factor": "Consistent Three-Point Shooting (>36% season)",
+      "importance": "HIGH",
+      "details": "Hot shooting beyond the arc has fueled notable tournament upsets. But it cuts both ways — high 3PT variance can doom teams too."
+    },
+    {
+      "factor": "Senior Leadership (3+ experienced rotation players)",
+      "importance": "MEDIUM-HIGH",
+      "details": "Experience in high-pressure situations matters enormously in single-elimination format."
+    },
+    {
+      "factor": "Guard-Heavy Roster with High Steal Rate",
+      "importance": "MEDIUM-HIGH",
+      "details": "Genetic algorithm analysis found lower-seeded teams making deep runs tend to be guard-heavy with high steal rates and high 3PT attempt rates."
+    },
+    {
+      "factor": "Systematic Mid-Major Underseeding",
+      "importance": "MEDIUM",
+      "details": "Mid-majors are systematically underseeded relative to their efficiency metrics. This creates predictable upset opportunities."
+    },
+    {
+      "factor": "Coaching Tournament Experience",
+      "importance": "MEDIUM",
+      "details": "Coaches with deep tournament experience make better tactical adjustments in single-elimination format."
+    },
+    {
+      "factor": "Matchup-Specific Style Clashes",
+      "importance": "MEDIUM",
+      "details": "Aggregate statistics miss matchup-specific advantages. A team's style may specifically counter their opponent's approach."
+    },
+    {
+      "factor": "Free Throw Shooting in Close Games",
+      "importance": "MEDIUM",
+      "details": "Tournament games are disproportionately close. FT shooting in late-game situations separates winners from losers."
+    }
+  ],
+  "historical_upset_rates": {
+    "round_of_64": {
+      "1_vs_16": {"higher_seed_wins": "98.8%", "record": "158-2", "notes": "Only UMBC 2018 and FDU 2023"},
+      "2_vs_15": {"higher_seed_wins": "93.1%", "record": "149-11"},
+      "3_vs_14": {"higher_seed_wins": "85.6%", "record": "137-23"},
+      "4_vs_13": {"higher_seed_wins": "79.4%", "record": "127-33"},
+      "5_vs_12": {"higher_seed_wins": "64.4%", "record": "103-57", "notes": "Classic upset spot — 12-seed wins 35.6% of time"},
+      "6_vs_11": {"higher_seed_wins": "61.3%", "record": "98-62", "notes": "11-seed wins 38.7% — highest upset rate after 8/9"},
+      "7_vs_10": {"higher_seed_wins": "61.3%", "record": "98-62"},
+      "8_vs_9": {"higher_seed_wins": "48.1%", "record": "77-83", "notes": "9-seed actually FAVORED historically"}
+    },
+    "round_of_32_key_matchups": {
+      "1_vs_8": {"higher_seed_wins": "79.2%", "record": "61-16"},
+      "1_vs_9": {"higher_seed_wins": "92.6%", "record": "75-6"},
+      "2_vs_7": {"higher_seed_wins": "70.7%", "record": "65-27"},
+      "2_vs_10": {"higher_seed_wins": "66.7%", "record": "38-19"},
+      "3_vs_6": {"higher_seed_wins": "59.8%", "record": "49-33"},
+      "3_vs_11": {"higher_seed_wins": "63.6%", "record": "35-20"},
+      "4_vs_5": {"higher_seed_wins": "54.9%", "record": "45-37"}
+    },
+    "elite_eight_key": {
+      "1_vs_2": {"higher_seed_wins": "52.9%", "record": "27-24", "notes": "Nearly a coin flip at this stage"},
+      "1_vs_3": {"higher_seed_wins": "64.3%", "record": "18-10"},
+      "1_vs_11": {"higher_seed_wins": "50.0%", "record": "4-4"}
+    },
+    "championship_by_seed": {
+      "1_seed": {"titles": 25, "championship_games": 39, "win_rate": "64.1%"},
+      "2_seed": {"titles": 5, "championship_games": 13, "win_rate": "38.5%"},
+      "3_seed": {"titles": 4, "championship_games": 11, "win_rate": "36.4%"},
+      "4_seed": {"titles": 2, "championship_games": 4, "win_rate": "50.0%"},
+      "7_seed": {"titles": 1, "championship_games": 1, "win_rate": "100%"},
+      "8_seed": {"titles": 1, "championship_games": 4, "win_rate": "25.0%"},
+      "notes": "No team seeded 5, 6, or higher than 8 has reached the title game"
+    }
+  },
+  "bracket_optimization": [
+    {
+      "strategy": "Pool Size Determines Strategy",
+      "details": "Small pools: play chalk (using KenPom odds, not just seeds). Large pools: must differentiate with contrarian picks. The most common mistake is going overly contrarian in small pools."
+    },
+    {
+      "strategy": "Expected Value = Win Probability x Inverse Ownership",
+      "details": "Compare model win probability against public ownership percentage. When a team's win probability exceeds their pick percentage, they offer positive expected value. This is the core of bracket pool optimization."
+    },
+    {
+      "strategy": "Be Contrarian in Later Rounds, Not Early Rounds",
+      "details": "Later rounds have higher point values and more leverage. Picking Round 1 upsets for differentiation is low-value (only 10 points). The Final Four and Championship picks are where contrarian value concentrates."
+    },
+    {
+      "strategy": "The 12-over-5 Upset Rule",
+      "details": "Pick at least one 12-over-5 upset — it has occurred in 32 of the last 39 tournaments. At 35.6% individual probability, NOT picking any 12-seed upset is statistically suboptimal."
+    },
+    {
+      "strategy": "Trust 1-Seeds to Elite 8",
+      "details": "97% of 1-seeds have historically reached the Sweet 16. Fade the 8/9 winner against 1-seeds. This is reliable chalk."
+    },
+    {
+      "strategy": "Defense Wins Championships — Literally",
+      "details": "Prioritize defense over offense for Final Four selections. 75% of champions ranked top-20 in defensive efficiency."
+    },
+    {
+      "strategy": "Ignore Conference Tournament Results",
+      "details": "Conference tournament performance is noise, not signal. Small sample size and fatigue effects make it unreliable."
+    },
+    {
+      "strategy": "Avoid Conference Clustering in Final Four",
+      "details": "Don't pick multiple teams from the same conference in the Final Four. Historically unlikely and reduces bracket diversity."
+    },
+    {
+      "strategy": "Game Theory: Counter the Field",
+      "details": "When everyone plays favorites, go for sleeper. When everyone picks upsets, go for favorites. The optimal strategy is the inverse of what the crowd does."
+    },
+    {
+      "strategy": "Scoring System Awareness",
+      "details": "Different scoring systems (1-2-4-8-16-32 vs ESPN standard) change optimal strategy. Higher late-round multipliers increase value of contrarian champion picks."
+    }
+  ],
+  "novel_approaches": [
+    {
+      "approach": "Genetic Algorithms for Bracket Optimization",
+      "details": "Generate random population of brackets, evaluate fitness based on expected score, select top performers, crossover and mutate, repeat. Genetic algorithms revealed that lower-seeded teams making deep runs tend to be guard-heavy with high steal rates and high 3PT attempt rates.",
+      "maturity": "Experimental",
+      "relevance_to_our_project": "HIGH — aligns with user's Biology Agent concept. Can layer evolutionary optimization on top of stratified importance sampling."
+    },
+    {
+      "approach": "MadNet Neural Network + GA Interpretation",
+      "details": "Multi-class classification neural network trained on team profiles, then genetic algorithms used to interpret what makes successful tournament teams. Generated synthetic team profiles that outperformed their seeding.",
+      "maturity": "Research",
+      "relevance_to_our_project": "HIGH — combines deep learning with evolutionary interpretation"
+    },
+    {
+      "approach": "LSTM with Brier Loss Training",
+      "details": "LSTM model trained directly on Brier score loss function achieved best calibration (Brier 0.1589) for NCAA basketball outcomes. Better than training on binary cross-entropy.",
+      "maturity": "Published research (2025)",
+      "relevance_to_our_project": "MEDIUM — could inform our probability calibration approach"
+    },
+    {
+      "approach": "Transformer Architecture for Game Prediction",
+      "details": "Transformer model achieved higher discriminative power than LSTM but worse calibration. Suggests attention mechanisms capture game dynamics differently.",
+      "maturity": "Published research (2025)",
+      "relevance_to_our_project": "MEDIUM — attention mechanisms parallel the AlphaFold analogy user mentioned"
+    },
+    {
+      "approach": "Monte Carlo Simulation with Dynamic Rating Updates",
+      "details": "Simulate tournament thousands of times, but update team ratings BETWEEN rounds based on how teams performed relative to expectations. Captures the reality that Day 1 results affect Day 2 predictions.",
+      "maturity": "Established",
+      "relevance_to_our_project": "HIGH — addresses user's concern about temporal correlation between rounds"
+    },
+    {
+      "approach": "GPU-Accelerated Monte Carlo (CUDA)",
+      "details": "Using CUDA/GPU for massive parallel bracket simulation. Can generate millions of brackets in seconds rather than minutes.",
+      "maturity": "Experimental",
+      "relevance_to_our_project": "LOW — we're using NumPy vectorization which should be sufficient for 12M brackets"
+    },
+    {
+      "approach": "Twitter/Social Sentiment Analysis",
+      "details": "Kaggle winning team added Twitter sentiment data measuring game excitement. Combined with suspense metrics (last moment winning team took lead) and leaderboard switches.",
+      "maturity": "Experimental (Kaggle winner)",
+      "relevance_to_our_project": "LOW-MEDIUM — could inform qualitative adjustments but adds complexity"
+    },
+    {
+      "approach": "Prediction Markets (Polymarket, Kalshi)",
+      "details": "AI and prediction markets increasingly replacing traditional office pools in 2026. Prediction markets aggregate crowd wisdom with financial incentives for accuracy.",
+      "maturity": "Growing rapidly (2026)",
+      "relevance_to_our_project": "MEDIUM — could be additional probability source alongside Vegas odds"
+    },
+    {
+      "approach": "Diversified Bracket Portfolio",
+      "details": "Instead of one optimal bracket, generate a SET of diversified brackets that collectively maximize chance of winning. Different brackets target different scenarios (chalk, moderate chaos, maximum chaos).",
+      "maturity": "Established (TeamRankings/PoolGenius)",
+      "relevance_to_our_project": "HIGH — this IS essentially what our stratified importance sampling does"
+    },
+    {
+      "approach": "Probability Distribution Sampling (Not Point Estimates)",
+      "details": "Instead of a single team rating number, work with a probability distribution (normal distribution) of possible ratings. Sample from the distribution to capture rating uncertainty.",
+      "maturity": "Established",
+      "relevance_to_our_project": "MEDIUM — could improve our simulation by adding rating uncertainty"
+    }
+  ],
+  "simulation_methodology_insights": {
+    "win_probability_conversion": {
+      "logistic_regression_approach": "Win Prob = 1/(1+e^(-0.163 * predicted_score_differential)). Fitted from historical data.",
+      "elo_approach": "P = 1/(1+10^(-rating_diff * 30.464/400)). FiveThirtyEight formula.",
+      "our_approach": "P(A wins) = 1/(1+10^((power_B - power_A)/k)). k calibrated via grid search.",
+      "score_differential_std": "Standard deviation of score differential is approximately 11.2 points in post-30-second shot clock era.",
+      "notes": "All three approaches are mathematically equivalent with different parameterizations. Our k-calibration approach is sound."
+    },
+    "calibration": {
+      "best_metric": "Brier Score",
+      "state_of_art_brier": 0.1589,
+      "our_target": 0.205,
+      "notes": "Our target of 0.205 is achievable with our blend approach. The LSTM Brier of 0.1589 used deep learning on much larger datasets. Our target is conservative and appropriate.",
+      "calibration_tips": [
+        "Train on Brier loss directly, not binary cross-entropy",
+        "Use reliability diagrams to check calibration visually",
+        "Combine AUC + accuracy + Brier for complete evaluation"
+      ]
+    },
+    "number_of_simulations": {
+      "typical_approaches": "Most public tools use 10,000 to 100,000 simulations",
+      "our_approach": "12 million brackets (3M per region) with stratified importance sampling",
+      "notes": "Our approach is 120-1200x more simulations than typical. The stratified sampling ensures we cover unlikely but important scenarios."
+    }
+  },
+  "key_takeaways": [
+    {
+      "takeaway": "Adjusted Efficiency Margin is the single most predictive stat",
+      "action": "Our 40% weight on AdjEM (KenPom) is well-justified. Consider it could even be higher."
+    },
+    {
+      "takeaway": "Defense is disproportionately important in March",
+      "action": "Our 10% Defensive Efficiency Premium is validated. 75% of champions are top-20 defense."
+    },
+    {
+      "takeaway": "Logistic regression often beats complex ML models",
+      "action": "Our logistic function approach P=1/(1+10^((pB-pA)/k)) is the right level of complexity. Don't over-engineer the win probability function."
+    },
+    {
+      "takeaway": "Multi-source blending outperforms any single model",
+      "action": "Our 3-layer blend (40% stats + 45% market + 15% factors) mirrors FiveThirtyEight's multi-source approach. The 45% market weight is well-supported."
+    },
+    {
+      "takeaway": "Simple seed-based predictions are surprisingly hard to beat",
+      "action": "Our model must significantly outperform seed-based baseline. Track seed-only bracket as benchmark."
+    },
+    {
+      "takeaway": "Travel distance matters for neutral-site games",
+      "action": "Consider adding travel distance as a factor in our qualitative adjustments (P_factors). FiveThirtyEight found it significant."
+    },
+    {
+      "takeaway": "Close games are essentially coin flips regardless of model",
+      "action": "Don't over-invest in predicting close games. Focus model calibration on identifying games that WON'T be close."
+    },
+    {
+      "takeaway": "Bracket optimization != game prediction",
+      "action": "Our simulation engine should support pool-optimized bracket selection (contrarian picks based on ownership data). This is separate from game prediction accuracy."
+    },
+    {
+      "takeaway": "Genetic algorithms reveal upset team profiles",
+      "action": "Guard-heavy teams with high steal rates and 3PT attempt rates are upset candidates. Build this into our upset detection."
+    },
+    {
+      "takeaway": "12-over-5 upset is the most reliable prediction",
+      "action": "Ensure our simulation produces at least one 12-over-5 upset in ~90% of brackets. Historical rate is 35.6% per matchup."
+    },
+    {
+      "takeaway": "Conference tournament results are noise",
+      "action": "Our CLAUDE.md already excludes 'recent form (last 10 games)' from power index. This is validated by research."
+    },
+    {
+      "takeaway": "Stratified importance sampling IS the state-of-art for bracket generation",
+      "action": "Our approach of generating diversified bracket portfolios covering multiple scenarios aligns with what the best bracket optimization services do (TeamRankings/PoolGenius)."
+    },
+    {
+      "takeaway": "The 8-vs-9 matchup is a coin flip (9-seed actually wins MORE)",
+      "action": "Our simulation should reflect this. Historical: 9-seeds win 51.9% against 8-seeds."
+    },
+    {
+      "takeaway": "Dynamic rating updates between tournament rounds improve accuracy",
+      "action": "Consider implementing Bayesian weight updates after each round in our tracker (we already plan this via weight normalization)."
+    },
+    {
+      "takeaway": "Brier score of 0.1589 is achievable with LSTM + Brier loss",
+      "action": "Our target of 0.205 is conservative. With our blend approach, aim for 0.18-0.20 range."
+    }
+  ],
+  "sources": [
+    {"title": "FiveThirtyEight - How Our March Madness Predictions Work", "url": "https://fivethirtyeight.com/features/how-our-march-madness-predictions-work/"},
+    {"title": "KenPom March Madness Betting Guide - betstamp", "url": "https://betstamp.com/education/kenpom-march-madness-betting-guide"},
+    {"title": "Applying Machine Learning to March Madness - Deshpande", "url": "https://adeshpande3.github.io/Applying-Machine-Learning-to-March-Madness"},
+    {"title": "BracketOdds - Seed Match-up Records (Illinois CS)", "url": "http://bracketodds.cs.illinois.edu/seed_records.html"},
+    {"title": "NCAA - How to pick upsets according to data", "url": "https://www.ncaa.com/news/basketball-men/bracketiq/2018-03-13/heres-how-pick-march-madness-upsets-according-data"},
+    {"title": "PoolGenius Bracket Strategy Guide", "url": "https://poolgenius.teamrankings.com/ncaa-bracket-picks/articles/bracket-strategy-guide/"},
+    {"title": "March Madness 2026 Complete AI Guide - 99 Community", "url": "https://the99community.com/blog/march-madness-2026-complete-guide"},
+    {"title": "Unabated - Building NCAA Bracket Simulator", "url": "https://unabated.com/articles/building-a-march-madness-bracket-simulator"},
+    {"title": "Genetic Algorithms + MadNet for March Madness", "url": "https://medium.com/re-hoop-per-rate/using-genetic-algorithms-to-gain-insights-from-madnet-the-multi-class-classification-neural-a4af9d240a49"},
+    {"title": "Kaggle March Machine Learning Madness", "url": "http://nickc1.github.io/machine/learning/2016/03/19/March-Machine-Learning-Madness.html"},
+    {"title": "Furman University - Predicting March Madness by Numbers", "url": "https://www.furman.edu/news/predicting-march-madness-is-a-numbers-game/"},
+    {"title": "Wharton - Predicting March Madness Cinderella Teams", "url": "https://wsb.wharton.upenn.edu/wp-content/uploads/2023/05/Sha_2023_Basketball_March.pdf"},
+    {"title": "Historical Records by Seed - BetFirm", "url": "https://www.betfirm.com/seeds-national-championship-odds/"},
+    {"title": "Forecasting NCAA with Deep Learning (LSTM vs Transformer)", "url": "https://arxiv.org/html/2508.02725v1"},
+    {"title": "FiveThirtyEight - Stats Led Brackets Astray", "url": "https://fivethirtyeight.com/features/the-stats-led-our-brackets-astray-this-march-madness-that-doesnt-happen-often/"},
+    {"title": "PYMNTS - AI and Prediction Markets Replace Office Pool", "url": "https://www.pymnts.com/news/artificial-intelligence/2026/march-madness-2026-ai-prediction-markets-replace-office-pool/"},
+    {"title": "VegasOdds - March Madness Bracket Guide", "url": "https://www.vegasodds.com/blog/march-madness-bracket-guide/"},
+    {"title": "Unabated No-Vig Calculator", "url": "https://unabated.com/betting-calculators/no-vig-fair-odds-calculator"},
+    {"title": "Establish The Run - Bracket Pool Strategy 2025", "url": "https://establishtherun.com/march-madness-bracket-pool-strategy-2/"},
+    {"title": "GitHub - dlm1223/march-madness bracket optimization", "url": "https://github.com/dlm1223/march-madness"},
+    {"title": "The Power Rank - Predictive CBB Analytics", "url": "https://thepowerrank.com/cbb-analytics/"},
+    {"title": "Data Action Lab - Predictive Analytics in CBB", "url": "https://www.data-action-lab.com/2021/11/21/predictive-analytics-in-college-basketball/"}
+  ]
+}

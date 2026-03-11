@@ -1,0 +1,865 @@
+{
+  "tier": 4,
+  "tier_name": "Underdogs & Cinderella Candidates",
+  "description": "Projected 13-16 seeds, auto-bid mid-majors, and bubble teams with upset potential for the 2026 NCAA Tournament",
+  "research_date": "2026-03-10",
+  "tournament_year": 2026,
+  "meta": {
+    "cinderella_landscape": "NIL and transfer portal have widened the talent gap between power conferences and mid-majors. 2025 tournament produced only 13 underdog wins (tied fewest since 1985 field expansion). Three straight tournaments without multiple double-digit seeds in Sweet 16. Experts predict another chalk year in 2026.",
+    "key_insight": "Continuity and coaching experience are the strongest predictors of mid-major upset potential. Teams with returning cores and experienced tournament coaches are the most dangerous lower seeds."
+  },
+  "teams": [
+    {
+      "team_name": "Miami (OH) RedHawks",
+      "conference": "MAC",
+      "record": "31-0",
+      "conference_record": "18-0",
+      "net_ranking": 55,
+      "projected_seed_range": [10, 12],
+      "auto_bid_status": "Lock for NCAA tournament regardless of MAC tournament result",
+      "coach": {
+        "name": "Travis Steele",
+        "tournament_experience": "Former Xavier head coach; first NCAA tournament with Miami OH",
+        "style_notes": "Emphasizes passing, fast pace, five-out alignment creating paint pressure for kick-out 3s. Modernized offense dramatically — scoring average jumped from 70.6 to 80.6 to 90.9 PPG over three seasons."
+      },
+      "key_stats": {
+        "ppg": 90.9,
+        "opp_ppg": 74.9,
+        "fg_pct": 0.526,
+        "three_pt_pct": 0.393,
+        "rpg": 35.8,
+        "apg": 16.0,
+        "national_ranks": {
+          "ppg": 2,
+          "fg_pct": 1,
+          "rpg": 16
+        }
+      },
+      "key_players": [
+        {
+          "name": "Peter Suder",
+          "position": "G",
+          "ppg": 14.8,
+          "rpg": 4.7,
+          "apg": 3.9,
+          "fg_pct": 0.556,
+          "nba_prospect": false,
+          "notes": "Team leader, versatile scorer and facilitator"
+        },
+        {
+          "name": "Brant Byers",
+          "position": "F",
+          "ppg": 14.1,
+          "rpg": 4.1,
+          "apg": 0.6,
+          "fg_pct": 0.491,
+          "nba_prospect": false,
+          "notes": "Reliable second scorer"
+        },
+        {
+          "name": "Eian Elmer",
+          "position": "F",
+          "ppg": 12.5,
+          "rpg": 6.1,
+          "apg": 1.1,
+          "fg_pct": 0.504,
+          "nba_prospect": false,
+          "notes": "Career-high 32 points in regular season finale OT win vs Ohio"
+        },
+        {
+          "name": "Luke Skaljac",
+          "position": "G",
+          "ppg": 10.3,
+          "rpg": 3.1,
+          "apg": 4.7,
+          "fg_pct": 0.465,
+          "nba_prospect": false,
+          "notes": "Primary playmaker"
+        },
+        {
+          "name": "Antwone Woolfolk",
+          "position": "F",
+          "ppg": 10.1,
+          "rpg": 5.5,
+          "apg": 1.5,
+          "fg_pct": 0.629,
+          "nba_prospect": false,
+          "notes": "Elite efficiency scorer"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "HIGH",
+        "strengths": [
+          "Undefeated record — first D1 team to finish regular season 31-0 with 90+ PPG, 50%+ FG, 10+ threes/game",
+          "Elite offensive efficiency — #1 nationally in FG%, #2 in scoring",
+          "Five balanced scorers in double figures",
+          "Deep roster with high-scoring bench",
+          "Extreme confidence from undefeated run",
+          "Fast tempo creates havoc for opponents unfamiliar with pace"
+        ],
+        "weaknesses": [
+          "KenPom SOS ranked #282 — extremely weak schedule",
+          "NET ranking only 55th despite 31-0 record",
+          "Multiple power conference teams REFUSED to schedule them",
+          "Defensive efficiency mediocre — 215th nationally in opponent PPG",
+          "No quality wins against top-50 opponents",
+          "Untested against elite competition"
+        ],
+        "historical_context": "Third D1 program to finish regular season undefeated (after 2013-14 Wichita State, 2015-16 North Carolina). First MAC team to go undefeated in conference play.",
+        "upset_narrative": "The undefeated story will generate massive public attention and media coverage. If they draw a beatable 5/6 seed, the pressure will be on the favorite. However, the massive step up in competition quality is the real concern.",
+        "overall_assessment": "Historic season but serious questions about competition level. Their offense is legit elite, but they haven't faced the kind of athleticism and defensive pressure that power conference teams bring. A classic trap game for a higher seed — massive public backing, no fear of losing."
+      },
+      "notable_wins": ["31-0 against MAC competition", "110-108 OT win vs Ohio to complete undefeated regular season"],
+      "program_history": "Limited NCAA tournament history. This would be a landmark appearance.",
+      "style_of_play": "Up-tempo, high-scoring, five-out offense with emphasis on 3-point shooting and ball movement. Top of D1 in assists. Play fast and shoot efficiently."
+    },
+    {
+      "team_name": "Tulsa Golden Hurricane",
+      "conference": "American Athletic",
+      "record": "23-6",
+      "conference_record": "11-5",
+      "net_ranking": 50,
+      "projected_seed_range": [10, 12],
+      "auto_bid_status": "Bubble — needs AAC tournament success for at-large or auto-bid",
+      "coach": {
+        "name": "Eric Konkol",
+        "tournament_experience": "Fourth-year head coach at Tulsa. Limited NCAA tournament head coaching experience.",
+        "style_notes": "Strong non-conference start (13-1). Solid but not spectacular in AAC play."
+      },
+      "key_stats": {
+        "ppg": null,
+        "opp_ppg": null,
+        "notes": "Started 7-0 in December 2025, 6-1 in November. 90-56 blowout win over Tulane on Feb 25."
+      },
+      "key_players": [],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Strong overall record at 23-6",
+          "Blowout capability shown in conference play",
+          "NET ranking inside top 50"
+        ],
+        "weaknesses": [
+          "AAC is mid-tier conference",
+          "Limited data on quality wins against ranked opponents",
+          "May need auto-bid to make tournament"
+        ],
+        "overall_assessment": "Solid mid-major with a good record but unclear ceiling. Needs AAC tournament run to punch ticket."
+      },
+      "notable_wins": ["Strong non-conference showing", "90-56 win over Tulane"],
+      "program_history": "Tulsa has NCAA tournament history including a Final Four in 2000. Program has been up and down but has institutional tournament DNA.",
+      "style_of_play": "Balanced offensive approach. Can blow out weaker opponents."
+    },
+    {
+      "team_name": "UCF Knights",
+      "conference": "Big 12",
+      "record": "20-10",
+      "conference_record": null,
+      "net_ranking": 51,
+      "projected_seed_range": [8, 10],
+      "auto_bid_status": "At-large likely — wins above bubble score of 3.49, strong quad 1 wins",
+      "coach": {
+        "name": "Johnny Dawkins",
+        "tournament_experience": "Tenth-year head coach. Limited NCAA tournament success at UCF.",
+        "style_notes": "Has elevated UCF's profile in Big 12. Best NET ranking since joining the conference."
+      },
+      "key_stats": {
+        "quad_1_wins": 5,
+        "wins_above_bubble": 3.49,
+        "notes": "Best NET ranking (as high as 30th) since joining Big 12"
+      },
+      "key_players": [],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Five quad 1 wins including victories over Texas A&M (sweep), Kansas, Colorado, Texas Tech, BYU",
+          "Battle-tested in Big 12 — plays elite competition weekly",
+          "NET ranking has been as high as 30th",
+          "Strong wins above bubble metric"
+        ],
+        "weaknesses": [
+          "10 losses show inconsistency",
+          "Not a traditional mid-major — Big 12 team, just lower-seeded",
+          "Could draw a tough matchup"
+        ],
+        "overall_assessment": "Not a classic Cinderella — they are a power conference team. But as a lower seed, their Big 12 experience means they won't be intimidated. Dangerous 8-10 seed."
+      },
+      "notable_wins": ["Swept Texas A&M", "Beat #17 Kansas at home", "Won at Colorado", "Beat #11 Texas Tech", "Beat #19 BYU on the road"],
+      "program_history": "UCF has limited NCAA tournament history but is building under Dawkins in the Big 12.",
+      "style_of_play": "Competitive in Big 12 play with ability to upset ranked opponents. Strong road performance."
+    },
+    {
+      "team_name": "Akron Zips",
+      "conference": "MAC",
+      "record": "26-5",
+      "conference_record": "17-1",
+      "net_ranking": 52,
+      "projected_seed_range": [13, 14],
+      "auto_bid_status": "#2 seed in MAC tournament — needs auto-bid (Miami OH is #1)",
+      "coach": {
+        "name": null,
+        "tournament_experience": null,
+        "style_notes": "Set program record for regular season wins (26). 31 consecutive home wins at James A. Rhodes Arena."
+      },
+      "key_stats": {
+        "notes": "Shot 66.7% from deep in 94-55 blowout of NIU. 31 consecutive home wins."
+      },
+      "key_players": [],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Program-record 26 regular season wins",
+          "Dominant home court — 31 consecutive wins",
+          "Only 1 MAC loss — elite in conference",
+          "Elite 3-point shooting capability"
+        ],
+        "weaknesses": [
+          "Miami OH is the MAC favorite for auto-bid",
+          "Would need to beat undefeated Miami OH in MAC tournament for auto-bid",
+          "MAC schedule strength concerns",
+          "NET ranking outside top 50"
+        ],
+        "overall_assessment": "Very good MAC team but plays second fiddle to Miami OH. If they upset Miami in MAC tournament, they'd be a dangerous low seed with a chip on their shoulder. Can shoot the lights out from 3."
+      },
+      "notable_wins": ["17-1 in MAC", "94-55 blowout of NIU with 66.7% from three"],
+      "program_history": "Akron has made the NCAA tournament several times and had a few first-round wins historically.",
+      "style_of_play": "High-volume 3-point shooting, strong home court advantage."
+    },
+    {
+      "team_name": "Miami (OH) vs Akron MAC Dynamic",
+      "notes": "These two teams are the MAC's best — if Miami OH wins the auto-bid, Akron likely stays home. If Akron upsets undefeated Miami, the story flips: Miami OH gets an at-large bid (likely) and Akron gets the auto-bid. Either way, at least one MAC team makes the tournament."
+    },
+    {
+      "team_name": "Oklahoma Sooners",
+      "conference": "SEC",
+      "record": "16-14",
+      "conference_record": "6-11",
+      "net_ranking": 54,
+      "projected_seed_range": null,
+      "auto_bid_status": "Deep bubble — needs SEC tournament run to make NCAA tournament",
+      "coach": {
+        "name": "Porter Moser",
+        "tournament_experience": "Led Loyola-Chicago to Final Four in 2018. Experienced tournament coach.",
+        "style_notes": "Defensive-minded approach. Struggled in loaded SEC."
+      },
+      "key_stats": {
+        "notes": "12th in SEC. 6-11 conference record is concerning."
+      },
+      "key_players": [],
+      "cinderella_factors": {
+        "upset_potential": "LOW",
+        "strengths": [
+          "Porter Moser's tournament pedigree (Loyola Final Four)",
+          "SEC experience means they've played elite competition",
+          "Brand name program"
+        ],
+        "weaknesses": [
+          "16-14 record is unimpressive",
+          "Sub-.500 in conference play",
+          "Unlikely to make tournament without SEC tournament run",
+          "Not playing well enough to be dangerous"
+        ],
+        "overall_assessment": "A struggling power conference team, not a traditional Cinderella. Unlikely to make the field. If they somehow get in via SEC tournament run, Moser's experience gives them a floor, but ceiling is low."
+      },
+      "notable_wins": [],
+      "program_history": "Historic program with multiple Final Four appearances. But current team is underperforming.",
+      "style_of_play": "Defensive-oriented but not executing at a high level in 2025-26."
+    },
+    {
+      "team_name": "Seton Hall Pirates",
+      "conference": "Big East",
+      "record": "20-11",
+      "conference_record": "10-10",
+      "net_ranking": 56,
+      "projected_seed_range": [10, 12],
+      "auto_bid_status": "Bubble — needs Big East tournament success or strong finish",
+      "coach": {
+        "name": "Shaheen Holloway",
+        "tournament_experience": "Fourth-year head coach. Led Saint Peter's to Elite Eight as a 15-seed in 2022 (as coach). Known for tournament magic.",
+        "style_notes": "Massive turnaround from 7-25 last season to 20-11. Defensive identity."
+      },
+      "key_stats": {
+        "notes": "Remarkable improvement from 7-25 (2024-25) to 20-11 (2025-26). 4th in Big East."
+      },
+      "key_players": [
+        {
+          "name": "Adam Clark",
+          "position": null,
+          "notes": "Season-high 31 points vs Providence (87-80 win)"
+        },
+        {
+          "name": "Stephon Payne",
+          "position": null,
+          "notes": "22 rebounds in win at Marquette — elite rebounder"
+        },
+        {
+          "name": "Najai Hines",
+          "position": null,
+          "notes": "Key bench contributor, 12 pts/10 reb vs Georgetown"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM-HIGH",
+        "strengths": [
+          "Shaheen Holloway has PROVEN tournament magic (Saint Peter's 15-seed Elite Eight run)",
+          "Massive year-over-year improvement shows team is peaking",
+          "Big East competition has prepared them well",
+          "Strong rebounding presence (Payne's 22-rebound game)",
+          "4th in Big East is respectable"
+        ],
+        "weaknesses": [
+          "10-10 in conference isn't dominant",
+          "Bubble status means they may not make the field",
+          "Young program chemistry after major roster overhaul"
+        ],
+        "overall_assessment": "If Seton Hall makes the tournament, Holloway is the kind of coach who can manufacture upsets. His Saint Peter's run proves he knows how to prepare for the tournament. The turnaround from 7-25 to 20-11 is remarkable and suggests a team trending in the right direction at the right time."
+      },
+      "notable_wins": ["Competitive games against St. John's and UConn in Big East"],
+      "program_history": "Won the 1989 national championship. Multiple Big East titles. Tournament program historically.",
+      "style_of_play": "Physical, defensive-minded. Strong rebounding. Coach known for opponent-specific game planning."
+    },
+    {
+      "team_name": "Boise State Broncos",
+      "conference": "Mountain West",
+      "record": "19-10",
+      "conference_record": null,
+      "net_ranking": 57,
+      "projected_seed_range": [11, 12],
+      "auto_bid_status": "Bubble — needs Mountain West tournament run",
+      "coach": {
+        "name": null,
+        "tournament_experience": null,
+        "style_notes": "Physical play and experienced roster."
+      },
+      "key_stats": {
+        "notes": "16-11 as of early March. Voted preseason 3rd in Mountain West behind San Diego State and Utah State."
+      },
+      "key_players": [
+        {
+          "name": "Andrew Meadow",
+          "position": "F",
+          "notes": "Preseason All-Mountain West selection"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Physical style of play that can bother higher seeds",
+          "Experienced roster",
+          "Identified by analysts as Cinderella candidate (11-seed in South per projections)",
+          "Final season in Mountain West — extra motivation"
+        ],
+        "weaknesses": [
+          "Mediocre record for a tournament team",
+          "Mountain West schedule strength is middling",
+          "Preseason expectations of 3rd — may have underperformed"
+        ],
+        "overall_assessment": "Identified by multiple outlets as a potential Cinderella. Physical play and experienced roster make them a tough out, but need to make the field first."
+      },
+      "notable_wins": ["84-69 over San Jose State"],
+      "program_history": "Limited NCAA tournament history. Moving to Pac-12 after this season.",
+      "style_of_play": "Physical, defensive-minded. Can grind out games."
+    },
+    {
+      "team_name": "West Virginia Mountaineers",
+      "conference": "Big 12",
+      "record": "18-13",
+      "conference_record": "9-9",
+      "net_ranking": 58,
+      "projected_seed_range": [10, 12],
+      "auto_bid_status": "Bubble — 7th seed in Big 12 tournament with first-round bye",
+      "coach": {
+        "name": "Ross Hodge",
+        "tournament_experience": "First-year head coach at WVU (fourth head coach in four years). Previously at North Texas.",
+        "style_notes": "Exceeded preseason expectations — finished 4 spots higher than preseason poll. Dealing with massive coaching instability (4 coaches in 4 years)."
+      },
+      "key_stats": {
+        "notes": "9-9 in Big 12 is respectable given coaching turmoil. Won tiebreakers for 7th seed due to series sweeps."
+      },
+      "key_players": [],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Big 12 battle-tested — plays elite competition",
+          "Exceeded preseason expectations significantly",
+          "Won tiebreakers showing clutch play",
+          "First-round bye in Big 12 tournament"
+        ],
+        "weaknesses": [
+          "Four head coaches in four years — institutional instability",
+          ".500 in conference play",
+          "13 losses is a lot for a tournament team",
+          "First-year coach with no WVU tournament experience"
+        ],
+        "overall_assessment": "Big 12 experience is valuable but 18-13 is borderline. If they make the tournament, they've seen the best competition in the country. Coaching instability is a wildcard — could rally around underdog narrative or fall apart."
+      },
+      "notable_wins": [],
+      "program_history": "Historic program under Bob Huggins. Multiple Final Four appearances. Strong tournament tradition.",
+      "style_of_play": "Physical Big 12 style. 3-point shooting is key on both ends."
+    },
+    {
+      "team_name": "Stanford Cardinal",
+      "conference": "ACC",
+      "record": "20-12",
+      "conference_record": "11-9",
+      "net_ranking": 59,
+      "projected_seed_range": [9, 11],
+      "auto_bid_status": "Bubble — 7th seed in ACC tournament",
+      "coach": {
+        "name": "Kyle Smith",
+        "tournament_experience": "Limited NCAA tournament head coaching experience at Stanford.",
+        "style_notes": "Has a star player in Ebuka Okorie who can take over games."
+      },
+      "key_stats": {
+        "notes": "7th in ACC. Close losses in ACC tournament (75-73 buzzer beater loss to Louisville)."
+      },
+      "key_players": [
+        {
+          "name": "Ebuka Okorie",
+          "position": "G/F",
+          "ppg": null,
+          "notes": "Season-high 40 points vs Georgia Tech. 36 points and 9 assists vs UNC. 33 points vs NC State in regular season finale. Potential NBA prospect with scoring explosions.",
+          "nba_prospect": true
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Ebuka Okorie is a potential game-changer — 40-point scoring ceiling",
+          "ACC experience against top competition",
+          "Beat UNC 95-90 at home",
+          "Capable of high-scoring games (95+ points multiple times)"
+        ],
+        "weaknesses": [
+          "Inconsistent — 12 losses",
+          "Heartbreaking buzzer-beater ACC tournament loss may affect morale",
+          "Reliant on one star player"
+        ],
+        "overall_assessment": "If Okorie is on, Stanford can beat anyone. His 40-point ceiling makes them a tough draw for any seed. But consistency is the question — when he's off, they're an average team."
+      },
+      "notable_wins": ["Beat UNC 95-90", "Beat Georgia Tech 95-72 (Okorie 40 pts)"],
+      "program_history": "Stanford has reached the Final Four (1998) and made multiple tournament appearances.",
+      "style_of_play": "Offensive-minded with heavy 3-point shooting. Star-driven system around Okorie."
+    },
+    {
+      "team_name": "Missouri Tigers",
+      "conference": "SEC",
+      "record": "22-12",
+      "conference_record": "10-8",
+      "net_ranking": 60,
+      "projected_seed_range": [6, 8],
+      "auto_bid_status": "At-large likely — 7th seed in SEC tournament, projected 6-seed in NCAA",
+      "coach": {
+        "name": "Dennis Gates",
+        "tournament_experience": "Fourth-year head coach. Won Big House Gaines Award. Led Mizzou to NCAA tournament previously.",
+        "style_notes": "Emphasizes versatility and frontcourt depth. Strong at home against ranked opponents."
+      },
+      "key_stats": {
+        "notes": "Tied for 6th in SEC. Beat Mississippi State 85-73 in SEC tournament before losing to Florida 95-81."
+      },
+      "key_players": [
+        {
+          "name": "Jevon Porter",
+          "position": "F",
+          "notes": "Transfer from Loyola Marymount. Key frontcourt addition."
+        },
+        {
+          "name": "Luke Northweather",
+          "position": null,
+          "notes": "Transfer from Oklahoma. Added experience."
+        },
+        {
+          "name": "Anthony Robinson II",
+          "position": null,
+          "notes": "Returning core player"
+        },
+        {
+          "name": "Jayden Stone",
+          "position": null,
+          "notes": "Key contributor during SEC play"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "SEC experience — 16 of 18 conference games against 2025 NCAA tournament teams",
+          "Gates is experienced tournament coach",
+          "Strong home schedule builds toughness",
+          "Frontcourt versatility with transfer additions"
+        ],
+        "weaknesses": [
+          "12 losses in loaded SEC",
+          "Lost to Drake 67-57 in first round of 2026 NCAA tournament (projected outcome per search results)",
+          "May be a first-round exit candidate"
+        ],
+        "overall_assessment": "Not a classic Cinderella — they're an SEC team that will be seeded 6-8. But the search results suggest they could be upset victims rather than upset makers. Drake's victory suggests Mizzou may underperform their seed."
+      },
+      "notable_wins": ["Beat Mississippi State 85-73 in SEC tournament"],
+      "program_history": "Elite Eight in 2023 under Gates. Program has Final Four history.",
+      "style_of_play": "Versatile, physical SEC team. Frontcourt-oriented with transfer portal additions."
+    },
+    {
+      "team_name": "McNeese Cowboys",
+      "conference": "Southland",
+      "record": "24-5",
+      "conference_record": "19-3",
+      "net_ranking": 62,
+      "projected_seed_range": [13, 15],
+      "auto_bid_status": "Needs Southland tournament auto-bid. 2nd seed in conference.",
+      "coach": {
+        "name": "Bill Armstrong",
+        "tournament_experience": "First-year head coach. Inherited strong program from Will Wade.",
+        "style_notes": "Maintained winning culture through coaching transition. Eight-game winning streak to end regular season."
+      },
+      "key_stats": {
+        "notes": "Ended regular season on 8-game win streak. 127-65 blowout shows scoring potential."
+      },
+      "key_players": [
+        {
+          "name": "Larry Johnson",
+          "position": "G",
+          "ppg": null,
+          "notes": "Scored 30 points in season high. 25 points to close regular season vs Nicholls. Lead scorer.",
+          "nba_prospect": false
+        },
+        {
+          "name": "Omar Cooper",
+          "position": "G",
+          "notes": "Key backcourt contributor"
+        },
+        {
+          "name": "Jerrell Colbert",
+          "position": "C",
+          "notes": "Interior presence"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM-HIGH",
+        "strengths": [
+          "Won first-ever NCAA tournament game last year (beat Clemson 69-67 as 12-seed)",
+          "Tournament experience from 2025 run — players know what it takes",
+          "Peaking at the right time — 8-game win streak",
+          "Larry Johnson is a proven scorer who can take over games",
+          "Program built by Will Wade with strong culture"
+        ],
+        "weaknesses": [
+          "First-year coach navigating tournament pressure",
+          "Southland Conference competition level is low",
+          "Lost key players from last year's tournament team",
+          "2nd in conference — may not even get auto-bid"
+        ],
+        "historical_context": "Program's first-ever NCAA tournament win came in 2025 (beat Clemson). That experience is invaluable for a second straight run.",
+        "overall_assessment": "McNeese proved last year they can compete in March. The question is whether a first-year coach can replicate that magic. If they make the field, their 2025 experience gives them an edge over typical Southland auto-bids."
+      },
+      "notable_wins": ["Beat Clemson 69-67 in 2025 NCAA tournament (first-ever tournament win)", "75-65 over Nicholls to close regular season"],
+      "program_history": "First NCAA tournament win ever in 2025. Building a mid-major powerhouse under Will Wade's foundation.",
+      "style_of_play": "Guard-driven offense. Can score in bunches (127 points in one game). Physical play."
+    },
+    {
+      "team_name": "Belmont Bruins",
+      "conference": "Missouri Valley",
+      "record": "26-5",
+      "conference_record": "16-4",
+      "net_ranking": 63,
+      "projected_seed_range": [13, 15],
+      "auto_bid_status": "Lost in MVC tournament quarterfinals to 9-seed Drake 100-81. Needs at-large bid (unlikely from MVC).",
+      "coach": {
+        "name": "Casey Alexander",
+        "tournament_experience": "Seventh-year head coach. Belmont has made 9 NCAA tournament appearances historically.",
+        "style_notes": "One of only 4 programs to win 20+ games in 15 consecutive seasons (with Gonzaga, Kansas, Oregon)."
+      },
+      "key_stats": {
+        "notes": "No. 1 seed in MVC tournament but upset by 9-seed Drake — first time a 9-seed beat a 1-seed in MVC tournament history."
+      },
+      "key_players": [
+        {
+          "name": "Tyler Lundblade",
+          "position": null,
+          "ppg": 15.8,
+          "notes": "Leading scorer, highly efficient"
+        },
+        {
+          "name": "Aidan Noyes",
+          "position": null,
+          "notes": "19 points in MVC tournament. Key contributor."
+        },
+        {
+          "name": "Sam Orme",
+          "position": null,
+          "notes": "18-point scorer. Versatile."
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "LOW (may not make field)",
+        "strengths": [
+          "Elite regular season record (26-5)",
+          "One of only 4 programs with 15 consecutive 20-win seasons",
+          "9 NCAA tournament appearances — program knows how to compete in March",
+          "Balanced scoring attack",
+          "MVC is a respected mid-major conference"
+        ],
+        "weaknesses": [
+          "Lost MVC tournament as 1-seed to 9-seed Drake — devastating upset",
+          "At-large bid from MVC is extremely difficult to earn",
+          "Lost Nic McClain to season-ending injury",
+          "Tournament loss raises questions about composure under pressure"
+        ],
+        "overall_assessment": "Belmont had a fantastic regular season but the MVC tournament loss likely ends their NCAA tournament hopes. If they somehow get an at-large bid, their 26-5 record and tournament pedigree make them dangerous. But this is probably NIT territory."
+      },
+      "notable_wins": ["26-5 regular season", "16-4 in MVC (1st place)"],
+      "program_history": "9 NCAA tournament appearances. Known as a mid-major powerhouse under Rick Byrd's legacy. Belmont is synonymous with March Madness upsets.",
+      "style_of_play": "Efficient offensive team. Balanced scoring. Strong shooting program historically."
+    },
+    {
+      "team_name": "Yale Bulldogs",
+      "conference": "Ivy League",
+      "record": "22-5",
+      "conference_record": "10-3",
+      "net_ranking": 65,
+      "projected_seed_range": [13, 14],
+      "auto_bid_status": "Regular season champion. Unanimous preseason favorite. Heavy favorite to win Ivy League tournament (March 13-15 at Cornell).",
+      "coach": {
+        "name": "James Jones",
+        "tournament_experience": "26th-year head coach. Multiple Ivy League titles. Has led Yale to NCAA tournament multiple times including 2-seed upset wins.",
+        "style_notes": "Master of preparation. Gets the most out of academic-focused rosters."
+      },
+      "key_stats": {
+        "notes": "Clinched second straight Ivy League title. Unanimously voted preseason favorite."
+      },
+      "key_players": [
+        {
+          "name": "Nick Townsend",
+          "position": "F",
+          "ppg": 16.9,
+          "rpg": 7.6,
+          "notes": "First Team All-Ivy. Team captain. 4th in Ivy League in scoring, 3rd in rebounding. Double-double machine.",
+          "nba_prospect": false
+        },
+        {
+          "name": "Samson Aletan",
+          "position": "C",
+          "notes": "Elite rim protector. One of the best shot-blockers in mid-major basketball. Junior anchor.",
+          "nba_prospect": false
+        },
+        {
+          "name": "Casey Simmons",
+          "position": null,
+          "notes": "Key contributor in backcourt"
+        },
+        {
+          "name": "Isaac Celiscar",
+          "position": null,
+          "notes": "Versatile guard"
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM-HIGH",
+        "strengths": [
+          "James Jones is in his 26th year — master tactician who prepares meticulously",
+          "Back-to-back Ivy League regular season and tournament champions",
+          "Nick Townsend is a legitimate star (16.9 PPG, 7.6 RPG)",
+          "Samson Aletan provides elite rim protection rarely seen in Ivy League",
+          "Yale has upset history — beat Baylor as a 12-seed in 2016",
+          "Continuity — no transfer portal churn, players develop together for 4 years",
+          "Smart players who execute game plans and don't beat themselves"
+        ],
+        "weaknesses": [
+          "Ivy League competition level is among the lowest in D1",
+          "Limited athleticism compared to power conference teams",
+          "Can't match the depth of higher-seeded opponents",
+          "Three losses show vulnerability"
+        ],
+        "historical_context": "Yale upset Baylor as a 12-seed in 2016 NCAA tournament. The Ivy League has produced upsets historically (Harvard, Princeton). Yale's recent consistency makes them a perennial threat.",
+        "overall_assessment": "Yale is the classic Cinderella template — smart, well-coached, experienced players who play together for years. Townsend is a legitimate star, and Aletan's rim protection can neutralize opposing big men. Jones will have a perfect game plan. If they get a 13 or 14 seed, they are ABSOLUTELY capable of a first-round upset."
+      },
+      "notable_wins": ["Second straight Ivy League regular season title", "Beat Columbia to clinch title"],
+      "program_history": "Yale beat Baylor as 12-seed in 2016. Multiple Ivy League titles under James Jones. Program is at its strongest in decades.",
+      "style_of_play": "Disciplined, half-court offense. Strong interior defense with Aletan. Smart ball movement. Don't turn it over. Execute in late-game situations."
+    },
+    {
+      "team_name": "Grand Canyon Antelopes",
+      "conference": "Mountain West",
+      "record": "20-11",
+      "conference_record": "11-6",
+      "net_ranking": 68,
+      "projected_seed_range": [12, 14],
+      "auto_bid_status": "4th in Mountain West. Needs conference tournament run or at-large (unlikely).",
+      "coach": {
+        "name": "Bryce Drew",
+        "tournament_experience": "121-40 at GCU. Three straight WAC tournament titles. Three straight NCAA tournament appearances. THE premier mid-major tournament coach.",
+        "style_notes": "High-scoring offense. Dynamic guard play. Won three straight conference tournaments — knows how to peak in March."
+      },
+      "key_stats": {
+        "notes": "First season in Mountain West after moving from WAC. 4th place finish is solid for first year in stronger conference."
+      },
+      "key_players": [
+        {
+          "name": "Rayquan Johnson",
+          "position": "G",
+          "notes": "Dynamic scorer. Identified by analysts as key to Cinderella potential.",
+          "nba_prospect": false
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "HIGH",
+        "strengths": [
+          "Bryce Drew is a PROVEN March coach — three straight conference tournament titles, three straight NCAA bids",
+          "Drew himself hit the famous buzzer-beater for Valparaiso in 1998 tournament — March is in his DNA",
+          "High-scoring offense can run with anyone",
+          "Dynamic guard play creates matchup problems",
+          "Identified by Bleacher Report and other outlets as a top Cinderella candidate",
+          "Strong rebounding team",
+          "Four straight NCAA tournament appearances (including current season projection)"
+        ],
+        "weaknesses": [
+          "First year in Mountain West — adjustment period",
+          "11 losses show inconsistency in stronger conference",
+          "May not make the field if they don't win MW tournament",
+          "Lost some key players from WAC championship runs"
+        ],
+        "historical_context": "Bryce Drew hit one of the most iconic shots in NCAA tournament history for Valparaiso in 1998. He brings that March magic as a coach — three straight conference tournament titles at GCU.",
+        "overall_assessment": "If GCU makes the tournament, they are arguably the MOST DANGEROUS Cinderella candidate. Drew's tournament DNA (as player AND coach), high-scoring offense, and dynamic guard play make them a nightmare matchup for a higher seed. Multiple outlets have identified them as their top upset pick."
+      },
+      "notable_wins": ["Three straight WAC tournament titles (previous years)", "Competitive in Mountain West debut season"],
+      "program_history": "Three straight NCAA tournament appearances. Program has risen rapidly under Bryce Drew. Transitioned from D2 to D1 in 2013.",
+      "style_of_play": "Up-tempo, guard-driven, high-scoring offense. Can shoot the three and attack the rim. Drew's teams play with confidence and freedom in March."
+    },
+    {
+      "team_name": "High Point Panthers",
+      "conference": "Big South",
+      "record": "27-4",
+      "conference_record": "14-1",
+      "net_ranking": 75,
+      "projected_seed_range": [14, 16],
+      "auto_bid_status": "CLINCHED — Won Big South tournament 91-76 over Winthrop. Second consecutive auto-bid.",
+      "coach": {
+        "name": "Flynn Clayman",
+        "tournament_experience": "First-year head coach. Promoted from associate HC after Alan Huss left for Creighton. Won Big South tournament in first season.",
+        "style_notes": "Won with only ONE returning starter and nine new rotation players. Remarkable coaching job. Defensive-first identity — nation's leader in steal percentage."
+      },
+      "key_stats": {
+        "notes": "Third consecutive Big South regular season championship. Won conference tournament 91-76. 27-4 overall. Nation's leader in steal percentage."
+      },
+      "key_players": [
+        {
+          "name": "Rob Martin",
+          "position": "G",
+          "height": "5-10",
+          "ppg": 15.0,
+          "fg_pct": 0.44,
+          "ft_pct": 0.84,
+          "notes": "Transfer from SE Missouri State. 2-year starter. Lead scorer despite small stature."
+        },
+        {
+          "name": "Scotty Washington",
+          "position": "G",
+          "height": "6-4",
+          "ppg": 8.0,
+          "fg_pct": 0.48,
+          "three_pt_pct": 0.36,
+          "notes": "Transfer from Cal-Northridge. Secondary scorer."
+        }
+      ],
+      "cinderella_factors": {
+        "upset_potential": "MEDIUM",
+        "strengths": [
+          "Nation's leader in steal percentage — creates havoc on defense",
+          "Balanced scoring attack with deep rotation",
+          "Won Big South tournament with only ONE returning starter — shows incredible coaching and team chemistry",
+          "Third consecutive conference regular season title — program excellence",
+          "91-76 dominant tournament championship win",
+          "Second consecutive NCAA tournament appearance builds program confidence"
+        ],
+        "weaknesses": [
+          "NET ranking of 75 is low — will likely be a 15 or 16 seed",
+          "Big South is one of the weakest conferences in D1",
+          "First-year head coach in NCAA tournament",
+          "Only one returning starter — limited tournament experience on roster",
+          "Small guard (5-10 Rob Martin) may struggle against bigger teams"
+        ],
+        "historical_context": "High Point's second ever NCAA tournament appearance (first was 2025). Program is building something special under former coach Huss's foundation.",
+        "overall_assessment": "High Point is a feel-good story — first-year coach, one returning starter, three straight conference titles. Their defensive identity (nation's best steal percentage) can create chaos. As a 15/16 seed they'd need everything to go right, but they have the defensive disruption capability to make a game interesting."
+      },
+      "notable_wins": ["91-76 Big South championship over Winthrop", "14-1 conference record", "27-4 overall"],
+      "program_history": "Second NCAA tournament appearance ever (both in 2025 and 2026). Rapidly ascending program.",
+      "style_of_play": "Defensive havoc — nation's leader in steal percentage. Creates turnovers and runs in transition. Balanced offensive attack with deep bench."
+    }
+  ],
+  "cinderella_rankings": {
+    "description": "Ranked by upset potential if they make the 2026 NCAA tournament",
+    "tier_1_most_dangerous": [
+      {
+        "team": "Grand Canyon",
+        "reason": "Bryce Drew's March DNA (player and coach), high-scoring offense, dynamic guards. Top Cinderella pick by multiple national outlets."
+      },
+      {
+        "team": "Miami (OH)",
+        "reason": "31-0 undefeated record, #1 in FG%, #2 in scoring nationally. Historic offense. Massive media narrative. Untested but lethal if offense translates."
+      }
+    ],
+    "tier_2_dangerous": [
+      {
+        "team": "Yale",
+        "reason": "26th-year coach James Jones, star player Townsend (16.9 PPG), elite rim protector Aletan, Ivy League upset history. Classic Cinderella template."
+      },
+      {
+        "team": "McNeese",
+        "reason": "Won first-ever tournament game last year (beat Clemson). Tournament experience from 2025 run. Peaking with 8-game win streak."
+      },
+      {
+        "team": "Seton Hall",
+        "reason": "Shaheen Holloway's Saint Peter's 15-seed Elite Eight pedigree. Massive 7-25 to 20-11 turnaround. Big East battle-tested."
+      }
+    ],
+    "tier_3_capable": [
+      {
+        "team": "High Point",
+        "reason": "Nation's best steal percentage. Havoc defense. But likely 15/16 seed facing enormous talent gap."
+      },
+      {
+        "team": "UCF",
+        "reason": "Five quad 1 wins in Big 12. Not a classic mid-major but dangerous as lower power conference seed."
+      },
+      {
+        "team": "Akron",
+        "reason": "26-5 with elite 3-point shooting. Program-record wins. But may not make field."
+      },
+      {
+        "team": "Stanford",
+        "reason": "Ebuka Okorie's 40-point ceiling can beat anyone on his night. Inconsistent otherwise."
+      }
+    ],
+    "tier_4_unlikely": [
+      {
+        "team": "Belmont",
+        "reason": "26-5 but lost MVC tournament to 9-seed Drake. Probably NIT-bound."
+      },
+      {
+        "team": "Boise State",
+        "reason": "Physical team but mediocre record. Needs MW tournament run."
+      },
+      {
+        "team": "West Virginia",
+        "reason": "Big 12 tested but 18-13 and coaching instability."
+      },
+      {
+        "team": "Missouri",
+        "reason": "SEC team likely seeded 6-8 — more likely to be upset than to upset."
+      },
+      {
+        "team": "Tulsa",
+        "reason": "Solid record but limited info on quality wins."
+      },
+      {
+        "team": "Oklahoma",
+        "reason": "16-14 in SEC. Unlikely to make field."
+      }
+    ]
+  },
+  "key_narratives_for_simulation": {
+    "nil_impact": "NIL and transfer portal have widened talent gap. Experts predict another chalk year. Only 13 underdog wins in 2025 (tied for fewest since 1985). Three straight years without multiple double-digit seeds in Sweet 16.",
+    "coaching_matters_most": "In the Cinderella era of NIL, the most dangerous lower seeds have elite tournament coaches: Bryce Drew (GCU), James Jones (Yale), Shaheen Holloway (Seton Hall), Travis Steele (Miami OH).",
+    "undefeated_miami": "Miami OH's 31-0 record will dominate public brackets. KenPom SOS of 282 means they're potentially overvalued by the public and undervalued by metrics. This creates a massive divergence between public perception and statistical reality.",
+    "simulation_implications": "Lower seed upset probabilities should be DECREASED from historical averages given the NIL talent consolidation trend. But apply coaching and experience bonuses to teams with proven March coaches (Drew, Jones, Holloway). Miami OH's offensive efficiency metrics should carry extra weight despite weak SOS."
+  }
+}

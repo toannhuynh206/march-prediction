@@ -1,0 +1,429 @@
+{
+  "title": "Bracket Uniqueness and Generation Strategy: Enumeration vs Sampling",
+  "date": "2026-03-11",
+  "status": "research_complete",
+
+  "mathematical_analysis": {
+    "per_region": {
+      "teams": 16,
+      "games": 15,
+      "total_unique_brackets": 32768,
+      "explanation": "Each region is a 16-team single-elimination bracket with 15 games. Each game has exactly 2 outcomes (win/lose), so there are 2^15 = 32,768 possible region brackets. This is an exact, exhaustive count — no approximation needed.",
+      "encoding": "Each region bracket maps to a 15-bit integer (0 to 32767). Bit i represents the outcome of game i. This is a perfect bijection: every integer in [0, 32767] is a valid region bracket, and every region bracket maps to exactly one integer."
+    },
+    "full_tournament": {
+      "total_games": 63,
+      "total_unique_brackets": "2^63 = 9,223,372,036,854,775,808 (9.2 quintillion)",
+      "breakdown": "4 regions x 15 games = 60 region games + 3 Final Four games = 63 total",
+      "cross_region_combinations": "32,768^4 = 1,152,921,504,606,846,976 (1.15 quintillion) region combinations, times 2^3 = 8 Final Four outcomes = 9.2 quintillion total",
+      "exhaustive_enumeration_feasible": false,
+      "explanation": "Full-bracket enumeration is impossible. Even at 1 billion brackets/second, it would take 292 years."
+    },
+    "plausible_brackets": {
+      "definition": "A bracket where P(bracket) > some threshold epsilon",
+      "analysis": "With typical win probabilities (1-seed vs 16-seed ~98.7%), the vast majority of 32,768 region brackets have negligible probability. A 16-seed-wins-all bracket has probability ~10^-30. However, ALL 32,768 are valid and computable — the question is which ones matter.",
+      "effective_count_per_region": {
+        "above_1e_minus_10": "roughly 5,000-10,000 brackets depending on probability model",
+        "above_1e_minus_6": "roughly 500-2,000 brackets",
+        "above_1e_minus_3": "roughly 50-200 brackets",
+        "note": "These are estimates. The exact counts depend on the pairwise win probability matrix."
+      }
+    }
+  },
+
+  "the_uniqueness_insight": {
+    "key_realization": "With only 32,768 possible region brackets, the original plan to generate 3M per region is fundamentally misguided. You CANNOT have 3M unique region brackets — only 32,768 exist. The 3M plan implicitly creates ~91 copies of each bracket on average.",
+    "what_3m_actually_means": "Under Monte Carlo sampling, you sample 3M brackets from the probability distribution. High-probability brackets get sampled many times (thousands of copies), low-probability brackets may never appear. The 3M samples are just a noisy approximation of the exact probability distribution over 32,768 outcomes.",
+    "the_better_approach": "Since 32,768 is trivially enumerable, we can compute EXACT probabilities for every region bracket. No sampling noise. No duplicates. Perfect coverage. This is orders of magnitude more efficient."
+  },
+
+  "approach_comparison": {
+    "approach_1_naive_monte_carlo": {
+      "name": "Naive Monte Carlo (3M samples per region)",
+      "description": "Simulate 3M brackets per region by sampling each game outcome according to win probability. Store all 12M brackets in PostgreSQL.",
+      "pros": [
+        "Simple to implement",
+        "Natural uncertainty quantification via sample variance"
+      ],
+      "cons": [
+        "Massive redundancy: 3M samples across 32,768 possible outcomes = ~91x duplication on average",
+        "Sampling noise: rare but interesting brackets (e.g., 11-seed champion) may be underrepresented",
+        "Wastes storage: 12M rows in PostgreSQL when 131,072 (32K x 4 regions) suffice per region",
+        "Wastes compute: generating and inserting millions of duplicate brackets"
+      ],
+      "storage_estimate": {
+        "per_bracket_bytes": 24,
+        "total_brackets": 12000000,
+        "total_bytes": 288000000,
+        "total_readable": "~275 MB"
+      },
+      "verdict": "REJECTED — unnecessary given enumeration is feasible"
+    },
+
+    "approach_2_stratified_importance_sampling": {
+      "name": "Stratified Importance Sampling (original architecture plan)",
+      "description": "Define strata by (R1 upset count, R2 upset count, champion seed). Allocate 3M budget per region using Neyman allocation (proportional to sqrt(P(stratum))). Assign weights to each sampled bracket.",
+      "pros": [
+        "Better coverage of rare events than naive MC",
+        "Neyman allocation minimizes estimator variance",
+        "Weight-based analysis allows Bayesian updating"
+      ],
+      "cons": [
+        "Still sampling from a space of only 32,768 outcomes — unnecessary complexity",
+        "Strata definition adds implementation burden for no real gain when enumeration is possible",
+        "Still creates massive redundancy",
+        "Weights add complexity to all downstream queries"
+      ],
+      "storage_estimate": {
+        "per_bracket_bytes": 28,
+        "total_brackets": 12000000,
+        "total_bytes": 336000000,
+        "total_readable": "~320 MB"
+      },
+      "verdict": "SUPERSEDED — enumeration eliminates the need for importance sampling at the region level"
+    },
+
+    "approach_3_full_region_enumeration": {
+      "name": "Full Region Enumeration + Cross-Region Sampling (RECOMMENDED)",
+      "description": "Enumerate all 32,768 region brackets for each of 4 regions. Compute exact probability for each. For full-bracket analysis, either (a) combine lazily on demand, or (b) sample cross-region combinations weighted by joint probability.",
+      "pros": [
+        "EXACT probabilities — zero sampling error for per-region statistics",
+        "Complete coverage — every possible outcome is represented, including rare upsets",
+        "Tiny storage footprint: 131,072 rows total (32K x 4 regions)",
+        "Trivial to compute: NumPy generates all 32,768 in microseconds",
+        "Bayesian updating is exact: just re-weight and renormalize",
+        "Pruning is simple: set eliminated brackets' weight to 0, renormalize",
+        "No strata, no sampling weights, no Neyman allocation — simpler code"
+      ],
+      "cons": [
+        "Cross-region combinations (32,768^4 ~ 10^18) cannot be fully enumerated",
+        "Full-bracket statistics (e.g., national champion probability) require either (a) conditional probability formula or (b) sampling from cross-region joint distribution",
+        "Loses the 'portfolio of specific full brackets' metaphor"
+      ],
+      "storage_estimate": {
+        "per_bracket_bytes": 16,
+        "total_brackets": 131072,
+        "total_bytes": 2097152,
+        "total_readable": "~2 MB"
+      },
+      "verdict": "RECOMMENDED — best balance of exactness, simplicity, and efficiency"
+    },
+
+    "approach_4_exact_probability_computation": {
+      "name": "Exact Probability via Phylogenetic/Recursive Algorithm (No Storage)",
+      "description": "Use the Felsenstein pruning algorithm (adapted for tournaments) to compute exact per-team advancement probabilities without enumerating any brackets. As described in the Phylourny paper (2023) and Brandes et al. 'Stop Simulating!' (2023/2025).",
+      "pros": [
+        "Fastest computation: equivalent to ~100-200 MC simulations but gives exact results",
+        "O(n^2) complexity for n teams",
+        "No storage needed for bracket database",
+        "Exact probabilities for any team reaching any round"
+      ],
+      "cons": [
+        "Only computes per-team advancement probabilities, not full bracket distributions",
+        "Cannot maintain a 'portfolio of brackets' for live pruning/tracking",
+        "Does not support the tracker use case (pruning live brackets as results come in)",
+        "Academic papers; less battle-tested for production bracket pools"
+      ],
+      "verdict": "USE FOR VALIDATION — compute exact advancement probabilities to validate our enumerated bracket weights, but not as primary architecture"
+    }
+  },
+
+  "recommended_architecture": {
+    "name": "Hybrid: Region Enumeration + Cross-Region Sampling + Exact Validation",
+    "summary": "Enumerate all 32,768 region brackets per region (131,072 total), compute exact probabilities. For the live tracker, sample a manageable number of full brackets (cross-region combinations) for the pruning use case. Validate with exact recursive algorithm.",
+
+    "layer_1_region_enumeration": {
+      "description": "Enumerate all 2^15 = 32,768 region brackets for each of 4 regions",
+      "implementation": {
+        "step_1": "Generate all 32,768 binary vectors: np.arange(32768, dtype=np.uint16)",
+        "step_2": "Unpack bits to get game outcomes: ((ids[:, None] >> np.arange(15)) & 1).astype(np.int8)",
+        "step_3": "For each bracket, simulate the region: determine which teams advance based on game outcomes",
+        "step_4": "Compute P(bracket) = product of P(game_outcome | teams_that_reached_that_game)",
+        "step_5": "Validate: sum of all 32,768 probabilities must equal 1.0 (within floating point tolerance)",
+        "step_6": "Store: bracket_id (SMALLINT), packed_result (SMALLINT), probability (FLOAT4), champion_seed (SMALLINT), champion_team_id (INT), round_results (JSONB optional)"
+      },
+      "storage": {
+        "rows_per_region": 32768,
+        "total_rows": 131072,
+        "bytes_per_row": 16,
+        "total_size": "~2 MB",
+        "comparison": "vs 320 MB for 12M sampled brackets = 160x reduction"
+      },
+      "exact_statistics_available": [
+        "P(team X wins region) — exact, by summing probabilities of brackets where X is champion",
+        "P(team X reaches round R) — exact, by summing probabilities of brackets where X reaches round R",
+        "P(seed S wins region) — exact, by summing probabilities of brackets where seed S is champion",
+        "P(exactly k upsets in round R) — exact, by summing matching brackets",
+        "Expected number of upsets per round — exact",
+        "Full probability distribution of any region-level statistic — exact"
+      ]
+    },
+
+    "layer_2_cross_region_full_brackets": {
+      "description": "For the live tracker use case, we need actual full brackets to prune. Sample full brackets by combining region brackets weighted by joint probability.",
+      "options": {
+        "option_a_lazy_combination": {
+          "description": "Do NOT pre-generate full brackets. When a game result comes in, prune the affected region's brackets (set weight=0, renormalize). Cross-region statistics computed on-the-fly by multiplying independent region probabilities.",
+          "pros": "Minimal storage, exact math, instant pruning",
+          "cons": "Cannot display 'number of surviving brackets' as a single integer (it's a product of surviving counts per region)",
+          "suitability": "Best if the tracker only needs per-region and per-team statistics"
+        },
+        "option_b_sampled_full_brackets": {
+          "description": "Pre-sample N full brackets (e.g., 1M-3M) by independently sampling one region bracket per region, weighted by probability. Store as 4 SMALLINT columns (one per region) + weight.",
+          "how_to_sample": "For each full bracket: sample south_bracket_id from Categorical(P_south), east_bracket_id from Categorical(P_east), etc. P(full_bracket) = P(south) * P(east) * P(west) * P(midwest) since regions are independent until Final Four.",
+          "final_four_handling": "After selecting 4 region champions, simulate 3 Final Four games. This adds 2^3 = 8 possible outcomes per 4-region combination. Can enumerate all 8 or sample.",
+          "pros": "Provides concrete full brackets for display, counting survivors is intuitive",
+          "cons": "Returns to sampling (though from exact region distributions), storage grows",
+          "suitability": "Best if the tracker UI shows 'X brackets still alive' as a headline number"
+        },
+        "option_c_top_k_per_region": {
+          "description": "Keep only the top-K most probable region brackets (e.g., K=1000) per region. Full bracket space = 1000^4 = 10^12 — still too large to enumerate, but region pruning is faster.",
+          "pros": "Reduces noise from astronomically unlikely brackets",
+          "cons": "Loses coverage of rare upsets, introduces selection bias",
+          "suitability": "Not recommended — loses the exact enumeration advantage"
+        }
+      },
+      "recommendation": "option_a_lazy_combination for most use cases. option_b with 1M-3M sampled full brackets if the UI requires a concrete bracket count."
+    },
+
+    "layer_3_exact_validation": {
+      "description": "Use the Phylourny / Felsenstein pruning algorithm to compute exact per-team advancement probabilities. Compare against our enumerated probabilities as a validation step.",
+      "implementation": "The recursive algorithm computes P(team_i wins tournament) in O(n^2) time. For 16 teams per region: 256 operations per team, 4096 total per region. Trivial.",
+      "purpose": "Catches bugs in our enumeration logic. If our summed probabilities disagree with the recursive algorithm, we have an implementation error."
+    }
+  },
+
+  "implementation_pseudocode": {
+    "region_enumeration": [
+      "def enumerate_region_brackets(teams: list[Team], win_prob_matrix: np.ndarray) -> RegionBrackets:",
+      "    # teams: 16 teams in seed order (1-seed at index 0, 16-seed at index 15)",
+      "    # win_prob_matrix: 16x16 matrix where [i][j] = P(team i beats team j)",
+      "    ",
+      "    n_brackets = 2**15  # 32768",
+      "    bracket_ids = np.arange(n_brackets, dtype=np.uint16)",
+      "    ",
+      "    # Unpack all 15 game outcomes for all 32768 brackets at once",
+      "    # Shape: (32768, 15) — each row is one bracket, each column is one game outcome",
+      "    game_outcomes = ((bracket_ids[:, None] >> np.arange(15, dtype=np.uint16)) & 1).astype(np.int8)",
+      "    ",
+      "    # For each bracket, determine which teams play and win each game",
+      "    # This requires knowing the bracket structure (which teams meet in which game)",
+      "    probabilities = np.ones(n_brackets, dtype=np.float64)  # use float64 for products",
+      "    champions = np.zeros(n_brackets, dtype=np.int16)",
+      "    ",
+      "    # Process all brackets in parallel using vectorized operations",
+      "    # Round 1: 8 games (game indices 0-7)",
+      "    # Game 0: seed 1 vs seed 16, Game 1: seed 8 vs seed 9, ...",
+      "    round1_matchups = [(0,15), (7,8), (4,11), (3,12), (5,10), (2,13), (6,9), (1,14)]",
+      "    ",
+      "    round1_winners = np.zeros((n_brackets, 8), dtype=np.int16)",
+      "    for game_idx, (seed_a, seed_b) in enumerate(round1_matchups):",
+      "        outcome = game_outcomes[:, game_idx]  # 0 = team_a wins, 1 = team_b wins",
+      "        p_a_wins = win_prob_matrix[seed_a, seed_b]",
+      "        probabilities *= np.where(outcome == 0, p_a_wins, 1 - p_a_wins)",
+      "        round1_winners[:, game_idx] = np.where(outcome == 0, seed_a, seed_b)",
+      "    ",
+      "    # Round 2: 4 games (game indices 8-11), winners of adjacent R1 games meet",
+      "    round2_winners = np.zeros((n_brackets, 4), dtype=np.int16)",
+      "    for game_idx in range(4):",
+      "        team_a = round1_winners[:, 2*game_idx]      # winner of R1 game 2k",
+      "        team_b = round1_winners[:, 2*game_idx + 1]   # winner of R1 game 2k+1",
+      "        outcome = game_outcomes[:, 8 + game_idx]",
+      "        # Vectorized probability lookup: P(team_a[i] beats team_b[i]) for each bracket i",
+      "        p_a_wins = win_prob_matrix[team_a, team_b]",
+      "        probabilities *= np.where(outcome == 0, p_a_wins, 1 - p_a_wins)",
+      "        round2_winners[:, game_idx] = np.where(outcome == 0, team_a, team_b)",
+      "    ",
+      "    # Round 3 (Elite Eight): 2 games (game indices 12-13)",
+      "    round3_winners = np.zeros((n_brackets, 2), dtype=np.int16)",
+      "    for game_idx in range(2):",
+      "        team_a = round2_winners[:, 2*game_idx]",
+      "        team_b = round2_winners[:, 2*game_idx + 1]",
+      "        outcome = game_outcomes[:, 12 + game_idx]",
+      "        p_a_wins = win_prob_matrix[team_a, team_b]",
+      "        probabilities *= np.where(outcome == 0, p_a_wins, 1 - p_a_wins)",
+      "        round3_winners[:, game_idx] = np.where(outcome == 0, team_a, team_b)",
+      "    ",
+      "    # Round 4 (Regional Final): 1 game (game index 14)",
+      "    team_a = round3_winners[:, 0]",
+      "    team_b = round3_winners[:, 1]",
+      "    outcome = game_outcomes[:, 14]",
+      "    p_a_wins = win_prob_matrix[team_a, team_b]",
+      "    probabilities *= np.where(outcome == 0, p_a_wins, 1 - p_a_wins)",
+      "    champions = np.where(outcome == 0, team_a, team_b)",
+      "    ",
+      "    # Validate: probabilities must sum to 1.0",
+      "    total = probabilities.sum()",
+      "    assert abs(total - 1.0) < 1e-10, f'Probabilities sum to {total}, expected 1.0'",
+      "    ",
+      "    return RegionBrackets(",
+      "        bracket_ids=bracket_ids,",
+      "        packed_results=bracket_ids,  # the ID IS the packed result",
+      "        probabilities=probabilities.astype(np.float32),",
+      "        champions=champions",
+      "    )"
+    ],
+    "probability_computation_note": "The probability of a bracket is the product of probabilities of each game outcome. For game g with outcome o, if o=0 (higher seed wins), multiply by P(A beats B). If o=1 (lower seed wins), multiply by P(B beats A) = 1 - P(A beats B). The win probability P(A beats B) depends on WHICH teams reach game g, which depends on outcomes of earlier games — this is why we must process rounds sequentially, but within each round we can vectorize across all 32,768 brackets."
+  },
+
+  "memory_and_storage_estimates": {
+    "region_enumeration_in_memory": {
+      "bracket_ids": "32768 x uint16 = 64 KB per region, 256 KB total",
+      "game_outcomes_unpacked": "32768 x 15 x int8 = 480 KB per region, 1.92 MB total (temporary, for computation)",
+      "probabilities": "32768 x float32 = 128 KB per region, 512 KB total",
+      "champions": "32768 x int16 = 64 KB per region, 256 KB total",
+      "total_in_memory": "~3 MB for all 4 regions (vs ~500 MB for 12M sampled brackets)"
+    },
+    "postgresql_storage": {
+      "table_schema": "region_brackets(region VARCHAR(10), bracket_id SMALLINT, packed_result SMALLINT, probability FLOAT4, champion_seed SMALLINT, champion_team_id INT, is_alive BOOLEAN DEFAULT TRUE)",
+      "rows": 131072,
+      "estimated_row_size_bytes": 40,
+      "total_table_size": "~5 MB (vs ~400 MB for 12M brackets)",
+      "index_size": "~2 MB",
+      "total_with_indexes": "~7 MB"
+    },
+    "sampled_full_brackets_optional": {
+      "if_1m_full_brackets": {
+        "schema": "full_brackets(id SERIAL, south_bracket_id SMALLINT, east_bracket_id SMALLINT, west_bracket_id SMALLINT, midwest_bracket_id SMALLINT, final_four_result SMALLINT, weight FLOAT4, is_alive BOOLEAN)",
+        "row_size_bytes": 24,
+        "total_size": "~24 MB for 1M brackets"
+      },
+      "if_3m_full_brackets": "~72 MB"
+    }
+  },
+
+  "how_this_changes_the_original_plan": {
+    "original_plan": "3M brackets per region, 12M total, stored in PostgreSQL partitioned by region. Stratified importance sampling with Neyman allocation. Brackets have weights for Bayesian updating.",
+    "revised_plan": "32,768 brackets per region, 131,072 total. Full enumeration with exact probabilities. Optionally sample 1M-3M full brackets for the live tracker UI. No stratification needed.",
+
+    "changes": [
+      {
+        "aspect": "Bracket count per region",
+        "old": "3,000,000 (sampled)",
+        "new": "32,768 (enumerated — ALL possible outcomes)",
+        "impact": "91x reduction in rows, ZERO sampling error"
+      },
+      {
+        "aspect": "Total brackets",
+        "old": "12,000,000",
+        "new": "131,072 (region) + optionally 1M-3M (full)",
+        "impact": "Massive storage and compute savings"
+      },
+      {
+        "aspect": "Probability computation",
+        "old": "Approximate (frequency-based from samples)",
+        "new": "Exact (analytical product of conditional probabilities)",
+        "impact": "No Monte Carlo noise, perfect accuracy"
+      },
+      {
+        "aspect": "Stratification / Neyman allocation",
+        "old": "Required for variance reduction",
+        "new": "Unnecessary — enumeration has zero variance",
+        "impact": "Eliminates stratifier.py complexity"
+      },
+      {
+        "aspect": "Storage",
+        "old": "~400 MB in PostgreSQL",
+        "new": "~7 MB in PostgreSQL",
+        "impact": "57x reduction"
+      },
+      {
+        "aspect": "Simulation time",
+        "old": "Minutes to generate 12M brackets + COPY insert",
+        "new": "Seconds to enumerate 131K brackets + insert",
+        "impact": "Orders of magnitude faster"
+      },
+      {
+        "aspect": "Pruning (live tracker)",
+        "old": "UPDATE brackets SET is_alive=FALSE WHERE bitwise condition",
+        "new": "Same SQL, but over 32K rows instead of 3M — instant",
+        "impact": "Pruning queries go from seconds to milliseconds"
+      },
+      {
+        "aspect": "Bayesian updating",
+        "old": "Re-weight sampled brackets, normalize",
+        "new": "Set eliminated brackets to weight=0, renormalize remaining — exact posterior",
+        "impact": "Simpler and exact"
+      },
+      {
+        "aspect": "Champion distribution validation",
+        "old": "'1-seeds must win >= 40% of region simulations'",
+        "new": "Compute exact P(1-seed wins region) by summing weights — no threshold check needed",
+        "impact": "Validation is a simple assertion on exact probability"
+      }
+    ],
+
+    "what_stays_the_same": [
+      "15-bit encoding per region bracket (SMALLINT) — this is perfect, keeps it",
+      "Win probability blend (40% stats + 45% market + 15% factors) — still determines P(A beats B)",
+      "Power index formula (9 factors) — still used to compute P_stats",
+      "PostgreSQL storage with partitioning by region — still useful, just fewer rows",
+      "Live tracker pruning via bitwise SQL — same logic, faster execution",
+      "Weight-based analysis — probabilities ARE the weights",
+      "Tournament year column — unchanged"
+    ]
+  },
+
+  "final_four_handling": {
+    "problem": "Regions are independent until the Final Four. Once we have 4 region champions, they play 3 more games (2 semifinals + 1 final). How do we handle this?",
+    "solution": {
+      "description": "For each combination of 4 region champions, enumerate all 2^3 = 8 Final Four outcomes. Compute P(Final Four outcome) = product of 3 game probabilities. Total full-bracket probability = P(south_region) * P(east_region) * P(west_region) * P(midwest_region) * P(final_four_outcome).",
+      "number_of_champion_combinations": "16^4 = 65,536 possible 4-champion tuples (most have negligible probability)",
+      "plausible_champion_combinations": "In practice, ~500-2000 tuples cover >99.9% of probability mass",
+      "final_four_outcomes_per_tuple": 8,
+      "total_full_bracket_specifications": "65,536 champion tuples * 8 FF outcomes = 524,288 (or ~8,000-16,000 for plausible only)",
+      "exact_national_champion_probability": "Sum over all region brackets where team X is region champion, multiply by P(team X wins Final Four given opponents). This is exact and fast."
+    }
+  },
+
+  "academic_references": {
+    "stop_simulating": {
+      "title": "Stop Simulating! Efficient Computation of Tournament Winning Probabilities",
+      "authors": "Ulrik Brandes, Gordana Marmulla, Ivana Smokovic",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2307.10411",
+      "key_finding": "Exact computation of tournament winning probabilities can be substantially faster than Monte Carlo approximation. The algorithm computes exact probabilities in time equivalent to a few hundred simulation runs.",
+      "relevance": "Validates our enumeration approach. If exact computation is faster than simulation for FIFA World Cup (32 teams), it is trivially fast for 16-team regions."
+    },
+    "phylourny": {
+      "title": "Phylourny: efficiently calculating elimination tournament win probabilities via phylogenetic methods",
+      "authors": "See PMC/Springer publication",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10186292/",
+      "key_finding": "Uses Felsenstein pruning algorithm (from computational phylogenetics) to compute exact per-team tournament win probabilities. O(n^2) complexity. Two orders of magnitude faster than simulation.",
+      "relevance": "Provides a validation algorithm for our enumerated probabilities. Can also compute P(team reaches round R) exactly."
+    },
+    "fivethirtyeight_method": {
+      "title": "How Our March Madness Predictions Work",
+      "source": "FiveThirtyEight",
+      "url": "https://fivethirtyeight.com/features/how-our-march-madness-predictions-work/",
+      "key_finding": "FiveThirtyEight does NOT use Monte Carlo for March Madness. They compute conditional probabilities directly: P(team reaches round R) = P(team reaches round R-1) * sum over possible opponents of [P(beat opponent) * P(opponent reaches round R-1)]. This is the recursive exact computation approach.",
+      "relevance": "Industry validation that exact computation is superior to simulation for single-elimination tournaments."
+    }
+  },
+
+  "recommendation_summary": {
+    "verdict": "ENUMERATE, DO NOT SAMPLE",
+    "rationale": [
+      "32,768 possible region brackets is trivially enumerable — there is no reason to sample from this space",
+      "Enumeration gives EXACT probabilities with ZERO sampling error",
+      "Storage drops from ~400 MB to ~7 MB (57x reduction)",
+      "Computation drops from minutes to seconds",
+      "Pruning queries drop from seconds to milliseconds",
+      "Code complexity drops: eliminate stratifier.py, simplify engine.py",
+      "FiveThirtyEight and academic researchers (Phylourny, 'Stop Simulating!') all converge on exact computation over simulation for single-elimination tournaments",
+      "The only place sampling is still needed is for cross-region full brackets (for the live tracker UI), and even there 1M samples is more than sufficient"
+    ],
+    "action_items": [
+      "1. Refactor simulation/engine.py to enumerate all 32,768 region brackets instead of sampling 3M",
+      "2. Remove simulation/stratifier.py (stratification is unnecessary with enumeration)",
+      "3. Update simulation/config.py: BRACKETS_PER_REGION = 32768, not 3_000_000",
+      "4. Add validation: assert sum(probabilities) == 1.0 for each region",
+      "5. Add Phylourny-style exact validation as a cross-check",
+      "6. Optionally sample 1M-3M full brackets for live tracker UI (cross-region combinations)",
+      "7. Update CLAUDE.md to reflect the new architecture",
+      "8. Update database schema: region_brackets table is tiny, remove partitioning (unnecessary for 32K rows per region)",
+      "9. Update pruning logic: same bitwise approach but over 32K rows = instant"
+    ]
+  }
+}

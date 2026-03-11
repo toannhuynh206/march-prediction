@@ -1,0 +1,393 @@
+{
+  "metadata": {
+    "last_updated": "2026-03-10T18:00:00Z",
+    "tournament_year": 2026,
+    "selection_sunday": "2026-03-15",
+    "total_conferences": 32,
+    "auto_bids_decided": 8,
+    "auto_bids_remaining": 24,
+    "projected_1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+    "sources": [
+      "ESPN Champ Week 2026",
+      "CBS Sports Conference Tournaments Tracker",
+      "NCAA.com Auto-Bid Tracker",
+      "OutKick NCAA Tournament Berth Tracker"
+    ]
+  },
+  "completed_tournaments": [
+    {
+      "conference": "Ohio Valley",
+      "champion": "Tennessee State",
+      "record": "23-9",
+      "championship_score": "Tennessee State 93, Morehead State 67",
+      "opponent": "Morehead State",
+      "seed_projection": "15-16 seed",
+      "notes": "First NCAA Tournament appearance since 1994"
+    },
+    {
+      "conference": "Big South",
+      "champion": "High Point",
+      "record": "30-4",
+      "championship_score": "High Point 91, Winthrop 76",
+      "opponent": "Winthrop",
+      "seed_projection": "14-15 seed",
+      "notes": "Back-to-back Big South titles; second consecutive NCAA Tournament"
+    },
+    {
+      "conference": "Missouri Valley",
+      "champion": "Northern Iowa",
+      "record": "20-14",
+      "championship_score": "Northern Iowa 84, UIC 69",
+      "opponent": "UIC",
+      "seed_projection": "14-15 seed",
+      "notes": "First NCAA Tournament appearance since 2016"
+    },
+    {
+      "conference": "ASUN",
+      "champion": "Queens",
+      "record": "21-13",
+      "championship_score": "Queens 98, Central Arkansas 93 (OT)",
+      "opponent": "Central Arkansas",
+      "seed_projection": "15-16 seed",
+      "notes": "First NCAA Tournament appearance in program history"
+    },
+    {
+      "conference": "Summit League",
+      "champion": "North Dakota State",
+      "record": "21-13",
+      "championship_score": "North Dakota State 70, North Dakota 62",
+      "opponent": "North Dakota",
+      "seed_projection": "15-16 seed",
+      "notes": "First NCAA Tournament appearance since 2019"
+    },
+    {
+      "conference": "Sun Belt",
+      "champion": "Troy",
+      "record": "22-11",
+      "championship_score": "Troy 77, Georgia Southern 61",
+      "opponent": "Georgia Southern",
+      "seed_projection": "14-15 seed",
+      "notes": "Back-to-back Sun Belt titles; fourth NCAA Tournament in program history"
+    },
+    {
+      "conference": "Southern (SoCon)",
+      "champion": "Furman",
+      "record": "22-12",
+      "championship_score": "Furman 76, East Tennessee State 61",
+      "opponent": "East Tennessee State",
+      "seed_projection": "13-14 seed",
+      "notes": "First NCAA Tournament appearance since 2023; upset over No. 1 seed ETSU"
+    },
+    {
+      "conference": "Northeast (NEC)",
+      "champion": "Long Island (LIU)",
+      "record": "23-10",
+      "championship_score": "TBD vs Mercyhurst (March 10 final)",
+      "opponent": "Mercyhurst",
+      "seed_projection": "16 seed",
+      "notes": "LIU clinched auto-bid in semifinals because Mercyhurst is not NCAA tournament eligible; championship game March 10"
+    }
+  ],
+  "championship_games_today_march_10": [
+    {
+      "conference": "Northeast (NEC)",
+      "matchup": "No. 1 LIU vs No. 3 Mercyhurst",
+      "time": "7:00 PM ET",
+      "network": "ESPN2",
+      "venue": "Steinberg Wellness Center, LIU Campus",
+      "notes": "LIU already has auto-bid regardless of result (Mercyhurst ineligible)"
+    },
+    {
+      "conference": "Coastal Athletic (CAA)",
+      "matchup": "Hofstra vs Monmouth",
+      "time": "7:00 PM ET",
+      "network": "CBSSN",
+      "venue": "Washington, DC",
+      "notes": null
+    },
+    {
+      "conference": "Horizon League",
+      "matchup": "Wright State vs Detroit Mercy",
+      "time": "7:00 PM ET",
+      "network": "ESPN",
+      "venue": "Corteva Coliseum, Indianapolis, IN",
+      "notes": null
+    },
+    {
+      "conference": "MAAC",
+      "matchup": "No. 1 Merrimack vs No. 3 Siena",
+      "time": "9:00 PM ET",
+      "network": "ESPN2",
+      "venue": "Jim Whelan Boardwalk Hall, Atlantic City, NJ",
+      "notes": null
+    },
+    {
+      "conference": "West Coast (WCC)",
+      "matchup": "No. 1 Gonzaga (29-3) vs No. 3 Santa Clara (26-7)",
+      "time": "9:00 PM ET",
+      "network": "ESPN",
+      "venue": "Orleans Arena, Las Vegas, NV",
+      "notes": "Gonzaga's 29th straight WCC final; Santa Clara's first since 2007. Gonzaga beat Oregon State 65-56 in semis; Santa Clara beat Saint Mary's 76-71 in semis. Gonzaga's last WCC tournament before moving to Pac-12."
+    }
+  ],
+  "in_progress_major_conferences": {
+    "ACC": {
+      "dates": "March 10-14",
+      "venue": "Spectrum Center, Charlotte, NC",
+      "status": "First round games March 10",
+      "seeds": {
+        "1": {"team": "Duke", "conf_record": "16-1"},
+        "2": {"team": "Virginia", "conf_record": "15-3"},
+        "3": {"team": "Miami", "conf_record": "13-5"},
+        "4": {"team": "UNC", "conf_record": "12-5"},
+        "5": {"team": "Clemson", "conf_record": "12-6"},
+        "6": {"team": "Louisville", "conf_record": "11-7"},
+        "7": {"team": "NC State", "conf_record": null},
+        "8": {"team": "Notre Dame", "conf_record": null},
+        "9": {"team": "Georgia Tech", "conf_record": null},
+        "10": {"team": "Stanford", "conf_record": null},
+        "11": {"team": "SMU", "conf_record": null},
+        "12": {"team": "Virginia Tech", "conf_record": null},
+        "13": {"team": "Wake Forest", "conf_record": null},
+        "14": {"team": "Syracuse", "conf_record": null},
+        "15": {"team": "Pitt", "conf_record": null},
+        "16": {"team": "Cal", "conf_record": null},
+        "17": {"team": "Boston College", "conf_record": null},
+        "18": {"team": "Florida State", "conf_record": null}
+      },
+      "first_round_results": [
+        "No. 15 Pitt 64, No. 10 Stanford 63"
+      ],
+      "championship": "Saturday, March 14",
+      "notes": "Duke is overall No. 1 in bracketology (29-2 record)"
+    },
+    "Big_Ten": {
+      "dates": "March 10-15",
+      "venue": "United Center, Chicago, IL",
+      "status": "First round games March 10",
+      "seeds": {
+        "1": {"team": "Michigan", "conf_record": null},
+        "2": {"team": "Illinois", "conf_record": null},
+        "3": {"team": "Purdue", "conf_record": null},
+        "4": {"team": "Michigan State", "conf_record": null},
+        "5": {"team": "Nebraska", "conf_record": null},
+        "6": {"team": "Wisconsin", "conf_record": null},
+        "7": {"team": "Indiana", "conf_record": null},
+        "8": {"team": "Ohio State", "conf_record": null},
+        "9": {"team": "Iowa", "conf_record": null},
+        "16": {"team": "Oregon", "conf_record": null},
+        "17": {"team": "Maryland", "conf_record": null}
+      },
+      "first_round_results": [],
+      "first_round_today": [
+        "No. 16 Oregon vs No. 17 Maryland (5:00 PM ET, Peacock)"
+      ],
+      "championship": "Sunday, March 15",
+      "notes": "Michigan won Big Ten outright; opens Friday. 18-team tournament."
+    },
+    "Big_12": {
+      "dates": "March 10-14",
+      "venue": "T-Mobile Center, Kansas City, MO",
+      "status": "First round games March 10",
+      "seeds": {
+        "1": {"team": "Arizona", "conf_record": "16-2"},
+        "2": {"team": "Houston", "conf_record": null},
+        "3": {"team": "Kansas", "conf_record": null},
+        "4": {"team": "Texas Tech", "conf_record": null},
+        "5": {"team": "Iowa State", "conf_record": null},
+        "6": {"team": "TCU", "conf_record": null},
+        "7": {"team": "West Virginia", "conf_record": null},
+        "8": {"team": "UCF", "conf_record": null},
+        "9": {"team": "Cincinnati", "conf_record": null}
+      },
+      "first_round_results": [
+        "No. 13 Arizona State 83, No. 12 Baylor 79"
+      ],
+      "first_round_today": [
+        "Cincinnati vs Utah",
+        "BYU vs Kansas State",
+        "Colorado vs Oklahoma State"
+      ],
+      "championship": "Saturday, March 14",
+      "notes": "Arizona won first Big 12 regular season title. Iowa State has won tournament in back-to-back years."
+    },
+    "SEC": {
+      "dates": "March 11-15",
+      "venue": "Bridgestone Arena, Nashville, TN",
+      "status": "Starts March 11 (Wednesday)",
+      "seeds": {
+        "1": {"team": "Florida", "conf_record": null},
+        "2": {"team": "Alabama", "conf_record": null},
+        "3": {"team": "Arkansas", "conf_record": null},
+        "4": {"team": "Tennessee", "conf_record": null},
+        "5": {"team": "Texas A&M", "conf_record": null},
+        "6": {"team": "Georgia", "conf_record": null},
+        "7": {"team": "Missouri", "conf_record": null},
+        "8": {"team": "Vanderbilt", "conf_record": null},
+        "9": {"team": "Kentucky", "conf_record": null}
+      },
+      "first_round_march_11": [
+        "No. 16 LSU vs No. 9 Kentucky (12:30 PM, SEC Network)",
+        "No. 13 Mississippi State vs No. 12 Auburn (after Game 1, SEC Network)",
+        "No. 15 Ole Miss vs No. 10 Texas (7:00 PM, SEC Network)",
+        "No. 14 South Carolina vs No. 11 Oklahoma (after Game 3, SEC Network)"
+      ],
+      "championship": "Sunday, March 15",
+      "notes": "Florida won SEC regular season title; projected No. 4 overall seed"
+    },
+    "Big_East": {
+      "dates": "March 11-14",
+      "venue": "Madison Square Garden, New York, NY",
+      "status": "Starts March 11 (Wednesday)",
+      "seeds": {
+        "1": {"team": "St. John's", "conf_record": null},
+        "2": {"team": "UConn", "conf_record": null},
+        "3": {"team": "Villanova", "conf_record": null},
+        "4": {"team": "Seton Hall", "conf_record": null},
+        "5": {"team": "Creighton", "conf_record": null},
+        "6": {"team": "DePaul", "conf_record": null},
+        "7": {"team": "Marquette", "conf_record": null},
+        "8": {"team": "Butler", "conf_record": null},
+        "9": {"team": "Providence", "conf_record": null},
+        "10": {"team": "Xavier", "conf_record": null},
+        "11": {"team": "Georgetown", "conf_record": null}
+      },
+      "first_round_march_11": [
+        "No. 9 Providence vs No. 8 Butler (4:00 PM ET)",
+        "No. 10 Xavier vs No. 7 Marquette (6:30 PM ET)",
+        "No. 11 Georgetown vs No. 6 DePaul (9:00 PM ET)"
+      ],
+      "championship": "Saturday, March 14",
+      "notes": "St. John's clinched outright Big East regular season title. UConn-St. John's rematch possible."
+    }
+  },
+  "in_progress_mid_major_conferences": {
+    "Big_Sky": {
+      "dates": "March 7-11",
+      "venue": "Idaho Central Arena, Boise, ID",
+      "status": "Semifinals March 10; championship March 11",
+      "top_seed": "Portland State",
+      "results": [
+        "Montana 95, Northern Colorado 89 (quarterfinal)",
+        "Montana advances to play No. 1 Portland State in semifinals"
+      ],
+      "championship": "Tuesday, March 11"
+    },
+    "Southland": {
+      "dates": "March 8-11",
+      "venue": "The Legacy Center, Lake Charles, LA",
+      "status": "Semifinals in progress",
+      "championship": "Wednesday, March 11, 5:00 PM ET (ESPN2)",
+      "notes": "McNeese is a key team to watch"
+    },
+    "Patriot_League": {
+      "dates": "March 3-11",
+      "venue": "Campus sites",
+      "status": "Championship March 11",
+      "championship_matchup": "No. 2 Lehigh vs No. 4 Boston University",
+      "championship": "Wednesday, March 11, 7:00 PM ET (CBSSN)",
+      "notes": "Boston University's Chance Gladden hit buzzer-beater 3 to reach title game"
+    },
+    "Conference_USA": {
+      "dates": "March 10-14",
+      "venue": "Huntsville, AL",
+      "status": "First round games March 10",
+      "championship": "Saturday, March 14"
+    },
+    "SWAC": {
+      "dates": "March 9-14",
+      "venue": "Gateway Center Arena, Atlanta, GA",
+      "status": "First round in progress",
+      "top_seed": "Bethune-Cookman (14-4 SWAC)",
+      "seeds": {
+        "1": "Bethune-Cookman",
+        "2": "Florida A&M",
+        "3": "Southern",
+        "4": "Texas Southern",
+        "5": "Alabama A&M"
+      },
+      "championship": "Saturday, March 14"
+    }
+  },
+  "upcoming_tournaments_not_started": {
+    "Mountain_West": {
+      "dates": "March 11-14",
+      "venue": "Thomas & Mack Center, Las Vegas, NV",
+      "top_seed": "Utah State",
+      "key_teams": ["Utah State", "San Diego State", "Grand Canyon", "Boise State", "Nevada"],
+      "first_round_march_11": [
+        "No. 8 UNLV vs No. 9 Wyoming",
+        "No. 5 Nevada vs No. 12 Air Force",
+        "No. 7 Colorado State vs No. 10 Fresno State",
+        "No. 6 Boise State vs No. 11 San Jose State"
+      ],
+      "championship": "Saturday, March 14"
+    },
+    "American_Athletic": {
+      "dates": "March 11-15",
+      "venue": "Legacy Arena at BJCC, Birmingham, AL",
+      "key_teams": ["South Florida", "Tulsa", "UCF"],
+      "championship": "Sunday, March 15, 3:15 PM ET (ESPN)"
+    },
+    "Atlantic_10": {
+      "dates": "March 11-15",
+      "venue": "PPG Paints Arena, Pittsburgh, PA",
+      "key_teams": ["Saint Louis", "VCU"],
+      "championship": "Sunday, March 15, 1:00 PM ET (CBS)"
+    },
+    "MAC": {
+      "dates": "March 12-14",
+      "venue": "TBD",
+      "key_teams": ["Miami OH", "Akron"],
+      "championship": "Saturday, March 14"
+    },
+    "Big_West": {
+      "dates": "March 11-14",
+      "venue": "Henderson, NV",
+      "championship": "Friday, March 14"
+    },
+    "WAC": {
+      "dates": "March 11-14",
+      "venue": "Las Vegas, NV",
+      "championship": "Saturday, March 14"
+    },
+    "MEAC": {
+      "dates": "March 11-14",
+      "venue": "Norfolk, VA",
+      "championship": "Saturday, March 14"
+    },
+    "America_East": {
+      "dates": "March 7-14",
+      "venue": "Campus sites / TBD",
+      "championship": "Saturday, March 14"
+    },
+    "Ivy_League": {
+      "dates": "March 14-15",
+      "venue": "Newman Arena at Bartels Hall, Ithaca, NY",
+      "key_teams": ["Yale", "Harvard", "Penn", "Cornell"],
+      "championship": "Sunday, March 15, 12:00 PM ET (ESPN2)",
+      "notes": "Four-team tournament format"
+    }
+  },
+  "bracketology_snapshot_march_10": {
+    "projected_1_seeds": [
+      {"team": "Duke", "record": "29-2", "conference": "ACC", "overall_seed": 1},
+      {"team": "Michigan", "record": null, "conference": "Big Ten", "overall_seed": 2},
+      {"team": "Arizona", "record": null, "conference": "Big 12", "overall_seed": 3},
+      {"team": "Florida", "record": null, "conference": "SEC", "overall_seed": 4}
+    ],
+    "notes": "Duke is No. 1 in WAB and all three predictive metrics. Florida passed UConn for fourth No. 1 seed. Conference tournament results could shift seeding."
+  },
+  "key_storylines": [
+    "Duke (29-2) is the clear No. 1 overall seed with top marks in every metric",
+    "Michigan won the Big Ten outright and is projected No. 2 overall seed",
+    "Arizona won its first Big 12 regular season title with a 16-2 conference record",
+    "Florida won the SEC regular season and is projected as the fourth No. 1 seed over UConn",
+    "St. John's won the Big East regular season outright; potential rematch with UConn looms",
+    "Gonzaga playing in its final WCC tournament before moving to the Pac-12 next year",
+    "Iowa State seeking three-peat as Big 12 tournament champion from the 5-seed",
+    "High Point (30-4) has the best record among auto-bid winners so far",
+    "Tennessee State makes first NCAA Tournament since 1994",
+    "Queens earns first-ever NCAA Tournament berth"
+  ]
+}

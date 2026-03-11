@@ -1,6 +1,6 @@
 /**
- * Admin panel: submit game results and trigger bracket pruning.
- * Requires X-Admin-Key header for all mutations.
+ * Admin panel — dark broadcast aesthetic with glow accents.
+ * Submit game results and trigger bracket pruning.
  */
 
 import { useState } from 'react'
@@ -10,6 +10,16 @@ import useTournamentStore from '../store/tournamentStore'
 
 const REGIONS = ['South', 'East', 'West', 'Midwest']
 const ROUNDS = ['R64', 'R32', 'S16', 'E8', 'F4', 'Championship']
+
+const inputStyle = {
+  backgroundColor: 'var(--bg-card)',
+  color: 'var(--text-primary)',
+  border: '1px solid var(--border-subtle)',
+}
+
+const labelStyle = {
+  color: 'var(--text-muted)',
+}
 
 export default function AdminPage() {
   const { adminKey, setAdminKey } = useTournamentStore()
@@ -27,7 +37,10 @@ export default function AdminPage() {
   const mutation = useMutation({
     mutationFn: (data) => submitResult(data, adminKey),
     onSuccess: (result) => {
-      setStatusMsg({ type: 'success', text: `Result recorded. ${result.eliminated?.toLocaleString() || 0} brackets eliminated, ${result.alive_remaining?.toLocaleString() || 0} remaining.` })
+      setStatusMsg({
+        type: 'success',
+        text: `Result recorded. ${result.eliminated?.toLocaleString() || 0} brackets eliminated, ${result.alive_remaining?.toLocaleString() || 0} remaining.`,
+      })
       queryClient.invalidateQueries({ queryKey: ['stats'] })
       queryClient.invalidateQueries({ queryKey: ['brackets'] })
       queryClient.invalidateQueries({ queryKey: ['bracket'] })
@@ -68,10 +81,20 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="max-w-lg mx-auto space-y-4">
+    <div className="max-w-xl mx-auto space-y-5">
+      {/* Header */}
+      <div className="text-center">
+        <h2 className="font-display text-3xl tracking-wider" style={{ color: 'var(--orange)' }}>
+          ADMIN PANEL
+        </h2>
+        <p className="text-xs font-mono mt-1" style={{ color: 'var(--text-muted)' }}>
+          SUBMIT GAME RESULTS · TRIGGER BRACKET PRUNING
+        </p>
+      </div>
+
       {/* Admin key */}
-      <div className="bg-white rounded-lg shadow-sm p-4">
-        <label className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-1">
+      <div className="glass rounded-xl p-5" style={{ border: '1px solid var(--border-subtle)' }}>
+        <label className="text-[10px] font-mono uppercase tracking-[0.2em] block mb-2" style={labelStyle}>
           Admin Key
         </label>
         <input
@@ -79,55 +102,80 @@ export default function AdminPage() {
           value={adminKey}
           onChange={(e) => setAdminKey(e.target.value)}
           placeholder="Enter admin key..."
-          className="w-full border border-gray-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+          className="w-full rounded-lg px-4 py-2.5 text-sm outline-none transition-all duration-200 focus:ring-1"
+          style={{
+            ...inputStyle,
+            '--tw-ring-color': 'var(--orange)',
+          }}
         />
-        <p className="text-[10px] text-gray-400 mt-1">Stored in localStorage. Required for all admin actions.</p>
+        <p className="text-[10px] font-mono mt-2" style={{ color: 'var(--text-muted)' }}>
+          Stored in localStorage. Required for all admin actions.
+        </p>
       </div>
 
       {/* Result entry form */}
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-4 space-y-3">
-        <h3 className="text-[13px] font-bold uppercase tracking-wider" style={{ color: 'var(--midnight)' }}>
-          Submit Game Result
+      <form
+        onSubmit={handleSubmit}
+        className="glass rounded-xl p-5 space-y-4"
+        style={{ border: '1px solid var(--border-subtle)' }}
+      >
+        <h3 className="font-display text-lg tracking-wider" style={{ color: 'var(--text-primary)' }}>
+          SUBMIT GAME RESULT
         </h3>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-[11px] font-semibold text-gray-500 block mb-1">Region</label>
+            <label className="text-[10px] font-mono uppercase tracking-widest block mb-1.5" style={labelStyle}>
+              Region
+            </label>
             <select
               value={form.region}
               onChange={(e) => updateField('region', e.target.value)}
-              className="w-full border border-gray-200 rounded px-2 py-1.5 text-sm"
+              className="w-full rounded-lg px-3 py-2 text-sm outline-none cursor-pointer"
+              style={inputStyle}
             >
-              {REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
+              {REGIONS.map((r) => (
+                <option key={r} value={r}>{r}</option>
+              ))}
             </select>
           </div>
           <div>
-            <label className="text-[11px] font-semibold text-gray-500 block mb-1">Round</label>
+            <label className="text-[10px] font-mono uppercase tracking-widest block mb-1.5" style={labelStyle}>
+              Round
+            </label>
             <select
               value={form.round}
               onChange={(e) => updateField('round', e.target.value)}
-              className="w-full border border-gray-200 rounded px-2 py-1.5 text-sm"
+              className="w-full rounded-lg px-3 py-2 text-sm outline-none cursor-pointer"
+              style={inputStyle}
             >
-              {ROUNDS.map((r) => <option key={r} value={r}>{r}</option>)}
+              {ROUNDS.map((r) => (
+                <option key={r} value={r}>{r}</option>
+              ))}
             </select>
           </div>
         </div>
 
         <div>
-          <label className="text-[11px] font-semibold text-gray-500 block mb-1">Game Number</label>
+          <label className="text-[10px] font-mono uppercase tracking-widest block mb-1.5" style={labelStyle}>
+            Game Number
+          </label>
           <input
             type="number"
             min="1"
             max="8"
             value={form.game_number}
             onChange={(e) => updateField('game_number', e.target.value)}
-            className="w-full border border-gray-200 rounded px-2 py-1.5 text-sm"
+            className="w-full rounded-lg px-3 py-2 text-sm outline-none"
+            style={inputStyle}
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="text-[11px] font-semibold text-gray-500 block mb-1">Winner Seed</label>
+            <label className="text-[10px] font-mono uppercase tracking-widest block mb-1.5" style={labelStyle}>
+              Winner Seed
+            </label>
             <input
               type="number"
               min="1"
@@ -135,11 +183,14 @@ export default function AdminPage() {
               value={form.winner_seed}
               onChange={(e) => updateField('winner_seed', e.target.value)}
               placeholder="e.g. 1"
-              className="w-full border border-gray-200 rounded px-2 py-1.5 text-sm"
+              className="w-full rounded-lg px-3 py-2 text-sm outline-none"
+              style={inputStyle}
             />
           </div>
           <div>
-            <label className="text-[11px] font-semibold text-gray-500 block mb-1">Loser Seed</label>
+            <label className="text-[10px] font-mono uppercase tracking-widest block mb-1.5" style={labelStyle}>
+              Loser Seed
+            </label>
             <input
               type="number"
               min="1"
@@ -147,7 +198,8 @@ export default function AdminPage() {
               value={form.loser_seed}
               onChange={(e) => updateField('loser_seed', e.target.value)}
               placeholder="e.g. 16"
-              className="w-full border border-gray-200 rounded px-2 py-1.5 text-sm"
+              className="w-full rounded-lg px-3 py-2 text-sm outline-none"
+              style={inputStyle}
             />
           </div>
         </div>
@@ -155,28 +207,56 @@ export default function AdminPage() {
         <button
           type="submit"
           disabled={mutation.isPending}
-          className="w-full py-2 rounded-lg text-white font-semibold text-sm transition-colors disabled:opacity-50"
-          style={{ backgroundColor: 'var(--orange)' }}
+          className="w-full py-3 rounded-lg font-display text-lg tracking-wider transition-all duration-200 disabled:opacity-50"
+          style={{
+            backgroundColor: 'var(--orange)',
+            color: 'white',
+            boxShadow: '0 0 30px rgba(255, 107, 53, 0.2)',
+          }}
         >
-          {mutation.isPending ? 'Submitting...' : 'Submit Result'}
+          {mutation.isPending ? 'SUBMITTING...' : 'SUBMIT RESULT'}
         </button>
 
         {statusMsg && (
-          <div className={`text-sm p-3 rounded-lg ${
-            statusMsg.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-          }`}>
+          <div
+            className="text-sm p-4 rounded-lg font-mono"
+            style={{
+              color: statusMsg.type === 'success' ? 'var(--green-alive)' : 'var(--red-dead)',
+              background: statusMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)',
+              border: `1px solid ${statusMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}`,
+            }}
+          >
             {statusMsg.text}
           </div>
         )}
       </form>
 
       {/* Instructions */}
-      <div className="bg-blue-50 rounded-lg p-4 text-[11px] text-blue-800 space-y-1">
-        <p className="font-bold">How it works:</p>
-        <p>1. Enter the game result with region, round, game number, and seeds.</p>
-        <p>2. The system determines if this was an upset based on seed matchup.</p>
-        <p>3. All brackets with the wrong pick are eliminated (pruned).</p>
-        <p>4. Stats and bracket counts update in real-time via SSE.</p>
+      <div
+        className="glass rounded-xl p-5 space-y-2"
+        style={{ border: '1px solid var(--border-subtle)' }}
+      >
+        <h4 className="font-display text-base tracking-wider" style={{ color: 'var(--cyan)' }}>
+          HOW IT WORKS
+        </h4>
+        <div className="space-y-1.5 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
+          <p className="flex gap-2">
+            <span className="font-mono font-bold" style={{ color: 'var(--orange)' }}>01</span>
+            Enter the game result with region, round, game number, and seeds.
+          </p>
+          <p className="flex gap-2">
+            <span className="font-mono font-bold" style={{ color: 'var(--orange)' }}>02</span>
+            The system determines if this was an upset based on seed matchup.
+          </p>
+          <p className="flex gap-2">
+            <span className="font-mono font-bold" style={{ color: 'var(--orange)' }}>03</span>
+            All brackets with the wrong pick are eliminated (pruned).
+          </p>
+          <p className="flex gap-2">
+            <span className="font-mono font-bold" style={{ color: 'var(--orange)' }}>04</span>
+            Stats and bracket counts update in real-time via SSE.
+          </p>
+        </div>
       </div>
     </div>
   )

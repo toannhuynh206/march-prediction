@@ -1,0 +1,599 @@
+{
+  "metadata": {
+    "description": "Coaching tournament track records for projected 2026 NCAA tournament coaches",
+    "last_updated": "2026-03-10",
+    "data_sources": [
+      "sports-reference.com",
+      "espn.com",
+      "wikipedia.org",
+      "school athletic sites"
+    ],
+    "notes": "Records include all NCAA tournament games through 2025 tournament. 2026 tournament has not yet begun (Selection Sunday March 15, 2026)."
+  },
+  "coaches": {
+    "tom_izzo": {
+      "name": "Tom Izzo",
+      "school": "Michigan State",
+      "conference": "Big Ten",
+      "years_head_coaching_experience": 31,
+      "years_at_current_school": 31,
+      "ncaa_tournament": {
+        "record": "59-26",
+        "wins": 59,
+        "losses": 26,
+        "appearances": 27,
+        "win_pct": 0.694
+      },
+      "final_four_appearances": 8,
+      "championship_appearances": 2,
+      "championship_wins": 1,
+      "championship_years": [2000],
+      "sweet_16_appearances": 15,
+      "sweet_16_rate": 0.556,
+      "upset_record": {
+        "wins_as_lower_seed": 15,
+        "losses_as_lower_seed": 12,
+        "notes": "15 wins as lower seed is most in NCAA Tournament history for any coach. MSU is 24-9 in second games of tournament weekends."
+      },
+      "coaching_score_notes": "Mr. March reputation fully earned. Elite at making halftime adjustments and winning 2nd weekend games. 8 Final Fours in 27 appearances (29.6% rate) is exceptional.",
+      "projected_2026_seed": "5-7 range"
+    },
+    "dan_hurley": {
+      "name": "Dan Hurley",
+      "school": "UConn",
+      "conference": "Big East",
+      "years_head_coaching_experience": 14,
+      "years_at_current_school": 8,
+      "ncaa_tournament": {
+        "record": "15-5",
+        "wins": 15,
+        "losses": 5,
+        "appearances": 7,
+        "win_pct": 0.750
+      },
+      "final_four_appearances": 2,
+      "championship_appearances": 2,
+      "championship_wins": 2,
+      "championship_years": [2023, 2024],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.429,
+      "upset_record": {
+        "notes": "Won back-to-back titles as 4-seed (2023) and 1-seed (2024). UConn's 13-game tournament winning streak ended in 2025 (loss to Florida)."
+      },
+      "coaching_score_notes": "Back-to-back champion. Highest active tournament win percentage. Dominant in tournament settings — teams peak in March. Lost to Florida in 2025 tournament ending streak.",
+      "projected_2026_seed": "3-5 range"
+    },
+    "bill_self": {
+      "name": "Bill Self",
+      "school": "Kansas",
+      "conference": "Big 12",
+      "years_head_coaching_experience": 31,
+      "years_at_current_school": 23,
+      "ncaa_tournament": {
+        "record": "57-24",
+        "wins": 57,
+        "losses": 24,
+        "appearances": 26,
+        "win_pct": 0.704
+      },
+      "final_four_appearances": 4,
+      "championship_appearances": 3,
+      "championship_wins": 2,
+      "championship_years": [2008, 2022],
+      "sweet_16_appearances": 12,
+      "sweet_16_rate": 0.462,
+      "upset_record": {
+        "notes": "Led 3 different teams (Tulsa, Illinois, Kansas) to Elite Eight. 8 Elite Eights with Kansas. 2018 Final Four was vacated due to recruiting violations."
+      },
+      "coaching_score_notes": "Hall of Famer. Extremely consistent tournament performer. Programs are always well-prepared. Has had some shocking early exits but overall record speaks for itself.",
+      "projected_2026_seed": "4-6 range"
+    },
+    "kelvin_sampson": {
+      "name": "Kelvin Sampson",
+      "school": "Houston",
+      "conference": "Big 12",
+      "years_head_coaching_experience": 36,
+      "years_at_current_school": 12,
+      "ncaa_tournament": {
+        "record": "31-21",
+        "wins": 31,
+        "losses": 21,
+        "appearances": 20,
+        "win_pct": 0.596
+      },
+      "final_four_appearances": 3,
+      "championship_appearances": 1,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 6,
+      "sweet_16_rate": 0.300,
+      "upset_record": {
+        "notes": "Led 4 different schools to NCAA Tournament (one of only 15 coaches to do so). Led multiple schools to Final Four (Oklahoma 2002, Houston 2021, Houston 2025)."
+      },
+      "coaching_score_notes": "Defensive system coach. Houston has been ranked Top 10 for 120 consecutive weeks. Named Naismith Hall of Fame finalist 2026. Lost in 2025 championship game. Teams grind opponents down.",
+      "projected_2026_seed": "2"
+    },
+    "mark_few": {
+      "name": "Mark Few",
+      "school": "Gonzaga",
+      "conference": "WCC",
+      "years_head_coaching_experience": 27,
+      "years_at_current_school": 27,
+      "ncaa_tournament": {
+        "record": "47-27",
+        "wins": 47,
+        "losses": 27,
+        "appearances": 25,
+        "win_pct": 0.635
+      },
+      "final_four_appearances": 2,
+      "championship_appearances": 2,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 8,
+      "sweet_16_rate": 0.320,
+      "upset_record": {
+        "notes": "Lost championship games in 2017 (to North Carolina) and 2021 (to Baylor). 23 consecutive tournament appearances (1999-2023 streak). Mid-major context important — often faces tougher seeded opponents."
+      },
+      "coaching_score_notes": "Perennial contender from WCC. Built Gonzaga into a national power. Two championship game losses. Teams are always well-coached but conference strength is a question mark in March.",
+      "projected_2026_seed": "3-5 range"
+    },
+    "rick_pitino": {
+      "name": "Rick Pitino",
+      "school": "St. John's",
+      "conference": "Big East",
+      "years_head_coaching_experience": 38,
+      "years_at_current_school": 3,
+      "ncaa_tournament": {
+        "record": "55-22",
+        "wins": 55,
+        "losses": 22,
+        "appearances": 24,
+        "win_pct": 0.714
+      },
+      "final_four_appearances": 7,
+      "championship_appearances": 3,
+      "championship_wins": 2,
+      "championship_years": [1996, 2013],
+      "sweet_16_appearances": 12,
+      "sweet_16_rate": 0.500,
+      "upset_record": {
+        "notes": "Only coach to win NCAA Championship at 2 different schools (Kentucky 1996, Louisville 2013 — Louisville title later vacated). 7 Final Fours with 5 different programs. Took 6 different schools to NCAA Tournament."
+      },
+      "coaching_score_notes": "Second-highest active tournament win percentage (.714). Controversial off-court but undeniable tournament pedigree. Transformed St. John's from 10-win team to 31-win team in 2 years. 900+ career wins.",
+      "projected_2026_seed": "2-3"
+    },
+    "john_calipari": {
+      "name": "John Calipari",
+      "school": "Arkansas",
+      "conference": "SEC",
+      "years_head_coaching_experience": 33,
+      "years_at_current_school": 2,
+      "ncaa_tournament": {
+        "record": "59-23",
+        "wins": 59,
+        "losses": 23,
+        "appearances": 24,
+        "win_pct": 0.720
+      },
+      "final_four_appearances": 6,
+      "championship_appearances": 2,
+      "championship_wins": 1,
+      "championship_years": [2012],
+      "sweet_16_appearances": 11,
+      "sweet_16_rate": 0.458,
+      "upset_record": {
+        "notes": "Some UMass wins vacated. Led Arkansas to Sweet 16 in first season (2025). 5th coach to reach 900 career wins (March 2026). Hall of Famer."
+      },
+      "coaching_score_notes": "Elite recruiter and tournament coach. 900 career wins as of March 2026. Led Arkansas to Sweet 16 in year 1. Known for one-and-done player development but also some shocking upsets (2-seed losses).",
+      "projected_2026_seed": "3-5 range"
+    },
+    "jon_scheyer": {
+      "name": "Jon Scheyer",
+      "school": "Duke",
+      "conference": "ACC",
+      "years_head_coaching_experience": 4,
+      "years_at_current_school": 4,
+      "ncaa_tournament": {
+        "record": "8-3",
+        "wins": 8,
+        "losses": 3,
+        "appearances": 3,
+        "win_pct": 0.727
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 2,
+      "sweet_16_rate": 0.667,
+      "upset_record": {
+        "notes": "Limited sample size. Krzyzewski's hand-picked successor. ACC Coach of the Year 2026."
+      },
+      "coaching_score_notes": "118-24 record in 4 seasons at Duke. Tied Brad Stevens for most wins in first 4 seasons. ACC regular season title 2 years in a row. Small tournament sample but very high win rate. 2026 projected 1-seed.",
+      "projected_2026_seed": "1"
+    },
+    "dusty_may": {
+      "name": "Dusty May",
+      "school": "Michigan",
+      "conference": "Big Ten",
+      "years_head_coaching_experience": 8,
+      "years_at_current_school": 2,
+      "ncaa_tournament": {
+        "record": "6-3",
+        "wins": 6,
+        "losses": 3,
+        "appearances": 3,
+        "win_pct": 0.667
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 2,
+      "sweet_16_rate": 0.667,
+      "upset_record": {
+        "notes": "Led 9-seed FAU to Final Four in 2023 (one of biggest Cinderella runs). At Michigan, beat 4-seed Texas A&M in 2025 as 5-seed. Lost to 1-seed Auburn in Sweet 16."
+      },
+      "coaching_score_notes": "Proven Cinderella coach (FAU Final Four as 9-seed). Big Ten Coach of the Year 2026. Quickly rebuilt Michigan into contender. Strong at player development and transfer portal management.",
+      "projected_2026_seed": "1"
+    },
+    "tommy_lloyd": {
+      "name": "Tommy Lloyd",
+      "school": "Arizona",
+      "conference": "Big 12",
+      "years_head_coaching_experience": 5,
+      "years_at_current_school": 5,
+      "ncaa_tournament": {
+        "record": "6-4",
+        "wins": 6,
+        "losses": 4,
+        "appearances": 4,
+        "win_pct": 0.600
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.750,
+      "upset_record": {
+        "notes": "Has not yet broken through to Final Four. Three Sweet 16 appearances. Spent decades as Mark Few's top assistant at Gonzaga before Arizona."
+      },
+      "coaching_score_notes": "Program-record 23-0 start in 2025-26. First Big 12 title in second year in conference. 140+ wins at Arizona in 5 seasons (fastest in school history). Naismith COTY candidate. Has yet to reach Final Four — potential weakness.",
+      "projected_2026_seed": "1"
+    },
+    "todd_golden": {
+      "name": "Todd Golden",
+      "school": "Florida",
+      "conference": "SEC",
+      "years_head_coaching_experience": 8,
+      "years_at_current_school": 4,
+      "ncaa_tournament": {
+        "record": "12-1",
+        "wins": 12,
+        "losses": 1,
+        "appearances": 3,
+        "win_pct": 0.923
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 1,
+      "championship_wins": 1,
+      "championship_years": [2025],
+      "sweet_16_appearances": 2,
+      "sweet_16_rate": 0.667,
+      "upset_record": {
+        "notes": "Led Florida to 2025 national championship (36-4 record). Fastest Florida coach to reach 100 wins. Gators seeking back-to-back titles."
+      },
+      "coaching_score_notes": "Reigning national champion. 100 wins at Florida faster than any coach in program history. Projecting as 1-seed for 2026. Could join elite company with back-to-back titles.",
+      "projected_2026_seed": "1"
+    },
+    "steven_pearl": {
+      "name": "Steven Pearl",
+      "school": "Auburn",
+      "conference": "SEC",
+      "years_head_coaching_experience": 1,
+      "years_at_current_school": 1,
+      "ncaa_tournament": {
+        "record": "0-0",
+        "wins": 0,
+        "losses": 0,
+        "appearances": 0,
+        "win_pct": 0.000
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 0,
+      "sweet_16_rate": 0.000,
+      "upset_record": {
+        "notes": "First-year head coach. Succeeded father Bruce Pearl who retired Sept 2025. Was assistant at Auburn for 8 seasons. Bruce Pearl's tournament record: 21-14 (2 Final Fours)."
+      },
+      "coaching_score_notes": "No tournament head coaching experience. Inherited strong roster from Bruce Pearl era. First-year coaches often underperform tournament expectations. Apply significant coaching penalty.",
+      "projected_2026_seed": "2-3"
+    },
+    "bryce_drew": {
+      "name": "Bryce Drew",
+      "school": "Grand Canyon",
+      "conference": "Mountain West",
+      "years_head_coaching_experience": 10,
+      "years_at_current_school": 6,
+      "ncaa_tournament": {
+        "record": "1-7",
+        "wins": 1,
+        "losses": 7,
+        "appearances": 7,
+        "win_pct": 0.125
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 0,
+      "sweet_16_rate": 0.000,
+      "upset_record": {
+        "notes": "1-7 overall tournament record is misleading — includes early Valparaiso and Vanderbilt exits. At GCU, led 12-seed to upset 5-seed Saint Mary's in 2024. 94-32 record at Grand Canyon (.746). Tournament DNA — father Homer Drew coached Valpo's famous Bryce Drew buzzer-beater in 1998."
+      },
+      "coaching_score_notes": "Poor overall tournament win rate but building GCU into consistent contender. Family basketball heritage. Mid-major coach who has made tournament 4 of last 5 years at GCU. Record at Vanderbilt dragged down overall numbers.",
+      "projected_2026_seed": "12-14 (auto-bid)"
+    },
+    "shaheen_holloway": {
+      "name": "Shaheen Holloway",
+      "school": "Seton Hall",
+      "conference": "Big East",
+      "years_head_coaching_experience": 8,
+      "years_at_current_school": 4,
+      "ncaa_tournament": {
+        "record": "3-1",
+        "wins": 3,
+        "losses": 1,
+        "appearances": 1,
+        "win_pct": 0.750
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 1,
+      "sweet_16_rate": 1.000,
+      "upset_record": {
+        "wins_as_lower_seed": 3,
+        "losses_as_lower_seed": 1,
+        "notes": "Led 15-seed Saint Peter's to Elite Eight in 2022 — beat 2-seed Kentucky, 7-seed Murray State, 3-seed Purdue. First 15-seed to reach Elite Eight in history. Won 2024 NIT at Seton Hall."
+      },
+      "coaching_score_notes": "Historic upset specialist — 15-seed Saint Peter's to Elite Eight. Small sample but 3-1 as underdog is remarkable. NIT champion at Seton Hall (2024). Needs more tournament appearances to confirm pattern but upset pedigree is real.",
+      "projected_2026_seed": "bubble team / 8-11 range"
+    },
+    "scott_drew": {
+      "name": "Scott Drew",
+      "school": "Baylor",
+      "conference": "Big 12",
+      "years_head_coaching_experience": 23,
+      "years_at_current_school": 23,
+      "ncaa_tournament": {
+        "record": "21-12",
+        "wins": 21,
+        "losses": 12,
+        "appearances": 13,
+        "win_pct": 0.636
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 1,
+      "championship_wins": 1,
+      "championship_years": [2021],
+      "sweet_16_appearances": 4,
+      "sweet_16_rate": 0.308,
+      "upset_record": {
+        "notes": "Built Baylor from scandal-ridden program to national champion. Has reached Round of 32 four straight years but eliminated in second round each time recently."
+      },
+      "coaching_score_notes": "2021 national champion. Program builder who took over in worst possible circumstances (murder scandal). Recent tournament ceiling has been Round of 32 (4 straight second-round exits). May be plateauing in March.",
+      "projected_2026_seed": "4-6 range"
+    },
+    "nate_oats": {
+      "name": "Nate Oats",
+      "school": "Alabama",
+      "conference": "SEC",
+      "years_head_coaching_experience": 11,
+      "years_at_current_school": 7,
+      "ncaa_tournament": {
+        "record": "13-8",
+        "wins": 13,
+        "losses": 8,
+        "appearances": 8,
+        "win_pct": 0.619
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.375,
+      "upset_record": {
+        "notes": "Only program to reach last 2 Elite Eights. First Final Four in Alabama history (2024). 1-seed in 2023 (31 wins, school record). High-variance offense can be boom-or-bust in March."
+      },
+      "coaching_score_notes": "Transformed Alabama into national contender. Uptempo style can produce upsets in both directions. First Final Four in school history. Most NCAA tournament wins in Alabama history.",
+      "projected_2026_seed": "3-5 range"
+    },
+    "eric_musselman": {
+      "name": "Eric Musselman",
+      "school": "USC",
+      "conference": "Big Ten",
+      "years_head_coaching_experience": 10,
+      "years_at_current_school": 2,
+      "ncaa_tournament": {
+        "record": "10-6",
+        "wins": 10,
+        "losses": 6,
+        "appearances": 6,
+        "win_pct": 0.625
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.500,
+      "upset_record": {
+        "notes": "Two Elite Eight runs at Arkansas. Former NBA head coach (Warriors, Kings). Transfer portal master. First year at USC was 17-18. Second year USC trending toward tournament."
+      },
+      "coaching_score_notes": "Strong tournament resume at Arkansas (3 Sweet 16s, 2 Elite Eights). Former NBA coach brings professional preparation. Still building at USC — may lack roster depth for deep run in year 2.",
+      "projected_2026_seed": "8-10 range (bubble)"
+    },
+    "mick_cronin": {
+      "name": "Mick Cronin",
+      "school": "UCLA",
+      "conference": "Big Ten",
+      "years_head_coaching_experience": 22,
+      "years_at_current_school": 7,
+      "ncaa_tournament": {
+        "record": "16-15",
+        "wins": 16,
+        "losses": 15,
+        "appearances": 15,
+        "win_pct": 0.516
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 4,
+      "sweet_16_rate": 0.267,
+      "upset_record": {
+        "notes": "2021 Final Four run from 11-seed (First Four). Overall near .500 in tournament. Defensive-minded coach. 503-235 career record."
+      },
+      "coaching_score_notes": "Near .500 tournament record is concerning for a blue-blood program. 2021 Final Four was as 11-seed (not as favorite). Defensive identity but lacks March consistency. Teams well-prepared but not elite tournament performers.",
+      "projected_2026_seed": "uncertain / bubble"
+    },
+    "chris_beard": {
+      "name": "Chris Beard",
+      "school": "Ole Miss",
+      "conference": "SEC",
+      "years_head_coaching_experience": 10,
+      "years_at_current_school": 3,
+      "ncaa_tournament": {
+        "record": "13-6",
+        "wins": 13,
+        "losses": 6,
+        "appearances": 6,
+        "win_pct": 0.684
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 1,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.500,
+      "upset_record": {
+        "notes": "Perfect 6-0 in tournament opening round games. Led Texas Tech to championship game (2019). Led Ole Miss to Sweet 16 in 2025. Controversial personal history but strong tournament coach."
+      },
+      "coaching_score_notes": "6-0 in first-round games is notable. 2019 championship game appearance with Texas Tech. Strong at getting teams ready for March. Ole Miss Sweet 16 in 2025 shows he can coach at any program.",
+      "projected_2026_seed": "5-7 range"
+    },
+    "tony_bennett": {
+      "name": "Tony Bennett",
+      "school": "Virginia (RETIRED Oct 2024)",
+      "conference": "ACC",
+      "years_head_coaching_experience": 18,
+      "years_at_current_school": 15,
+      "ncaa_tournament": {
+        "record": "16-11",
+        "wins": 16,
+        "losses": 11,
+        "appearances": 12,
+        "win_pct": 0.593
+      },
+      "final_four_appearances": 1,
+      "championship_appearances": 1,
+      "championship_wins": 1,
+      "championship_years": [2019],
+      "sweet_16_appearances": 3,
+      "sweet_16_rate": 0.250,
+      "upset_record": {
+        "notes": "RETIRED October 2024. First team to lose as 1-seed to 16-seed (UMBC, 2018). Won title next year (2019) — greatest redemption arc in tournament history. Pack-line defense can struggle against fast-paced tournament opponents."
+      },
+      "coaching_score_notes": "RETIRED. Included for historical reference. 2019 champion after historic 2018 upset loss. Pack-line defense produced elite regular seasons but inconsistent March results. Virginia now coached by Ron Sanchez/Ryan Odom.",
+      "projected_2026_seed": "N/A — retired"
+    },
+    "dennis_gates": {
+      "name": "Dennis Gates",
+      "school": "Missouri",
+      "conference": "SEC",
+      "years_head_coaching_experience": 6,
+      "years_at_current_school": 4,
+      "ncaa_tournament": {
+        "record": "1-3",
+        "wins": 1,
+        "losses": 3,
+        "appearances": 3,
+        "win_pct": 0.250
+      },
+      "final_four_appearances": 0,
+      "championship_appearances": 0,
+      "championship_wins": 0,
+      "championship_years": [],
+      "sweet_16_appearances": 0,
+      "sweet_16_rate": 0.000,
+      "upset_record": {
+        "notes": "All 3 tournament appearances resulted in early exits. Lost to 15-seed Princeton in 2023 as 7-seed. Coaching Calipari praised Gates for 2026 SEC COTY candidacy."
+      },
+      "coaching_score_notes": "Poor tournament track record — 1-3 with no Sweet 16s. Upset loss to Princeton in 2023 is a red flag. Apply negative coaching adjustment for March performance.",
+      "projected_2026_seed": "last four in / bubble"
+    }
+  },
+  "coaching_score_methodology": {
+    "description": "Coaching Tournament Score is one of 9 factors in the power index (weight: 7%). Score from 0-100 based on tournament track record.",
+    "factors": [
+      "NCAA tournament win percentage (30% of coaching score)",
+      "Final Four rate per appearance (20% of coaching score)",
+      "Sweet 16 rate per appearance (15% of coaching score)",
+      "Championship wins (15% of coaching score)",
+      "Upset wins as lower seed (10% of coaching score)",
+      "Years of experience (5% of coaching score)",
+      "Recent 5-year tournament trend (5% of coaching score)"
+    ],
+    "score_tiers": {
+      "elite": {
+        "range": "85-100",
+        "coaches": ["Tom Izzo", "Dan Hurley", "Rick Pitino", "Bill Self", "John Calipari"]
+      },
+      "strong": {
+        "range": "70-84",
+        "coaches": ["Kelvin Sampson", "Mark Few", "Scott Drew", "Jon Scheyer", "Chris Beard", "Todd Golden"]
+      },
+      "above_average": {
+        "range": "55-69",
+        "coaches": ["Dusty May", "Tommy Lloyd", "Nate Oats", "Shaheen Holloway", "Eric Musselman"]
+      },
+      "average": {
+        "range": "40-54",
+        "coaches": ["Mick Cronin", "Bryce Drew", "Dennis Gates"]
+      },
+      "below_average_or_unknown": {
+        "range": "0-39",
+        "coaches": ["Steven Pearl (first-year)", "Various auto-bid mid-major coaches"]
+      }
+    }
+  },
+  "key_insights": {
+    "mr_march_candidates": [
+      "Tom Izzo — 8 Final Fours, 15 upset wins as lower seed (NCAA record)",
+      "Rick Pitino — .714 tournament win pct, 7 Final Fours, 2 titles at different schools",
+      "Dan Hurley — Back-to-back titles, .750 tournament win pct"
+    ],
+    "upset_risk_coaches": [
+      "Dennis Gates — 1-3 tournament record, lost to 15-seed as 7-seed",
+      "Mick Cronin — Near .500 tournament record despite coaching at UCLA",
+      "Bryce Drew — 1-7 career tournament record (though GCU context matters)"
+    ],
+    "first_year_coaches_at_school": [
+      "Steven Pearl (Auburn) — first year as head coach anywhere, no tournament experience",
+      "Note: Dusty May (Michigan year 2), Calipari (Arkansas year 2) are now past first-year adjustment"
+    ],
+    "coaching_changes_since_2025": [
+      "Bruce Pearl retired (Auburn) → Steven Pearl",
+      "Tony Bennett retired (Virginia) → Ryan Odom",
+      "Jerome Tang fired (Kansas State) → interim coach"
+    ]
+  }
+}

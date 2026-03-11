@@ -1,0 +1,250 @@
+{
+  "date": "2026-03-10",
+  "last_updated": "2026-03-10T12:00:00Z",
+  "notes": "Compiled from ESPN, CBS Sports, Yahoo Sports, SI, Covers.com, team beat writers. NCAA will require official availability reports starting with 2026 tournament.",
+  "injuries": [
+    {
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "position": "PG",
+      "injury": "Right foot fracture (surgery March 9)",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Earliest possible: Final Four (if Duke advances). Needs 2+ weeks post-surgery before rehab can begin.",
+      "notes": "Starting PG. Injured in 76-61 win over UNC on March 8. Had surgery Sunday morning. Scheyer said Foster told him 'I'm going to be back' but realistically needs Duke to reach Final Four. Duke's title odds already dropped."
+    },
+    {
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "position": "C",
+      "injury": "Right foot soreness",
+      "status": "OUT (ACC Tournament) / PROBABLE (NCAA Tournament)",
+      "impact": "HIGH",
+      "return_timeline": "Expected back for NCAA Tournament first round (March 19-20). Sitting out ACC Tournament to rest.",
+      "notes": "6-11 sophomore, 10.7 PPG, 6.0 RPG, team-leading 32 blocks. Scheyer: 'Our mindset is to get him ready for the NCAA Tournament.' Participated in walk-throughs before UNC game. Foot soreness flared up in win at NC State."
+    },
+    {
+      "team": "Michigan",
+      "player": "L.J. Cason",
+      "position": "G",
+      "injury": "Torn ACL",
+      "status": "OUT",
+      "impact": "MODERATE",
+      "return_timeline": "Season-ending. Expected to redshirt 2026-27.",
+      "notes": "Backup guard / sixth man. Michigan (29-2) still co-favorites to win title per FanDuel. Puts more pressure on Elliot Cadeau for depth through 6 potential tournament games."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Caleb Wilson",
+      "position": "F",
+      "injury": "Broken right thumb (surgery required)",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Season-ending. Broke thumb March 5 while dunking in practice. Was already rehabbing a left hand fracture.",
+      "notes": "Leading scorer (19.8 PPG) and rebounder (9.4 RPG). Two-time National Player of the Week. Projected top-5 NBA pick. Massive blow to UNC's tournament ceiling."
+    },
+    {
+      "team": "Arizona",
+      "player": "Koa Peat",
+      "position": "F",
+      "injury": "Lower leg muscle strain",
+      "status": "ACTIVE (returned March 1)",
+      "impact": "LOW (recovered)",
+      "return_timeline": "Returned March 1 vs Kansas. Scored 12 pts, 7 reb, 5 ast in 23 min.",
+      "notes": "Five-star freshman missed 3 games after Feb 14 injury vs Texas Tech. Looked healthy and impactful in return. Expected fully available for NCAA Tournament."
+    },
+    {
+      "team": "Arizona",
+      "player": "Dwayne Aristode",
+      "position": "G/F",
+      "injury": "Illness / undisclosed",
+      "status": "DAY-TO-DAY",
+      "impact": "MODERATE",
+      "return_timeline": "Sat out with illness in mid-February. Status unclear for tournament.",
+      "notes": "Missed time alongside Peat in February. Monitor for updates during conference tournament."
+    },
+    {
+      "team": "Florida",
+      "player": null,
+      "position": null,
+      "injury": null,
+      "status": "HEALTHY",
+      "impact": "NONE",
+      "return_timeline": null,
+      "notes": "No players on injury report as of March 9 per Covers.com. Gators (24-6, 15-2 SEC) on 10-game winning streak. Fully healthy heading into postseason."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Braden Huff",
+      "position": "F",
+      "injury": "Left knee injury",
+      "status": "OUT (questionable for NCAA Tournament R1)",
+      "impact": "CRITICAL",
+      "return_timeline": "8-week minimum from Jan 15 injury = ~March 16. First round March 19-20. Mark Few said he's 'a long ways away' as of mid-Feb, still on crutches.",
+      "notes": "Was averaging 17.8 PPG, 5.6 RPG before injury. Return for first round is theoretically possible but very tight timeline. Gonzaga has adapted without him but ceiling is much lower."
+    },
+    {
+      "team": "BYU",
+      "player": "Richie Saunders",
+      "position": "G",
+      "injury": "Torn ACL",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Season-ending. Tore ACL Feb 14 vs Colorado in first 45 seconds (non-contact).",
+      "notes": "Star guard averaging 18.8 PPG. Second BYU player to suffer season-ending ACL tear this season."
+    },
+    {
+      "team": "BYU",
+      "player": "Dawson Baker",
+      "position": "G",
+      "injury": "Torn ACL",
+      "status": "OUT",
+      "impact": "HIGH",
+      "return_timeline": "Season-ending. Suffered ACL tear in November.",
+      "notes": "Sixth man averaging 8 PPG with 38% 3PT rate before injury."
+    },
+    {
+      "team": "BYU",
+      "player": "Nate Pickens",
+      "position": "F",
+      "injury": "Knee injury",
+      "status": "OUT",
+      "impact": "MODERATE",
+      "return_timeline": "Season-ending.",
+      "notes": "One of six BYU players lost for the season. Others include KJ Perry, Brody Kozlowski, Xavion Staton."
+    },
+    {
+      "team": "BYU",
+      "player": "KJ Perry",
+      "position": null,
+      "injury": "Undisclosed",
+      "status": "OUT",
+      "impact": "MODERATE",
+      "return_timeline": "Season-ending.",
+      "notes": "BYU has lost 6 of 17 rostered players for the season. Unprecedented attrition."
+    },
+    {
+      "team": "BYU",
+      "player": "Brody Kozlowski",
+      "position": null,
+      "injury": "Undisclosed",
+      "status": "OUT",
+      "impact": "MODERATE",
+      "return_timeline": "Season-ending.",
+      "notes": "Part of BYU's mass injury wave."
+    },
+    {
+      "team": "BYU",
+      "player": "Xavion Staton",
+      "position": "C",
+      "injury": "Undisclosed",
+      "status": "OUT",
+      "impact": "MODERATE",
+      "return_timeline": "Season-ending.",
+      "notes": "Part of BYU's mass injury wave."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "JT Toppin",
+      "position": "F",
+      "injury": "Torn ACL",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Season-ending. Tore ACL in 72-67 loss at Arizona State.",
+      "notes": "Team leader in points (21.8), rebounds (10.8), and blocks (1.7). All-America candidate. Texas Tech's Final Four ceiling gone without him."
+    },
+    {
+      "team": "Arkansas",
+      "player": "Darius Acuff Jr.",
+      "position": "PG",
+      "injury": "Ankle (nagging, walking boot between games)",
+      "status": "PROBABLE (SEC Tournament)",
+      "impact": "HIGH (if limited) / LOW (if fully healthy)",
+      "return_timeline": "Calipari confirmed Acuff will play in SEC Tournament first game. Sat out final regular season game vs Missouri as precautionary rest.",
+      "notes": "SEC Player of the Year. 22.2 PPG, 6.4 AST, 49.3% FG, 43.7% 3PT in 30 games. Ankle has been nagging for weeks. Rest appears precautionary but must monitor. Star freshman."
+    },
+    {
+      "team": "Tennessee",
+      "player": "Nate Ament",
+      "position": "F",
+      "injury": "High ankle sprain + knee tweak (right leg)",
+      "status": "PROBABLE (SEC Tournament)",
+      "impact": "HIGH",
+      "return_timeline": "Rick Barnes 'expects' Ament to play in SEC Tournament. Missed last 2 games. Barnes suggested he could have played in recent game.",
+      "notes": "Second-leading scorer, team-leading rebounder. Injured going for loose ball vs Alabama. Both ankle and knee affected. Positive coach updates but high ankle sprains can linger."
+    },
+    {
+      "team": "Villanova",
+      "player": "Matthew Hodge",
+      "position": "F",
+      "injury": "Torn ACL",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Season-ending.",
+      "notes": "Starting forward. Major loss for Villanova's tournament hopes."
+    },
+    {
+      "team": "USC",
+      "player": "Chad Baker-Mazara",
+      "position": "F",
+      "injury": "Dismissed from program (not injury)",
+      "status": "OUT",
+      "impact": "CRITICAL",
+      "return_timeline": "Permanent. Left program March 1 after accumulation of issues.",
+      "notes": "Leading scorer (18.5 PPG). Left during home loss to Nebraska, sat with fans instead of bench. USC bubble hopes severely damaged. Transfer from Auburn."
+    },
+    {
+      "team": "USC",
+      "player": "Rodney Rice",
+      "position": "G",
+      "injury": "Undisclosed (went down earlier in season)",
+      "status": "OUT",
+      "impact": "HIGH",
+      "return_timeline": "Was already out before Baker-Mazara became lead scorer.",
+      "notes": "Baker-Mazara became top option after Rice went down."
+    },
+    {
+      "team": "Saint Louis",
+      "player": "Robbie Avila",
+      "position": "C",
+      "injury": "Foot (chronic ankle issues)",
+      "status": "DAY-TO-DAY",
+      "impact": "HIGH",
+      "return_timeline": "Has history of ankle sprains. May be contributing to recent struggles. Has not missed a start this season per available data.",
+      "notes": "12.8 PPG, 4.5 RPG, 4.0 APG. Has chronic ankle issues dating back to 2024. Monitor closely as bubble team."
+    }
+  ],
+  "summary": {
+    "critical_tournament_impacts": [
+      "Duke WITHOUT starting PG Caleb Foster for at least first 3 rounds. Ngongba II expected back for R1.",
+      "Gonzaga's Braden Huff (17.8 PPG) extremely tight timeline — earliest return March 19 (R1).",
+      "North Carolina lost Caleb Wilson (19.8 PPG, 9.4 RPG) for season — devastating blow to a team already struggling.",
+      "Texas Tech lost JT Toppin (21.8 PPG, 10.8 RPG) — team's ceiling drastically lowered.",
+      "BYU lost 6 players total including star Richie Saunders (18.8 PPG) — shell of projected team.",
+      "Villanova lost starting F Matthew Hodge to ACL."
+    ],
+    "watch_list": [
+      "Arkansas' Darius Acuff Jr. (SEC POY) — ankle in walking boot, but expected to play SEC Tournament. Monitor game-to-game.",
+      "Tennessee's Nate Ament — high ankle sprain can linger even if he plays. May be limited.",
+      "Arizona's Koa Peat — returned and looked good, but only 23 min. May be on minutes restriction early in tournament.",
+      "Gonzaga's Braden Huff — if he can return for R1, even limited, it changes Gonzaga's ceiling significantly.",
+      "Duke's Patrick Ngongba II — expected back for NCAA Tournament but foot soreness is vague diagnosis."
+    ],
+    "healthy_contenders": [
+      "Florida — fully healthy, 10-game win streak",
+      "Michigan — only lost backup Cason, core intact (29-2)",
+      "Houston — no major injuries reported",
+      "Illinois — no major injuries reported",
+      "Iowa State — no major injuries reported"
+    ],
+    "model_adjustments": {
+      "duke": "Reduce power index significantly without Foster. Ngongba return partially offsets. Model Duke with 2 scenarios: with/without Ngongba for R1.",
+      "gonzaga": "Model 2 scenarios: with/without Huff. Without Huff = major downgrade. With Huff (even limited) = partial recovery.",
+      "north_carolina": "Major downgrade. Wilson was 19.8 PPG / 9.4 RPG. UNC's ceiling drops from potential Sweet 16 to early exit risk.",
+      "texas_tech": "Major downgrade. Toppin was the team. Without him, Texas Tech is a first-round exit candidate.",
+      "byu": "Severe downgrade. Lost 6 players including 18.8 PPG scorer. Tournament viability questionable.",
+      "arkansas": "Minor downgrade if Acuff plays through ankle. Major if he re-aggravates. Weight 70/30 healthy/limited.",
+      "tennessee": "Moderate downgrade. High ankle sprain limits explosiveness even when playing. Expect 80% Ament."
+    }
+  }
+}

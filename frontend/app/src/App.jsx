@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import BracketView from './components/BracketView'
 import ExplorerPage from './components/ExplorerPage'
 import StatsPage from './components/StatsPage'
 import AdminPage from './components/AdminPage'
+import BlogPage from './components/BlogPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,13 +15,44 @@ const queryClient = new QueryClient({
   },
 })
 
-const TABS = ['Bracket', 'Explorer', 'Statistics', 'Admin']
+const TABS = [
+  { id: 'Bracket', label: 'BRACKET', icon: '🏀' },
+  { id: 'Explorer', label: 'EXPLORER', icon: '🔍' },
+  { id: 'Statistics', label: 'STATS', icon: '📊' },
+  { id: 'Admin', label: 'ADMIN', icon: '⚙️' },
+  { id: 'Blog', label: 'BLOG', icon: '📝' },
+]
 
 const TAB_COMPONENTS = {
   Bracket: BracketView,
   Explorer: ExplorerPage,
   Statistics: StatsPage,
   Admin: AdminPage,
+  Blog: BlogPage,
+}
+
+function LiveIndicator() {
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const timer = setInterval(() => setVisible((v) => !v), 1500)
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="flex items-center gap-2 text-xs font-mono" style={{ color: 'var(--green-alive)' }}>
+      <span
+        className="w-2 h-2 rounded-full"
+        style={{
+          backgroundColor: 'var(--green-alive)',
+          opacity: visible ? 1 : 0.3,
+          transition: 'opacity 0.5s',
+          boxShadow: visible ? '0 0 8px rgba(34, 197, 94, 0.6)' : 'none',
+        }}
+      />
+      LIVE
+    </div>
+  )
 }
 
 export default function App() {
@@ -29,35 +61,93 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen" style={{ backgroundColor: 'var(--cream)' }}>
-        {/* Hero */}
-        <header className="text-white text-center py-8" style={{ background: 'linear-gradient(135deg, var(--midnight) 0%, #2C4F7C 100%)' }}>
-          <h1 className="text-3xl font-bold tracking-tight">March Madness Survivor</h1>
-          <p className="text-lg opacity-80 mt-1">10 Million Bracket Challenge</p>
+      <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-deep)' }}>
+        {/* ── Hero Header ── */}
+        <header className="animated-gradient relative overflow-hidden">
+          {/* Court line decorations */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-white/[0.03]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-white/[0.02]" />
+            <div className="absolute top-0 left-0 w-full h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, var(--orange), transparent)' }} />
+          </div>
+
+          <div className="relative z-10 text-center py-6 sm:py-10 px-4">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <div className="h-[1px] w-16" style={{ background: 'linear-gradient(90deg, transparent, var(--orange))' }} />
+              <span className="text-xs font-mono tracking-[0.3em] uppercase" style={{ color: 'var(--orange)' }}>
+                2025 NCAA Tournament
+              </span>
+              <div className="h-[1px] w-16" style={{ background: 'linear-gradient(270deg, transparent, var(--orange))' }} />
+            </div>
+
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl tracking-wide" style={{ color: 'var(--text-primary)' }}>
+              MARCH MADNESS
+              <span className="block text-2xl sm:text-3xl md:text-4xl mt-1" style={{ color: 'var(--orange)' }}>
+                SURVIVOR
+              </span>
+            </h1>
+
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mt-3 sm:mt-4">
+              <span
+                className="font-mono text-xs sm:text-sm tracking-wider px-3 sm:px-4 py-1 rounded-full"
+                style={{
+                  color: 'var(--text-secondary)',
+                  border: '1px solid var(--border-subtle)',
+                  background: 'rgba(255,255,255,0.03)',
+                }}
+              >
+                10,000,000 BRACKETS
+              </span>
+              <LiveIndicator />
+            </div>
+          </div>
+
+          {/* Bottom edge glow */}
+          <div className="h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, var(--orange), var(--cyan), transparent)' }} />
         </header>
 
-        {/* Tabs */}
-        <nav className="flex justify-center gap-1 py-3 px-4" style={{ backgroundColor: 'var(--light-gray)' }}>
-          {TABS.map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 rounded-lg font-semibold text-sm transition-colors ${
-                activeTab === tab
-                  ? 'text-white'
-                  : 'text-gray-600 hover:text-gray-900 bg-white/50'
-              }`}
-              style={activeTab === tab ? { backgroundColor: 'var(--midnight)' } : {}}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* ── Tab Navigation ── */}
+        <nav
+          className="sticky top-0 z-50 px-4 py-2 flex justify-center gap-1"
+          style={{
+            backgroundColor: 'rgba(11, 14, 23, 0.85)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            borderBottom: '1px solid var(--border-subtle)',
+          }}
+        >
+          {TABS.map((tab) => {
+            const isActive = activeTab === tab.id
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className="px-3 sm:px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 flex items-center gap-1.5 sm:gap-2"
+                style={{
+                  color: isActive ? 'var(--text-primary)' : 'var(--text-muted)',
+                  backgroundColor: isActive ? 'var(--bg-card)' : 'transparent',
+                  border: isActive ? '1px solid var(--border-accent)' : '1px solid transparent',
+                  boxShadow: isActive ? '0 0 20px rgba(255, 107, 53, 0.08)' : 'none',
+                }}
+              >
+                <span className="text-base">{tab.icon}</span>
+                <span className="tracking-wider hidden sm:inline">{tab.label}</span>
+              </button>
+            )
+          })}
         </nav>
 
-        {/* Content */}
-        <main className="max-w-7xl mx-auto px-4 py-6">
+        {/* ── Content ── */}
+        <main className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-6">
           <ActiveComponent />
         </main>
+
+        {/* ── Footer ── */}
+        <footer className="text-center py-6 px-4" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+          <p className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+            MARCH MADNESS SURVIVOR — STRATIFIED IMPORTANCE SAMPLING — 12M BRACKETS
+          </p>
+        </footer>
       </div>
     </QueryClientProvider>
   )

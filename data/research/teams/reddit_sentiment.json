@@ -1,0 +1,553 @@
+{
+  "scrape_date": "2026-03-10",
+  "source": "r/CollegeBasketball + sports media aggregation",
+  "note": "Direct Reddit scraping returned limited indexed results; data synthesized from CBS Sports, ESPN, Fox Sports, On3, SI, Yahoo Sports, Bleacher Report, and community-aligned sentiment sources",
+
+  "consensus_1_seeds": {
+    "Duke": {
+      "record": "29-2",
+      "conference": "ACC",
+      "status": "No. 1 overall seed favorite",
+      "notes": "Won ACC regular-season title. Beat Michigan 68-63 on neutral court Feb 21. Eight-game win streak. Championship odds: +325 (favorite). BUT Caleb Foster (starting PG) out with foot fracture requiring surgery — huge concern. Patrick Ngongba II (starting C) also dealt with injury."
+    },
+    "Michigan": {
+      "record": "28-3",
+      "conference": "Big Ten",
+      "status": "Consensus 1-seed",
+      "notes": "Ended regular season with 4 straight wins including No. 9 Illinois and No. 8 Michigan State. Championship odds: +340. Lost to Duke on neutral court. L.J. Carson out for season (ACL). Darryn Peterson is potential No. 1 NBA pick."
+    },
+    "Arizona": {
+      "record": "27-4",
+      "conference": "Big 12",
+      "status": "Consensus 1-seed",
+      "notes": "Won Big 12 regular-season title by 2 games. Championship odds: -120 Final Four. Separated from the pack all season alongside Duke and Michigan."
+    },
+    "Florida": {
+      "record": "25-6",
+      "conference": "SEC",
+      "status": "Likely 4th 1-seed",
+      "notes": "Reigning national champion (beat Houston 65-63 in 2025 title game). Won SEC regular-season title by 3 games. 11-game winning streak. Championship odds: +130 Final Four. Six losses but dominant in conference play. If they win SEC tourney, 1-seed is locked."
+    }
+  },
+
+  "overrated_teams": [
+    {
+      "team": "North Carolina",
+      "seed_projection": "2-seed",
+      "reason": "Fell in 3 of last 5 games, 2 losses to non-tournament teams. 2-seed feels generous given late-season struggles. Freshman Caleb Wilson out for season with thumb injury."
+    },
+    {
+      "team": "Duke",
+      "seed_projection": "1-seed",
+      "reason": "Some analysts call Duke the most overrated team of the top 16 despite receiving highest seed. Caleb Foster injury is devastating — losing your starting PG before the tournament is a red flag. Patrick Ngongba II injury compounds the concern."
+    },
+    {
+      "team": "Saint Mary's",
+      "seed_projection": "Bubble",
+      "reason": "17-3 record looks good but only played ONE game against a projected tournament team — lost to Vanderbilt by 25. Schedule is paper thin."
+    },
+    {
+      "team": "BYU",
+      "seed_projection": "5-6 seed",
+      "reason": "AJ Dybantsa is elite but team is decimated by injuries: Richie Saunders (ACL), Dawson Baker (knee, season-ending), Nate Pickens (knee, season-ending). Missing 4 guards total. Too much on one freshman's shoulders."
+    },
+    {
+      "team": "Creighton",
+      "seed_projection": "Bubble/Out",
+      "reason": "After 5 consecutive tournament appearances, undoing without a quality big man. Program in decline."
+    }
+  ],
+
+  "underrated_teams": [
+    {
+      "team": "Virginia",
+      "record": "27-4",
+      "seed_projection": "3-4 seed",
+      "reason": "Second-best team in the ACC behind Duke. Led by Thijs De Ridder and Malik Thomas. Final Four odds +2200 — massive value. Closed regular season with wins over Virginia Tech and Wake Forest."
+    },
+    {
+      "team": "Michigan State",
+      "record": "~24-7",
+      "seed_projection": "4-5 seed",
+      "reason": "More Quad 1 wins than any team outside the top 4 favorites. Tom Izzo is Mr. March — one of 7 active coaches with a national title. Team-first mentality. Road losses to Minnesota and Wisconsin killed buzz but this team is dangerous."
+    },
+    {
+      "team": "Nebraska",
+      "record": "26-5",
+      "seed_projection": "3-4 seed",
+      "reason": "Fred Hoiberg has built something real. Ranked No. 9 nationally. BUT they are 0-8 ALL TIME in the NCAA tournament — the only Power 5 school never to win a tournament game. This is a massive narrative. Final Four odds +1800."
+    },
+    {
+      "team": "Saint Louis",
+      "record": "27-4",
+      "seed_projection": "Mid-major seed (10-12)",
+      "reason": "Won A-10 regular-season title. Robbie Avila anchors both ends. Top 10 scoring offense nationally. If they win the A-10 tourney, they will be the most popular Cinderella pick in the nation."
+    },
+    {
+      "team": "Vanderbilt",
+      "record": "Unknown exact",
+      "seed_projection": "5-6 seed",
+      "reason": "Final Four odds +2200. Quietly strong SEC team. Beat Saint Mary's by 25."
+    }
+  ],
+
+  "popular_upset_picks": [
+    {
+      "matchup_type": "12-over-5",
+      "notes": "Traditional March Madness upset seed. Community consensus is that 12-5 upsets happen every year — look for mid-majors with offensive firepower."
+    },
+    {
+      "team": "Miami OH",
+      "seed_projection": "8-seed",
+      "notes": "Undefeated team seeded as 8 or 9 due to weak schedule. If they face a 1-seed, the narrative is irresistible. History of tournament upsets as double-digit seed."
+    },
+    {
+      "team": "Saint Louis",
+      "notes": "Top 10 offense + strong mid-major defense = classic upset formula. Robbie Avila is a matchup nightmare."
+    },
+    {
+      "team": "South Florida",
+      "notes": "Most slept-on mid-major. Top 10 nationally in PPG with fastest-paced offense. Three prolific scorers. Dangerous in first round."
+    },
+    {
+      "team": "Furman",
+      "notes": "Already upset No. 1 seed East Tennessee State 76-61 in SoCon tourney title game. Proven giant-killers."
+    },
+    {
+      "team": "Boston University",
+      "notes": "Chance Gladden's buzzer-beater 3 upset No. 1 seed Navy in Patriot League. Momentum and confidence heading into tournament."
+    }
+  ],
+
+  "cinderella_candidates": [
+    {
+      "team": "Miami OH",
+      "record": "31-0",
+      "conference": "MAC",
+      "seed_projection": "8-seed",
+      "notes": "First team to complete an undefeated regular season since Gonzaga 2021. First in D1 history with undefeated record + 90+ PPG + 50%+ FG% + 10+ threes/game. Haven't made tournament in 19 years. Weak schedule is the concern — no ranked opponents all season. But 31-0 is 31-0."
+    },
+    {
+      "team": "Saint Louis",
+      "record": "27-4",
+      "conference": "A-10",
+      "notes": "Led by Robbie Avila (transferred with coach Josh Schertz). Top 10 national offense in scoring and efficiency. A-10 regular-season champs. Best mid-major Cinderella candidate if they win conference tourney."
+    },
+    {
+      "team": "South Florida",
+      "conference": "American",
+      "notes": "Best team in a strong American Conference. Top 10 nationally in PPG. Fastest-paced offense in the country. Three prolific scorers. Total sleeper nobody is talking about."
+    },
+    {
+      "team": "Merrimack",
+      "record": "23-10",
+      "conference": "MAAC",
+      "notes": "First-ever NCAA tournament eligibility after D1 transition. Inaugural trip to the bracket. Opponents won't have film/history on them in tournament setting."
+    },
+    {
+      "team": "Central Arkansas",
+      "record": "22-12",
+      "conference": "ASUN",
+      "notes": "Dramatic turnaround from 4-14 conference record to ASUN co-champs under second-year coach John Shulman. Efficient offensive unit."
+    },
+    {
+      "team": "Santa Clara",
+      "conference": "WCC",
+      "notes": "Upset Saint Mary's in WCC tourney. Could be third WCC bid alongside Gonzaga and Saint Mary's. Bubble odds rose to 88% after upset. Haven't made tournament since 1996."
+    }
+  ],
+
+  "fade_picks": [
+    {
+      "team": "Auburn",
+      "record": "16-15",
+      "reason": "Complete collapse after Final Four season. 2-8 in last 10 games. Bruce Pearl retired, Steven Pearl transition was messy. Discipline issues, late-game meltdowns, poor 3-point defense. Probably NIT at best. Fade completely."
+    },
+    {
+      "team": "Kentucky",
+      "record": "19-12",
+      "reason": "Lost 5 of last 7 games. Playing in SEC Tournament first round (Wednesday) for the first time. Projected 5-6 seed but extremely unpredictable. Classic early-round exit candidate."
+    },
+    {
+      "team": "BYU",
+      "reason": "Missing 4 guards to injury. Richie Saunders (ACL), Dawson Baker, Nate Pickens all out for season. AJ Dybantsa can't carry alone. Team is gutted."
+    },
+    {
+      "team": "North Carolina",
+      "reason": "Lost 3 of last 5. Caleb Wilson out for season. 2-seed feels like an over-seed. Late-season losses to non-tournament teams."
+    },
+    {
+      "team": "Baylor",
+      "reason": "Promising start but disastrous Big 12 play. Fade."
+    },
+    {
+      "team": "Creighton",
+      "reason": "No quality big man. After 5 consecutive tournament appearances, this team doesn't have it."
+    }
+  ],
+
+  "dark_horse_final_four": [
+    {
+      "team": "Houston",
+      "odds": "+230",
+      "reason": "Perennial contender under Kelvin Sampson. Always plays elite defense. Never count them out in March."
+    },
+    {
+      "team": "UConn",
+      "odds": "+400",
+      "reason": "Won 2 of last 3 national titles (2023, 2024). Tournament DNA is unmatched. Dan Hurley knows how to win in March."
+    },
+    {
+      "team": "Iowa State",
+      "odds": "+425",
+      "reason": "T.J. Otzelberger's system prioritizes continuity. 4 of top 7 scorers return from 25-win team. Virginia transfer Blake Buchanan could be difference-maker. Nearly stole a 1-seed after beating Houston."
+    },
+    {
+      "team": "Illinois",
+      "odds": "+320",
+      "reason": "Strong Big Ten team. Could make a deep run with favorable draw."
+    },
+    {
+      "team": "Arkansas",
+      "odds": "+1100",
+      "reason": "Calipari returns 45% scoring from Sweet 16 team. BUT Darius Acuff Jr. injury is worrying news ahead of tournament. High upside if healthy."
+    },
+    {
+      "team": "Michigan State",
+      "odds": "+1000",
+      "reason": "Tom Izzo in March. More Quad 1 wins than almost anyone. Team-first mentality. Mr. March factor is real."
+    },
+    {
+      "team": "Kansas",
+      "odds": "+750",
+      "reason": "Darryn Peterson is potential No. 1 NBA pick. When he's healthy, Kansas can beat anyone. Bill Self in March is always dangerous."
+    },
+    {
+      "team": "Virginia",
+      "odds": "+2200",
+      "reason": "27-4 record, second-best ACC team. Tony Bennett's defensive system travels well in March. Massive value at these odds."
+    }
+  ],
+
+  "injury_news": [
+    {
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "position": "PG (starter)",
+      "injury": "Right foot fracture, had surgery",
+      "status": "Out for foreseeable future",
+      "impact": "CRITICAL — losing starting PG before tournament. Duke's biggest vulnerability."
+    },
+    {
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "position": "C (starter)",
+      "injury": "Recent injury",
+      "status": "Day-to-day",
+      "impact": "HIGH — Duke's frontcourt depth is thin."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Caleb Wilson",
+      "position": "Freshman star",
+      "injury": "Thumb injury in practice",
+      "status": "Out for season",
+      "impact": "HIGH — significant loss for a 2-seed."
+    },
+    {
+      "team": "BYU",
+      "player": "Richie Saunders",
+      "position": "Wing",
+      "injury": "ACL tear",
+      "status": "Out for season",
+      "impact": "HIGH — key returning player gone."
+    },
+    {
+      "team": "BYU",
+      "player": "Dawson Baker",
+      "position": "Guard",
+      "injury": "Knee",
+      "status": "Out for season",
+      "impact": "HIGH — BYU missing 4 guards total."
+    },
+    {
+      "team": "BYU",
+      "player": "Nate Pickens",
+      "position": "Guard",
+      "injury": "Knee",
+      "status": "Out for season",
+      "impact": "HIGH — compounds BYU guard shortage."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "JT Toppin",
+      "position": "Forward",
+      "injury": "ACL tear",
+      "status": "Out for season",
+      "impact": "MEDIUM — hurts Tech's tournament ceiling."
+    },
+    {
+      "team": "Michigan",
+      "player": "L.J. Carson",
+      "position": "Forward",
+      "injury": "ACL tear",
+      "status": "Out for season",
+      "impact": "MEDIUM — Michigan has depth but loses a contributor."
+    },
+    {
+      "team": "Arkansas",
+      "player": "Darius Acuff Jr.",
+      "position": "Guard (five-star freshman)",
+      "injury": "Undisclosed",
+      "status": "Worrying news ahead of tournament",
+      "impact": "HIGH — key piece of Calipari's plans."
+    },
+    {
+      "team": "Tennessee",
+      "player": "Nate Ament",
+      "position": "Wing (five-star freshman)",
+      "injury": "Leg injury",
+      "status": "Timetable uncertain",
+      "impact": "MEDIUM — needed for wing scoring in deep run."
+    },
+    {
+      "team": "Villanova",
+      "player": "Matthew Hodge",
+      "position": "Guard",
+      "injury": "ACL tear",
+      "status": "Out for season",
+      "impact": "MEDIUM — Villanova already struggling."
+    }
+  ],
+
+  "hot_takes": [
+    "Duke losing Caleb Foster before the tournament could be the difference between a title and a Sweet 16 exit. They are the most vulnerable 1-seed.",
+    "Miami OH at 31-0 is being disrespected with an 8-seed. An undefeated team should be no lower than a 5-seed regardless of conference.",
+    "Nebraska's 0-8 all-time NCAA tournament record is the biggest monkey on any program's back. If they lose in the first round again, it becomes the most cursed stat in college basketball.",
+    "Auburn going from Final Four to 16-15 is the biggest single-season collapse in recent SEC history. The Bruce Pearl to Steven Pearl transition was a disaster.",
+    "Kentucky playing in the SEC Tournament first round for the FIRST TIME tells you everything about this disappointing season.",
+    "Tom Izzo's Michigan State is the most dangerous 4-5 seed in the field. Nobody wants to play them.",
+    "UConn at +400 to make the Final Four is the best value bet on the board. Two titles in three years = tournament DNA.",
+    "The Big 12 is the deepest conference: Arizona, Houston, Iowa State, Texas Tech, Kansas, BYU all tournament-caliber.",
+    "Florida winning back-to-back titles would be the first repeat since Florida in 2006-2007. The symmetry is too perfect.",
+    "The 2026 NBA Draft class playing in March Madness (Peterson at Kansas, Dybantsa at BYU, Boozer at Duke) makes this the most star-studded tournament in years."
+  ],
+
+  "team_sentiment": {
+    "Duke": {
+      "sentiment": "mixed",
+      "record": "29-2",
+      "notes": "Clearly the best team on paper but Caleb Foster injury is devastating. Championship favorite at +325 but vulnerability is real. Cameron Boozer is elite but needs PG help."
+    },
+    "Michigan": {
+      "sentiment": "positive",
+      "record": "28-3",
+      "notes": "Consistent all season. Darryn Peterson is a generational talent. 4-game win streak to close. Lost to Duke head-to-head but otherwise dominant. Slight concern about L.J. Carson ACL loss."
+    },
+    "Arizona": {
+      "sentiment": "positive",
+      "record": "27-4",
+      "notes": "Won Big 12 by 2 games in the deepest conference. Rock solid. No major injury concerns. Quiet confidence."
+    },
+    "Florida": {
+      "sentiment": "positive",
+      "record": "25-6",
+      "notes": "Defending champ on 11-game heater. Won SEC by 3 games. Six losses are a concern for 1-seed but momentum is undeniable. Repeat is very possible."
+    },
+    "Houston": {
+      "sentiment": "positive",
+      "record": "~25-6",
+      "notes": "Kelvin Sampson's defense travels. +230 Final Four odds. Perennial contender. Always dangerous."
+    },
+    "UConn": {
+      "sentiment": "positive",
+      "record": "Unknown exact",
+      "notes": "Won 2 of last 3 titles. Dan Hurley is elite tournament coach. +400 Final Four — community sees value here. Had upset loss recently but tournament is different."
+    },
+    "Iowa State": {
+      "sentiment": "positive",
+      "record": "~25-6",
+      "notes": "Continuity under Otzelberger. Nearly stole 1-seed after beating Houston. Strong returning core. Blake Buchanan transfer is X-factor."
+    },
+    "Kansas": {
+      "sentiment": "mixed",
+      "record": "~22-9",
+      "notes": "Darryn Peterson can take over any game but team is inconsistent. Bill Self factor in March. +750 Final Four — high variance team."
+    },
+    "Kentucky": {
+      "sentiment": "negative",
+      "record": "19-12",
+      "notes": "Lost 5 of 7 to close season. Playing SEC tourney first round. Most unpredictable team in the field. Could flame out early or make a run — nobody knows. Classic trap pick."
+    },
+    "Auburn": {
+      "sentiment": "very_negative",
+      "record": "16-15",
+      "notes": "Complete disaster. Final Four to 16-15. Pearl coaching transition failed. Discipline issues all season. 2-8 in last 10. Likely NIT or nothing."
+    },
+    "Virginia": {
+      "sentiment": "positive",
+      "record": "27-4",
+      "notes": "Quietly excellent. Second-best ACC team. +2200 Final Four is massive value. Led by Thijs De Ridder and Malik Thomas. Tony Bennett defense travels in March."
+    },
+    "Nebraska": {
+      "sentiment": "mixed",
+      "record": "26-5",
+      "notes": "Ranked No. 9 but 0-8 ALL TIME in NCAA tournament. The most cursed stat in basketball. Fred Hoiberg has built a legit team. Won 3 straight after mid-season slump. +1800 Final Four."
+    },
+    "Miami_OH": {
+      "sentiment": "mixed",
+      "record": "31-0",
+      "notes": "Historic undefeated regular season. First team since 2021 Gonzaga. 90+ PPG, 50%+ FG%, 10+ threes/game — absurd stats. BUT no ranked opponents all season. 75+ teams refused to schedule them. Projected 8-seed despite being unbeaten. Community divided: is this real or schedule fraud?"
+    },
+    "Michigan_State": {
+      "sentiment": "positive",
+      "record": "~24-7",
+      "notes": "Tom Izzo = Mr. March. More Quad 1 wins than almost anyone outside top 4. Team-first mentality. Road losses killed buzz but nobody wants to face them. +1000 Final Four."
+    },
+    "Illinois": {
+      "sentiment": "positive",
+      "record": "~24-7",
+      "notes": "+320 Final Four odds. Strong Big Ten team. Could make a deep run."
+    },
+    "Arkansas": {
+      "sentiment": "mixed",
+      "record": "~22-9",
+      "notes": "Calipari's second year. Returns 45% from Sweet 16 team. Nick Pringle and Malique Ewin transfers. BUT Darius Acuff Jr. injury is worrying. +1100 Final Four — upside play."
+    },
+    "BYU": {
+      "sentiment": "negative",
+      "record": "~21-10",
+      "notes": "AJ Dybantsa is a generational talent but team is gutted by injuries. 4 guards out for season including Richie Saunders (ACL). Dybantsa can't do it alone. Fade."
+    },
+    "Purdue": {
+      "sentiment": "neutral",
+      "record": "Unknown exact",
+      "notes": "+950 Final Four. Safely in the field. Big Ten contender but not generating much excitement."
+    },
+    "Tennessee": {
+      "sentiment": "neutral",
+      "record": "~22-9",
+      "notes": "Consecutive Elite Eights under Rick Barnes. Defensive specialists. Nate Ament injury is a concern. +1600 Final Four. Quietly dangerous."
+    },
+    "Saint_Louis": {
+      "sentiment": "positive",
+      "record": "27-4",
+      "notes": "Community's favorite Cinderella pick. Robbie Avila is a monster. Top 10 offense nationally. A-10 champs. If they win conference tourney, everyone will pick them for upsets."
+    },
+    "Louisville": {
+      "sentiment": "neutral",
+      "record": "Unknown exact",
+      "notes": "+2000 Final Four. In the field. Pat Kelsey has this program trending up."
+    },
+    "Gonzaga": {
+      "sentiment": "neutral",
+      "record": "~24-7",
+      "notes": "+1300 Final Four. Safely in. Mark Few always dangerous. WCC isn't as weak with Santa Clara and Saint Mary's this year."
+    },
+    "North_Carolina": {
+      "sentiment": "negative",
+      "record": "~23-8",
+      "notes": "Lost 3 of last 5. Caleb Wilson out for season. 2-seed feels generous. Late-season struggles are a red flag. Community consensus: overseeded."
+    },
+    "Alabama": {
+      "sentiment": "neutral",
+      "record": "~22-9",
+      "notes": "+1600 Final Four. In the field safely. SEC is deep. Beat Auburn in rivalry game."
+    },
+    "St_Johns": {
+      "sentiment": "neutral",
+      "record": "Unknown exact",
+      "notes": "+1700 Final Four. Rick Pitino factor. Big East contender."
+    },
+    "Vanderbilt": {
+      "sentiment": "neutral",
+      "record": "Unknown exact",
+      "notes": "+2200 Final Four. Beat Saint Mary's by 25. Quietly solid SEC team."
+    },
+    "South_Florida": {
+      "sentiment": "positive",
+      "record": "Unknown exact",
+      "notes": "Most slept-on Cinderella. Best team in American Conference. Top 10 PPG nationally. Fastest pace in the country. Three elite scorers. Nobody is talking about them."
+    }
+  },
+
+  "conference_tournament_watch": {
+    "ACC": "Duke is heavy favorite. Virginia is the dark horse. UNC is shaky. Louisville trending up.",
+    "Big_Ten": "Michigan favored. Michigan State and Illinois are dangerous. Nebraska seeking first-ever tournament win. Purdue is steady.",
+    "Big_12": "Most competitive tournament. Arizona favored but Houston, Iowa State, Kansas, BYU all capable. Deepest conference in America.",
+    "SEC": "Florida favored to repeat as champs. Arkansas and Alabama are contenders. Kentucky is wildcard. Auburn is done.",
+    "WCC": "Gonzaga expected to win. Saint Mary's and Santa Clara fighting for at-large bids.",
+    "A_10": "Saint Louis is dominant. Could produce this year's Cinderella.",
+    "MAC": "Miami OH 31-0. If they lose in MAC tourney, they're still in as at-large."
+  },
+
+  "championship_odds_draftkings_march_9": {
+    "Duke": "+325",
+    "Michigan": "+340",
+    "Arizona": "+450",
+    "Florida": "+600",
+    "Houston": "+900",
+    "UConn": "+1200",
+    "Illinois": "+1500",
+    "Iowa_State": "+1800",
+    "Kansas": "+2500",
+    "Michigan_State": "+3000",
+    "Purdue": "+3500",
+    "Arkansas": "+4000",
+    "Nebraska": "+4500",
+    "Virginia": "+5000"
+  },
+
+  "final_four_odds_draftkings_march_9": {
+    "Duke": "-180",
+    "Michigan": "-160",
+    "Arizona": "-120",
+    "Florida": "+130",
+    "Houston": "+230",
+    "Illinois": "+320",
+    "UConn": "+400",
+    "Iowa_State": "+425",
+    "Kansas": "+750",
+    "Purdue": "+950",
+    "Michigan_State": "+1000",
+    "Arkansas": "+1100",
+    "Gonzaga": "+1300",
+    "Alabama": "+1600",
+    "Tennessee": "+1600",
+    "St_Johns": "+1700",
+    "Nebraska": "+1800",
+    "Louisville": "+2000",
+    "Virginia": "+2200",
+    "Vanderbilt": "+2200"
+  },
+
+  "bubble_status": {
+    "locks_29_teams": {
+      "SEC": ["Florida", "Alabama", "Vanderbilt", "Arkansas", "Tennessee", "Georgia", "Kentucky"],
+      "Big_Ten": ["Michigan", "Illinois", "Purdue", "Michigan State", "Nebraska", "Wisconsin"],
+      "Big_12": ["Arizona", "Houston", "Iowa State", "Texas Tech", "Kansas", "BYU"],
+      "ACC": ["Duke", "Virginia", "North Carolina", "Louisville"],
+      "Mid_Major": ["Gonzaga", "Saint Mary's", "Utah State"]
+    },
+    "should_be_in_13_teams": {
+      "SEC": ["Texas A&M", "Missouri"],
+      "Big_Ten": ["UCLA", "Ohio State", "Iowa"],
+      "Big_12": ["TCU", "UCF"],
+      "ACC": ["Clemson", "Miami", "NC State"],
+      "Mid_Major": ["Miami OH", "Saint Louis", "Santa Clara"]
+    },
+    "work_to_do_12_teams": {
+      "SEC": ["Texas (55%)", "Auburn (20%)", "Oklahoma (12%)"],
+      "Big_Ten": ["Indiana (40%)"],
+      "Big_12": ["Cincinnati (24%)"],
+      "ACC": ["SMU (39%)", "Virginia Tech (17%)"],
+      "Mid_Major": ["VCU (60%)", "San Diego State (17%)", "South Florida (~20%)"]
+    }
+  },
+
+  "key_nba_prospects_in_tournament": [
+    {"player": "AJ Dybantsa", "team": "BYU", "projected_pick": "Top 3", "notes": "Generational talent but team is injury-decimated"},
+    {"player": "Darryn Peterson", "team": "Kansas", "projected_pick": "No. 1 overall", "notes": "Can take over games. Had 18 pts in 20 min vs BYU. Health concern (left game early vs BYU)"},
+    {"player": "Cameron Boozer", "team": "Duke", "projected_pick": "Top 3", "notes": "Elite frontcourt player. Duke's anchor with Foster out."}
+  ]
+}

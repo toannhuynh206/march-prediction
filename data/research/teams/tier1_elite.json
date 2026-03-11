@@ -1,0 +1,1470 @@
+{
+  "metadata": {
+    "research_date": "2026-03-10",
+    "tournament_year": 2026,
+    "tier": "elite",
+    "description": "Projected 1-4 seed teams for 2026 NCAA Tournament. Conference tournaments in progress as of research date.",
+    "data_sources": [
+      "KenPom",
+      "Sports-Reference",
+      "ESPN",
+      "CBS Sports",
+      "BetMGM",
+      "DraftKings",
+      "FanDuel",
+      "247Sports",
+      "Various beat reporters"
+    ]
+  },
+  "teams": [
+    {
+      "name": "Duke Blue Devils",
+      "conference": "ACC",
+      "record": "29-2",
+      "conference_record": "17-1",
+      "ap_ranking": 1,
+      "net_ranking": 1,
+      "coach": {
+        "name": "Jon Scheyer",
+        "tournament_experience": "2nd year as HC; won 2022 Final Four as assistant under Coach K. Duke program has 17 Final Fours, 5 national titles."
+      },
+      "kenpom": {
+        "overall_rank": 1,
+        "adj_em": 39.65,
+        "adj_o_rank": "Top 10",
+        "adj_d_rank": 2,
+        "adj_d_value": 89.5,
+        "tempo": null,
+        "notes": "Historic KenPom net rating, surpassing 2024-25 Duke (39.29) which was the previous KenPom-era record."
+      },
+      "key_players": [
+        {
+          "name": "Cameron Boozer",
+          "position": "F",
+          "class": "Freshman",
+          "stats": {
+            "ppg": 22.7,
+            "rpg": 10.2
+          },
+          "notes": "Projected No. 1 overall pick in 2026 NBA Draft. All-ACC First Team. Second in ACC in both scoring and rebounding."
+        },
+        {
+          "name": "Cayden Boozer",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "Cameron's twin brother. Key contributor in the backcourt."
+        },
+        {
+          "name": "Caleb Foster",
+          "position": "G",
+          "class": "Sophomore",
+          "stats": {},
+          "notes": "Returning guard, key playmaker."
+        },
+        {
+          "name": "Isaiah Evans",
+          "position": "G/F",
+          "class": "Sophomore",
+          "stats": {},
+          "notes": "Versatile wing contributor."
+        },
+        {
+          "name": "Patrick Ngongba",
+          "position": "C",
+          "class": "Sophomore",
+          "stats": {},
+          "notes": "Starting center. INJURY CONCERN: recently appeared on injury report, missed game vs North Carolina."
+        }
+      ],
+      "injuries": [
+        {
+          "player": "Patrick Ngongba",
+          "status": "Questionable",
+          "details": "Recently missed game vs North Carolina. Status for ACC Tournament unclear."
+        }
+      ],
+      "strengths": [
+        "Best defense in the country (KenPom #2 AdjD at 89.5)",
+        "Top-10 offense with elite frontcourt",
+        "Historic KenPom profile (39.65 AdjEM)",
+        "15 Quad 1 NET wins (tied for most in D-I)",
+        "Elite freshman talent with Cameron Boozer"
+      ],
+      "weaknesses": [
+        "Reliance on freshmen in March pressure situations",
+        "Center depth concern with Ngongba injury"
+      ],
+      "championship_odds": {
+        "draftkings": "+315",
+        "fanduel": "+320",
+        "notes": "Current favorite. Took over top spot from Michigan in early March."
+      },
+      "notable_wins": [
+        "15 Quad 1 wins",
+        "Won ACC regular season (17-1)",
+        "Beat Michigan on neutral site"
+      ],
+      "notable_losses": [
+        "2 losses total (best record among top seeds)"
+      ],
+      "conference_tournament": {
+        "seed": 1,
+        "status": "ACC Tournament in progress (March 10). Duke is top seed, seeking back-to-back titles (won 2025 ACC Tournament)."
+      },
+      "expert_analysis": "Consensus top overall seed. Historic KenPom profile. Best defense in the country combined with top-10 offense. Cameron Boozer is the singular star who could carry them to a title. Only concern is freshman reliance in March."
+    },
+    {
+      "name": "Michigan Wolverines",
+      "conference": "Big Ten",
+      "record": "29-2",
+      "conference_record": "19-1",
+      "ap_ranking": 3,
+      "net_ranking": 2,
+      "coach": {
+        "name": "Dusty May",
+        "tournament_experience": "2nd year at Michigan. Previously coached FAU to 2023 Final Four. Named 2026 Big Ten Coach of the Year."
+      },
+      "kenpom": {
+        "overall_rank": 2,
+        "adj_em": null,
+        "adj_o_rank": null,
+        "adj_d_rank": null,
+        "tempo": null,
+        "notes": "Close behind Duke in KenPom. Historic Big Ten season with 19-1 conference record."
+      },
+      "key_players": [
+        {
+          "name": "Yaxel Lendeborg",
+          "position": "F/C",
+          "class": "Junior (Transfer from UAB)",
+          "stats": {},
+          "notes": "Big Ten Player of the Year. Top first-year transfer in Big Ten. Potential All-American. Versatile, can play multiple positions."
+        },
+        {
+          "name": "Morez Johnson Jr.",
+          "position": "F",
+          "class": "Transfer from Illinois",
+          "stats": {},
+          "notes": "Key frontcourt piece alongside Lendeborg."
+        },
+        {
+          "name": "Aday Mara",
+          "position": "C",
+          "class": "Transfer from UCLA",
+          "stats": {},
+          "notes": "Size and rim protection."
+        },
+        {
+          "name": "Elliot Cadeau",
+          "position": "G",
+          "class": "Transfer from North Carolina",
+          "stats": {},
+          "notes": "Splits point guard duties with Cason."
+        },
+        {
+          "name": "L.J. Cason",
+          "position": "G",
+          "class": null,
+          "stats": {},
+          "notes": "Shares PG duties with Cadeau."
+        },
+        {
+          "name": "Trey McKenney",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "Strong freshman year, key rotation piece."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Program record 29 wins and 19 Big Ten wins",
+        "Set new Big Ten record for conference wins (19, surpassing 1975-76 Indiana)",
+        "5 victories against AP Top 10 opponents (tied program record)",
+        "88.4 PPG (9th nationally), 69.1 PPG allowed (56th nationally)",
+        "Elite roster construction via transfer portal",
+        "Big Ten Player of the Year (Lendeborg) and Coach of the Year (May)"
+      ],
+      "weaknesses": [
+        "Transfer-heavy roster, limited shared history together",
+        "'Mercenary' label — 4 of 5 starters are transfers, chemistry questions",
+        "Lost to Duke on neutral site"
+      ],
+      "championship_odds": {
+        "draftkings": "+320",
+        "fanduel": "+320",
+        "notes": "Was the favorite before Duke overtook them. Still co-favorite on FanDuel."
+      },
+      "notable_wins": [
+        "5 wins vs AP Top 10 teams",
+        "Beat No. 8 Michigan State on Senior Day to cap regular season",
+        "Impressive road win at No. 10 Illinois"
+      ],
+      "notable_losses": [
+        "Loss to Duke on neutral site",
+        "1 other loss"
+      ],
+      "conference_tournament": {
+        "seed": 1,
+        "status": "Big Ten Tournament in progress (March 10-15) at United Center in Chicago."
+      },
+      "expert_analysis": "Historic season for the program. Dusty May has built a juggernaut through the transfer portal. Yaxel Lendeborg is a legitimate Player of the Year candidate. The question is whether a roster full of transfers can gel in March. First team since 2012-13 to earn #1 AP ranking."
+    },
+    {
+      "name": "Arizona Wildcats",
+      "conference": "Big 12",
+      "record": "29-2",
+      "conference_record": "15-2",
+      "ap_ranking": 2,
+      "net_ranking": 3,
+      "coach": {
+        "name": "Tommy Lloyd",
+        "tournament_experience": "4th year as HC. Assistant under Mark Few at Gonzaga for 20+ years. Led Arizona to 2022 #1 seed, 2023 #2 seed."
+      },
+      "kenpom": {
+        "overall_rank": 3,
+        "adj_em": null,
+        "adj_o": 120.2,
+        "adj_o_rank": 20,
+        "adj_d": 94.7,
+        "adj_d_rank": 6,
+        "tempo": null,
+        "notes": "Elite defensive profile (#6 nationally). Strong offense (#20). Well-balanced."
+      },
+      "key_players": [
+        {
+          "name": "Brayden Burries",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {
+            "ppg": 16.0,
+            "fg_pct": 49.7
+          },
+          "notes": "Team's leading scorer. Five-star recruit from California. Led HS team to state championship."
+        },
+        {
+          "name": "Koa Peat",
+          "position": "F",
+          "class": "Freshman",
+          "stats": {
+            "ppg": 13.8,
+            "rpg": 5.4,
+            "fg_pct": 54.8
+          },
+          "notes": "Five-star recruit. Three-time Gatorade Arizona POTY. INJURY CONCERN: muscle strain in lower leg, missed at least 2 games in late Feb. Status unclear for tournament."
+        },
+        {
+          "name": "Evan Nelson",
+          "position": "G",
+          "class": "Transfer from Harvard",
+          "stats": {},
+          "notes": "Floor general. Averaged 40.4% from three at Harvard."
+        },
+        {
+          "name": "Bryce James",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "Son of LeBron James. Backcourt depth, shooting and basketball IQ."
+        },
+        {
+          "name": "Dwayne Aristode",
+          "position": "F",
+          "class": null,
+          "stats": {},
+          "notes": "INJURY CONCERN: was unavailable alongside Peat in late February."
+        }
+      ],
+      "injuries": [
+        {
+          "player": "Koa Peat",
+          "status": "Day-to-day",
+          "details": "Lower leg muscle strain. Missed games vs BYU and Houston in late February. Was set for reevaluation. May be back for Big 12 Tournament."
+        },
+        {
+          "player": "Dwayne Aristode",
+          "status": "Questionable",
+          "details": "Missed time alongside Peat in late February."
+        }
+      ],
+      "strengths": [
+        "Held #1 AP ranking for 9 consecutive weeks (program record)",
+        "Elite defense (#6 KenPom AdjD at 94.7)",
+        "Won Big 12 regular season championship (15-2)",
+        "Beat No. 5 Houston on the road",
+        "Beat No. 6 Iowa State by 16 points",
+        "5 consecutive wins after brief injury-related dip"
+      ],
+      "weaknesses": [
+        "Injury concerns to Koa Peat (key scorer/rebounder)",
+        "Freshman-heavy roster may face March pressure",
+        "Depth concerns with Aristode also missing time"
+      ],
+      "championship_odds": {
+        "draftkings": "+425",
+        "fanduel": "+550",
+        "notes": "Third favorite. In the 6% range for betting ticket distribution."
+      },
+      "notable_wins": [
+        "Road win at No. 5 Houston",
+        "16-point rout of No. 6 Iowa State",
+        "Big 12 regular season title"
+      ],
+      "notable_losses": [
+        "2 losses total"
+      ],
+      "conference_tournament": {
+        "seed": 1,
+        "status": "Big 12 Tournament in progress at T-Mobile Center, Kansas City (March 10-14)."
+      },
+      "expert_analysis": "Elite two-way team with the best defensive profile among top seeds after Duke. Koa Peat's health is the X-factor. If healthy, Arizona has the balance and depth to win it all. Tommy Lloyd's Gonzaga pedigree gives them tournament coaching edge."
+    },
+    {
+      "name": "Florida Gators",
+      "conference": "SEC",
+      "record": "25-6",
+      "conference_record": "15-2",
+      "ap_ranking": 4,
+      "net_ranking": 4,
+      "coach": {
+        "name": "Todd Golden",
+        "tournament_experience": "4th year at Florida. Won 2025 National Championship. Named 2026 SEC Coach of the Year. Built program into annual contender."
+      },
+      "kenpom": {
+        "overall_rank": 4,
+        "adj_em": 35.34,
+        "adj_o": 126.2,
+        "adj_o_rank": 9,
+        "adj_d": 90.9,
+        "adj_d_rank": 4,
+        "sos_rank": 6,
+        "notes": "Top-4 defense, top-10 offense. Luck rating 314th (very unlucky) suggesting they're better than record indicates."
+      },
+      "key_players": [
+        {
+          "name": "Thomas Haugh",
+          "position": "F",
+          "class": null,
+          "stats": {},
+          "notes": "First-Team All-SEC. Team's leading scorer."
+        },
+        {
+          "name": "Rueben Chinyelu",
+          "position": "C",
+          "class": null,
+          "stats": {},
+          "notes": "Second-Team All-SEC. SEC Defensive Player of the Year. SEC Scholar-Athlete of the Year."
+        },
+        {
+          "name": "Alex Condon",
+          "position": "F",
+          "class": null,
+          "stats": {},
+          "notes": "Third-Team All-SEC. Key frontcourt contributor."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Defending national champions",
+        "Won SEC regular season title (15-2)",
+        "Elite defense (#4 KenPom AdjD at 90.9)",
+        "Top-10 offense (126.2 pts per 100 possessions)",
+        "6th-toughest schedule in the country",
+        "KenPom luck rating suggests underperformance relative to true talent",
+        "Todd Golden's championship coaching experience"
+      ],
+      "weaknesses": [
+        "Lost 3 key players to 2025 NBA Draft (Walter Clayton Jr., Alijah Martin, Will Richard)",
+        "6 losses suggest some inconsistency",
+        "Dropped from #2 preseason to as low as #15 before climbing back"
+      ],
+      "championship_odds": {
+        "draftkings": null,
+        "fanduel": "+600",
+        "betmgm": "+800",
+        "notes": "Fourth-best odds. Defending champions get respect but not favorites."
+      },
+      "notable_wins": [
+        "Beat Kentucky",
+        "Beat South Carolina",
+        "SEC regular season champions"
+      ],
+      "notable_losses": [
+        "6 total losses, dropped to #15 before recovering"
+      ],
+      "conference_tournament": {
+        "seed": 1,
+        "status": "SEC Tournament begins March 11 at Bridgestone Arena, Nashville."
+      },
+      "expert_analysis": "Defending champs who lost major pieces to the NBA Draft but reloaded impressively. The KenPom profile is elite (top-4 defense, top-10 offense) and their 'unlucky' luck rating suggests they're even better than 25-6. Todd Golden has proven he can win in March. Strong value pick."
+    },
+    {
+      "name": "Illinois Fighting Illini",
+      "conference": "Big Ten",
+      "record": "24-7",
+      "conference_record": null,
+      "ap_ranking": 5,
+      "net_ranking": 5,
+      "coach": {
+        "name": "Brad Underwood",
+        "tournament_experience": "9th year at Illinois. Has produced 4 NBA players. Led Illinois to 2024 Elite Eight."
+      },
+      "kenpom": {
+        "overall_rank": 5,
+        "adj_em": null,
+        "adj_o_rank": "Top 5 (KenPom AdjO #1 per some reports)",
+        "adj_d_rank": 30,
+        "tempo": null,
+        "notes": "Elite offense, above-average defense. Top-5 overall KenPom."
+      },
+      "key_players": [
+        {
+          "name": "Keaton Wagler",
+          "position": "G",
+          "class": null,
+          "stats": {
+            "season_high_pts": 46,
+            "season_high_ast": 10
+          },
+          "notes": "Explosive scorer. 46-point game vs Purdue. 10-assist game vs Nebraska."
+        },
+        {
+          "name": "Tomislav Ivisic",
+          "position": "C",
+          "class": "Sophomore",
+          "stats": {
+            "ppg": 13.0,
+            "rpg": 7.7
+          },
+          "notes": "Key big man returning for second year. Focal point of Illini offense."
+        },
+        {
+          "name": "Andrej Stojakovic",
+          "position": "G/F",
+          "class": "Transfer from Cal",
+          "stats": {
+            "ppg_previous": 17.9
+          },
+          "notes": "Transfer who averaged 17.9 PPG at Cal. Potential first-round NBA pick."
+        },
+        {
+          "name": "Kylan Boswell",
+          "position": "G",
+          "class": null,
+          "stats": {},
+          "notes": "Described as team's 'most important player.' Key defensive piece."
+        },
+        {
+          "name": "David Mirkovic",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "season_high_reb": 21
+          },
+          "notes": "Elite rebounder. 21-rebound game early in season."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite offensive efficiency (potentially #1 in KenPom AdjO)",
+        "Deep roster with multiple double-figure scorers",
+        "Star power with Wagler, Stojakovic, and Ivisic",
+        "Brad Underwood has tournament experience"
+      ],
+      "weaknesses": [
+        "7 losses more than the top 3 seeds",
+        "Defense ranked 30th (good but not elite)",
+        "Lost Kasparas Jakucionis to NBA Draft"
+      ],
+      "championship_odds": {
+        "draftkings": null,
+        "fanduel": "+2000",
+        "notes": "Significant underdog at +2000 despite #5 KenPom ranking."
+      },
+      "notable_wins": [],
+      "notable_losses": [],
+      "conference_tournament": {
+        "seed": null,
+        "status": "Big Ten Tournament in progress (March 10-15) at United Center, Chicago."
+      },
+      "expert_analysis": "Top-5 KenPom team with the most explosive offense in the country. The Wagler-Stojakovic-Ivisic trio can score with anyone. The concern is defense (#30) and 7 losses. At +2000 odds, they represent significant value if you believe offense wins in March. Brad Underwood needs a deep run to validate his tenure."
+    },
+    {
+      "name": "Gonzaga Bulldogs",
+      "conference": "WCC",
+      "record": "29-3",
+      "conference_record": "16-2",
+      "ap_ranking": 12,
+      "net_ranking": 6,
+      "coach": {
+        "name": "Mark Few",
+        "tournament_experience": "26th year at Gonzaga. 2 national championship game appearances (2017, 2021). Multiple Final Fours. One of the most experienced tournament coaches alive."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 120.7,
+        "adj_o_rank": 18,
+        "adj_d": 93.0,
+        "adj_d_rank": 2,
+        "tempo": null,
+        "notes": "#2 defense nationally (93.0 AdjD). Strong offense (#18). SRS 25.84 (#7 nationally)."
+      },
+      "key_players": [
+        {
+          "name": "Graham Ike",
+          "position": "F",
+          "class": "Senior",
+          "stats": {
+            "ppg": 17.3,
+            "season_high_reb": 15
+          },
+          "notes": "All-WCC. Team's leading scorer. Had 21-point/15-rebound game vs Santa Clara."
+        },
+        {
+          "name": "Tyon Grant-Foster",
+          "position": "G/F",
+          "class": null,
+          "stats": {},
+          "notes": "Key contributor off bench, 15 points vs Oregon State."
+        },
+        {
+          "name": "Braden Huff",
+          "position": "F/C",
+          "class": null,
+          "stats": {},
+          "notes": "INJURY CONCERN: Sidelined for weeks. Original 8-week prognosis puts return around March 12 — 3 days before Selection Sunday. May not be available."
+        },
+        {
+          "name": "Jalen Warley",
+          "position": "G",
+          "class": null,
+          "stats": {},
+          "notes": "INJURY CONCERN: Day-to-day with thigh contusion."
+        }
+      ],
+      "injuries": [
+        {
+          "player": "Braden Huff",
+          "status": "Out / Doubtful",
+          "details": "Sidelined for weeks. 8-week prognosis puts return around March 12. Unclear if he will return for NCAA Tournament."
+        },
+        {
+          "player": "Jalen Warley",
+          "status": "Day-to-day",
+          "details": "Thigh contusion in closing stretch of season."
+        }
+      ],
+      "strengths": [
+        "Elite defense (#2 KenPom AdjD at 93.0)",
+        "WCC regular season and tournament contender",
+        "Mark Few's unmatched tournament coaching experience",
+        "66.3 PPG allowed (22nd nationally)",
+        "Strong SRS (25.84, #7 nationally)"
+      ],
+      "weaknesses": [
+        "Significant injury concerns (Huff, Warley)",
+        "WCC schedule quality concern (weaker conference)",
+        "Projected as #4 seed, not a top-1/2 seed",
+        "AP ranking (#12) lower than NET ranking (#6) suggests perception gap"
+      ],
+      "championship_odds": {
+        "notes": "Not among top favorites. Likely in +3000-5000 range."
+      },
+      "notable_wins": [
+        "Won WCC regular season (16-2)"
+      ],
+      "notable_losses": [
+        "3 losses"
+      ],
+      "conference_tournament": {
+        "seed": 1,
+        "status": "Advanced to WCC Tournament championship game. Gonzaga's last year in WCC before moving to Pac-12."
+      },
+      "expert_analysis": "Pegged as a #4 seed in Bracketology. Elite defense but injury concerns to Huff and Warley could derail March run. Mark Few's tournament pedigree is a significant X-factor. This is their final WCC tournament before joining Pac-12, adding motivation. If healthy, they're dangerous; if not, early exit."
+    },
+    {
+      "name": "Houston Cougars",
+      "conference": "Big 12",
+      "record": "26-5",
+      "conference_record": "13-4",
+      "ap_ranking": 7,
+      "net_ranking": 7,
+      "coach": {
+        "name": "Kelvin Sampson",
+        "tournament_experience": "12th year at Houston. 2021 Final Four, 2023 and 2024 Final Four, 2025 National Championship runner-up. Elite tournament coach."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 119.0,
+        "adj_o_rank": 31,
+        "adj_d": 95.7,
+        "adj_d_rank": 10,
+        "tempo": null,
+        "notes": "Defense-first identity (#10 AdjD). Balanced attack."
+      },
+      "key_players": [
+        {
+          "name": "Milos Uzan",
+          "position": "G",
+          "class": "Senior",
+          "stats": {
+            "apg": 4.3
+          },
+          "notes": "Floor general. Started all 40 games last season. Second-Team All-Big 12. Big 12 All-Tournament. Led team with 170 assists."
+        },
+        {
+          "name": "Emanuel Sharp",
+          "position": "G",
+          "class": null,
+          "stats": {
+            "ppg_previous": 12.6
+          },
+          "notes": "Key offensive weapon, returning scorer from championship runner-up team."
+        },
+        {
+          "name": "Chris Cenac",
+          "position": "C",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "Highest-ranked recruit in Houston's modern era. Projected 2026 NBA Draft lottery pick."
+        },
+        {
+          "name": "Pop Isaacs",
+          "position": "G",
+          "class": "Senior (Transfer from Creighton)",
+          "stats": {},
+          "notes": "Committed to Houston within 24 hours of 2025 championship loss. Major transfer addition."
+        },
+        {
+          "name": "Cedric Lath",
+          "position": "C",
+          "class": "Redshirt Junior",
+          "stats": {},
+          "notes": "6'9\" 260 lbs. Physical presence, rim protection, rebounding."
+        },
+        {
+          "name": "Kingston Flemings",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "#3 PG nationally by 247Sports and Rivals."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Elite defense (#10 KenPom, #2 in raw PPG allowed at 62.3)",
+        "Kelvin Sampson's tournament pedigree (4 consecutive Final Four/championship games)",
+        "Won 2025 Big 12 Tournament (beat Colorado, BYU, Arizona)",
+        "Experienced roster with championship game experience",
+        "Elite recruit in Chris Cenac"
+      ],
+      "weaknesses": [
+        "Offense ranks lower (#31 KenPom AdjO) compared to other contenders",
+        "5 losses suggest some inconsistency",
+        "Big 12 is brutal — 4 losses in conference"
+      ],
+      "championship_odds": {
+        "fanduel": "+1200",
+        "notes": "Solid mid-tier contender in odds."
+      },
+      "notable_wins": [
+        "Won 2025 Big 12 Tournament",
+        "Beat Colorado, BYU, Arizona in conference tournament"
+      ],
+      "notable_losses": [
+        "5 losses, 4 in Big 12 play"
+      ],
+      "conference_tournament": {
+        "seed": 2,
+        "status": "Big 12 Tournament in progress at T-Mobile Center, Kansas City."
+      },
+      "expert_analysis": "Kelvin Sampson's program is perpetually tournament-ready. Four straight years in the Final Four or championship game is remarkable. Defense-first identity (62.3 PPG allowed) is tournament-proven. Chris Cenac adds a new dimension. The question is whether the offense is explosive enough to beat the Dukes and Michigans of the bracket."
+    },
+    {
+      "name": "Iowa State Cyclones",
+      "conference": "Big 12",
+      "record": "25-6",
+      "conference_record": "11-6",
+      "ap_ranking": 6,
+      "net_ranking": 8,
+      "coach": {
+        "name": "T.J. Otzelberger",
+        "tournament_experience": "4th year at Iowa State. Led ISU to 2024 Sweet 16."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 119.7,
+        "adj_o_rank": 22,
+        "adj_d": 96.5,
+        "adj_d_rank": 15,
+        "tempo": null,
+        "notes": "Strong on both ends. #22 offense, #15 defense."
+      },
+      "key_players": [
+        {
+          "name": "Joshua Jefferson",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "ppg": 16.6,
+            "rpg": 7.4,
+            "apg": 5.0,
+            "spg": 1.6
+          },
+          "notes": "All-Big 12 First Team. Wooden Award midseason top 20. Triple-double threat (17/10/12 vs UCF). At times mentioned in NPOY conversation with Cameron Boozer."
+        },
+        {
+          "name": "Tamin Lipsey",
+          "position": "G",
+          "class": "Senior",
+          "stats": {},
+          "notes": "All-Big 12 Second Team. Veteran floor general."
+        },
+        {
+          "name": "Milan Momcilovic",
+          "position": "G",
+          "class": "Junior",
+          "stats": {
+            "season_high_pts": 34
+          },
+          "notes": "All-Big 12 Second Team. Elite scorer, 34-point game vs Cincinnati."
+        },
+        {
+          "name": "Blake Buchanan",
+          "position": "C",
+          "class": null,
+          "stats": {},
+          "notes": "Shot-blocker and rim protector."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Joshua Jefferson is a legitimate star and triple-double threat",
+        "Balanced on both ends (top-22 offense, top-15 defense)",
+        "Three All-Conference players",
+        "81.6 PPG (#58) with 65.8 PPG allowed (#16)",
+        "Deep and experienced roster"
+      ],
+      "weaknesses": [
+        "6 losses including 6 in Big 12 play — uneven in conference",
+        "Not as dominant as the top 3 seeds",
+        "Questions about ability to beat elite teams consistently"
+      ],
+      "championship_odds": {
+        "notes": "Likely in +2500-4000 range."
+      },
+      "notable_wins": [],
+      "notable_losses": [
+        "Lost to Arizona by 16 points"
+      ],
+      "conference_tournament": {
+        "seed": 4,
+        "status": "Big 12 Tournament in progress."
+      },
+      "expert_analysis": "Joshua Jefferson is a legitimate star who can take over games (triple-double ability). Iowa State has the balance and depth to make a run, but 6 Big 12 losses raise consistency questions. They're a strong 2-3 seed with Final Four upside if Jefferson plays at his peak."
+    },
+    {
+      "name": "Connecticut Huskies",
+      "conference": "Big East",
+      "record": "27-4",
+      "conference_record": "17-3",
+      "ap_ranking": null,
+      "net_ranking": 9,
+      "coach": {
+        "name": "Dan Hurley",
+        "tournament_experience": "6th year at UConn. Won back-to-back national championships (2023, 2024). One of the best active tournament coaches."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 116.8,
+        "adj_o_rank": 53,
+        "adj_d": 97.5,
+        "adj_d_rank": 21,
+        "tempo": null,
+        "notes": "Good defense (#21), average offense (#53). Lower offensive profile than recent title teams."
+      },
+      "key_players": [
+        {
+          "name": "Alex Karaban",
+          "position": "F",
+          "class": "Senior",
+          "stats": {
+            "ppg": 12.9,
+            "rpg": 5.3,
+            "apg": 2.2
+          },
+          "notes": "Two-time national champion. All-time winningest player in UConn history. First-Team All-Big East. Clutch performer. Has been banged up."
+        },
+        {
+          "name": "Tarris Reed Jr.",
+          "position": "C",
+          "class": null,
+          "stats": {
+            "ppg": 13.9,
+            "rpg": 7.7,
+            "fg_pct": 63.3
+          },
+          "notes": "First-Team All-Big East. Dominant when healthy (63.3% FG). INJURY CONCERN: Limited to 10 games due to hamstring and ankle injuries."
+        },
+        {
+          "name": "Silas Demary Jr.",
+          "position": "G",
+          "class": "Transfer",
+          "stats": {
+            "apg": 7.4
+          },
+          "notes": "First-Team All-Big East. Led Big East in assists (7.4 APG in conference play). Elite playmaker in first year at UConn."
+        },
+        {
+          "name": "Solo Ball",
+          "position": "G",
+          "class": null,
+          "stats": {},
+          "notes": "All-Big East Second Team. Has dealt with wrist injury."
+        },
+        {
+          "name": "Braylon Mullins",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {},
+          "notes": "Five-star recruit. Missed first 6 games (ankle), another game (concussion protocol). Talented but limited by injuries."
+        }
+      ],
+      "injuries": [
+        {
+          "player": "Tarris Reed Jr.",
+          "status": "Questionable / Returning",
+          "details": "Limited to 10 games with hamstring and ankle injuries. Availability for tournament is key question."
+        },
+        {
+          "player": "Solo Ball",
+          "status": "Day-to-day",
+          "details": "Wrist injury."
+        },
+        {
+          "player": "Alex Karaban",
+          "status": "Playing through",
+          "details": "Has been banged up but playing."
+        },
+        {
+          "player": "Braylon Mullins",
+          "status": "Available",
+          "details": "Returned from ankle injury and concussion protocol earlier in season."
+        }
+      ],
+      "strengths": [
+        "Historic first: 3 First-Team All-Big East selections on same team",
+        "Dan Hurley's back-to-back championship pedigree",
+        "Championship DNA and culture",
+        "When healthy, one of the most talented rosters in the country",
+        "Alex Karaban's clutch tournament experience"
+      ],
+      "weaknesses": [
+        "Injury-plagued season (Reed, Ball, Mullins, Karaban)",
+        "Offense only #53 in KenPom AdjO",
+        "Reed limited to 10 games — chemistry/fitness concerns",
+        "Dropped regular season finale"
+      ],
+      "championship_odds": {
+        "notes": "In the 6% range for betting tickets. Likely +1500-2500 range."
+      },
+      "notable_wins": [
+        "17-3 Big East record",
+        "Beat Villanova 73-56 in Big East Tournament QF"
+      ],
+      "notable_losses": [
+        "Lost to Creighton in Big East Tournament SF (71-62)",
+        "Lost regular season finale"
+      ],
+      "conference_tournament": {
+        "seed": 2,
+        "status": "Beat Villanova in QF, lost to Creighton in SF. Received at-large bid with #8 seed."
+      },
+      "expert_analysis": "The wildcard of the field. If Tarris Reed Jr. returns healthy alongside Karaban and Demary, this is a Final Four team. Dan Hurley knows how to win in March better than almost anyone. But the injury concerns are severe — Reed in only 10 games means limited chemistry and conditioning. High ceiling, uncertain floor."
+    },
+    {
+      "name": "Purdue Boilermakers",
+      "conference": "Big Ten",
+      "record": "23-8",
+      "conference_record": "13-7",
+      "ap_ranking": 15,
+      "net_ranking": 10,
+      "coach": {
+        "name": "Matt Painter",
+        "tournament_experience": "20th year at Purdue. 2024 National Championship runner-up. Multiple Sweet 16 and Elite Eight appearances."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 124.4,
+        "adj_o_rank": 4,
+        "adj_d": 106.8,
+        "adj_d_rank": 187,
+        "tempo": null,
+        "notes": "EXTREME offensive/defensive split. #4 offense in the country but #187 defense. Pure offensive juggernaut with defensive concerns."
+      },
+      "key_players": [
+        {
+          "name": "Braden Smith",
+          "position": "G",
+          "class": "Senior",
+          "stats": {
+            "ppg": 14.9,
+            "apg": 8.7,
+            "rpg": 3.6
+          },
+          "notes": "Three-time First-Team All-Big Ten. Big Ten all-time career assist leader. 1,000+ career assists (one of 5 in college basketball history). 23 games of 10+ assists (Big Ten record). Wooden Award contender."
+        },
+        {
+          "name": "Trey Kaufman-Renn",
+          "position": "F",
+          "class": "Senior",
+          "stats": {},
+          "notes": "All-Big Ten Honorable Mention. Moved to 4-spot with addition of Cluff. Improved as rebounder. Wooden Award candidate (5th-best odds at +1800)."
+        },
+        {
+          "name": "Oscar Cluff",
+          "position": "C",
+          "class": "Transfer",
+          "stats": {},
+          "notes": "New addition that allowed Kaufman-Renn to move to power forward."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "#4 offense in the country (124.4 AdjO)",
+        "Braden Smith is historic playmaker (all-time Big Ten assist leader)",
+        "Matt Painter's tournament experience",
+        "Elite offensive firepower with multiple weapons"
+      ],
+      "weaknesses": [
+        "Defense ranked #187 in KenPom AdjD (106.8) — massive liability",
+        "8 losses, 7 in Big Ten (inconsistent)",
+        "Huge gap between offensive excellence and defensive mediocrity"
+      ],
+      "championship_odds": {
+        "notes": "Likely +4000-6000 range. Respected but not favored."
+      },
+      "notable_wins": [
+        "85-57 dominant win over Minnesota"
+      ],
+      "notable_losses": [
+        "Lost to Illinois 88-82 (Wagler scored 46)",
+        "8 total losses"
+      ],
+      "conference_tournament": {
+        "seed": null,
+        "status": "Big Ten Tournament in progress."
+      },
+      "expert_analysis": "The most fascinating team in the field. #4 offense with #187 defense creates extreme variance. Braden Smith is a generational passer (1,000+ career assists). If they get hot from three and Smith controls tempo, they can beat anyone. But the defense means they can lose to anyone too. Classic March Madness upset candidate on either side."
+    },
+    {
+      "name": "Michigan State Spartans",
+      "conference": "Big Ten",
+      "record": "25-6",
+      "conference_record": "15-5",
+      "ap_ranking": 8,
+      "net_ranking": 11,
+      "coach": {
+        "name": "Tom Izzo",
+        "tournament_experience": "31st year at Michigan State. 8 Final Fours, 2000 National Championship. THE Mr. March. Most experienced active tournament coach."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 117.1,
+        "adj_o_rank": 51,
+        "adj_d": 100.7,
+        "adj_d_rank": 51,
+        "tempo": null,
+        "notes": "Balanced but not elite on either end (#51 offense, #51 defense). SRS 23.98 (#11). SOS 12.98 (#7 — very tough schedule)."
+      },
+      "key_players": [
+        {
+          "name": "Jeremy Fears Jr.",
+          "position": "G",
+          "class": "Redshirt Sophomore",
+          "stats": {
+            "total_assists": 272,
+            "apg": 9.1
+          },
+          "notes": "LEADS THE COUNTRY in assists (272 total, 9.1 APG). #1 in points created per 40 minutes (46.7) per CBB Analytics. The engine of the entire offense."
+        },
+        {
+          "name": "Carson Cooper",
+          "position": "C",
+          "class": "Senior",
+          "stats": {
+            "career_high_pts": 20
+          },
+          "notes": "Team captain. Scored career-high 20 vs Ohio State. Pick-and-roll partner with Fears is their best play."
+        },
+        {
+          "name": "Jaxon Kohler",
+          "position": "F",
+          "class": "Senior",
+          "stats": {},
+          "notes": "Team captain. Part of core four."
+        },
+        {
+          "name": "Coen Carr",
+          "position": "F",
+          "class": "Junior",
+          "stats": {},
+          "notes": "Athletic forward, part of core four."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Jeremy Fears leads the COUNTRY in assists (9.1 APG)",
+        "Tom Izzo's unmatched 'Mr. March' tournament pedigree (8 Final Fours)",
+        "Core four (Cooper, Kohler, Carr, Fears) average combined 49.9 PPG, 24.0 RPG, 12.9 APG",
+        "7th-toughest schedule in the country",
+        "Battle-tested in Big Ten (15-5)"
+      ],
+      "weaknesses": [
+        "Not elite on either end statistically (#51 offense, #51 defense)",
+        "Lost to Michigan in regular season finale",
+        "Lack a true go-to scorer for crunch time"
+      ],
+      "championship_odds": {
+        "notes": "Likely +3000-5000 range."
+      },
+      "notable_wins": [
+        "Beat Rutgers 91-87 on Senior Day",
+        "Beat Ohio State 66-60"
+      ],
+      "notable_losses": [
+        "Lost to Michigan in regular season finale",
+        "6 total losses"
+      ],
+      "conference_tournament": {
+        "seed": 3,
+        "status": "Big Ten Tournament in progress."
+      },
+      "expert_analysis": "Never bet against Tom Izzo in March. His 8 Final Fours speak for themselves. Jeremy Fears is the best pure passer in college basketball (country leader in assists). The team isn't statistically elite, but Izzo consistently overperforms seed expectations. A classic 'dangerous 3-seed' that nobody wants to face."
+    },
+    {
+      "name": "Nebraska Cornhuskers",
+      "conference": "Big Ten",
+      "record": "26-5",
+      "conference_record": "14-5",
+      "ap_ranking": 9,
+      "net_ranking": 12,
+      "coach": {
+        "name": "Fred Hoiberg",
+        "tournament_experience": "7th year at Nebraska. Former Iowa State HC (2010-15, 3 NCAA Tournaments). Limited NCAA Tournament experience at Nebraska."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o_rank": null,
+        "adj_d_rank": null,
+        "tempo": null,
+        "notes": "77.7 PPG (#136), 65.7 PPG allowed (#15). Defense-first profile."
+      },
+      "key_players": [
+        {
+          "name": "Pryce Sandfort",
+          "position": "G/F",
+          "class": null,
+          "stats": {
+            "season_high_pts": 33
+          },
+          "notes": "Leading scorer. 33-point game with 9 rebounds vs Penn State."
+        },
+        {
+          "name": "Berke Buyuktuncel",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "season_high_reb": 13
+          },
+          "notes": "Key rebounder. 13-rebound game vs Creighton."
+        },
+        {
+          "name": "Sam Hoiberg",
+          "position": "G",
+          "class": null,
+          "stats": {
+            "season_high_stl": 6
+          },
+          "notes": "Coach's son. 6-steal game vs Oregon. Defensive pest."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Program-historic season (first AP Top 10 since 1965-66)",
+        "Started season 20-0 with 24-game winning streak (best Big Ten start since 2010-11 Ohio State)",
+        "Strong defense (65.7 PPG allowed, #15 nationally)",
+        "Deep, cohesive roster with no major injury concerns"
+      ],
+      "weaknesses": [
+        "Limited NCAA Tournament institutional experience",
+        "Offense not elite (#136 in PPG)",
+        "Fred Hoiberg's limited postseason track record at Nebraska",
+        "5 losses after 20-0 start suggests regression"
+      ],
+      "championship_odds": {
+        "notes": "Likely +5000-8000 range."
+      },
+      "notable_wins": [
+        "Beat Oregon 90-55",
+        "Beat Creighton 71-50",
+        "Beat Penn State 87-64"
+      ],
+      "notable_losses": [
+        "5 losses after 20-0 start"
+      ],
+      "conference_tournament": {
+        "seed": null,
+        "status": "Big Ten Tournament in progress."
+      },
+      "expert_analysis": "One of the best stories in college basketball — first AP Top 10 team since 1965-66. The 20-0 start and 24-game winning streak were historic. But 5 losses after that streak raises concerns about sustainability. Defense is solid (#15 in PPG allowed) but offense is merely average. A feel-good story, but likely a 3-4 seed that could struggle against elite competition."
+    },
+    {
+      "name": "Louisville Cardinals",
+      "conference": "ACC",
+      "record": "22-9",
+      "conference_record": "8-4 (partial)",
+      "ap_ranking": null,
+      "net_ranking": 13,
+      "coach": {
+        "name": "Pat Kelsey",
+        "tournament_experience": "2nd year at Louisville. Previously at College of Charleston. Building program back up. Louisville program has 2013 National Championship (vacated) and 2 Final Fours."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 120.3,
+        "adj_o_rank": 20,
+        "adj_d": 101.5,
+        "adj_d_rank": 59,
+        "tempo": null,
+        "notes": "Strong offense (#20), average defense (#59). 85.9 PPG (#17 nationally)."
+      },
+      "key_players": [
+        {
+          "name": "Mikel Brown Jr.",
+          "position": "G",
+          "class": "Freshman",
+          "stats": {
+            "season_high_pts": 45
+          },
+          "notes": "Five-star recruit. #6 overall in 2025 class. #1 PG. Broke ACC freshman scoring record with 45 points vs NC State. Tied Louisville program 59-year scoring record."
+        },
+        {
+          "name": "Ryan Conwell",
+          "position": "G",
+          "class": null,
+          "stats": {
+            "season_high_pts": 31
+          },
+          "notes": "31-point game alongside Brown's 45 — first 30-point duo in program history."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Explosive offense (#20 KenPom, 85.9 PPG)",
+        "Mikel Brown Jr. is a generational freshman talent",
+        "Brown-Conwell scoring duo can overwhelm opponents",
+        "Pat Kelsey's energy and recruiting momentum"
+      ],
+      "weaknesses": [
+        "9 losses — most among this group",
+        "Defense only #59 in KenPom AdjD",
+        "Program still rebuilding under Kelsey",
+        "Freshman-dependent in key moments"
+      ],
+      "championship_odds": {
+        "preseason": "+2500",
+        "notes": "Outside contender. Likely +4000-6000 now."
+      },
+      "notable_wins": [
+        "118-77 blowout of NC State (Brown 45, Conwell 31)"
+      ],
+      "notable_losses": [
+        "9 total losses"
+      ],
+      "conference_tournament": {
+        "seed": null,
+        "status": "ACC Tournament in progress."
+      },
+      "expert_analysis": "Mikel Brown Jr. is the most exciting freshman not named Cameron Boozer. His 45-point game broke records. But 9 losses and average defense make them a dangerous but flawed team. They're the kind of high-variance team that can beat anyone on a hot night or lose to a disciplined mid-major. Likely a 4-5 seed."
+    },
+    {
+      "name": "Virginia Cavaliers",
+      "conference": "ACC",
+      "record": "27-4",
+      "conference_record": "14-3",
+      "ap_ranking": null,
+      "net_ranking": 14,
+      "coach": {
+        "name": "Ryan Odom",
+        "tournament_experience": "1st year at Virginia. Previously coached UMBC (famously beat Virginia as #16 seed in 2018) and VCU. Virginia program has 2019 National Championship under Tony Bennett."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 119.0,
+        "adj_o_rank": 30,
+        "adj_d": 100.1,
+        "adj_d_rank": 46,
+        "tempo": null,
+        "notes": "Balanced profile. #30 offense, #46 defense."
+      },
+      "key_players": [
+        {
+          "name": "Thijs De Ridder",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "ppg": 15.9
+          },
+          "notes": "All-ACC First Team. Team's leading scorer. First Cavalier on All-ACC First Team since Sam Hauser in 2021."
+        },
+        {
+          "name": "Ugonna Onyenso",
+          "position": "C",
+          "class": "Senior",
+          "stats": {},
+          "notes": "All-ACC Defensive Team. Rim protection and shot-blocking."
+        },
+        {
+          "name": "Malik Thomas",
+          "position": "G",
+          "class": "Transfer",
+          "stats": {
+            "ppg_previous": 19.9
+          },
+          "notes": "Transfer who led WCC in scoring (19.9 PPG). Set school FT record (189)."
+        },
+        {
+          "name": "Dallin Hall",
+          "position": "G",
+          "class": "Transfer",
+          "stats": {
+            "apg_previous": null
+          },
+          "notes": "Veteran PG with Big 12 experience. 133 assists last year."
+        },
+        {
+          "name": "Jacari White",
+          "position": "G",
+          "class": "Transfer",
+          "stats": {
+            "ppg_previous": 17.0,
+            "three_pt_pct": 0.40
+          },
+          "notes": "Volume shooter, 40% from three, 17+ PPG."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "27-4 record is a remarkable turnaround under first-year coach",
+        "Strong scoring depth from transfers (Thomas, White, Hall)",
+        "All-ACC First Team player in De Ridder",
+        "Ryan Odom's coaching upside",
+        "20+ win turnaround from recent Virginia struggles"
+      ],
+      "weaknesses": [
+        "Had a 5-game losing streak mid-season",
+        "First-year coach with largely new roster — limited chemistry",
+        "Defense only #46, far from Virginia's traditional elite defensive identity",
+        "Unproven in March under this coaching staff"
+      ],
+      "championship_odds": {
+        "notes": "Dark horse. Likely +6000-10000 range."
+      },
+      "notable_wins": [
+        "ACC regular season contender (14-3)"
+      ],
+      "notable_losses": [
+        "5-game losing streak including losses to Louisville (x2), Stanford, California, SMU"
+      ],
+      "conference_tournament": {
+        "seed": null,
+        "status": "ACC Tournament in progress. Ryan Odom's first ACC Tournament."
+      },
+      "expert_analysis": "The best turnaround story in the ACC. Ryan Odom (who coached UMBC's historic upset of Virginia in 2018) now leads Virginia to a potential tournament berth. 27-4 is remarkable for a first-year coach with a revamped roster. The 5-game losing streak is concerning, but the overall body of work is impressive. A tricky 3-4 seed that could surprise."
+    },
+    {
+      "name": "Texas Tech Red Raiders",
+      "conference": "Big 12",
+      "record": "22-9",
+      "conference_record": "12-6",
+      "ap_ranking": 16,
+      "net_ranking": 15,
+      "coach": {
+        "name": "Grant McCasland",
+        "tournament_experience": "2nd year at Texas Tech. Previously coached North Texas. Texas Tech program has 2019 National Championship runner-up under Chris Beard."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 118.8,
+        "adj_o_rank": 34,
+        "adj_d": 105.4,
+        "adj_d_rank": 144,
+        "tempo": null,
+        "notes": "Average offense (#34), below-average defense (#144). SRS 23.12 (#13) and SOS 13.88 (#4 — extremely tough schedule)."
+      },
+      "key_players": [
+        {
+          "name": "JT Toppin",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "ppg": 22.1,
+            "rpg": 10.9,
+            "apg": 2.1,
+            "bpg": 1.8,
+            "spg": 1.1
+          },
+          "notes": "SEASON-ENDING INJURY (ACL). Team's best player by far. Was averaging a double-double with elite all-around stats. THIS IS A MASSIVE LOSS."
+        },
+        {
+          "name": "Christian Anderson",
+          "position": "G",
+          "class": "Sophomore",
+          "stats": {
+            "ppg": 19.8,
+            "rpg": 3.5,
+            "apg": 7.5
+          },
+          "notes": "Team's secondary star. Now the primary option with Toppin out."
+        },
+        {
+          "name": "LeJuan Watts",
+          "position": "F",
+          "class": null,
+          "stats": {},
+          "notes": "Elevated role with Toppin out. 13 points vs Cincinnati."
+        }
+      ],
+      "injuries": [
+        {
+          "player": "JT Toppin",
+          "status": "Out for season",
+          "details": "ACL injury. Season-ending. Was the team's star (22.1 PPG, 10.9 RPG). Massive blow to tournament hopes."
+        }
+      ],
+      "strengths": [
+        "Christian Anderson is an elite guard (19.8 PPG, 7.5 APG)",
+        "4th-toughest schedule in the country (battle-tested)",
+        "Grant McCasland adjusting gameplan post-Toppin"
+      ],
+      "weaknesses": [
+        "LOST JT TOPPIN TO ACL INJURY — star player, massive loss",
+        "Defense ranked #144 in KenPom AdjD — concerning",
+        "9 losses",
+        "Without Toppin, significantly diminished title threat"
+      ],
+      "championship_odds": {
+        "notes": "Long shot. Likely +10000+ with Toppin out."
+      },
+      "notable_wins": [
+        "Beat Cincinnati"
+      ],
+      "notable_losses": [
+        "Lost to Florida 84-79 in postseason",
+        "9 total losses"
+      ],
+      "conference_tournament": {
+        "seed": 3,
+        "status": "Big 12 Tournament in progress."
+      },
+      "expert_analysis": "The Toppin ACL injury is devastating. He was their clear #1 player (22.1/10.9 double-double). Without him, Texas Tech drops from a legitimate 3-seed threat to a potential first-weekend exit. Christian Anderson (19.8 PPG, 7.5 APG) will need to be superhuman. The #4 toughest schedule means they're battle-tested, but losing your best player before the tournament is a death sentence for most teams."
+    },
+    {
+      "name": "Vanderbilt Commodores",
+      "conference": "SEC",
+      "record": "24-7",
+      "conference_record": "9-7",
+      "ap_ranking": 24,
+      "net_ranking": 16,
+      "coach": {
+        "name": "Mark Byington",
+        "tournament_experience": "2nd year at Vanderbilt. Previously at JMU (led to 2024 NCAA Tournament). Building Vanderbilt back into relevance."
+      },
+      "kenpom": {
+        "overall_rank": null,
+        "adj_em": null,
+        "adj_o": 121.2,
+        "adj_o_rank": 15,
+        "adj_d": 104.0,
+        "adj_d_rank": 112,
+        "tempo": null,
+        "notes": "Strong offense (#15 AdjO at 121.2), poor defense (#112). 86.9 PPG (#13 nationally) but 74.5 PPG allowed (#205)."
+      },
+      "key_players": [
+        {
+          "name": "Tyler Nickel",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "ppg_previous": 10.4
+          },
+          "notes": "Key returning forward from last season's success."
+        },
+        {
+          "name": "Devin McGlockton",
+          "position": "F",
+          "class": null,
+          "stats": {
+            "ppg_previous": 10.3
+          },
+          "notes": "Key returning forward alongside Nickel."
+        },
+        {
+          "name": "George Kimble III",
+          "position": null,
+          "class": "Transfer",
+          "stats": {},
+          "notes": "One of 8 transfer portal additions."
+        },
+        {
+          "name": "Frankie Collins",
+          "position": "G",
+          "class": "Transfer",
+          "stats": {},
+          "notes": "Transfer guard addition."
+        }
+      ],
+      "injuries": [],
+      "strengths": [
+        "Top-15 offense nationally (#15 KenPom AdjO)",
+        "86.9 PPG (#13 nationally) — explosive scoring",
+        "Won first 14 games of the season",
+        "8 transfer portal additions added depth",
+        "Vanderbilt back in AP Top 25 and tournament picture"
+      ],
+      "weaknesses": [
+        "Defense ranked #112 in KenPom AdjD (104.0) — significant liability",
+        "74.5 PPG allowed (#205 nationally) — terrible",
+        "7 losses including 7 in SEC play",
+        "Lost Jason Edwards (17 PPG) to transfer portal from last year"
+      ],
+      "championship_odds": {
+        "notes": "Deep long shot. Likely +15000+."
+      },
+      "notable_wins": [
+        "Started 14-0"
+      ],
+      "notable_losses": [
+        "First loss to Missouri",
+        "9-7 in SEC play — inconsistent in conference"
+      ],
+      "conference_tournament": {
+        "seed": null,
+        "status": "SEC Tournament begins March 11 in Nashville (home venue for Vanderbilt)."
+      },
+      "expert_analysis": "A fun offensive team (#13 in PPG) that can outscore anyone, but the defense (#205 in PPG allowed) will be their undoing against elite teams. The 14-0 start was impressive but 7 SEC losses tell the real story. Playing the SEC Tournament in Nashville (their home city) could give them a boost. Likely a 4-5 seed that's dangerous but flawed."
+    }
+  ]
+}
