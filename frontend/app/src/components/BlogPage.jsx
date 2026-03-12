@@ -421,13 +421,13 @@ export default function BlogPage() {
             <p className="text-center mt-6 text-sm sm:text-base max-w-lg mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               How we built an AI-powered bracket simulation engine that enumerates
               every possible outcome, blends Vegas odds with advanced statistics,
-              and generates millions of strategically targeted brackets.
+              and generates 206 million strategically targeted brackets.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8">
               <div className="text-center">
-                <span className="font-display text-xl sm:text-3xl" style={{ color: 'var(--cyan)' }}>32,768</span>
-                <span className="block font-mono text-[9px] sm:text-[10px] mt-1" style={{ color: 'var(--text-muted)' }}>brackets per region</span>
+                <span className="font-display text-xl sm:text-3xl" style={{ color: 'var(--cyan)' }}>206M</span>
+                <span className="block font-mono text-[9px] sm:text-[10px] mt-1" style={{ color: 'var(--text-muted)' }}>brackets generated</span>
               </div>
               <div className="text-center">
                 <span className="font-display text-xl sm:text-3xl" style={{ color: 'var(--orange)' }}>9.2 QN</span>
@@ -817,7 +817,7 @@ Example: bracket integer 0 = 000...000 = every favorite wins = "perfect chalk"`}
           <Reveal>
             <Prose>
               <p>
-                The original plan was Monte Carlo simulation: randomly generate 3 million
+                The original plan was Monte Carlo simulation: randomly generate millions of
                 brackets per region by rolling weighted dice for each game. This is what
                 most bracket tools do. But we discovered something that changed everything:
               </p>
@@ -867,13 +867,13 @@ Important: later-round probabilities are CONDITIONAL.
           </Reveal>
 
           <DataTable
-            headers={['Metric', 'Monte Carlo (3M sampled)', 'Enumeration (all 32,768)']}
+            headers={['Metric', 'Monte Carlo (51.5M sampled)', 'Enumeration (all 32,768)']}
             rows={[
               ['Probability accuracy', 'Approximate (sampling error)', 'Exact (zero error)'],
-              ['Storage per region', '~100 MB', '~1.8 MB (57x smaller)'],
+              ['Storage per region', '~1.7 GB', '~1.8 MB'],
               ['Time per region', 'Minutes', '< 1 second'],
               ['Duplicate brackets', 'Possible', 'Impossible (every bracket unique)'],
-              ['Coverage', '~91x oversampling', '100% of possibility space'],
+              ['Coverage', '~1,570x oversampling', '100% of possibility space'],
             ]}
           />
 
@@ -883,8 +883,9 @@ Important: later-round probabilities are CONDITIONAL.
                 The catch: full brackets combine 4 regions plus 3 Final Four games,
                 giving 32,768^4 × 8 = 9.2 quintillion possibilities. We can't
                 enumerate those. So we use a <strong style={{ color: 'var(--text-primary)' }}>hybrid approach</strong>: enumerate
-                regions exactly, then sample cross-region combinations weighted by
-                their exact regional probabilities.
+                regions exactly, then generate 206 million cross-region combinations
+                using stratified importance sampling — weighted by exact regional
+                probabilities, with a 6% mutation X-factor on coin-flip games.
               </p>
             </Prose>
           </Reveal>
@@ -1454,12 +1455,13 @@ The ratio is what matters.`}
           <Reveal>
             <Prose>
               <p>
-                Instead of generating random brackets, we generate <strong style={{ color: 'var(--text-primary)' }}>targeted batches</strong>.
-                Each strategy modifies the probability matrix differently before
-                enumeration. The result is brackets designed for specific scenarios.
+                Instead of generating random brackets, we generate <strong style={{ color: 'var(--text-primary)' }}>206 million targeted brackets</strong> using
+                a funnel-shaped portfolio strategy. Each bracket gets a 6% mutation X-factor —
+                any coin-flip game (40-60% probability) can randomly flip, modeling the chaos
+                of buzzer beaters and off nights.
               </p>
               <p>
-                We allocate brackets like an investment portfolio:
+                We split our budget into two clusters:
               </p>
             </Prose>
           </Reveal>
@@ -1468,24 +1470,26 @@ The ratio is what matters.`}
             <div className="flex gap-2 my-6 items-end">
               <div className="flex-[6] rounded-t-lg" style={{ height: 80, background: 'var(--cyan)', opacity: 0.8 }}>
                 <div className="p-2 text-center">
-                  <span className="font-display text-lg text-black">CORE — 60%</span>
-                  <span className="block text-[10px] text-black/70 font-mono">High probability, consistent scoring</span>
+                  <span className="font-display text-lg text-black">BASELINE — 60%</span>
+                  <span className="block text-[10px] text-black/70 font-mono">Average upsets, warm later rounds</span>
                 </div>
               </div>
-              <div className="flex-[3] rounded-t-lg" style={{ height: 80, background: 'var(--orange)', opacity: 0.8 }}>
+              <div className="flex-[4] rounded-t-lg" style={{ height: 80, background: 'var(--orange)', opacity: 0.8 }}>
                 <div className="p-2 text-center">
-                  <span className="font-display text-base text-black">SATELLITE — 30%</span>
-                  <span className="block text-[10px] text-black/70 font-mono">Targeted edges</span>
-                </div>
-              </div>
-              <div className="flex-[1] rounded-t-lg" style={{ height: 80, background: 'var(--red-dead)', opacity: 0.8 }}>
-                <div className="p-1 text-center">
-                  <span className="font-display text-xs text-black">MOON</span>
-                  <span className="block text-[9px] text-black/70 font-mono">10%</span>
+                  <span className="font-display text-base text-black">GAMBLE — 40%</span>
+                  <span className="block text-[10px] text-black/70 font-mono">R64 upsets cascade into unique paths</span>
                 </div>
               </div>
             </div>
           </Reveal>
+
+          <CalloutCard accent="var(--cyan)" icon="🧬" title="The X-Factor: 6% Mutation Rate">
+            Every game where the probability falls between 40-60% has a 6% chance of being
+            randomly flipped — regardless of what the model says. This isn't noise. It's
+            modeling reality: in March, <em>anything</em> can happen in a coin-flip game.
+            The mutation ensures our portfolio contains brackets that no deterministic model
+            would ever produce.
+          </CalloutCard>
 
           <DataTable
             headers={['#', 'Strategy', 'Tier', 'Core Idea']}
@@ -1508,10 +1512,17 @@ The ratio is what matters.`}
             <Prose>
               <p>
                 Each strategy produces a different probability matrix, which produces
-                a different ranking of the 32,768 regional brackets. The "Chalk" strategy
-                ranks the all-favorites bracket highest. The "Correlated Chaos" strategy
-                ranks brackets with multiple upsets in the same region highest. By
-                generating from each, we cover a wide range of tournament scenarios.
+                a different ranking of the 32,768 regional brackets. The Baseline cluster
+                uses neutral R64 temperature (probabilities as-is) but warms up in later
+                rounds — creating path diversity where it matters most. The Gamble cluster
+                runs hot from R64 (tau=1.4), deliberately picking more upsets that cascade
+                into completely different R32/S16/E8 matchups. Both clusters get the 6% mutation.
+              </p>
+              <p>
+                The key insight: <strong style={{ color: 'var(--text-primary)' }}>R64 gambles are the variation engine</strong>. A single
+                12-over-5 upset in R64 changes every downstream matchup. Gamble brackets that
+                survive Day 1 occupy uncharted territory — paths that virtually no public
+                bracket explores. That's where the edge lives.
               </p>
             </Prose>
           </Reveal>
@@ -1542,11 +1553,12 @@ The ratio is what matters.`}
                 ))}
               </ul>
               <p className="mt-6">
-                When the bracket drops, we generate millions of targeted brackets
-                in seconds — each one engineered to exploit a specific edge the
-                public is missing. The math doesn't guarantee we win. But it
-                guarantees we're playing a fundamentally different game than
-                everyone filling out one bracket with their gut.
+                When the bracket drops, we generate 206 million targeted brackets —
+                each one engineered to exploit a specific edge the public is missing.
+                A 6% mutation X-factor flips coin-flip games randomly, injecting the
+                chaos that makes March Madness unpredictable. The math doesn't guarantee
+                we win. But it guarantees we're playing a fundamentally different game
+                than everyone filling out one bracket with their gut.
               </p>
             </Prose>
           </Reveal>
@@ -1560,10 +1572,10 @@ The ratio is what matters.`}
               }}
             >
               <span className="font-display text-2xl sm:text-3xl tracking-wide" style={{ color: 'var(--text-primary)' }}>
-                32,768 × 4 regions × 11 strategies
+                206,000,000 brackets × 11 strategies × 6% mutation
               </span>
               <p className="mt-2 font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
-                Every bracket computed. Every edge exploited. Every outcome priced.
+                Every edge exploited. Every outcome priced. Every coin flip mutated.
               </p>
             </div>
           </Reveal>

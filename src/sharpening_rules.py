@@ -14,7 +14,7 @@ Key rules:
 
 These rules modify the probability matrix before simulation:
   - P=1.0 for guaranteed advances (1/2 seeds in R64)
-  - P=0.0 for impossible outcomes (16-seed in S16)
+  - P=0.01 for extremely unlikely outcomes (soft ceiling)
   - Minimum probabilities for "at least one" upset constraints
 """
 
@@ -67,31 +67,31 @@ CEILING_RULES = [
         round_scope="R32",
         rule_type="ceiling",
         seeds_affected=(16,),
-        value=0.0,
+        value=0.01,
     ),
     SharpeningRule(
         name="15_seed_ceiling_S16",
-        description="No 15-seed past R32 (Saint Peter's 2022 was a unicorn)",
+        description="No 15-seed past R32 (Saint Peter's 2022 reached E8 — rare but possible)",
         round_scope="S16",
         rule_type="ceiling",
         seeds_affected=(15,),
-        value=0.0,
+        value=0.01,
     ),
     SharpeningRule(
         name="14_seed_ceiling_S16",
-        description="No 14-seed past R32 (never happened)",
+        description="No 14-seed past R32 (extremely rare but not impossible)",
         round_scope="S16",
         rule_type="ceiling",
         seeds_affected=(14,),
-        value=0.0,
+        value=0.01,
     ),
     SharpeningRule(
         name="13_seed_ceiling_E8",
-        description="No 13-seed past S16 (never happened)",
+        description="No 13-seed past S16 (extremely rare but not impossible)",
         round_scope="E8",
         rule_type="ceiling",
         seeds_affected=(13,),
-        value=0.0,
+        value=0.01,
     ),
 ]
 
@@ -156,7 +156,7 @@ def apply_seed_ceilings(
     tournament_round: str,
     active_seeds: set[int],
 ) -> dict[tuple[int, int], float]:
-    """Apply seed ceiling rules: eliminate seeds that can't reach this round.
+    """Apply seed ceiling rules: heavily penalize seeds that rarely reach this round.
 
     Returns a new probability matrix with blocked seeds getting P=0.
     """

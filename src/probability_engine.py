@@ -20,6 +20,7 @@ from math_primitives import (
     spread_to_prob,
     power_index_prob,
     log_odds_blend,
+    get_spread_adaptive_tier,
     SIGMA_SPREAD,
 )
 from database import get_connection, DB_PATH
@@ -201,8 +202,8 @@ def compute_all_r1_probabilities(db_path: str = DB_PATH):
         # P_factors from FCI + base rates
         p_factors = compute_p_factors(seed_a, seed_b)
 
-        # Determine weight tier — we have game-specific spreads
-        tier = "game_lines"
+        # Spread-adaptive tier: coin-flip games amplify non-market signals
+        tier = get_spread_adaptive_tier(spread)
         p_final = log_odds_blend(p_market, p_stats, p_matchup, p_factors, tier=tier)
 
         # Update matchup in database
@@ -216,6 +217,7 @@ def compute_all_r1_probabilities(db_path: str = DB_PATH):
             "region": m["region"],
             "matchup": f"({seed_a}) {team_a} vs ({seed_b}) {team_b}",
             "spread": spread,
+            "tier": tier,
             "p_market": round(p_market, 3),
             "p_stats": round(p_stats, 3),
             "p_matchup": round(p_matchup, 3),
@@ -231,9 +233,9 @@ def compute_all_r1_probabilities(db_path: str = DB_PATH):
 if __name__ == "__main__":
     results = compute_all_r1_probabilities()
 
-    print("=" * 95)
-    print(f"{'MATCHUP':<45} {'SPREAD':>7} {'P_MKT':>7} {'P_STAT':>7} {'P_MTCH':>7} {'P_FAC':>7} {'P_FINAL':>8}")
-    print("=" * 95)
+    print("=" * 105)
+    print(f"{'MATCHUP':<45} {'SPREAD':>7} {'TIER':>10} {'P_MKT':>7} {'P_STAT':>7} {'P_MTCH':>7} {'P_FAC':>7} {'P_FINAL':>8}")
+    print("=" * 105)
 
     current_region = None
     for r in results:
@@ -241,8 +243,8 @@ if __name__ == "__main__":
             current_region = r["region"]
             print(f"\n--- {current_region} ---")
 
-        print(f"{r['matchup']:<45} {r['spread']:>+7.1f} {r['p_market']:>7.3f} {r['p_stats']:>7.3f} {r['p_matchup']:>7.3f} {r['p_factors']:>7.3f} {r['p_final']:>8.3f}")
+        print(f"{r['matchup']:<45} {r['spread']:>+7.1f} {r['tier']:>10} {r['p_market']:>7.3f} {r['p_stats']:>7.3f} {r['p_matchup']:>7.3f} {r['p_factors']:>7.3f} {r['p_final']:>8.3f}")
 
-    print("\n" + "=" * 95)
-    print("P_FINAL = sigmoid(0.55*logit(P_market) + 0.25*logit(P_stats) + 0.12*logit(P_matchup) + 0.08*logit(P_factors))")
-    print("Weight tier: game_lines (w_m=0.55, w_s=0.25, w_x=0.12, w_f=0.08)")
+    print("\n" + "=" * 105)
+    print("Spread-adaptive blending: locks (|s|>15), lean (5-15), coin_flip (<5)")
+    print("Coin-flip games amplify matchup + factors signals over Vegas")

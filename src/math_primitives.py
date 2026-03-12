@@ -23,6 +23,10 @@ WEIGHT_TIERS = {
     "futures_only": {"w_m": 0.40, "w_s": 0.35, "w_x": 0.15, "w_f": 0.10},
     "no_market": {"w_m": 0.00, "w_s": 0.55, "w_x": 0.30, "w_f": 0.15},
     "live_tournament": {"w_m": 0.60, "w_s": 0.18, "w_x": 0.14, "w_f": 0.08},
+    # Spread-adaptive tiers: weight shifts based on how informative the spread is
+    "locks":      {"w_m": 0.60, "w_s": 0.20, "w_x": 0.10, "w_f": 0.10},  # |spread| > 15
+    "lean":       {"w_m": 0.45, "w_s": 0.25, "w_x": 0.15, "w_f": 0.15},  # |spread| 5-15
+    "coin_flip":  {"w_m": 0.30, "w_s": 0.25, "w_x": 0.25, "w_f": 0.20},  # |spread| < 5
 }
 
 # ESPN Tournament Challenge scoring
@@ -196,22 +200,39 @@ def log_odds_blend(
     return max(0.005, min(0.995, p_final))
 
 
+def get_spread_adaptive_tier(spread: float) -> str:
+    """Select weight tier based on spread magnitude.
+
+    For R64 Day 1 optimization: coin-flip games (|spread| < 5) amplify
+    non-market signals where vibes and matchup analysis have more alpha.
+    Locks (|spread| > 15) let Vegas dominate since the market is highly informative.
+
+    Returns tier name for use with log_odds_blend().
+    """
+    abs_spread = abs(spread)
+    if abs_spread > 15:
+        return "locks"
+    elif abs_spread >= 5:
+        return "lean"
+    else:
+        return "coin_flip"
+
+
 # ---------------------------------------------------------------------------
 # Power Index computation (Spec Section 5.1)
 # ---------------------------------------------------------------------------
 
 # Factor weights from spec (9-factor model)
 PI_WEIGHTS = {
-    "adj_efficiency_margin": 0.25,
-    "bart_torvik_rating": 0.18,
-    "strength_of_schedule": 0.12,
-    "recent_form": 0.10,
-    "offensive_efficiency": 0.08,
-    "defensive_efficiency": 0.08,
-    "free_throw_rate_index": 0.07,
-    "coaching_tournament_score": 0.07,
-    "key_injuries": 0.05,
-    "three_point_variance_flag": 0.03,
+    "adj_efficiency_margin": 0.40,       # AdjEM (KenPom) — single most predictive
+    "defensive_efficiency_premium": 0.10, # Defense > Offense in single-elim
+    "non_conference_sos": 0.10,          # Quality vs external competition
+    "experience_score": 0.10,            # Upperclassmen correlation (Bart Torvik)
+    "luck_adjustment": 0.08,             # Pythagorean gap — overperformers regress
+    "free_throw_rate_index": 0.07,       # Discriminator in close games
+    "coaching_tournament_score": 0.07,   # 15+ tournament appearances = bonus
+    "key_injuries": 0.05,               # Hard point adjustment
+    "three_point_variance_flag": 0.03,   # Widens distribution, doesn't shift mean
 }
 
 

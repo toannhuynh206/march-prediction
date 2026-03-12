@@ -96,8 +96,13 @@ def apply_injury_adjustments(
         factor_b = injury_map.get(team_b, 1.0)
 
         if factor_a != 1.0 or factor_b != 1.0:
-            # Adjust: multiply fav prob by their factor, divide by opponent factor
-            adjusted_p = p_fav * factor_a / max(factor_b, 0.01)
+            # Adjust in logit space: smooth, never clips
+            # log(factor) is negative when factor < 1 (injured team gets weaker)
+            p_clamped = max(0.005, min(0.995, p_fav))
+            logit_p = math.log(p_clamped / (1 - p_clamped))
+            logit_offset = math.log(max(factor_a, 0.01)) - math.log(max(factor_b, 0.01))
+            adjusted_logit = logit_p + logit_offset
+            adjusted_p = 1.0 / (1.0 + math.exp(-adjusted_logit))
             updated[matchup_key] = max(0.005, min(0.995, adjusted_p))
 
     return updated
