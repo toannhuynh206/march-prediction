@@ -1,0 +1,252 @@
+{
+  "established_analysts": [
+    {
+      "name": "Andy Katz",
+      "channel": "NCAA (ncaa.com / March Madness YouTube)",
+      "video_title": "Final March Madness men's bracket predictions before Selection Sunday",
+      "video_url": "https://www.ncaa.com/video/basketball-men/2026-03-10/final-march-madness-mens-bracket-predictions-selection-sunday",
+      "date_published": "2026-03-10",
+      "no_1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+      "final_four_picks": ["Duke", "Michigan", "Arizona", "Florida"],
+      "champion_pick": null,
+      "key_sleepers": ["Michigan State", "Illinois"],
+      "upset_picks": [],
+      "key_insights": [
+        "Florida grabbed the 4th No. 1 seed, replacing UConn which dropped to a No. 2 seed",
+        "Duke is the No. 1 overall seed in his latest projection",
+        "Florida won the SEC by 3 games and is on a heater — winners of 12 of last 13, all but 3 by double digits",
+        "Michigan State climbed to a No. 2 seed line in March 3 update",
+        "UConn dropped from No. 1 to No. 2 seed line in final update",
+        "Katz's Power 37 final rankings released March 9 provide additional context on team strength"
+      ],
+      "additional_videos": [
+        {
+          "title": "March Madness bracket predictions: Top seed lines projected on March 3",
+          "url": "https://www.ncaa.com/video/basketball-men/2026-03-03/march-madness-bracket-predictions-top-seed-lines-projected-march-3",
+          "date_published": "2026-03-03"
+        }
+      ]
+    },
+    {
+      "name": "Joe Lunardi",
+      "channel": "ESPN",
+      "video_title": null,
+      "article_url": "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions",
+      "date_published": "2026-03-12",
+      "no_1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+      "final_four_picks": null,
+      "champion_pick": null,
+      "key_sleepers": ["Wisconsin"],
+      "upset_picks": [],
+      "key_insights": [
+        "Lunardi projects Wisconsin as a No. 6 seed despite 4 wins against top-10 KenPom teams",
+        "Wisconsin scored over 90 points in wins over Michigan, Michigan State, Illinois, and Purdue",
+        "SEC bubble teams Missouri, Texas, and Auburn are clinging to at-large spots as of March 12",
+        "Seton Hall barely clinging to bubble at 13% at-large probability after Big East semifinal win over Creighton",
+        "Conference tournament results are rapidly shifting bubble positions",
+        "Lunardi's Bracketology watch guide provides real-time updates on how results impact the projected bracket"
+      ],
+      "note": "Lunardi primarily publishes via ESPN Bracketology tool and articles; video content embedded in ESPN platform rather than standalone YouTube"
+    }
+  ],
+  "fresh_takes": [
+    {
+      "name": "XbotGo / Sports Analytics Blog",
+      "channel": "XbotGo",
+      "article_title": "2026 March Madness: 8 Bracket Buster Picks",
+      "url": "https://xbotgo.com/blogs/knowledge/march-madness-predictions-upset-picks",
+      "date_published": "2026-03",
+      "hot_takes": [
+        "12-over-5 upset: South Florida is the most defensible data-backed choice — analytics rate them higher than UCF (projected 10-seed) in underlying efficiency metrics",
+        "Miami (Ohio) at 31-0 is a legitimate Cinderella threat — nine different players have scored 20+ points in a game, 40% from three, 62% from two",
+        "High Point over UNC is live — UNC lost Caleb Wilson to season-ending hand injury and High Point plays pressure full-court man defense that creates chaos",
+        "Nebraska to the second weekend — 26-5 under Hoiberg, best season in program history, never won an NCAA Tournament game, five players avg 9+ points",
+        "Skip the 12-over-5 obsession — the smarter play is backing 11-seeds, which went 10-10 over last 5 tournaments with three 11-seeds making Round of 32 in both 2023 and 2024",
+        "TCU over BYU is a bracket-buster pick",
+        "Vanderbilt is vulnerable despite a 16-0 start — they've been sliding since January"
+      ],
+      "contrarian_picks": [
+        "Miami (Ohio) — undefeated MAC team as Cinderella",
+        "High Point over UNC — targeting depleted roster",
+        "South Florida as 12-over-5 upset pick"
+      ],
+      "reasoning": "Analytics-first approach focusing on underlying efficiency metrics, injury context, and historical upset vectors rather than brand-name bias. Targets teams whose records mask underlying quality (or fragility)."
+    },
+    {
+      "name": "SportsBrackets.net AI Model",
+      "channel": "SportsBrackets.net",
+      "article_title": "2026 March Madness AI Bracket Predictions: Data-Driven Projections & Sleepers",
+      "url": "https://sportsbrackets.net/2026/03/06/2026-march-madness-ai-bracket/",
+      "date_published": "2026-03-06",
+      "hot_takes": [
+        "AI model ignores 'blue blood' status and TV narratives — focuses exclusively on Adjusted Efficiency, ShotQuality, and Historical Upset Vectors",
+        "Model identified four 'Red Zone' matchups — one per region — where lower seed has statistically significant path to victory",
+        "The 'Izzo Factor' is built into the model — historical weighting for elite coaching performance in tournament second weekend",
+        "ShotQuality filter separates teams that won through luck vs. sustainable offensive systems",
+        "AI-driven models typically outperform human experts by removing emotional bias and anchoring in multi-year efficiency data"
+      ],
+      "contrarian_picks": [
+        "Four 'Red Zone' matchups identified (specific teams behind paywall/article)",
+        "Teams with high ShotQuality but lower seeds are model favorites for upsets"
+      ],
+      "reasoning": "Pure data-driven approach using Adjusted Efficiency + ShotQuality + Historical Upset Vectors. Removes brand bias. Updates in real-time as conference tournament results shift efficiency ratings."
+    }
+  ],
+  "additional_analysis_sources": [
+    {
+      "name": "RotoWire AI Projections",
+      "url": "https://www.rotowire.com/cbasketball/article/march-madness-2026-ai-projection-106270",
+      "champion_pick": "Duke",
+      "champion_win_rate_pct": 23,
+      "simulations_run": 100,
+      "projected_final": "Duke defeats Michigan 74-72",
+      "projected_semifinal_results": [
+        "Duke defeats Houston 75-72",
+        "Michigan defeats Arizona 78-76"
+      ],
+      "other_contender_win_rates": {
+        "Michigan": 20,
+        "Arizona": 12,
+        "Florida": 9,
+        "Houston": 6,
+        "Illinois": 4,
+        "UConn": 4
+      },
+      "first_round_upsets_projected": [
+        "No. 9 Clemson over No. 8 Utah State",
+        "No. 13 Utah Valley over No. 4 Texas Tech"
+      ]
+    },
+    {
+      "name": "PoolGenius Champion Formula",
+      "url": "https://poolgenius.teamrankings.com/ncaa-bracket-picks/articles/who-will-win-march-madness-2026/",
+      "teams_fitting_champion_formula": ["Duke", "Michigan", "Florida", "Arizona", "Iowa State", "Louisville"],
+      "formula_hit_rate_pct": 93,
+      "key_insight": "Only 6 teams fit the historical champion formula — champions have hit 50 of 54 statistical benchmarks. Louisville is the biggest surprise inclusion.",
+      "criteria": "Must rank near top nationally in both offensive and defensive efficiency while playing an elite schedule"
+    },
+    {
+      "name": "Yahoo Sports Sleeper Analysis",
+      "url": "https://sports.yahoo.com/articles/why-four-sleeper-teams-primed-170000254.html",
+      "four_sleeper_teams": ["West Virginia", "Louisville", "Kentucky", "Oregon"],
+      "west_virginia_profile": {
+        "adj_defensive_efficiency_rank": 9,
+        "adj_offensive_efficiency": 111.0,
+        "adj_offensive_efficiency_rank": 29,
+        "key_strength": "Forces turnovers on nearly 1/3 of opposing possessions, strong offensive rebounding"
+      }
+    },
+    {
+      "name": "Bleacher Report Sleeper Analysis",
+      "url": "https://bleacherreport.com/articles/25405502-ncaa-tournament-2026-top-sleeper-teams-amid-mens-march-madness-bracketology-picks",
+      "key_sleepers": ["Arkansas", "Wisconsin", "Michigan State"],
+      "arkansas_profile": {
+        "key_player": "Darius Acuff Jr.",
+        "ppg": 22.2,
+        "apg": 6.4,
+        "note": "Top 10 nationally in PPG, top 20 in APG — capable of carrying team on a tournament run"
+      }
+    },
+    {
+      "name": "College Basketball Eye Test",
+      "url": "https://collegebasketballeyetest.com/2026/03/05/march-madness-conference-tournament-sleepers/",
+      "conference_tournament_sleepers": ["Cincinnati", "UNLV", "Stanford", "Colorado State", "Northwestern"],
+      "cincinnati_note": "Upset Kansas at Allen Fieldhouse. Star PG Jizzle James returned from month-long absence and transformed the team.",
+      "date_published": "2026-03-05"
+    }
+  ],
+  "consensus_summary": {
+    "most_common_no_1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+    "most_common_champion": "Duke",
+    "champion_odds": "+325 (bet365), favored across most sportsbooks",
+    "most_common_final_four": ["Duke", "Michigan", "Arizona", "Florida"],
+    "other_final_four_contenders": ["Houston", "Illinois", "UConn", "Iowa State"],
+    "trending_sleepers": [
+      {
+        "team": "Wisconsin",
+        "projected_seed": 6,
+        "reason": "4 wins vs top-10 KenPom teams, scored 90+ in wins over Michigan/MSU/Illinois/Purdue"
+      },
+      {
+        "team": "West Virginia",
+        "projected_seed": null,
+        "reason": "9th nationally in adj. defensive efficiency, forces turnovers on 1/3 of possessions"
+      },
+      {
+        "team": "Arkansas",
+        "projected_seed": null,
+        "reason": "Darius Acuff Jr. averaging 22.2 PPG / 6.4 APG — one-man army potential"
+      },
+      {
+        "team": "Louisville",
+        "projected_seed": null,
+        "reason": "Surprise inclusion in PoolGenius champion formula — fits statistical profile of past champions"
+      },
+      {
+        "team": "Nebraska",
+        "projected_seed": null,
+        "reason": "26-5 under Hoiberg, best season in program history, never won NCAA Tournament game"
+      },
+      {
+        "team": "Michigan State",
+        "projected_seed": 2,
+        "reason": "Climbed to 2-seed line, elite team-first mentality despite some road losses"
+      }
+    ],
+    "trending_upsets": [
+      {
+        "matchup": "South Florida (12) over projected 5-seed",
+        "reason": "Analytics rate higher than UCF in underlying efficiency"
+      },
+      {
+        "matchup": "Miami Ohio (12-13 seed) Cinderella run",
+        "reason": "31-0 regular season, 9 players with 20+ point games, 40% from three"
+      },
+      {
+        "matchup": "No. 13 Utah Valley over No. 4 Texas Tech",
+        "reason": "AI projections flag this as likely first-round upset"
+      },
+      {
+        "matchup": "No. 9 Clemson over No. 8 Utah State",
+        "reason": "AI projections flag as likely 8-9 flip"
+      },
+      {
+        "matchup": "High Point over UNC",
+        "reason": "UNC lost Caleb Wilson to season-ending hand injury; High Point plays pressure defense"
+      }
+    ],
+    "key_betting_odds": {
+      "Duke": "+325",
+      "Michigan": "+340",
+      "Arizona": "+475 to +550",
+      "Florida": "+675 to +775",
+      "Houston": "longer odds, value pick per CBS Sports",
+      "Illinois": "best bet among +1000 or longer odds per SBR"
+    },
+    "consensus_narrative": "The 2026 tournament is top-heavy with Duke, Michigan, and Arizona as clear Tier 1. Florida is the hottest team entering the tournament (12-1 in last 13, defending champion). The contrarian play is targeting 11-seeds over 12-over-5 upsets. Wisconsin and West Virginia are the most commonly cited sleepers across sources. Louisville's inclusion in the champion formula is the biggest analytical surprise."
+  },
+  "methodology_notes": {
+    "search_date": "2026-03-12",
+    "note": "YouTube-specific video results were limited; most bracket analysis content from established analysts (Katz, Lunardi) is hosted on NCAA.com and ESPN platforms respectively, which syndicate to YouTube. Fresh takes were found primarily from sports analytics blogs and AI projection sites rather than independent YouTube creators. All data points are sourced from web search results of published articles and videos.",
+    "limitation": "Selection Sunday is March 15, 2026 — the actual 68-team bracket has not yet been revealed. All projections are pre-Selection Sunday estimates. Conference tournaments are still in progress as of March 12."
+  },
+  "sources": [
+    "https://www.ncaa.com/video/basketball-men/2026-03-10/final-march-madness-mens-bracket-predictions-selection-sunday",
+    "https://www.ncaa.com/news/basketball-men/article/2026-03-10/florida-grabs-no-1-seed-andy-katzs-latest-march-madness-bracket-predictions",
+    "https://www.ncaa.com/news/basketball-men/article/2026-03-09/andy-katzs-final-mens-basketball-power-37-rankings-one-week-selection-sunday",
+    "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions",
+    "https://www.espn.com/mens-college-basketball/story/_/id/47809690/bubble-watch-mens-ncaa-tournament-march-madness-bracket-predictions-2026",
+    "https://www.rotowire.com/cbasketball/article/march-madness-2026-ai-projection-106270",
+    "https://poolgenius.teamrankings.com/ncaa-bracket-picks/articles/who-will-win-march-madness-2026/",
+    "https://sportsbrackets.net/2026/03/06/2026-march-madness-ai-bracket/",
+    "https://xbotgo.com/blogs/knowledge/march-madness-predictions-upset-picks",
+    "https://bleacherreport.com/articles/25405502-ncaa-tournament-2026-top-sleeper-teams-amid-mens-march-madness-bracketology-picks",
+    "https://sports.yahoo.com/articles/why-four-sleeper-teams-primed-170000254.html",
+    "https://collegebasketballeyetest.com/2026/03/05/march-madness-conference-tournament-sleepers/",
+    "https://www.cbssports.com/college-basketball/news/march-madness-2026-college-basketball-conference-tournament-predictions-picks-odds-upsets-sleepers/",
+    "https://www.foxsports.com/stories/college-basketball/2026-ncaa-tournament-projections-florida",
+    "https://sports.yahoo.com/articles/march-madness-odds-mens-ncaa-145100536.html",
+    "https://www.cbssports.com/college-basketball/news/ncaa-tournament-2026-national-championship-odds-early-bracket-reveal-michigan/"
+  ],
+  "date_updated": "2026-03-12"
+}

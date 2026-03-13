@@ -1,11 +1,15 @@
 # Project Status — March Madness Bracket Simulation Engine
-**Last updated:** 2026-03-06
-**Current Phase:** Sprint 1 — READY TO START
-**Program Manager:** Active
+
+**Last updated:** 2026-03-12
+**Current Phase:** Sprint 1 — IN PROGRESS
+**Selection Sunday:** March 15 (3 days)
+**Tournament starts:** March 19 (7 days)
+**Deploy target:** March 16-17
+**Daily board:** See ROADMAP.md
 
 ---
 
-## All Pre-Sprint Decisions: LOCKED ✓
+## All Pre-Sprint Decisions: LOCKED
 
 | Decision | Choice |
 |----------|--------|
@@ -14,6 +18,8 @@
 | Tournament data | 2025 pre-tournament state as test; swap 2026 on March 15 |
 | Simulation method | 3M Stratified Importance Sampling per region (12M total) |
 | Win probability | Blend: 40% stats + 45% market + 15% factors (log-odds) |
+| Power index | 9-factor model (AdjEM 40%, see DECISION_LOG.md) |
+| K value | k=22 (Brier=0.189 on 79-game balanced dataset) |
 
 ---
 
@@ -21,58 +27,86 @@
 
 | Sprint | Name | Status | Gate |
 |--------|------|--------|------|
-| Pre-Sprint | Architecture + Decisions | ✅ COMPLETE | All decisions locked |
-| Sprint 1 | Foundation | 🟡 READY TO START | — |
-| Sprint 2 | Research Agent | ⬜ NOT STARTED | Sprint 1 complete |
-| Sprint 3 | Simulation Engine | ⬜ NOT STARTED | Sprint 2 complete + data in DB |
-| Sprint 4 | Tracker Website | ⬜ NOT STARTED | Sprint 3 complete + 12M brackets in DB |
-| Sprint 5 | Polish + Final Four | ⬜ FUTURE | — |
+| Pre-Sprint | Architecture + Decisions | COMPLETE | All decisions locked |
+| Sprint 1 | Foundation + Math | IN PROGRESS | Core engine working |
+| Sprint 2 | Research + Data Pipeline | IN PROGRESS (parallel) | All 64 teams populated |
+| Sprint 3 | Simulation + Storage | NOT STARTED | 12M brackets generated |
+| Sprint 4 | Deploy + Tracker | NOT STARTED | Live tracking works |
+| Sprint 5 | Tournament Tracking | NOT STARTED | Games entered, pruning works |
 
 ---
 
-## Sprint 1 Tasks (Start Here)
+## What's DONE
 
-| Task | Description | Dependencies | Parallel? |
-|------|-------------|--------------|-----------|
-| 1.1 | Project scaffold (folders, requirements.txt, package.json, .gitignore) | None | Yes |
-| 1.2 | docker-compose.yml + .env.example | None | Yes |
-| 1.3 | DB migrations: 001_initial_schema.sql (all tables with tournament_year, partitioning) | None | Yes |
-| 1.4 | DB migrations: 002_indexes.sql (all indexes including partial index on is_alive) | 1.3 | No |
-| 1.5 | config/settings.py + config/constants.py (weights, k placeholder, regions) | 1.1 | Yes |
-| 1.6 | simulation/bracket_structure.py (seed ordering, game_index mapping) | 1.5 | Yes |
-| 1.7 | simulation/encoder.py + tests/test_encoder.py | 1.6 | No |
-| 1.8 | data/brackets/2025_bracket.json (all 68 teams, seeds, regions) | None | Yes |
-| 1.9 | data/historical/seed_win_rates.json (1985-2024 upset rates) | None | Yes |
+### Source Code (17 files, 6,153 lines)
+| File | Lines | Status |
+|------|-------|--------|
+| math_primitives.py | 524 | DONE — logit, sigmoid, de-vig, encoding, scoring |
+| k_calibration.py | 275 | DONE — k=22, Brier=0.189, 79-game dataset |
+| talent_factors.py | 263 | DONE — NBA draft, experience, star player boosts |
+| round_probability.py | 634 | DONE — 6 signals + talent factors wired in |
+| seed_composition.py | 671 | DONE — stratified sampling, FF composition |
+| calibration_targets.py | 292 | DONE — historical upset rates, modal configs |
+| strategy_profiles.py | 408 | DONE — temperature scaling, upset clustering |
+| sharpening_rules.py | 279 | DONE — chalk preference, cinderella filtering |
+| portfolio_strategy.py | 309 | DONE — cluster budget, sharpening |
+| round_calibration.py | 396 | DONE — round-level calibration targets |
+| engine.py | 520 | DONE — vectorized NumPy simulation |
+| stratifier.py | 248 | DONE — Neyman allocation |
+| probability_engine.py | 250 | DONE — probability matrix builder |
+| research_aggregator.py | 391 | DONE — data source aggregation |
+| tournament_config.py | 66 | DONE — year, regions, seeds |
+| database.py | 326 | DONE — SQLite layer |
+| test_math_primitives.py | 301 | DONE — unit tests |
 
-**Sprint 1 Exit Gate:**
-- [ ] `docker compose up -d` works, PostgreSQL accessible
-- [ ] All tables created with correct schema
-- [ ] `pytest tests/test_encoder.py` passes (round-trip encode/decode)
-- [ ] 2025 bracket JSON populated with all 68 teams
+### API (10 files, 1,019 lines) — DONE
+### Frontend (9 files, 3,824 lines) — DONE
+### Agent Reports (15+ files) — DONE
+### Research Data (16 files) — NEEDS DAILY REFRESH
 
 ---
 
-## Agent Outputs
+## What's LEFT (Critical Path)
 
-| Agent | Report | Status |
-|-------|--------|--------|
-| Math Agent | agents/reports/math-agent-report.md | ✅ COMPLETE |
-| Stats Agent | agents/reports/stats-agent-report.md | ✅ COMPLETE |
-| Sports Betting Agent | agents/reports/betting-agent-report.md | ✅ COMPLETE |
-| Architecture Agent | architecture-plan.md | ✅ COMPLETE |
+| Priority | Task | Target Date | Status |
+|----------|------|-------------|--------|
+| P0 | Daily research refresh | Every day | Running now (March 12) |
+| P0 | Integration test on 2025 data | March 12-13 | NOT STARTED |
+| P0 | Docker + PostgreSQL setup | March 14 | NOT STARTED |
+| P0 | Populate 2026 bracket | March 15 | Waiting for Selection Sunday |
+| P0 | Deploy to production | March 16-17 | NOT STARTED |
+| P0 | Generate 12M brackets | March 16 | NOT STARTED |
+| P1 | Blog content updates | Ongoing | IN PROGRESS |
+| P1 | Verify pruner end-to-end | March 17 | NOT STARTED |
+| P2 | Genetic algorithm layer | Deferred | DECIDED: defer to 2027 |
+| P2 | Division-first optimization | Deferred | REVIEW NEEDED |
 
-## Agent Team (All Defined)
+---
+
+## Research Pipeline Status
+
+| Agent/Source | Last Run | Data Date | Next Run |
+|-------------|----------|-----------|----------|
+| KenPom refresh | March 12 | Updating... | March 13 |
+| Vegas odds | March 12 | Updating... | March 13 |
+| Injury tracker | March 12 | Updating... | March 13 |
+| Conference tourneys | March 12 | Updating... | March 13 |
+| YouTube analysis | March 12 | Updating... | March 15 |
+| Reddit sentiment | March 10 | March 10 | March 14 |
+| Expert brackets | — | — | March 15 (post-bracket) |
+
+---
+
+## Agent Team
 
 | Agent | File | Status |
 |-------|------|--------|
-| Program Manager | agents/program-manager-agent.md | ✅ Active |
-| Lead Software Engineer | agents/lead-swe-agent.md | ✅ Ready |
-| Design Agent | agents/design-agent.md | ✅ Ready |
-| Elite Research Agent | agents/elite-research-agent.md | ✅ Ready — deploy in Sprint 2 |
-
----
-
-## Next Immediate Actions
-1. Begin Sprint 1 tasks 1.1, 1.2, 1.3, 1.5, 1.8, 1.9 in parallel
-2. Deploy Elite Research Agent in Sprint 2 to collect 2025 team data
-3. Obtain The Odds API key before Sprint 2 (free tier at the-odds-api.com)
+| Program Manager | agents/program-manager-agent.md | Active |
+| Lead SWE | agents/lead-swe-agent.md | Ready |
+| Design Agent | agents/design-agent.md | Ready |
+| Math Agent | agents/math-agent.md | Report complete |
+| Stats Agent | agents/stats-agent.md | Report complete |
+| Betting Agent | agents/sports-betting-agent.md | Report complete |
+| Biology Agent | agents/biology-agent.md | Report complete |
+| Research Validator | agents/research-validator-agent.md | Ready |
+| Elite Research | agents/elite-research-agent.md | Active (daily refresh) |

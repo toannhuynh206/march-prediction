@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import BracketView from './components/BracketView'
 import ExplorerPage from './components/ExplorerPage'
@@ -15,11 +15,11 @@ const queryClient = new QueryClient({
   },
 })
 
+// Admin tab hidden from public nav — accessible via Ctrl+Shift+A
 const TABS = [
   { id: 'Bracket', label: 'BRACKET', icon: '🏀' },
   { id: 'Explorer', label: 'EXPLORER', icon: '🔍' },
   { id: 'Statistics', label: 'STATS', icon: '📊' },
-  { id: 'Admin', label: 'ADMIN', icon: '⚙️' },
   { id: 'Blog', label: 'BLOG', icon: '📝' },
 ]
 
@@ -59,6 +59,19 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('Bracket')
   const ActiveComponent = TAB_COMPONENTS[activeTab]
 
+  // Secret keyboard shortcut: Ctrl+Shift+A opens Admin panel
+  const handleKeyDown = useCallback((e) => {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+      e.preventDefault()
+      setActiveTab('Admin')
+    }
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-deep)' }}>
@@ -96,7 +109,7 @@ export default function App() {
                   background: 'rgba(255,255,255,0.03)',
                 }}
               >
-                10,000,000 BRACKETS
+                206,000,000 BRACKETS
               </span>
               <LiveIndicator />
             </div>
@@ -145,7 +158,7 @@ export default function App() {
         {/* ── Footer ── */}
         <footer className="text-center py-6 px-4" style={{ borderTop: '1px solid var(--border-subtle)' }}>
           <p className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-            MARCH MADNESS SURVIVOR — STRATIFIED IMPORTANCE SAMPLING — 12M BRACKETS
+            MARCH MADNESS SURVIVOR — STRATIFIED IMPORTANCE SAMPLING — 206M BRACKETS
           </p>
         </footer>
       </div>

@@ -186,7 +186,7 @@ def get_champion_seed_guarantee(
 
 def validate_allocation(
     allocations: tuple[StratumAllocation, ...],
-    total_budget: int = 3_000_000,
+    total_budget: int = 51_500_000,
     min_champion_guarantee: int = 50_000,
 ) -> tuple[bool, list[str]]:
     """Validate that allocation meets all constraints.

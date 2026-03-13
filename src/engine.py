@@ -25,6 +25,7 @@ from math_primitives import (
     get_game_bit,
     get_regional_winner_seed,
 )
+from round_probability import UPSET_BOOST_BY_SEED_GAP
 from stratifier import StratumAllocation, SEED_TO_TIER
 from portfolio_strategy import (
     apply_temperature,
@@ -32,6 +33,12 @@ from portfolio_strategy import (
     allocate_cluster_budgets,
     TEMPERATURE_BY_ROUND,
 )
+
+# Pre-built lookup: seed gap -> logit boost (vectorized access)
+_BOOST_LOOKUP = np.zeros(16, dtype=np.float32)
+for _gap, _boost in UPSET_BOOST_BY_SEED_GAP.items():
+    if _gap < 16:
+        _BOOST_LOOKUP[_gap] = _boost
 
 
 @dataclass(frozen=True)
@@ -88,6 +95,7 @@ def simulate_later_rounds(
     prob_matrix: dict[tuple[int, int], float],
     rng: np.random.Generator,
     temp_schedule: dict[str, float] | None = None,
+    apply_survivor_bias: bool = True,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Simulate R32 through E8 given R64 winners.
 
@@ -98,16 +106,25 @@ def simulate_later_rounds(
 
     temp_schedule: optional {round_name: tau} for per-round temperature.
     If None, uses tau=1.0 (no temperature adjustment).
+    apply_survivor_bias: if True, upset winners get a small logit boost
+    in their next game (from UPSET_BOOST_BY_SEED_GAP).
     """
     n = r64_winners.shape[0]
 
     # game_winners tracks the seed that won each game
-    # Initialize with R64 winners
+    # game_losers tracks the seed that lost (for survivor bias)
     game_winners = np.empty((n, 15), dtype=np.int8)
     game_outcomes = np.empty((n, 15), dtype=np.bool_)
+    game_losers = np.empty((n, 15), dtype=np.int8)
 
     # R64 results already known
     game_winners[:, :8] = r64_winners
+
+    # R64 losers: matchup is (high_seed, low_seed), loser = other side
+    for g, (high_seed, low_seed) in enumerate(R64_MATCHUPS):
+        game_losers[:, g] = np.where(
+            r64_winners[:, g] == high_seed, low_seed, high_seed,
+        ).astype(np.int8)
 
     # Parent game mapping: game -> (parent_a, parent_b, round_name)
     parent_pairs = [
@@ -122,27 +139,50 @@ def simulate_later_rounds(
         seeds_b = game_winners[:, pb]
 
         # For each bracket, look up P(higher seed wins)
-        # Vectorize by getting unique matchups
         high_seeds = np.minimum(seeds_a, seeds_b)
         low_seeds = np.maximum(seeds_a, seeds_b)
-
-        # Get probabilities for each bracket's specific matchup
-        probs = np.empty(n, dtype=np.float32)
 
         # Get temperature for this round
         tau = 1.0
         if temp_schedule is not None:
             tau = temp_schedule.get(round_name, 1.0)
 
-        # Find unique matchups to avoid redundant lookups
+        # Build 17x17 lookup array for vectorized indexing
         unique_matchups = set(zip(high_seeds.tolist(), low_seeds.tolist()))
-        matchup_probs = {}
+        prob_lookup = np.full((17, 17), 0.5, dtype=np.float32)
         for hs, ls in unique_matchups:
             base_p = prob_matrix.get((hs, ls), 0.5)
-            matchup_probs[(hs, ls)] = apply_temperature(base_p, tau)
+            prob_lookup[hs, ls] = apply_temperature(base_p, tau)
 
-        for j in range(n):
-            probs[j] = matchup_probs[(high_seeds[j], low_seeds[j])]
+        probs = prob_lookup[high_seeds, low_seeds]
+
+        # Survivor bias: boost upset winners' probability in their next game
+        if apply_survivor_bias:
+            losers_a = game_losers[:, pa]
+            losers_b = game_losers[:, pb]
+
+            # Seed gap (positive only when the team was an upset winner)
+            gap_a = np.clip(seeds_a.astype(np.int16) - losers_a.astype(np.int16), 0, 15)
+            gap_b = np.clip(seeds_b.astype(np.int16) - losers_b.astype(np.int16), 0, 15)
+
+            boost_a = _BOOST_LOOKUP[gap_a]
+            boost_b = _BOOST_LOOKUP[gap_b]
+
+            # Apply in logit space: probs = P(high_seed wins)
+            # Determine which side (a or b) is the high seed
+            a_is_high = (seeds_a <= seeds_b)
+            high_boost = np.where(a_is_high, boost_a, boost_b)
+            low_boost = np.where(a_is_high, boost_b, boost_a)
+
+            net_boost = high_boost - low_boost
+            has_boost = net_boost != 0.0
+
+            if np.any(has_boost):
+                clamped = np.clip(probs, 1e-6, 1.0 - 1e-6)
+                logit_p = np.log(clamped / (1.0 - clamped))
+                logit_p += net_boost
+                adjusted = 1.0 / (1.0 + np.exp(-logit_p))
+                probs = np.where(has_boost, adjusted, probs)
 
         # Simulate: upset if random > p_fav
         is_upset = rng.random(n) > probs
@@ -150,6 +190,7 @@ def simulate_later_rounds(
 
         # Winner is low_seed if upset, high_seed otherwise
         game_winners[:, game_idx] = np.where(is_upset, low_seeds, high_seeds)
+        game_losers[:, game_idx] = np.where(is_upset, high_seeds, low_seeds)
 
     champion_seeds = game_winners[:, 14]
     return game_outcomes, game_winners, champion_seeds
@@ -249,12 +290,15 @@ def apply_mutation_later_rounds(
         high_seeds = np.minimum(seeds_a, seeds_b)
         low_seeds = np.maximum(seeds_a, seeds_b)
 
-        # Check each bracket's matchup probability
-        for j in range(n):
-            base_p = prob_matrix.get((int(high_seeds[j]), int(low_seeds[j])), 0.5)
-            if MUTATION_P_LOW <= base_p <= MUTATION_P_HIGH:
-                if rng.random() < mutation_rate:
-                    mutated[j, game_idx] = not later_outcomes[j, game_idx]
+        # Vectorized: build lookup, mask coin-flip games, batch-flip
+        prob_lookup = np.full((17, 17), 0.5, dtype=np.float32)
+        for (hs, ls), p in prob_matrix.items():
+            prob_lookup[hs, ls] = p
+        base_probs = prob_lookup[high_seeds, low_seeds]
+
+        coin_flip_mask = (base_probs >= MUTATION_P_LOW) & (base_probs <= MUTATION_P_HIGH)
+        flip_mask = coin_flip_mask & (rng.random(n) < mutation_rate)
+        mutated[flip_mask, game_idx] = ~later_outcomes[flip_mask, game_idx]
 
     return mutated
 
@@ -318,7 +362,10 @@ def simulate_stratum(
         r64_tau = temp_schedule.get("R64", 1.0)
 
     accepted = []
-    max_attempts = target_count * max_attempts_multiplier
+    # Scale attempts by inverse prior: rare worlds need more rejection sampling
+    rarity_factor = max(1.0, 0.01 / max(world.prior_probability, 1e-9))
+    effective_multiplier = int(max_attempts_multiplier * max(1, rarity_factor))
+    max_attempts = target_count * effective_multiplier
     batch_size = min(target_count * 2, max_attempts)
 
     attempts = 0

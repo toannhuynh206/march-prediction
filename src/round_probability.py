@@ -19,7 +19,12 @@ Our additions: aggregator blending, sharpening rules, 12M stratified sampling.
 import math
 from typing import Optional
 
-from math_primitives import logit, sigmoid, spread_to_prob, SIGMA_SPREAD
+from math_primitives import logit, sigmoid, spread_to_prob, SIGMA_SPREAD, K_DEFAULT
+from talent_factors import (
+    compute_talent_adjustment,
+    PlayerExperience,
+    TalentAdjustment,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -115,6 +120,27 @@ EXPERIENCE_PREMIUM = {
     "R64": 0.0, "R32": 0.01, "S16": 0.03, "E8": 0.05, "F4": 0.07, "Championship": 0.08,
 }
 
+# ---------------------------------------------------------------------------
+# Talent factor scaling by round
+# ---------------------------------------------------------------------------
+# Conversion factor: power index points -> logit units.
+# From the logistic model P = 1/(1+10^((PI_B-PI_A)/k)):
+#   logit(P) = (PI_A - PI_B) * ln(10) / k
+# With k=22: 1 PI point ≈ 0.105 logit units.
+PI_TO_LOGIT = math.log(10) / K_DEFAULT
+
+# Round scaling for talent impact.
+# R64: Vegas lines already price in most talent → dampen.
+# S16+: Stars take over close games → full or amplified effect.
+TALENT_ROUND_SCALE = {
+    "R64": 0.6,
+    "R32": 0.8,
+    "S16": 1.0,
+    "E8": 1.1,
+    "F4": 1.2,
+    "Championship": 1.2,
+}
+
 
 # ---------------------------------------------------------------------------
 # Team data container
@@ -129,7 +155,12 @@ class TeamProfile:
         "kenpom_rank", "torvik_rank", "bpi_rank", "net_rank",
         "elo", "defensive_rating", "experience_score",
         "conference", "tourney_appearances",
-        "season_results",  # list of (opponent_name, margin, location)
+        "season_results",          # list of (opponent_name, margin, location)
+        # Talent factors (NBA draft, experience, star player)
+        "draft_picks",             # tuple of tier strings: ("top_3", "top_20", ...)
+        "players_experience",      # tuple of PlayerExperience records
+        "star_usage_rate",         # best player's usage rate (%)
+        "star_offensive_rating",   # best player's offensive rating
     )
 
     def __init__(self, **kwargs):
@@ -362,6 +393,61 @@ def compute_market_signal(
 
 
 # ---------------------------------------------------------------------------
+# Upset-conditional adjustment (survivor bias)
+# ---------------------------------------------------------------------------
+# When a lower seed wins (upset), they've proven they're better than their
+# seed suggests. Their next-round probability should be adjusted upward.
+#
+# The boost is proportional to how unlikely the upset was:
+#   - 9 over 8 (coin flip): +0.01 logit (negligible)
+#   - 12 over 5:            +0.08 logit (~2% probability shift)
+#   - 15 over 2:            +0.15 logit (~3.5% probability shift)
+#   - 16 over 1:            +0.20 logit (~5% probability shift)
+#
+# This captures: if a 12-seed just beat a 5-seed, they're not a "typical" 12.
+# The seed_history signal for their next game (e.g., 4 vs 12) should be
+# tempered because this 12-seed already showed they belong.
+
+UPSET_BOOST_BY_SEED_GAP = {
+    # seed_gap -> logit boost for the upset winner's next game
+    1: 0.01,    # 8v9, 7v10 range — marginal
+    2: 0.03,    # close matchups
+    3: 0.05,    # moderate upset
+    4: 0.06,    # e.g., 5 over 12 (wait, gap is 7 here — see below)
+    5: 0.08,
+    6: 0.10,
+    7: 0.12,    # 5v12 upset
+    8: 0.14,    # 4v13 upset (rare)
+    9: 0.15,    # big upset
+    10: 0.16,
+    11: 0.17,
+    12: 0.18,
+    13: 0.19,   # 3v14 upset
+    14: 0.20,   # 2v15 or 1v16
+    15: 0.20,   # 1v16 (max boost)
+}
+
+
+def compute_upset_adjustment(
+    winner_seed: int,
+    loser_seed: int,
+) -> float:
+    """Compute logit-scale boost for an upset winner's next game.
+
+    Only applies when the higher-numbered seed (underdog) won.
+    Returns 0.0 if the favorite won (no adjustment needed).
+
+    Returns: logit-scale positive value (boost for the upset winner).
+    """
+    if winner_seed <= loser_seed:
+        # Favorite won — no adjustment
+        return 0.0
+
+    seed_gap = winner_seed - loser_seed
+    return UPSET_BOOST_BY_SEED_GAP.get(seed_gap, 0.20)
+
+
+# ---------------------------------------------------------------------------
 # Main probability computation
 # ---------------------------------------------------------------------------
 
@@ -372,12 +458,19 @@ def compute_win_probability(
     spread: Optional[float] = None,
     futures_a: Optional[float] = None,
     futures_b: Optional[float] = None,
+    prev_opponent_seed_a: Optional[int] = None,
+    prev_opponent_seed_b: Optional[int] = None,
 ) -> float:
     """Compute P(A beats B) using round-adaptive signal weighting.
 
     For R64: market signal dominates (actual Vegas lines).
     For R32+: blends rating, h2h, common opponents, seed history,
     defense/experience, and futures (if available).
+
+    Upset-conditional adjustment: if either team won as an upset in
+    the previous round, their probability gets a small boost.
+    Pass prev_opponent_seed to enable this (the seed of the team
+    they beat in the prior round).
 
     Returns: probability in [0.005, 0.995].
     """
@@ -404,6 +497,38 @@ def compute_win_probability(
         weights[key] * signals[key] for key in weights
     )
 
+    # Upset-conditional adjustment: if a team won as an underdog
+    # in the prior round, they get a logit boost (survivor bias).
+    # Boost is applied symmetrically — A's boost helps A, B's helps B.
+    if prev_opponent_seed_a is not None:
+        boost_a = compute_upset_adjustment(team_a.seed, prev_opponent_seed_a)
+        blended_logit += boost_a  # positive = favors A
+
+    if prev_opponent_seed_b is not None:
+        boost_b = compute_upset_adjustment(team_b.seed, prev_opponent_seed_b)
+        blended_logit -= boost_b  # positive boost for B = subtract from A's logit
+
+    # Talent adjustment: NBA draft picks, tournament experience, star players.
+    # Computed as power-index differential converted to logit units.
+    talent_a = compute_talent_adjustment(
+        draft_picks=getattr(team_a, "draft_picks", None) or (),
+        players_experience=getattr(team_a, "players_experience", None) or (),
+        tournament_round=tournament_round,
+        star_usage_rate=getattr(team_a, "star_usage_rate", None) or 0.0,
+        star_offensive_rating=getattr(team_a, "star_offensive_rating", None) or 0.0,
+    )
+    talent_b = compute_talent_adjustment(
+        draft_picks=getattr(team_b, "draft_picks", None) or (),
+        players_experience=getattr(team_b, "players_experience", None) or (),
+        tournament_round=tournament_round,
+        star_usage_rate=getattr(team_b, "star_usage_rate", None) or 0.0,
+        star_offensive_rating=getattr(team_b, "star_offensive_rating", None) or 0.0,
+    )
+
+    talent_diff = talent_a.total - talent_b.total
+    round_scale = TALENT_ROUND_SCALE.get(tournament_round, 1.0)
+    blended_logit += talent_diff * PI_TO_LOGIT * round_scale
+
     p = sigmoid(blended_logit)
     return max(0.005, min(0.995, p))
 
@@ -417,6 +542,7 @@ def build_probability_matrix(
     tournament_round: str,
     spreads: Optional[dict[tuple[str, str], float]] = None,
     futures: Optional[dict[str, float]] = None,
+    prev_round_results: Optional[dict[int, int]] = None,
 ) -> dict[tuple[int, int], float]:
     """Build P(A beats B) for all possible matchups in a round.
 
@@ -424,6 +550,9 @@ def build_probability_matrix(
     tournament_round: "R64", "R32", etc.
     spreads: optional dict of (team_a_name, team_b_name) -> spread
     futures: optional dict of team_name -> championship probability
+    prev_round_results: optional dict of winner_seed -> loser_seed from
+        the previous round, used for upset-conditional adjustments.
+        Example: {12: 5, 1: 16, 9: 8} means 12 beat 5, 1 beat 16, 9 beat 8.
 
     Returns: dict mapping (seed_a, seed_b) -> P(seed_a beats seed_b)
              where seed_a < seed_b (higher seed first).
@@ -432,6 +561,8 @@ def build_probability_matrix(
         spreads = {}
     if futures is None:
         futures = {}
+    if prev_round_results is None:
+        prev_round_results = {}
 
     prob_matrix = {}
     seeds = sorted(teams.keys())
@@ -453,11 +584,17 @@ def build_probability_matrix(
             fut_a = futures.get(team_a.name)
             fut_b = futures.get(team_b.name)
 
+            # Look up previous round opponent seeds (for upset adjustment)
+            prev_opp_a = prev_round_results.get(seed_a)
+            prev_opp_b = prev_round_results.get(seed_b)
+
             p = compute_win_probability(
                 team_a, team_b, tournament_round,
                 spread=spread,
                 futures_a=fut_a,
                 futures_b=fut_b,
+                prev_opponent_seed_a=prev_opp_a,
+                prev_opponent_seed_b=prev_opp_b,
             )
 
             prob_matrix[(seed_a, seed_b)] = p

@@ -1,0 +1,556 @@
+{
+  "date_updated": "2026-03-13T21:00:00Z",
+  "tournament_year": 2026,
+  "selection_sunday": "2026-03-15",
+  "total_auto_bids_decided": 16,
+  "total_auto_bids_remaining": 16,
+  "sources": [
+    "ESPN Champ Week 2026",
+    "CBS Sports Conference Tournaments Tracker",
+    "NCAA.com Auto-Bid Tracker",
+    "Yahoo Sports Conference Tournament Coverage",
+    "FOX Sports Conference Tournament Coverage",
+    "Joe Lunardi Bracketology (ESPN)",
+    "Bleacher Report Bracketology",
+    "CBS Sports Bracketology",
+    "On3 Bracketology",
+    "Georgetown Athletics (guhoyas.com)",
+    "SI.com Conference Tournament Coverage"
+  ],
+  "completed_tournaments": [
+    {
+      "conference": "Ohio Valley (OVC)",
+      "champion": "Tennessee State",
+      "runner_up": "Morehead State",
+      "auto_bid_team": "Tennessee State",
+      "date": "2026-03-07",
+      "championship_score": "Tennessee State 93, Morehead State 67",
+      "champion_record": "23-9",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 1994"
+    },
+    {
+      "conference": "Big South",
+      "champion": "High Point",
+      "runner_up": "Winthrop",
+      "auto_bid_team": "High Point",
+      "date": "2026-03-08",
+      "championship_score": "High Point 91, Winthrop 76",
+      "champion_record": "30-4",
+      "seed_projection": "14-15",
+      "notes": "Back-to-back Big South titles; second consecutive NCAA Tournament"
+    },
+    {
+      "conference": "Missouri Valley (MVC)",
+      "champion": "Northern Iowa",
+      "runner_up": "UIC",
+      "auto_bid_team": "Northern Iowa",
+      "date": "2026-03-08",
+      "championship_score": "Northern Iowa 84, UIC 69",
+      "champion_record": "20-14",
+      "seed_projection": "14-15",
+      "notes": "First NCAA Tournament appearance since 2016"
+    },
+    {
+      "conference": "ASUN",
+      "champion": "Queens",
+      "runner_up": "Central Arkansas",
+      "auto_bid_team": "Queens",
+      "date": "2026-03-08",
+      "championship_score": "Queens 98, Central Arkansas 93 (OT)",
+      "champion_record": "21-13",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance in program history"
+    },
+    {
+      "conference": "Summit League",
+      "champion": "North Dakota State",
+      "runner_up": "North Dakota",
+      "auto_bid_team": "North Dakota State",
+      "date": "2026-03-08",
+      "championship_score": "North Dakota State 70, North Dakota 62",
+      "champion_record": "21-13",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2019"
+    },
+    {
+      "conference": "Sun Belt",
+      "champion": "Troy",
+      "runner_up": "Georgia Southern",
+      "auto_bid_team": "Troy",
+      "date": "2026-03-09",
+      "championship_score": "Troy 77, Georgia Southern 61",
+      "champion_record": "22-11",
+      "seed_projection": "14-15",
+      "notes": "Back-to-back Sun Belt titles; fourth NCAA Tournament in program history"
+    },
+    {
+      "conference": "Southern (SoCon)",
+      "champion": "Furman",
+      "runner_up": "East Tennessee State",
+      "auto_bid_team": "Furman",
+      "date": "2026-03-09",
+      "championship_score": "Furman 76, East Tennessee State 61",
+      "champion_record": "22-12",
+      "seed_projection": "13-14",
+      "notes": "First NCAA Tournament appearance since 2023; upset over No. 1 seed ETSU"
+    },
+    {
+      "conference": "Northeast (NEC)",
+      "champion": "Long Island (LIU)",
+      "runner_up": "Mercyhurst",
+      "auto_bid_team": "Long Island (LIU)",
+      "date": "2026-03-10",
+      "championship_score": "LIU vs Mercyhurst (final)",
+      "champion_record": "23-10",
+      "seed_projection": "16",
+      "notes": "LIU clinched auto-bid in semifinals because Mercyhurst is not NCAA tournament eligible"
+    },
+    {
+      "conference": "Coastal Athletic (CAA)",
+      "champion": "Hofstra",
+      "runner_up": "Monmouth",
+      "auto_bid_team": "Hofstra",
+      "date": "2026-03-10",
+      "championship_score": "Hofstra 75, Monmouth 69",
+      "champion_record": null,
+      "seed_projection": "14-15",
+      "notes": "First NCAA Tournament appearance since 2001; coach Speedy Claxton emotional postgame"
+    },
+    {
+      "conference": "Horizon League",
+      "champion": "Wright State",
+      "runner_up": "Detroit Mercy",
+      "auto_bid_team": "Wright State",
+      "date": "2026-03-10",
+      "championship_score": "Wright State 66, Detroit Mercy 63",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2022"
+    },
+    {
+      "conference": "MAAC",
+      "champion": "Siena",
+      "runner_up": "Merrimack",
+      "auto_bid_team": "Siena",
+      "date": "2026-03-10",
+      "championship_score": "Siena 64, Merrimack 54",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2010"
+    },
+    {
+      "conference": "West Coast (WCC)",
+      "champion": "Gonzaga",
+      "runner_up": "Santa Clara",
+      "auto_bid_team": "Gonzaga",
+      "date": "2026-03-10",
+      "championship_score": "Gonzaga 79, Santa Clara 68",
+      "champion_record": "29-3",
+      "seed_projection": "2-3",
+      "notes": "27th consecutive NCAA Tournament; final WCC tournament before move to Pac-12"
+    },
+    {
+      "conference": "Southland",
+      "champion": "McNeese",
+      "runner_up": "Stephen F. Austin",
+      "auto_bid_team": "McNeese",
+      "date": "2026-03-11",
+      "championship_score": "McNeese 76, Stephen F. Austin 59",
+      "champion_record": null,
+      "seed_projection": "14-15",
+      "notes": "Third straight Southland championship"
+    },
+    {
+      "conference": "Patriot League",
+      "champion": "Lehigh",
+      "runner_up": "Boston University",
+      "auto_bid_team": "Lehigh",
+      "date": "2026-03-11",
+      "championship_score": "Lehigh 74, Boston University 60",
+      "champion_record": "18-16",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2012"
+    },
+    {
+      "conference": "Big Sky",
+      "champion": "Idaho",
+      "runner_up": "Montana",
+      "auto_bid_team": "Idaho",
+      "date": "2026-03-11",
+      "championship_score": "Idaho 77, Montana 66",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 1990; stunning 36-year drought ended"
+    }
+  ],
+  "new_results_march_12_13": {
+    "ACC": {
+      "quarterfinals_march_12": [
+        "No. 2 Virginia 81, No. 7 NC State 74",
+        "No. 3 Miami 78, No. 6 Louisville 73",
+        "No. 1 Duke 80, No. 8 Florida State 79",
+        "No. 4 UNC 79, No. 5 Clemson 80 (Clemson wins)"
+      ],
+      "quarterfinal_details": {
+        "duke_fsu": "Isaiah Evans scored career-high 32 points (7 three-pointers), Cameron Boozer had 23 pts/10 reb. Duke rallied from 8 down in second half. Duke played only 7 players — Caleb Foster (foot fracture, had surgery) and Patrick Ngongba II (foot soreness) both out.",
+        "clemson_unc": "Nick Davidson scored 17 for Clemson. Henri Veesar led UNC with 28 points. UNC's last-ditch 3-pointer from beyond halfcourt with 2.7 seconds left didn't fall. Clemson wins 80-79.",
+        "virginia_ncstate": "Virginia controlled throughout to advance.",
+        "miami_louisville": "Miami advances to face Virginia in semifinals."
+      },
+      "semifinals_march_13": [
+        "Semifinal 1 (7 PM ESPN): No. 2 Virginia vs No. 3 Miami",
+        "Semifinal 2 (9:30 PM ESPN): No. 1 Duke vs No. 5 Clemson"
+      ],
+      "semifinal_notes": "Virginia beat Miami 86-83 in regular season meeting (Feb 21). Duke's short 7-man rotation due to Foster/Ngongba injuries could be a problem on short rest against deep Clemson team.",
+      "championship": "Saturday, March 14"
+    },
+    "Big_12": {
+      "quarterfinals_march_12": [
+        "No. 1 Arizona 81, No. 8 UCF 59",
+        "No. 5 Iowa State 75, No. 4 Texas Tech 53",
+        "No. 2 Houston 73, No. 10 BYU 66",
+        "No. 3 Kansas 78, No. 6 TCU 73"
+      ],
+      "quarterfinal_details": {
+        "houston_byu": "Kingston Flemings scored team-high 17 for Houston. AJ Dybantsa became leading scorer in single Big 12 tournament history for BYU but it wasn't enough. BYU was playing their 3rd game in 3 days.",
+        "kansas_tcu": "Darryn Peterson played 37 minutes, scored 24 points and grabbed 7 rebounds to lead Kansas."
+      },
+      "semifinals_march_13": [
+        "Semifinal 1 (7 PM ESPN/ESPN2): No. 1 Arizona vs No. 5 Iowa State",
+        "Semifinal 2 (9:30 PM ESPN/ESPN2): No. 2 Houston vs No. 3 Kansas"
+      ],
+      "championship": "Saturday, March 14",
+      "notes": "All four top-half seeds advance. Iowa State seeking three-peat as Big 12 tournament champion."
+    },
+    "SEC": {
+      "second_round_march_12": [
+        "No. 9 Kentucky 78, No. 8 Missouri 72",
+        "No. 5 Tennessee 72, No. 12 Auburn 62",
+        "No. 15 Ole Miss 76, No. 7 Georgia 72",
+        "No. 11 Oklahoma 83, No. 6 Texas A&M 63"
+      ],
+      "second_round_details": {
+        "ole_miss_georgia": "Ole Miss rallied late to defeat Georgia 76-72, continuing their surprising tournament run as a 15-seed.",
+        "oklahoma_texasam": "Nijel Pack led Oklahoma with 20 points. Oklahoma won its 6th straight game against an SEC opponent. Dominant first half.",
+        "tennessee_auburn": "Auburn's 16th loss. Tennessee controlled throughout.",
+        "kentucky_missouri": "Kentucky continues dark horse run with back-to-back wins."
+      },
+      "quarterfinals_march_13": [
+        "Game 9 (1 PM ESPN): No. 1 Florida vs No. 9 Kentucky",
+        "Game 10 (after Game 9, ESPN): No. 4 Vanderbilt vs No. 5 Tennessee",
+        "Game 11 (7 PM SEC Network): No. 2 Alabama vs No. 15 Ole Miss",
+        "Game 12 (after Game 11, SEC Network): No. 3 Arkansas vs No. 11 Oklahoma"
+      ],
+      "championship": "Sunday, March 15"
+    },
+    "Big_Ten": {
+      "third_round_march_12": [
+        "No. 8 Ohio State 72, No. 9 Iowa 69",
+        "No. 5 Wisconsin 85, No. 12 Washington 82",
+        "No. 7 Purdue 81, No. 15 Northwestern 68",
+        "No. 6 UCLA 72, No. 14 Rutgers 59"
+      ],
+      "third_round_details": {
+        "purdue_northwestern": "Purdue controlled to advance.",
+        "ucla_rutgers": "Donovan Dent recorded first triple-double in Big Ten tournament history: 10 pts, 10 reb, 12 ast."
+      },
+      "quarterfinals_march_13": [
+        "Game 11 (12 PM BTN): No. 1 Michigan vs No. 8 Ohio State",
+        "Game 12 (after Game 11, BTN): No. 4 Illinois vs No. 5 Wisconsin",
+        "Game 13 (6:30 PM BTN): No. 2 Nebraska vs No. 7 Purdue",
+        "Game 14 (after Game 13, BTN): No. 3 Michigan State vs No. 6 UCLA"
+      ],
+      "championship": "Sunday, March 15"
+    },
+    "Big_East": {
+      "first_round_march_11": [
+        "No. 9 Providence 91, No. 8 Butler 81",
+        "No. 10 Xavier 89, No. 7 Marquette 87",
+        "No. 11 Georgetown 63, No. 6 DePaul 56"
+      ],
+      "quarterfinals_march_12": [
+        "No. 1 St. John's 85, No. 9 Providence 72",
+        "No. 4 Seton Hall 72, No. 5 Creighton 61",
+        "No. 2 UConn 93, No. 10 Xavier 68",
+        "No. 11 Georgetown 78, No. 3 Villanova 64"
+      ],
+      "quarterfinal_details": {
+        "st_johns_providence": "Ejiofor and Hopkins led St. John's.",
+        "georgetown_villanova": "UPSET: 11-seed Georgetown (16-17) knocked off 3-seed Villanova (24-8). Julius Halaifonua had 21 pts/10 reb. Kayvaun Mulready went 5-5 from the field (14 pts). Jeremiah Williams added 14 pts. Georgetown's first semifinal since 2021.",
+        "uconn_xavier": "UConn dominated throughout.",
+        "seton_hall_creighton": "Seton Hall advances, keeping alive slim at-large hopes."
+      },
+      "semifinals_march_13": [
+        "Semifinal 1 (5:30 PM Fox): No. 1 St. John's vs No. 4 Seton Hall",
+        "Semifinal 2 (8 PM FS1): No. 2 UConn vs No. 11 Georgetown"
+      ],
+      "championship": "Saturday, March 14",
+      "notes": "St. John's-UConn rematch possible in final. Georgetown's Cinderella run continues."
+    },
+    "Mountain_West": {
+      "quarterfinals_march_12": [
+        "No. 1 Utah State 80, No. 8 Wyoming 60 (via UNLV)",
+        "No. 3 San Diego State 71, No. 6 Fresno State 62 (via Colorado State)",
+        "No. 5 Nevada 84, No. 4 Grand Canyon 80"
+      ],
+      "quarterfinal_details": {
+        "utah_state_unlv": "Mason Falslev led Utah State with 24 pts/9 reb. MJ Collins added 20 pts. Utah State cruised.",
+        "sdsu_colorado_state": "San Diego State advances with 71-62 win.",
+        "nevada_grand_canyon": "Nevada set MW Tournament record for made free throws with 36 in the game."
+      },
+      "semifinals_march_13": [
+        "Semifinal 1 (6:30 PM PT, CBSSN): No. 1 Utah State vs No. 5 Nevada",
+        "Semifinal 2 (9 PM PT, CBSSN): No. 3 San Diego State vs TBD"
+      ],
+      "championship": "Saturday, March 14"
+    },
+    "Atlantic_10": {
+      "second_round_march_12": [
+        "No. 7 Duquesne 67, No. 10 Rhode Island 61",
+        "No. 6 Davidson 64, No. 14 Loyola Chicago 59 (OT)",
+        "No. 9 George Washington 66, No. 8 Fordham 62",
+        "No. 13 St. Bonaventure 63, No. 5 George Mason 57"
+      ],
+      "quarterfinals_march_13": [
+        "Game 7 (11:30 AM USA): No. 1 Saint Louis vs No. 9 George Washington",
+        "Game 8 (2 PM USA): No. 13 St. Bonaventure vs No. 4 Dayton",
+        "Game 9 (5 PM USA): No. 2 VCU vs No. 7 Duquesne",
+        "Game 10 (7:30 PM CNBC): No. 6 Davidson vs No. 3 Saint Joseph's"
+      ],
+      "championship": "Sunday, March 15",
+      "notes": "Saint Louis and VCU shared A-10 regular season title. VCU is a bubble team — needs to win tournament or hope for chaos."
+    },
+    "Conference_USA": {
+      "quarterfinals_march_12": [
+        "Sam Houston 69, New Mexico State 61",
+        "Kennesaw State 96, Western Kentucky 87"
+      ],
+      "semifinals_march_13": [
+        "Sam Houston vs Kennesaw State (3 PM CBSSN)",
+        "Missouri State vs TBD"
+      ],
+      "championship": "Saturday, March 14"
+    },
+    "MAC": {
+      "first_round_march_12": [
+        "UMass 87, No. 1 Miami (OH) 83 — MAJOR UPSET: 31-0 Miami (OH) falls"
+      ],
+      "notes": "Miami (OH) entered as nation's only unbeaten team at 31-0. Stunning first-round exit.",
+      "championship": "Saturday, March 14"
+    },
+    "Big_West": {
+      "results_march_12": [
+        "UC San Diego 80, CSUN 70"
+      ],
+      "championship": "Saturday, March 14"
+    },
+    "AAC": {
+      "results": [
+        "Tulane 81, Memphis 69"
+      ],
+      "championship": "Sunday, March 15, 3:15 PM ET (ESPN)"
+    },
+    "SWAC": {
+      "status": "Quarterfinals/Semifinals in progress",
+      "championship": "Saturday, March 14"
+    },
+    "WAC": {
+      "status": "Quarterfinals/Semifinals in progress",
+      "championship": "Saturday, March 14"
+    },
+    "MEAC": {
+      "status": "Quarterfinals/Semifinals in progress",
+      "championship": "Saturday, March 14"
+    },
+    "America_East": {
+      "status": "Championship game March 14",
+      "notes": "UMBC vs Vermont projected for championship",
+      "championship": "Saturday, March 14, 11 AM ET (ESPN2)"
+    },
+    "Ivy_League": {
+      "status": "Not started (starts March 14)",
+      "teams": ["Yale", "Harvard", "Penn", "Cornell"],
+      "venue": "Newman Arena at Bartels Hall, Ithaca, NY",
+      "championship": "Sunday, March 15, 12 PM ET (ESPN2)"
+    }
+  },
+  "bubble_watch": [
+    {
+      "team": "NC State",
+      "status": "last_four_byes",
+      "resume_notes": "Lost ACC quarterfinal to Virginia 74-81. Season done. Most projections still have them safely in as a play-in team."
+    },
+    {
+      "team": "Texas",
+      "status": "last_four_byes",
+      "resume_notes": "Lost SEC first round to Ole Miss 66-76. Season done. Weak bubble provides cover."
+    },
+    {
+      "team": "Santa Clara",
+      "status": "last_four_byes",
+      "resume_notes": "WCC runner-up (lost 68-79 to Gonzaga). Strong 26-7 season. Most projections have them comfortably in."
+    },
+    {
+      "team": "Missouri",
+      "status": "last_four_byes",
+      "resume_notes": "Lost SEC second round to Kentucky 72-78. Done for the year. Weak bubble keeps them in."
+    },
+    {
+      "team": "UCF",
+      "status": "safely_in",
+      "resume_notes": "Lost Big 12 quarterfinal to Arizona 59-81. Had passed into lock status before quarterfinal loss."
+    },
+    {
+      "team": "SMU",
+      "status": "last_four_in",
+      "resume_notes": "Lost ACC second round to Louisville 58-62. Season done. No resume boost. Anxiously awaiting Selection Sunday."
+    },
+    {
+      "team": "VCU",
+      "status": "last_four_in",
+      "resume_notes": "Won 13 of last 14. A-10 tournament quarterfinal vs Duquesne on March 13. Winning A-10 tournament would clinch auto-bid. At-large hopes alive but fragile."
+    },
+    {
+      "team": "Seton Hall",
+      "status": "bubble_fringe",
+      "resume_notes": "Advanced to Big East semis after beating Creighton 72-61. Faces St. John's in semifinal. Only 16% at-large chances. Needs to win Big East tournament for auto-bid."
+    },
+    {
+      "team": "Auburn",
+      "status": "first_four_out",
+      "resume_notes": "Lost to Tennessee 62-72 in SEC second round. Season done. At-large hopes effectively dead."
+    },
+    {
+      "team": "Indiana",
+      "status": "first_four_out",
+      "resume_notes": "Lost Big Ten tournament game. At-large hopes dead."
+    },
+    {
+      "team": "New Mexico",
+      "status": "first_four_out",
+      "resume_notes": "Needs Mountain West tournament run or bid-stealer chaos."
+    },
+    {
+      "team": "Stanford",
+      "status": "first_four_out",
+      "resume_notes": "Lost ACC first round to Pitt 63-64. At-large case dead."
+    },
+    {
+      "team": "Virginia Tech",
+      "status": "first_four_out",
+      "resume_notes": "Lost ACC second round to Wake Forest in OT. Resume insufficient."
+    },
+    {
+      "team": "Cincinnati",
+      "status": "next_four_out",
+      "resume_notes": "Big 12 bubble team. Needs significant chaos."
+    },
+    {
+      "team": "San Diego State",
+      "status": "next_four_out",
+      "resume_notes": "Advanced in MW tournament (beat Colorado State/Fresno State). Needs to win MW tournament for auto-bid."
+    },
+    {
+      "team": "Oklahoma",
+      "status": "next_four_out",
+      "resume_notes": "Blew out Texas A&M 83-63 in SEC second round. Faces Arkansas in quarterfinal. 6-game SEC win streak but still long shot for at-large."
+    },
+    {
+      "team": "California",
+      "status": "next_four_out",
+      "resume_notes": "Lost ACC second round to Florida State 89-95. At-large case effectively over."
+    }
+  ],
+  "projected_field_changes_from_march_12": [
+    {
+      "team": "Seton Hall",
+      "previous_status": "bubble_fringe",
+      "new_status": "bubble_fringe (alive)",
+      "reason": "Beat Creighton 72-61 in Big East QF. Still only 16% at-large probability but now has a path to auto-bid through the Big East tournament. Faces St. John's in semis."
+    },
+    {
+      "team": "UNC",
+      "previous_status": "solidly_in",
+      "new_status": "solidly_in",
+      "reason": "Lost to Clemson 79-80 in ACC QF. Resume strong enough to stay safely in field. Seeding may drop slightly."
+    },
+    {
+      "team": "Georgetown",
+      "previous_status": "NIT_candidate",
+      "new_status": "alive_for_auto_bid",
+      "reason": "Upset Villanova 78-64 in Big East QF as 11-seed (16-17 record). No at-large chance but alive for Big East auto-bid. Faces UConn in semifinal."
+    },
+    {
+      "team": "Oklahoma",
+      "previous_status": "next_four_out",
+      "new_status": "next_four_out (slight improvement)",
+      "reason": "Dominant 83-63 win over Texas A&M. 6-game SEC win streak. Still long shot for at-large but resume improving. Faces Arkansas in QF."
+    }
+  ],
+  "bracketology_projections": {
+    "projected_1_seeds": {
+      "consensus": ["Duke", "Michigan", "Arizona", "Florida"],
+      "lunardi_espn": {
+        "1_seeds": ["Duke", "Michigan", "Arizona", "UConn"],
+        "notes": "Lunardi shifted UConn back to 4th No. 1 seed over Florida in latest update. Duke (29-2) remains No. 1 overall. All three top seeds are two-loss teams; UConn is 27-3."
+      },
+      "other_sources": {
+        "1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+        "notes": "Most other bracketologists still have Florida as 4th No. 1 seed. UConn/Florida race will be decided by conference tournament results this weekend."
+      }
+    },
+    "projected_2_seeds": ["UConn/Florida (one will be 1-seed)", "Houston", "Michigan State", "St. John's"],
+    "projected_3_seeds": ["Gonzaga", "Illinois", "Alabama", "Kansas"],
+    "key_seeding_notes": [
+      "Duke (29-2) unanimous No. 1 overall seed",
+      "Michigan locked as No. 2 overall with Big Ten title",
+      "Arizona locked as No. 3 overall with Big 12 title (16-2 conference)",
+      "UConn/Florida battling for 4th No. 1 seed — Lunardi now favors UConn, most others still have Florida",
+      "St. John's has Big East regular season title; could cement 2-seed with tournament title",
+      "Iowa State could improve seeding with Big 12 tournament run (seeking three-peat)",
+      "Duke's injuries (Foster fracture, Ngongba out) are biggest X-factor for top overall seed entering NCAA Tournament"
+    ],
+    "locks": [
+      "Duke", "Michigan", "Arizona", "Florida", "UConn", "Houston",
+      "Michigan State", "St. John's", "Illinois", "Alabama", "Kansas",
+      "Gonzaga", "Tennessee", "Purdue", "Texas A&M", "Arkansas",
+      "Iowa State", "Clemson", "Virginia", "UNC", "Miami",
+      "Nebraska", "Wisconsin", "UCLA", "Louisville", "Villanova",
+      "Texas Tech", "UCF", "Creighton", "Ohio State", "Iowa"
+    ]
+  },
+  "key_storylines_march_13": [
+    "Duke survives Florida State 80-79 without Foster (foot fracture, had surgery) and Ngongba (foot soreness) — played only 7 players. Isaiah Evans erupts for 32 points (7 threes). Title hopes now face health questions.",
+    "UNC falls to Clemson 80-79 on late-game heartbreak — last-second 3 from beyond halfcourt doesn't fall",
+    "Georgetown (16-17, 11-seed) upsets Villanova 78-64 in Big East quarterfinals — first semifinal since 2021",
+    "Ole Miss continues stunning SEC run as 15-seed, beating Georgia 76-72 to set up Alabama quarterfinal",
+    "Oklahoma blows out Texas A&M 83-63 for 6th straight SEC win — Nijel Pack with 20 points",
+    "BYU's AJ Dybantsa becomes leading scorer in single Big 12 tournament history but BYU falls to Houston 73-66",
+    "Kansas advances behind Darryn Peterson's 24 pts/7 reb — Big 12 semis: Arizona-Iowa State, Houston-Kansas",
+    "Donovan Dent records FIRST triple-double in Big Ten tournament history (10/10/12) for UCLA",
+    "Nevada sets MW Tournament record with 36 made free throws in 84-80 win over Grand Canyon",
+    "UMass shocks unbeaten Miami (OH) 87-83 in MAC first round — Miami was 31-0",
+    "Seton Hall stays alive on bubble with 72-61 win over Creighton — faces St. John's in Big East semifinal",
+    "Big East semis set: St. John's vs Seton Hall, UConn vs Georgetown",
+    "Big 12 semis set: Arizona vs Iowa State, Houston vs Kansas — all top-half seeds advance",
+    "SEC quarterfinals: Florida-Kentucky (dark horse), Alabama-Ole Miss (Cinderella), Arkansas-Oklahoma, Vanderbilt-Tennessee",
+    "Big Ten quarterfinals: Michigan-Ohio State, Illinois-Wisconsin, Nebraska-Purdue, Michigan State-UCLA",
+    "2 days until Selection Sunday — 16 auto-bids still to be decided"
+  ],
+  "duke_injury_update": {
+    "caleb_foster": {
+      "injury": "Right foot fracture",
+      "status": "Out indefinitely — had surgery March 10",
+      "timeline": "Out for foreseeable future. Will miss ACC Tournament. NCAA Tournament availability uncertain.",
+      "notes": "Suffered fracture in win vs UNC. Used knee scooter on sideline."
+    },
+    "patrick_ngongba_ii": {
+      "injury": "Right foot soreness",
+      "status": "Out for ACC Tournament",
+      "timeline": "Hopeful to return for NCAA Tournament per coach Scheyer.",
+      "notes": "Had own boot and scooter. Being held out as precaution."
+    },
+    "impact": "Duke used only 7 players in 80-79 win over FSU. Short rotation is major concern for deep tournament run."
+  }
+}

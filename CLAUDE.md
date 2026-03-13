@@ -3,7 +3,7 @@
 ## What This Project Does
 End-to-end March Madness bracket prediction system:
 1. **Research Phase** — Power-rank 64 tournament teams using KenPom stats, market odds, and qualitative research
-2. **Simulation Phase** — Generate 12M stratified importance-sampled brackets (3M per region) using NumPy
+2. **Simulation Phase** — Generate 206M stratified importance-sampled brackets (51.5M per region) using NumPy
 3. **Tracker Phase** — React + FastAPI website that prunes brackets live as real results come in
 
 **Test data:** 2025 NCAA Tournament (pre-tournament state, before any games)
@@ -20,7 +20,7 @@ End-to-end March Madness bracket prediction system:
 
 ## Tournament Year
 ```python
-TOURNAMENT_YEAR = 2025  # test harness; swap to 2026 on Selection Sunday
+TOURNAMENT_YEAR = 2026  # test harness; swap to 2026 on Selection Sunday
 ```
 Every database table has a `tournament_year INT NOT NULL` column. Switching years = one config change.
 
@@ -29,7 +29,7 @@ Every database table has a `tournament_year INT NOT NULL` column. Switching year
 ## Critical Architectural Decisions (Non-Negotiable)
 
 ### Simulation: Stratified Importance Sampling (NOT naive Monte Carlo)
-- 3M brackets per region, 12M total (NOT 10M)
+- 51.5M brackets per region, 206M total
 - Worlds defined by (k_R1 upset count, k_R2 upset count, champion seed)
 - Budget allocated proportional to √P(world) — Neyman allocation
 - Each bracket has `weight FLOAT` column for Bayesian updating
@@ -50,13 +50,21 @@ Every database table has a `tournament_year INT NOT NULL` column. Switching year
 | 3-Point Variance Flag | 3% |
 **DO NOT** include: raw seed, standalone AdjO/AdjD, recent form (last 10 games)
 
-### Win Probability Blend (3-layer)
+### Win Probability Blend (4-layer, spread-adaptive)
 ```
-logit(P_final) = 0.40×logit(P_stats) + 0.45×logit(P_market) + 0.15×logit(P_factors)
+logit(P_final) = w_m×logit(P_market) + w_s×logit(P_stats) + w_x×logit(P_matchup) + w_f×logit(P_factors)
 ```
+Weights adapt based on spread magnitude (spread-adaptive tiers):
+| Tier | Condition | w_market | w_stats | w_matchup | w_factors |
+|------|-----------|----------|---------|-----------|-----------|
+| locks | \|spread\| > 15 | 0.60 | 0.20 | 0.10 | 0.10 |
+| lean | \|spread\| 5–15 | 0.45 | 0.25 | 0.15 | 0.15 |
+| coin_flip | \|spread\| < 5 | 0.30 | 0.25 | 0.25 | 0.20 |
+
+- P_market: de-vigged moneyline / spread from The Odds API
 - P_stats: logistic function from power index differential
-- P_market: de-vigged moneyline from The Odds API
-- P_factors: qualitative adjustments (coaching, pace, experience)
+- P_matchup: tempo/size differential adjustments
+- P_factors: qualitative (coaching, sentiment, FCI-adjusted base rates)
 
 ### Logistic Function
 ```python
@@ -175,7 +183,7 @@ march-prediction/
 ## Database Rules
 
 - Every table has `tournament_year INT NOT NULL DEFAULT 2025`
-- Brackets table is **partitioned by region** (4 partitions × 3M rows each)
+- Brackets table is **partitioned by region** (4 partitions × 51.5M rows each)
 - Matchup cache uses canonical ordering: `team_a_id < team_b_id` enforced by CHECK constraint
 - Pruning is a **single SQL UPDATE with bitwise operator** — never Python-side filtering
 - All pruning queries must use the partial index `WHERE is_alive = TRUE`
@@ -213,7 +221,7 @@ march-prediction/
 
 ## Simulation Rules
 
-- 3M brackets per region = 12M total (NOT 10M)
+- 51.5M brackets per region = 206M total
 - Use stratified importance sampling (NOT naive Monte Carlo)
 - Bracket storage: 15-bit packed SMALLINT + FLOAT weight + INT stratum_id
 - Batch insert in chunks of 100K using COPY

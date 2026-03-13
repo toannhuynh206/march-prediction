@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: march-madness-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-marchmadness}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bracketbuster2026}
+      POSTGRES_DB: ${POSTGRES_DB:-march_madness}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-marchmadness}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    shm_size: 256mb
+    command:
+      - "postgres"
+      - "-c"
+      - "shared_buffers=512MB"
+      - "-c"
+      - "work_mem=64MB"
+      - "-c"
+      - "maintenance_work_mem=256MB"
+      - "-c"
+      - "effective_cache_size=1536MB"
+      - "-c"
+      - "max_parallel_workers_per_gather=4"
+      - "-c"
+      - "random_page_cost=1.1"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: march-madness-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@marchmadness.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+      PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - "${PGADMIN_PORT:-5050}:5050"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+    driver: local

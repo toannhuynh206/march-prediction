@@ -1,0 +1,571 @@
+{
+  "_metadata": {
+    "description": "NCAA Men's Basketball Final Four seeds by year (1985-2025, excluding 2020 cancelled)",
+    "sources": [
+      "https://www.basketball.org/data/final-four-seeds/",
+      "https://www.sports-reference.com/cbb/postseason/men/",
+      "https://www.ncaa.com/news/basketball-men/bracketiq/2025-04-07/march-madness-brackets-how-do-seeds-perform-final-four",
+      "https://en.wikipedia.org/wiki/List_of_NCAA_Division_I_men%27s_basketball_tournament_Final_Four_participants"
+    ],
+    "verified_date": "2026-03-12",
+    "total_tournaments": 40,
+    "note": "2020 tournament cancelled due to COVID-19"
+  },
+  "final_fours": [
+    {
+      "year": 1985,
+      "teams": [
+        {"name": "Georgetown", "seed": 1, "region": "East"},
+        {"name": "St. John's", "seed": 1, "region": "West"},
+        {"name": "Memphis State", "seed": 2, "region": "Midwest"},
+        {"name": "Villanova", "seed": 8, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 2, 8],
+      "count_1_seeds": 2,
+      "champion": "Villanova",
+      "champion_seed": 8
+    },
+    {
+      "year": 1986,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "East"},
+        {"name": "Kansas", "seed": 1, "region": "Midwest"},
+        {"name": "Louisville", "seed": 2, "region": "West"},
+        {"name": "LSU", "seed": 11, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 2, 11],
+      "count_1_seeds": 2,
+      "champion": "Louisville",
+      "champion_seed": 2
+    },
+    {
+      "year": 1987,
+      "teams": [
+        {"name": "Indiana", "seed": 1, "region": "Midwest"},
+        {"name": "UNLV", "seed": 1, "region": "West"},
+        {"name": "Syracuse", "seed": 2, "region": "East"},
+        {"name": "Providence", "seed": 6, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 2, 6],
+      "count_1_seeds": 2,
+      "champion": "Indiana",
+      "champion_seed": 1
+    },
+    {
+      "year": 1988,
+      "teams": [
+        {"name": "Arizona", "seed": 1, "region": "West"},
+        {"name": "Oklahoma", "seed": 1, "region": "Midwest"},
+        {"name": "Duke", "seed": 2, "region": "East"},
+        {"name": "Kansas", "seed": 6, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 2, 6],
+      "count_1_seeds": 2,
+      "champion": "Kansas",
+      "champion_seed": 6
+    },
+    {
+      "year": 1989,
+      "teams": [
+        {"name": "Illinois", "seed": 1, "region": "Midwest"},
+        {"name": "Duke", "seed": 2, "region": "East"},
+        {"name": "Seton Hall", "seed": 3, "region": "West"},
+        {"name": "Michigan", "seed": 3, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 2, 3, 3],
+      "count_1_seeds": 1,
+      "champion": "Michigan",
+      "champion_seed": 3
+    },
+    {
+      "year": 1990,
+      "teams": [
+        {"name": "UNLV", "seed": 1, "region": "West"},
+        {"name": "Duke", "seed": 3, "region": "East"},
+        {"name": "Georgia Tech", "seed": 4, "region": "Southeast"},
+        {"name": "Arkansas", "seed": 4, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 3, 4, 4],
+      "count_1_seeds": 1,
+      "champion": "UNLV",
+      "champion_seed": 1
+    },
+    {
+      "year": 1991,
+      "teams": [
+        {"name": "UNLV", "seed": 1, "region": "West"},
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Duke", "seed": 2, "region": "Midwest"},
+        {"name": "Kansas", "seed": 3, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 2, 3],
+      "count_1_seeds": 2,
+      "champion": "Duke",
+      "champion_seed": 2
+    },
+    {
+      "year": 1992,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "East"},
+        {"name": "Indiana", "seed": 2, "region": "West"},
+        {"name": "Cincinnati", "seed": 4, "region": "Midwest"},
+        {"name": "Michigan", "seed": 6, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 2, 4, 6],
+      "count_1_seeds": 1,
+      "champion": "Duke",
+      "champion_seed": 1
+    },
+    {
+      "year": 1993,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Kentucky", "seed": 1, "region": "Southeast"},
+        {"name": "Michigan", "seed": 1, "region": "West"},
+        {"name": "Kansas", "seed": 2, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 1, 1, 2],
+      "count_1_seeds": 3,
+      "champion": "North Carolina",
+      "champion_seed": 1
+    },
+    {
+      "year": 1994,
+      "teams": [
+        {"name": "Arkansas", "seed": 1, "region": "Midwest"},
+        {"name": "Duke", "seed": 2, "region": "Southeast"},
+        {"name": "Arizona", "seed": 2, "region": "West"},
+        {"name": "Florida", "seed": 3, "region": "East"}
+      ],
+      "sorted_seeds": [1, 2, 2, 3],
+      "count_1_seeds": 1,
+      "champion": "Arkansas",
+      "champion_seed": 1
+    },
+    {
+      "year": 1995,
+      "teams": [
+        {"name": "UCLA", "seed": 1, "region": "West"},
+        {"name": "North Carolina", "seed": 2, "region": "Southeast"},
+        {"name": "Arkansas", "seed": 2, "region": "Midwest"},
+        {"name": "Oklahoma State", "seed": 4, "region": "East"}
+      ],
+      "sorted_seeds": [1, 2, 2, 4],
+      "count_1_seeds": 1,
+      "champion": "UCLA",
+      "champion_seed": 1
+    },
+    {
+      "year": 1996,
+      "teams": [
+        {"name": "Kentucky", "seed": 1, "region": "Midwest"},
+        {"name": "UMass", "seed": 1, "region": "East"},
+        {"name": "Syracuse", "seed": 4, "region": "West"},
+        {"name": "Mississippi State", "seed": 5, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 4, 5],
+      "count_1_seeds": 2,
+      "champion": "Kentucky",
+      "champion_seed": 1,
+      "note": "UMass Final Four later vacated by NCAA"
+    },
+    {
+      "year": 1997,
+      "teams": [
+        {"name": "Kentucky", "seed": 1, "region": "West"},
+        {"name": "Minnesota", "seed": 1, "region": "Midwest"},
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Arizona", "seed": 4, "region": "Southeast"}
+      ],
+      "sorted_seeds": [1, 1, 1, 4],
+      "count_1_seeds": 3,
+      "champion": "Arizona",
+      "champion_seed": 4,
+      "note": "Minnesota Final Four later vacated by NCAA"
+    },
+    {
+      "year": 1998,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Kentucky", "seed": 2, "region": "South"},
+        {"name": "Stanford", "seed": 3, "region": "Midwest"},
+        {"name": "Utah", "seed": 3, "region": "West"}
+      ],
+      "sorted_seeds": [1, 2, 3, 3],
+      "count_1_seeds": 1,
+      "champion": "Kentucky",
+      "champion_seed": 2
+    },
+    {
+      "year": 1999,
+      "teams": [
+        {"name": "Connecticut", "seed": 1, "region": "East"},
+        {"name": "Duke", "seed": 1, "region": "South"},
+        {"name": "Michigan State", "seed": 1, "region": "Midwest"},
+        {"name": "Ohio State", "seed": 4, "region": "West"}
+      ],
+      "sorted_seeds": [1, 1, 1, 4],
+      "count_1_seeds": 3,
+      "champion": "Connecticut",
+      "champion_seed": 1
+    },
+    {
+      "year": 2000,
+      "teams": [
+        {"name": "Michigan State", "seed": 1, "region": "Midwest"},
+        {"name": "Florida", "seed": 5, "region": "East"},
+        {"name": "Wisconsin", "seed": 8, "region": "West"},
+        {"name": "North Carolina", "seed": 8, "region": "South"}
+      ],
+      "sorted_seeds": [1, 5, 8, 8],
+      "count_1_seeds": 1,
+      "champion": "Michigan State",
+      "champion_seed": 1
+    },
+    {
+      "year": 2001,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "East"},
+        {"name": "Michigan State", "seed": 1, "region": "South"},
+        {"name": "Arizona", "seed": 2, "region": "Midwest"},
+        {"name": "Maryland", "seed": 3, "region": "West"}
+      ],
+      "sorted_seeds": [1, 1, 2, 3],
+      "count_1_seeds": 2,
+      "champion": "Duke",
+      "champion_seed": 1
+    },
+    {
+      "year": 2002,
+      "teams": [
+        {"name": "Maryland", "seed": 1, "region": "East"},
+        {"name": "Kansas", "seed": 1, "region": "Midwest"},
+        {"name": "Oklahoma", "seed": 2, "region": "West"},
+        {"name": "Indiana", "seed": 5, "region": "South"}
+      ],
+      "sorted_seeds": [1, 1, 2, 5],
+      "count_1_seeds": 2,
+      "champion": "Maryland",
+      "champion_seed": 1
+    },
+    {
+      "year": 2003,
+      "teams": [
+        {"name": "Texas", "seed": 1, "region": "South"},
+        {"name": "Kansas", "seed": 2, "region": "West"},
+        {"name": "Marquette", "seed": 3, "region": "Midwest"},
+        {"name": "Syracuse", "seed": 3, "region": "East"}
+      ],
+      "sorted_seeds": [1, 2, 3, 3],
+      "count_1_seeds": 1,
+      "champion": "Syracuse",
+      "champion_seed": 3
+    },
+    {
+      "year": 2004,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "South"},
+        {"name": "Connecticut", "seed": 2, "region": "East"},
+        {"name": "Oklahoma State", "seed": 2, "region": "West"},
+        {"name": "Georgia Tech", "seed": 3, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 2, 2, 3],
+      "count_1_seeds": 1,
+      "champion": "Connecticut",
+      "champion_seed": 2
+    },
+    {
+      "year": 2005,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Illinois", "seed": 1, "region": "Midwest"},
+        {"name": "Louisville", "seed": 4, "region": "South"},
+        {"name": "Michigan State", "seed": 5, "region": "West"}
+      ],
+      "sorted_seeds": [1, 1, 4, 5],
+      "count_1_seeds": 2,
+      "champion": "North Carolina",
+      "champion_seed": 1
+    },
+    {
+      "year": 2006,
+      "teams": [
+        {"name": "UCLA", "seed": 2, "region": "West"},
+        {"name": "Florida", "seed": 3, "region": "South"},
+        {"name": "LSU", "seed": 4, "region": "East"},
+        {"name": "George Mason", "seed": 11, "region": "Midwest"}
+      ],
+      "sorted_seeds": [2, 3, 4, 11],
+      "count_1_seeds": 0,
+      "champion": "Florida",
+      "champion_seed": 3
+    },
+    {
+      "year": 2007,
+      "teams": [
+        {"name": "Florida", "seed": 1, "region": "Midwest"},
+        {"name": "Ohio State", "seed": 1, "region": "South"},
+        {"name": "UCLA", "seed": 2, "region": "West"},
+        {"name": "Georgetown", "seed": 2, "region": "East"}
+      ],
+      "sorted_seeds": [1, 1, 2, 2],
+      "count_1_seeds": 2,
+      "champion": "Florida",
+      "champion_seed": 1
+    },
+    {
+      "year": 2008,
+      "teams": [
+        {"name": "Kansas", "seed": 1, "region": "Midwest"},
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "UCLA", "seed": 1, "region": "West"},
+        {"name": "Memphis", "seed": 1, "region": "South"}
+      ],
+      "sorted_seeds": [1, 1, 1, 1],
+      "count_1_seeds": 4,
+      "champion": "Kansas",
+      "champion_seed": 1
+    },
+    {
+      "year": 2009,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Connecticut", "seed": 1, "region": "West"},
+        {"name": "Michigan State", "seed": 2, "region": "Midwest"},
+        {"name": "Villanova", "seed": 3, "region": "South"}
+      ],
+      "sorted_seeds": [1, 1, 2, 3],
+      "count_1_seeds": 2,
+      "champion": "North Carolina",
+      "champion_seed": 1
+    },
+    {
+      "year": 2010,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "South"},
+        {"name": "West Virginia", "seed": 2, "region": "East"},
+        {"name": "Butler", "seed": 5, "region": "West"},
+        {"name": "Michigan State", "seed": 5, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 2, 5, 5],
+      "count_1_seeds": 1,
+      "champion": "Duke",
+      "champion_seed": 1
+    },
+    {
+      "year": 2011,
+      "teams": [
+        {"name": "Connecticut", "seed": 3, "region": "West"},
+        {"name": "Kentucky", "seed": 4, "region": "East"},
+        {"name": "Butler", "seed": 8, "region": "Southeast"},
+        {"name": "VCU", "seed": 11, "region": "Southwest"}
+      ],
+      "sorted_seeds": [3, 4, 8, 11],
+      "count_1_seeds": 0,
+      "champion": "Connecticut",
+      "champion_seed": 3
+    },
+    {
+      "year": 2012,
+      "teams": [
+        {"name": "Kentucky", "seed": 1, "region": "South"},
+        {"name": "Kansas", "seed": 2, "region": "Midwest"},
+        {"name": "Ohio State", "seed": 2, "region": "East"},
+        {"name": "Louisville", "seed": 4, "region": "West"}
+      ],
+      "sorted_seeds": [1, 2, 2, 4],
+      "count_1_seeds": 1,
+      "champion": "Kentucky",
+      "champion_seed": 1
+    },
+    {
+      "year": 2013,
+      "teams": [
+        {"name": "Louisville", "seed": 1, "region": "Midwest"},
+        {"name": "Michigan", "seed": 4, "region": "South"},
+        {"name": "Syracuse", "seed": 4, "region": "East"},
+        {"name": "Wichita State", "seed": 9, "region": "West"}
+      ],
+      "sorted_seeds": [1, 4, 4, 9],
+      "count_1_seeds": 1,
+      "champion": "Louisville",
+      "champion_seed": 1
+    },
+    {
+      "year": 2014,
+      "teams": [
+        {"name": "Florida", "seed": 1, "region": "South"},
+        {"name": "Wisconsin", "seed": 2, "region": "West"},
+        {"name": "Connecticut", "seed": 7, "region": "East"},
+        {"name": "Kentucky", "seed": 8, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 2, 7, 8],
+      "count_1_seeds": 1,
+      "champion": "Connecticut",
+      "champion_seed": 7
+    },
+    {
+      "year": 2015,
+      "teams": [
+        {"name": "Duke", "seed": 1, "region": "South"},
+        {"name": "Kentucky", "seed": 1, "region": "Midwest"},
+        {"name": "Wisconsin", "seed": 1, "region": "West"},
+        {"name": "Michigan State", "seed": 7, "region": "East"}
+      ],
+      "sorted_seeds": [1, 1, 1, 7],
+      "count_1_seeds": 3,
+      "champion": "Duke",
+      "champion_seed": 1
+    },
+    {
+      "year": 2016,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "East"},
+        {"name": "Villanova", "seed": 2, "region": "South"},
+        {"name": "Oklahoma", "seed": 2, "region": "West"},
+        {"name": "Syracuse", "seed": 10, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 2, 2, 10],
+      "count_1_seeds": 1,
+      "champion": "Villanova",
+      "champion_seed": 2
+    },
+    {
+      "year": 2017,
+      "teams": [
+        {"name": "North Carolina", "seed": 1, "region": "South"},
+        {"name": "Gonzaga", "seed": 1, "region": "West"},
+        {"name": "Oregon", "seed": 3, "region": "Midwest"},
+        {"name": "South Carolina", "seed": 7, "region": "East"}
+      ],
+      "sorted_seeds": [1, 1, 3, 7],
+      "count_1_seeds": 2,
+      "champion": "North Carolina",
+      "champion_seed": 1
+    },
+    {
+      "year": 2018,
+      "teams": [
+        {"name": "Villanova", "seed": 1, "region": "East"},
+        {"name": "Kansas", "seed": 1, "region": "Midwest"},
+        {"name": "Michigan", "seed": 3, "region": "West"},
+        {"name": "Loyola Chicago", "seed": 11, "region": "South"}
+      ],
+      "sorted_seeds": [1, 1, 3, 11],
+      "count_1_seeds": 2,
+      "champion": "Villanova",
+      "champion_seed": 1
+    },
+    {
+      "year": 2019,
+      "teams": [
+        {"name": "Virginia", "seed": 1, "region": "South"},
+        {"name": "Michigan State", "seed": 2, "region": "East"},
+        {"name": "Texas Tech", "seed": 3, "region": "West"},
+        {"name": "Auburn", "seed": 5, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 2, 3, 5],
+      "count_1_seeds": 1,
+      "champion": "Virginia",
+      "champion_seed": 1
+    },
+    {
+      "year": 2021,
+      "teams": [
+        {"name": "Baylor", "seed": 1, "region": "South"},
+        {"name": "Gonzaga", "seed": 1, "region": "West"},
+        {"name": "Houston", "seed": 2, "region": "Midwest"},
+        {"name": "UCLA", "seed": 11, "region": "East"}
+      ],
+      "sorted_seeds": [1, 1, 2, 11],
+      "count_1_seeds": 2,
+      "champion": "Baylor",
+      "champion_seed": 1
+    },
+    {
+      "year": 2022,
+      "teams": [
+        {"name": "Kansas", "seed": 1, "region": "Midwest"},
+        {"name": "Duke", "seed": 2, "region": "West"},
+        {"name": "Villanova", "seed": 2, "region": "South"},
+        {"name": "North Carolina", "seed": 8, "region": "East"}
+      ],
+      "sorted_seeds": [1, 2, 2, 8],
+      "count_1_seeds": 1,
+      "champion": "Kansas",
+      "champion_seed": 1
+    },
+    {
+      "year": 2023,
+      "teams": [
+        {"name": "Connecticut", "seed": 4, "region": "West"},
+        {"name": "Miami", "seed": 5, "region": "South"},
+        {"name": "San Diego State", "seed": 5, "region": "East"},
+        {"name": "FAU", "seed": 9, "region": "Midwest"}
+      ],
+      "sorted_seeds": [4, 5, 5, 9],
+      "count_1_seeds": 0,
+      "champion": "Connecticut",
+      "champion_seed": 4
+    },
+    {
+      "year": 2024,
+      "teams": [
+        {"name": "Connecticut", "seed": 1, "region": "East"},
+        {"name": "Purdue", "seed": 1, "region": "Midwest"},
+        {"name": "Alabama", "seed": 4, "region": "South"},
+        {"name": "NC State", "seed": 11, "region": "West"}
+      ],
+      "sorted_seeds": [1, 1, 4, 11],
+      "count_1_seeds": 2,
+      "champion": "Connecticut",
+      "champion_seed": 1
+    },
+    {
+      "year": 2025,
+      "teams": [
+        {"name": "Auburn", "seed": 1, "region": "South"},
+        {"name": "Duke", "seed": 1, "region": "East"},
+        {"name": "Florida", "seed": 1, "region": "West"},
+        {"name": "Houston", "seed": 1, "region": "Midwest"}
+      ],
+      "sorted_seeds": [1, 1, 1, 1],
+      "count_1_seeds": 4,
+      "champion": "Florida",
+      "champion_seed": 1
+    }
+  ],
+  "distribution_of_1_seeds_in_final_four": {
+    "4_one_seeds": {
+      "count": 2,
+      "percentage": 5.0,
+      "years": [2008, 2025]
+    },
+    "3_one_seeds": {
+      "count": 4,
+      "percentage": 10.0,
+      "years": [1993, 1997, 1999, 2015]
+    },
+    "2_one_seeds": {
+      "count": 15,
+      "percentage": 37.5,
+      "years": [1985, 1986, 1987, 1988, 1991, 1996, 2001, 2002, 2005, 2007, 2009, 2017, 2018, 2021, 2024]
+    },
+    "1_one_seed": {
+      "count": 16,
+      "percentage": 40.0,
+      "years": [1989, 1990, 1992, 1994, 1995, 1998, 2000, 2003, 2004, 2010, 2012, 2013, 2014, 2016, 2019, 2022]
+    },
+    "0_one_seeds": {
+      "count": 3,
+      "percentage": 7.5,
+      "years": [2006, 2011, 2023]
+    }
+  },
+  "summary_statistics": {
+    "total_final_four_slots": 160,
+    "total_1_seeds_in_final_fours": 63,
+    "pct_1_seeds": 39.375,
+    "avg_1_seeds_per_final_four": 1.575
+  }
+}

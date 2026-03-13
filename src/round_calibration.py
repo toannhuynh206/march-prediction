@@ -303,29 +303,42 @@ class TournamentShape:
 TOURNAMENT_SHAPES_2026 = (
     TournamentShape(
         name="chalk",
-        weight=0.35,
+        weight=0.10,
         r64_upsets=7, r32_upsets=1, s16_upsets=0, e8_upsets=0, f4_upsets=0,
         description=(
-            "2025-like: top seeds dominate. 7 R64 upsets (mostly 8v9 and 5v12) "
-            "but talent wins from R32 onward. All 1-seeds in Final Four."
+            "2025/2008-like: all four 1-seeds in Final Four. Only happened 2/40 "
+            "tournaments (5%) since 1985. Weight set at 10% — slightly above "
+            "historical rate to account for NIL talent concentration trend."
+        ),
+    ),
+    TournamentShape(
+        name="mild",
+        weight=0.30,
+        r64_upsets=8, r32_upsets=2, s16_upsets=0, e8_upsets=1, f4_upsets=0,
+        description=(
+            "Slightly chalky: mostly favorites advance but one 3-5 seed sneaks "
+            "into the Elite Eight. Three 1-seeds in Final Four (most common "
+            "outcome historically). 2022-adjacent shape."
         ),
     ),
     TournamentShape(
         name="moderate",
-        weight=0.45,
-        r64_upsets=9, r32_upsets=2, s16_upsets=1, e8_upsets=1, f4_upsets=0,
+        weight=0.35,
+        r64_upsets=9, r32_upsets=3, s16_upsets=1, e8_upsets=1, f4_upsets=0,
         description=(
             "2024-like: chaotic R64 (9 upsets) with a couple Cinderellas surviving "
-            "to S16/E8, but top 2 seeds dominate Final Four. Most likely shape."
+            "to S16/E8. Two 1-seeds in Final Four — the modal historical outcome. "
+            "Most likely shape."
         ),
     ),
     TournamentShape(
         name="chaos",
-        weight=0.20,
+        weight=0.25,
         r64_upsets=10, r32_upsets=4, s16_upsets=2, e8_upsets=1, f4_upsets=1,
         description=(
-            "2021/2022-like: correlated upset chains. Multiple Cinderella runs. "
-            "A double-digit seed reaches Final Four. ~18 total upsets."
+            "2021/2023-like: correlated upset chains. Multiple Cinderella runs. "
+            "A double-digit seed reaches Final Four. 0-1 one-seeds in FF. "
+            "~18 total upsets. Happens ~25% of the time historically."
         ),
     ),
 )

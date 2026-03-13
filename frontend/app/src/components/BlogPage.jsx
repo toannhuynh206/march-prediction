@@ -958,8 +958,8 @@ Important: later-round probabilities are CONDITIONAL.
             </h3>
             <Prose>
               <p>
-                A 1-seed has won the championship <strong style={{ color: 'var(--text-primary)' }}>22 out of 35 tournaments</strong> — a
-                62.8% rate. This is our most important calibration target. If our simulation
+                A 1-seed has won the championship <strong style={{ color: 'var(--text-primary)' }}>25 out of 40 tournaments</strong> — a
+                62.5% rate. This is our most important calibration target. If our simulation
                 produces 1-seed champions at 45% or 80%, we know we're off.
               </p>
             </Prose>

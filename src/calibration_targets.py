@@ -80,14 +80,14 @@ FINAL_FOUR_SEED_RATES = {
 # ---------------------------------------------------------------------------
 
 CHAMPION_SEED_RATES = {
-    1: 0.628,  # 22/35 — nearly 2 in 3
-    2: 0.171,  # 6/35
-    3: 0.086,  # 3/35
-    4: 0.029,  # 1/35
+    1: 0.625,  # 25/40 — nearly 2 in 3
+    2: 0.150,  # 6/40
+    3: 0.100,  # 4/40 (Michigan '89, Syracuse '03, Florida '06, UConn '11)
+    4: 0.050,  # 2/40 (Arizona '97, UConn '23)
     5: 0.000,  # never happened
-    6: 0.029,  # 1/35 (Villanova 1985 as a 8-seed proxy, debatable)
-    7: 0.029,  # 1/35 (UConn 2014)
-    8: 0.029,  # 1/35 (Villanova 1985)
+    6: 0.025,  # 1/40 (Kansas '88)
+    7: 0.025,  # 1/40 (UConn '14)
+    8: 0.025,  # 1/40 (Villanova '85)
 }
 
 

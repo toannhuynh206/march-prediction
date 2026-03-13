@@ -7,8 +7,8 @@ Computes P_final for every matchup by blending:
 - P_matchup (tempo/size differentials)
 - P_factors (sentiment, field strength gap)
 
-Uses the CTO-locked formula:
-  P_final = sigmoid(0.55*logit(P_market) + 0.25*logit(P_stats) + 0.12*logit(P_matchup) + 0.08*logit(P_factors))
+Uses spread-adaptive blending (weights vary by spread magnitude):
+  P_final = sigmoid(w_m*logit(P_market) + w_s*logit(P_stats) + w_x*logit(P_matchup) + w_f*logit(P_factors))
 """
 
 import sqlite3
@@ -22,6 +22,7 @@ from math_primitives import (
     log_odds_blend,
     get_spread_adaptive_tier,
     SIGMA_SPREAD,
+    K_DEFAULT,
 )
 from database import get_connection, DB_PATH
 
@@ -94,9 +95,9 @@ def compute_p_stats(adj_em_a: float, adj_em_b: float) -> float:
 
     Uses the power index logistic model. AdjEM difference maps to
     win probability via P = 1 / (1 + 10^((EM_B - EM_A) / k)).
-    k=15 is default, calibrate later.
+    k is calibrated via grid search (K_DEFAULT=22.0, Brier=0.191).
     """
-    return power_index_prob(adj_em_a, adj_em_b, k=15.0)
+    return power_index_prob(adj_em_a, adj_em_b, k=K_DEFAULT)
 
 
 def compute_p_matchup(team_a_stats: dict, team_b_stats: dict) -> float:

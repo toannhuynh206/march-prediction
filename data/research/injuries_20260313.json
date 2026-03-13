@@ -1,0 +1,316 @@
+{
+  "date": "2026-03-13",
+  "last_updated": "2026-03-13T18:00:00Z",
+  "notes": "Compiled from ESPN, CBS Sports, Yahoo Sports, SI, Covers.com, RotoWire, 247Sports, team beat writers, conference tournament availability reports. Conference tournaments in progress: ACC semifinals (Mar 13), Big 12 semifinals (Mar 13), SEC quarterfinals (Mar 13), Big Ten quarterfinals (Mar 13). Selection Sunday is March 15.",
+  "changes_since_march_12": [
+    "Clemson's Carter Welling confirmed TORN ACL — suffered in ACC Tournament R2 win over Wake Forest (March 11). MRI confirmed March 12. Season-ending. NEW ENTRY.",
+    "Texas Tech's Christian Anderson strained muscle slipping on Big 12's new glass floor during 75-53 loss to Iowa State (March 12). Grabbed groin area. Says he's 'feeling good' afterward. Status TBD for NCAA Tournament. NEW ENTRY.",
+    "Kentucky's Kam Williams DOWNGRADED to OUT for Florida quarterfinal (March 13). Foot was 'too sore' after practice — could not finish practice day before game. Played 17 min vs LSU on March 11 but setback. Mark Pope listing him OUT alongside Jaland Lowe and Jayden Quaintance.",
+    "Kentucky's Jayden Quaintance confirmed OUT for SEC Tournament — right knee injury since Jan 7. Swelling 'a little bit under control,' completed strength testing. Earliest possible return: NCAA Tournament second weekend (if Kentucky advances). NEW ENTRY.",
+    "Tennessee's Nate Ament confirmed STARTING vs Vanderbilt in SEC Tournament quarterfinal (March 13, 3:30 PM). Ankle held up in Auburn game (27 pts, 32 min). Vanderbilt 'bracing' for Ament. Status upgraded from QUESTIONABLE to PROBABLE.",
+    "Arkansas' Darius Acuff Jr. confirmed playing in SEC Tournament quarterfinal vs Oklahoma (March 13, 9:30 PM). No new reports of ankle issues. Status remains PROBABLE.",
+    "Duke's Patrick Ngongba II and Caleb Foster BOTH arrived at ACC Tournament on knee scooters — optics concerning. Ngongba confirmed playing in NO ACC Tournament games. Duke using only 7 players in tournament rotation. Scheyer maintaining NCAA Tournament return plan for Ngongba.",
+    "Gonzaga's Braden Huff — Mark Few confirms timeline tracking toward 8+ weeks (injury Jan 15). Still no practice clearance. Was walking/jogging/shooting at WCC Tournament but not game-ready. Selection Sunday March 15, R1 starts March 19-20. Extremely tight. No change in DOUBTFUL status.",
+    "Louisville's Mikel Brown Jr. — Louisville eliminated from ACC Tournament (lost 78-73 to Miami, March 12). Brown did NOT play. Still targeting NCAA Tournament return. No new update on back progression.",
+    "SMU — eliminated from ACC Tournament. Edwards still did not play. SMU's bubble status in severe jeopardy after 4-game losing streak. Tournament fate now in committee's hands."
+  ],
+  "injuries": [
+    {
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "injury_type": "Right foot fracture (surgery March 9)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "No change. Surgery completed March 9. Arrived at ACC Tournament on knee scooter with Ngongba. Earliest return: Final Four. Cayden Boozer handling PG duties. Duke used only 7 players in ACC Tournament games."
+    },
+    {
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "injury_type": "Right foot soreness",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: Arrived at ACC Tournament on knee scooter — raised concerns about severity. Had reportedly practiced day before FSU game, making knee scooter appearance contradictory. Scheyer maintaining NCAA Tournament R1 return plan but optics are concerning. Duke faces Clemson in ACC semifinal (March 13) without him. 6-11 sophomore, 10.7 PPG, 6.0 RPG, 32 blocks."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Caleb Wilson",
+      "injury_type": "Broken right thumb (surgery completed)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "No change. Season-ending. UNC lost to Clemson 80-79 in ACC Tournament quarterfinals (March 12). Leading scorer (19.8 PPG) and rebounder (9.4 RPG) out for season."
+    },
+    {
+      "team": "Michigan",
+      "player": "L.J. Cason",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending. Michigan (29-2) core intact."
+    },
+    {
+      "team": "Arizona",
+      "player": "Koa Peat",
+      "injury_type": "Lower leg muscle strain (recovered)",
+      "status": "CLEARED",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-13",
+      "notes": "No change. Fully recovered. Arizona beat UCF 81-59 in Big 12 Tournament quarterfinals (March 12). Peat playing regularly."
+    },
+    {
+      "team": "Arizona",
+      "player": "Dwayne Aristode",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Has not played since Feb 9. Over a month out with undisclosed issue."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Braden Huff",
+      "injury_type": "Left knee injury",
+      "status": "DOUBTFUL",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: Mark Few confirms timeline tracking toward 8+ weeks (injured Jan 15). Was walking, jogging, shooting at WCC Tournament but still no practice clearance and not game-ready. Gonzaga (30-3) awaits seeding on Selection Sunday March 15. NCAA R1 starts March 19-20 — that's 9 weeks post-injury. Still needs full practice before game action. 17.8 PPG, 5.6 RPG before injury."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Jalen Warley",
+      "injury_type": "Quad contusion",
+      "status": "CLEARED",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Fully recovered. Scored 24 pts in WCC Tournament. Stepped into starting PF role in Huff's absence."
+    },
+    {
+      "team": "Tennessee",
+      "player": "Nate Ament",
+      "injury_type": "High ankle sprain + knee tweak (right leg)",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-13",
+      "notes": "UPGRADE: Status changed from QUESTIONABLE to PROBABLE. Confirmed STARTING vs No. 22 Vanderbilt in SEC Tournament quarterfinal (March 13, 3:30 PM). Ankle held up in Auburn game: 27 pts, 8 reb, 4 ast, 3 blk in 32 min. Vanderbilt reportedly 'bracing' for Ament. Still wearing knee brace. High ankle sprains can linger but performance suggests he's functional. Monitor post-game."
+    },
+    {
+      "team": "Arkansas",
+      "player": "Darius Acuff Jr.",
+      "injury_type": "Ankle (nagging, walking boot between games)",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-13",
+      "notes": "No significant change. Confirmed playing in SEC Tournament quarterfinal vs Oklahoma (March 13, 9:30 PM). No new reports of ankle flare-up. SEC POY: 22.2 PPG, 6.4 AST. Monitor post-game."
+    },
+    {
+      "team": "BYU",
+      "player": "Richie Saunders",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending. BYU lost to Houston 73-66 in Big 12 Tournament quarterfinals (March 12)."
+    },
+    {
+      "team": "BYU",
+      "player": "Dawson Baker",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Nate Pickens",
+      "injury_type": "Knee injury",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "KJ Perry",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Brody Kozlowski",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Xavion Staton",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "JT Toppin",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending. Texas Tech eliminated from Big 12 Tournament (lost 75-53 to Iowa State, March 12)."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "Christian Anderson",
+      "injury_type": "Muscle strain (groin area, slipped on glass floor)",
+      "status": "QUESTIONABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-13",
+      "notes": "NEW ENTRY. Strained muscle slipping on Big 12's new LED glass floor during 75-53 loss to Iowa State (March 12). His foot slipped near the free throw line on an inbounds pass with 8.5 min remaining. Grabbed groin area. Said afterward: 'I'm feeling good. The floor is a bit slippery, I just kind of misstepped.' Texas Tech eliminated from Big 12 Tournament. Monitor for NCAA Tournament availability."
+    },
+    {
+      "team": "Clemson",
+      "player": "Carter Welling",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "NEW ENTRY. Suffered torn ACL during ACC Tournament R2 win over Wake Forest (March 11). MRI confirmed March 12. 6-11, 240 lb junior center attempted to drive late in first half, collapsed to court. Was helped off, later seen with brace and crutches. Averaged 10.2 PPG, 5.4 RPG. Season-ending. Clemson (5-seed) beat UNC 80-79 without him and faces Duke in ACC semifinal March 13. Freshmen expected to step into larger roles. Clemson headed to NCAA Tournament but ceiling significantly lowered."
+    },
+    {
+      "team": "Villanova",
+      "player": "Matthew Hodge",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "USC",
+      "player": "Chad Baker-Mazara",
+      "injury_type": "Dismissed from program",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Permanent. Leading scorer (18.5 PPG). Not injury-related."
+    },
+    {
+      "team": "USC",
+      "player": "Rodney Rice",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-12",
+      "notes": "No change."
+    },
+    {
+      "team": "Louisville",
+      "player": "Mikel Brown Jr.",
+      "injury_type": "Lower back injury (chronic)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: Louisville eliminated from ACC Tournament (lost 78-73 to Miami, March 12). Brown did NOT play. Still targeting NCAA Tournament return. HC Kelsey said 'really close' before tournament. Brown: 'Absolutely' expects to play in NCAA Tournament. 18.2 PPG, 4.7 APG in 21 games. Has missed 10+ games. No new medical update on back progression. Louisville's NCAA Tournament seeding and Brown's return are the key variables."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Jaland Lowe",
+      "injury_type": "Shoulder injury (surgery)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Season-ending. Listed OUT on Kentucky injury report for Florida game."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Kam Williams",
+      "injury_type": "Broken foot (surgery Jan 21)",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-13",
+      "notes": "DOWNGRADE: Status changed from PROBABLE to OUT. Played 17 min vs LSU (March 11) in SEC Tournament R1 return after missing 12 games. But foot was 'too sore' the day before Florida quarterfinal — could not finish practice. Listed OUT by Mark Pope for March 13 quarterfinal vs Florida alongside Lowe and Quaintance. Setback after initial return. Williams himself said: 'I was trying to play Saturday (vs Florida) but it was too sore the day before that, I didn't finish practice.' NCAA Tournament availability now uncertain."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Jayden Quaintance",
+      "injury_type": "Right knee injury",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-13",
+      "notes": "NEW ENTRY. Has not played since Jan 7 due to right knee injury. Confirmed OUT for entire SEC Tournament. Mark Pope: swelling 'a little bit under control,' completed strength testing. Earliest possible return: NCAA Tournament second weekend (if Kentucky advances). Star freshman forward and projected lottery pick. Kentucky playing without Lowe, Williams (for Florida game), and Quaintance."
+    },
+    {
+      "team": "SMU",
+      "player": "B.J. Edwards",
+      "injury_type": "Ankle injury",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: SMU eliminated from ACC Tournament. Edwards did not play in any ACC Tournament games. Has missed 5+ straight games since Feb 25 ankle injury vs Cal. Without him, SMU went on 4+ game losing streak. Scoring dropped from 86.7 to 72.8 PPG. SMU's NCAA Tournament bubble status now in severe jeopardy. If SMU makes the field, Edwards was expected back for NCAA Tournament per coach Enfield."
+    },
+    {
+      "team": "Saint Louis",
+      "player": "Robbie Avila",
+      "injury_type": "Plantar fasciitis (chronic ankle issues)",
+      "status": "QUESTIONABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-12",
+      "notes": "No change. Playing through it but visibly limited. 12.6 PPG, 4.1 APG. A-10 Tournament in progress."
+    },
+    {
+      "team": "Illinois",
+      "player": "Andrej Stojakovic",
+      "injury_type": "Flu / illness + prior high ankle sprain",
+      "status": "PROBABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: Illinois (No. 4 seed) plays Big Ten Tournament quarterfinal Friday March 13. Had triple bye for recovery. Lost 10 lbs from flu. Also had high ankle sprain earlier in season (recovered). Both Stojakovic and Boswell back in rotation, giving Illinois more depth. Monitor conditioning."
+    },
+    {
+      "team": "Illinois",
+      "player": "Keaton Wagler",
+      "injury_type": "Back stiffness / left shoulder injury",
+      "status": "PROBABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-13",
+      "notes": "No significant change. Triple bye provided rest. Playing in Big Ten Tournament quarterfinal March 13."
+    },
+    {
+      "team": "Illinois",
+      "player": "Kylan Boswell",
+      "injury_type": "Fractured hand (recovered) / undisclosed lingering",
+      "status": "PROBABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-13",
+      "notes": "UPDATE: Boswell previously missed 7 games with fractured hand earlier in season but returned. Health questioned heading into postseason with vague reports, but Illinois says 'all systems go' for Boswell. Back in rotation for Big Ten Tournament. Upgraded from QUESTIONABLE to PROBABLE."
+    },
+    {
+      "team": "UCF",
+      "player": "Jeremy Foumena",
+      "injury_type": "Ankle injury",
+      "status": "QUESTIONABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-13",
+      "notes": "No significant change. UCF eliminated from Big 12 Tournament (lost 81-59 to Arizona, March 12). Foumena's status for NCAA Tournament (if UCF makes field) remains game-time decision."
+    },
+    {
+      "team": "Florida",
+      "player": "Thomas Haugh",
+      "injury_type": "Undisclosed",
+      "status": "PROBABLE",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-13",
+      "notes": "Listed PROBABLE on injury report for SEC Tournament quarterfinal vs Kentucky (March 13). Rest of Florida roster fully healthy. No. 1 seed, SEC regular season champion."
+    }
+  ]
+}

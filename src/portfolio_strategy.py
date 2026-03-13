@@ -6,9 +6,9 @@ A 12-over-5 upset pick cascades into completely different R32/S16/E8
 matchups that no public bracket explores.
 
 Two clusters:
-  Cluster A (chalk, ~75%): Agree on ~28-30/32 R64 games. Survive Day 1.
+  Cluster A (baseline, 60%): Agree on ~28-30/32 R64 games. Survive Day 1.
     Later-round variation comes from temperature softening.
-  Cluster B (gamble, ~25%): Deliberately pick 2-4 R64 upsets in coin-flip
+  Cluster B (gamble, 40%): Deliberately pick 2-4 R64 upsets in coin-flip
     games. These upsets structurally generate unique later-round paths.
     Brackets that survive Day 1 are disproportionately valuable.
 

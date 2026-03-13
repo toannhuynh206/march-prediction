@@ -1,0 +1,1093 @@
+{
+  "scrape_date": "2026-03-13",
+  "data_as_of": "2026-03-13",
+  "notes": "Odds compiled from DraftKings, FanDuel, BetMGM, Caesars, VegasInsider, Covers, OddShark. Conference tournaments in full swing — ACC quarterfinals completed (Duke survives FSU 80-79, Clemson upsets UNC 80-79), SEC second round completed (Auburn eliminated by Tennessee 72-62), Big Ten/Big 12/Big East quarterfinals and semifinals on March 13. Duke remains consensus #1 favorite. Projected No. 1 seeds unchanged: Duke, Michigan, Arizona, Florida. Auburn bubble burst after SEC loss — may be first 16-loss at-large if selected. Oklahoma surging onto bubble (42% forecast). Selection Sunday March 15.",
+  "last_updated": "2026-03-13T18:00:00Z",
+
+  "changes_since_march12": [
+    "Duke odds stable at +325 consensus after surviving ACC quarterfinal scare vs FSU (80-79)",
+    "Michigan stable at +335; faces Ohio State in Big Ten quarterfinals March 13",
+    "Arizona stable at +475; faces Iowa State in Big 12 semifinals March 13",
+    "Florida stable at +675-775 range; faces Kentucky in SEC quarterfinals March 13",
+    "BetMGM now showing Duke +320, Michigan +325, Arizona +475, Florida +775, Houston +1000",
+    "Caesars now showing Duke +315, Michigan +325",
+    "Auburn bubble burst — eliminated from SEC tournament by Tennessee 72-62; blew 10-point lead with 10 min left (20-0 Tennessee run); now 17-16, ESPN projects first four OUT",
+    "Oklahoma surging — beat South Carolina and Texas A&M (83-63) in SEC tournament; bubble odds up to 42% per forecast models; replaced SMU as last team in",
+    "ACC quarterfinal results: Duke 80 FSU 79, Virginia 81 NC State 74, Miami 78 Louisville 73, Clemson 80 UNC 79",
+    "SEC second round results: Kentucky 78 Missouri 72, Tennessee 72 Auburn 62, Ole Miss 76 Georgia 72, Oklahoma 83 Texas A&M 63",
+    "Big Ten third round results: Ohio State 72 Iowa 69, Wisconsin 85 Washington 82, Purdue 81 Northwestern 68, UCLA 72 Rutgers 59",
+    "Big East quarterfinal results: St. John's 85 Providence 72, Seton Hall 72 Creighton 61, UConn 93 Xavier 68, Georgetown 78 Villanova 64",
+    "Big 12 quarterfinal results: Arizona 81 UCF 59, Iowa State beat Texas Tech by 22, Houston 73 BYU 66, Kansas 78 TCU 73",
+    "New auto-bids clinched since March 12: Gonzaga (WCC), Northern Iowa (MVC), Idaho (Big Sky — first bid since 1990), High Point (Big South), Hofstra (CAA), Troy (Sun Belt), Furman (SoCon), Wright State (Horizon), Siena (MAAC), LIU (NEC), Lehigh (Patriot), McNeese State (Southland), North Dakota State (Summit), Tennessee State (OVC), Queens (ASUN)",
+    "Bubble weakest in recent memory per CBS Sports — teams with prolonged slumps getting grace because others are also losing"
+  ],
+
+  "championship_futures": [
+    {
+      "team_name": "Duke",
+      "record": "29-2",
+      "draftkings_odds": "+330",
+      "fanduel_odds": "+340",
+      "betmgm_odds": "+320",
+      "caesars_odds": "+315",
+      "consensus_implied_prob": 0.238,
+      "movement_since_march12": "stable; survived ACC quarterfinal scare vs FSU 80-79. Isaiah Evans career-high 32 pts, Cameron Boozer 23-10 double-double.",
+      "notes": "Consensus #1 favorite. 29-2 after ACC quarterfinal win. Faces Clemson in ACC semifinals March 13. Projected overall No. 1 seed. BetMGM best price at +320.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Michigan",
+      "record": "27-2",
+      "draftkings_odds": "+340",
+      "fanduel_odds": "+340",
+      "betmgm_odds": "+325",
+      "caesars_odds": "+325",
+      "consensus_implied_prob": 0.229,
+      "movement_since_march12": "stable; faces Ohio State in Big Ten quarterfinals March 13 at noon",
+      "notes": "Projected No. 1 seed. Highest ticket % (12.3%) and handle % in the nation. Big Ten tournament #1 seed.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Arizona",
+      "record": null,
+      "draftkings_odds": "+475",
+      "fanduel_odds": "+475",
+      "betmgm_odds": "+475",
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.174,
+      "movement_since_march12": "stable; routed UCF 81-59 in Big 12 quarterfinals. Faces Iowa State in semifinals March 13.",
+      "notes": "Projected No. 1 seed. 51.2% implied probability to win Big 12 tournament. Big 12 #1 seed.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Florida",
+      "record": "24-6",
+      "draftkings_odds": "+675",
+      "fanduel_odds": "+700",
+      "betmgm_odds": "+775",
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.131,
+      "movement_since_march12": "stable; faces Kentucky in SEC quarterfinals March 13. SEC #1 seed at -170 to win tournament.",
+      "notes": "Defending national champion. 10-game win streak. Projected No. 1 seed. SEC regular-season champions.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Houston",
+      "record": null,
+      "draftkings_odds": "+1000",
+      "fanduel_odds": "+1100",
+      "betmgm_odds": "+1000",
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.091,
+      "movement_since_march12": "stable; beat BYU 73-66 in Big 12 quarterfinals. Faces Kansas in semifinals March 13.",
+      "notes": "Big 12 #2 seed. 12.0% of public handle. Faces Kansas in semifinal — winner likely earns No. 2 seed.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "UConn",
+      "record": "28-3",
+      "draftkings_odds": "+1300",
+      "fanduel_odds": "+1400",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.071,
+      "movement_since_march12": "stable; demolished Xavier 93-68 in Big East quarterfinals. Faces Georgetown in semifinals March 13.",
+      "notes": "Still in No. 1 seed debate per CBS bracketology despite earlier Marquette loss. Big East tournament favorite at -115. Dan Hurley gave 'unfortunate update' per Newsweek (possible injury concern?).",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Illinois",
+      "record": "23-7",
+      "draftkings_odds": "+1600",
+      "fanduel_odds": "+1600",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.059,
+      "movement_since_march12": "stable; faces Wisconsin in Big Ten quarterfinals March 13. Line opened Illinois -8.5, settled at -7.5 with heavy sharp action on Wisconsin.",
+      "notes": "Nation's #1-rated offense. Best value bet among teams longer than +1000 per multiple analysts. Big Ten #4 seed. Sharp money moving Wisconsin line from -8.5 to -7.5.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Iowa State",
+      "record": "24-6",
+      "draftkings_odds": "+2200",
+      "fanduel_odds": "+2200",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.043,
+      "movement_since_march12": "stable; beat Texas Tech by 22 in Big 12 quarterfinals. Faces Arizona in semifinals March 13.",
+      "notes": "Big 12 #5 seed. Crushed Sun Devils in historic earlier Big 12 tournament win. Faces top-seeded Arizona.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Kansas",
+      "record": null,
+      "draftkings_odds": "+3500",
+      "fanduel_odds": "+4000",
+      "betmgm_odds": "+2000",
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.030,
+      "movement_since_march12": "stable; beat TCU 78-73 in Big 12 quarterfinals. Faces Houston in semifinals March 13.",
+      "notes": "Big 12 #3 seed. BetMGM has significantly shorter odds (+2000) than DK/FD. Blue-blood deflator applies (0.88-0.92x).",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "St. John's",
+      "record": null,
+      "draftkings_odds": "+2500",
+      "fanduel_odds": "+2500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.038,
+      "movement_since_march12": "stable; beat Providence 85-72 in Big East quarterfinals. Faces Seton Hall in semifinals March 13.",
+      "notes": "Big East #1 seed. Massive shortening from +6500 on 3/10 holds. Look destined for UConn rematch in Big East final per Yahoo Sports.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Purdue",
+      "record": null,
+      "draftkings_odds": "+4000",
+      "fanduel_odds": "+3300",
+      "betmgm_odds": "+2000",
+      "caesars_odds": "+5000",
+      "consensus_implied_prob": 0.030,
+      "movement_since_march12": "slight drift at DK (was +4000, may be drifting); Caesars at +5000. Beat Northwestern 81-68 in Big Ten third round. Faces Nebraska in quarterfinals March 13.",
+      "notes": "Big Ten #7 seed. Caesars at +5000 suggests some books are longer. BetMGM still at +2000 (shortest).",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Michigan State",
+      "record": "24-5",
+      "draftkings_odds": "+4000",
+      "fanduel_odds": "+4000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.024,
+      "movement_since_march12": "stable; faces UCLA in Big Ten quarterfinals March 13. Best longshot value per analysts.",
+      "notes": "Big Ten #3 seed. Most Quad 1 wins outside top 4 favorites.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Gonzaga",
+      "record": null,
+      "draftkings_odds": "+5500",
+      "fanduel_odds": "+5500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.018,
+      "movement_since_march12": "stable; clinched WCC tournament championship and automatic bid",
+      "notes": "Locked into NCAA tournament with automatic bid. WCC champion.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Arkansas",
+      "record": null,
+      "draftkings_odds": "+6000",
+      "fanduel_odds": "+6000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.016,
+      "movement_since_march12": "stable; faces Oklahoma in SEC quarterfinals March 13",
+      "notes": "John Calipari as head coach. SEC #3 seed. SEC tournament at +600.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Tennessee",
+      "record": null,
+      "draftkings_odds": "+7000",
+      "fanduel_odds": "+7000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.014,
+      "movement_since_march12": "stable; eliminated Auburn 72-62 in SEC second round with 20-0 run. Faces Vanderbilt in SEC quarterfinals March 13.",
+      "notes": "Nate Ament scored 27 pts vs Auburn. Ranked #25. SEC #5 seed.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Alabama",
+      "record": null,
+      "draftkings_odds": "+7500",
+      "fanduel_odds": "+7500",
+      "betmgm_odds": "+2000",
+      "caesars_odds": "+8000",
+      "consensus_implied_prob": 0.018,
+      "movement_since_march12": "stable to slight drift at FanDuel (+10000 at FD per some reports); BetMGM still at +2000. Faces Ole Miss in SEC quarterfinals March 13.",
+      "notes": "92.0 PPG (nation-leading), 35.8 3PA/game. SEC #2 seed. Volatile but explosive. Caesars at +8000.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Nebraska",
+      "record": null,
+      "draftkings_odds": "+8000",
+      "fanduel_odds": "+8000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march12": "stable; faces Purdue in Big Ten quarterfinals March 13. Big Ten #2 seed.",
+      "notes": "Emerged as contender this season (was off board preseason).",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "North Carolina",
+      "record": null,
+      "draftkings_odds": "+8000",
+      "fanduel_odds": "+8000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march12": "potential drift; lost to Clemson 80-79 in ACC quarterfinals. Blue-blood deflator applies (0.88-0.92x).",
+      "notes": "Eliminated from ACC tournament by Clemson. Rally fell short 80-79. Still likely in NCAA tournament field but seeding could drop.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Virginia",
+      "record": null,
+      "draftkings_odds": "+8500",
+      "fanduel_odds": "+8500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march12": "stable; beat NC State 81-74 in ACC quarterfinals. Faces Miami in ACC semifinals March 13.",
+      "notes": "ACC #2 seed. ACC tournament at +700.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Kentucky",
+      "record": null,
+      "draftkings_odds": "+9000",
+      "fanduel_odds": "+9000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.011,
+      "movement_since_march12": "stable; won multiple SEC tournament games for first time in years — beat LSU 87-82 (first round) and Missouri 78-72 (second round). Faces #1 Florida in SEC quarterfinals March 13.",
+      "notes": "SEC #9 seed making run. Year 2 of Mark Pope era. Blue-blood deflator applies (0.88-0.92x).",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Louisville",
+      "record": null,
+      "draftkings_odds": "+9500",
+      "fanduel_odds": "+9500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.010,
+      "movement_since_march12": "potential drift; lost to Miami 78-73 in ACC quarterfinals",
+      "notes": "Eliminated from ACC tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Vanderbilt",
+      "record": null,
+      "draftkings_odds": "+9500",
+      "fanduel_odds": "+9500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.010,
+      "movement_since_march12": "stable; SEC #4 seed. Faces Tennessee in SEC quarterfinals March 13.",
+      "notes": "SEC tournament at +1200.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Texas Tech",
+      "record": null,
+      "draftkings_odds": "+10500",
+      "fanduel_odds": "+10500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.009,
+      "movement_since_march12": "potential drift; lost to Iowa State by 22 in Big 12 quarterfinals (described as short-handed)",
+      "notes": "Eliminated from Big 12 tournament. Short-handed for quarterfinal loss.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Wisconsin",
+      "record": null,
+      "draftkings_odds": "+11250",
+      "fanduel_odds": "+11250",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.009,
+      "movement_since_march12": "stable; beat Washington 85-82 in Big Ten third round. Faces Illinois in Big Ten quarterfinals March 13.",
+      "notes": "Big Ten #5 seed. Sharp money backing Wisconsin as underdog vs Illinois (line moved from -8.5 to -7.5). 96-97% public money on Wisconsin.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "BYU",
+      "record": null,
+      "draftkings_odds": "+16500",
+      "fanduel_odds": "+16500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march12": "stable; lost to Houston 73-66 in Big 12 quarterfinals. AJ Dybantsa described as 'brilliant' and 'pesky' but not enough.",
+      "notes": "Eliminated from Big 12 tournament. AJ Dybantsa (potential #1 overall NBA pick) impressive in loss.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Saint Louis",
+      "record": null,
+      "draftkings_odds": "+15000",
+      "fanduel_odds": "+16500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Iowa",
+      "record": null,
+      "draftkings_odds": "+17500",
+      "fanduel_odds": "+17500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march12": "potential drift; lost to Ohio State 72-69 in Big Ten third round",
+      "notes": "Eliminated from Big Ten tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "North Carolina State",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march12": "potential drift; lost to Virginia 81-74 in ACC quarterfinals",
+      "notes": "Eliminated from ACC tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Texas A&M",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march12": "potential drift; blown out by Oklahoma 83-63 in SEC second round",
+      "notes": "Eliminated from SEC tournament. Blowout loss could hurt seeding.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Miami (FL)",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march12": "stable; beat Louisville 78-73 in ACC quarterfinals. Faces Virginia in ACC semifinals March 13.",
+      "notes": "ACC #3 seed advancing.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Clemson",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "possible shortening; upset UNC 80-79 in ACC quarterfinals. Faces Duke in ACC semifinals March 13.",
+      "notes": "ACC #5 seed advancing after upset of North Carolina.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Missouri",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "stable; lost to Kentucky 78-72 in SEC second round",
+      "notes": "Eliminated from SEC tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "UCLA",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "stable; beat Rutgers 72-59 in Big Ten third round. Faces Michigan State in Big Ten quarterfinals March 13.",
+      "notes": "Big Ten #6 seed advancing.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Saint Mary's",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Texas",
+      "record": null,
+      "draftkings_odds": "+25000",
+      "fanduel_odds": "+25000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "drifting; was +22500 on 3/12, now +25000. Upset loss to Ole Miss 76-66 in SEC first round eliminated them from SEC tournament. FOX projections dropped Texas. Among last four in per bracketology.",
+      "notes": "Eliminated from SEC tournament. Bubble team — among last four in per FOX Sports projections. Seeding could drop significantly.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Villanova",
+      "record": null,
+      "draftkings_odds": "+25000",
+      "fanduel_odds": "+25000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "potential drift; upset by Georgetown 78-64 in Big East quarterfinals",
+      "notes": "Eliminated from Big East tournament by #11 Georgetown.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Utah State",
+      "record": null,
+      "draftkings_odds": "+27500",
+      "fanduel_odds": "+27500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "SMU",
+      "record": null,
+      "draftkings_odds": "+27500",
+      "fanduel_odds": "+27500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march12": "potential drift; replaced by Oklahoma as last team in field per CBS bracketology",
+      "notes": "Now first team OUT per some bracketologists after Oklahoma's SEC tournament run.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "UCF",
+      "record": null,
+      "draftkings_odds": "+30000",
+      "fanduel_odds": "+30000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march12": "stable; lost to Arizona 81-59 in Big 12 quarterfinals",
+      "notes": "Eliminated from Big 12 tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "TCU",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; lost to Kansas 78-73 in Big 12 quarterfinals",
+      "notes": "Eliminated from Big 12 tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Stanford",
+      "record": null,
+      "draftkings_odds": "+35000",
+      "fanduel_odds": "+35000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Georgia",
+      "record": null,
+      "draftkings_odds": "+37500",
+      "fanduel_odds": "+37500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march12": "potential drift; lost to Ole Miss 76-72 in SEC second round",
+      "notes": "Eliminated from SEC tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Ohio State",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "possible shortening; beat Iowa 72-69 in Big Ten third round. Faces #1 Michigan in Big Ten quarterfinals March 13. Got bump in FOX projections.",
+      "notes": "Big Ten #8 seed advancing. FOX Sports gave Ohio State a bump in projections.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Seton Hall",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; beat Creighton 72-61 in Big East quarterfinals. Faces St. John's in semifinals March 13.",
+      "notes": "Big East #4 seed advancing.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Virginia Tech",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Cincinnati",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "San Diego State",
+      "record": null,
+      "draftkings_odds": "+42500",
+      "fanduel_odds": "+42500",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Indiana",
+      "record": null,
+      "draftkings_odds": "+45000",
+      "fanduel_odds": "+45000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "potential drift; FOX projections have Indiana OUT of tournament",
+      "notes": "Bubble team — win-or-go-home territory. FOX Sports projections have Indiana out.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "VCU",
+      "record": null,
+      "draftkings_odds": "+45000",
+      "fanduel_odds": "+45000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; A-10 and Mountain West games on March 13 are key bubble games to watch per CBS",
+      "notes": "Bubble team. A-10 tournament game March 13 is critical per bracketology.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Auburn",
+      "record": "17-16",
+      "draftkings_odds": "+75000",
+      "fanduel_odds": "+75000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march12": "significant drift from +50000; eliminated from SEC tournament by Tennessee 72-62 after blowing 10-point lead (20-0 Tennessee run). Now 17-16. ESPN projects first four OUT.",
+      "notes": "BUBBLE BURST. Collapsed from preseason +1800. Would be first 16-loss at-large if selected. Steven Pearl 'rant' after lead vanished. ESPN's Lunardi has them among first four OUT. Needs significant help to make field.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Creighton",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; lost to Seton Hall 72-61 in Big East quarterfinals",
+      "notes": "Eliminated from Big East tournament.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Oklahoma",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "shortening from +50000; surging on bubble after SEC tournament wins over South Carolina (86-74) and Texas A&M (83-63). Now last team IN per CBS bracketology. 42% forecast probability. 8 wins in last 10 games. Faces Arkansas in SEC quarterfinals March 13.",
+      "notes": "BUBBLE SURGE. Replaced SMU as last team in. All Quad 1 wins came in recent 8-of-10 hot streak. SEC #11 seed making deep run.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Oklahoma State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "New Mexico",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Boise State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; near bubble per KenPom rankings",
+      "notes": "Near NCAA tournament bubble teams in KenPom per SI.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "California",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; bubble team",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Colorado",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Colorado State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "High Point",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable; clinched Big South conference tournament championship and automatic bid",
+      "notes": "Locked into NCAA tournament with automatic bid. Big South champion.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Liberty",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Santa Clara",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": "Potential mid-major Cinderella candidate.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "UC Irvine",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "West Virginia",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Georgetown",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "NEW — surging after Big East upset of #3 Villanova 78-64 in quarterfinals. Faces UConn in semifinals March 13.",
+      "notes": "Big East #11 seed making surprising run. Upset Villanova.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Yale",
+      "record": "23-5",
+      "draftkings_odds": "+55000",
+      "fanduel_odds": "+55000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": "Ivy League leaders. 5 players shooting over 40% from 3PT. Cinderella candidate.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Baylor",
+      "record": null,
+      "draftkings_odds": "+60000",
+      "fanduel_odds": "+60000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "South Florida",
+      "record": null,
+      "draftkings_odds": "+60000",
+      "fanduel_odds": "+60000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march12": "stable",
+      "notes": "Potential March Madness Cinderella.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Miami (OH)",
+      "record": "30-1",
+      "draftkings_odds": "+100000",
+      "fanduel_odds": "+65000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march12": "stable at drifted levels; 30-0 regular season ended by UMass upset in MAC tournament",
+      "notes": "Likely still gets at-large bid despite MAC tournament upset loss.",
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "USC",
+      "record": null,
+      "draftkings_odds": "+70000",
+      "fanduel_odds": "+70000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march12": "stable",
+      "notes": null,
+      "date_updated": "2026-03-13"
+    },
+    {
+      "team_name": "Hofstra",
+      "record": null,
+      "draftkings_odds": "+100000",
+      "fanduel_odds": "+100000",
+      "betmgm_odds": null,
+      "caesars_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march12": "odds now posted; clinched CAA automatic bid. First tournament bid since Speedy Claxton era.",
+      "notes": "Locked into NCAA tournament. CAA champion. Speedy Claxton emotional after clinching.",
+      "date_updated": "2026-03-13"
+    }
+  ],
+
+  "conference_tournament_results_march_12_13": {
+    "ACC_quarterfinals_march_12": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "Duke", "loser": "Florida State", "score": "80-79", "seed_matchup": "#1 vs #8", "notes": "Isaiah Evans career-high 32 pts (7 threes), Cameron Boozer 23-10 double-double. Duke rallied from 8-point second-half deficit with 19-2 run."},
+        {"winner": "Virginia", "loser": "NC State", "score": "81-74", "seed_matchup": "#2 vs #7"},
+        {"winner": "Miami (FL)", "loser": "Louisville", "score": "78-73", "seed_matchup": "#3 vs #6"},
+        {"winner": "Clemson", "loser": "North Carolina", "score": "80-79", "seed_matchup": "#5 vs #4", "upset": true, "notes": "UNC rally fell short"}
+      ]
+    },
+    "ACC_semifinals_march_13": {
+      "date": "2026-03-13",
+      "matchups": [
+        {"game": "Virginia vs Miami (FL)", "time": "7:00 PM ET", "network": "ESPN/ESPN2"},
+        {"game": "Duke vs Clemson", "time": "9:30 PM ET", "network": "ESPN/ESPN2"}
+      ],
+      "notes": "Championship game March 14"
+    },
+    "SEC_second_round_march_12": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "Kentucky", "loser": "Missouri", "score": "78-72", "seed_matchup": "#9 vs #8"},
+        {"winner": "Tennessee", "loser": "Auburn", "score": "72-62", "seed_matchup": "#5 vs #12", "notes": "Tennessee scored 20 consecutive points after trailing by 10. Tahaad Pettiford 28 pts for Auburn. Nate Ament 27 for Tennessee."},
+        {"winner": "Ole Miss", "loser": "Georgia", "score": "76-72", "seed_matchup": "#15 vs #7"},
+        {"winner": "Oklahoma", "loser": "Texas A&M", "score": "83-63", "seed_matchup": "#11 vs #6", "notes": "Oklahoma blowout; now last team IN per bracketology"}
+      ]
+    },
+    "SEC_quarterfinals_march_13": {
+      "date": "2026-03-13",
+      "matchups": [
+        {"game": "#1 Florida vs #9 Kentucky", "time": "1:00 PM ET", "network": "ESPN"},
+        {"game": "#4 Vanderbilt vs #5 Tennessee", "time": "3:00 PM ET"},
+        {"game": "#2 Alabama vs #15 Ole Miss", "time": "7:00 PM ET", "network": "SEC Network"},
+        {"game": "#3 Arkansas vs #11 Oklahoma", "time": "9:00 PM ET"}
+      ],
+      "notes": "Semifinals March 14, Championship March 15"
+    },
+    "Big_Ten_third_round_march_12": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "Ohio State", "loser": "Iowa", "score": "72-69", "seed_matchup": "#8 vs #9"},
+        {"winner": "Wisconsin", "loser": "Washington", "score": "85-82", "seed_matchup": "#5 vs #12"},
+        {"winner": "Purdue", "loser": "Northwestern", "score": "81-68", "seed_matchup": "#7 vs #10"},
+        {"winner": "UCLA", "loser": "Rutgers", "score": "72-59", "seed_matchup": "#6 vs #11"}
+      ]
+    },
+    "Big_Ten_quarterfinals_march_13": {
+      "date": "2026-03-13",
+      "matchups": [
+        {"game": "#8 Ohio State vs #1 Michigan", "time": "12:00 PM ET", "network": "Big Ten Network"},
+        {"game": "#5 Wisconsin vs #4 Illinois", "time": "2:30 PM ET"},
+        {"game": "#7 Purdue vs #2 Nebraska", "time": "6:30 PM ET"},
+        {"game": "#6 UCLA vs #3 Michigan State", "time": "9:00 PM ET"}
+      ],
+      "notes": "Semifinals March 14, Championship March 15 at 3:30 PM on CBS"
+    },
+    "Big_12_quarterfinals_march_12": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "Arizona", "loser": "UCF", "score": "81-59", "seed_matchup": "#1 vs #8", "notes": "Arizona dominated"},
+        {"winner": "Iowa State", "loser": "Texas Tech", "score": null, "seed_matchup": "#5 vs #4", "notes": "Iowa State won by 22; Texas Tech was short-handed"},
+        {"winner": "Houston", "loser": "BYU", "score": "73-66", "seed_matchup": "#2 vs #7", "notes": "AJ Dybantsa 'brilliant' but BYU fell short"},
+        {"winner": "Kansas", "loser": "TCU", "score": "78-73", "seed_matchup": "#3 vs #6"}
+      ]
+    },
+    "Big_12_semifinals_march_13": {
+      "date": "2026-03-13",
+      "matchups": [
+        {"game": "#5 Iowa State vs #1 Arizona", "time": "7:00 PM ET", "network": "ESPN/ESPN2"},
+        {"game": "#2 Houston vs #3 Kansas", "time": "9:30 PM ET", "network": "ESPN/ESPN2"}
+      ],
+      "notes": "Championship game March 14"
+    },
+    "Big_East_quarterfinals_march_12": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "St. John's", "loser": "Providence", "score": "85-72", "seed_matchup": "#1 vs #9"},
+        {"winner": "Seton Hall", "loser": "Creighton", "score": "72-61", "seed_matchup": "#4 vs #5"},
+        {"winner": "UConn", "loser": "Xavier", "score": "93-68", "seed_matchup": "#2 vs #10"},
+        {"winner": "Georgetown", "loser": "Villanova", "score": "78-64", "seed_matchup": "#11 vs #3", "upset": true, "notes": "Georgetown upset Villanova as #11 seed"}
+      ]
+    },
+    "Big_East_semifinals_march_13": {
+      "date": "2026-03-13",
+      "matchups": [
+        {"game": "#1 St. John's vs #4 Seton Hall", "time": "5:30 PM ET", "network": "FOX"},
+        {"game": "#2 UConn vs #11 Georgetown", "time": "8:00 PM ET", "network": "FS1"}
+      ],
+      "notes": "Championship game March 14. Yahoo Sports says St. John's and UConn look destined for rematch."
+    },
+    "MAC_tournament": {
+      "notable": "UMass upset #20 Miami (OH) 87-83, ending 30-0 season (March 11)"
+    },
+    "automatic_bids_clinched_as_of_march_13": [
+      "Hofstra (CAA)",
+      "Gonzaga (WCC)",
+      "Northern Iowa (MVC — won 4 games in 4 days)",
+      "Idaho (Big Sky — first bid since 1990)",
+      "High Point (Big South)",
+      "Troy (Sun Belt)",
+      "Furman (SoCon)",
+      "Wright State (Horizon)",
+      "Siena (MAAC)",
+      "LIU (NEC)",
+      "Lehigh (Patriot)",
+      "McNeese State (Southland)",
+      "North Dakota State (Summit)",
+      "Tennessee State (OVC)",
+      "Queens (ASUN)"
+    ]
+  },
+
+  "projected_no1_seeds": {
+    "source": "ESPN Bracketology, Andy Katz (NCAA.com), FOX Sports (Mike DeCourcy), CBS Sports — as of March 13",
+    "seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+    "notes": "Unchanged from March 12. Duke, Michigan, Arizona have separated themselves. Florida newest addition after closing regular season in dominant fashion. UConn still in No. 1 seed debate per CBS but dropped from consensus No. 1 seed group. Conference tournament results could still reshuffle — CBS notes conference tournaments could decide top seeds.",
+    "overall_no1": "Duke (consensus)"
+  },
+
+  "public_betting_data": {
+    "source": "Multiple sportsbooks, Yahoo Sports, Covers — as of March 13",
+    "highest_ticket_pct": {"team": "Michigan", "pct": 0.123, "notes": "12.3% of all championship wagers — unchanged"},
+    "other_high_handle": [
+      {"team": "Houston", "pct": 0.120, "notes": "12.0% of handle"},
+      {"team": "Arizona", "pct": 0.109, "notes": "10.9% of handle"}
+    ],
+    "ai_simulation_win_rates": {
+      "source": "RotoWire AI projections (100 simulations)",
+      "Duke": 0.23,
+      "Michigan": 0.20,
+      "Arizona": 0.12,
+      "Florida": 0.09,
+      "Houston": 0.06,
+      "Iowa_State": 0.03
+    }
+  },
+
+  "sharp_action_update": {
+    "date": "2026-03-13",
+    "key_moves_since_march12": [
+      "Championship futures mostly stable as conference tournaments proceed — no major shifts in top 10",
+      "Auburn drifting further: +50000 to +75000 after SEC tournament elimination",
+      "Oklahoma shortening: +50000 to +40000 on SEC tournament surge",
+      "Texas drifting: +22500 to +25000 after SEC tournament first-round loss to Ole Miss",
+      "Wisconsin vs Illinois Big Ten quarterfinal: Line moved from Illinois -8.5 to -7.5 on sharp action favoring Wisconsin; 96-97% public money on Wisconsin",
+      "BetMGM Duke at +320, Caesars Duke at +315 — slightly shorter than DK/FD",
+      "Purdue at Caesars +5000 vs BetMGM +2000 — widest spread among books for any top-15 team",
+      "Dan Hurley gave 'unfortunate update' for Big East tournament per Newsweek — potential UConn injury concern to monitor"
+    ],
+    "value_plays_identified": [
+      "Illinois at +1600 — still best value among teams longer than +1000 per multiple analysts (unchanged)",
+      "Michigan State at +4000 — most Quad 1 wins outside top 4 (unchanged)",
+      "Florida at +675 — defending champ, 10-game win streak, projected No. 1 seed (unchanged)",
+      "St. John's at +2500 — Big East #1 seed, if they beat UConn for Big East title could shorten further",
+      "Oklahoma at +40000 — surging on bubble, 8 wins in 10, replaced SMU as last team in"
+    ]
+  },
+
+  "bubble_watch_march_13": {
+    "source": "ESPN Bubble Watch, CBS Bracketology, FOX Sports projections — March 13",
+    "last_four_in": ["Texas", "California", "VCU", "Oklahoma"],
+    "first_four_out": ["Auburn", "SMU", "Indiana", "Boise State"],
+    "notes": "Weakest bubble in recent memory per CBS Sports. Teams with prolonged late-season slumps getting grace because others also losing. Auburn (17-16) would be first 16-loss at-large team in history if selected. Oklahoma surging — replaced SMU as last team in after SEC tournament wins. VCU A-10 game March 13 is critical. Indiana projected OUT by FOX Sports.",
+    "key_bubble_games_march_13": [
+      "VCU in A-10 tournament — result could determine at-large status",
+      "Mountain West tournament — bubble implications for multiple teams"
+    ]
+  },
+
+  "early_round_lines": {
+    "_status": "NOT YET AVAILABLE",
+    "_note": "Selection Sunday is March 15, 2026. R64 spreads/moneylines posted after bracket announcement. First Four March 17-18, Round of 64 March 19-20.",
+    "historical_ats_trends": {
+      "12_vs_5_seeds_last_3_years": "12-seeds are 8-4 ATS",
+      "underdogs_since_2015": "122-97-2 ATS (55.7%)",
+      "most_common_upset_seeds": ["12-over-5 (~35%)", "11-over-6 (~37%)", "10-over-7 (~39%)", "9-over-8 (~49%)"]
+    }
+  },
+
+  "de_vig_methodology": {
+    "_note": "Raw implied probabilities from American odds sum to >100% due to vig. For simulation, de-vig using power method or multiplicative approach.",
+    "estimated_total_implied_prob": 1.35,
+    "estimated_vig": 0.35,
+    "recommended_de_vig": "Divide each team's implied_prob by sum of all implied_probs to normalize to 1.0"
+  },
+
+  "sources": [
+    {"name": "VegasInsider", "url": "https://www.vegasinsider.com/college-basketball/odds/futures/", "data": "Championship futures"},
+    {"name": "OddShark", "url": "https://www.oddsshark.com/ncaab/college-basketball-national-championship-odds", "data": "Championship odds"},
+    {"name": "Covers", "url": "https://www.covers.com/ncaab/march-madness/odds", "data": "Championship odds"},
+    {"name": "DraftKings Sportsbook", "url": "https://sportsbook.draftkings.com/event/men's-ncaa-tournament-2026/d02155e6-98df-4a41-7746-08dd6793eb4d", "data": "DraftKings championship futures"},
+    {"name": "FanDuel Research", "url": "https://sportsbook.fanduel.com/navigation/ncaab?tab=national-champion", "data": "FanDuel championship futures"},
+    {"name": "BetMGM", "url": "https://sports.betmgm.com/en/blog/ncaab/college-basketball-championship-odds-2023-ncaa-bm06/", "data": "BetMGM championship futures — Duke +320, Michigan +325"},
+    {"name": "Yahoo Sports", "url": "https://sports.yahoo.com/articles/march-madness-odds-mens-ncaa-145100536.html", "data": "Duke favored, Michigan, Arizona odds"},
+    {"name": "CBS Sports Bracketology", "url": "https://www.cbssports.com/college-basketball/news/bracketology-locks-2026-ncaa-tournament-field/", "data": "Bracketology locks and bubble"},
+    {"name": "CBS Sports Bracket Winners/Losers", "url": "https://www.cbssports.com/college-basketball/news/bracketology-winners-losers-duke-florida-state-bubble-uconn-no-1-seed/", "data": "Duke/FSU, UConn No. 1 seed debate"},
+    {"name": "CBS Sports Conf Tournaments", "url": "https://www.cbssports.com/college-basketball/news/march-madness-2026-college-basketball-conference-tournament-predictions-picks-odds-upsets-sleepers/", "data": "Conference tournament predictions"},
+    {"name": "CBS Sports Big Ten", "url": "https://www.cbssports.com/college-basketball/news/big-ten-tournament-2026-bracket-schedule-scores/", "data": "Big Ten tournament bracket/scores"},
+    {"name": "CBS Sports SEC", "url": "https://www.cbssports.com/college-basketball/news/sec-tournament-2026-bracket-schedule-scores/", "data": "SEC tournament bracket/scores"},
+    {"name": "CBS Sports Big East", "url": "https://www.cbssports.com/college-basketball/news/big-east-tournament-2026-bracket-schedule-scores-results/", "data": "Big East tournament bracket/scores"},
+    {"name": "CBS Sports Big 12", "url": "https://www.cbssports.com/college-basketball/news/big-12-tournament-2026-bracket-schedule-scores-results/", "data": "Big 12 tournament bracket/scores"},
+    {"name": "CBS Sports ACC", "url": "https://www.cbssports.com/college-basketball/news/acc-tournament-2026-bracket-schedule-scores-results/", "data": "ACC tournament bracket/scores"},
+    {"name": "FOX Sports Projections", "url": "https://www.foxsports.com/stories/college-basketball/2026-ncaa-tournament-projections", "data": "Ohio State bump, Texas/Indiana drops"},
+    {"name": "FOX Sports No. 1 Seeds", "url": "https://www.foxsports.com/stories/college-basketball/2026-ncaa-tournament-projections-florida", "data": "Florida locked into final No. 1 seed?"},
+    {"name": "ESPN Bubble Watch", "url": "https://www.espn.com/mens-college-basketball/story/_/id/47809690/bubble-watch-mens-ncaa-tournament-march-madness-bracket-predictions-2026", "data": "Bubble watch, Auburn first four out"},
+    {"name": "ESPN Bracketology", "url": "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions", "data": "Bracketology field"},
+    {"name": "On3 Bracketology", "url": "https://www.on3.com/news/2026-ncaa-tournament-predictions-bracketology-shifts-as-conference-tournaments-continue/", "data": "Bracketology shifts"},
+    {"name": "NCAA.com ACC", "url": "https://www.ncaa.com/news/basketball-men/article/2026-03-13/2026-acc-tournament-bracket-schedule-scores-mens-basketball", "data": "ACC tournament official bracket"},
+    {"name": "NCAA.com SEC", "url": "https://www.ncaa.com/news/basketball-men/article/2026-03-13/2026-sec-tournament-bracket-schedule-scores-mens-basketball", "data": "SEC tournament official bracket"},
+    {"name": "NCAA.com Big Ten", "url": "https://www.ncaa.com/news/basketball-men/article/2026-03-13/2026-big-ten-tournament-bracket-schedule-scores-mens-basketball", "data": "Big Ten tournament official bracket"},
+    {"name": "Duke Chronicle", "url": "https://www.dukechronicle.com/article/duke-mens-basketball-florida-state-game-recap-acc-quarterfinal-scheyer-boozer-cameron-cayden-evans-brown-sarr-20260313", "data": "Duke 80-79 FSU game recap"},
+    {"name": "SI Auburn", "url": "https://www.si.com/college/cbb-hq/sec-basketball/auburn-wasted-chance-to-prove-itself-worthy-of-ncaa-tournament-against-tennessee", "data": "Auburn bubble burst"},
+    {"name": "247Sports Auburn", "url": "https://247sports.com/college/auburn/article/auburn-basketball-sec-tournament-game-tigers-2026-tahaad-pettiford-steven-pearl-277460503/", "data": "Auburn meltdown, 20-0 Tennessee run"},
+    {"name": "Yahoo Sports Big East", "url": "https://sports.yahoo.com/mens-college-basketball/article/2026-big-east-mens-basketball-tournament-bracket-schedule-how-to-watch-st-johns-uconn-look-destined-for-rematch-042924463.html", "data": "Big East tournament, St. John's vs UConn rematch"},
+    {"name": "NBC Sports Big East", "url": "https://www.nbcsports.com/mens-college-basketball/news/how-to-watch-the-2026-big-east-mens-basketball-tournament-schedule-bracket-streaming-info-results-peacock-nbcsn", "data": "Big East streaming info"},
+    {"name": "Newsweek UConn", "url": "https://www.newsweek.com/sports/ncaa/uconns-dan-hurley-gives-unfortunate-update-for-big-east-tournament-11656051", "data": "Dan Hurley unfortunate update"},
+    {"name": "Winners and Whiners", "url": "https://winnersandwhiners.com/free-picks/college-basketball/wisconsin-badgers-vs-illinois-fighting-illini-picks-prediction-odds-and-line-movement-for-friday-march-13-2026", "data": "Wisconsin vs Illinois line movement analysis"},
+    {"name": "FOX Sports Auto Bids", "url": "https://www.foxsports.com/stories/college-basketball/2026-march-madness-ncaa-mens-basketball-tournament-automatic-bids-tracker", "data": "Auto bids tracker"},
+    {"name": "ESPN Auto Bids", "url": "https://www.espn.com/mens-college-basketball/story/_/id/47800886/mens-college-basketball-2026-champ-week-tournament-brackets-schedule-sites-bids", "data": "Champ week bids — Idaho first since 1990"},
+    {"name": "BetMGM Auto Bids", "url": "https://sports.betmgm.com/en/blog/ncaab/ncaa-tournament-automatic-bids-so-far-2026-bm06/", "data": "Auto bids tracker"},
+    {"name": "Rebel Walk", "url": "https://therebelwalk.com/2026/03/ole-miss-downs-georgia-76-72-in-sec-tournament-second-round/", "data": "Ole Miss 76-72 Georgia"},
+    {"name": "UK Athletics", "url": "https://ukathletics.com/news/2026/03/12/kentucky-battles-past-missouri-in-sec-tournament/", "data": "Kentucky wins multiple SEC tournament games"},
+    {"name": "Auburn Tigers", "url": "https://auburntigers.com/news/2026/03/12/late-run-costs-auburn-in-72-62-sec-tournament-loss-to-no-25-tennessee", "data": "Auburn SEC loss"},
+    {"name": "Sports Betting Ace", "url": "https://www.sportsbettingace.com/march-madness-2026-betting-guide-top-strategies-odds-trends-and-sleeper-picks/", "data": "Betting strategies and sleeper picks"}
+  ]
+}

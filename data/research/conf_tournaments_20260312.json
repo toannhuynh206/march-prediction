@@ -1,0 +1,538 @@
+{
+  "date_updated": "2026-03-12T21:00:00Z",
+  "tournament_year": 2026,
+  "selection_sunday": "2026-03-15",
+  "total_auto_bids_decided": 16,
+  "total_auto_bids_remaining": 16,
+  "sources": [
+    "ESPN Champ Week 2026",
+    "CBS Sports Conference Tournaments Tracker",
+    "NCAA.com Auto-Bid Tracker",
+    "FOX Sports Auto-Bid Tracker",
+    "OutKick NCAA Tournament Berth Tracker",
+    "Joe Lunardi Bracketology (ESPN)",
+    "Andy Katz Bracket Predictions (NCAA.com)",
+    "CBS Sports Bracketology",
+    "On3 Bracketology",
+    "Inside the Hall Bracketology"
+  ],
+  "completed_tournaments": [
+    {
+      "conference": "Ohio Valley (OVC)",
+      "champion": "Tennessee State",
+      "runner_up": "Morehead State",
+      "auto_bid_team": "Tennessee State",
+      "date": "2026-03-07",
+      "championship_score": "Tennessee State 93, Morehead State 67",
+      "champion_record": "23-9",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 1994"
+    },
+    {
+      "conference": "Big South",
+      "champion": "High Point",
+      "runner_up": "Winthrop",
+      "auto_bid_team": "High Point",
+      "date": "2026-03-08",
+      "championship_score": "High Point 91, Winthrop 76",
+      "champion_record": "30-4",
+      "seed_projection": "14-15",
+      "notes": "Back-to-back Big South titles; second consecutive NCAA Tournament"
+    },
+    {
+      "conference": "Missouri Valley (MVC)",
+      "champion": "Northern Iowa",
+      "runner_up": "UIC",
+      "auto_bid_team": "Northern Iowa",
+      "date": "2026-03-08",
+      "championship_score": "Northern Iowa 84, UIC 69",
+      "champion_record": "20-14",
+      "seed_projection": "14-15",
+      "notes": "First NCAA Tournament appearance since 2016"
+    },
+    {
+      "conference": "ASUN",
+      "champion": "Queens",
+      "runner_up": "Central Arkansas",
+      "auto_bid_team": "Queens",
+      "date": "2026-03-08",
+      "championship_score": "Queens 98, Central Arkansas 93 (OT)",
+      "champion_record": "21-13",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance in program history"
+    },
+    {
+      "conference": "Summit League",
+      "champion": "North Dakota State",
+      "runner_up": "North Dakota",
+      "auto_bid_team": "North Dakota State",
+      "date": "2026-03-08",
+      "championship_score": "North Dakota State 70, North Dakota 62",
+      "champion_record": "21-13",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2019"
+    },
+    {
+      "conference": "Sun Belt",
+      "champion": "Troy",
+      "runner_up": "Georgia Southern",
+      "auto_bid_team": "Troy",
+      "date": "2026-03-09",
+      "championship_score": "Troy 77, Georgia Southern 61",
+      "champion_record": "22-11",
+      "seed_projection": "14-15",
+      "notes": "Back-to-back Sun Belt titles; fourth NCAA Tournament in program history"
+    },
+    {
+      "conference": "Southern (SoCon)",
+      "champion": "Furman",
+      "runner_up": "East Tennessee State",
+      "auto_bid_team": "Furman",
+      "date": "2026-03-09",
+      "championship_score": "Furman 76, East Tennessee State 61",
+      "champion_record": "22-12",
+      "seed_projection": "13-14",
+      "notes": "First NCAA Tournament appearance since 2023; upset over No. 1 seed ETSU"
+    },
+    {
+      "conference": "Northeast (NEC)",
+      "champion": "Long Island (LIU)",
+      "runner_up": "Mercyhurst",
+      "auto_bid_team": "Long Island (LIU)",
+      "date": "2026-03-10",
+      "championship_score": "LIU vs Mercyhurst (final)",
+      "champion_record": "23-10",
+      "seed_projection": "16",
+      "notes": "LIU clinched auto-bid in semifinals because Mercyhurst is not NCAA tournament eligible"
+    },
+    {
+      "conference": "Coastal Athletic (CAA)",
+      "champion": "Hofstra",
+      "runner_up": "Monmouth",
+      "auto_bid_team": "Hofstra",
+      "date": "2026-03-10",
+      "championship_score": "Hofstra 75, Monmouth 69",
+      "champion_record": null,
+      "seed_projection": "14-15",
+      "notes": "First NCAA Tournament appearance since 2001; coach Speedy Claxton emotional postgame"
+    },
+    {
+      "conference": "Horizon League",
+      "champion": "Wright State",
+      "runner_up": "Detroit Mercy",
+      "auto_bid_team": "Wright State",
+      "date": "2026-03-10",
+      "championship_score": "Wright State 66, Detroit Mercy 63",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2022"
+    },
+    {
+      "conference": "MAAC",
+      "champion": "Siena",
+      "runner_up": "Merrimack",
+      "auto_bid_team": "Siena",
+      "date": "2026-03-10",
+      "championship_score": "Siena 64, Merrimack 54",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2010"
+    },
+    {
+      "conference": "West Coast (WCC)",
+      "champion": "Gonzaga",
+      "runner_up": "Santa Clara",
+      "auto_bid_team": "Gonzaga",
+      "date": "2026-03-10",
+      "championship_score": "Gonzaga 79, Santa Clara 68",
+      "champion_record": "29-3",
+      "seed_projection": "2-3",
+      "notes": "27th consecutive NCAA Tournament; final WCC tournament before move to Pac-12"
+    },
+    {
+      "conference": "Southland",
+      "champion": "McNeese",
+      "runner_up": "Stephen F. Austin",
+      "auto_bid_team": "McNeese",
+      "date": "2026-03-11",
+      "championship_score": "McNeese 76, Stephen F. Austin 59",
+      "champion_record": null,
+      "seed_projection": "14-15",
+      "notes": "Third straight Southland championship"
+    },
+    {
+      "conference": "Patriot League",
+      "champion": "Lehigh",
+      "runner_up": "Boston University",
+      "auto_bid_team": "Lehigh",
+      "date": "2026-03-11",
+      "championship_score": "Lehigh 74, Boston University 60",
+      "champion_record": "18-16",
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 2012"
+    },
+    {
+      "conference": "Big Sky",
+      "champion": "Idaho",
+      "runner_up": "Montana",
+      "auto_bid_team": "Idaho",
+      "date": "2026-03-11",
+      "championship_score": "Idaho 77, Montana 66",
+      "champion_record": null,
+      "seed_projection": "15-16",
+      "notes": "First NCAA Tournament appearance since 1990; stunning 36-year drought ended"
+    }
+  ],
+  "in_progress": [
+    {
+      "conference": "ACC",
+      "current_round": "Quarterfinals",
+      "remaining_games": 3,
+      "venue": "Spectrum Center, Charlotte, NC",
+      "championship_date": "2026-03-14",
+      "results_so_far": [
+        "First Round (Mar 10): No. 15 Pitt 64, No. 10 Stanford 63",
+        "Second Round (Mar 11): NC State 98, Pittsburgh 88",
+        "Second Round (Mar 11): Florida State 95, California 89",
+        "Second Round (Mar 11): Louisville 62, SMU 58",
+        "Second Round (Mar 11): Clemson 71, Wake Forest 62",
+        "Quarterfinals (Mar 12): No. 2 Virginia 81, No. 7 NC State 74",
+        "Quarterfinals (Mar 12): No. 3 Miami 78, No. 6 Louisville 73",
+        "Quarterfinals (Mar 12): No. 1 Duke vs No. 8 Florida State (7 PM ESPN)",
+        "Quarterfinals (Mar 12): No. 4 UNC vs No. 5 Clemson (9:30 PM ESPN)"
+      ],
+      "top_seed": "Duke"
+    },
+    {
+      "conference": "SEC",
+      "current_round": "Second Round",
+      "remaining_games": 5,
+      "venue": "Bridgestone Arena, Nashville, TN",
+      "championship_date": "2026-03-15",
+      "results_so_far": [
+        "First Round (Mar 11): No. 9 Kentucky 87, No. 16 LSU 82",
+        "First Round (Mar 11): No. 12 Auburn 77, No. 13 Mississippi State 61",
+        "First Round (Mar 11): No. 15 Ole Miss 76, No. 10 Texas 66",
+        "First Round (Mar 11): No. 11 Oklahoma 86, No. 14 South Carolina 74",
+        "Second Round (Mar 12): No. 9 Kentucky 78, No. 8 Missouri 72",
+        "Second Round (Mar 12): No. 5 Tennessee 72, No. 12 Auburn 62",
+        "Second Round (Mar 12): No. 7 Georgia vs No. 15 Ole Miss (7 PM SEC Network)",
+        "Second Round (Mar 12): No. 6 Texas A&M vs No. 11 Oklahoma (9:30 PM SEC Network)"
+      ],
+      "top_seed": "Florida"
+    },
+    {
+      "conference": "Big Ten",
+      "current_round": "Third Round (Round of 16 equivalent)",
+      "remaining_games": 5,
+      "venue": "United Center, Chicago, IL",
+      "championship_date": "2026-03-15",
+      "results_so_far": [
+        "Third Round (Mar 12): No. 8 Ohio State 72, No. 9 Iowa 69",
+        "Third Round (Mar 12): No. 6 Wisconsin 85, No. 11 Washington 82",
+        "Third Round (Mar 12): No. 15 Northwestern vs No. 7 Purdue (6:30 PM)",
+        "Third Round (Mar 12): No. 14 Rutgers vs No. 6 UCLA (9 PM)"
+      ],
+      "top_seed": "Michigan",
+      "notes": "Michigan opens Friday vs Ohio State in quarterfinals; 18-team format"
+    },
+    {
+      "conference": "Big 12",
+      "current_round": "Quarterfinals",
+      "remaining_games": 3,
+      "venue": "T-Mobile Center, Kansas City, MO",
+      "championship_date": "2026-03-14",
+      "results_so_far": [
+        "First Round (Mar 10): No. 13 Arizona State 83, No. 12 Baylor 79",
+        "Second Round (Mar 11): Iowa State 75, Texas Tech 53",
+        "Second Round (Mar 11): Iowa State crushed Arizona State",
+        "Quarterfinals (Mar 12): No. 1 Arizona 81, No. 8 UCF 59",
+        "Quarterfinals (Mar 12): No. 5 Iowa State 75, No. 4 Texas Tech 53",
+        "Quarterfinals (Mar 12): No. 2 Houston vs No. 10 BYU (7 PM ESPN)",
+        "Quarterfinals (Mar 12): No. 3 Kansas vs No. 6 TCU (9:30 PM ESPN)"
+      ],
+      "top_seed": "Arizona"
+    },
+    {
+      "conference": "Big East",
+      "current_round": "Quarterfinals",
+      "remaining_games": 3,
+      "venue": "Madison Square Garden, New York, NY",
+      "championship_date": "2026-03-14",
+      "results_so_far": [
+        "Quarterfinals (Mar 12): No. 1 St. John's 85, No. 9 Providence 72",
+        "Quarterfinals (Mar 12): No. 4 Seton Hall vs No. 5 Creighton (scheduled)",
+        "Quarterfinals (Mar 12): No. 2 UConn vs No. 7 Marquette (scheduled)",
+        "Quarterfinals (Mar 12): No. 3 Villanova vs No. 6 DePaul (scheduled)"
+      ],
+      "top_seed": "St. John's"
+    },
+    {
+      "conference": "Mountain West",
+      "current_round": "Quarterfinals",
+      "remaining_games": 5,
+      "venue": "Thomas & Mack Center, Las Vegas, NV",
+      "championship_date": "2026-03-14",
+      "results_so_far": [
+        "First Round (Mar 11): Wyoming 73, UNLV 70",
+        "First Round (Mar 11): Nevada 80, Air Force 45",
+        "First Round (Mar 11): Fresno State 67, Colorado State 63",
+        "First Round (Mar 11): San Jose State 84, Boise State 74"
+      ],
+      "top_seed": "Utah State"
+    },
+    {
+      "conference": "American Athletic (AAC)",
+      "current_round": "First Round",
+      "remaining_games": "TBD",
+      "venue": "Legacy Arena at BJCC, Birmingham, AL",
+      "championship_date": "2026-03-15"
+    },
+    {
+      "conference": "Atlantic 10 (A-10)",
+      "current_round": "First Round",
+      "remaining_games": "TBD",
+      "venue": "PPG Paints Arena, Pittsburgh, PA",
+      "championship_date": "2026-03-15"
+    },
+    {
+      "conference": "Conference USA (CUSA)",
+      "current_round": "Second Round",
+      "remaining_games": "TBD",
+      "venue": "Huntsville, AL",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "SWAC",
+      "current_round": "Early Rounds",
+      "remaining_games": "TBD",
+      "venue": "Gateway Center Arena, Atlanta, GA",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "MAC",
+      "current_round": "Opening Round",
+      "remaining_games": "TBD",
+      "venue": "TBD",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "Big West",
+      "current_round": "Opening Round",
+      "remaining_games": "TBD",
+      "venue": "Henderson, NV",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "WAC",
+      "current_round": "Early Rounds",
+      "remaining_games": "TBD",
+      "venue": "Las Vegas, NV",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "MEAC",
+      "current_round": "Early Rounds",
+      "remaining_games": "TBD",
+      "venue": "Norfolk, VA",
+      "championship_date": "2026-03-14"
+    },
+    {
+      "conference": "America East",
+      "current_round": "Championship Game (Mar 14)",
+      "remaining_games": 1,
+      "venue": "Campus site",
+      "championship_date": "2026-03-14",
+      "notes": "UMBC vs Vermont projected for championship"
+    },
+    {
+      "conference": "Ivy League",
+      "current_round": "Not started (Mar 14-15)",
+      "remaining_games": 3,
+      "venue": "Newman Arena at Bartels Hall, Ithaca, NY",
+      "championship_date": "2026-03-15",
+      "notes": "Four-team format: Yale, Harvard, Penn, Cornell"
+    }
+  ],
+  "bubble_watch": [
+    {
+      "team": "NC State",
+      "status": "last_four_byes",
+      "resume_notes": "Lost ACC quarterfinal to Virginia 74-81. Had strong season but tournament exit could be costly. Most projections still have them safely in as a play-in team."
+    },
+    {
+      "team": "Texas",
+      "status": "last_four_byes",
+      "resume_notes": "Lost SEC first round to Ole Miss 66-76. Entered at No. 44 in WAB. Loss hurts but weak bubble peers provide cover. Likely still in."
+    },
+    {
+      "team": "Santa Clara",
+      "status": "last_four_byes",
+      "resume_notes": "WCC runner-up to Gonzaga (lost 68-79). Strong 26-7 season. Most projections have them comfortably in the field."
+    },
+    {
+      "team": "Missouri",
+      "status": "last_four_byes",
+      "resume_notes": "Lost SEC second round to Kentucky 72-78. Bubble resume but the weak bubble field gives them a cushion."
+    },
+    {
+      "team": "UCF",
+      "status": "safely_in",
+      "resume_notes": "Won Big 12 first round games but lost to Arizona 59-81 in quarterfinals. Had passed into lock status before quarterfinal loss."
+    },
+    {
+      "team": "SMU",
+      "status": "last_four_in",
+      "resume_notes": "Lost final four regular season games. Beat Syracuse in ACC tournament first round but fell to Louisville 58-62. Quad 1 loss to Louisville not too damaging but no resume boost either. Anxiously awaiting Selection Sunday."
+    },
+    {
+      "team": "VCU",
+      "status": "last_four_in",
+      "resume_notes": "Won 13 of last 14 games including critical road win at Dayton. Early loss at Saint Louis hurt but fellow bubble teams losing has given new life. A-10 tournament still ongoing."
+    },
+    {
+      "team": "Indiana",
+      "status": "first_four_out",
+      "resume_notes": "Lost Big Ten tournament game Wednesday. Probably ends at-large hopes. Conference tournament exit likely fatal for bubble case."
+    },
+    {
+      "team": "Auburn",
+      "status": "first_four_out",
+      "resume_notes": "Beat Mississippi State 77-61 in SEC first round (not resume-enhancing). Lost to Tennessee 62-72 in second round. Needed deeper run to justify at-large bid. Dropped from Last Four In to First Four Out."
+    },
+    {
+      "team": "New Mexico",
+      "status": "first_four_out",
+      "resume_notes": "Projects as the first team out across most bracketologies. Needs a Mountain West tournament run or bid-stealer chaos."
+    },
+    {
+      "team": "Stanford",
+      "status": "first_four_out",
+      "resume_notes": "Lost ACC first round to Pitt 63-64. Early exit makes at-large case very difficult."
+    },
+    {
+      "team": "Virginia Tech",
+      "status": "first_four_out",
+      "resume_notes": "Lost ACC second round game to Wake Forest in OT. Resume not strong enough without deeper tournament run."
+    },
+    {
+      "team": "Seton Hall",
+      "status": "bubble_fringe",
+      "resume_notes": "Only 13% at-large chances in forecast composite. Ranks outside top 50 nationally in resume average. Only one Quad 1 win. Needs Big East tournament run to survive."
+    },
+    {
+      "team": "Cincinnati",
+      "status": "next_four_out",
+      "resume_notes": "Big 12 bubble team. Needs significant chaos or deep conference tournament run."
+    },
+    {
+      "team": "San Diego State",
+      "status": "next_four_out",
+      "resume_notes": "Mountain West bubble team. Would need to win MW tournament to make field."
+    },
+    {
+      "team": "Oklahoma",
+      "status": "next_four_out",
+      "resume_notes": "Beat South Carolina 86-74 in SEC first round. Lost to Texas A&M area in second round. Not enough for at-large."
+    },
+    {
+      "team": "California",
+      "status": "next_four_out",
+      "resume_notes": "Lost ACC second round game to Florida State 89-95. At-large case effectively over."
+    }
+  ],
+  "projected_field_changes": [
+    {
+      "team": "Auburn",
+      "previous_status": "last_four_in",
+      "new_status": "first_four_out",
+      "reason": "Lost SEC second round to Tennessee 62-72. Win over Mississippi State was not resume-enhancing. Dropped out of projected field."
+    },
+    {
+      "team": "Indiana",
+      "previous_status": "last_four_in",
+      "new_status": "first_four_out",
+      "reason": "Lost Big Ten tournament game. Conference tournament exit likely fatal for at-large hopes."
+    },
+    {
+      "team": "UCF",
+      "previous_status": "bubble",
+      "new_status": "safely_in",
+      "reason": "Passed into lock status after Big 12 tournament wins despite quarterfinal loss to Arizona."
+    },
+    {
+      "team": "Iowa",
+      "previous_status": "bubble",
+      "new_status": "safely_in",
+      "reason": "Won Big Ten tournament games; passed into lock status despite loss to Ohio State in third round."
+    },
+    {
+      "team": "SMU",
+      "previous_status": "safely_in",
+      "new_status": "last_four_in",
+      "reason": "Lost final four regular season games then lost to Louisville in ACC second round. Slid from near-lock to anxious bubble."
+    },
+    {
+      "team": "Ohio State",
+      "previous_status": "solidly_in",
+      "new_status": "solidly_in",
+      "reason": "Beat Iowa 72-69 in Big Ten third round. Resume bump heading into quarterfinal vs Michigan."
+    },
+    {
+      "team": "Texas",
+      "previous_status": "last_four_in",
+      "new_status": "last_four_byes",
+      "reason": "Lost to Ole Miss in SEC first round but weak bubble keeps them in field for now."
+    }
+  ],
+  "bracketology_projections": {
+    "projected_1_seeds": {
+      "consensus": ["Duke", "Michigan", "Arizona", "Florida"],
+      "lunardi_espn": {
+        "1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+        "notes": "Duke, Arizona, Michigan are locks for 1-seeds. Florida has slight edge over UConn for final 1-seed."
+      },
+      "andy_katz_ncaa": {
+        "1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+        "notes": "UConn dropped to No. 2 seed as Florida moved into No. 1 seed in latest projection (March 10)."
+      },
+      "cbs_sports": {
+        "1_seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+        "notes": "Duke is prospective No. 1 overall. Conference tournament results could shift seeding. UConn competing with Florida for 4th No. 1."
+      }
+    },
+    "projected_2_seeds": ["UConn", "Houston", "Michigan State", "St. John's"],
+    "projected_3_seeds": ["Gonzaga", "Illinois", "Alabama", "Kansas"],
+    "key_seeding_notes": [
+      "Duke (29-2) is unanimous No. 1 overall seed across all projections",
+      "Michigan clinched Big Ten regular season title; locked as No. 2 overall",
+      "Arizona won first Big 12 regular season title (16-2); No. 3 overall",
+      "Florida/UConn battle for 4th No. 1 seed; Florida currently holds it",
+      "St. John's won Big East outright; projected 2-seed",
+      "Gonzaga is a 2-3 seed depending on projection source",
+      "Conference tournament performance could still shift 1-seed race"
+    ],
+    "locks": [
+      "Duke", "Michigan", "Arizona", "Florida", "UConn", "Houston",
+      "Michigan State", "St. John's", "Illinois", "Alabama", "Kansas",
+      "Gonzaga", "Tennessee", "Purdue", "Texas A&M", "Arkansas",
+      "Iowa State", "Clemson", "Virginia", "UNC", "Miami",
+      "Nebraska", "Wisconsin", "UCLA", "Louisville", "Villanova",
+      "Texas Tech", "UCF", "Creighton", "Ohio State", "Iowa"
+    ]
+  },
+  "key_storylines_march_12": [
+    "The 2026 NCAA Tournament bubble is historically weak - struggling teams getting grace because peers are also losing",
+    "Auburn dropped from Last Four In to First Four Out after Tennessee loss",
+    "Indiana's tournament loss likely ends at-large hopes",
+    "Arizona and Iowa State cruise into Big 12 semifinals with dominant quarterfinal wins",
+    "Kentucky emerges as SEC dark horse after beating LSU and Missouri in consecutive days",
+    "Tennessee eliminated Auburn from bubble contention with 72-62 second-round win",
+    "Virginia and Miami advance in ACC; Duke and UNC play quarterfinal games tonight",
+    "St. John's handles Providence in Big East quarterfinals",
+    "Ohio State and Wisconsin win Big Ten third-round games to advance",
+    "Idaho's first NCAA Tournament bid since 1990 is the Cinderella story of Champ Week",
+    "Gonzaga's final WCC tournament ends with 27th consecutive NCAA Tournament berth",
+    "3 days until Selection Sunday (March 15) - 16 auto-bids remaining"
+  ]
+}

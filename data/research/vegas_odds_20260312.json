@@ -1,0 +1,873 @@
+{
+  "scrape_date": "2026-03-12",
+  "data_as_of": "2026-03-12",
+  "notes": "Odds compiled from DraftKings, FanDuel, BetMGM, VegasInsider, Covers, OddShark, Yahoo Sports, CBS Sports, FOX Sports, RotoWire. Conference tournaments underway — SEC first round completed March 12. ACC quarterfinals March 12. Big Ten and Big 12 tournaments ongoing. Selection Sunday March 15. Duke remains #1 favorite. Florida continues surge on 10-game win streak and is now projected as No. 1 seed. UConn dropped from No. 1 seed contention after loss at Marquette. Miami (OH) upset in MAC tournament (30-1 season ended). Hofstra clinched automatic bid.",
+  "last_updated": "2026-03-12T18:00:00Z",
+
+  "championship_futures": [
+    {
+      "team_name": "Duke",
+      "record": "28-2",
+      "draftkings_odds": "+330",
+      "fanduel_odds": "+340",
+      "betmgm_odds": "+320",
+      "consensus_implied_prob": 0.238,
+      "movement_since_march10": "shortening (-5 pts avg); was +315 consensus on 3/10, now +320 at BetMGM (best price)",
+      "notes": "Consensus #1 favorite. Won 8 straight including neutral-site win over Michigan 68-63. Projected No. 1 overall seed. ACC tournament favorite at -350. Sharp money driving line.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Michigan",
+      "record": "27-2",
+      "draftkings_odds": "+340",
+      "fanduel_odds": "+340",
+      "betmgm_odds": "+325",
+      "consensus_implied_prob": 0.229,
+      "movement_since_march10": "stable to slight drift; was +340 on 3/10, holding steady",
+      "notes": "19-1 in Big Ten play (only loss to Wisconsin). Lost neutral-site game to Duke 68-63. Highest ticket % and handle % in the nation (12.3% of all championship wagers). Projected No. 1 seed. Big Ten tournament favorite at -105.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Arizona",
+      "record": null,
+      "draftkings_odds": "+475",
+      "fanduel_odds": "+475",
+      "betmgm_odds": "+475",
+      "consensus_implied_prob": 0.174,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Held nation's #1 AP ranking from Dec 8 to Feb 16 polls. 51.2% implied probability to win Big 12 tournament. Projected No. 1 seed. AI simulations give 12% win probability.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Florida",
+      "record": "24-6",
+      "draftkings_odds": "+675",
+      "fanduel_odds": "+700",
+      "betmgm_odds": "+775",
+      "consensus_implied_prob": 0.131,
+      "movement_since_march10": "shortening; was +700 consensus on 3/10, now +675 at DK. BetMGM still at +775. Leap-frogged Houston for 4th.",
+      "notes": "Defending national champion. 15-1 in last 16 games, current 10-game win streak. SEC regular-season champions. Andy Katz projects as No. 1 seed (as of 3/10). SEC tournament favorite at -170. AI simulations give 9% win probability.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Houston",
+      "record": null,
+      "draftkings_odds": "+1000",
+      "fanduel_odds": "+1100",
+      "betmgm_odds": "+1000",
+      "consensus_implied_prob": 0.091,
+      "movement_since_march10": "slight drift; was +1100 consensus on 3/10, DK/BetMGM now at +1000 but FanDuel at +1100",
+      "notes": "Lost 3 in a row (at Iowa State, at Kansas, vs Arizona) before stabilizing. 12.0% of public handle. Big 12 tournament second choice at +200. AI simulations give 6% win probability.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "UConn",
+      "record": "27-3",
+      "draftkings_odds": "+1300",
+      "fanduel_odds": "+1400",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.071,
+      "movement_since_march10": "shortening from +1800 on 3/10; significant move to +1300-1400 range. 6th choice.",
+      "notes": "Dropped from No. 1 seed contention after loss at Marquette on Saturday. Big East tournament favorite at -115 despite being #2 seed (St. John's is #1 seed). Final Four odds: FD +420, DK +400.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Illinois",
+      "record": "23-7",
+      "draftkings_odds": "+1600",
+      "fanduel_odds": "+1600",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.059,
+      "movement_since_march10": "shortening from +1800 on 3/10 to +1600; 7th choice",
+      "notes": "Nation's #1-rated offense. Guard Keaton Wagler averaging 18.1 PPG. Potent 3-point attack with absurd length. Multiple analysts identify as best value bet among teams longer than +1000. Big Ten tournament second choice at +370.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Iowa State",
+      "record": "24-6",
+      "draftkings_odds": "+2200",
+      "fanduel_odds": "+2200",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.043,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "AI simulations give 3% win probability. Big 12 tournament third choice at +700.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Kansas",
+      "record": null,
+      "draftkings_odds": "+3500",
+      "fanduel_odds": "+4000",
+      "betmgm_odds": "+2000",
+      "consensus_implied_prob": 0.030,
+      "movement_since_march10": "mixed; was +4000 consensus on 3/10, BetMGM at +2000 but DK/FD still long. Drifting at some books.",
+      "notes": "Freshman guard Darryn Peterson strong offensive piece. Sophomore forward Flory Bidunga. 2022 champions. Big 12 tournament at +1000. Final Four: FD +1100, DK +750. Blue-blood deflator applies (0.88-0.92x).",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Purdue",
+      "record": null,
+      "draftkings_odds": "+4000",
+      "fanduel_odds": "+3300",
+      "betmgm_odds": "+2000",
+      "consensus_implied_prob": 0.030,
+      "movement_since_march10": "mixed signals; was +3300 consensus on 3/10, some books shortening, others drifting to +4000",
+      "notes": "Sharp money coming in per earlier reports. Final Four: FD +1000, DK +950. Big Ten tournament third choice at +700.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "St. John's",
+      "record": null,
+      "draftkings_odds": "+2500",
+      "fanduel_odds": "+2500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.038,
+      "movement_since_march10": "shortening from +6500 on 3/10; major move inward",
+      "notes": "Big East #1 seed. Tournament odds at +185. Final Four: FD +1500, DK +1700.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Michigan State",
+      "record": "24-5",
+      "draftkings_odds": "+4000",
+      "fanduel_odds": "+4000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.024,
+      "movement_since_march10": "shortening from +5500 on 3/10 to +4000; analysts say best longshot value on the board",
+      "notes": "Despite ill-timed losses, only dropped games to unranked programs while winning more Quad 1 games than any team outside top 4 favorites. Big Ten tournament at +700. Final Four: FD +1000, DK +1000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Gonzaga",
+      "record": null,
+      "draftkings_odds": "+5500",
+      "fanduel_odds": "+5500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.018,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Final Four: FD +1200, DK +1300.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Arkansas",
+      "record": null,
+      "draftkings_odds": "+6000",
+      "fanduel_odds": "+6000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.016,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "John Calipari as head coach. Final Four: FD +1200, DK +1100. SEC tournament at +600.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Tennessee",
+      "record": null,
+      "draftkings_odds": "+7000",
+      "fanduel_odds": "+7000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.014,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Final Four: FD +2500, DK +1600. SEC tournament at +1700.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Alabama",
+      "record": null,
+      "draftkings_odds": "+7500",
+      "fanduel_odds": "+7500",
+      "betmgm_odds": "+2000",
+      "consensus_implied_prob": 0.018,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Averaging 92.0 PPG (nation-leading) and 35.8 3PA/game. Volatile but explosive. Final Four: FD +2500, DK +1600. SEC tournament at +750.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Nebraska",
+      "record": null,
+      "draftkings_odds": "+8000",
+      "fanduel_odds": "+8000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Emerged as contender this season (was off board preseason). Final Four: FD +2500, DK +1800.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "North Carolina",
+      "record": null,
+      "draftkings_odds": "+8000",
+      "fanduel_odds": "+8000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Blue-blood deflator applies (0.88-0.92x). Final Four: FD +4500.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Virginia",
+      "record": null,
+      "draftkings_odds": "+8500",
+      "fanduel_odds": "+8500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.012,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "ACC tournament at +700. Final Four: FD +2700, DK +2200.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Kentucky",
+      "record": null,
+      "draftkings_odds": "+9000",
+      "fanduel_odds": "+9000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.011,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Year 2 of Mark Pope era. Mixed season. Playing SEC tournament first round (beat LSU 87-82 on March 12). Blue-blood deflator applies (0.88-0.92x). Final Four: FD +2700.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Louisville",
+      "record": null,
+      "draftkings_odds": "+9500",
+      "fanduel_odds": "+9500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.010,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Final Four: FD +2700, DK +2000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Vanderbilt",
+      "record": null,
+      "draftkings_odds": "+9500",
+      "fanduel_odds": "+9500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.010,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Final Four: FD +2500, DK +2200. SEC tournament at +1200.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Texas Tech",
+      "record": null,
+      "draftkings_odds": "+10500",
+      "fanduel_odds": "+10500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.009,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big 12 tournament at +2000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Wisconsin",
+      "record": null,
+      "draftkings_odds": "+11250",
+      "fanduel_odds": "+11250",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.009,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Projected as No. 6 seed. Beat Michigan in Big Ten play. Big Ten tournament at +2700. Final Four: FD +3500.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "BYU",
+      "record": null,
+      "draftkings_odds": "+16500",
+      "fanduel_odds": "+16500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Led by AJ Dybantsa (potential #1 overall pick in 2026 NBA Draft). Dark horse candidate. Projected No. 6 seed. Big 12 tournament at +15000. Final Four: FD +7000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Saint Louis",
+      "record": null,
+      "draftkings_odds": "+15000",
+      "fanduel_odds": "+16500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march10": "slight shortening at DK; was +16500 on 3/10, now +15000 at DK",
+      "notes": "+3000 to make Final Four. Final Four: FD +10000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Iowa",
+      "record": null,
+      "draftkings_odds": "+17500",
+      "fanduel_odds": "+17500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.006,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big Ten tournament at +6500. Final Four: FD +8000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "North Carolina State",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Playing Pitt in ACC tournament (March 12). Final Four: FD +10000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Texas A&M",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Miami (FL)",
+      "record": null,
+      "draftkings_odds": "+20000",
+      "fanduel_odds": "+20000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.005,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "ACC tournament at +2500. Final Four: FD +8000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Clemson",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Missouri",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "UCLA",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big Ten tournament at +5000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Saint Mary's",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Final Four: FD +10000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Texas",
+      "record": null,
+      "draftkings_odds": "+22500",
+      "fanduel_odds": "+22500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "possible drift; lost to Ole Miss 76-66 in SEC tournament first round (March 12)",
+      "notes": "SEC tournament upset loss to Ole Miss on March 12. Bubble implications.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Villanova",
+      "record": null,
+      "draftkings_odds": "+25000",
+      "fanduel_odds": "+25000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Utah State",
+      "record": null,
+      "draftkings_odds": "+27500",
+      "fanduel_odds": "+27500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "SMU",
+      "record": null,
+      "draftkings_odds": "+27500",
+      "fanduel_odds": "+27500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.004,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "UCF",
+      "record": null,
+      "draftkings_odds": "+30000",
+      "fanduel_odds": "+30000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big 12 tournament at +50000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Stanford",
+      "record": null,
+      "draftkings_odds": "+35000",
+      "fanduel_odds": "+35000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Georgia",
+      "record": null,
+      "draftkings_odds": "+37500",
+      "fanduel_odds": "+37500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.003,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Ohio State",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Got a bump in latest FOX projections.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Seton Hall",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "TCU",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big 12 tournament at +6600.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Virginia Tech",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Cincinnati",
+      "record": null,
+      "draftkings_odds": "+40000",
+      "fanduel_odds": "+40000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Big 12 tournament at +4000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "San Diego State",
+      "record": null,
+      "draftkings_odds": "+42500",
+      "fanduel_odds": "+42500",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Indiana",
+      "record": null,
+      "draftkings_odds": "+45000",
+      "fanduel_odds": "+45000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Bubble team — win-or-go-home territory per Hoops HQ.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "VCU",
+      "record": null,
+      "draftkings_odds": "+45000",
+      "fanduel_odds": "+45000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Auburn",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable at floor; preseason +1800, collapsed to +50000",
+      "notes": "Bubble team. Beat Mississippi State 77-61 in SEC tournament first round (March 12). Must win conference tournament to guarantee bid. Danger of missing tournament entirely.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Creighton",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Recently beat UConn.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Oklahoma",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Beat South Carolina 86-74 in SEC tournament first round (March 12).",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Oklahoma State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "New Mexico",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Boise State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "California",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Bubble team per Hoops HQ.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Colorado",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Colorado State",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "High Point",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Liberty",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Santa Clara",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Identified as potential mid-major Cinderella candidate.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "UC Irvine",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "West Virginia",
+      "record": null,
+      "draftkings_odds": "+50000",
+      "fanduel_odds": "+50000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Yale",
+      "record": "23-5",
+      "draftkings_odds": "+55000",
+      "fanduel_odds": "+55000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Ivy League leaders. 5 players shooting over 40% from 3PT. 4 players over 80% FT. Cinderella candidate.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Baylor",
+      "record": null,
+      "draftkings_odds": "+60000",
+      "fanduel_odds": "+60000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "South Florida",
+      "record": null,
+      "draftkings_odds": "+60000",
+      "fanduel_odds": "+60000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.002,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": "Identified as potential March Madness Cinderella.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Miami (OH)",
+      "record": "30-1",
+      "draftkings_odds": "+100000",
+      "fanduel_odds": "+65000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march10": "drifting; was +65000, DK now at +100000 after MAC tournament upset loss to UMass 87-83",
+      "notes": "Perfect 30-0 regular season ENDED by UMass upset in MAC tournament 87-83. Likely still gets at-large bid but momentum shattered. VegasInsider had at +100000.",
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "USC",
+      "record": null,
+      "draftkings_odds": "+70000",
+      "fanduel_odds": "+70000",
+      "betmgm_odds": null,
+      "consensus_implied_prob": 0.001,
+      "movement_since_march10": "stable; unchanged from 3/10",
+      "notes": null,
+      "date_updated": "2026-03-12"
+    },
+    {
+      "team_name": "Hofstra",
+      "record": null,
+      "draftkings_odds": null,
+      "fanduel_odds": null,
+      "betmgm_odds": null,
+      "consensus_implied_prob": null,
+      "movement_since_march10": "new entrant; clinched automatic bid on March 12",
+      "notes": "Clinched conference tournament championship and automatic NCAA tournament bid. First time since Speedy Claxton era (~2000). Odds not yet posted at major books.",
+      "date_updated": "2026-03-12"
+    }
+  ],
+
+  "conference_tournament_results_march_12": {
+    "SEC_first_round": {
+      "date": "2026-03-12",
+      "results": [
+        {"winner": "Kentucky", "loser": "LSU", "score": "87-82", "seed_matchup": "#9 vs #16"},
+        {"winner": "Auburn", "loser": "Mississippi State", "score": "77-61", "seed_matchup": "#12 vs #13"},
+        {"winner": "Ole Miss", "loser": "Texas", "score": "76-66", "seed_matchup": "#15 vs #10", "upset": true},
+        {"winner": "Oklahoma", "loser": "South Carolina", "score": "86-74", "seed_matchup": "#11 vs #14"}
+      ]
+    },
+    "ACC_quarterfinals": {
+      "date": "2026-03-12",
+      "notes": "NC State vs Pitt among games with NCAA implications. Four games on Wednesday slate have NCAA tournament bubble implications."
+    },
+    "MAC_tournament": {
+      "notable_upset": "UMass upset #20 Miami (OH) 87-83, ending their 30-0 season"
+    },
+    "automatic_bids_clinched": [
+      "Hofstra (conference tournament champion)"
+    ]
+  },
+
+  "projected_no1_seeds": {
+    "source": "ESPN Bracketology, Andy Katz (NCAA.com), FOX Sports, CBS Sports — as of March 12",
+    "seeds": ["Duke", "Michigan", "Arizona", "Florida"],
+    "notes": "UConn dropped from No. 1 seed contention after loss at Marquette. Florida jumped UConn as 4th No. 1 seed after winning at Kentucky.",
+    "overall_no1": "Duke (consensus)"
+  },
+
+  "public_betting_data": {
+    "source": "Multiple sportsbooks, Yahoo Sports, Covers",
+    "highest_ticket_pct": {"team": "Michigan", "pct": 0.123, "notes": "12.3% of all championship wagers"},
+    "highest_handle_pct": {"team": "Michigan", "pct": null, "notes": "Also highest handle percentage in the nation"},
+    "other_high_handle": [
+      {"team": "Houston", "pct": 0.120, "notes": "12.0% of handle"},
+      {"team": "Arizona", "pct": 0.109, "notes": "10.9% of handle"}
+    ],
+    "ai_simulation_win_rates": {
+      "source": "RotoWire AI projections (100 simulations)",
+      "Duke": 0.23,
+      "Michigan": 0.20,
+      "Arizona": 0.12,
+      "Florida": 0.09,
+      "Houston": 0.06,
+      "Iowa_State": 0.03
+    }
+  },
+
+  "sharp_action_update": {
+    "date": "2026-03-12",
+    "key_moves_since_march10": [
+      "Duke holding steady at #1 after moving from +700 to +315-330 range over past month",
+      "UConn significant shortening: +1800 on 3/10 to +1300-1400 on 3/12 despite losing No. 1 seed projection",
+      "Illinois shortening: +1800 on 3/10 to +1600 on 3/12 — sharp money continuing",
+      "St. John's major shortening: +6500 on 3/10 to +2500 on 3/12 — huge move inward",
+      "Michigan State shortening: +5500 on 3/10 to +4000 on 3/12 — analysts call best longshot value",
+      "Miami (OH) drifting after MAC tournament upset loss; DK now at +100000",
+      "Texas potentially drifting after Ole Miss upset loss in SEC tournament"
+    ],
+    "value_plays_identified": [
+      "Illinois at +1600 — best value among teams longer than +1000 per multiple analysts",
+      "Michigan State at +4000 — most Quad 1 wins outside top 4, only losses to unranked teams",
+      "Florida at +675 — defending champ, 10-game win streak, projected No. 1 seed",
+      "St. John's at +2500 — Big East #1 seed, shortened dramatically"
+    ]
+  },
+
+  "early_round_lines": {
+    "_status": "NOT YET AVAILABLE",
+    "_note": "Selection Sunday is March 15, 2026. R64 spreads/moneylines posted after bracket announcement. First Four March 17-18, Round of 64 March 19-20.",
+    "historical_ats_trends": {
+      "12_vs_5_seeds_last_3_years": "12-seeds are 8-4 ATS",
+      "underdogs_since_2015": "122-97-2 ATS (55.7%)",
+      "most_common_upset_seeds": ["12-over-5 (~35%)", "11-over-6 (~37%)", "10-over-7 (~39%)", "9-over-8 (~49%)"]
+    }
+  },
+
+  "de_vig_methodology": {
+    "_note": "Raw implied probabilities from American odds sum to >100% due to vig. For simulation, de-vig using power method or multiplicative approach.",
+    "estimated_total_implied_prob": 1.35,
+    "estimated_vig": 0.35,
+    "recommended_de_vig": "Divide each team's implied_prob by sum of all implied_probs to normalize to 1.0"
+  },
+
+  "sources": [
+    {"name": "VegasInsider", "url": "https://www.vegasinsider.com/college-basketball/odds/futures/", "data": "Championship futures"},
+    {"name": "OddShark", "url": "https://www.oddsshark.com/ncaab/college-basketball-national-championship-odds", "data": "Championship odds, Duke favorites"},
+    {"name": "Covers", "url": "https://www.covers.com/ncaab/march-madness/odds", "data": "Championship odds"},
+    {"name": "DraftKings Sportsbook", "url": "https://sportsbook.draftkings.com/event/men's-ncaa-tournament-2026/d02155e6-98df-4a41-7746-08dd6793eb4d", "data": "DraftKings championship futures"},
+    {"name": "FanDuel Research", "url": "https://www.fanduel.com/research/ncaa-tournament-odds-college-basketball-national-championship-odds-for-2025-26", "data": "FanDuel championship and Final Four odds"},
+    {"name": "BetMGM", "url": "https://sports.betmgm.com/en/blog/ncaab/college-basketball-championship-odds-2023-ncaa-bm06/", "data": "BetMGM championship futures"},
+    {"name": "Yahoo Sports", "url": "https://sports.yahoo.com/articles/march-madness-odds-mens-ncaa-145100536.html", "data": "Duke favored, Michigan, Arizona odds"},
+    {"name": "CBS Sports", "url": "https://www.cbssports.com/college-basketball/news/march-madness-2026-college-basketball-conference-tournament-predictions-picks-odds-upsets-sleepers/", "data": "Conference tournament predictions and odds"},
+    {"name": "FOX Sports", "url": "https://www.foxsports.com/stories/college-basketball/2026-mens-final-four-odds", "data": "Final Four odds, Duke/Michigan board"},
+    {"name": "RotoWire", "url": "https://www.rotowire.com/cbasketball/article/march-madness-2026-ai-projection-106270", "data": "AI bracket projections and win probabilities"},
+    {"name": "ESPN Bracketology", "url": "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions", "data": "Bracketology, bubble watch"},
+    {"name": "NCAA.com / Andy Katz", "url": "https://www.ncaa.com/news/basketball-men/article/2026-03-10/florida-grabs-no-1-seed-andy-katzs-latest-march-madness-bracket-predictions", "data": "No. 1 seed projections"},
+    {"name": "On3", "url": "https://www.on3.com/news/2026-ncaa-tournament-predictions-bracketology-shifts-with-early-bubble-results/", "data": "Bracketology shifts"},
+    {"name": "Hoops HQ", "url": "https://www.hoopshq.com/rankings/bubble-watch-mar-11-2026", "data": "Bubble watch March 11"},
+    {"name": "NCAA.com Conference Tracker", "url": "https://www.ncaa.com/news/basketball-men/article/2026-03-12/tracking-31-ncaa-mens-basketball-conference-tournaments-auto-bids-2026-march", "data": "Conference tournament auto bids"},
+    {"name": "Sports Betting Ace", "url": "https://www.sportsbettingace.com/march-madness-2026-betting-guide-top-odds-trends-sleeper-teams-and-smart-wagering-strategies/", "data": "Sleeper picks and dark horses"},
+    {"name": "William Hill", "url": "https://news.williamhill.com/basketball/march-madness-predictions-2026/", "data": "Dark horse predictions"},
+    {"name": "Maize n Brew", "url": "https://www.maizenbrew.com/michigan-mens-basketball/107920/betting-odds-ncaa-tournament-march-madness-fanduel-michigan-basketball", "data": "Michigan betting odds and handle data"}
+  ]
+}
