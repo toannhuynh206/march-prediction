@@ -15,11 +15,19 @@ const useTournamentStore = create((set) => ({
 
   // Explorer state
   explorerCursor: null,
-  explorerSort: 'score',
+  explorerSort: 'probability',
   explorerAliveOnly: false,
+  explorerChampion: '',
   setExplorerCursor: (cursor) => set({ explorerCursor: cursor }),
   setExplorerSort: (sort) => set({ explorerSort: sort, explorerCursor: null }),
   setExplorerAliveOnly: (val) => set({ explorerAliveOnly: val, explorerCursor: null }),
+  setExplorerChampion: (team) => set({ explorerChampion: team, explorerCursor: null }),
+
+  // Bracket viewer state
+  bracketSort: 'probability',
+  bracketChampion: '',
+  setBracketSort: (sort) => set({ bracketSort: sort }),
+  setBracketChampion: (team) => set({ bracketChampion: team }),
 
   // Expanded bracket in explorer
   expandedBracketId: null,

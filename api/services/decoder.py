@@ -1,159 +1,175 @@
-"""Bracket decoder: converts 63-bit integer to human-readable picks.
+"""Bracket decoder: per-region SMALLINT + 3-bit F4 → human-readable picks.
 
-Uses math_primitives for bit manipulation, team DB for name lookup.
+Decodes 4 per-region packed SMALLINTs (15 bits each) plus a 3-bit
+F4 packed value into full bracket detail with team names.
 """
 
+from __future__ import annotations
+
 import sys
-import os
+from pathlib import Path
+from typing import Any
 
-# Add src/ to path so we can import math_primitives and database
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from math_primitives import (
-    REGION_NAMES,
-    REGION_OFFSETS,
-    R64_MATCHUPS,
-    PARENT_GAMES,
-    decode_bracket,
-    get_game_bit,
-    get_regional_winner_seed,
+from config.constants import F4_SEMI_PAIRINGS, TOURNAMENT_YEAR
+from db.connection import get_engine
+from simulation.bracket_structure import (
+    GAME_TREE,
+    R64_SEED_MATCHUPS,
 )
-from database import get_connection, DB_PATH
+from simulation.encoder import get_bit
+from sqlalchemy import text
 
 
-def _load_region_teams(db_path: str = DB_PATH) -> dict[str, dict[int, dict]]:
+def load_region_teams(year: int = TOURNAMENT_YEAR) -> dict[str, dict[int, dict]]:
     """Load all teams indexed by region -> seed -> team info."""
-    conn = get_connection(db_path)
-    rows = conn.execute(
-        "SELECT name, seed, region, conference, record FROM teams ORDER BY region, seed"
-    ).fetchall()
-    conn.close()
+    engine = get_engine()
+    with engine.connect() as conn:
+        rows = conn.execute(
+            text(
+                "SELECT name, seed, region, conference, record "
+                "FROM teams WHERE tournament_year = :year "
+                "ORDER BY region, seed"
+            ),
+            {"year": year},
+        ).fetchall()
 
     by_region: dict[str, dict[int, dict]] = {}
     for r in rows:
-        region = r["region"]
+        region = r[2]
         if region not in by_region:
             by_region[region] = {}
-        by_region[region][r["seed"]] = {
-            "name": r["name"],
-            "seed": r["seed"],
+        by_region[region][r[1]] = {
+            "name": r[0],
+            "seed": r[1],
             "region": region,
-            "conference": r["conference"],
-            "record": r["record"],
+            "conference": r[3],
+            "record": r[4],
         }
     return by_region
 
 
-def count_upsets(bracket_int: int) -> int:
-    """Count total upsets in a 63-bit bracket."""
-    count = 0
-    for bit_pos in range(63):
-        if (bracket_int >> bit_pos) & 1:
-            count += 1
-    return count
+def decode_region(
+    packed: int,
+    teams: dict[int, dict],
+) -> dict[str, Any]:
+    """Decode a 15-bit packed SMALLINT into region picks.
 
-
-def decode_bracket_detail(
-    bracket_int: int,
-    region_teams: dict[str, dict[int, dict]] | None = None,
-    db_path: str = DB_PATH,
-) -> dict:
-    """Decode a 63-bit bracket integer into full pick detail.
-
-    Returns a dict with 'regions' (4 region picks) and 'final_four'.
+    Returns dict with R64, R32, S16, E8 game lists and champion info.
     """
-    if region_teams is None:
-        region_teams = _load_region_teams(db_path)
+    game_winners: dict[int, int] = {}
+    rounds_data: dict[str, list] = {"R64": [], "R32": [], "S16": [], "E8": []}
 
-    regional_bits, f4_bits = decode_bracket(bracket_int)
+    # R64: 8 games (bits 0-7)
+    for g in range(8):
+        top_seed, bot_seed = R64_SEED_MATCHUPS[g]
+        bit = get_bit(packed, g)
+        winner_seed = bot_seed if bit == 1 else top_seed
+        game_winners[g] = winner_seed
 
-    regions = {}
-    region_champions = {}
+        top_name = teams.get(top_seed, {}).get("name", f"Seed {top_seed}")
+        bot_name = teams.get(bot_seed, {}).get("name", f"Seed {bot_seed}")
+        winner_name = bot_name if bit == 1 else top_name
 
-    for region_name in REGION_NAMES:
-        rbits = regional_bits[region_name]
-        teams = region_teams.get(region_name, {})
+        rounds_data["R64"].append({
+            "game": g,
+            "seeds": [top_seed, bot_seed],
+            "teams": [top_name, bot_name],
+            "winner": winner_name,
+            "upset": bit == 1,
+        })
 
-        # Trace game winners through the bracket
-        game_winners_seed: dict[int, int] = {}
-        rounds_data: dict[str, list] = {"R64": [], "R32": [], "S16": [], "E8": []}
+    # R32 (games 8-11), S16 (12-13), E8 (14)
+    round_map = {
+        8: "R32", 9: "R32", 10: "R32", 11: "R32",
+        12: "S16", 13: "S16",
+        14: "E8",
+    }
+    for g in range(8, 15):
+        src_a, src_b = GAME_TREE[g]
+        seed_a = game_winners[src_a]
+        seed_b = game_winners[src_b]
+        bit = get_bit(packed, g)
 
-        # R64
-        for g in range(8):
-            high_seed, low_seed = R64_MATCHUPS[g]
-            bit = get_game_bit(rbits, g)
-            winner_seed = low_seed if bit == 1 else high_seed
-            game_winners_seed[g] = winner_seed
+        winner_seed = seed_b if bit == 1 else seed_a
+        game_winners[g] = winner_seed
 
-            high_team = teams.get(high_seed, {}).get("name", f"Seed {high_seed}")
-            low_team = teams.get(low_seed, {}).get("name", f"Seed {low_seed}")
-            winner_name = low_team if bit == 1 else high_team
+        name_a = teams.get(seed_a, {}).get("name", f"Seed {seed_a}")
+        name_b = teams.get(seed_b, {}).get("name", f"Seed {seed_b}")
+        winner_name = name_b if bit == 1 else name_a
 
-            rounds_data["R64"].append({
-                "game": g,
-                "seeds": [high_seed, low_seed],
-                "teams": [high_team, low_team],
-                "winner": winner_name,
-                "upset": bit == 1,
-            })
+        is_upset = winner_seed > min(seed_a, seed_b)
 
-        # R32, S16, E8
-        round_names = {8: "R32", 9: "R32", 10: "R32", 11: "R32", 12: "S16", 13: "S16", 14: "E8"}
-        for g in [8, 9, 10, 11, 12, 13, 14]:
-            parent_a, parent_b = PARENT_GAMES[g]
-            seed_a = game_winners_seed[parent_a]
-            seed_b = game_winners_seed[parent_b]
-            bit = get_game_bit(rbits, g)
+        rounds_data[round_map[g]].append({
+            "game": g,
+            "seeds": [seed_a, seed_b],
+            "teams": [name_a, name_b],
+            "winner": winner_name,
+            "upset": is_upset,
+        })
 
-            high_seed = min(seed_a, seed_b)
-            low_seed = max(seed_a, seed_b)
+    champion_seed = game_winners[14]
+    champion_name = teams.get(champion_seed, {}).get("name", f"Seed {champion_seed}")
 
-            winner_seed = low_seed if bit == 1 else high_seed
-            game_winners_seed[g] = winner_seed
-
-            high_team = teams.get(high_seed, {}).get("name", f"Seed {high_seed}")
-            low_team = teams.get(low_seed, {}).get("name", f"Seed {low_seed}")
-            winner_name = low_team if bit == 1 else high_team
-
-            rounds_data[round_names[g]].append({
-                "game": g,
-                "seeds": [high_seed, low_seed],
-                "teams": [high_team, low_team],
-                "winner": winner_name,
-                "upset": bit == 1,
-            })
-
-        champion_seed = game_winners_seed[14]
-        champion_name = teams.get(champion_seed, {}).get("name", f"Seed {champion_seed}")
-        region_champions[region_name] = {
+    return {
+        **rounds_data,
+        "champion": {
             "name": champion_name,
             "seed": champion_seed,
-            "region": region_name,
-        }
+        },
+    }
 
-        regions[region_name] = {
-            **rounds_data,
-            "champion": {
-                "name": champion_name,
-                "seed": champion_seed,
-                "region": region_name,
-            },
-        }
+
+def decode_full_bracket(
+    east_packed: int,
+    south_packed: int,
+    west_packed: int,
+    midwest_packed: int,
+    f4_packed: int,
+    region_teams: dict[str, dict[int, dict]],
+) -> dict[str, Any]:
+    """Decode a full bracket into human-readable picks.
+
+    Returns dict with 'regions' and 'final_four'.
+    """
+    region_packs = {
+        "East": east_packed,
+        "South": south_packed,
+        "West": west_packed,
+        "Midwest": midwest_packed,
+    }
+
+    regions = {}
+    region_champions: dict[str, dict] = {}
+    for region, packed in region_packs.items():
+        teams = region_teams.get(region, {})
+        decoded = decode_region(packed, teams)
+        regions[region] = decoded
+        region_champions[region] = decoded["champion"]
 
     # Final Four
-    # Semi1: South vs East (bit 60)
-    # Semi2: West vs Midwest (bit 61)
-    # Championship: Semi1 winner vs Semi2 winner (bit 62)
-    semi1_teams = [region_champions["South"]["name"], region_champions["East"]["name"]]
-    semi1_bit = (f4_bits >> 0) & 1
+    semi1_a, semi1_b = F4_SEMI_PAIRINGS[0]  # East, South
+    semi2_a, semi2_b = F4_SEMI_PAIRINGS[1]  # West, Midwest
+
+    semi1_teams = [
+        region_champions[semi1_a]["name"],
+        region_champions[semi1_b]["name"],
+    ]
+    semi1_bit = (f4_packed >> 0) & 1
     semi1_winner = semi1_teams[semi1_bit]
 
-    semi2_teams = [region_champions["West"]["name"], region_champions["Midwest"]["name"]]
-    semi2_bit = (f4_bits >> 1) & 1
+    semi2_teams = [
+        region_champions[semi2_a]["name"],
+        region_champions[semi2_b]["name"],
+    ]
+    semi2_bit = (f4_packed >> 1) & 1
     semi2_winner = semi2_teams[semi2_bit]
 
     champ_teams = [semi1_winner, semi2_winner]
-    champ_bit = (f4_bits >> 2) & 1
+    champ_bit = (f4_packed >> 2) & 1
     champ_winner = champ_teams[champ_bit]
 
     final_four = {
@@ -165,38 +181,12 @@ def decode_bracket_detail(
     return {"regions": regions, "final_four": final_four}
 
 
-def get_champion_name(
-    bracket_int: int,
-    region_teams: dict[str, dict[int, dict]] | None = None,
-    db_path: str = DB_PATH,
-) -> tuple[str, int]:
-    """Get the champion team name and seed from a bracket integer.
-
-    Returns (champion_name, champion_seed).
-    """
-    if region_teams is None:
-        region_teams = _load_region_teams(db_path)
-
-    regional_bits, f4_bits = decode_bracket(bracket_int)
-
-    # Find regional champions
-    region_champs = {}
-    for region_name in REGION_NAMES:
-        rbits = regional_bits[region_name]
-        champ_seed = get_regional_winner_seed(rbits)
-        teams = region_teams.get(region_name, {})
-        champ_name = teams.get(champ_seed, {}).get("name", f"Seed {champ_seed}")
-        region_champs[region_name] = (champ_name, champ_seed)
-
-    # Trace Final Four
-    semi1_idx = (f4_bits >> 0) & 1
-    semi1_regions = ["South", "East"]
-    semi1_winner = region_champs[semi1_regions[semi1_idx]]
-
-    semi2_idx = (f4_bits >> 1) & 1
-    semi2_regions = ["West", "Midwest"]
-    semi2_winner = region_champs[semi2_regions[semi2_idx]]
-
-    champ_idx = (f4_bits >> 2) & 1
-    finalists = [semi1_winner, semi2_winner]
-    return finalists[champ_idx]
+def get_champion_name_from_db(
+    champion_seed: int,
+    champion_region: str,
+    region_teams: dict[str, dict[int, dict]],
+) -> str:
+    """Look up champion team name from pre-computed seed and region."""
+    teams = region_teams.get(champion_region, {})
+    team = teams.get(champion_seed, {})
+    return team.get("name", f"({champion_seed}) {champion_region}")

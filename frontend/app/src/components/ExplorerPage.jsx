@@ -3,10 +3,11 @@
  * Uses cursor-based (keyset) pagination for efficient traversal.
  */
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchBrackets, fetchBracketDetail } from '../api/client'
+import { fetchBrackets, fetchBracketDetail, fetchBracket } from '../api/client'
 import useTournamentStore from '../store/tournamentStore'
+import BracketDetailView from './BracketDetailView'
 
 function BracketRow({ bracket, isExpanded, onToggle, index }) {
   const upsetColor =
@@ -45,10 +46,10 @@ function BracketRow({ bracket, isExpanded, onToggle, index }) {
           </span>
         </div>
         <span className="text-right font-mono text-sm font-bold" style={{ color: 'var(--orange)' }}>
-          {bracket.expected_score}
+          {(bracket.probability * 100).toFixed(6)}%
         </span>
         <span className="text-right font-mono text-xs hidden sm:block" style={{ color: 'var(--text-secondary)' }}>
-          {(bracket.probability * 100).toFixed(4)}%
+          w:{bracket.expected_score}
         </span>
         <span className="text-right font-mono text-xs font-semibold hidden sm:block" style={{ color: upsetColor }}>
           {bracket.upset_count} upsets
@@ -95,78 +96,52 @@ function BracketDetail({ bracketId }) {
     )
   }
 
-  const REGION_ACCENT = { South: '#FF6B35', East: '#00D4FF', West: '#F59E0B', Midwest: '#22C55E' }
-
   return (
     <div
       className="p-4 animate-fade-up"
       style={{ background: 'rgba(255,107,53,0.03)', borderBottom: '2px solid var(--border-accent)' }}
     >
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {Object.entries(data.regions || {}).map(([region, picks]) => {
-          const accent = REGION_ACCENT[region] || 'var(--orange)'
-          return (
-            <div key={region} className="glass rounded-lg p-3">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-1 h-4 rounded-full" style={{ backgroundColor: accent }} />
-                <span className="text-[11px] font-display tracking-wider" style={{ color: accent }}>
-                  {region.toUpperCase()}
-                </span>
-                <span className="text-[9px] font-mono ml-auto" style={{ color: 'var(--text-muted)' }}>
-                  {picks.champion?.name} ({picks.champion?.seed})
-                </span>
-              </div>
-              <div className="space-y-0.5">
-                {(picks.R64 || []).map((g, i) => (
-                  <div key={i} className="flex items-center text-[10px] gap-1.5 py-0.5">
-                    <span
-                      className="flex-1 font-medium"
-                      style={{ color: g.upset ? 'var(--orange)' : 'var(--text-secondary)' }}
-                    >
-                      {g.upset && (
-                        <span className="text-[8px] mr-1 font-black" style={{ color: 'var(--orange)' }}>!</span>
-                      )}
-                      {g.winner}
-                    </span>
-                    <span className="font-mono text-[9px]" style={{ color: 'var(--text-muted)' }}>
-                      {g.seeds[0]}v{g.seeds[1]}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-      {data.final_four && (
-        <div
-          className="mt-3 glass rounded-lg p-3 text-center"
-          style={{ border: '1px solid var(--border-accent)' }}
-        >
-          <span className="font-display text-sm tracking-wider" style={{ color: 'var(--orange)' }}>
-            CHAMPION: {data.final_four.championship?.winner}
-          </span>
-        </div>
-      )}
+      <BracketDetailView data={data} />
     </div>
   )
 }
 
 export default function ExplorerPage() {
-  const { explorerSort, explorerAliveOnly, setExplorerSort, setExplorerAliveOnly } = useTournamentStore()
+  const {
+    explorerSort, explorerAliveOnly, explorerChampion,
+    setExplorerSort, setExplorerAliveOnly, setExplorerChampion,
+  } = useTournamentStore()
   const [cursors, setCursors] = useState([null])
   const [pageIndex, setPageIndex] = useState(0)
   const [expandedId, setExpandedId] = useState(null)
 
+  // Fetch team list for the filter dropdown
+  const { data: bracketData } = useQuery({
+    queryKey: ['bracket'],
+    queryFn: fetchBracket,
+  })
+
+  const allTeams = useMemo(() => {
+    if (!bracketData?.regions) return []
+    const teams = []
+    for (const [, regionTeams] of Object.entries(bracketData.regions)) {
+      for (const t of regionTeams) {
+        teams.push({ name: t.name, seed: t.seed, region: t.region })
+      }
+    }
+    return teams.sort((a, b) => a.seed - b.seed || a.name.localeCompare(b.name))
+  }, [bracketData])
+
   const currentCursor = cursors[pageIndex]
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['brackets', currentCursor, explorerSort, explorerAliveOnly],
+    queryKey: ['brackets', currentCursor, explorerSort, explorerAliveOnly, explorerChampion],
     queryFn: () =>
       fetchBrackets({
         cursor: currentCursor,
         sort: explorerSort,
         aliveOnly: explorerAliveOnly,
+        champion: explorerChampion,
       }),
     keepPreviousData: true,
   })
@@ -215,6 +190,33 @@ export default function ExplorerPage() {
           </select>
         </div>
 
+        <div className="flex items-center gap-2">
+          <label className="text-[10px] font-mono uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+            Champion
+          </label>
+          <select
+            value={explorerChampion}
+            onChange={(e) => {
+              setExplorerChampion(e.target.value)
+              setCursors([null])
+              setPageIndex(0)
+            }}
+            className="text-sm font-medium rounded-lg px-3 py-1.5 border-none outline-none cursor-pointer"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              color: explorerChampion ? 'var(--orange)' : 'var(--text-primary)',
+              border: `1px solid ${explorerChampion ? 'var(--border-accent)' : 'var(--border-subtle)'}`,
+            }}
+          >
+            <option value="">All Champions</option>
+            {allTeams.map((t) => (
+              <option key={`${t.name}-${t.region}`} value={t.name}>
+                ({t.seed}) {t.name} — {t.region}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <label className="flex items-center gap-2 cursor-pointer group">
           <input
             type="checkbox"
@@ -256,8 +258,8 @@ export default function ExplorerPage() {
         >
           <span>Rank</span>
           <span>Champion</span>
-          <span className="text-right">E[Score]</span>
-          <span className="text-right hidden sm:block">Prob</span>
+          <span className="text-right">Prob</span>
+          <span className="text-right hidden sm:block">Weight</span>
           <span className="text-right hidden sm:block">Upsets</span>
           <span className="text-center">Live</span>
         </div>
@@ -277,9 +279,11 @@ export default function ExplorerPage() {
 
         {data?.brackets?.length === 0 && (
           <div className="p-12 text-center">
-            <span className="text-3xl mb-3 block">🏀</span>
+            <span className="text-3xl mb-3 block">&#x1F3C0;</span>
             <span className="font-mono text-sm" style={{ color: 'var(--text-muted)' }}>
-              No brackets found. Run the simulation first.
+              {explorerChampion
+                ? `No brackets found with ${explorerChampion} as champion.`
+                : 'No brackets found. Run the simulation first.'}
             </span>
           </div>
         )}

@@ -23,12 +23,13 @@ export function fetchBracket() {
 }
 
 /** GET /api/brackets — paginated bracket list (cursor-based) */
-export function fetchBrackets({ cursor, limit = 50, sort = 'score', aliveOnly = false } = {}) {
+export function fetchBrackets({ cursor, limit = 50, sort = 'score', aliveOnly = false, champion = '' } = {}) {
   const params = new URLSearchParams()
   if (cursor) params.set('cursor', cursor)
   if (limit !== 50) params.set('limit', String(limit))
   if (sort !== 'score') params.set('sort', sort)
   if (aliveOnly) params.set('alive_only', 'true')
+  if (champion) params.set('champion', champion)
   return fetchJSON(`/brackets?${params}`)
 }
 
@@ -54,6 +55,11 @@ export function submitResult(data, adminKey) {
     headers: { 'X-Admin-Key': adminKey },
     body: JSON.stringify(data),
   })
+}
+
+/** GET /api/portfolio — strategy portfolio breakdown */
+export function fetchPortfolio() {
+  return fetchJSON('/portfolio')
 }
 
 /** SSE stream for live updates */

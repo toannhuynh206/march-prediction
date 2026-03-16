@@ -27,7 +27,7 @@ from sqlalchemy import text
 _COPY_COLUMNS = (
     "id, east_outcomes, south_outcomes, west_outcomes, midwest_outcomes, "
     "f4_outcomes, probability, weight, champion_seed, champion_region, "
-    "total_upsets, is_alive, tournament_year"
+    "total_upsets, strategy, is_alive, tournament_year"
 )
 
 _COPY_SQL = f"COPY full_brackets ({_COPY_COLUMNS}) FROM STDIN"
@@ -44,10 +44,12 @@ def insert_full_brackets_copy(
     midwest_outcomes: np.ndarray,
     f4_outcomes: np.ndarray,
     probabilities: np.ndarray,
+    weights: np.ndarray,
     champion_seeds: np.ndarray,
     champion_region_idx: np.ndarray,
     total_upsets: np.ndarray,
     id_offset: int,
+    strategy: str = "standard",
     year: int = TOURNAMENT_YEAR,
     batch_size: int = COPY_BATCH_SIZE,
 ) -> int:
@@ -60,6 +62,7 @@ def insert_full_brackets_copy(
         midwest_outcomes: (N,) int16.
         f4_outcomes: (N,) int8, 3-bit packed F4 outcomes.
         probabilities: (N,) float64 full bracket probability.
+        weights: (N,) float64 importance sampling weights.
         champion_seeds: (N,) int16 tournament champion seed.
         champion_region_idx: (N,) int8 index into REGION_NAMES.
         total_upsets: (N,) int16 total R64 upsets across all regions.
@@ -94,10 +97,11 @@ def insert_full_brackets_copy(
                     f"{int(midwest_outcomes[i])}\t"
                     f"{int(f4_outcomes[i])}\t"
                     f"{float(probabilities[i]):.15e}\t"
-                    f"1.0\t"
+                    f"{float(weights[i]):.15e}\t"
                     f"{int(champion_seeds[i])}\t"
                     f"{region_name}\t"
                     f"{int(total_upsets[i])}\t"
+                    f"{strategy}\t"
                     f"true\t"
                     f"{year}\n"
                 )

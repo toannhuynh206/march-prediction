@@ -1,105 +1,130 @@
-"""Bitwise bracket pruning service.
+"""Bitwise bracket pruning — PostgreSQL native bitwise operations.
 
-When a game result is entered, eliminates all brackets that picked
-the wrong winner for that game using a single SQL UPDATE with
-bitwise operations.
+Single SQL UPDATE per game result. No Python-side filtering.
 """
 
+from __future__ import annotations
+
 import sys
-import os
+from pathlib import Path
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from math_primitives import REGION_OFFSETS
-from database import get_connection, DB_PATH
+from config.constants import TOURNAMENT_YEAR
+from db.connection import get_engine
+from sqlalchemy import text
 
 
-def prune_brackets(
+# Region name → full_brackets column name
+REGION_COLUMN: dict[str, str] = {
+    "South": "south_outcomes",
+    "East": "east_outcomes",
+    "West": "west_outcomes",
+    "Midwest": "midwest_outcomes",
+}
+
+
+def prune_regional_game(
     region: str,
     game_index: int,
-    winner_is_upset: bool,
-    db_path: str = DB_PATH,
+    expected_bit: int,
+    year: int = TOURNAMENT_YEAR,
 ) -> tuple[int, int]:
-    """Eliminate brackets that picked the wrong winner for a game.
+    """Eliminate brackets with wrong outcome for a regional game.
 
-    The bracket encoding uses bit=0 for favorite wins, bit=1 for upset.
-    We check the specific bit position and eliminate brackets where
-    the bit doesn't match the actual result.
+    Uses a single SQL UPDATE with PostgreSQL bitwise operators.
 
     Args:
-        region: Region name (South, East, West, Midwest)
-        game_index: Game index within the region (0-14)
-        winner_is_upset: True if the lower seed won (upset)
-        db_path: Path to SQLite database
+        region: Region name (South, East, West, Midwest).
+        game_index: Bit position within the region column (0-14).
+        expected_bit: 0 = top team won, 1 = bottom team won.
+        year: Tournament year.
 
     Returns:
-        (eliminated_count, alive_remaining)
+        (eliminated_count, alive_remaining).
     """
-    offset = REGION_OFFSETS[region]
-    bit_position = offset + game_index
+    column = REGION_COLUMN[region]
+    engine = get_engine()
 
-    # The expected bit value: 0 = favorite wins, 1 = upset
-    expected_bit = 1 if winner_is_upset else 0
+    with engine.begin() as conn:
+        alive_before = conn.execute(
+            text(
+                "SELECT COUNT(*) FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year"
+            ),
+            {"year": year},
+        ).scalar()
 
-    conn = get_connection(db_path)
-    cursor = conn.cursor()
+        # Single UPDATE: eliminate where the bit doesn't match
+        # Column name is from a hardcoded dict — safe from injection
+        result = conn.execute(
+            text(
+                f"UPDATE full_brackets "
+                f"SET is_alive = FALSE "
+                f"WHERE is_alive = TRUE "
+                f"AND tournament_year = :year "
+                f"AND ({column} >> :bit_pos) & 1 != :expected_bit"
+            ),
+            {"year": year, "bit_pos": game_index, "expected_bit": expected_bit},
+        )
+        eliminated = result.rowcount
+        alive_after = alive_before - eliminated
 
-    # Bracket outcomes are stored as BLOB. We need to extract the integer
-    # and check the specific bit. SQLite doesn't have native 64-bit
-    # bitwise ops on BLOBs, so we'll use a Python-side approach for
-    # correctness, but batch it efficiently.
-    #
-    # For production with 10M rows, this would use PostgreSQL's bitwise
-    # operators directly. For SQLite, we read alive bracket IDs in batches
-    # and update them.
-
-    # Count alive before
-    alive_before = cursor.execute(
-        "SELECT COUNT(*) FROM brackets WHERE is_alive = 1"
-    ).fetchone()[0]
-
-    # Read all alive bracket outcomes
-    # For SQLite: outcomes is stored as an 8-byte big-endian integer blob
-    rows = cursor.execute(
-        "SELECT id, outcomes FROM brackets WHERE is_alive = 1"
-    ).fetchall()
-
-    ids_to_eliminate = []
-    for row in rows:
-        bracket_int = int.from_bytes(row["outcomes"], byteorder="big")
-        actual_bit = (bracket_int >> bit_position) & 1
-        if actual_bit != expected_bit:
-            ids_to_eliminate.append(row["id"])
-
-    # Batch eliminate
-    if ids_to_eliminate:
-        # SQLite max variables is 999, batch in chunks
-        batch_size = 500
-        for i in range(0, len(ids_to_eliminate), batch_size):
-            batch = ids_to_eliminate[i : i + batch_size]
-            placeholders = ",".join("?" * len(batch))
-            cursor.execute(
-                f"UPDATE brackets SET is_alive = 0 WHERE id IN ({placeholders})",
-                batch,
-            )
-
-    conn.commit()
-
-    alive_after = cursor.execute(
-        "SELECT COUNT(*) FROM brackets WHERE is_alive = 1"
-    ).fetchone()[0]
-
-    conn.close()
-
-    eliminated = alive_before - alive_after
     return eliminated, alive_after
 
 
-def get_alive_count(db_path: str = DB_PATH) -> int:
-    """Get the current count of alive brackets."""
-    conn = get_connection(db_path)
-    count = conn.execute(
-        "SELECT COUNT(*) FROM brackets WHERE is_alive = 1"
-    ).fetchone()[0]
-    conn.close()
-    return count
+def prune_f4_game(
+    f4_bit_position: int,
+    expected_bit: int,
+    year: int = TOURNAMENT_YEAR,
+) -> tuple[int, int]:
+    """Eliminate brackets with wrong F4 outcome.
+
+    Args:
+        f4_bit_position: 0 = Semi1, 1 = Semi2, 2 = Championship.
+        expected_bit: 0 or 1.
+        year: Tournament year.
+
+    Returns:
+        (eliminated_count, alive_remaining).
+    """
+    engine = get_engine()
+
+    with engine.begin() as conn:
+        alive_before = conn.execute(
+            text(
+                "SELECT COUNT(*) FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year"
+            ),
+            {"year": year},
+        ).scalar()
+
+        result = conn.execute(
+            text(
+                "UPDATE full_brackets "
+                "SET is_alive = FALSE "
+                "WHERE is_alive = TRUE "
+                "AND tournament_year = :year "
+                "AND (f4_outcomes >> :bit_pos) & 1 != :expected_bit"
+            ),
+            {"year": year, "bit_pos": f4_bit_position, "expected_bit": expected_bit},
+        )
+        eliminated = result.rowcount
+        alive_after = alive_before - eliminated
+
+    return eliminated, alive_after
+
+
+def get_alive_count(year: int = TOURNAMENT_YEAR) -> int:
+    """Get current count of alive brackets."""
+    engine = get_engine()
+    with engine.connect() as conn:
+        return conn.execute(
+            text(
+                "SELECT COUNT(*) FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year"
+            ),
+            {"year": year},
+        ).scalar()

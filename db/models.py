@@ -227,6 +227,7 @@ class FullBracket(Base):
     champion_seed: Mapped[int] = mapped_column(SmallInteger, nullable=False)
     champion_region: Mapped[str] = mapped_column(Text, nullable=False)
     total_upsets: Mapped[int | None] = mapped_column(SmallInteger)
+    strategy: Mapped[str | None] = mapped_column(Text)
     is_alive: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     tournament_year: Mapped[int] = mapped_column(Integer, nullable=False, default=2026)
 

@@ -1,6 +1,6 @@
 """Pydantic request/response models for the March Madness API."""
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 # ---------------------------------------------------------------------------
@@ -51,12 +51,10 @@ class BracketSummary(BaseModel):
     rank: int
     expected_score: float
     probability: float
-    pool_value: float | None = None
     upset_count: int
     champion: str
     champion_seed: int
     is_alive: bool
-    region_scores: dict[str, float]
 
 
 class BracketListResponse(BaseModel):
@@ -76,40 +74,13 @@ class BracketDetailResponse(BaseModel):
     final_four: FinalFourPicks
 
 
-class MatchupProb(BaseModel):
-    game_index: int
-    round: str
-    region: str
-    team_a: str
-    seed_a: int
-    team_b: str
-    seed_b: int
-    p_market: float | None = None
-    p_stats: float | None = None
-    p_matchup: float | None = None
-    p_factors: float | None = None
-    p_final: float | None = None
-
-
-class TournamentBracketResponse(BaseModel):
-    year: int
-    regions: dict[str, list[TeamInfo]]
-    matchups: list[MatchupProb]
-
-
-class RegionSurvivalStats(BaseModel):
-    region: str
-    teams: list[dict]
-
-
 class StatsResponse(BaseModel):
-    total_brackets: int
-    alive_brackets: int
-    survival_rate: float
-    results_entered: int
+    total: int
+    alive_count: int
+    games_played: int
+    upsets_so_far: int
     champion_odds: list[dict]
     upset_distribution: list[dict]
-    regions: dict[str, RegionSurvivalStats] | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -117,10 +88,13 @@ class StatsResponse(BaseModel):
 # ---------------------------------------------------------------------------
 
 class GameResultRequest(BaseModel):
-    region: str
+    region: str = ""
     round: str
-    game_index: int
+    game_index: int = 0
     winner_seed: int
+    loser_seed: int = 0
+    winner_name: str | None = None
+    loser_name: str | None = None
 
 
 class GameResultResponse(BaseModel):

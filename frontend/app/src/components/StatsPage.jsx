@@ -7,7 +7,9 @@ import { useQuery } from '@tanstack/react-query'
 import { fetchStats, fetchRegionStats } from '../api/client'
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  PieChart, Pie,
 } from 'recharts'
+import { getTeamColor, REST_SLICE_COLOR } from '../constants/teamColors'
 
 const REGIONS = ['South', 'East', 'West', 'Midwest']
 const REGION_ACCENT = { South: '#FF6B35', East: '#00D4FF', West: '#F59E0B', Midwest: '#22C55E' }
@@ -88,6 +90,68 @@ function ChampionOddsChart({ data }) {
             ))}
           </Bar>
         </BarChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+function ChampionPieChart({ data }) {
+  if (!data || data.length === 0) return null
+
+  const top6 = data.slice(0, 6)
+  const restProb = data.slice(6).reduce((sum, d) => sum + d.probability, 0)
+  const pieData = [
+    ...top6.map((d) => ({ name: d.name, value: d.probability })),
+    ...(restProb > 0 ? [{ name: 'Rest', value: restProb }] : []),
+  ]
+  const colors = [
+    ...top6.map((d) => getTeamColor(d.name)),
+    REST_SLICE_COLOR,
+  ]
+
+  const renderLabel = ({ name, value, cx, x, y }) => {
+    const anchor = x > cx ? 'start' : 'end'
+    return (
+      <text x={x} y={y} textAnchor={anchor} fill="var(--text-secondary)" fontSize={11} fontFamily="'JetBrains Mono', monospace">
+        {name} {(value * 100).toFixed(1)}%
+      </text>
+    )
+  }
+
+  return (
+    <div className="glass rounded-xl p-5" style={{ border: '1px solid var(--border-subtle)' }}>
+      <h3 className="font-display text-lg tracking-wider mb-4" style={{ color: 'var(--orange)' }}>
+        CHAMPION DISTRIBUTION
+      </h3>
+      <ResponsiveContainer width="100%" height={340}>
+        <PieChart>
+          <Pie
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={120}
+            innerRadius={55}
+            strokeWidth={2}
+            stroke="var(--bg-deep)"
+            label={renderLabel}
+            labelLine={{ stroke: 'var(--text-muted)', strokeWidth: 1 }}
+          >
+            {pieData.map((_, i) => (
+              <Cell key={i} fill={colors[i]} />
+            ))}
+          </Pie>
+          <Tooltip
+            formatter={(v) => `${(v * 100).toFixed(2)}%`}
+            contentStyle={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '8px',
+              color: 'var(--text-primary)',
+            }}
+          />
+        </PieChart>
       </ResponsiveContainer>
     </div>
   )
@@ -245,7 +309,10 @@ export default function StatsPage() {
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <ChampionPieChart data={data.champion_odds} />
         <ChampionOddsChart data={data.champion_odds} />
+      </div>
+      <div className="grid grid-cols-1 gap-4">
         <UpsetDistributionChart data={data.upset_distribution} />
       </div>
 

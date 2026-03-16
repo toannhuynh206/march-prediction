@@ -1,86 +1,112 @@
-"""Statistics endpoints: dashboard data, survival rates, champion odds."""
+"""Statistics endpoints: dashboard data, champion odds, upset distribution."""
+
+from __future__ import annotations
 
 import sys
-import os
+from pathlib import Path
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from fastapi import APIRouter, HTTPException
-from database import get_connection
-from api.services.decoder import _load_region_teams, get_champion_name
+from sqlalchemy import text
+
+from config.constants import TOURNAMENT_YEAR
+from db.connection import get_engine
 
 router = APIRouter(prefix="/api", tags=["stats"])
 
 
 @router.get("/stats")
-async def get_stats():
-    """Dashboard statistics: alive count, survival rate, champion odds, upset distribution."""
-    conn = get_connection()
-    try:
-        total = conn.execute("SELECT COUNT(*) FROM brackets").fetchone()[0]
-        alive = conn.execute(
-            "SELECT COUNT(*) FROM brackets WHERE is_alive = 1"
-        ).fetchone()[0]
+async def get_stats(year: int = TOURNAMENT_YEAR):
+    """Dashboard statistics: counts, champion odds, upset distribution."""
+    engine = get_engine()
+    with engine.connect() as conn:
+        # Total and alive counts
+        counts = conn.execute(
+            text(
+                "SELECT "
+                "  COUNT(*) AS total, "
+                "  COUNT(*) FILTER (WHERE is_alive = TRUE) AS alive "
+                "FROM full_brackets "
+                "WHERE tournament_year = :year"
+            ),
+            {"year": year},
+        ).fetchone()
+        total = counts[0]
+        alive = counts[1]
 
-        results_entered = conn.execute(
-            "SELECT COUNT(*) FROM matchups WHERE actual_winner_id IS NOT NULL"
-        ).fetchone()[0]
+        # Games played and upsets from game_results
+        game_stats = conn.execute(
+            text(
+                "SELECT "
+                "  COUNT(*) AS games_played, "
+                "  COUNT(*) FILTER (WHERE winner_seed > loser_seed) AS upsets "
+                "FROM game_results "
+                "WHERE tournament_year = :year"
+            ),
+            {"year": year},
+        ).fetchone()
+        games_played = game_stats[0]
+        upsets_so_far = game_stats[1]
 
-        survival_rate = alive / total if total > 0 else 0
+        # Champion odds — weighted among alive brackets
+        # JOIN with teams to get champion name
+        champion_rows = conn.execute(
+            text(
+                "SELECT t.name, fb.champion_seed, fb.champion_region, "
+                "  SUM(fb.weight) AS total_weight "
+                "FROM full_brackets fb "
+                "JOIN teams t ON t.seed = fb.champion_seed "
+                "  AND t.region = fb.champion_region "
+                "  AND t.tournament_year = fb.tournament_year "
+                "WHERE fb.is_alive = TRUE AND fb.tournament_year = :year "
+                "GROUP BY t.name, fb.champion_seed, fb.champion_region "
+                "ORDER BY total_weight DESC"
+            ),
+            {"year": year},
+        ).fetchall()
 
-        # Champion odds: count brackets per champion among alive brackets
-        champion_counts: dict[str, int] = {}
-        if alive > 0:
-            region_teams = _load_region_teams()
-            rows = conn.execute(
-                "SELECT outcomes FROM brackets WHERE is_alive = 1"
-            ).fetchall()
+        total_weight = sum(float(r[3]) for r in champion_rows) if champion_rows else 1.0
+        champion_odds = [
+            {
+                "name": r[0],
+                "probability": float(r[3]) / total_weight,
+            }
+            for r in champion_rows
+        ]
 
-            for row in rows:
-                bracket_int = int.from_bytes(row["outcomes"], byteorder="big")
-                champ_name, _ = get_champion_name(bracket_int, region_teams)
-                champion_counts[champ_name] = champion_counts.get(champ_name, 0) + 1
+        # Upset distribution — count of alive brackets by total_upsets
+        upset_rows = conn.execute(
+            text(
+                "SELECT total_upsets, COUNT(*) "
+                "FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year "
+                "GROUP BY total_upsets "
+                "ORDER BY total_upsets"
+            ),
+            {"year": year},
+        ).fetchall()
 
-        champion_odds = sorted(
-            [
-                {"team": name, "count": count, "percentage": round(count / alive * 100, 2) if alive > 0 else 0}
-                for name, count in champion_counts.items()
-            ],
-            key=lambda x: x["count"],
-            reverse=True,
-        )
+        upset_distribution = [
+            {"upsets": int(r[0]), "count": int(r[1])}
+            for r in upset_rows
+        ]
 
-        # Upset distribution: count brackets by upset count
-        upset_dist: dict[int, int] = {}
-        if total > 0:
-            rows = conn.execute(
-                "SELECT outcomes FROM brackets WHERE is_alive = 1"
-            ).fetchall()
-            for row in rows:
-                bracket_int = int.from_bytes(row["outcomes"], byteorder="big")
-                upsets = bin(bracket_int).count("1")
-                upset_dist[upsets] = upset_dist.get(upsets, 0) + 1
-
-        upset_distribution = sorted(
-            [{"upset_count": k, "bracket_count": v} for k, v in upset_dist.items()],
-            key=lambda x: x["upset_count"],
-        )
-
-        return {
-            "total_brackets": total,
-            "alive_brackets": alive,
-            "survival_rate": round(survival_rate, 6),
-            "results_entered": results_entered,
-            "champion_odds": champion_odds[:20],
-            "upset_distribution": upset_distribution,
-        }
-    finally:
-        conn.close()
+    return {
+        "total": total,
+        "alive_count": alive,
+        "games_played": games_played,
+        "upsets_so_far": upsets_so_far,
+        "champion_odds": champion_odds[:30],
+        "upset_distribution": upset_distribution,
+    }
 
 
 @router.get("/stats/regions/{region}")
-async def get_region_stats(region: str):
-    """Region-specific survival statistics."""
+async def get_region_stats(region: str, year: int = TOURNAMENT_YEAR):
+    """Region-specific team list with championship probability."""
     valid_regions = {"South", "East", "West", "Midwest"}
     if region not in valid_regions:
         raise HTTPException(
@@ -88,62 +114,78 @@ async def get_region_stats(region: str):
             detail=f"Invalid region. Must be one of: {', '.join(valid_regions)}",
         )
 
-    conn = get_connection()
-    try:
-        # Get teams in this region with their stats
+    engine = get_engine()
+    with engine.connect() as conn:
+        # Teams in this region
         teams = conn.execute(
-            """SELECT t.name, t.seed, t.region, t.conference,
-                      ts.adj_em, ts.tempo
-               FROM teams t
-               LEFT JOIN team_stats ts ON t.id = ts.team_id
-               WHERE t.region = ?
-               ORDER BY t.seed""",
-            (region,),
+            text(
+                "SELECT name, seed, region, conference, record "
+                "FROM teams "
+                "WHERE region = :region AND tournament_year = :year "
+                "ORDER BY seed"
+            ),
+            {"region": region, "year": year},
         ).fetchall()
 
-        # Get matchup results for this region
-        matchups = conn.execute(
-            """SELECT m.round, m.game_index, m.seed_a, m.seed_b,
-                      ta.name as team_a, tb.name as team_b,
-                      m.p_final, tw.name as winner
-               FROM matchups m
-               JOIN teams ta ON m.team_a_id = ta.id
-               JOIN teams tb ON m.team_b_id = tb.id
-               LEFT JOIN teams tw ON m.actual_winner_id = tw.id
-               WHERE m.region = ?
-               ORDER BY m.round, m.game_index""",
-            (region,),
+        # Total weight across all alive brackets
+        total_weight = conn.execute(
+            text(
+                "SELECT COALESCE(SUM(weight), 1.0) FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year"
+            ),
+            {"year": year},
+        ).scalar()
+
+        # Championship probability per seed from this region
+        champion_rates = conn.execute(
+            text(
+                "SELECT champion_seed, SUM(weight) AS total_weight "
+                "FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year "
+                "  AND champion_region = :region "
+                "GROUP BY champion_seed"
+            ),
+            {"year": year, "region": region},
         ).fetchall()
+
+        seed_rate = {int(r[0]): float(r[1]) / float(total_weight) for r in champion_rates}
 
         team_list = [
             {
-                "name": t["name"],
-                "seed": t["seed"],
-                "conference": t["conference"],
-                "adj_em": t["adj_em"],
-                "tempo": t["tempo"],
+                "name": t[0],
+                "seed": t[1],
+                "region": t[2],
+                "conference": t[3],
+                "survival_rate": seed_rate.get(t[1], 0.0),
             }
             for t in teams
         ]
 
-        matchup_list = [
+        # Game results for this region
+        results = conn.execute(
+            text(
+                "SELECT round, game_number, winner_name, loser_name, "
+                "  winner_seed, loser_seed "
+                "FROM game_results "
+                "WHERE region = :region AND tournament_year = :year "
+                "ORDER BY entered_at"
+            ),
+            {"region": region, "year": year},
+        ).fetchall()
+
+        result_list = [
             {
-                "round": m["round"],
-                "game_index": m["game_index"],
-                "team_a": m["team_a"],
-                "seed_a": m["seed_a"],
-                "team_b": m["team_b"],
-                "seed_b": m["seed_b"],
-                "p_final": m["p_final"],
-                "winner": m["winner"],
+                "round": r[0],
+                "game_number": r[1],
+                "winner": r[2],
+                "loser": r[3],
+                "upset": int(r[4]) > int(r[5]),
             }
-            for m in matchups
+            for r in results
         ]
 
-        return {
-            "region": region,
-            "teams": team_list,
-            "matchups": matchup_list,
-        }
-    finally:
-        conn.close()
+    return {
+        "region": region,
+        "teams": team_list,
+        "results": result_list,
+    }

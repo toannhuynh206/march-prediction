@@ -5,6 +5,7 @@ import ExplorerPage from './components/ExplorerPage'
 import StatsPage from './components/StatsPage'
 import AdminPage from './components/AdminPage'
 import BlogPage from './components/BlogPage'
+import PortfolioPage from './components/PortfolioPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,6 +21,7 @@ const TABS = [
   { id: 'Bracket', label: 'BRACKET', icon: '🏀' },
   { id: 'Explorer', label: 'EXPLORER', icon: '🔍' },
   { id: 'Statistics', label: 'STATS', icon: '📊' },
+  { id: 'Portfolio', label: 'PORTFOLIO', icon: '💼' },
   { id: 'Blog', label: 'BLOG', icon: '📝' },
 ]
 
@@ -27,6 +29,7 @@ const TAB_COMPONENTS = {
   Bracket: BracketView,
   Explorer: ExplorerPage,
   Statistics: StatsPage,
+  Portfolio: PortfolioPage,
   Admin: AdminPage,
   Blog: BlogPage,
 }

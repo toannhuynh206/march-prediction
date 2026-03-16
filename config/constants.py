@@ -91,11 +91,13 @@ F4_SEMI_PAIRINGS: tuple[tuple[str, str], ...] = (
     ("West", "Midwest"),    # Semi 2: West champion vs Midwest champion
 )
 
-# Legacy constants (kept for import compatibility, unused in enumeration)
+# Minimum brackets per champion seed tier (used by stratifier)
 MIN_BRACKETS_PER_CHAMPION_SEED = 50_000
-MUTATION_RATE = 0.06
-CHALK_FRACTION = 0.60
-GAMBLE_FRACTION = 0.40
+
+# Strategy profiles are defined in simulation/temperature.py:
+#   Each region independently flips p_upset to decide base_T vs upset_T.
+#   chalk (25%), standard (30%), mild_chaos (20%), cinderella (15%), chaos (10%)
+#   All pairwise Hellinger distances > 0.10 (validated).
 
 # =========================================================================
 # Stratified sampling — world dimensions (legacy, unused in enumeration)

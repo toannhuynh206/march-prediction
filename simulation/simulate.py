@@ -45,7 +45,8 @@ from simulation.storage import (
     get_bracket_count,
     insert_enumerated_brackets,
 )
-from simulation.tournament_sampler import sample_full_brackets
+from simulation.temperature import DEFAULT_PROFILES, compute_profile_budgets
+from simulation.tournament_sampler import sample_stratified_brackets
 
 
 # =========================================================================
@@ -169,15 +170,27 @@ def simulate_full_tournament(
         print(f"  Clearing {existing:,} existing full brackets...")
         clear_full_brackets(year)
 
-    # 3. Sample and insert in batches
-    print(f"\n[3/3] Sampling and inserting full brackets...")
+    # 3. Show strategy profile allocation
+    budgets = compute_profile_budgets(n_brackets, DEFAULT_PROFILES)
+    print(f"\n[3/4] Strategy profile allocation:")
+    for profile, budget in budgets:
+        upset_exp = 4 * profile.p_upset
+        print(f"  {profile.name:>12s}: base_T={profile.base_temperature:.1f}, "
+              f"upset_T={profile.upset_temperature:.1f}, "
+              f"p_upset={profile.p_upset:.2f} (~{upset_exp:.1f} regions), "
+              f"F4_T={profile.f4_temperature:.1f}, "
+              f"{budget:>12,} brackets ({profile.fraction*100:.0f}%)")
+
+    # 4. Sample and insert in batches (multi-profile stratified)
+    print(f"\n[4/4] Sampling and inserting full brackets...")
     total_inserted = 0
     t_sample = time.time()
 
-    for batch in sample_full_brackets(
+    for batch in sample_stratified_brackets(
         enumerations=enumerations,
         region_teams=region_teams,
         n_brackets=n_brackets,
+        profiles=DEFAULT_PROFILES,
         rng_seed=year,
     ):
         n_inserted = insert_full_brackets_copy(
@@ -187,10 +200,12 @@ def simulate_full_tournament(
             midwest_outcomes=batch.midwest_outcomes,
             f4_outcomes=batch.f4_outcomes,
             probabilities=batch.probabilities,
+            weights=batch.weights,
             champion_seeds=batch.champion_seeds,
             champion_region_idx=batch.champion_region_idx,
             total_upsets=batch.total_upsets,
             id_offset=total_inserted,
+            strategy=batch.strategy,
             year=year,
         )
         total_inserted += n_inserted
@@ -250,6 +265,12 @@ def main() -> None:
 
     if args.full_tournament:
         simulate_full_tournament(n_brackets=args.count, year=args.year)
+
+        # Run validation after generation
+        from simulation.bracket_validator import validate_portfolio, print_champion_breakdown
+        report = validate_portfolio(year=args.year)
+        report.print_report()
+        print_champion_breakdown(year=args.year)
         return
 
     regions = list(REGIONS) if args.all else [args.region]

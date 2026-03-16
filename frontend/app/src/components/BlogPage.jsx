@@ -268,6 +268,7 @@ function ProbBar({ label, value, max = 1, color = 'var(--orange)' }) {
 const TOC = [
   { id: 'motivation', label: 'Motivation' },
   { id: 'the-problem', label: 'The Problem' },
+  { id: 'how-it-works', label: 'How It Works' },
   { id: 'probability', label: 'Win Probability' },
   { id: 'log-odds', label: 'Log-Odds Blend' },
   { id: 'bracket-encoding', label: 'Bracket Encoding' },
@@ -570,9 +571,123 @@ export default function BlogPage() {
 
         <Divider />
 
-        {/* ── 03. Win Probability ── */}
+        {/* ── 03. How It Works ── */}
+        <section id="how-it-works">
+          <SectionHeading number={3} title="HOW IT WORKS" subtitle="The complete data pipeline" />
+          <Reveal>
+            <Prose>
+              <p>
+                Before diving into the details, here's the complete pipeline — six stages
+                that transform raw research into 206 million strategically targeted brackets.
+                Each stage feeds the next. The brackets and their probabilities aren't
+                scored separately — they{' '}
+                <strong style={{ color: 'var(--orange)' }}>emerge together</strong> from the math.
+              </p>
+            </Prose>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <div className="space-y-3 my-8">
+              {[
+                {
+                  stage: '1',
+                  title: 'Research → Raw Data',
+                  color: 'var(--cyan)',
+                  desc: 'Web searches, KenPom scraping, odds API calls, injury reports, coaching records. This produces raw numbers for all 64 teams: efficiency margins, tempo, defensive ratings, experience scores, moneylines, and more.',
+                },
+                {
+                  stage: '2',
+                  title: 'Power Index → One Number Per Team',
+                  color: 'var(--cyan)',
+                  desc: 'A 9-factor weighted formula (AdjEM 40%, defensive premium 10%, schedule strength 10%, etc.) collapses each team\'s raw data into a single power index on a 0–100 scale. Every team gets one number that represents their overall strength.',
+                },
+                {
+                  stage: '3',
+                  title: 'Win Probabilities → One Number Per Matchup',
+                  color: 'var(--orange)',
+                  desc: 'A logistic function converts the power index differential between any two teams into a win probability. Then a 4-layer log-odds blend (market, stats, matchup, qualitative factors) produces a final P(A beats B) for every possible pairing.',
+                },
+                {
+                  stage: '4',
+                  title: 'Regional Enumeration → 32,768 Exact Brackets',
+                  color: 'var(--orange)',
+                  desc: 'For each of the 2\u00B9\u2075 possible outcome combinations in a region, the code traces through round by round, looks up the conditional matchup probability for whoever actually advances, and multiplies them together. Each bracket gets an exact probability. No sampling, no randomness — pure enumeration.',
+                },
+                {
+                  stage: '5',
+                  title: 'Strategy + Combination → 206M Full Brackets',
+                  color: 'var(--red-dead)',
+                  desc: 'Temperature transforms and 11 strategy profiles re-weight the base probabilities to create diversity. Then 4 regional brackets are combined (one from each region), Final Four outcomes are simulated, and you get a 63-bit full tournament bracket with a combined probability.',
+                },
+                {
+                  stage: '6',
+                  title: 'Live Pruning → Survivors',
+                  color: 'var(--red-dead)',
+                  desc: 'As real games are played, a SQL bitwise operation eliminates every bracket that got a game wrong. Surviving brackets\' weights get renormalized. What survives becomes the live prediction for the next round.',
+                },
+              ].map((item) => (
+                <Reveal key={item.stage} delay={0.03 * Number(item.stage)}>
+                  <div
+                    className="flex gap-4 rounded-xl p-4 sm:p-5"
+                    style={{
+                      background: 'var(--bg-card)',
+                      border: '1px solid var(--border-subtle)',
+                      borderLeftColor: item.color,
+                      borderLeftWidth: 3,
+                    }}
+                  >
+                    <div className="flex-shrink-0">
+                      <span
+                        className="font-display text-2xl sm:text-3xl leading-none"
+                        style={{ color: item.color, opacity: 0.7 }}
+                      >
+                        {item.stage}
+                      </span>
+                    </div>
+                    <div>
+                      <h3
+                        className="font-display text-base sm:text-lg tracking-wide mb-1"
+                        style={{ color: 'var(--text-primary)' }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+
+          <CalloutCard accent="var(--orange)" icon="&#9889;" title="Key Insight">
+            The research and math don't score brackets <em>after</em> generation — they define
+            the probability space that enumeration walks through. The brackets and their
+            probabilities emerge together in one pass. Stage 4 isn't "generate then evaluate" —
+            it's "enumerate every possibility and compute its exact likelihood simultaneously."
+          </CalloutCard>
+
+          <Reveal delay={0.1}>
+            <Prose>
+              <p>
+                The sections that follow dive deep into each stage. But remember:
+                this pipeline is a{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>funnel</strong>.
+                9.2 quintillion possibilities enter at the top. Research eliminates the
+                impossible. Math ranks what's left. Strategy diversifies across the
+                best candidates. And live pruning tells you which of your picks
+                are still standing.
+              </p>
+            </Prose>
+          </Reveal>
+        </section>
+
+        <Divider />
+
+        {/* ── 04. Win Probability ── */}
         <section id="probability">
-          <SectionHeading number={3} title="WIN PROBABILITY" subtitle="Predicting who wins each game" />
+          <SectionHeading number={4} title="WIN PROBABILITY" subtitle="Predicting who wins each game" />
           <Reveal>
             <Prose>
               <p>
@@ -690,7 +805,7 @@ Example: Duke -14.5
 
         {/* ── 04. Log-Odds Blend ── */}
         <section id="log-odds">
-          <SectionHeading number={4} title="THE LOG-ODDS BLEND" subtitle="Why we can't just average probabilities" />
+          <SectionHeading number={5} title="THE LOG-ODDS BLEND" subtitle="Why we can't just average probabilities" />
           <Reveal>
             <Prose>
               <p>
@@ -766,7 +881,7 @@ is respected, not diluted.`}
 
         {/* ── 05. Bracket Encoding ── */}
         <section id="bracket-encoding">
-          <SectionHeading number={5} title="BRACKET ENCODING" subtitle="63 games as a binary number" />
+          <SectionHeading number={6} title="BRACKET ENCODING" subtitle="63 games as a binary number" />
           <Reveal>
             <Prose>
               <p>
@@ -813,7 +928,7 @@ Example: bracket integer 0 = 000...000 = every favorite wins = "perfect chalk"`}
 
         {/* ── 06. The Discovery ── */}
         <section id="enumeration">
-          <SectionHeading number={6} title="THE DISCOVERY" subtitle="Enumerate, don't sample" />
+          <SectionHeading number={7} title="THE DISCOVERY" subtitle="Enumerate, don't sample" />
           <Reveal>
             <Prose>
               <p>
@@ -895,7 +1010,7 @@ Important: later-round probabilities are CONDITIONAL.
 
         {/* ── 07. Sharpening ── */}
         <section id="sharpening">
-          <SectionHeading number={7} title="SHARPENING RULES" subtitle="Eliminating the impossible" />
+          <SectionHeading number={8} title="SHARPENING RULES" subtitle="Eliminating the impossible" />
           <Reveal>
             <Prose>
               <p>
@@ -934,7 +1049,7 @@ Important: later-round probabilities are CONDITIONAL.
 
         {/* ── 08. Historical Calibration ── */}
         <section id="calibration">
-          <SectionHeading number={8} title="HISTORICAL CALIBRATION" subtitle="The Polacheck Method — 40 years of base rates" />
+          <SectionHeading number={9} title="HISTORICAL CALIBRATION" subtitle="The Polacheck Method — 40 years of base rates" />
           <Reveal>
             <Prose>
               <p>
@@ -1067,7 +1182,7 @@ Important: later-round probabilities are CONDITIONAL.
 
         {/* ── 09. Upset Decay Curve ── */}
         <section id="upset-decay">
-          <SectionHeading number={9} title="THE UPSET DECAY CURVE" subtitle="Round-by-round chaos analysis — 5 years of data" />
+          <SectionHeading number={10} title="THE UPSET DECAY CURVE" subtitle="Round-by-round chaos analysis — 5 years of data" />
           <Reveal>
             <Prose>
               <p>
@@ -1271,7 +1386,7 @@ Final   │    0.30x     │    0.20x      │  Near-certain better seed wins`}
 
         {/* ── 10. Contrarian Edge ── */}
         <section id="contrarian">
-          <SectionHeading number={10} title="THE CONTRARIAN EDGE" subtitle="Game theory meets bracket pools" />
+          <SectionHeading number={11} title="THE CONTRARIAN EDGE" subtitle="Game theory meets bracket pools" />
           <Reveal>
             <Prose>
               <p>
@@ -1324,7 +1439,7 @@ The ratio is what matters.`}
 
         {/* ── 11. Agent Architecture ── */}
         <section id="agents">
-          <SectionHeading number={11} title="AGENT ARCHITECTURE" subtitle="An AI team building this together" />
+          <SectionHeading number={12} title="AGENT ARCHITECTURE" subtitle="An AI team building this together" />
           <Reveal>
             <Prose>
               <p>
@@ -1414,7 +1529,7 @@ The ratio is what matters.`}
 
         {/* ── 12. Research Pipeline ── */}
         <section id="research">
-          <SectionHeading number={12} title="RESEARCH PIPELINE" subtitle="Where the data comes from" />
+          <SectionHeading number={13} title="RESEARCH PIPELINE" subtitle="Where the data comes from" />
           <Reveal>
             <Prose>
               <p>
@@ -1451,7 +1566,7 @@ The ratio is what matters.`}
 
         {/* ── 13. Strategies ── */}
         <section id="strategies">
-          <SectionHeading number={13} title="11 STRATEGIES" subtitle="Portfolio theory for brackets" />
+          <SectionHeading number={14} title="11 STRATEGIES" subtitle="Portfolio theory for brackets" />
           <Reveal>
             <Prose>
               <p>
@@ -1532,7 +1647,7 @@ The ratio is what matters.`}
 
         {/* ── 14. What's Next ── */}
         <section id="whats-next">
-          <SectionHeading number={14} title="WHAT'S NEXT" subtitle="The road to Selection Sunday" />
+          <SectionHeading number={15} title="WHAT'S NEXT" subtitle="The road to Selection Sunday" />
           <Reveal>
             <Prose>
               <p>
