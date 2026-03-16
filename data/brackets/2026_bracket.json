@@ -1,0 +1,370 @@
+{
+  "tournament_year": 2026,
+  "selection_date": "2026-03-15",
+  "source": "NCAA/ESPN/CBS/SI — cross-referenced Selection Sunday 2026",
+  "schedule": {
+    "first_four": {
+      "dates": ["2026-03-17", "2026-03-18"],
+      "location": "Dayton, OH",
+      "venue": "UD Arena"
+    },
+    "first_round": {
+      "dates": ["2026-03-19", "2026-03-20"]
+    },
+    "second_round": {
+      "dates": ["2026-03-21", "2026-03-22"]
+    },
+    "sweet_sixteen": {
+      "dates": ["2026-03-26", "2026-03-27"]
+    },
+    "elite_eight": {
+      "dates": ["2026-03-28", "2026-03-29"]
+    },
+    "final_four": {
+      "date": "2026-04-04",
+      "location": "Indianapolis, IN",
+      "venue": "Lucas Oil Stadium"
+    },
+    "championship": {
+      "date": "2026-04-06",
+      "location": "Indianapolis, IN",
+      "venue": "Lucas Oil Stadium"
+    }
+  },
+  "first_round_sites": [
+    {"city": "Greenville, SC", "venue": "Bon Secours Wellness Arena", "dates": ["2026-03-19", "2026-03-21"]},
+    {"city": "Buffalo, NY", "venue": "KeyBank Center", "dates": ["2026-03-19", "2026-03-21"]},
+    {"city": "Oklahoma City, OK", "venue": "Paycom Center", "dates": ["2026-03-19", "2026-03-21"]},
+    {"city": "Portland, OR", "venue": "Moda Center", "dates": ["2026-03-19", "2026-03-21"]},
+    {"city": "Tampa, FL", "venue": "Benchmark International Arena", "dates": ["2026-03-20", "2026-03-22"]},
+    {"city": "Philadelphia, PA", "venue": "Xfinity Mobile Arena", "dates": ["2026-03-20", "2026-03-22"]},
+    {"city": "San Diego, CA", "venue": "Viejas Arena", "dates": ["2026-03-20", "2026-03-22"]},
+    {"city": "St. Louis, MO", "venue": "Enterprise Center", "dates": ["2026-03-20", "2026-03-22"]}
+  ],
+  "regions": {
+    "East": {
+      "regional_location": "Washington, DC",
+      "regional_venue": "Capital One Arena",
+      "seeds": {
+        "1": {"team": "Duke", "conference": "ACC", "record": "32-2", "overall_seed": 1, "auto_bid": true},
+        "2": {"team": "UConn", "conference": "Big East", "record": "29-5", "overall_seed": 6, "auto_bid": false},
+        "3": {"team": "Michigan State", "conference": "Big Ten", "record": "25-7", "overall_seed": 9, "auto_bid": false},
+        "4": {"team": "Kansas", "conference": "Big 12", "record": "23-10", "overall_seed": 15, "auto_bid": false},
+        "5": {"team": "St. John's", "conference": "Big East", "record": "28-6", "overall_seed": 18, "auto_bid": true},
+        "6": {"team": "Louisville", "conference": "ACC", "record": "23-10", "overall_seed": 23, "auto_bid": false},
+        "7": {"team": "UCLA", "conference": "Big Ten", "record": "23-11", "overall_seed": 28, "auto_bid": false},
+        "8": {"team": "Ohio State", "conference": "Big Ten", "record": "21-12", "overall_seed": 31, "auto_bid": false},
+        "9": {"team": "TCU", "conference": "Big 12", "record": "22-11", "overall_seed": 34, "auto_bid": false},
+        "10": {"team": "UCF", "conference": "Big 12", "record": "21-11", "overall_seed": 38, "auto_bid": false},
+        "11": {"team": "South Florida", "conference": "AAC", "record": "25-8", "overall_seed": 46, "auto_bid": true},
+        "12": {"team": "Northern Iowa", "conference": "Missouri Valley", "record": "23-12", "overall_seed": 49, "auto_bid": true},
+        "13": {"team": "Cal Baptist", "conference": "WAC", "record": "25-8", "overall_seed": 51, "auto_bid": true},
+        "14": {"team": "North Dakota State", "conference": "Summit League", "record": "27-7", "overall_seed": 55, "auto_bid": true},
+        "15": {"team": "Furman", "conference": "SoCon", "record": "22-12", "overall_seed": 61, "auto_bid": true},
+        "16": {"team": "Siena", "conference": "MAAC", "record": "23-11", "overall_seed": 63, "auto_bid": true}
+      },
+      "first_round_matchups": [
+        {"higher_seed": 1, "lower_seed": 16, "location": "Greenville, SC"},
+        {"higher_seed": 8, "lower_seed": 9, "location": "Greenville, SC"},
+        {"higher_seed": 5, "lower_seed": 12, "location": "San Diego, CA"},
+        {"higher_seed": 4, "lower_seed": 13, "location": "San Diego, CA"},
+        {"higher_seed": 6, "lower_seed": 11, "location": "Buffalo, NY"},
+        {"higher_seed": 3, "lower_seed": 14, "location": "Buffalo, NY"},
+        {"higher_seed": 7, "lower_seed": 10, "location": "Philadelphia, PA"},
+        {"higher_seed": 2, "lower_seed": 15, "location": "Philadelphia, PA"}
+      ]
+    },
+    "South": {
+      "regional_location": "Houston, TX",
+      "regional_venue": "Toyota Center",
+      "seeds": {
+        "1": {"team": "Florida", "conference": "SEC", "record": "26-7", "overall_seed": 4, "auto_bid": false},
+        "2": {"team": "Houston", "conference": "Big 12", "record": "28-6", "overall_seed": 5, "auto_bid": false},
+        "3": {"team": "Illinois", "conference": "Big Ten", "record": "24-8", "overall_seed": 10, "auto_bid": false},
+        "4": {"team": "Nebraska", "conference": "Big Ten", "record": "26-6", "overall_seed": 13, "auto_bid": false},
+        "5": {"team": "Vanderbilt", "conference": "SEC", "record": "26-8", "overall_seed": 17, "auto_bid": false},
+        "6": {"team": "North Carolina", "conference": "ACC", "record": "24-8", "overall_seed": 22, "auto_bid": false},
+        "7": {"team": "Saint Mary's", "conference": "WCC", "record": "27-5", "overall_seed": 26, "auto_bid": false},
+        "8": {"team": "Clemson", "conference": "ACC", "record": "24-10", "overall_seed": 29, "auto_bid": false},
+        "9": {"team": "Iowa", "conference": "Big Ten", "record": "21-12", "overall_seed": 36, "auto_bid": false},
+        "10": {"team": "Texas A&M", "conference": "SEC", "record": "21-11", "overall_seed": 40, "auto_bid": false},
+        "11": {"team": "VCU", "conference": "Atlantic 10", "record": "27-7", "overall_seed": 45, "auto_bid": true},
+        "12": {"team": "McNeese", "conference": "Southland", "record": "28-5", "overall_seed": 47, "auto_bid": true},
+        "13": {"team": "Troy", "conference": "Sun Belt", "record": "22-11", "overall_seed": 53, "auto_bid": true},
+        "14": {"team": "Penn", "conference": "Ivy League", "record": "18-11", "overall_seed": 56, "auto_bid": true},
+        "15": {"team": "Idaho", "conference": "Big Sky", "record": "21-14", "overall_seed": 60, "auto_bid": true},
+        "16": {"team": "Prairie View A&M/Lehigh", "conference": "SWAC/Patriot League", "record": "TBD", "overall_seed": 68, "auto_bid": true, "first_four": true, "first_four_teams": [
+          {"team": "Prairie View A&M", "conference": "SWAC", "record": "18-17"},
+          {"team": "Lehigh", "conference": "Patriot League", "record": "18-16"}
+        ]}
+      },
+      "first_round_matchups": [
+        {"higher_seed": 1, "lower_seed": 16, "location": "Tampa, FL"},
+        {"higher_seed": 8, "lower_seed": 9, "location": "Tampa, FL"},
+        {"higher_seed": 5, "lower_seed": 12, "location": "Oklahoma City, OK"},
+        {"higher_seed": 4, "lower_seed": 13, "location": "Oklahoma City, OK"},
+        {"higher_seed": 6, "lower_seed": 11, "location": "Greenville, SC"},
+        {"higher_seed": 3, "lower_seed": 14, "location": "Greenville, SC"},
+        {"higher_seed": 7, "lower_seed": 10, "location": "Oklahoma City, OK"},
+        {"higher_seed": 2, "lower_seed": 15, "location": "Oklahoma City, OK"}
+      ]
+    },
+    "West": {
+      "regional_location": "San Jose, CA",
+      "regional_venue": "SAP Center",
+      "seeds": {
+        "1": {"team": "Arizona", "conference": "Big 12", "record": "32-2", "overall_seed": 2, "auto_bid": true},
+        "2": {"team": "Purdue", "conference": "Big Ten", "record": "27-8", "overall_seed": 8, "auto_bid": true},
+        "3": {"team": "Gonzaga", "conference": "WCC", "record": "30-3", "overall_seed": 11, "auto_bid": true},
+        "4": {"team": "Arkansas", "conference": "SEC", "record": "26-8", "overall_seed": 16, "auto_bid": true},
+        "5": {"team": "Wisconsin", "conference": "Big Ten", "record": "24-10", "overall_seed": 20, "auto_bid": false},
+        "6": {"team": "BYU", "conference": "Big 12", "record": "23-11", "overall_seed": 24, "auto_bid": false},
+        "7": {"team": "Miami", "conference": "ACC", "record": "25-8", "overall_seed": 27, "auto_bid": false},
+        "8": {"team": "Villanova", "conference": "Big East", "record": "24-8", "overall_seed": 30, "auto_bid": false},
+        "9": {"team": "Utah State", "conference": "Mountain West", "record": "28-6", "overall_seed": 33, "auto_bid": true},
+        "10": {"team": "Missouri", "conference": "SEC", "record": "20-12", "overall_seed": 39, "auto_bid": false},
+        "11": {"team": "Texas/NC State", "conference": "SEC/ACC", "record": "TBD", "overall_seed": 42, "auto_bid": false, "first_four": true, "first_four_teams": [
+          {"team": "Texas", "conference": "SEC", "record": "18-14"},
+          {"team": "NC State", "conference": "ACC", "record": "20-13"}
+        ]},
+        "12": {"team": "High Point", "conference": "Big South", "record": "30-4", "overall_seed": 50, "auto_bid": true},
+        "13": {"team": "Hawaii", "conference": "Big West", "record": "24-8", "overall_seed": 54, "auto_bid": true},
+        "14": {"team": "Kennesaw State", "conference": "Conference USA", "record": "21-13", "overall_seed": 58, "auto_bid": true},
+        "15": {"team": "Queens", "conference": "Atlantic Sun", "record": "21-13", "overall_seed": 62, "auto_bid": true},
+        "16": {"team": "LIU", "conference": "NEC", "record": "24-10", "overall_seed": 64, "auto_bid": true}
+      },
+      "first_round_matchups": [
+        {"higher_seed": 1, "lower_seed": 16, "location": "San Diego, CA"},
+        {"higher_seed": 8, "lower_seed": 9, "location": "San Diego, CA"},
+        {"higher_seed": 5, "lower_seed": 12, "location": "Portland, OR"},
+        {"higher_seed": 4, "lower_seed": 13, "location": "Portland, OR"},
+        {"higher_seed": 6, "lower_seed": 11, "location": "Portland, OR"},
+        {"higher_seed": 3, "lower_seed": 14, "location": "Portland, OR"},
+        {"higher_seed": 7, "lower_seed": 10, "location": "St. Louis, MO"},
+        {"higher_seed": 2, "lower_seed": 15, "location": "St. Louis, MO"}
+      ]
+    },
+    "Midwest": {
+      "regional_location": "Chicago, IL",
+      "regional_venue": "United Center",
+      "seeds": {
+        "1": {"team": "Michigan", "conference": "Big Ten", "record": "31-3", "overall_seed": 3, "auto_bid": false},
+        "2": {"team": "Iowa State", "conference": "Big 12", "record": "27-7", "overall_seed": 7, "auto_bid": false},
+        "3": {"team": "Virginia", "conference": "ACC", "record": "29-5", "overall_seed": 12, "auto_bid": false},
+        "4": {"team": "Alabama", "conference": "SEC", "record": "23-9", "overall_seed": 14, "auto_bid": false},
+        "5": {"team": "Texas Tech", "conference": "Big 12", "record": "22-10", "overall_seed": 19, "auto_bid": false},
+        "6": {"team": "Tennessee", "conference": "SEC", "record": "22-11", "overall_seed": 21, "auto_bid": false},
+        "7": {"team": "Kentucky", "conference": "SEC", "record": "21-13", "overall_seed": 25, "auto_bid": false},
+        "8": {"team": "Georgia", "conference": "SEC", "record": "22-10", "overall_seed": 32, "auto_bid": false},
+        "9": {"team": "Saint Louis", "conference": "Atlantic 10", "record": "28-5", "overall_seed": 35, "auto_bid": false},
+        "10": {"team": "Santa Clara", "conference": "WCC", "record": "26-8", "overall_seed": 37, "auto_bid": false},
+        "11": {"team": "Miami (OH)/SMU", "conference": "MAC/ACC", "record": "TBD", "overall_seed": 44, "auto_bid": false, "first_four": true, "first_four_teams": [
+          {"team": "Miami (OH)", "conference": "MAC", "record": "31-1"},
+          {"team": "SMU", "conference": "ACC", "record": "20-13"}
+        ]},
+        "12": {"team": "Akron", "conference": "MAC", "record": "29-5", "overall_seed": 48, "auto_bid": true},
+        "13": {"team": "Hofstra", "conference": "CAA", "record": "24-10", "overall_seed": 52, "auto_bid": true},
+        "14": {"team": "Wright State", "conference": "Horizon League", "record": "23-11", "overall_seed": 57, "auto_bid": true},
+        "15": {"team": "Tennessee State", "conference": "Ohio Valley", "record": "23-9", "overall_seed": 59, "auto_bid": true},
+        "16": {"team": "UMBC/Howard", "conference": "America East/MEAC", "record": "TBD", "overall_seed": 66, "auto_bid": true, "first_four": true, "first_four_teams": [
+          {"team": "UMBC", "conference": "America East", "record": "24-8"},
+          {"team": "Howard", "conference": "MEAC", "record": "23-10"}
+        ]}
+      },
+      "first_round_matchups": [
+        {"higher_seed": 1, "lower_seed": 16, "location": "Buffalo, NY"},
+        {"higher_seed": 8, "lower_seed": 9, "location": "Buffalo, NY"},
+        {"higher_seed": 5, "lower_seed": 12, "location": "Tampa, FL"},
+        {"higher_seed": 4, "lower_seed": 13, "location": "Tampa, FL"},
+        {"higher_seed": 6, "lower_seed": 11, "location": "Philadelphia, PA"},
+        {"higher_seed": 3, "lower_seed": 14, "location": "Philadelphia, PA"},
+        {"higher_seed": 7, "lower_seed": 10, "location": "St. Louis, MO"},
+        {"higher_seed": 2, "lower_seed": 15, "location": "St. Louis, MO"}
+      ]
+    }
+  },
+  "first_four": [
+    {
+      "teams": ["UMBC", "Howard"],
+      "seed": 16,
+      "region": "Midwest",
+      "location": "Dayton, OH",
+      "venue": "UD Arena",
+      "date": "2026-03-17",
+      "time": "6:40 PM ET",
+      "tv": "truTV",
+      "team_details": [
+        {"team": "UMBC", "conference": "America East", "record": "24-8"},
+        {"team": "Howard", "conference": "MEAC", "record": "23-10"}
+      ]
+    },
+    {
+      "teams": ["Texas", "NC State"],
+      "seed": 11,
+      "region": "West",
+      "location": "Dayton, OH",
+      "venue": "UD Arena",
+      "date": "2026-03-17",
+      "time": "9:15 PM ET",
+      "tv": "truTV",
+      "team_details": [
+        {"team": "Texas", "conference": "SEC", "record": "18-14"},
+        {"team": "NC State", "conference": "ACC", "record": "20-13"}
+      ]
+    },
+    {
+      "teams": ["Prairie View A&M", "Lehigh"],
+      "seed": 16,
+      "region": "South",
+      "location": "Dayton, OH",
+      "venue": "UD Arena",
+      "date": "2026-03-18",
+      "time": "6:40 PM ET",
+      "tv": "truTV",
+      "team_details": [
+        {"team": "Prairie View A&M", "conference": "SWAC", "record": "18-17"},
+        {"team": "Lehigh", "conference": "Patriot League", "record": "18-16"}
+      ]
+    },
+    {
+      "teams": ["Miami (OH)", "SMU"],
+      "seed": 11,
+      "region": "Midwest",
+      "location": "Dayton, OH",
+      "venue": "UD Arena",
+      "date": "2026-03-18",
+      "time": "9:15 PM ET",
+      "tv": "truTV",
+      "team_details": [
+        {"team": "Miami (OH)", "conference": "MAC", "record": "31-1"},
+        {"team": "SMU", "conference": "ACC", "record": "20-13"}
+      ]
+    }
+  ],
+  "final_four": {
+    "location": "Indianapolis, IN",
+    "venue": "Lucas Oil Stadium",
+    "semifinals_date": "2026-04-04",
+    "championship_date": "2026-04-06",
+    "tv": "TBS"
+  },
+  "conference_bids": {
+    "SEC": {"count": 10, "teams": ["Florida", "Arkansas", "Alabama", "Vanderbilt", "Tennessee", "Kentucky", "Georgia", "Texas A&M", "Missouri", "Texas"]},
+    "Big Ten": {"count": 9, "teams": ["Michigan", "Purdue", "Michigan State", "Illinois", "Nebraska", "Wisconsin", "UCLA", "Ohio State", "Iowa"]},
+    "Big 12": {"count": 8, "teams": ["Arizona", "Houston", "Iowa State", "Kansas", "Texas Tech", "BYU", "TCU", "UCF"]},
+    "ACC": {"count": 8, "teams": ["Duke", "Virginia", "Louisville", "North Carolina", "Miami", "Clemson", "SMU", "NC State"]},
+    "Big East": {"count": 3, "teams": ["UConn", "St. John's", "Villanova"]},
+    "WCC": {"count": 3, "teams": ["Gonzaga", "Saint Mary's", "Santa Clara"]},
+    "AAC": {"count": 1, "teams": ["South Florida"]},
+    "Atlantic 10": {"count": 2, "teams": ["VCU", "Saint Louis"]},
+    "MAC": {"count": 2, "teams": ["Miami (OH)", "Akron"]},
+    "Mountain West": {"count": 1, "teams": ["Utah State"]},
+    "Missouri Valley": {"count": 1, "teams": ["Northern Iowa"]},
+    "Southland": {"count": 1, "teams": ["McNeese"]},
+    "Big South": {"count": 1, "teams": ["High Point"]},
+    "WAC": {"count": 1, "teams": ["Cal Baptist"]},
+    "CAA": {"count": 1, "teams": ["Hofstra"]},
+    "Sun Belt": {"count": 1, "teams": ["Troy"]},
+    "Big West": {"count": 1, "teams": ["Hawaii"]},
+    "Summit League": {"count": 1, "teams": ["North Dakota State"]},
+    "Ivy League": {"count": 1, "teams": ["Penn"]},
+    "Horizon League": {"count": 1, "teams": ["Wright State"]},
+    "Conference USA": {"count": 1, "teams": ["Kennesaw State"]},
+    "SoCon": {"count": 1, "teams": ["Furman"]},
+    "Ohio Valley": {"count": 1, "teams": ["Tennessee State"]},
+    "Big Sky": {"count": 1, "teams": ["Idaho"]},
+    "Atlantic Sun": {"count": 1, "teams": ["Queens"]},
+    "MAAC": {"count": 1, "teams": ["Siena"]},
+    "NEC": {"count": 1, "teams": ["LIU"]},
+    "MEAC": {"count": 1, "teams": ["Howard"]},
+    "America East": {"count": 1, "teams": ["UMBC"]},
+    "Patriot League": {"count": 1, "teams": ["Lehigh"]},
+    "SWAC": {"count": 1, "teams": ["Prairie View A&M"]}
+  },
+  "overall_seed_list": [
+    {"overall_seed": 1, "team": "Duke", "region": "East", "seed_in_region": 1, "conference": "ACC", "record": "32-2"},
+    {"overall_seed": 2, "team": "Arizona", "region": "West", "seed_in_region": 1, "conference": "Big 12", "record": "32-2"},
+    {"overall_seed": 3, "team": "Michigan", "region": "Midwest", "seed_in_region": 1, "conference": "Big Ten", "record": "31-3"},
+    {"overall_seed": 4, "team": "Florida", "region": "South", "seed_in_region": 1, "conference": "SEC", "record": "26-7"},
+    {"overall_seed": 5, "team": "Houston", "region": "South", "seed_in_region": 2, "conference": "Big 12", "record": "28-6"},
+    {"overall_seed": 6, "team": "UConn", "region": "East", "seed_in_region": 2, "conference": "Big East", "record": "29-5"},
+    {"overall_seed": 7, "team": "Iowa State", "region": "Midwest", "seed_in_region": 2, "conference": "Big 12", "record": "27-7"},
+    {"overall_seed": 8, "team": "Purdue", "region": "West", "seed_in_region": 2, "conference": "Big Ten", "record": "27-8"},
+    {"overall_seed": 9, "team": "Michigan State", "region": "East", "seed_in_region": 3, "conference": "Big Ten", "record": "25-7"},
+    {"overall_seed": 10, "team": "Illinois", "region": "South", "seed_in_region": 3, "conference": "Big Ten", "record": "24-8"},
+    {"overall_seed": 11, "team": "Gonzaga", "region": "West", "seed_in_region": 3, "conference": "WCC", "record": "30-3"},
+    {"overall_seed": 12, "team": "Virginia", "region": "Midwest", "seed_in_region": 3, "conference": "ACC", "record": "29-5"},
+    {"overall_seed": 13, "team": "Nebraska", "region": "South", "seed_in_region": 4, "conference": "Big Ten", "record": "26-6"},
+    {"overall_seed": 14, "team": "Alabama", "region": "Midwest", "seed_in_region": 4, "conference": "SEC", "record": "23-9"},
+    {"overall_seed": 15, "team": "Kansas", "region": "East", "seed_in_region": 4, "conference": "Big 12", "record": "23-10"},
+    {"overall_seed": 16, "team": "Arkansas", "region": "West", "seed_in_region": 4, "conference": "SEC", "record": "26-8"},
+    {"overall_seed": 17, "team": "Vanderbilt", "region": "South", "seed_in_region": 5, "conference": "SEC", "record": "26-8"},
+    {"overall_seed": 18, "team": "St. John's", "region": "East", "seed_in_region": 5, "conference": "Big East", "record": "28-6"},
+    {"overall_seed": 19, "team": "Texas Tech", "region": "Midwest", "seed_in_region": 5, "conference": "Big 12", "record": "22-10"},
+    {"overall_seed": 20, "team": "Wisconsin", "region": "West", "seed_in_region": 5, "conference": "Big Ten", "record": "24-10"},
+    {"overall_seed": 21, "team": "Tennessee", "region": "Midwest", "seed_in_region": 6, "conference": "SEC", "record": "22-11"},
+    {"overall_seed": 22, "team": "North Carolina", "region": "South", "seed_in_region": 6, "conference": "ACC", "record": "24-8"},
+    {"overall_seed": 23, "team": "Louisville", "region": "East", "seed_in_region": 6, "conference": "ACC", "record": "23-10"},
+    {"overall_seed": 24, "team": "BYU", "region": "West", "seed_in_region": 6, "conference": "Big 12", "record": "23-11"},
+    {"overall_seed": 25, "team": "Kentucky", "region": "Midwest", "seed_in_region": 7, "conference": "SEC", "record": "21-13"},
+    {"overall_seed": 26, "team": "Saint Mary's", "region": "South", "seed_in_region": 7, "conference": "WCC", "record": "27-5"},
+    {"overall_seed": 27, "team": "Miami", "region": "West", "seed_in_region": 7, "conference": "ACC", "record": "25-8"},
+    {"overall_seed": 28, "team": "UCLA", "region": "East", "seed_in_region": 7, "conference": "Big Ten", "record": "23-11"},
+    {"overall_seed": 29, "team": "Clemson", "region": "South", "seed_in_region": 8, "conference": "ACC", "record": "24-10"},
+    {"overall_seed": 30, "team": "Villanova", "region": "West", "seed_in_region": 8, "conference": "Big East", "record": "24-8"},
+    {"overall_seed": 31, "team": "Ohio State", "region": "East", "seed_in_region": 8, "conference": "Big Ten", "record": "21-12"},
+    {"overall_seed": 32, "team": "Georgia", "region": "Midwest", "seed_in_region": 8, "conference": "SEC", "record": "22-10"},
+    {"overall_seed": 33, "team": "Utah State", "region": "West", "seed_in_region": 9, "conference": "Mountain West", "record": "28-6"},
+    {"overall_seed": 34, "team": "TCU", "region": "East", "seed_in_region": 9, "conference": "Big 12", "record": "22-11"},
+    {"overall_seed": 35, "team": "Saint Louis", "region": "Midwest", "seed_in_region": 9, "conference": "Atlantic 10", "record": "28-5"},
+    {"overall_seed": 36, "team": "Iowa", "region": "South", "seed_in_region": 9, "conference": "Big Ten", "record": "21-12"},
+    {"overall_seed": 37, "team": "Santa Clara", "region": "Midwest", "seed_in_region": 10, "conference": "WCC", "record": "26-8"},
+    {"overall_seed": 38, "team": "UCF", "region": "East", "seed_in_region": 10, "conference": "Big 12", "record": "21-11"},
+    {"overall_seed": 39, "team": "Missouri", "region": "West", "seed_in_region": 10, "conference": "SEC", "record": "20-12"},
+    {"overall_seed": 40, "team": "Texas A&M", "region": "South", "seed_in_region": 10, "conference": "SEC", "record": "21-11"},
+    {"overall_seed": 41, "team": "NC State", "region": "West", "seed_in_region": 11, "conference": "ACC", "record": "20-13", "first_four": true},
+    {"overall_seed": 42, "team": "Texas", "region": "West", "seed_in_region": 11, "conference": "SEC", "record": "18-14", "first_four": true},
+    {"overall_seed": 43, "team": "SMU", "region": "Midwest", "seed_in_region": 11, "conference": "ACC", "record": "20-13", "first_four": true},
+    {"overall_seed": 44, "team": "Miami (OH)", "region": "Midwest", "seed_in_region": 11, "conference": "MAC", "record": "31-1", "first_four": true},
+    {"overall_seed": 45, "team": "VCU", "region": "South", "seed_in_region": 11, "conference": "Atlantic 10", "record": "27-7"},
+    {"overall_seed": 46, "team": "South Florida", "region": "East", "seed_in_region": 11, "conference": "AAC", "record": "25-8"},
+    {"overall_seed": 47, "team": "McNeese", "region": "South", "seed_in_region": 12, "conference": "Southland", "record": "28-5"},
+    {"overall_seed": 48, "team": "Akron", "region": "Midwest", "seed_in_region": 12, "conference": "MAC", "record": "29-5"},
+    {"overall_seed": 49, "team": "Northern Iowa", "region": "East", "seed_in_region": 12, "conference": "Missouri Valley", "record": "23-12"},
+    {"overall_seed": 50, "team": "High Point", "region": "West", "seed_in_region": 12, "conference": "Big South", "record": "30-4"},
+    {"overall_seed": 51, "team": "Cal Baptist", "region": "East", "seed_in_region": 13, "conference": "WAC", "record": "25-8"},
+    {"overall_seed": 52, "team": "Hofstra", "region": "Midwest", "seed_in_region": 13, "conference": "CAA", "record": "24-10"},
+    {"overall_seed": 53, "team": "Troy", "region": "South", "seed_in_region": 13, "conference": "Sun Belt", "record": "22-11"},
+    {"overall_seed": 54, "team": "Hawaii", "region": "West", "seed_in_region": 13, "conference": "Big West", "record": "24-8"},
+    {"overall_seed": 55, "team": "North Dakota State", "region": "East", "seed_in_region": 14, "conference": "Summit League", "record": "27-7"},
+    {"overall_seed": 56, "team": "Penn", "region": "South", "seed_in_region": 14, "conference": "Ivy League", "record": "18-11"},
+    {"overall_seed": 57, "team": "Wright State", "region": "Midwest", "seed_in_region": 14, "conference": "Horizon League", "record": "23-11"},
+    {"overall_seed": 58, "team": "Kennesaw State", "region": "West", "seed_in_region": 14, "conference": "Conference USA", "record": "21-13"},
+    {"overall_seed": 59, "team": "Tennessee State", "region": "Midwest", "seed_in_region": 15, "conference": "Ohio Valley", "record": "23-9"},
+    {"overall_seed": 60, "team": "Idaho", "region": "South", "seed_in_region": 15, "conference": "Big Sky", "record": "21-14"},
+    {"overall_seed": 61, "team": "Furman", "region": "East", "seed_in_region": 15, "conference": "SoCon", "record": "22-12"},
+    {"overall_seed": 62, "team": "Queens", "region": "West", "seed_in_region": 15, "conference": "Atlantic Sun", "record": "21-13"},
+    {"overall_seed": 63, "team": "Siena", "region": "East", "seed_in_region": 16, "conference": "MAAC", "record": "23-11"},
+    {"overall_seed": 64, "team": "LIU", "region": "West", "seed_in_region": 16, "conference": "NEC", "record": "24-10"},
+    {"overall_seed": 65, "team": "Howard", "region": "Midwest", "seed_in_region": 16, "conference": "MEAC", "record": "23-10", "first_four": true},
+    {"overall_seed": 66, "team": "UMBC", "region": "Midwest", "seed_in_region": 16, "conference": "America East", "record": "24-8", "first_four": true},
+    {"overall_seed": 67, "team": "Lehigh", "region": "South", "seed_in_region": 16, "conference": "Patriot League", "record": "18-16", "first_four": true},
+    {"overall_seed": 68, "team": "Prairie View A&M", "region": "South", "seed_in_region": 16, "conference": "SWAC", "record": "18-17", "first_four": true}
+  ],
+  "bubble": {
+    "first_four_out": ["Oklahoma", "Auburn", "San Diego State", "Indiana"],
+    "last_four_in": ["NC State", "Texas", "SMU", "Miami (OH)"]
+  },
+  "notes": [
+    "Duke is the overall No. 1 seed",
+    "Arizona won the Big 12 tournament championship",
+    "Purdue won the Big Ten tournament championship",
+    "Gonzaga won the WCC tournament championship",
+    "Arkansas won the SEC tournament championship",
+    "St. John's won the Big East tournament championship",
+    "Duke won the ACC tournament championship",
+    "Miami (OH) enters at 31-1, the best record in the field",
+    "Auburn was the biggest snub per CBS Sports analysis",
+    "NC State is an at-large selection despite 20-13 record"
+  ]
+}

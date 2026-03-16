@@ -1,0 +1,557 @@
+{
+  "date": "2026-03-15",
+  "source": "DraftKings / FanDuel / BetMGM / Caesars / ESPN Bet (aggregated)",
+  "last_updated": "2026-03-15T20:00:00-04:00",
+  "notes": "Selection Sunday opening odds. R64 lines for First Four winner matchups (Michigan vs UMBC/Howard, BYU vs NC State/Texas, Florida vs Lehigh/Prairie View, Tennessee vs SMU/Miami OH) are TBD until First Four games complete March 17-18.",
+
+  "championship_futures": [
+    {"team": "Duke", "seed": 1, "region": "East", "odds": "+330", "implied_prob": 0.233, "fair_prob": 0.253, "dk": "+330", "fd": "+340", "mgm": "+320", "caesars": "+315"},
+    {"team": "Michigan", "seed": 1, "region": "Midwest", "odds": "+350", "implied_prob": 0.222, "fair_prob": 0.241, "dk": "+340", "fd": "+300", "mgm": "+325", "caesars": "+325"},
+    {"team": "Arizona", "seed": 1, "region": "West", "odds": "+400", "implied_prob": 0.200, "fair_prob": 0.217, "dk": "+400", "fd": "+550", "mgm": "+425", "caesars": "+425"},
+    {"team": "Florida", "seed": 1, "region": "South", "odds": "+700", "implied_prob": 0.125, "fair_prob": 0.136, "dk": "+700", "fd": "+650", "mgm": "+675", "caesars": "+600"},
+    {"team": "Houston", "seed": 2, "region": "South", "odds": "+1000", "implied_prob": 0.091, "fair_prob": 0.099, "dk": "+1000", "fd": "+1000", "mgm": "+1000", "caesars": "+1100"},
+    {"team": "UConn", "seed": 2, "region": "East", "odds": "+1700", "implied_prob": 0.056, "fair_prob": 0.061, "dk": "+2000", "fd": "+1700", "mgm": "+1700", "caesars": "+1700"},
+    {"team": "Illinois", "seed": 3, "region": "South", "odds": "+1900", "implied_prob": 0.050, "fair_prob": 0.054, "dk": "+2200", "fd": "+1700", "mgm": "+1900", "caesars": "+2000"},
+    {"team": "Iowa State", "seed": 2, "region": "Midwest", "odds": "+2200", "implied_prob": 0.043, "fair_prob": 0.047, "dk": "+2200", "fd": "+2200", "mgm": "+2200", "caesars": "+2200"},
+    {"team": "Purdue", "seed": 2, "region": "West", "odds": "+3500", "implied_prob": 0.028, "fair_prob": 0.030, "dk": "+4500", "fd": "+4000", "mgm": "+5000", "caesars": "+5000"},
+    {"team": "Michigan State", "seed": 3, "region": "East", "odds": "+4000", "implied_prob": 0.024, "fair_prob": 0.026, "dk": "+4000", "fd": "+3500", "mgm": "+4500", "caesars": "+5000"},
+    {"team": "Kansas", "seed": 4, "region": "East", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021},
+    {"team": "Arkansas", "seed": 4, "region": "West", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021},
+    {"team": "St. John's", "seed": 5, "region": "East", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021},
+    {"team": "Gonzaga", "seed": 3, "region": "West", "odds": "+5500", "implied_prob": 0.018, "fair_prob": 0.019},
+    {"team": "Virginia", "seed": 3, "region": "Midwest", "odds": "+6000", "implied_prob": 0.016, "fair_prob": 0.018},
+    {"team": "Vanderbilt", "seed": 5, "region": "South", "odds": "+6500", "implied_prob": 0.015, "fair_prob": 0.016},
+    {"team": "Wisconsin", "seed": 5, "region": "West", "odds": "+7000", "implied_prob": 0.014, "fair_prob": 0.015},
+    {"team": "Tennessee", "seed": 6, "region": "Midwest", "odds": "+9000", "implied_prob": 0.011, "fair_prob": 0.012},
+    {"team": "Nebraska", "seed": 4, "region": "South", "odds": "+10000", "implied_prob": 0.0099, "fair_prob": 0.011},
+    {"team": "Kentucky", "seed": 7, "region": "Midwest", "odds": "+10000", "implied_prob": 0.0099, "fair_prob": 0.011},
+    {"team": "Alabama", "seed": 4, "region": "Midwest", "odds": "+10000", "implied_prob": 0.0099, "fair_prob": 0.011, "dk": "+7000", "fd": "+10000", "mgm": "+8000", "caesars": "+8000"},
+    {"team": "North Carolina", "seed": 6, "region": "South", "odds": "+11000", "implied_prob": 0.0090, "fair_prob": 0.010},
+    {"team": "Texas Tech", "seed": 5, "region": "Midwest", "odds": "+11000", "implied_prob": 0.0090, "fair_prob": 0.010},
+    {"team": "Louisville", "seed": 6, "region": "East", "odds": "+12000", "implied_prob": 0.0083, "fair_prob": 0.009},
+    {"team": "BYU", "seed": 6, "region": "West", "odds": "+13000", "implied_prob": 0.0077, "fair_prob": 0.008},
+    {"team": "UCLA", "seed": 7, "region": "East", "odds": "+13000", "implied_prob": 0.0077, "fair_prob": 0.008},
+    {"team": "Iowa", "seed": 9, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005},
+    {"team": "Clemson", "seed": 8, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005},
+    {"team": "Texas A&M", "seed": 10, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005},
+    {"team": "NC State", "seed": 11, "region": "West", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005},
+    {"team": "Missouri", "seed": 10, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Miami FL", "seed": 7, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Villanova", "seed": 8, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Utah State", "seed": 9, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Saint Mary's", "seed": 7, "region": "South", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Ohio State", "seed": 8, "region": "East", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004},
+    {"team": "Georgia", "seed": 8, "region": "Midwest", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.004},
+    {"team": "UCF", "seed": 10, "region": "East", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.004},
+    {"team": "TCU", "seed": 9, "region": "East", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.004},
+    {"team": "SMU", "seed": 11, "region": "Midwest", "odds": "+35000", "implied_prob": 0.0029, "fair_prob": 0.003},
+    {"team": "VCU", "seed": 11, "region": "South", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003},
+    {"team": "Saint Louis", "seed": 9, "region": "Midwest", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003},
+    {"team": "Santa Clara", "seed": 10, "region": "Midwest", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003},
+    {"team": "Texas", "seed": 11, "region": "West", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003},
+    {"team": "Akron", "seed": 12, "region": "Midwest", "odds": "+50000", "implied_prob": 0.0020, "fair_prob": 0.002},
+    {"team": "South Florida", "seed": 11, "region": "East", "odds": "+60000", "implied_prob": 0.0017, "fair_prob": 0.002},
+    {"team": "Miami OH", "seed": 11, "region": "Midwest", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001},
+    {"team": "Penn", "seed": 14, "region": "South", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001},
+    {"team": "McNeese", "seed": 12, "region": "South", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001},
+    {"team": "Northern Iowa", "seed": 12, "region": "East", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001},
+    {"team": "UMBC", "seed": 16, "region": "Midwest", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001},
+    {"team": "Hawaii", "seed": 13, "region": "West", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001},
+    {"team": "Troy", "seed": 13, "region": "South", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001},
+    {"team": "High Point", "seed": 12, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Hofstra", "seed": 13, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Cal Baptist", "seed": 13, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Siena", "seed": 16, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Queens", "seed": 15, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Lehigh", "seed": 16, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "North Dakota State", "seed": 14, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Wright State", "seed": 14, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Kennesaw State", "seed": 14, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Furman", "seed": 15, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Tennessee State", "seed": 15, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Idaho", "seed": 15, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Prairie View A&M", "seed": 16, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "Howard", "seed": 16, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001},
+    {"team": "LIU", "seed": 16, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001}
+  ],
+
+  "final_four_odds": {
+    "source": "DraftKings Sportsbook via sportsbettingdime.com / FOX Sports",
+    "East": [
+      {"team": "Duke", "seed": 1, "odds": "-175"},
+      {"team": "UConn", "seed": 2, "odds": "+450"},
+      {"team": "Kansas", "seed": 4, "odds": "+1000"},
+      {"team": "Michigan State", "seed": 3, "odds": "+1150"},
+      {"team": "St. John's", "seed": 5, "odds": "+1300"},
+      {"team": "Louisville", "seed": 6, "odds": "+2500"},
+      {"team": "UCLA", "seed": 7, "odds": "+5000"},
+      {"team": "Ohio State", "seed": 8, "odds": "+7100"},
+      {"team": "UCF", "seed": 10, "odds": "+10000"},
+      {"team": "TCU", "seed": 9, "odds": "+12500"},
+      {"team": "South Florida", "seed": 11, "odds": "+17500"},
+      {"team": "Northern Iowa", "seed": 12, "odds": "+25000"},
+      {"team": "Cal Baptist", "seed": 13, "odds": "+50000"},
+      {"team": "North Dakota State", "seed": 14, "odds": "+50000"},
+      {"team": "Furman", "seed": 15, "odds": "+50000"},
+      {"team": "Siena", "seed": 16, "odds": "+50000"}
+    ],
+    "Midwest": [
+      {"team": "Michigan", "seed": 1, "odds": "-181"},
+      {"team": "Iowa State", "seed": 2, "odds": "+450"},
+      {"team": "Virginia", "seed": 3, "odds": "+2000"},
+      {"team": "Tennessee", "seed": 6, "odds": "+2100"},
+      {"team": "Alabama", "seed": 4, "odds": "+2200"},
+      {"team": "Kentucky", "seed": 7, "odds": "+3000"},
+      {"team": "Texas Tech", "seed": 5, "odds": "+3300"},
+      {"team": "Saint Louis", "seed": 9, "odds": "+10000"},
+      {"team": "Georgia", "seed": 8, "odds": "+15000"},
+      {"team": "Santa Clara", "seed": 10, "odds": "+20000"},
+      {"team": "SMU", "seed": 11, "odds": "+25000"},
+      {"team": "Akron", "seed": 12, "odds": "+25000"},
+      {"team": "Hofstra", "seed": 13, "odds": "+25000"},
+      {"team": "Miami OH", "seed": 11, "odds": "+30000"},
+      {"team": "Wright State", "seed": 14, "odds": "+50000"},
+      {"team": "Tennessee State", "seed": 15, "odds": "+50000"},
+      {"team": "UMBC/Howard", "seed": 16, "odds": "+150000"}
+    ],
+    "South": [
+      {"team": "Florida", "seed": 1, "odds": "-103"},
+      {"team": "Houston", "seed": 2, "odds": "+210"},
+      {"team": "Illinois", "seed": 3, "odds": "+360"},
+      {"team": "Vanderbilt", "seed": 5, "odds": "+1400"},
+      {"team": "Nebraska", "seed": 4, "odds": "+2000"},
+      {"team": "North Carolina", "seed": 6, "odds": "+6600"},
+      {"team": "Saint Mary's", "seed": 7, "odds": "+8000"},
+      {"team": "Clemson", "seed": 8, "odds": "+8000"},
+      {"team": "Iowa", "seed": 9, "odds": "+8000"},
+      {"team": "Texas A&M", "seed": 10, "odds": "+10000"},
+      {"team": "VCU", "seed": 11, "odds": "+17500"},
+      {"team": "McNeese", "seed": 12, "odds": "+50000"},
+      {"team": "Troy", "seed": 13, "odds": "+50000"},
+      {"team": "Penn", "seed": 14, "odds": "+50000"},
+      {"team": "Idaho", "seed": 15, "odds": "+150000"},
+      {"team": "Prairie View A&M/Lehigh", "seed": 16, "odds": "+150000"}
+    ],
+    "West": [
+      {"team": "Arizona", "seed": 1, "odds": "-138"},
+      {"team": "Purdue", "seed": 2, "odds": "+650"},
+      {"team": "Gonzaga", "seed": 3, "odds": "+1200"},
+      {"team": "Arkansas", "seed": 4, "odds": "+1200"},
+      {"team": "Wisconsin", "seed": 5, "odds": "+1600"},
+      {"team": "BYU", "seed": 6, "odds": "+5000"},
+      {"team": "Miami FL", "seed": 7, "odds": "+6600"},
+      {"team": "NC State", "seed": 11, "odds": "+8000"},
+      {"team": "Villanova", "seed": 8, "odds": "+8000"},
+      {"team": "Missouri", "seed": 10, "odds": "+9000"},
+      {"team": "Utah State", "seed": 9, "odds": "+10000"},
+      {"team": "High Point", "seed": 12, "odds": "+25000"},
+      {"team": "Texas", "seed": 11, "odds": "+35000"},
+      {"team": "Hawaii", "seed": 13, "odds": "+50000"},
+      {"team": "Queens", "seed": 15, "odds": "+50000"},
+      {"team": "LIU", "seed": 16, "odds": "+50000"},
+      {"team": "Kennesaw State", "seed": 14, "odds": "+150000"}
+    ]
+  },
+
+  "region_winner_odds": {
+    "notes": "Derived from Final Four odds above. 1-seeds are heavy favorites in all regions. South is most competitive (Florida only -103).",
+    "East": {"favorite": "Duke", "favorite_odds": "-175"},
+    "Midwest": {"favorite": "Michigan", "favorite_odds": "-181"},
+    "South": {"favorite": "Florida", "favorite_odds": "-103"},
+    "West": {"favorite": "Arizona", "favorite_odds": "-138"}
+  },
+
+  "first_four": [
+    {
+      "matchup": "16 UMBC vs 16 Howard",
+      "region": "Midwest",
+      "winner_plays": "1 Michigan",
+      "date": "2026-03-17",
+      "spread": -1.5,
+      "favorite": "UMBC",
+      "moneyline_fav": -120,
+      "moneyline_dog": 100,
+      "over_under": 142.5,
+      "source": "FanDuel / DraftKings"
+    },
+    {
+      "matchup": "11 NC State vs 11 Texas",
+      "region": "West",
+      "winner_plays": "6 BYU",
+      "date": "2026-03-17",
+      "spread": -1.5,
+      "favorite": "NC State",
+      "moneyline_fav": -120,
+      "moneyline_dog": 100,
+      "over_under": 164.5,
+      "source": "FanDuel / DraftKings"
+    },
+    {
+      "matchup": "11 SMU vs 11 Miami OH",
+      "region": "Midwest",
+      "winner_plays": "6 Tennessee",
+      "date": "2026-03-18",
+      "spread": -7.5,
+      "favorite": "SMU",
+      "moneyline_fav": -325,
+      "moneyline_dog": 260,
+      "over_under": 167.5,
+      "source": "FanDuel / DraftKings"
+    },
+    {
+      "matchup": "16 Lehigh vs 16 Prairie View A&M",
+      "region": "South",
+      "winner_plays": "1 Florida",
+      "date": "2026-03-18",
+      "spread": -1.5,
+      "favorite": "Lehigh",
+      "moneyline_fav": -120,
+      "moneyline_dog": 100,
+      "over_under": 148.5,
+      "source": "FanDuel / DraftKings"
+    }
+  ],
+
+  "r64_lines": [
+    {
+      "matchup": "1 Duke vs 16 Siena",
+      "region": "East",
+      "spread": -27.5,
+      "favorite": "Duke",
+      "moneyline_fav": -20000,
+      "moneyline_dog": 3500,
+      "over_under": 136.5
+    },
+    {
+      "matchup": "8 Ohio State vs 9 TCU",
+      "region": "East",
+      "spread": -2.5,
+      "favorite": "Ohio State",
+      "moneyline_fav": -198,
+      "moneyline_dog": 164,
+      "over_under": 147.5
+    },
+    {
+      "matchup": "5 St. John's vs 12 Northern Iowa",
+      "region": "East",
+      "spread": -9.5,
+      "favorite": "St. John's",
+      "moneyline_fav": -425,
+      "moneyline_dog": 330,
+      "over_under": 130.5
+    },
+    {
+      "matchup": "4 Kansas vs 13 Cal Baptist",
+      "region": "East",
+      "spread": -13.5,
+      "favorite": "Kansas",
+      "moneyline_fav": -1100,
+      "moneyline_dog": 700,
+      "over_under": 135.5
+    },
+    {
+      "matchup": "6 Louisville vs 11 South Florida",
+      "region": "East",
+      "spread": -6.5,
+      "favorite": "Louisville",
+      "moneyline_fav": -285,
+      "moneyline_dog": 230,
+      "over_under": 163.5
+    },
+    {
+      "matchup": "3 Michigan State vs 14 North Dakota State",
+      "region": "East",
+      "spread": -15.5,
+      "favorite": "Michigan State",
+      "moneyline_fav": -1650,
+      "moneyline_dog": 950,
+      "over_under": 143.5
+    },
+    {
+      "matchup": "7 UCLA vs 10 UCF",
+      "region": "East",
+      "spread": -6.5,
+      "favorite": "UCLA",
+      "moneyline_fav": -245,
+      "moneyline_dog": 200,
+      "over_under": 154.5
+    },
+    {
+      "matchup": "2 UConn vs 15 Furman",
+      "region": "East",
+      "spread": -19.5,
+      "favorite": "UConn",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 136.5
+    },
+    {
+      "matchup": "1 Arizona vs 16 LIU",
+      "region": "West",
+      "spread": -29.5,
+      "favorite": "Arizona",
+      "moneyline_fav": -100000,
+      "moneyline_dog": 5000,
+      "over_under": 151.5
+    },
+    {
+      "matchup": "8 Villanova vs 9 Utah State",
+      "region": "West",
+      "spread": 2.5,
+      "favorite": "Utah State",
+      "moneyline_fav": -135,
+      "moneyline_dog": 114,
+      "over_under": 147.5,
+      "notes": "9-seed favored over 8-seed — spread widened from -1.5 to -2.5"
+    },
+    {
+      "matchup": "5 Wisconsin vs 12 High Point",
+      "region": "West",
+      "spread": -11.5,
+      "favorite": "Wisconsin",
+      "moneyline_fav": -850,
+      "moneyline_dog": 575,
+      "over_under": 165.5
+    },
+    {
+      "matchup": "4 Arkansas vs 13 Hawaii",
+      "region": "West",
+      "spread": -15.5,
+      "favorite": "Arkansas",
+      "moneyline_fav": -1650,
+      "moneyline_dog": 950,
+      "over_under": 161.5
+    },
+    {
+      "matchup": "6 BYU vs 11 NC State/Texas",
+      "region": "West",
+      "spread": null,
+      "favorite": "BYU",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD - First Four winner plays BYU. Line available after March 17."
+    },
+    {
+      "matchup": "3 Gonzaga vs 14 Kennesaw State",
+      "region": "West",
+      "spread": -19.5,
+      "favorite": "Gonzaga",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 158.5
+    },
+    {
+      "matchup": "7 Miami FL vs 10 Missouri",
+      "region": "West",
+      "spread": -2.5,
+      "favorite": "Miami FL",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 150.5
+    },
+    {
+      "matchup": "2 Purdue vs 15 Queens",
+      "region": "West",
+      "spread": -22.5,
+      "favorite": "Purdue",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 164.5
+    },
+    {
+      "matchup": "1 Michigan vs 16 UMBC/Howard",
+      "region": "Midwest",
+      "spread": null,
+      "favorite": "Michigan",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD - First Four winner plays Michigan. Line available after March 17."
+    },
+    {
+      "matchup": "8 Georgia vs 9 Saint Louis",
+      "region": "Midwest",
+      "spread": -1.5,
+      "favorite": "Georgia",
+      "moneyline_fav": -148,
+      "moneyline_dog": 124,
+      "over_under": 170.5,
+      "notes": "Highest total in R64 - both top-25 KenPom tempo teams"
+    },
+    {
+      "matchup": "5 Texas Tech vs 12 Akron",
+      "region": "Midwest",
+      "spread": -8.5,
+      "favorite": "Texas Tech",
+      "moneyline_fav": -410,
+      "moneyline_dog": 320,
+      "over_under": 155.5
+    },
+    {
+      "matchup": "4 Alabama vs 13 Hofstra",
+      "region": "Midwest",
+      "spread": -12.5,
+      "favorite": "Alabama",
+      "moneyline_fav": -700,
+      "moneyline_dog": 500,
+      "over_under": 161.5
+    },
+    {
+      "matchup": "6 Tennessee vs 11 SMU/Miami OH",
+      "region": "Midwest",
+      "spread": null,
+      "favorite": "Tennessee",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD - First Four winner plays Tennessee. Line available after March 18."
+    },
+    {
+      "matchup": "3 Virginia vs 14 Wright State",
+      "region": "Midwest",
+      "spread": -17.5,
+      "favorite": "Virginia",
+      "moneyline_fav": -3200,
+      "moneyline_dog": 1400,
+      "over_under": 144.5
+    },
+    {
+      "matchup": "7 Kentucky vs 10 Santa Clara",
+      "region": "Midwest",
+      "spread": -2.5,
+      "favorite": "Kentucky",
+      "moneyline_fav": -148,
+      "moneyline_dog": 124,
+      "over_under": 161.5,
+      "notes": "Surprisingly tight spread for a blue blood vs mid-major - major upset watch"
+    },
+    {
+      "matchup": "2 Iowa State vs 15 Tennessee State",
+      "region": "Midwest",
+      "spread": -23.5,
+      "favorite": "Iowa State",
+      "moneyline_fav": -6500,
+      "moneyline_dog": 2000,
+      "over_under": 148.5
+    },
+    {
+      "matchup": "1 Florida vs 16 Lehigh/Prairie View A&M",
+      "region": "South",
+      "spread": null,
+      "favorite": "Florida",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD - First Four winner plays Florida. Line available after March 18."
+    },
+    {
+      "matchup": "8 Clemson vs 9 Iowa",
+      "region": "South",
+      "spread": 1.5,
+      "favorite": "Iowa",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 130.5,
+      "notes": "9-seed favored over 8-seed. Tied for lowest total in R64."
+    },
+    {
+      "matchup": "5 Vanderbilt vs 12 McNeese",
+      "region": "South",
+      "spread": -10.5,
+      "favorite": "Vanderbilt",
+      "moneyline_fav": -625,
+      "moneyline_dog": 455,
+      "over_under": 150.5
+    },
+    {
+      "matchup": "4 Nebraska vs 13 Troy",
+      "region": "South",
+      "spread": -13.5,
+      "favorite": "Nebraska",
+      "moneyline_fav": -1200,
+      "moneyline_dog": 750,
+      "over_under": 135.5
+    },
+    {
+      "matchup": "6 North Carolina vs 11 VCU",
+      "region": "South",
+      "spread": -2.5,
+      "favorite": "North Carolina",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 155.5,
+      "notes": "Very tight spread - VCU a live upset pick"
+    },
+    {
+      "matchup": "3 Illinois vs 14 Penn",
+      "region": "South",
+      "spread": -22.5,
+      "favorite": "Illinois",
+      "moneyline_fav": -10000,
+      "moneyline_dog": 3000,
+      "over_under": 149.5
+    },
+    {
+      "matchup": "7 Saint Mary's vs 10 Texas A&M",
+      "region": "South",
+      "spread": -2.5,
+      "favorite": "Saint Mary's",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 148.5
+    },
+    {
+      "matchup": "2 Houston vs 15 Idaho",
+      "region": "South",
+      "spread": -21.5,
+      "favorite": "Houston",
+      "moneyline_fav": -10000,
+      "moneyline_dog": 3000,
+      "over_under": 134.5
+    }
+  ],
+
+  "betting_handle_data": {
+    "notes": "Percentage of championship futures handle by team",
+    "top_teams": [
+      {"team": "Michigan", "handle_pct": 12.3},
+      {"team": "Houston", "handle_pct": 12.0},
+      {"team": "Arizona", "handle_pct": 10.9}
+    ]
+  },
+
+  "upset_watch_games": [
+    {"matchup": "7 Kentucky vs 10 Santa Clara", "region": "Midwest", "spread": -2.5, "notes": "Tight spread for blue blood vs mid-major"},
+    {"matchup": "6 North Carolina vs 11 VCU", "region": "South", "spread": -2.5, "notes": "Slim spread signals oddsmaker respect for VCU"},
+    {"matchup": "8 Clemson vs 9 Iowa", "region": "South", "spread": 1.5, "notes": "9-seed Iowa favored - true coin flip"},
+    {"matchup": "8 Villanova vs 9 Utah State", "region": "West", "spread": 1.5, "notes": "9-seed Utah State favored"},
+    {"matchup": "8 Ohio State vs 9 TCU", "region": "East", "spread": -2.5, "notes": "Physical battle potential"},
+    {"matchup": "7 Miami FL vs 10 Missouri", "region": "West", "spread": -2.5, "notes": "Tight matchup"},
+    {"matchup": "7 Saint Mary's vs 10 Texas A&M", "region": "South", "spread": -2.5, "notes": "Very competitive"}
+  ],
+
+  "key_observations": {
+    "biggest_favorites": [
+      "Arizona -29.5 vs LIU (largest spread in tournament)",
+      "Duke -27.5 vs Siena",
+      "Iowa State -23.5 vs Tennessee State",
+      "Purdue -22.5 vs Queens",
+      "Illinois -22.5 vs Penn",
+      "Houston -21.5 vs Idaho"
+    ],
+    "tightest_games": [
+      "Georgia -1.5 vs Saint Louis (8v9)",
+      "Utah State -1.5 vs Villanova (9 favored over 8)",
+      "Iowa -1.5 vs Clemson (9 favored over 8)",
+      "Kentucky -2.5 vs Santa Clara",
+      "North Carolina -2.5 vs VCU",
+      "Miami FL -2.5 vs Missouri",
+      "Saint Mary's -2.5 vs Texas A&M"
+    ],
+    "south_region_competitive": "South is the most competitive region with Florida only -103 to win it. Houston (+210) and Illinois (+360) are credible threats.",
+    "east_region_duke_dominant": "Duke at -175 is the heaviest region favorite. UConn at +450 is the clear #2.",
+    "midwest_region_michigan_heavy": "Michigan at -181 has the shortest odds of any region favorite.",
+    "west_region_arizona_strong": "Arizona at -138 is strong but not dominant. Purdue (+650) and Gonzaga/Arkansas (+1200) have paths."
+  }
+}

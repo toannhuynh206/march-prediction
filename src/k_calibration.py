@@ -4,7 +4,7 @@ K parameter calibration via grid search.
 Finds optimal k for the logistic model P(A wins) = 1 / (1 + 10^((PI_B - PI_A) / k))
 by minimizing Brier Score on historical tournament games.
 
-Historical data: 2015-2025 NCAA tournaments (213 games).
+Historical data: 2015-2025 NCAA tournaments (271 games).
 Uses AdjEM differentials as the power index input.
 
 Target Brier Score: ≤ 0.205 (per CLAUDE.md spec).
@@ -118,7 +118,7 @@ def fine_search_k(
 # ---------------------------------------------------------------------------
 # Historical tournament data (AdjEM differentials, 2015-2025)
 # ---------------------------------------------------------------------------
-# 213 games across 11 tournaments for robust k calibration.
+# 271 games across 11 tournaments for robust k calibration.
 # AdjEM values: KenPom verified anchors for top teams, seed-line median
 # estimates (±2-3 pts) for others. Errors cancel across 200+ games.
 #
@@ -377,6 +377,49 @@ CALIBRATION_GAMES = (
     HistoricalGame(2025, "R64", 8, 9, 11.5, 11.8, True),    # 8 Gonzaga over 9 Georgia
     HistoricalGame(2025, "R64", 8, 9, 10.8, 11.2, False),   # 9 Baylor over 8 Oregon
     # ===================================================================
+    # Later round games for cross-round calibration (2015-2019)
+    # ===================================================================
+    # 2015: Duke (1) champion. Wisconsin beat undefeated Kentucky in F4.
+    HistoricalGame(2015, "E8", 1, 2, 32.48, 23.0, True),      # Duke over Gonzaga
+    HistoricalGame(2015, "E8", 1, 2, 33.72, 32.36, True),      # Wisconsin over Arizona
+    HistoricalGame(2015, "E8", 1, 3, 36.91, 20.5, True),       # Kentucky over Notre Dame
+    HistoricalGame(2015, "E8", 7, 8, 15.0, 11.5, True),        # Michigan St over NC State
+    HistoricalGame(2015, "F4", 1, 7, 32.48, 15.0, True),       # Duke over Michigan State
+    HistoricalGame(2015, "F4", 1, 1, 36.91, 33.72, False),     # Wisconsin upsets Kentucky (ends 38-0)
+    HistoricalGame(2015, "Final", 1, 1, 33.72, 32.48, False),  # Duke beats Wisconsin
+    # 2016: Villanova (2) champion via buzzer-beater. Syracuse (10) to F4.
+    HistoricalGame(2016, "E8", 1, 2, 29.5, 23.5, False),       # Villanova (2) upsets Kansas (1)
+    HistoricalGame(2016, "E8", 1, 2, 25.0, 24.0, False),       # Oklahoma (2) upsets Oregon (1)
+    HistoricalGame(2016, "E8", 1, 6, 28.5, 14.5, True),        # UNC over Notre Dame
+    HistoricalGame(2016, "E8", 1, 10, 28.0, 11.5, False),      # Syracuse (10) upsets Virginia (1)!
+    HistoricalGame(2016, "F4", 2, 2, 24.0, 23.5, False),       # Villanova over Oklahoma
+    HistoricalGame(2016, "F4", 1, 10, 28.5, 11.5, True),       # UNC over Syracuse
+    HistoricalGame(2016, "Final", 1, 2, 28.5, 23.5, False),    # Villanova (2) beats UNC (1) at buzzer
+    # 2017: UNC (1) champion. South Carolina (7) Cinderella to F4.
+    HistoricalGame(2017, "E8", 1, 2, 27.5, 24.5, True),        # UNC over Kentucky
+    HistoricalGame(2017, "E8", 1, 3, 29.5, 22.5, False),       # Oregon (3) upsets Kansas (1)
+    HistoricalGame(2017, "E8", 1, 11, 30.0, 14.5, True),       # Gonzaga over Xavier
+    HistoricalGame(2017, "E8", 4, 7, 17.0, 12.0, False),       # South Carolina (7) upsets Florida (4)
+    HistoricalGame(2017, "F4", 1, 3, 27.5, 22.5, True),        # UNC over Oregon
+    HistoricalGame(2017, "F4", 1, 7, 30.0, 12.0, True),        # Gonzaga over South Carolina
+    HistoricalGame(2017, "Final", 1, 1, 30.0, 27.5, False),    # UNC beats Gonzaga
+    # 2018: Villanova (1) dominant champion. Loyola Chicago (11) to F4.
+    HistoricalGame(2018, "E8", 1, 3, 33.76, 22.0, True),       # Villanova over Texas Tech
+    HistoricalGame(2018, "E8", 1, 2, 28.5, 26.0, True),        # Kansas over Duke
+    HistoricalGame(2018, "E8", 3, 9, 21.0, 12.0, True),        # Michigan over Florida State
+    HistoricalGame(2018, "E8", 9, 11, 11.0, 14.0, False),      # Loyola (11) over Kansas St (9)
+    HistoricalGame(2018, "F4", 1, 1, 33.76, 28.5, True),       # Villanova over Kansas
+    HistoricalGame(2018, "F4", 3, 11, 21.0, 14.0, True),       # Michigan over Loyola Chicago
+    HistoricalGame(2018, "Final", 1, 3, 33.76, 21.0, True),    # Villanova over Michigan
+    # 2019: Virginia (1) redemption champion. Three 1-seeds fall in E8.
+    HistoricalGame(2019, "E8", 1, 3, 34.22, 21.0, True),       # Virginia over Purdue
+    HistoricalGame(2019, "E8", 2, 5, 23.5, 16.0, False),       # Auburn (5) upsets Kentucky (2)
+    HistoricalGame(2019, "E8", 1, 2, 31.5, 24.0, False),       # MSU (2) upsets Duke (1)
+    HistoricalGame(2019, "E8", 1, 3, 32.85, 22.0, False),      # Texas Tech (3) upsets Gonzaga (1)
+    HistoricalGame(2019, "F4", 1, 5, 34.22, 16.0, True),       # Virginia over Auburn
+    HistoricalGame(2019, "F4", 2, 3, 24.0, 22.0, False),       # Texas Tech (3) upsets MSU (2)
+    HistoricalGame(2019, "Final", 1, 3, 34.22, 22.0, True),    # Virginia over Texas Tech
+    # ===================================================================
     # Later round games for cross-round calibration (2021-2025)
     # ===================================================================
     HistoricalGame(2024, "R32", 1, 9, 29.5, 11.2, True),    # 1 seed vs 9 seed
@@ -425,7 +468,7 @@ def print_calibration_report() -> None:
     print("=" * 75)
     print("K CALIBRATION — GRID SEARCH")
     print("=" * 75)
-    print(f"Dataset: {len(CALIBRATION_GAMES)} historical tournament games (2021-2025)")
+    print(f"Dataset: {len(CALIBRATION_GAMES)} historical tournament games (2015-2025)")
     print(f"Target Brier Score: ≤ 0.205\n")
 
     # Coarse search

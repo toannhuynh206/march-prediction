@@ -1,7 +1,7 @@
 """
 Round-by-round upset calibration targets.
 
-Historical upset data (2021-2025) analyzed per round to model the "upset decay
+Historical upset data (2015-2025) analyzed per round to model the "upset decay
 curve" — upsets are concentrated in R64 and drop off sharply in later rounds.
 
 Key insight for 2026: talent concentration at the top (NIL + transfer portal)
@@ -19,7 +19,7 @@ from typing import Optional
 
 
 # ---------------------------------------------------------------------------
-# Historical upset data (2021-2025) — round by round
+# Historical upset data (2015-2025) — round by round
 # ---------------------------------------------------------------------------
 # "Upset" = higher-numbered seed wins the game.
 # Includes 8v9 games (coin flips) for completeness.
@@ -62,6 +62,40 @@ class TournamentUpsetProfile:
 
 
 HISTORICAL_UPSETS = (
+    TournamentUpsetProfile(
+        year=2015, champion_seed=1,
+        r64=5, r32=3, s16=2, e8=0, f4=0, final=0,
+        # Very chalky: only 5 R64 upsets (UAB, Georgia State, Dayton, UCLA, Ohio State)
+        # MSU (7) Cinderella: beat Virginia (2) R32, Oklahoma (3) S16, NC State (8) E8
+        # Wisconsin beat undefeated Kentucky in FF. Duke won title.
+    ),
+    TournamentUpsetProfile(
+        year=2016, champion_seed=2,
+        r64=10, r32=4, s16=1, e8=3, f4=0, final=1,
+        # Chaos year: 10 R64 upsets (MTSU/15, SFA/14, Hawaii/13, etc.)
+        # Syracuse (10) to FF, three 2-seeds beat 1-seeds in E8
+        # Villanova wins championship over UNC on buzzer-beater
+    ),
+    TournamentUpsetProfile(
+        year=2017, champion_seed=1,
+        r64=6, r32=3, s16=1, e8=2, f4=0, final=0,
+        # Moderate chaos. South Carolina (7) to FF.
+        # Oregon (3) beat Kansas (1) in E8. UNC won title over Gonzaga.
+    ),
+    TournamentUpsetProfile(
+        year=2018, champion_seed=1,
+        r64=9, r32=3, s16=2, e8=1, f4=0, final=0,
+        # UMBC (16) beat Virginia (1) — historic first 16-over-1!
+        # Loyola Chicago (11) Cinderella to FF (beat Nevada, Tennessee, KSU)
+        # Villanova dominant champion.
+    ),
+    TournamentUpsetProfile(
+        year=2019, champion_seed=1,
+        r64=11, r32=4, s16=2, e8=3, f4=1, final=0,
+        # Most chaotic modern tournament: 11 R64 upsets, three 1-seeds fell in E8
+        # Auburn (5) to FF, Texas Tech (3) to Final
+        # Virginia redemption: won title one year after UMBC loss
+    ),
     TournamentUpsetProfile(
         year=2021, champion_seed=1,
         r64=10, r32=5, s16=2, e8=1, f4=1, final=0,
@@ -126,7 +160,7 @@ def compute_historical_averages(
 
 
 HISTORICAL_AVERAGES = compute_historical_averages()
-# r64_mean ~7.8, r32_mean ~3.0, s16_mean ~1.0, e8_mean ~1.2, f4_mean ~0.6
+# With 2015-2025 (10 years): r64_mean ~8.0, r32_mean ~3.2, s16_mean ~1.3, e8_mean ~1.5, f4_mean ~0.4
 
 
 # ---------------------------------------------------------------------------
