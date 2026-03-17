@@ -6,7 +6,7 @@ import { create } from 'zustand'
 
 const useTournamentStore = create((set) => ({
   // Active tab
-  activeTab: 'Bracket',
+  activeTab: 'Explorer',
   setActiveTab: (tab) => set({ activeTab: tab }),
 
   // Selected region for region-specific views
@@ -16,18 +16,12 @@ const useTournamentStore = create((set) => ({
   // Explorer state
   explorerCursor: null,
   explorerSort: 'probability',
-  explorerAliveOnly: false,
+  explorerStatus: 'all', // 'all' | 'alive' | 'dead'
   explorerChampion: '',
   setExplorerCursor: (cursor) => set({ explorerCursor: cursor }),
   setExplorerSort: (sort) => set({ explorerSort: sort, explorerCursor: null }),
-  setExplorerAliveOnly: (val) => set({ explorerAliveOnly: val, explorerCursor: null }),
+  setExplorerStatus: (status) => set({ explorerStatus: status, explorerCursor: null }),
   setExplorerChampion: (team) => set({ explorerChampion: team, explorerCursor: null }),
-
-  // Bracket viewer state
-  bracketSort: 'probability',
-  bracketChampion: '',
-  setBracketSort: (sort) => set({ bracketSort: sort }),
-  setBracketChampion: (team) => set({ bracketChampion: team }),
 
   // Expanded bracket in explorer
   expandedBracketId: null,

@@ -92,7 +92,7 @@ async def list_brackets(
     cursor: str | None = Query(None, description="Cursor: 'value_id'"),
     limit: int = Query(50, ge=1, le=200),
     sort: str = Query("probability", pattern="^(score|probability)$"),
-    alive_only: bool = Query(False),
+    status: str = Query("all", pattern="^(all|alive|dead)$"),
     champion: str | None = Query(None, description="Filter by champion team name"),
     year: int = TOURNAMENT_YEAR,
 ):
@@ -161,8 +161,10 @@ async def list_brackets(
             params["champ_seed"] = champ_seed
             params["champ_region"] = champ_region
 
-        if alive_only:
+        if status == "alive":
             conditions.append("is_alive = TRUE")
+        elif status == "dead":
+            conditions.append("is_alive = FALSE")
 
         sort_col = "weight" if sort == "score" else "probability"
 

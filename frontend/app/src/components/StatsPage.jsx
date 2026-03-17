@@ -76,6 +76,7 @@ function ChampionOddsChart({ data }) {
           />
           <Tooltip
             formatter={(v) => `${(v * 100).toFixed(3)}%`}
+            cursor={{ fill: 'rgba(255,255,255,0.06)' }}
             contentStyle={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border-subtle)',
@@ -185,6 +186,7 @@ function UpsetDistributionChart({ data }) {
           <Tooltip
             formatter={(v) => v.toLocaleString()}
             labelFormatter={(l) => `${l} upsets`}
+            cursor={{ fill: 'rgba(255,255,255,0.06)' }}
             contentStyle={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border-subtle)',
@@ -192,7 +194,7 @@ function UpsetDistributionChart({ data }) {
               color: 'var(--text-primary)',
             }}
           />
-          <Bar dataKey="count" fill="var(--cyan)" radius={[4, 4, 0, 0]} opacity={0.8} />
+          <Bar dataKey="count" fill="var(--cyan)" radius={[4, 4, 0, 0]} opacity={0.8} activeBar={{ fill: 'var(--cyan)', opacity: 1 }} />
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -302,7 +304,7 @@ export default function StatsPage() {
       {/* Summary cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard label="Total Brackets" value={data.total?.toLocaleString()} accent="var(--text-primary)" />
-        <StatCard label="Alive" value={data.alive_count?.toLocaleString()} sub={`${survivalPct}% survival`} accent="var(--green-alive)" />
+        <StatCard label="Alive" value={`${data.alive_count?.toLocaleString()} / ${data.total?.toLocaleString()}`} sub={`${survivalPct}% survival`} accent="var(--green-alive)" />
         <StatCard label="Games Played" value={data.games_played || 0} sub="of 63" accent="var(--cyan)" />
         <StatCard label="Upsets" value={data.upsets_so_far || 0} accent="var(--orange)" />
       </div>

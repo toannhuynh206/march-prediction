@@ -5,7 +5,7 @@
 
 import { useState, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchBrackets, fetchBracketDetail, fetchBracket } from '../api/client'
+import { fetchBrackets, fetchBracketDetail, fetchBracket, fetchGameResults } from '../api/client'
 import useTournamentStore from '../store/tournamentStore'
 import BracketDetailView from './BracketDetailView'
 
@@ -104,7 +104,7 @@ function BracketMeta({ bracket }) {
   )
 }
 
-function BracketFullDetail({ bracketId }) {
+function BracketFullDetail({ bracketId, gameResults }) {
   const { data, isLoading, error } = useQuery({
     queryKey: ['bracket-detail', bracketId],
     queryFn: () => fetchBracketDetail(bracketId),
@@ -132,7 +132,7 @@ function BracketFullDetail({ bracketId }) {
     )
   }
 
-  return <BracketDetailView data={data} />
+  return <BracketDetailView data={data} gameResults={gameResults} />
 }
 
 export default function BracketView() {
@@ -151,6 +151,14 @@ export default function BracketView() {
   const { data: bracketData } = useQuery({
     queryKey: ['bracket'],
     queryFn: fetchBracket,
+  })
+
+  // Fetch actual game results for bust indicators
+  const { data: gameResults } = useQuery({
+    queryKey: ['game-results'],
+    queryFn: fetchGameResults,
+    refetchInterval: 30_000,
+    staleTime: 30_000,
   })
 
   const allTeams = useMemo(() => {
@@ -263,11 +271,8 @@ export default function BracketView() {
 
         {data && (
           <div className="ml-auto flex items-center gap-3">
-            <span className="font-mono text-xs" style={{ color: 'var(--orange)' }}>
-              {data.total.toLocaleString()} brackets
-            </span>
             <span className="font-mono text-xs" style={{ color: 'var(--green-alive)' }}>
-              {data.alive_count.toLocaleString()} alive
+              {data.alive_count.toLocaleString()} / {data.total.toLocaleString()} alive
             </span>
           </div>
         )}
@@ -337,7 +342,7 @@ export default function BracketView() {
 
             {/* Full bracket visualization */}
             <div className="p-4">
-              <BracketFullDetail bracketId={currentBracket.id} />
+              <BracketFullDetail bracketId={currentBracket.id} gameResults={gameResults} />
             </div>
           </>
         )}

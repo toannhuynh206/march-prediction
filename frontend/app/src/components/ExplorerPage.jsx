@@ -5,11 +5,11 @@
 
 import { useState, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchBrackets, fetchBracketDetail, fetchBracket } from '../api/client'
+import { fetchBrackets, fetchBracketDetail, fetchBracket, fetchGameResults } from '../api/client'
 import useTournamentStore from '../store/tournamentStore'
 import BracketDetailView from './BracketDetailView'
 
-function BracketRow({ bracket, isExpanded, onToggle, index }) {
+function BracketRow({ bracket, isExpanded, onToggle, index, gameResults }) {
   const upsetColor =
     bracket.upset_count > 10
       ? 'var(--red-dead)'
@@ -70,12 +70,12 @@ function BracketRow({ bracket, isExpanded, onToggle, index }) {
           )}
         </div>
       </div>
-      {isExpanded && <BracketDetail bracketId={bracket.id} />}
+      {isExpanded && <BracketDetail bracketId={bracket.id} gameResults={gameResults} />}
     </>
   )
 }
 
-function BracketDetail({ bracketId }) {
+function BracketDetail({ bracketId, gameResults }) {
   const { data, isLoading, error } = useQuery({
     queryKey: ['bracket-detail', bracketId],
     queryFn: () => fetchBracketDetail(bracketId),
@@ -101,15 +101,15 @@ function BracketDetail({ bracketId }) {
       className="p-4 animate-fade-up"
       style={{ background: 'rgba(255,107,53,0.03)', borderBottom: '2px solid var(--border-accent)' }}
     >
-      <BracketDetailView data={data} />
+      <BracketDetailView data={data} gameResults={gameResults} />
     </div>
   )
 }
 
 export default function ExplorerPage() {
   const {
-    explorerSort, explorerAliveOnly, explorerChampion,
-    setExplorerSort, setExplorerAliveOnly, setExplorerChampion,
+    explorerSort, explorerStatus, explorerChampion,
+    setExplorerSort, setExplorerStatus, setExplorerChampion,
   } = useTournamentStore()
   const [cursors, setCursors] = useState([null])
   const [pageIndex, setPageIndex] = useState(0)
@@ -119,6 +119,14 @@ export default function ExplorerPage() {
   const { data: bracketData } = useQuery({
     queryKey: ['bracket'],
     queryFn: fetchBracket,
+  })
+
+  // Fetch actual game results for bust indicators
+  const { data: gameResults } = useQuery({
+    queryKey: ['game-results'],
+    queryFn: fetchGameResults,
+    refetchInterval: 30_000,
+    staleTime: 30_000,
   })
 
   const allTeams = useMemo(() => {
@@ -135,12 +143,12 @@ export default function ExplorerPage() {
   const currentCursor = cursors[pageIndex]
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['brackets', currentCursor, explorerSort, explorerAliveOnly, explorerChampion],
+    queryKey: ['brackets', currentCursor, explorerSort, explorerStatus, explorerChampion],
     queryFn: () =>
       fetchBrackets({
         cursor: currentCursor,
         sort: explorerSort,
-        aliveOnly: explorerAliveOnly,
+        status: explorerStatus,
         champion: explorerChampion,
       }),
     keepPreviousData: true,
@@ -217,29 +225,38 @@ export default function ExplorerPage() {
           </select>
         </div>
 
-        <label className="flex items-center gap-2 cursor-pointer group">
-          <input
-            type="checkbox"
-            checked={explorerAliveOnly}
+        <div className="flex items-center gap-2">
+          <label className="text-[10px] font-mono uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+            Status
+          </label>
+          <select
+            value={explorerStatus}
             onChange={(e) => {
-              setExplorerAliveOnly(e.target.checked)
+              setExplorerStatus(e.target.value)
               setCursors([null])
               setPageIndex(0)
             }}
-            className="rounded accent-orange-500"
-          />
-          <span className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>
-            Alive only
-          </span>
-        </label>
+            className="text-sm font-medium rounded-lg px-3 py-1.5 border-none outline-none cursor-pointer"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              color: explorerStatus === 'alive'
+                ? 'var(--green-alive)'
+                : explorerStatus === 'dead'
+                  ? 'var(--red-dead)'
+                  : 'var(--text-primary)',
+              border: `1px solid ${explorerStatus !== 'all' ? 'var(--border-accent)' : 'var(--border-subtle)'}`,
+            }}
+          >
+            <option value="all">All</option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+          </select>
+        </div>
 
         {data && (
           <div className="ml-auto flex items-center gap-3">
             <span className="font-mono text-xs" style={{ color: 'var(--green-alive)' }}>
-              {data.alive_count.toLocaleString()} alive
-            </span>
-            <span className="font-mono text-xs" style={{ color: 'var(--text-muted)' }}>
-              / {data.total.toLocaleString()} total
+              {data.alive_count.toLocaleString()} / {data.total.toLocaleString()} alive
             </span>
           </div>
         )}
@@ -295,6 +312,7 @@ export default function ExplorerPage() {
             isExpanded={expandedId === b.id}
             onToggle={() => setExpandedId(expandedId === b.id ? null : b.id)}
             index={i}
+            gameResults={gameResults}
           />
         ))}
       </div>

@@ -260,6 +260,91 @@ def _resolve_championship_bit(
 # ── main endpoint ────────────────────────────────────────────────────────
 
 
+@router.get("/game-results", tags=["public"])
+async def get_game_results():
+    """Public endpoint: get all recorded game results for bracket comparison.
+
+    No authentication required — viewing results is public.
+    """
+    year = TOURNAMENT_YEAR
+    engine = get_engine()
+
+    round_order = (
+        "CASE round "
+        "WHEN 'R64' THEN 1 WHEN 'R32' THEN 2 WHEN 'S16' THEN 3 "
+        "WHEN 'E8' THEN 4 WHEN 'F4' THEN 5 WHEN 'Final' THEN 6 ELSE 7 END"
+    )
+
+    with engine.connect() as conn:
+        rows = conn.execute(
+            text(
+                f"SELECT region, round, game_number, winner_seed, loser_seed, "
+                f"winner_name, loser_name "
+                f"FROM game_results "
+                f"WHERE tournament_year = :year "
+                f"ORDER BY {round_order}, region, game_number"
+            ),
+            {"year": year},
+        ).fetchall()
+
+    return [
+        {
+            "region": r[0],
+            "round": r[1],
+            "game_number": r[2],
+            "winner_seed": r[3],
+            "loser_seed": r[4],
+            "winner_name": r[5],
+            "loser_name": r[6],
+        }
+        for r in rows
+    ]
+
+
+@router.get("/results")
+async def get_results(
+    x_admin_key: str = Header(..., alias="X-Admin-Key"),
+):
+    """Get all recorded game results for the current tournament year.
+
+    Returns results ordered by round progression (R64 → R32 → S16 → E8 → F4 → Final).
+    """
+    if x_admin_key != ADMIN_KEY:
+        raise HTTPException(status_code=403, detail="Invalid admin key")
+
+    year = TOURNAMENT_YEAR
+    engine = get_engine()
+
+    round_order = "CASE round " \
+        "WHEN 'R64' THEN 1 WHEN 'R32' THEN 2 WHEN 'S16' THEN 3 " \
+        "WHEN 'E8' THEN 4 WHEN 'F4' THEN 5 WHEN 'Final' THEN 6 ELSE 7 END"
+
+    with engine.connect() as conn:
+        rows = conn.execute(
+            text(
+                f"SELECT region, round, game_number, winner_seed, loser_seed, "
+                f"winner_name, loser_name "
+                f"FROM game_results "
+                f"WHERE tournament_year = :year "
+                f"ORDER BY {round_order}, region, game_number"
+            ),
+            {"year": year},
+        ).fetchall()
+
+    return [
+        {
+            "region": r[0],
+            "round": r[1],
+            "game_number": r[2],
+            "winner_seed": r[3],
+            "loser_seed": r[4],
+            "winner_name": r[5],
+            "loser_name": r[6],
+        }
+        for r in rows
+    ]
+
+
 @router.post("/results", response_model=GameResultResponse)
 async def submit_result(
     body: GameResultRequest,

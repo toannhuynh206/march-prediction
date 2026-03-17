@@ -72,6 +72,9 @@ def prune_regional_game(
         eliminated = result.rowcount
         alive_after = alive_before - eliminated
 
+    if eliminated > 0:
+        renormalize_weights(year)
+
     return eliminated, alive_after
 
 
@@ -114,7 +117,36 @@ def prune_f4_game(
         eliminated = result.rowcount
         alive_after = alive_before - eliminated
 
+    if eliminated > 0:
+        renormalize_weights(year)
+
     return eliminated, alive_after
+
+
+def renormalize_weights(year: int = TOURNAMENT_YEAR) -> None:
+    """Re-normalize weights so they sum to 1 across alive brackets.
+
+    Called after each pruning operation per CLAUDE.md requirements.
+    """
+    engine = get_engine()
+    with engine.begin() as conn:
+        total = conn.execute(
+            text(
+                "SELECT SUM(weight) FROM full_brackets "
+                "WHERE is_alive = TRUE AND tournament_year = :year"
+            ),
+            {"year": year},
+        ).scalar()
+
+        if total and total > 0:
+            conn.execute(
+                text(
+                    "UPDATE full_brackets "
+                    "SET weight = weight / :total "
+                    "WHERE is_alive = TRUE AND tournament_year = :year"
+                ),
+                {"year": year, "total": float(total)},
+            )
 
 
 def get_alive_count(year: int = TOURNAMENT_YEAR) -> int:

@@ -15,7 +15,7 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 
 SIGMA_SPREAD = 11.0  # spread-to-probability conversion std dev
-K_DEFAULT = 22.0     # logistic model scaling factor (Brier=0.191 on 79 games; range 22-30 all pass)
+K_DEFAULT = 47.75    # logistic model scaling factor (calibrated 2026-03-15: Brier=0.1823 on 271 games)
 
 # CTO-locked weight tiers
 WEIGHT_TIERS = {

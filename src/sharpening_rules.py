@@ -162,21 +162,24 @@ def apply_seed_ceilings(
     """
     updated = dict(prob_matrix)
 
-    blocked_seeds = set()
+    # Map blocked seed -> soft ceiling value (e.g. 0.01) from rule definition
+    blocked_seed_values: dict[int, float] = {}
     for rule in rules:
         if rule.rule_type != "ceiling":
             continue
         if rule.round_scope != tournament_round:
             continue
-        blocked_seeds.update(rule.seeds_affected)
+        for seed in rule.seeds_affected:
+            blocked_seed_values[seed] = rule.value
 
-    # For any matchup involving a blocked seed, the other team wins
+    # For any matchup involving a blocked seed, use the rule's soft ceiling
+    # value instead of hard 0.0/1.0. E.g. value=0.01 means 1% chance.
     for matchup_key in prob_matrix:
         seed_a, seed_b = matchup_key
-        if seed_a in blocked_seeds and seed_a in active_seeds:
-            updated[matchup_key] = 0.0  # seed_a can't be here, seed_b wins
-        elif seed_b in blocked_seeds and seed_b in active_seeds:
-            updated[matchup_key] = 1.0  # seed_b can't be here, seed_a wins
+        if seed_a in blocked_seed_values and seed_a in active_seeds:
+            updated[matchup_key] = blocked_seed_values[seed_a]  # seed_a nearly can't win
+        elif seed_b in blocked_seed_values and seed_b in active_seeds:
+            updated[matchup_key] = 1.0 - blocked_seed_values[seed_b]  # seed_b nearly can't win
 
     return updated
 

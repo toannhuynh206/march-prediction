@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import BracketView from './components/BracketView'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
+import { fetchStats } from './api/client'
 import ExplorerPage from './components/ExplorerPage'
 import StatsPage from './components/StatsPage'
 import AdminPage from './components/AdminPage'
@@ -18,15 +18,13 @@ const queryClient = new QueryClient({
 
 // Admin tab hidden from public nav — accessible via Ctrl+Shift+A
 const TABS = [
-  { id: 'Bracket', label: 'BRACKET', icon: '🏀' },
-  { id: 'Explorer', label: 'EXPLORER', icon: '🔍' },
+  { id: 'Explorer', label: 'BRACKETS', icon: '🏀' },
   { id: 'Statistics', label: 'STATS', icon: '📊' },
   { id: 'Portfolio', label: 'PORTFOLIO', icon: '💼' },
   { id: 'Blog', label: 'BLOG', icon: '📝' },
 ]
 
 const TAB_COMPONENTS = {
-  Bracket: BracketView,
   Explorer: ExplorerPage,
   Statistics: StatsPage,
   Portfolio: PortfolioPage,
@@ -58,8 +56,35 @@ function LiveIndicator() {
   )
 }
 
+function BracketCountPill() {
+  const { data } = useQuery({
+    queryKey: ['stats'],
+    queryFn: fetchStats,
+    refetchInterval: 30_000,
+    staleTime: 10_000,
+  })
+
+  const alive = data?.alive_count ?? null
+  const total = data?.total ?? null
+
+  return (
+    <span
+      className="font-mono text-xs sm:text-sm tracking-wider px-3 sm:px-4 py-1 rounded-full"
+      style={{
+        color: alive !== null && alive < total ? 'var(--green-alive)' : 'var(--text-secondary)',
+        border: `1px solid ${alive !== null && alive < total ? 'rgba(34,197,94,0.3)' : 'var(--border-subtle)'}`,
+        background: alive !== null && alive < total ? 'rgba(34,197,94,0.06)' : 'rgba(255,255,255,0.03)',
+      }}
+    >
+      {alive !== null
+        ? `${alive.toLocaleString()} / ${total.toLocaleString()} ALIVE`
+        : 'LOADING...'}
+    </span>
+  )
+}
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('Bracket')
+  const [activeTab, setActiveTab] = useState('Explorer')
   const ActiveComponent = TAB_COMPONENTS[activeTab]
 
   // Secret keyboard shortcut: Ctrl+Shift+A opens Admin panel
@@ -104,16 +129,7 @@ export default function App() {
             </h1>
 
             <div className="flex items-center justify-center gap-3 sm:gap-4 mt-3 sm:mt-4">
-              <span
-                className="font-mono text-xs sm:text-sm tracking-wider px-3 sm:px-4 py-1 rounded-full"
-                style={{
-                  color: 'var(--text-secondary)',
-                  border: '1px solid var(--border-subtle)',
-                  background: 'rgba(255,255,255,0.03)',
-                }}
-              >
-                206,000,000 BRACKETS
-              </span>
+              <BracketCountPill />
               <LiveIndicator />
             </div>
           </div>
@@ -161,7 +177,7 @@ export default function App() {
         {/* ── Footer ── */}
         <footer className="text-center py-6 px-4" style={{ borderTop: '1px solid var(--border-subtle)' }}>
           <p className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-            MARCH MADNESS SURVIVOR — STRATIFIED IMPORTANCE SAMPLING — 206M BRACKETS
+            MARCH MADNESS SURVIVOR — STRATIFIED IMPORTANCE SAMPLING
           </p>
         </footer>
       </div>

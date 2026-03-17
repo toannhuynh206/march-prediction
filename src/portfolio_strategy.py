@@ -68,9 +68,12 @@ class ClusterConfig:
     use_gamble_temps: bool
 
 
-# Default mutation rate: 6% chance of flipping any coin-flip game
-# This is the X-factor — models buzzer beaters, bad ref calls, off nights.
+# Default mutation rate: 6% chance of flipping any coin-flip game.
+# Models buzzer beaters, bad ref calls, off nights.
 # Only affects games where P is in [0.40, 0.60] range.
+# NOTE: NOT YET WIRED into the simulation pipeline. Defined here for
+# future integration with the genetic algorithm / evolutionary bracket
+# optimization (see MEMORY.md: user's biology-agent concept).
 DEFAULT_MUTATION_RATE = 0.06
 
 
@@ -80,9 +83,9 @@ CLUSTER_CONFIGS = (
         budget_fraction=0.60,
         description=(
             "Baseline cluster: targets the historical average upset count "
-            "(~3 per region). Uses neutral R64 temperature (tau=1.0) with "
-            "6% mutation X-factor on coin-flip games. Later rounds warm up "
-            "for path diversity. This is the bread and butter."
+            "(~3 per region). Uses neutral R64 temperature (tau=1.0). "
+            "Later rounds warm up for path diversity. This is the bread "
+            "and butter. (Mutation rate defined but not yet applied.)"
         ),
         use_gamble_temps=False,
     ),
@@ -93,7 +96,8 @@ CLUSTER_CONFIGS = (
             "Gamble cluster: deliberately picks more R64 upsets in coin-flip "
             "games (warm R64 temperature). These upsets cascade into unique "
             "later-round matchups. Surviving brackets are 10x more valuable "
-            "because they occupy unexplored territory. Also uses 6% mutation."
+            "because they occupy unexplored territory. "
+            "(Mutation rate defined but not yet applied.)"
         ),
         use_gamble_temps=True,
     ),

@@ -126,7 +126,7 @@ EXPERIENCE_PREMIUM = {
 # Conversion factor: power index points -> logit units.
 # From the logistic model P = 1/(1+10^((PI_B-PI_A)/k)):
 #   logit(P) = (PI_A - PI_B) * ln(10) / k
-# With k=22: 1 PI point ≈ 0.105 logit units.
+# With k=47.75: 1 PI point ≈ 0.048 logit units.
 PI_TO_LOGIT = math.log(10) / K_DEFAULT
 
 # Round scaling for talent impact.
@@ -611,6 +611,12 @@ def build_full_tournament_matrices(
 
     Returns nested dict: region -> round -> (seed_a, seed_b) -> P(A wins).
     For R64, uses spreads. For R32+, uses the adaptive algorithm.
+
+    NOTE: prev_round_results is not passed to build_probability_matrix(),
+    so upset-conditional adjustments (UPSET_BOOST_BY_SEED_GAP) are not
+    active. This is intentional for pre-tournament simulation where no
+    results exist yet. During live tracking, call build_probability_matrix()
+    directly with prev_round_results for round-by-round updates.
     """
     if spreads is None:
         spreads = {}

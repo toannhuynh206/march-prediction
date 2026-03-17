@@ -41,6 +41,8 @@ SEED_UPSET_RATES = {
 # 2025 R1 consensus opening spreads (verified: Yahoo, CBS, FOX, FanDuel)
 # Positive = higher seed favored by that many points
 # Negative = lower seed favored (upset line)
+# TODO: Make configurable by year. For 2026, populate from The Odds API
+# or a data/spreads/2026_r1_spreads.json file on Selection Sunday.
 R1_SPREADS_2025 = {
     # South
     ("Auburn", "Alabama State"): 32.5,
@@ -95,7 +97,7 @@ def compute_p_stats(adj_em_a: float, adj_em_b: float) -> float:
 
     Uses the power index logistic model. AdjEM difference maps to
     win probability via P = 1 / (1 + 10^((EM_B - EM_A) / k)).
-    k is calibrated via grid search (K_DEFAULT=22.0, Brier=0.191).
+    k is calibrated via grid search (K_DEFAULT=47.75, Brier=0.1823 on 271 games).
     """
     return power_index_prob(adj_em_a, adj_em_b, k=K_DEFAULT)
 

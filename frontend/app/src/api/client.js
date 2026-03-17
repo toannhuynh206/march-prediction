@@ -6,13 +6,22 @@
 const BASE = '/api'
 
 async function fetchJSON(path, options = {}) {
+  const { headers: extraHeaders, ...restOptions } = options
   const res = await fetch(`${BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...options.headers },
-    ...options,
+    headers: { 'Content-Type': 'application/json', ...extraHeaders },
+    ...restOptions,
   })
   if (!res.ok) {
     const body = await res.json().catch(() => ({ detail: res.statusText }))
-    throw new Error(body.detail || `API error ${res.status}`)
+    const detail = body.detail
+    // FastAPI validation errors return detail as an array of objects
+    const message =
+      typeof detail === 'string'
+        ? detail
+        : Array.isArray(detail)
+        ? detail.map((d) => d.msg || JSON.stringify(d)).join('; ')
+        : `API error ${res.status}`
+    throw new Error(message)
   }
   return res.json()
 }
@@ -23,12 +32,12 @@ export function fetchBracket() {
 }
 
 /** GET /api/brackets — paginated bracket list (cursor-based) */
-export function fetchBrackets({ cursor, limit = 50, sort = 'score', aliveOnly = false, champion = '' } = {}) {
+export function fetchBrackets({ cursor, limit = 50, sort = 'score', status = 'all', champion = '' } = {}) {
   const params = new URLSearchParams()
   if (cursor) params.set('cursor', cursor)
   if (limit !== 50) params.set('limit', String(limit))
   if (sort !== 'score') params.set('sort', sort)
-  if (aliveOnly) params.set('alive_only', 'true')
+  if (status !== 'all') params.set('status', status)
   if (champion) params.set('champion', champion)
   return fetchJSON(`/brackets?${params}`)
 }
@@ -48,6 +57,13 @@ export function fetchRegionStats(region) {
   return fetchJSON(`/stats/regions/${region}`)
 }
 
+/** GET /api/results — load existing game results (admin) */
+export function fetchResults(adminKey) {
+  return fetchJSON('/results', {
+    headers: { 'X-Admin-Key': adminKey },
+  })
+}
+
 /** POST /api/results — submit game result (admin) */
 export function submitResult(data, adminKey) {
   return fetchJSON('/results', {
@@ -55,6 +71,11 @@ export function submitResult(data, adminKey) {
     headers: { 'X-Admin-Key': adminKey },
     body: JSON.stringify(data),
   })
+}
+
+/** GET /api/game-results — public game results for bracket comparison */
+export function fetchGameResults() {
+  return fetchJSON('/game-results')
 }
 
 /** GET /api/portfolio — strategy portfolio breakdown */

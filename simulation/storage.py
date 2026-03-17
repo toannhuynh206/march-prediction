@@ -59,9 +59,9 @@ def insert_brackets_copy(
 
     # Scalar weight → broadcast
     if isinstance(weights, (int, float)):
-        weight_arr = np.full(n, weights, dtype=np.float32)
+        weight_arr = np.full(n, weights, dtype=np.float64)
     else:
-        weight_arr = weights.astype(np.float32)
+        weight_arr = weights.astype(np.float64)
 
     conn = get_raw_connection()
     cursor = conn.cursor()
