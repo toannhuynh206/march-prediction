@@ -92,7 +92,8 @@ class RegionSamplingData:
     true_probs: np.ndarray      # (32768,) float64 — original, normalized
     packed: np.ndarray           # (32768,) int16
     champion_seeds: np.ndarray   # (32768,) int16
-    r64_upsets: np.ndarray       # (32768,) int8
+    r64_upsets: np.ndarray       # (32768,) int8 — R64 only (for stratification)
+    total_upsets: np.ndarray     # (32768,) int8 — all 15 games
     pi_lookup: np.ndarray        # (17,) float64 — seed -> power_index
 
 
@@ -110,6 +111,7 @@ def _prepare_region(
         packed=enum.packed,
         champion_seeds=enum.champion_seeds,
         r64_upsets=enum.r64_upsets,
+        total_upsets=enum.total_upsets,
         pi_lookup=build_seed_pi_lookup(teams),
     )
 
@@ -392,8 +394,8 @@ def sample_full_brackets(
         champ_seeds = {
             r: regions_data[r].champion_seeds[indices[r]] for r in REGIONS
         }
-        upsets = {
-            r: regions_data[r].r64_upsets[indices[r]] for r in REGIONS
+        region_total_upsets = {
+            r: regions_data[r].total_upsets[indices[r]] for r in REGIONS
         }
 
         # 3. Look up champion power indices (vectorized via fancy indexing)
@@ -479,13 +481,45 @@ def sample_full_brackets(
             semi1_result, semi2_result, champ_result, champ_seeds,
         )
 
-        # 13. Total R64 upsets across all 4 regions
+        # 13. Total upsets across all 4 regions (R64+R32+S16+E8) + F4 games
         total_ups = (
-            upsets["South"].astype(np.int16)
-            + upsets["East"].astype(np.int16)
-            + upsets["West"].astype(np.int16)
-            + upsets["Midwest"].astype(np.int16)
+            region_total_upsets["South"].astype(np.int16)
+            + region_total_upsets["East"].astype(np.int16)
+            + region_total_upsets["West"].astype(np.int16)
+            + region_total_upsets["Midwest"].astype(np.int16)
         )
+
+        # F4 upsets: compare champion seeds across regions
+        # Semi 1
+        semi1_winner_seed = np.where(
+            semi1_result == 0,
+            champ_seeds[semi1_a], champ_seeds[semi1_b],
+        )
+        semi1_loser_seed = np.where(
+            semi1_result == 0,
+            champ_seeds[semi1_b], champ_seeds[semi1_a],
+        )
+        total_ups += (semi1_winner_seed > semi1_loser_seed).astype(np.int16)
+
+        # Semi 2
+        semi2_winner_seed = np.where(
+            semi2_result == 0,
+            champ_seeds[semi2_a], champ_seeds[semi2_b],
+        )
+        semi2_loser_seed = np.where(
+            semi2_result == 0,
+            champ_seeds[semi2_b], champ_seeds[semi2_a],
+        )
+        total_ups += (semi2_winner_seed > semi2_loser_seed).astype(np.int16)
+
+        # Championship
+        champ_winner_seed = np.where(
+            champ_result == 0, semi1_winner_seed, semi2_winner_seed,
+        )
+        champ_loser_seed = np.where(
+            champ_result == 0, semi2_winner_seed, semi1_winner_seed,
+        )
+        total_ups += (champ_winner_seed > champ_loser_seed).astype(np.int16)
 
         yield FullBracketBatch(
             east_outcomes=outcomes["East"],

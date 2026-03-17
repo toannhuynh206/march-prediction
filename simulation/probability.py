@@ -50,11 +50,16 @@ def logistic_prob(
 def _load_region_teams(year: int, region: str) -> list[dict[str, Any]]:
     """Load team data for a region, ordered by seed.
 
-    Returns list of dicts with: team_id, name, seed, power_index.
+    Returns list of dicts with power_index + all style stats for matchup analysis.
     """
     with session_scope() as session:
         rows = session.execute(text("""
-            SELECT t.id, t.name, t.seed, ts.power_index
+            SELECT t.id, t.name, t.seed, ts.power_index,
+                   ts.three_pt_pct, ts.three_pt_defense, ts.three_pt_rate,
+                   ts.steal_pct, ts.to_pct, ts.block_pct,
+                   ts.ft_rate, ts.ft_pct, ts.efg_pct,
+                   ts.adj_d, ts.tempo, ts.height_avg_inches, ts.orb_pct,
+                   ts.adj_o, ts.coaching_tourney_apps
             FROM teams t
             JOIN team_stats ts ON t.id = ts.team_id
               AND ts.tournament_year = :year
@@ -64,8 +69,18 @@ def _load_region_teams(year: int, region: str) -> list[dict[str, Any]]:
         """), {"year": year, "region": region}).fetchall()
 
     return [
-        {"team_id": r[0], "name": r[1], "seed": r[2],
-         "power_index": float(r[3]) if r[3] is not None else 50.0}
+        {
+            "team_id": r[0], "name": r[1], "seed": r[2],
+            "power_index": float(r[3]) if r[3] is not None else 50.0,
+            "three_pt_pct": r[4], "three_pt_defense": r[5],
+            "three_pt_rate": r[6], "steal_pct": r[7],
+            "to_pct": r[8], "block_pct": r[9],
+            "ft_rate": r[10], "ft_pct": r[11], "efg_pct": r[12],
+            "adj_d": r[13], "tempo": r[14],
+            "height_avg_inches": r[15], "orb_pct": r[16],
+            "adj_o": float(r[17]) if r[17] is not None else None,
+            "coaching_tourney_apps": int(r[18]) if r[18] is not None else 0,
+        }
         for r in rows
     ]
 
@@ -110,38 +125,122 @@ def _load_r64_probabilities(year: int, region: str) -> dict[int, float]:
 # Full probability matrix
 # =========================================================================
 
+def _style_matchup_adjustment(team_a: dict[str, Any], team_b: dict[str, Any]) -> float:
+    """Compute style-based matchup adjustment between two teams.
+
+    Factors in how teams' offensive strengths interact with opponents'
+    defensive weaknesses: EFG%, 3PT shooting vs 3PT defense, turnovers,
+    interior defense, free throw exploitation, offensive efficiency.
+
+    Returns adjustment centered at 0.0 (positive = team_a advantage).
+    """
+    adj = 0.0
+
+    # EFG% differential — overall shooting efficiency (Reddit: key predictor
+    # across all seed groups, especially 5-8 and 13-16 seeds)
+    efg_a = team_a.get("efg_pct")
+    efg_b = team_b.get("efg_pct")
+    if efg_a and efg_b:
+        # Each percentage point of EFG% edge ≈ 0.4% win prob shift
+        adj += np.clip((efg_a - efg_b) * 0.004, -0.04, 0.04)
+
+    # Offensive efficiency differential — stronger offense matters more
+    # in later rounds (Reddit: AdjOE increasingly important for advancement)
+    adj_o_a = team_a.get("adj_o")
+    adj_o_b = team_b.get("adj_o")
+    if adj_o_a and adj_o_b:
+        # Each point of AdjOE edge ≈ 0.15% win prob shift
+        adj += np.clip((adj_o_a - adj_o_b) * 0.0015, -0.03, 0.03)
+
+    # 3PT shooting vs 3PT defense mismatch
+    tpp_a = team_a.get("three_pt_pct")
+    tpp_b = team_b.get("three_pt_pct")
+    tpd_a = team_a.get("three_pt_defense")
+    tpd_b = team_b.get("three_pt_defense")
+    if tpp_a and tpp_b and tpd_a and tpd_b:
+        a_exploits_b = (tpp_a - 33.0) + (tpd_b - 33.0)
+        b_exploits_a = (tpp_b - 33.0) + (tpd_a - 33.0)
+        adj += np.clip((a_exploits_b - b_exploits_a) * 0.002, -0.03, 0.03)
+
+    # Turnover battle
+    steal_a = team_a.get("steal_pct")
+    steal_b = team_b.get("steal_pct")
+    to_a = team_a.get("to_pct")
+    to_b = team_b.get("to_pct")
+    if steal_a and steal_b and to_a and to_b:
+        a_forces_b = (steal_a - 9.5) + (to_b - 17.0)
+        b_forces_a = (steal_b - 9.5) + (to_a - 17.0)
+        adj += np.clip((a_forces_b - b_forces_a) * 0.0015, -0.02, 0.02)
+
+    # Interior defense vs perimeter offense
+    block_a = team_a.get("block_pct")
+    block_b = team_b.get("block_pct")
+    tpr_a = team_a.get("three_pt_rate") or team_a.get("three_pt_pct")
+    tpr_b = team_b.get("three_pt_rate") or team_b.get("three_pt_pct")
+    if block_a and block_b and tpr_a and tpr_b:
+        a_interior_d = (block_a - 10.0)
+        b_perimeter = (tpr_b - 35.0)
+        b_interior_d = (block_b - 10.0)
+        a_perimeter = (tpr_a - 35.0)
+        a_edge = a_interior_d * max(0.5, 1.0 - b_perimeter * 0.03)
+        b_edge = b_interior_d * max(0.5, 1.0 - a_perimeter * 0.03)
+        adj += np.clip((a_edge - b_edge) * 0.0015, -0.015, 0.015)
+
+    # Free throw exploitation
+    ftr_a = team_a.get("ft_rate")
+    ftr_b = team_b.get("ft_rate")
+    ftp_a = team_a.get("ft_pct")
+    ftp_b = team_b.get("ft_pct")
+    if ftr_a and ftr_b and ftp_a and ftp_b:
+        a_ft_value = (ftr_a - 32.0) * 0.5 + (ftp_a - 72.0) * 0.3
+        b_ft_value = (ftr_b - 32.0) * 0.5 + (ftp_b - 72.0) * 0.3
+        adj += np.clip((a_ft_value - b_ft_value) * 0.0015, -0.015, 0.015)
+
+    return np.clip(adj, -0.10, 0.10)
+
+
 def build_probability_matrix(
     teams: list[dict[str, Any]],
     k: float = LOGISTIC_K_INITIAL,
 ) -> np.ndarray:
     """Build 16×16 win probability matrix from team data.
 
+    Uses logistic function from power index differential as base,
+    then applies style-based matchup adjustments (3PT, turnovers,
+    interior defense, free throws) for each pair.
+
     Args:
-        teams: List of team dicts with 'seed' and 'power_index'.
+        teams: List of team dicts with 'seed', 'power_index', and style stats.
         k: Logistic function parameter.
 
     Returns:
         prob_matrix: float32 array of shape (16, 16) where
         prob_matrix[i][j] = P(team at position i beats team at position j).
     """
-    # Map seed → power_index
-    seed_to_pi: dict[int, float] = {
-        t["seed"]: t["power_index"] for t in teams
-    }
+    # Map seed → team data (power_index + style stats)
+    seed_to_team: dict[int, dict[str, Any]] = {t["seed"]: t for t in teams}
 
     n = len(POSITION_TO_SEED)
     matrix = np.zeros((n, n), dtype=np.float32)
 
     for i in range(n):
         seed_i = POSITION_TO_SEED[i]
-        pi_i = seed_to_pi.get(seed_i, 50.0)
+        team_i = seed_to_team.get(seed_i, {"power_index": 50.0})
+        pi_i = team_i.get("power_index", 50.0)
         for j in range(n):
             if i == j:
                 matrix[i, j] = 0.5  # self-play (unused)
                 continue
             seed_j = POSITION_TO_SEED[j]
-            pi_j = seed_to_pi.get(seed_j, 50.0)
-            matrix[i, j] = logistic_prob(pi_i, pi_j, k)
+            team_j = seed_to_team.get(seed_j, {"power_index": 50.0})
+            pi_j = team_j.get("power_index", 50.0)
+
+            # Base probability from logistic function
+            p_base = logistic_prob(pi_i, pi_j, k)
+
+            # Style matchup adjustment
+            style_adj = _style_matchup_adjustment(team_i, team_j)
+            matrix[i, j] = np.clip(p_base + style_adj, 0.01, 0.99)
 
     return matrix
 

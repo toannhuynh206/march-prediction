@@ -74,12 +74,16 @@ def _compute_p_matchup(
 ) -> float:
     """Compute matchup-specific probability adjustment.
 
-    Five sub-factors centered at 0.5:
+    Nine sub-factors centered at 0.5:
       1. Tempo/defense control — slow + defensive teams impose their style
       2. Size/rebounding — taller teams dominate the glass
       3. Travel distance — closer team has logistical + crowd advantage
       4. Injury differential — healthier team gets edge
       5. Rivalry/familiarity — underdogs get boost in revenge/rivalry games
+      6. 3PT shooting vs 3PT defense — exploiting perimeter weakness
+      7. Turnover battle — steal-heavy team vs turnover-prone team
+      8. Interior defense vs perimeter offense — blocks vs 3PT-dependent teams
+      9. Free throw exploitation — high FT rate vs foul-prone opponents
     """
     name_a = team_a.get("name", "")
     name_b = team_b.get("name", "")
@@ -145,8 +149,74 @@ def _compute_p_matchup(
             # underdog_boost favors team_b (the underdog)
             rivalry_factor = -rivalry["underdog_boost"]
 
+    # --- Sub-factor 6: 3PT shooting vs 3PT defense mismatch ---
+    # If team A shoots well from 3 and team B has poor 3PT defense, advantage A.
+    # three_pt_pct: higher = better shooter. three_pt_defense: higher = WORSE defense
+    # (opponent 3PT% allowed — lower is better defense).
+    three_factor = 0.0
+    tpp_a = team_a.get("three_pt_pct")
+    tpp_b = team_b.get("three_pt_pct")
+    tpd_a = team_a.get("three_pt_defense")
+    tpd_b = team_b.get("three_pt_defense")
+    if tpp_a and tpp_b and tpd_a and tpd_b:
+        # A's shooting exploits B's defense: (A shoots well) × (B defends poorly)
+        # Normalize around league average (~33% 3PT shooting, ~33% 3PT defense)
+        a_exploits_b = (tpp_a - 33.0) + (tpd_b - 33.0)  # positive = A advantage
+        b_exploits_a = (tpp_b - 33.0) + (tpd_a - 33.0)  # positive = B advantage
+        # Net advantage: each percentage point of mismatch ≈ 0.3% win prob shift
+        three_factor = np.clip((a_exploits_b - b_exploits_a) * 0.003, -0.04, 0.04)
+
+    # --- Sub-factor 7: Turnover battle ---
+    # Team A forces turnovers (high steal_pct) vs team B turns it over (high to_pct)
+    to_factor = 0.0
+    steal_a = team_a.get("steal_pct")
+    steal_b = team_b.get("steal_pct")
+    to_a = team_a.get("to_pct")
+    to_b = team_b.get("to_pct")
+    if steal_a and steal_b and to_a and to_b:
+        # A forces TO from B: A's steal% vs B's TO%. Higher steal + higher opp TO = advantage
+        a_forces_b = (steal_a - 9.5) + (to_b - 17.0)  # league avg ~9.5% steal, ~17% TO
+        b_forces_a = (steal_b - 9.5) + (to_a - 17.0)
+        to_factor = np.clip((a_forces_b - b_forces_a) * 0.002, -0.03, 0.03)
+
+    # --- Sub-factor 8: Interior defense vs perimeter offense ---
+    # A team with high block% against a team that lives by the 3 (high 3PT rate)
+    # can contest shots. But if a team shoots lots of 3s, blocks matter less.
+    interior_factor = 0.0
+    block_a = team_a.get("block_pct")
+    block_b = team_b.get("block_pct")
+    tpr_a = team_a.get("three_pt_rate") or team_a.get("three_pt_pct")
+    tpr_b = team_b.get("three_pt_rate") or team_b.get("three_pt_pct")
+    if block_a and block_b and tpr_a and tpr_b:
+        # A's blocks are less effective if B shoots many 3s (perimeter offense)
+        # But if B relies on interior scoring (low 3PT rate) and A blocks well → advantage A
+        a_interior_d = (block_a - 10.0)  # league avg ~10%
+        b_perimeter = (tpr_b - 35.0)     # league avg ~35% of shots from 3
+        b_interior_d = (block_b - 10.0)
+        a_perimeter = (tpr_a - 35.0)
+        # Interior defense advantage shrinks when opponent is perimeter-heavy
+        a_edge = a_interior_d * max(0.5, 1.0 - b_perimeter * 0.03)
+        b_edge = b_interior_d * max(0.5, 1.0 - a_perimeter * 0.03)
+        interior_factor = np.clip((a_edge - b_edge) * 0.002, -0.02, 0.02)
+
+    # --- Sub-factor 9: Free throw exploitation ---
+    # Team that gets to the line (high ft_rate) vs opponent that fouls
+    ft_factor = 0.0
+    ftr_a = team_a.get("ft_rate")
+    ftr_b = team_b.get("ft_rate")
+    ftp_a = team_a.get("ft_pct")
+    ftp_b = team_b.get("ft_pct")
+    if ftr_a and ftr_b and ftp_a and ftp_b:
+        # Combined FT advantage: get to the line AND make them
+        a_ft_value = (ftr_a - 32.0) * 0.5 + (ftp_a - 72.0) * 0.3  # rate + accuracy
+        b_ft_value = (ftr_b - 32.0) * 0.5 + (ftp_b - 72.0) * 0.3
+        ft_factor = np.clip((a_ft_value - b_ft_value) * 0.002, -0.02, 0.02)
+
     # Combine all sub-factors
-    adjustment = tempo_factor + size_factor + travel_factor + injury_factor + rivalry_factor
+    adjustment = (
+        tempo_factor + size_factor + travel_factor + injury_factor
+        + rivalry_factor + three_factor + to_factor + interior_factor + ft_factor
+    )
     return 0.5 + np.clip(adjustment, -0.15, 0.15)
 
 
@@ -295,7 +365,10 @@ def compute_matchup_probabilities(year: int) -> list[dict[str, Any]]:
             SELECT t.id, t.name, t.seed,
                    ts.power_index, ts.adj_d, ts.tempo,
                    ts.height_avg_inches, ts.orb_pct,
-                   ts.coaching_tourney_apps
+                   ts.coaching_tourney_apps,
+                   ts.three_pt_pct, ts.three_pt_defense, ts.three_pt_rate,
+                   ts.steal_pct, ts.to_pct, ts.block_pct,
+                   ts.ft_rate, ts.ft_pct, ts.efg_pct
             FROM teams t
             JOIN team_stats ts ON t.id = ts.team_id
             WHERE t.tournament_year = :year AND ts.tournament_year = :year
@@ -316,6 +389,10 @@ def compute_matchup_probabilities(year: int) -> list[dict[str, Any]]:
             "power_index": r[3], "adj_d": r[4], "tempo": r[5],
             "height_avg_inches": r[6], "orb_pct": r[7],
             "coaching_tourney_apps": r[8],
+            "three_pt_pct": r[9], "three_pt_defense": r[10],
+            "three_pt_rate": r[11], "steal_pct": r[12],
+            "to_pct": r[13], "block_pct": r[14],
+            "ft_rate": r[15], "ft_pct": r[16], "efg_pct": r[17],
         }
 
     # Compute probabilities for each matchup

@@ -71,9 +71,11 @@ HISTORICAL_REGIONAL_CHAMP_RATE = {
     16: 0.0000,  # 0/160
 }
 
-# Average R64 upsets per tournament: 6.2 (range: 4-19)
-HISTORICAL_R64_UPSETS_MEAN = 6.2
-HISTORICAL_R64_UPSETS_STD = 3.0  # approximate
+# Average total upsets per tournament (all 63 games): ~20
+# R64 upsets alone average ~6.2 per tournament, but total_upsets now
+# counts upsets across all rounds (R64 + R32 + S16 + E8 + F4 + Championship).
+HISTORICAL_TOTAL_UPSETS_MEAN = 20.0
+HISTORICAL_TOTAL_UPSETS_STD = 5.0  # approximate
 
 
 # =========================================================================
@@ -212,26 +214,26 @@ def validate_upset_distribution(
     upset_stats: dict,
     total: int,
 ) -> list[ValidationCheck]:
-    """Validate R64 upset count distribution."""
+    """Validate total upset count distribution (all 63 games)."""
     checks = []
 
     avg_upsets = upset_stats.get("mean_upsets", 0)
     checks.append(ValidationCheck(
-        name="Average R64 upsets per bracket",
-        status="PASS" if 3.0 <= avg_upsets <= 12.0 else "WARN",
-        message=f"Mean R64 upsets: {avg_upsets:.1f} (historical mean: ~6.2 per tournament)",
+        name="Average total upsets per bracket",
+        status="PASS" if 10.0 <= avg_upsets <= 30.0 else "WARN",
+        message=f"Mean total upsets: {avg_upsets:.1f} (expected ~{HISTORICAL_TOTAL_UPSETS_MEAN:.0f} across all 63 games)",
         actual=round(avg_upsets, 1),
-        expected=HISTORICAL_R64_UPSETS_MEAN,
+        expected=HISTORICAL_TOTAL_UPSETS_MEAN,
         severity="info",
     ))
 
-    # Check for brackets with unrealistic upset counts (>15 R64 upsets out of 32 games)
+    # Check for brackets with extreme upset counts (>40 out of 63 games)
     extreme_upsets = upset_stats.get("extreme_count", 0)
-    max_extreme = int(total * 0.001)  # <0.1% should have >15 upsets
+    max_extreme = int(total * 0.05)  # <5% should have >40 total upsets
     checks.append(ValidationCheck(
-        name="Extreme upset brackets (>15 R64 upsets)",
+        name="Extreme upset brackets (>40 total upsets)",
         status="PASS" if extreme_upsets <= max_extreme else "WARN",
-        message=f"{extreme_upsets:,} brackets with >15 R64 upsets ({extreme_upsets/total*100:.4f}%)",
+        message=f"{extreme_upsets:,} brackets with >40 total upsets ({extreme_upsets/total*100:.4f}%)",
         actual=extreme_upsets,
         expected=max_extreme,
         severity="warning",
@@ -348,10 +350,10 @@ def validate_portfolio(year: int = TOURNAMENT_YEAR) -> ValidationReport:
             "WHERE tournament_year = :year AND is_alive = TRUE"
         ), {"year": year}).fetchone()[0]
 
-        # Upset distribution stats
+        # Upset distribution stats (total_upsets counts all 63 games)
         upset_row = conn.execute(text(
             "SELECT AVG(total_upsets), STDDEV(total_upsets), "
-            "  COUNT(*) FILTER (WHERE total_upsets > 15) "
+            "  COUNT(*) FILTER (WHERE total_upsets > 40) "
             "FROM full_brackets WHERE tournament_year = :year"
         ), {"year": year}).fetchone()
         upset_stats = {

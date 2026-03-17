@@ -40,7 +40,8 @@ class RegionEnumeration:
     packed: np.ndarray          # (32768,) int16 — packed 15-bit outcomes
     probabilities: np.ndarray   # (32768,) float64 — exact P(bracket)
     champion_seeds: np.ndarray  # (32768,) int16 — champion seed per bracket
-    r64_upsets: np.ndarray      # (32768,) int8 — R64 upset count
+    r64_upsets: np.ndarray      # (32768,) int8 — R64 upset count (for stratification)
+    total_upsets: np.ndarray    # (32768,) int8 — all 15 games upset count
 
     @property
     def n_brackets(self) -> int:
@@ -67,6 +68,68 @@ class RegionEnumeration:
             if prob > 0:
                 dist[k] = prob / total
         return dist
+
+
+# =========================================================================
+# All-round upset counting
+# =========================================================================
+
+def _count_all_region_upsets(
+    r64: np.ndarray,
+    r32: np.ndarray,
+    s16: np.ndarray,
+    e8: np.ndarray,
+) -> np.ndarray:
+    """Count upsets across all 15 regional games (R64 + R32 + S16 + E8).
+
+    An upset = the team with the higher seed number (weaker team) wins.
+    In R64, bit=1 always means upset (bottom team has higher seed number).
+    In later rounds, must trace seeds through bracket to determine upset.
+
+    Args:
+        r64: (N, 8) int8 — R64 outcomes (0=top wins, 1=bottom wins)
+        r32: (N, 4) int8 — R32 outcomes
+        s16: (N, 2) int8 — S16 outcomes
+        e8:  (N, 1) int8 — E8 outcome
+
+    Returns:
+        (N,) int8 — total upset count per bracket (0–15)
+    """
+    seed_lut = np.array(POSITION_TO_SEED, dtype=np.int16)
+    n = r64.shape[0]
+
+    # R64: bit=1 always = upset
+    total = r64.sum(axis=1).astype(np.int16)
+
+    # Trace advancing positions for later rounds
+    r64_adv, r32_adv, s16_adv, _ = _trace_advancing_positions(
+        r64, r32, s16, e8,
+    )
+
+    # R32: 4 games — compare seeds of R64 winners
+    for g in range(4):
+        seed_a = seed_lut[r64_adv[:, g * 2]]
+        seed_b = seed_lut[r64_adv[:, g * 2 + 1]]
+        winner_seed = np.where(r32[:, g] == 0, seed_a, seed_b)
+        loser_seed = np.where(r32[:, g] == 0, seed_b, seed_a)
+        total += (winner_seed > loser_seed).astype(np.int16)
+
+    # S16: 2 games — compare seeds of R32 winners
+    for g in range(2):
+        seed_a = seed_lut[r32_adv[:, g * 2]]
+        seed_b = seed_lut[r32_adv[:, g * 2 + 1]]
+        winner_seed = np.where(s16[:, g] == 0, seed_a, seed_b)
+        loser_seed = np.where(s16[:, g] == 0, seed_b, seed_a)
+        total += (winner_seed > loser_seed).astype(np.int16)
+
+    # E8: 1 game — compare seeds of S16 winners
+    seed_a = seed_lut[s16_adv[:, 0]]
+    seed_b = seed_lut[s16_adv[:, 1]]
+    winner_seed = np.where(e8[:, 0] == 0, seed_a, seed_b)
+    loser_seed = np.where(e8[:, 0] == 0, seed_b, seed_a)
+    total += (winner_seed > loser_seed).astype(np.int16)
+
+    return total.astype(np.int8)
 
 
 # =========================================================================
@@ -255,8 +318,11 @@ def enumerate_region(region_probs: RegionProbabilities) -> RegionEnumeration:
     seed_by_pos = np.array(POSITION_TO_SEED, dtype=np.int16)
     champion_seeds = seed_by_pos[champion_pos]
 
-    # R64 upset counts
+    # R64 upset counts (kept for stratification)
     r64_upsets = r64.sum(axis=1).astype(np.int8)
+
+    # Total upsets across all 15 games
+    total_upsets = _count_all_region_upsets(r64, r32, s16, e8)
 
     return RegionEnumeration(
         region=region_probs.region,
@@ -264,6 +330,7 @@ def enumerate_region(region_probs: RegionProbabilities) -> RegionEnumeration:
         probabilities=probabilities,
         champion_seeds=champion_seeds,
         r64_upsets=r64_upsets,
+        total_upsets=total_upsets,
     )
 
 

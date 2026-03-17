@@ -96,7 +96,7 @@ MIN_BRACKETS_PER_CHAMPION_SEED = 50_000
 
 # Strategy profiles are defined in simulation/temperature.py:
 #   Each region independently flips p_upset to decide base_T vs upset_T.
-#   chalk (25%), standard (30%), mild_chaos (20%), cinderella (15%), chaos (10%)
+#   chalk (32.5%), standard (42.5%), cinderella (15%), chaos (10%)
 #   All pairwise Hellinger distances > 0.10 (validated).
 
 # =========================================================================

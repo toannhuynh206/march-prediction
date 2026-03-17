@@ -35,14 +35,6 @@ STRATEGY_META = {
         "upset_temp": 1.0,
         "risk_level": "medium",
     },
-    "mild_chaos": {
-        "ticker": "MILD",
-        "display_name": "Mild Chaos",
-        "description": "Moderate upset boost — all regions elevated",
-        "base_temp": 1.5,
-        "upset_temp": 1.5,
-        "risk_level": "medium-high",
-    },
     "cinderella": {
         "ticker": "CNDL",
         "display_name": "Cinderella",

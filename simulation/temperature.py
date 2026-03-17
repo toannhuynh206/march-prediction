@@ -137,7 +137,6 @@ class StrategyProfile:
 #
 # chalk:       All regions sharply favor strong seeds. F4 also sharp.
 # standard:    True probability sampling. weight=1.0, perfect ESS.
-# mild_chaos:  Uniform mild upset boost across ALL regions. No mixing.
 # cinderella:  ~1 region gets moderate upsets, 3 stay normal (realistic).
 # chaos:       ~1.6 regions elevated, F4 also volatile.
 DEFAULT_PROFILES: tuple[StrategyProfile, ...] = (
@@ -147,7 +146,7 @@ DEFAULT_PROFILES: tuple[StrategyProfile, ...] = (
         upset_temperature=0.5,
         p_upset=0.0,
         f4_temperature=0.5,
-        fraction=0.25,
+        fraction=0.325,
     ),
     StrategyProfile(
         name="standard",
@@ -155,15 +154,7 @@ DEFAULT_PROFILES: tuple[StrategyProfile, ...] = (
         upset_temperature=1.0,
         p_upset=0.0,
         f4_temperature=1.0,
-        fraction=0.35,
-    ),
-    StrategyProfile(
-        name="mild_chaos",
-        base_temperature=1.5,
-        upset_temperature=1.5,
-        p_upset=0.0,
-        f4_temperature=1.1,
-        fraction=0.15,
+        fraction=0.425,
     ),
     StrategyProfile(
         name="cinderella",

@@ -8,7 +8,7 @@ with StringIO buffers. Designed for 206M rows in batched COPY operations.
 from __future__ import annotations
 
 import sys
-from io import StringIO
+from io import BytesIO
 from pathlib import Path
 
 import numpy as np
@@ -31,6 +31,83 @@ _COPY_COLUMNS = (
 )
 
 _COPY_SQL = f"COPY full_brackets ({_COPY_COLUMNS}) FROM STDIN"
+
+# Pre-encode region names to bytes for fast lookup
+_REGION_BYTES = [name.encode("ascii") for name in REGION_NAMES]
+
+
+# =========================================================================
+# Vectorized COPY buffer builder
+# =========================================================================
+
+def _build_copy_buffer(
+    ids: np.ndarray,
+    east: np.ndarray,
+    south: np.ndarray,
+    west: np.ndarray,
+    midwest: np.ndarray,
+    f4: np.ndarray,
+    probs: np.ndarray,
+    wts: np.ndarray,
+    champ_seeds: np.ndarray,
+    champ_region_idx: np.ndarray,
+    upsets: np.ndarray,
+    strategy: bytes,
+    year: bytes,
+) -> BytesIO:
+    """Build COPY buffer using numpy savetxt for maximum throughput.
+
+    Stacks all columns into a single 2D array and writes via np.savetxt
+    with tab delimiter. ~10-20x faster than per-row Python string loops.
+    """
+    n = len(ids)
+    region_lut = np.array(REGION_NAMES, dtype="U10")
+    col_region = region_lut[champ_region_idx.astype(np.intp)]
+
+    strat = strategy.decode("ascii")
+    yr = year.decode("ascii")
+
+    # Build a structured array of all columns as strings for np.savetxt
+    # Integer columns
+    c_id = ids.astype(np.int64)
+    c_east = east.astype(np.int32)
+    c_south = south.astype(np.int32)
+    c_west = west.astype(np.int32)
+    c_midwest = midwest.astype(np.int32)
+    c_f4 = f4.astype(np.int32)
+    c_champ = champ_seeds.astype(np.int32)
+    c_upsets = upsets.astype(np.int32)
+
+    # Write numeric columns with savetxt, then patch in string columns
+    # Actually fastest: build a 2D object array and join
+    table = np.empty((n, 14), dtype=object)
+    table[:, 0] = c_id
+    table[:, 1] = c_east
+    table[:, 2] = c_south
+    table[:, 3] = c_west
+    table[:, 4] = c_midwest
+    table[:, 5] = c_f4
+    table[:, 6] = probs   # will be formatted below
+    table[:, 7] = wts
+    table[:, 8] = c_champ
+    table[:, 9] = col_region
+    table[:, 10] = c_upsets
+    table[:, 11] = strat
+    table[:, 12] = "true"
+    table[:, 13] = yr
+
+    # Format: use np.savetxt with custom fmt for each column
+    buf = BytesIO()
+    np.savetxt(
+        buf, table,
+        delimiter="\t",
+        fmt=["%d", "%d", "%d", "%d", "%d", "%d",
+             "%.15e", "%.15e",
+             "%d", "%s", "%d", "%s", "%s", "%s"],
+        newline="\n",
+    )
+    buf.seek(0)
+    return buf
 
 
 # =========================================================================
@@ -55,6 +132,9 @@ def insert_full_brackets_copy(
 ) -> int:
     """Bulk insert full tournament brackets using PostgreSQL COPY.
 
+    Uses vectorized buffer building and commits per batch to avoid
+    transaction bloat at scale (206M rows).
+
     Args:
         east_outcomes: (N,) int16 packed regional outcomes.
         south_outcomes: (N,) int16.
@@ -67,6 +147,7 @@ def insert_full_brackets_copy(
         champion_region_idx: (N,) int8 index into REGION_NAMES.
         total_upsets: (N,) int16 total R64 upsets across all regions.
         id_offset: Starting bracket ID (for global uniqueness).
+        strategy: Strategy profile name.
         year: Tournament year.
         batch_size: Rows per COPY batch.
 
@@ -77,46 +158,38 @@ def insert_full_brackets_copy(
     if n == 0:
         return 0
 
-    conn = get_raw_connection()
-    cursor = conn.cursor()
+    strategy_b = strategy.encode("ascii")
+    year_b = str(year).encode("ascii")
     total_inserted = 0
 
-    try:
-        for start in range(0, n, batch_size):
-            end = min(start + batch_size, n)
+    for start in range(0, n, batch_size):
+        end = min(start + batch_size, n)
+        sl = slice(start, end)
 
-            buf = StringIO()
-            for i in range(start, end):
-                row_id = id_offset + i + 1
-                region_name = REGION_NAMES[int(champion_region_idx[i])]
-                buf.write(
-                    f"{row_id}\t"
-                    f"{int(east_outcomes[i])}\t"
-                    f"{int(south_outcomes[i])}\t"
-                    f"{int(west_outcomes[i])}\t"
-                    f"{int(midwest_outcomes[i])}\t"
-                    f"{int(f4_outcomes[i])}\t"
-                    f"{float(probabilities[i]):.15e}\t"
-                    f"{float(weights[i]):.15e}\t"
-                    f"{int(champion_seeds[i])}\t"
-                    f"{region_name}\t"
-                    f"{int(total_upsets[i])}\t"
-                    f"{strategy}\t"
-                    f"true\t"
-                    f"{year}\n"
-                )
+        ids = np.arange(id_offset + start + 1, id_offset + end + 1)
 
-            buf.seek(0)
+        buf = _build_copy_buffer(
+            ids,
+            east_outcomes[sl], south_outcomes[sl],
+            west_outcomes[sl], midwest_outcomes[sl],
+            f4_outcomes[sl], probabilities[sl], weights[sl],
+            champion_seeds[sl], champion_region_idx[sl],
+            total_upsets[sl], strategy_b, year_b,
+        )
+
+        # Commit per batch to avoid transaction bloat
+        conn = get_raw_connection()
+        cursor = conn.cursor()
+        try:
             cursor.copy_expert(_COPY_SQL, buf)
+            conn.commit()
             total_inserted += end - start
-
-        conn.commit()
-    except Exception:
-        conn.rollback()
-        raise
-    finally:
-        cursor.close()
-        conn.close()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            cursor.close()
+            conn.close()
 
     return total_inserted
 

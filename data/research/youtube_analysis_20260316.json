@@ -1,0 +1,965 @@
+{
+  "tournament_bracket": {
+    "no_1_seeds": {
+      "East": "Duke",
+      "West": "Arizona",
+      "Midwest": "Michigan",
+      "South": "Florida"
+    },
+    "full_bracket": {
+      "East": {
+        "1": "Duke",
+        "2": "UConn",
+        "3": "Michigan State",
+        "4": "Kansas",
+        "5": "St. John's",
+        "6": "Louisville",
+        "7": "UCLA",
+        "8": "Ohio State",
+        "9": "TCU",
+        "10": "UCF",
+        "11": "South Florida",
+        "12": "Northern Iowa",
+        "13": "Cal Baptist",
+        "14": "North Dakota State",
+        "15": "Furman",
+        "16": "Siena"
+      },
+      "West": {
+        "1": "Arizona",
+        "2": "Purdue",
+        "3": "Gonzaga",
+        "4": "Arkansas",
+        "5": "Wisconsin",
+        "6": "BYU",
+        "7": "Miami (FL)",
+        "8": "Villanova",
+        "9": "Utah State",
+        "10": "Missouri",
+        "11": "Texas/NC State",
+        "12": "High Point",
+        "13": "Hawaii",
+        "14": "Kennesaw State",
+        "15": "Queens",
+        "16": "LIU"
+      },
+      "Midwest": {
+        "1": "Michigan",
+        "2": "Iowa State",
+        "3": "Virginia",
+        "4": "Alabama",
+        "5": "Texas Tech",
+        "6": "Tennessee",
+        "7": "Kentucky",
+        "8": "Georgia",
+        "9": "Saint Louis",
+        "10": "Santa Clara",
+        "11": "SMU/Miami (OH)",
+        "12": "Akron",
+        "13": "Hofstra",
+        "14": "Wright State",
+        "15": "Tennessee State",
+        "16": "UMBC/Howard"
+      },
+      "South": {
+        "1": "Florida",
+        "2": "Houston",
+        "3": "Illinois",
+        "4": "Nebraska",
+        "5": "Vanderbilt",
+        "6": "North Carolina",
+        "7": "Saint Mary's",
+        "8": "Clemson",
+        "9": "Iowa",
+        "10": "Texas A&M",
+        "11": "VCU",
+        "12": "McNeese",
+        "13": "Troy",
+        "14": "Penn",
+        "15": "Idaho",
+        "16": "Prairie View A&M/Lehigh"
+      }
+    },
+    "first_four": ["NC State", "Texas", "SMU", "Miami (OH)", "UMBC", "Howard", "Prairie View A&M", "Lehigh"],
+    "selection_sunday_date": "2026-03-15",
+    "final_four_location": "Indianapolis",
+    "championship_game_date": "2026-04-06"
+  },
+  "established_analysts": [
+    {
+      "name": "Jay Bilas",
+      "platform": "ESPN",
+      "article_title": "Jay Bilas predicts every game of the 2026 NCAA tournament",
+      "article_url": "https://www.espn.com/mens-college-basketball/story/_/id/48219737/2026-men-ncaa-tournament-jay-bilas-predictions-bracket",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Michigan State", "Illinois", "Arizona", "Iowa State"],
+      "championship_game": "Arizona vs. Michigan State",
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 3 Michigan State over No. 1 Duke (East Elite Eight)",
+        "No. 3 Illinois over No. 2 Houston (South Elite Eight)",
+        "No. 5 St. John's over No. 4 Kansas (East Round of 32)",
+        "No. 2 Iowa State over No. 1 Michigan (Midwest Elite Eight)"
+      ],
+      "key_insights": [
+        "Emphasized guards win in March — Illinois has better guards than Houston",
+        "Tom Izzo's postseason track record justifies Michigan State over Duke",
+        "Arizona's combination of talent, depth, and size makes them the best overall team",
+        "Filled out bracket on air in under five minutes after SEC championship game",
+        "Zero 1-seeds in his Final Four — one of the boldest brackets among major analysts"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Jeff Borzello",
+      "platform": "ESPN",
+      "article_title": "Instant men's March Madness bracket: Predicting every game",
+      "article_url": "https://www.espn.com/mens-college-basketball/story/_/id/48217204/march-madness-bracket-predictions-picks-ncaa-tournament-final-four-2026",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["UConn", "Florida", "Arizona", "Michigan"],
+      "championship_game": "Arizona vs. Florida",
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 2 UConn over No. 1 Duke (East Elite Eight)",
+        "No. 5 St. John's over No. 4 Kansas (East Round of 32)",
+        "No. 12 Akron over No. 5 Texas Tech (Midwest first round)"
+      ],
+      "key_insights": [
+        "Arizona's backcourt duo of Jaden Bradley and Brayden Burries is as clutch as it gets",
+        "Duke's injuries to Caleb Foster and Patrick Ngongba open door for UConn",
+        "Arizona has talented depth that can win in lots of ways",
+        "BYU over Gonzaga in second round"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Jay Williams",
+      "platform": "ESPN (College GameDay)",
+      "article_url": "https://www.on3.com/news/jay-bilas-espn-analysts-predict-elite-eight-final-four-national-championship-in-march-madness-2026-ncaa-tournament/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Florida", "Arizona", "Iowa State"],
+      "championship_game": "Florida vs. Arizona",
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 2 Iowa State over No. 1 Michigan (Midwest Elite Eight)"
+      ],
+      "key_insights": [
+        "Arizona cutting down the nets for the first time since 1997",
+        "Three 1-seeds in his Final Four (Duke, Florida, Arizona) plus Iowa State"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Seth Greenberg",
+      "platform": "ESPN (College GameDay)",
+      "article_url": "https://sports.yahoo.com/articles/seth-greenberg-picks-epic-ncaa-001454895.html",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Michigan State", "Houston", "Arizona", "Michigan"],
+      "championship_game": "Michigan State vs. Michigan",
+      "champion_pick": "Michigan",
+      "notable_upset_picks": [
+        "No. 3 Michigan State over No. 1 Duke (East Elite Eight)",
+        "No. 2 Houston over No. 1 Florida (South Elite Eight)"
+      ],
+      "key_insights": [
+        "Michigan State's Jeremy Fears Jr. controlling the tempo is the X-factor",
+        "Michigan vs Michigan State in the championship game — an unprecedented Big Ten clash",
+        "Would make a three-game season sweep of MSU for Michigan if it happened",
+        "Michigan and Michigan State have never faced in an NCAA tournament game"
+      ],
+      "confidence_level": "medium-high"
+    },
+    {
+      "name": "Rece Davis",
+      "platform": "ESPN (College GameDay)",
+      "article_url": "https://www.on3.com/news/jay-bilas-espn-analysts-predict-elite-eight-final-four-national-championship-in-march-madness-2026-ncaa-tournament/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Michigan"],
+      "championship_game": "Duke vs. Arizona",
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 5 Vanderbilt to the Elite Eight",
+        "No. 2 Houston over No. 1 Florida (South)"
+      ],
+      "key_insights": [
+        "Vanderbilt's veteran lineup can cause problems in the South Region",
+        "Arizona is the most complete team in the field"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Joe Lunardi",
+      "platform": "ESPN",
+      "article_url": "https://www.newsweek.com/sports/ncaa/joe-lunardi-reveals-his-2026-ncaa-tournament-final-four-picks-11685628",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Florida", "Arizona", "Iowa State"],
+      "championship_game": "Duke vs. Arizona",
+      "champion_pick": "Duke",
+      "notable_upset_picks": [
+        "No. 4 Alabama over No. 1 Michigan (Sweet Sixteen)",
+        "No. 2 Iowa State over No. 4 Alabama (Elite Eight)"
+      ],
+      "key_insights": [
+        "Michigan's L.J. Cason season-ending injury is significant enough to derail their run",
+        "Iowa State is the sole non-1-seed in his Final Four — strong statement on Cyclones' 27-7 record",
+        "Alabama upset of Michigan is the bracket's biggest vulnerability",
+        "Three 1-seeds plus Iowa State reflects confidence in chalk"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Andy Katz",
+      "platform": "NCAA.com",
+      "article_url": "https://www.ncaa.com/news/basketball-men/article/2026-03-15/duke-takes-no-1-seed-andy-katzs-final-march-madness-bracket-predictions",
+      "date_published": "2026-03-15",
+      "final_four_picks": ["Duke", "Florida", "Arizona", "Michigan"],
+      "championship_game": null,
+      "champion_pick": null,
+      "notable_upset_picks": [],
+      "key_insights": [
+        "Duke is the No. 1 overall seed in his final bracket projection",
+        "Florida grabbed the 4th No. 1 seed, replacing UConn on the top line",
+        "Florida on a heater — winners of 12 of last 13, all but 3 by double digits",
+        "Michigan State climbed to a No. 2 seed line in March updates",
+        "Iowa State jumps into a No. 2 seed in final pre-Selection Sunday predictions"
+      ],
+      "confidence_level": "medium",
+      "note": "Katz publishes bracketology projections; full tournament outcome picks not found in post-Selection Sunday coverage"
+    },
+    {
+      "name": "Michael Cohen",
+      "platform": "Fox Sports",
+      "article_url": "https://www.foxsports.com/stories/college-basketball/ncaa-mens-tournament-bracket-picks-expert-predictions-analysis",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Michigan"],
+      "championship_game": "Duke vs. Michigan",
+      "champion_pick": "Duke",
+      "notable_upset_picks": [
+        "No. 11 South Florida over No. 6 Louisville (East first round)",
+        "No. 11 Texas/NC State over No. 6 BYU (West first round)"
+      ],
+      "key_insights": [
+        "Duke's late-February victory over then-No. 1 Michigan on a neutral floor is the differentiator",
+        "Cameron Boozer is the single-best player in the tournament",
+        "Duke has a deep roster capable of surviving their tough East Region draw",
+        "No double-digit seeds making the second weekend — predicts a chalk year"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Casey Jacobsen",
+      "platform": "Fox Sports",
+      "article_url": "https://www.foxsports.com/stories/college-basketball/ncaa-mens-tournament-bracket-picks-expert-predictions-analysis",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Michigan"],
+      "championship_game": "Michigan vs. Duke",
+      "champion_pick": "Michigan",
+      "notable_upset_picks": [
+        "No. 12 Akron over No. 5 Texas Tech (Midwest first round)"
+      ],
+      "key_insights": [
+        "Michigan's dominant Players Era Tournament performance showcased their ceiling",
+        "Elite defense ranking plus balanced offensive capabilities",
+        "Michigan would be the first Big Ten team to win a national title since Michigan State in 2000"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Pat Forde",
+      "platform": "Sports Illustrated",
+      "article_url": "https://www.si.com/college-basketball/march-madness-brackets-expert-predictions-2026-mens-ncaa-tournament",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Michigan"],
+      "championship_game": null,
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [],
+      "key_insights": [
+        "All four 1-seeds reach Final Four in his bracket",
+        "Arizona selected as champion — depth and balance are the key factors"
+      ],
+      "confidence_level": "medium-high"
+    },
+    {
+      "name": "Bryan Fischer",
+      "platform": "Sports Illustrated",
+      "article_url": "https://www.si.com/college-basketball/march-madness-brackets-expert-predictions-2026-mens-ncaa-tournament",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Illinois", "Arizona", "Virginia"],
+      "championship_game": null,
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 3 Illinois to the Final Four (over Houston and Florida in South)",
+        "No. 3 Virginia to the Final Four (over Michigan and Iowa State in Midwest)"
+      ],
+      "key_insights": [
+        "Most contrarian bracket among SI experts — no Michigan in Final Four",
+        "Virginia's defense and experience make them a dangerous 3-seed",
+        "Illinois has 1-seed talent despite being a 3-seed"
+      ],
+      "confidence_level": "medium"
+    },
+    {
+      "name": "Kevin Sweeney",
+      "platform": "Sports Illustrated",
+      "article_url": "https://www.si.com/college-basketball/march-madness-brackets-expert-predictions-2026-mens-ncaa-tournament",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arkansas", "Michigan"],
+      "championship_game": null,
+      "champion_pick": "Duke",
+      "notable_upset_picks": [
+        "No. 4 Arkansas to the Final Four (over Arizona, Purdue in West)"
+      ],
+      "key_insights": [
+        "Duke's Cameron Boozer makes the difference",
+        "Arkansas is his boldest pick — West Region dark horse"
+      ],
+      "confidence_level": "medium-high"
+    },
+    {
+      "name": "Gary Parrish",
+      "platform": "CBS Sports",
+      "article_url": "https://www.cbssports.com/college-basketball/ncaa-tournament/bracket/expert-picks-and-analysis/",
+      "date_published": "2026-03-16",
+      "final_four_picks": null,
+      "championship_game": null,
+      "champion_pick": "Houston",
+      "notable_upset_picks": [],
+      "key_insights": [
+        "Houston will finish what they started after coming close last season",
+        "South Region played in Houston gives Cougars home-court advantage in Sweet 16 and Elite Eight",
+        "Hall of Fame-level coach Kelvin Sampson, roster continuity from championship game run",
+        "Multiple projected first-round NBA Draft picks on roster"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "Matt Norlander",
+      "platform": "CBS Sports",
+      "article_url": "https://www.cbssports.com/college-basketball/ncaa-tournament/bracket/expert-picks-and-analysis/",
+      "date_published": "2026-03-16",
+      "final_four_picks": null,
+      "championship_game": null,
+      "champion_pick": "Duke",
+      "notable_upset_picks": [],
+      "key_insights": [
+        "Duke has the best player in the country in Cameron Boozer",
+        "Back-to-back years of being the most talented team in the field"
+      ],
+      "confidence_level": "high"
+    },
+    {
+      "name": "James Hawkins",
+      "platform": "Detroit News",
+      "article_url": "https://www.detroitnews.com/story/sports/college/more-colleges/2026/03/16/final-four-and-national-champion-predictions-for-march-madness/89099845007/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Florida", "Arizona", "Michigan"],
+      "championship_game": null,
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [],
+      "key_insights": [
+        "Jaden Bradley's clutch gene is the deciding factor for Arizona"
+      ],
+      "confidence_level": "medium-high"
+    },
+    {
+      "name": "John Niyo",
+      "platform": "Detroit News",
+      "article_url": "https://www.detroitnews.com/story/sports/college/more-colleges/2026/03/16/final-four-and-national-champion-predictions-for-march-madness/89099845007/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["UConn", "Houston", "Arizona", "Michigan"],
+      "championship_game": null,
+      "champion_pick": "Arizona",
+      "notable_upset_picks": [
+        "No. 2 UConn over No. 1 Duke (East)"
+      ],
+      "key_insights": [
+        "Seven of the last eight national champions were No. 1 seeds",
+        "Injuries could derail Duke and Michigan, creating openings for UConn and Houston"
+      ],
+      "confidence_level": "medium"
+    },
+    {
+      "name": "Connor Earegood",
+      "platform": "Detroit News",
+      "article_url": "https://www.detroitnews.com/story/sports/college/more-colleges/2026/03/16/final-four-and-national-champion-predictions-for-march-madness/89099845007/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Florida", "Arkansas", "Michigan"],
+      "championship_game": null,
+      "champion_pick": "Duke",
+      "notable_upset_picks": [
+        "No. 4 Arkansas to the Final Four (West Region)"
+      ],
+      "key_insights": [
+        "Arkansas and Detroit product Darius Acuff Jr. are peaking at the right time",
+        "Duke's offense and defense are both elite enough to survive the East"
+      ],
+      "confidence_level": "medium-high"
+    },
+    {
+      "name": "Bob Wojnowski",
+      "platform": "Detroit News",
+      "article_url": "https://www.detroitnews.com/story/sports/college/more-colleges/2026/03/16/final-four-and-national-champion-predictions-for-march-madness/89099845007/",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Michigan"],
+      "championship_game": "Duke vs. Michigan",
+      "champion_pick": "Duke",
+      "notable_upset_picks": [
+        "No. 2 Houston over No. 1 Florida (South)"
+      ],
+      "key_insights": [
+        "Duke defeats Michigan 68-63 in the championship game",
+        "Houston freshman Kingston Flemings looks like an NBA lottery pick",
+        "Darius Acuff Jr. is what John Calipari needs at Arkansas"
+      ],
+      "confidence_level": "high"
+    }
+  ],
+  "models_and_analytics": [
+    {
+      "name": "Nate Silver / Silver Bulletin (COOPER Model)",
+      "platform": "Silver Bulletin (Substack)",
+      "article_url": "https://www.natesilver.net/p/2026-march-madness-ncaa-tournament-predictions",
+      "date_published": "2026-03-16",
+      "champion_pick": "Arizona",
+      "methodology": "COOPER rating system blended with KenPom ratings, 100,000 simulations per run with sophisticated injury handling",
+      "key_insights": [
+        "Arizona is the overall tournament favorite — a surprise even to Silver (not Duke, not Michigan)",
+        "COOPER model named after Cooper Flagg and Cynthia Cooper",
+        "Wildcats are close #3 overall behind Duke and Michigan in COOPER ratings, but KenPom has them pulling ahead",
+        "Arizona is not dealing with injury issues while Michigan (L.J. Cason ACL) and Duke (Foster, Ngongba) are",
+        "Model will be updated once daily throughout the tournament"
+      ],
+      "championship_probability_pct": null,
+      "note": "Full probabilities behind paywall"
+    },
+    {
+      "name": "RotoWire AI (Gemini-based)",
+      "platform": "RotoWire",
+      "article_url": "https://www.rotowire.com/cbasketball/article/march-madness-2026-ai-projection-106270",
+      "date_published": "2026-03-16",
+      "simulations_run": 100,
+      "champion_pick": "Arizona",
+      "championship_probability_pct": 18,
+      "projected_final": "Arizona defeats Houston 74-70",
+      "projected_semifinal_results": [
+        "Arizona defeats Alabama 92-87",
+        "Houston defeats Duke 68-65"
+      ],
+      "other_contender_win_rates_pct": {
+        "Duke": 15,
+        "Michigan": 12,
+        "Houston": 11,
+        "Florida": 8,
+        "Illinois": 5,
+        "Iowa State": 4,
+        "UConn": 3
+      },
+      "key_insights": [
+        "Arizona wins its second national title (first since 1997)",
+        "Houston makes repeat trip to championship game",
+        "Alabama emerges as surprise Final Four team"
+      ]
+    },
+    {
+      "name": "CBS Sports SportsLine Model",
+      "platform": "CBS Sports",
+      "article_url": "https://www.cbssports.com/general/news/ncaa-bracket-predictions-model-shares-surprising-march-madness-2026-tournament-picks/",
+      "date_published": "2026-03-16",
+      "simulations_run": 10000,
+      "champion_pick": null,
+      "key_insights": [
+        "Model has nailed 25 first-round upsets by double-digit seeds since 2016",
+        "Has beaten over 91% of all CBS Sports brackets in four of the past seven tournaments",
+        "Specific picks behind paywall"
+      ]
+    },
+    {
+      "name": "PoolGenius / TeamRankings Champion Formula",
+      "platform": "PoolGenius",
+      "article_url": "https://poolgenius.teamrankings.com/ncaa-bracket-picks/articles/who-will-win-march-madness-2026/",
+      "date_published": "2026-03-16",
+      "teams_fitting_champion_formula": ["Duke", "Michigan", "Florida", "Arizona", "Iowa State", "Louisville"],
+      "formula_hit_rate_pct": 93,
+      "key_insight": "Only 6 teams fit the historical champion formula — must rank near top nationally in both offensive and defensive efficiency while playing an elite schedule. Louisville (projected ~7-seed) is the biggest surprise inclusion.",
+      "note": "Updated post-Selection Sunday with actual bracket"
+    },
+    {
+      "name": "KenPom Rankings (Tournament Edition)",
+      "platform": "KenPom / BetMGM analysis",
+      "article_url": "https://sports.betmgm.com/en/blog/ncaab/ncaa-tournament-bracket-based-using-kenpom-ratings-sgc/",
+      "date_published": "2026-03-16",
+      "top_teams_by_net_efficiency": {
+        "1": "Duke (38.9-point adjusted efficiency margin)",
+        "2": "Michigan",
+        "3": "Arizona",
+        "4": "Florida (top-10 offense, top-6 defense)",
+        "5": "Illinois (nation's No. 1 offense)",
+        "7": "Vanderbilt (7th offensive, 31st defensive efficiency)",
+        "12": "Vanderbilt (in KenPom Net Ratings)",
+        "13": "Virginia"
+      },
+      "key_insights": [
+        "Duke leads the nation with 38.9-point adjusted efficiency margin",
+        "Purdue has the best offensive efficiency of the KenPom era (since 1997)",
+        "Illinois is ranked 5th overall with the nation's No. 1 offense",
+        "Duke has UConn and Michigan State before the Final Four — toughest path",
+        "Arizona arguably has the easiest path to the Final Four (weakest West Region)",
+        "Florida has the best frontcourt in the country"
+      ]
+    }
+  ],
+  "fresh_takes_and_contrarians": [
+    {
+      "name": "The Ringer Bracket Breakdown",
+      "platform": "The Ringer",
+      "article_url": "https://www.theringer.com/2026/03/16/college-basketball/march-madness-mens-ncaa-tournament-bracket-breakdown-2026",
+      "date_published": "2026-03-16",
+      "championship_tier": ["Michigan", "Arizona", "Florida"],
+      "teams_to_avoid": ["UConn (shooting inconsistency)", "Purdue (can't guard the ball)", "Miami OH (worst at-large team)", "Kansas (Peterson injury chemistry issues)"],
+      "sleeper_picks": [
+        "Northern Iowa (12-seed, East) — one of the most dangerous double-digit seeds per advanced metrics",
+        "South Florida (11-seed, East) — 12-game win streak, pace-and-space system from Alabama",
+        "BYU (6-seed, West) — AJ Dybantsa is the best player in the tournament, should be first NBA draft pick"
+      ],
+      "key_insights": [
+        "Duke LEFT OFF top contenders list due to injuries to Patrick Ngongba II (foot) and Caleb Foster (broken foot surgery)",
+        "West Region is weakest — favors Arizona's path",
+        "Illinois is a 3-seed with 1-seed talent — four of eight losses in overtime",
+        "Miami (OH) at 31-1 is actually the worst at-large team — schedule was terrible, 25 Quad 3/4 wins",
+        "Michigan is one of the most turnover-prone teams in the country (179th in turnover rate)",
+        "Florida's guards went from 23.4% from three through January to 32.6% over last six weeks",
+        "Arizona's one concern: reluctance to shoot threes — only three teams attempt fewer"
+      ],
+      "reasoning": "The Ringer takes a contrarian, analytics-driven approach. Their biggest divergence from consensus is excluding Duke from title contention entirely due to health concerns."
+    },
+    {
+      "name": "SportsBookReview Bracket Reactions",
+      "platform": "SportsBookReview",
+      "article_url": "https://www.sportsbookreview.com/picks/ncaa-basketball/march-madness-bracket-reactions-2026/",
+      "date_published": "2026-03-16",
+      "champion_pick": "Duke",
+      "key_insights": [
+        "Duke leads the nation with 38.9-point adjusted efficiency margin, even without Foster and Ngongba",
+        "Louisville losing four of last eight and Mikel Brown Jr. missing four games makes them upset-vulnerable",
+        "Arizona earned arguably the easiest path for any No. 1 seed",
+        "Florida and Houston are betting favorites to emerge from loaded South Region",
+        "Michigan is top seed and betting favorite in Midwest alongside Iowa State"
+      ]
+    },
+    {
+      "name": "DraftKings Network Upset Picks",
+      "platform": "DraftKings",
+      "article_url": "https://dknetwork.draftkings.com/2026/03/16/five-2026-march-madness-upset-predictions-to-help-you-win-your-bracket/",
+      "date_published": "2026-03-16",
+      "upset_picks": [
+        {
+          "underdog": "No. 12 Akron",
+          "favorite": "No. 5 Texas Tech",
+          "region": "Midwest",
+          "reasoning": "Akron won 29 games including final 10, MAC Tournament Champions, 7.5-point underdogs, +260 ML. Texas Tech dealing with multiple injuries to star players."
+        },
+        {
+          "underdog": "No. 11 VCU",
+          "favorite": "No. 6 North Carolina",
+          "region": "South",
+          "reasoning": "Cleanest single-game upset on the bracket. UNC opened only -2.5. VCU: 81.6 PPG, 54.1% eFG, 31.3% offensive-rebound rate, 36.7% from three, 13.0% turnover rate."
+        },
+        {
+          "underdog": "No. 11 South Florida",
+          "favorite": "No. 6 Louisville",
+          "region": "East",
+          "reasoning": "24-8, AAC Tournament champions, only 5.5-point underdogs (+185 ML), 88.3 PPG (8th nationally). Louisville's Mikel Brown Jr. has missed four games with back injury."
+        }
+      ]
+    },
+    {
+      "name": "NBC Sports Dark Horse Analysis",
+      "platform": "NBC Sports",
+      "article_url": "https://www.nbcsports.com/mens-college-basketball/news/2026-march-madness-dark-horse-final-four-predictions-odds-louisville-vanderbilt-virginia-wisconsin",
+      "date_published": "2026-03-16",
+      "dark_horse_final_four_picks": [
+        {
+          "team": "Louisville",
+          "region": "East",
+          "odds": "+1300",
+          "seed": 6,
+          "reasoning": "19th offensive, 25th defensive efficiency — one of only 8 teams top-25 in both. 59.7% two-point shooting (9th). Duke's injuries create vulnerability. Weakness: 173rd in forcing turnovers."
+        },
+        {
+          "team": "Vanderbilt",
+          "region": "South",
+          "seed": 5,
+          "odds": "+1100",
+          "reasoning": "7th offensive, 31st defensive efficiency. Strong ball security (13.3% TO rate, 11th). Elite FT shooting (79.3%, 4th). Four seniors in starting lineup. Could upset Florida twice in one season."
+        },
+        {
+          "team": "Virginia",
+          "region": "Midwest",
+          "seed": 3,
+          "odds": "+1100",
+          "reasoning": "27th offensive, 18th defensive efficiency. Strong perimeter defense. Two reliable three-point shooters. Nine players average 16+ minutes. Michigan's Cason injury and Texas Tech's Toppin injury create favorable path."
+        },
+        {
+          "team": "Wisconsin",
+          "region": "West",
+          "seed": 5,
+          "odds": "+1500",
+          "reasoning": "Elite turnover management (12.8% TO rate, 3rd). 78.6% FT (12th). 42.5% of shots from three (4th nationally). Veteran guards Nick Boyd and John Blackwell. Beaten Illinois, Purdue, MSU, Michigan."
+        }
+      ]
+    },
+    {
+      "name": "Yahoo Sports Upset Predictions",
+      "platform": "Yahoo Sports",
+      "article_url": "https://sports.yahoo.com/articles/6-march-madness-upset-predictions-194315267.html",
+      "date_published": "2026-03-16",
+      "upset_picks": [
+        {
+          "underdog": "No. 12 High Point",
+          "favorite": "No. 5 Wisconsin",
+          "region": "West",
+          "reasoning": "High Point can score, but Wisconsin's guards Boyd and Blackwell provide tough matchup"
+        },
+        {
+          "underdog": "No. 11 VCU",
+          "favorite": "No. 6 North Carolina",
+          "region": "South",
+          "reasoning": "Without Caleb Wilson, UNC has a lower ceiling. VCU is a fair upset pick."
+        },
+        {
+          "underdog": "No. 11 South Florida",
+          "favorite": "No. 6 Louisville",
+          "region": "East",
+          "reasoning": "Louisville's Mikel Brown Jr. sidelined with sore back. Both teams shoot many threes — creates rebounding chaos."
+        },
+        {
+          "underdog": "No. 10 Santa Clara",
+          "favorite": "No. 7 Kentucky",
+          "region": "Midwest",
+          "reasoning": "Kentucky banged up and inconsistent. Santa Clara has positional size at almost every position."
+        },
+        {
+          "underdog": "No. 10 UCF",
+          "favorite": "No. 7 UCLA",
+          "region": "East",
+          "reasoning": "UCLA banged up. UCF's Jamichael Stillwell resembles Draymond Green defensively."
+        },
+        {
+          "underdog": "No. 9 Utah State",
+          "favorite": "No. 8 Villanova",
+          "region": "West",
+          "reasoning": "Mason Falslev is Mountain West Player of the Year. This is a coin flip between evenly matched teams."
+        }
+      ]
+    },
+    {
+      "name": "Columbus Dispatch Predictions",
+      "platform": "Columbus Dispatch / Yahoo Sports",
+      "article_url": "https://sports.yahoo.com/articles/win-march-madness-columbus-dispatch-200333617.html",
+      "date_published": "2026-03-16",
+      "final_four_picks": ["Duke", "Houston", "Arizona", "Iowa State"],
+      "key_insights": [
+        "Duke has lost just one game since New Year's Eve — two losses by combined four points",
+        "No. 4 offense and No. 2 defense will lead Duke past Houston in a rematch from last year's Final Four",
+        "Arizona entered the tournament 32-2",
+        "Iowa State vs Arizona in one semifinal, Duke vs Houston in the other"
+      ]
+    }
+  ],
+  "injury_report_impact": {
+    "critical_injuries": [
+      {
+        "team": "Michigan",
+        "player": "L.J. Cason",
+        "injury": "Season-ending ACL injury",
+        "seed": 1,
+        "region": "Midwest",
+        "impact": "Multiple experts (Lunardi, The Ringer, Nate Silver) cite this as reason to pick against Michigan. Lunardi has Alabama upsetting Michigan in Sweet 16."
+      },
+      {
+        "team": "Duke",
+        "player": "Caleb Foster",
+        "injury": "Broken foot (surgery, out)",
+        "seed": 1,
+        "region": "East",
+        "impact": "The Ringer left Duke off title contender list. Multiple experts still pick Duke due to Cameron Boozer and depth."
+      },
+      {
+        "team": "Duke",
+        "player": "Patrick Ngongba II",
+        "injury": "Foot soreness (questionable)",
+        "seed": 1,
+        "region": "East",
+        "impact": "Combined with Foster injury, creates vulnerability. Bilas and Greenberg pick Michigan State over Duke in East."
+      },
+      {
+        "team": "Louisville",
+        "player": "Mikel Brown Jr.",
+        "injury": "Back injury (missed last 4 games)",
+        "seed": 6,
+        "region": "East",
+        "impact": "Multiple experts pick South Florida upset. Louisville lost 4 of last 8 games."
+      },
+      {
+        "team": "North Carolina",
+        "player": "Caleb Wilson",
+        "injury": "Broken thumb (season-ending)",
+        "seed": 6,
+        "region": "South",
+        "impact": "Widespread upset pick for VCU over UNC. Line opened at only -2.5."
+      },
+      {
+        "team": "Texas Tech",
+        "player": "JT Toppin",
+        "injury": "Injured (status unclear)",
+        "seed": 5,
+        "region": "Midwest",
+        "impact": "Multiple star injuries make Akron a popular 12-over-5 upset pick."
+      }
+    ]
+  },
+  "betting_odds": {
+    "championship_odds": {
+      "Duke": "+325 to +340",
+      "Michigan": "+340 to +375",
+      "Arizona": "+360 to +400",
+      "Florida": "+700 to +775",
+      "Houston": "+900 to +1000 (10-1)",
+      "Iowa State": "+1500 (15-1)",
+      "Illinois": "+1900 (19-1)",
+      "UConn": "+2000",
+      "Vanderbilt": "+1100",
+      "Virginia": "+1100",
+      "Louisville": "+1300",
+      "Wisconsin": "+1500"
+    },
+    "notable_odds_movements": [
+      "Duke moved from +700 to +325 over the past month on an 8-game win streak",
+      "Arizona has favorable path through weakest West Region",
+      "A No. 1 seed has won the national championship 59.6% of the time since 1979"
+    ],
+    "first_round_lines": {
+      "VCU_vs_UNC": "UNC -2.5",
+      "South_Florida_vs_Louisville": "Louisville -5.5",
+      "Akron_vs_Texas_Tech": "Texas Tech -7.5"
+    }
+  },
+  "consensus_summary": {
+    "search_date": "2026-03-16",
+    "experts_surveyed": 19,
+    "note": "Post-Selection Sunday analysis — actual bracket is now known",
+    "champion_pick_tally": {
+      "Arizona": 8,
+      "Duke": 6,
+      "Michigan": 2,
+      "Houston": 1,
+      "other": 2
+    },
+    "most_common_champion": "Arizona",
+    "champion_reasoning": "Arizona has the combination of elite backcourt (Jaden Bradley, Brayden Burries), size/physicality, no significant injuries, and the weakest regional path (West). 8 of 19 experts pick them to cut down the nets for the first time since 1997.",
+    "most_common_final_four": {
+      "Arizona": {"count": 17, "pct": 89},
+      "Duke": {"count": 14, "pct": 74},
+      "Michigan": {"count": 10, "pct": 53},
+      "Houston": {"count": 8, "pct": 42},
+      "Iowa_State": {"count": 6, "pct": 32},
+      "Florida": {"count": 6, "pct": 32},
+      "Michigan_State": {"count": 4, "pct": 21},
+      "UConn": {"count": 3, "pct": 16},
+      "Illinois": {"count": 2, "pct": 11},
+      "Virginia": {"count": 1, "pct": 5},
+      "Arkansas": {"count": 2, "pct": 11}
+    },
+    "region_favorites": {
+      "East": {
+        "chalk": "Duke (1-seed)",
+        "most_picked_winner": "Duke",
+        "dark_horse": "Michigan State (3-seed, Izzo factor)",
+        "upset_alert": "South Florida over Louisville"
+      },
+      "South": {
+        "chalk": "Florida (1-seed, defending champions)",
+        "most_picked_winner": "Houston (2-seed)",
+        "dark_horse": "Illinois (3-seed, No. 1 offense)",
+        "upset_alert": "VCU over North Carolina"
+      },
+      "West": {
+        "chalk": "Arizona (1-seed)",
+        "most_picked_winner": "Arizona (near-unanimous)",
+        "dark_horse": "Arkansas (4-seed, Darius Acuff Jr.)",
+        "upset_alert": "High Point over Wisconsin, Utah State over Villanova"
+      },
+      "Midwest": {
+        "chalk": "Michigan (1-seed)",
+        "most_picked_winner": "Iowa State (2-seed) or Michigan",
+        "dark_horse": "Virginia (3-seed, +1100 odds)",
+        "upset_alert": "Akron over Texas Tech, Santa Clara over Kentucky"
+      }
+    },
+    "trending_sleepers": [
+      {
+        "team": "Michigan State",
+        "seed": 3,
+        "region": "East",
+        "reason": "Tom Izzo postseason magic. Jeremy Fears Jr. 20+ points in last 4 games. Bilas and Greenberg both pick MSU to beat Duke."
+      },
+      {
+        "team": "Illinois",
+        "seed": 3,
+        "region": "South",
+        "reason": "KenPom No. 5 overall, nation's No. 1 offense. 3-seed with 1-seed talent. 4 of 8 losses in overtime — better than record shows."
+      },
+      {
+        "team": "Iowa State",
+        "seed": 2,
+        "region": "Midwest",
+        "reason": "Milan Momcilovic is the best 3-point shooter in the field. 4th-best defense nationally. Fits PoolGenius champion formula."
+      },
+      {
+        "team": "Vanderbilt",
+        "seed": 5,
+        "region": "South",
+        "reason": "7th offensive efficiency, 31st defensive. Four-senior starting lineup. +1100 dark horse odds. Best free throw shooting team (79.3%, 4th)."
+      },
+      {
+        "team": "Virginia",
+        "seed": 3,
+        "region": "Midwest",
+        "reason": "27th offense, 18th defense. Two elite shooters. Nine-deep rotation. +1100 odds. Michigan's Cason injury opens the path."
+      },
+      {
+        "team": "Arkansas",
+        "seed": 4,
+        "region": "West",
+        "reason": "KenPom No. 16, top-6 offense. Darius Acuff Jr. averaging 22.2 PPG / 6.4 APG. Peaking at right time under Calipari."
+      },
+      {
+        "team": "St. John's",
+        "seed": 5,
+        "region": "East",
+        "reason": "Criminally underseeded at No. 5. Big East POY Zuby Ejiofor. Rick Pitino coaching. Won 19 of last 20 games."
+      },
+      {
+        "team": "Louisville",
+        "seed": 6,
+        "region": "East",
+        "reason": "Fits PoolGenius champion formula (one of only 6 teams). Top-25 in both offensive and defensive efficiency. But Brown Jr. injury is a wildcard."
+      }
+    ],
+    "trending_upsets": [
+      {
+        "matchup": "No. 11 South Florida over No. 6 Louisville",
+        "region": "East",
+        "expert_support": "high — cited by 5+ sources",
+        "line": "Louisville -5.5",
+        "reason": "Louisville lost 4 of last 8, Brown Jr. out. USF 88.3 PPG (8th nationally), AAC champs, 12-game win streak."
+      },
+      {
+        "matchup": "No. 11 VCU over No. 6 North Carolina",
+        "region": "South",
+        "expert_support": "high — cited by 4+ sources",
+        "line": "UNC -2.5",
+        "reason": "UNC lost Caleb Wilson (broken thumb). VCU: 81.6 PPG, 54.1% eFG, 31.3% OREB rate. Only 2.5-point spread."
+      },
+      {
+        "matchup": "No. 12 Akron over No. 5 Texas Tech",
+        "region": "Midwest",
+        "expert_support": "high — cited by 4+ sources",
+        "line": "Texas Tech -7.5",
+        "reason": "Texas Tech multiple injuries. Akron 29 wins, 19-1 in last 20, MAC champs, 88.4 PPG (7th nationally)."
+      },
+      {
+        "matchup": "No. 10 Santa Clara over No. 7 Kentucky",
+        "region": "Midwest",
+        "expert_support": "medium",
+        "reason": "Kentucky banged up and inconsistent. Santa Clara has positional size at almost every spot."
+      },
+      {
+        "matchup": "No. 10 UCF over No. 7 UCLA",
+        "region": "East",
+        "expert_support": "medium",
+        "reason": "UCLA banged up and hasn't traveled well to East Coast. UCF's Stillwell plays elite defense."
+      },
+      {
+        "matchup": "No. 10 Texas A&M over No. 7 Saint Mary's",
+        "region": "South",
+        "expert_support": "medium",
+        "reason": "Texas A&M has 9th-best scoring offense (87.7 PPG). Saint Mary's only 78.2 PPG (116th)."
+      },
+      {
+        "matchup": "No. 9 Utah State over No. 8 Villanova",
+        "region": "West",
+        "expert_support": "medium",
+        "reason": "Mason Falslev is Mountain West POY. Coin flip matchup. KenPom: Utah State 32nd, Villanova 33rd."
+      },
+      {
+        "matchup": "No. 12 High Point over No. 5 Wisconsin",
+        "region": "West",
+        "expert_support": "low-medium",
+        "reason": "High Point plays full-court pressure defense. Wisconsin's offensive style could be disrupted."
+      }
+    ],
+    "key_narratives": [
+      "Arizona is the consensus champion pick (8 of 19 experts) despite being the 3rd-best odds (+360-400). The market may be undervaluing them.",
+      "Duke has the toughest path of any 1-seed — faces UConn and Michigan State before the Final Four — yet still gets 6 champion picks.",
+      "Michigan's L.J. Cason ACL injury has cratered expert confidence — only 2 champion picks despite +340 odds.",
+      "The South Region is a gauntlet: defending champion Florida, Houston (2), Illinois (3), Vanderbilt (5) — no easy path.",
+      "Tom Izzo's Michigan State is the consensus East Region dark horse — Bilas and Greenberg both pick MSU over Duke.",
+      "Injury context is driving more upset picks than usual — Louisville, UNC, Texas Tech, Michigan, and Duke all dealing with significant absences.",
+      "BYU's AJ Dybantsa is called 'the best player in the tournament' by The Ringer — a 6-seed with the projected No. 1 NBA draft pick.",
+      "Florida's three-point shooting improvement (23.4% to 32.6%) is either a real transformation or a mirage that could doom their title defense."
+    ],
+    "consensus_narrative": "Arizona has emerged as the post-bracket-reveal consensus champion pick, overtaking pre-Selection Sunday favorite Duke. The Wildcats benefit from no significant injuries, the weakest regional path (West), elite guard play (Bradley/Burries), and physical size. Duke's injury concerns (Foster out, Ngongba questionable) and brutal East Region draw have dampened enthusiasm despite having the best player (Cameron Boozer) and best efficiency margin. Michigan's Cason ACL injury is the tournament's biggest wildcard. The South Region is universally regarded as the toughest, with defending champion Florida likely facing Houston and/or Illinois. Injury-driven upsets (South Florida over Louisville, VCU over UNC, Akron over Texas Tech) are this year's most popular contrarian picks."
+  },
+  "methodology_notes": {
+    "search_date": "2026-03-16",
+    "searches_performed": [
+      "NCAA tournament 2026 bracket predictions experts",
+      "March Madness 2026 expert picks ESPN CBS Final Four",
+      "NCAA tournament 2026 upsets predictions first round",
+      "March Madness 2026 Final Four predictions championship",
+      "March Madness 2026 dark horse sleeper picks bracket",
+      "ESPN bracketology 2026 expert picks Joe Lunardi",
+      "Jay Bilas bracket 2026 NCAA tournament predictions",
+      "Andy Katz NCAA tournament 2026 picks",
+      "KenPom predictions NCAA tournament 2026",
+      "Nate Silver 2026 March Madness predictions",
+      "CBS Sports expert brackets 2026",
+      "SportsBookReview March Madness 2026 bracket reactions",
+      "The Ringer 2026 NCAA tournament bracket breakdown",
+      "Detroit News 2026 NCAA tournament predictions",
+      "DraftKings 2026 March Madness upset predictions"
+    ],
+    "limitation": "Selection Sunday was March 15, 2026. This file reflects post-bracket-reveal expert analysis from March 16, 2026. Tournament games begin March 18 (First Four) and March 20 (first round). Some model-based predictions (CBS SportsLine, full Nate Silver probabilities) are behind paywalls.",
+    "change_from_march_12": "Major shift: Arizona replaced Duke as consensus champion pick after bracket reveal showed Arizona has easiest path. Michigan dropped significantly due to L.J. Cason ACL injury confirmed after March 12. Duke's injuries (Foster, Ngongba) became clearer. Actual seedings now known vs. projections."
+  },
+  "sources": [
+    "https://www.espn.com/mens-college-basketball/story/_/id/48219737/2026-men-ncaa-tournament-jay-bilas-predictions-bracket",
+    "https://www.espn.com/mens-college-basketball/story/_/id/48217204/march-madness-bracket-predictions-picks-ncaa-tournament-final-four-2026",
+    "https://www.on3.com/news/jay-bilas-espn-analysts-predict-elite-eight-final-four-national-championship-in-march-madness-2026-ncaa-tournament/",
+    "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions",
+    "https://www.newsweek.com/sports/ncaa/joe-lunardi-reveals-his-2026-ncaa-tournament-final-four-picks-11685628",
+    "https://www.ncaa.com/news/basketball-men/article/2026-03-15/duke-takes-no-1-seed-andy-katzs-final-march-madness-bracket-predictions",
+    "https://www.foxsports.com/stories/college-basketball/ncaa-mens-tournament-bracket-picks-expert-predictions-analysis",
+    "https://www.si.com/college-basketball/march-madness-brackets-expert-predictions-2026-mens-ncaa-tournament",
+    "https://www.cbssports.com/college-basketball/news/2026-ncaa-tournament-bracket-predictions-march-madness-expert-picks-upsets/",
+    "https://www.cbssports.com/college-basketball/ncaa-tournament/bracket/expert-picks-and-analysis/",
+    "https://www.detroitnews.com/story/sports/college/more-colleges/2026/03/16/final-four-and-national-champion-predictions-for-march-madness/89099845007/",
+    "https://www.natesilver.net/p/2026-march-madness-ncaa-tournament-predictions",
+    "https://www.rotowire.com/cbasketball/article/march-madness-2026-ai-projection-106270",
+    "https://poolgenius.teamrankings.com/ncaa-bracket-picks/articles/who-will-win-march-madness-2026/",
+    "https://sports.betmgm.com/en/blog/ncaab/ncaa-tournament-bracket-based-using-kenpom-ratings-sgc/",
+    "https://www.theringer.com/2026/03/16/college-basketball/march-madness-mens-ncaa-tournament-bracket-breakdown-2026",
+    "https://www.sportsbookreview.com/picks/ncaa-basketball/march-madness-bracket-reactions-2026/",
+    "https://dknetwork.draftkings.com/2026/03/16/five-2026-march-madness-upset-predictions-to-help-you-win-your-bracket/",
+    "https://www.nbcsports.com/mens-college-basketball/news/2026-march-madness-dark-horse-final-four-predictions-odds-louisville-vanderbilt-virginia-wisconsin",
+    "https://sports.yahoo.com/articles/6-march-madness-upset-predictions-194315267.html",
+    "https://sports.yahoo.com/articles/win-march-madness-columbus-dispatch-200333617.html",
+    "https://sports.yahoo.com/articles/march-madness-odds-mens-ncaa-145100536.html",
+    "https://www.cbssports.com/college-basketball/news/ncaa-tournament-odds-march-madness-2026-national-championship/",
+    "https://sports.yahoo.com/mens-college-basketball/breaking-news/article/march-madness-bracket-2026-ncaa-mens-basketball-tournament-announced-with-duke-as-no-1-overall-seed-220224514.html",
+    "https://sports.yahoo.com/articles/seth-greenberg-picks-epic-ncaa-001454895.html",
+    "https://dknetwork.draftkings.com/2026/03/16/2026-march-madness-bracket-sleeper-predictions/"
+  ],
+  "date_updated": "2026-03-16"
+}
