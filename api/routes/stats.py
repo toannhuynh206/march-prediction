@@ -1,7 +1,12 @@
-"""Statistics endpoints: dashboard data, champion odds, upset distribution."""
+"""Statistics endpoints: dashboard data, champion odds, upset distribution.
+
+Uses stats_cache table for instant responses. Cache is refreshed after each
+pruning operation (see api/services/pruner.py).
+"""
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -20,24 +25,30 @@ router = APIRouter(prefix="/api", tags=["stats"])
 
 @router.get("/stats")
 async def get_stats(year: int = TOURNAMENT_YEAR):
-    """Dashboard statistics: counts, champion odds, upset distribution."""
+    """Dashboard statistics from pre-computed cache. Instant response."""
     engine = get_engine()
     with engine.connect() as conn:
-        # Total and alive counts
-        counts = conn.execute(
+        # Read from cache (single row, instant)
+        cache = conn.execute(
             text(
-                "SELECT "
-                "  COUNT(*) AS total, "
-                "  COUNT(*) FILTER (WHERE is_alive = TRUE) AS alive "
-                "FROM full_brackets "
-                "WHERE tournament_year = :year"
+                "SELECT total_brackets, alive_brackets, champion_odds, "
+                "  upset_distribution "
+                "FROM stats_cache WHERE tournament_year = :year"
             ),
             {"year": year},
         ).fetchone()
-        total = counts[0]
-        alive = counts[1]
 
-        # Games played and upsets from game_results
+        if not cache:
+            return {
+                "total": 0,
+                "alive_count": 0,
+                "games_played": 0,
+                "upsets_so_far": 0,
+                "champion_odds": [],
+                "upset_distribution": [],
+            }
+
+        # Games played from game_results (tiny table, always fast)
         game_stats = conn.execute(
             text(
                 "SELECT "
@@ -48,57 +59,15 @@ async def get_stats(year: int = TOURNAMENT_YEAR):
             ),
             {"year": year},
         ).fetchone()
-        games_played = game_stats[0]
-        upsets_so_far = game_stats[1]
 
-        # Champion odds — weighted among alive brackets
-        # JOIN with teams to get champion name
-        champion_rows = conn.execute(
-            text(
-                "SELECT t.name, fb.champion_seed, fb.champion_region, "
-                "  SUM(fb.weight) AS total_weight "
-                "FROM full_brackets fb "
-                "JOIN teams t ON t.seed = fb.champion_seed "
-                "  AND t.region = fb.champion_region "
-                "  AND t.tournament_year = fb.tournament_year "
-                "WHERE fb.is_alive = TRUE AND fb.tournament_year = :year "
-                "GROUP BY t.name, fb.champion_seed, fb.champion_region "
-                "ORDER BY total_weight DESC"
-            ),
-            {"year": year},
-        ).fetchall()
-
-        total_weight = sum(float(r[3]) for r in champion_rows) if champion_rows else 1.0
-        champion_odds = [
-            {
-                "name": r[0],
-                "probability": float(r[3]) / total_weight,
-            }
-            for r in champion_rows
-        ]
-
-        # Upset distribution — count of alive brackets by total_upsets
-        upset_rows = conn.execute(
-            text(
-                "SELECT total_upsets, COUNT(*) "
-                "FROM full_brackets "
-                "WHERE is_alive = TRUE AND tournament_year = :year "
-                "GROUP BY total_upsets "
-                "ORDER BY total_upsets"
-            ),
-            {"year": year},
-        ).fetchall()
-
-        upset_distribution = [
-            {"upsets": int(r[0]), "count": int(r[1])}
-            for r in upset_rows
-        ]
+    champion_odds = cache[2] if isinstance(cache[2], list) else json.loads(cache[2]) if cache[2] else []
+    upset_distribution = cache[3] if isinstance(cache[3], list) else json.loads(cache[3]) if cache[3] else []
 
     return {
-        "total": total,
-        "alive_count": alive,
-        "games_played": games_played,
-        "upsets_so_far": upsets_so_far,
+        "total": cache[0],
+        "alive_count": cache[1],
+        "games_played": game_stats[0],
+        "upsets_so_far": game_stats[1],
         "champion_odds": champion_odds[:30],
         "upset_distribution": upset_distribution,
     }
@@ -106,7 +75,7 @@ async def get_stats(year: int = TOURNAMENT_YEAR):
 
 @router.get("/stats/regions/{region}")
 async def get_region_stats(region: str, year: int = TOURNAMENT_YEAR):
-    """Region-specific team list with championship probability."""
+    """Region-specific team list with championship probability from cache."""
     valid_regions = {"South", "East", "West", "Midwest"}
     if region not in valid_regions:
         raise HTTPException(
@@ -116,7 +85,7 @@ async def get_region_stats(region: str, year: int = TOURNAMENT_YEAR):
 
     engine = get_engine()
     with engine.connect() as conn:
-        # Teams in this region
+        # Teams in this region (64 rows total, instant)
         teams = conn.execute(
             text(
                 "SELECT name, seed, region, conference, record "
@@ -127,28 +96,22 @@ async def get_region_stats(region: str, year: int = TOURNAMENT_YEAR):
             {"region": region, "year": year},
         ).fetchall()
 
-        # Total weight across all alive brackets
-        total_weight = conn.execute(
+        # Get champion odds from cache and extract this region's rates
+        cache = conn.execute(
             text(
-                "SELECT COALESCE(SUM(weight), 1.0) FROM full_brackets "
-                "WHERE is_alive = TRUE AND tournament_year = :year"
+                "SELECT champion_odds FROM stats_cache "
+                "WHERE tournament_year = :year"
             ),
             {"year": year},
-        ).scalar()
+        ).fetchone()
 
-        # Championship probability per seed from this region
-        champion_rates = conn.execute(
-            text(
-                "SELECT champion_seed, SUM(weight) AS total_weight "
-                "FROM full_brackets "
-                "WHERE is_alive = TRUE AND tournament_year = :year "
-                "  AND champion_region = :region "
-                "GROUP BY champion_seed"
-            ),
-            {"year": year, "region": region},
-        ).fetchall()
+        champion_odds = []
+        if cache and cache[0]:
+            champion_odds = cache[0] if isinstance(cache[0], list) else json.loads(cache[0])
 
-        seed_rate = {int(r[0]): float(r[1]) / float(total_weight) for r in champion_rates}
+        # Build seed -> probability lookup from cached champion odds
+        # Champion odds has team names — match to seeds via teams list
+        name_to_prob = {entry["name"]: entry["probability"] for entry in champion_odds}
 
         team_list = [
             {
@@ -156,12 +119,12 @@ async def get_region_stats(region: str, year: int = TOURNAMENT_YEAR):
                 "seed": t[1],
                 "region": t[2],
                 "conference": t[3],
-                "survival_rate": seed_rate.get(t[1], 0.0),
+                "survival_rate": name_to_prob.get(t[0], 0.0),
             }
             for t in teams
         ]
 
-        # Game results for this region
+        # Game results for this region (tiny table)
         results = conn.execute(
             text(
                 "SELECT round, game_number, winner_name, loser_name, "

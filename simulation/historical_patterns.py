@@ -329,7 +329,14 @@ def calibrate_r64_probabilities(
                 # Hardcoded evidence is strongest — weight heavily
                 p_blended = 0.30 * p_blended + 0.70 * p_scenario
 
-        calibrated[game_idx] = np.clip(p_blended, 0.01, 0.99)
+        # 1-seeds and 2-seeds auto-advance: P=1.0 (user mandate)
+        # No 16-over-1 or 15-over-2 upsets in our brackets
+        if seed_h <= 2:
+            p_blended = 1.0
+        else:
+            p_blended = np.clip(p_blended, 0.01, 0.99)
+
+        calibrated[game_idx] = p_blended
 
     return calibrated.astype(np.float32)
 

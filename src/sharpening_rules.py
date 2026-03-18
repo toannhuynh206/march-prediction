@@ -43,19 +43,19 @@ class SharpeningRule:
 AUTO_ADVANCE_RULES = [
     SharpeningRule(
         name="1_seed_auto_R64",
-        description="1-seeds nearly always win R64 (1 vs 16 historically 99.3%, UMBC 2018 exception)",
+        description="1-seeds ALWAYS win R64 — user mandate, zero 16-seed upsets this year",
         round_scope="R64",
         rule_type="auto_advance",
         seeds_affected=(1,),
-        value=0.993,  # soft floor — allows UMBC-type upsets at historical rate
+        value=1.0,  # hard lock — gambling on no UMBC repeat
     ),
     SharpeningRule(
         name="2_seed_auto_R64",
-        description="2-seeds nearly always win R64 (2 vs 15 historically 93.5%)",
+        description="2-seeds ALWAYS win R64 — user mandate",
         round_scope="R64",
         rule_type="auto_advance",
         seeds_affected=(2,),
-        value=0.935,  # soft floor — matches historical rate
+        value=1.0,  # hard lock — gambling on no 15-seed upset
     ),
 ]
 

@@ -16,11 +16,9 @@ const useTournamentStore = create((set) => ({
   // Explorer state
   explorerCursor: null,
   explorerSort: 'probability',
-  explorerStatus: 'all', // 'all' | 'alive' | 'dead'
   explorerChampion: '',
   setExplorerCursor: (cursor) => set({ explorerCursor: cursor }),
   setExplorerSort: (sort) => set({ explorerSort: sort, explorerCursor: null }),
-  setExplorerStatus: (status) => set({ explorerStatus: status, explorerCursor: null }),
   setExplorerChampion: (team) => set({ explorerChampion: team, explorerCursor: null }),
 
   // Expanded bracket in explorer

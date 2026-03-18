@@ -28,7 +28,7 @@ function BracketRow({ bracket, isExpanded, onToggle, index, gameResults }) {
         }}
       >
         <span className="font-mono text-xs font-bold" style={{ color: 'var(--text-muted)' }}>
-          #{bracket.rank}
+          #{bracket.id}
         </span>
         <div className="flex items-center gap-2">
           <span className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>
@@ -108,8 +108,8 @@ function BracketDetail({ bracketId, gameResults }) {
 
 export default function ExplorerPage() {
   const {
-    explorerSort, explorerStatus, explorerChampion,
-    setExplorerSort, setExplorerStatus, setExplorerChampion,
+    explorerSort, explorerChampion,
+    setExplorerSort, setExplorerChampion,
   } = useTournamentStore()
   const [cursors, setCursors] = useState([null])
   const [pageIndex, setPageIndex] = useState(0)
@@ -143,12 +143,12 @@ export default function ExplorerPage() {
   const currentCursor = cursors[pageIndex]
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['brackets', currentCursor, explorerSort, explorerStatus, explorerChampion],
+    queryKey: ['brackets', currentCursor, explorerSort, explorerChampion],
     queryFn: () =>
       fetchBrackets({
         cursor: currentCursor,
         sort: explorerSort,
-        status: explorerStatus,
+        status: 'alive',
         champion: explorerChampion,
       }),
     keepPreviousData: true,
@@ -225,33 +225,6 @@ export default function ExplorerPage() {
           </select>
         </div>
 
-        <div className="flex items-center gap-2">
-          <label className="text-[10px] font-mono uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
-            Status
-          </label>
-          <select
-            value={explorerStatus}
-            onChange={(e) => {
-              setExplorerStatus(e.target.value)
-              setCursors([null])
-              setPageIndex(0)
-            }}
-            className="text-sm font-medium rounded-lg px-3 py-1.5 border-none outline-none cursor-pointer"
-            style={{
-              backgroundColor: 'var(--bg-card)',
-              color: explorerStatus === 'alive'
-                ? 'var(--green-alive)'
-                : explorerStatus === 'dead'
-                  ? 'var(--red-dead)'
-                  : 'var(--text-primary)',
-              border: `1px solid ${explorerStatus !== 'all' ? 'var(--border-accent)' : 'var(--border-subtle)'}`,
-            }}
-          >
-            <option value="all">All</option>
-            <option value="alive">Alive</option>
-            <option value="dead">Dead</option>
-          </select>
-        </div>
 
         {data && (
           <div className="ml-auto flex items-center gap-3">
