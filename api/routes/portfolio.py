@@ -47,6 +47,14 @@ STRATEGY_META = {
         "upset_temp": 2.5,
         "risk_level": "high",
     },
+    "smart_upset": {
+        "ticker": "SMRT",
+        "display_name": "Smart Upset",
+        "description": "Targeted coin-flip upsets — chalk structure with 2-3 strategic flips",
+        "base_temp": 0.7,
+        "upset_temp": 2.0,
+        "risk_level": "medium-high",
+    },
     "chaos": {
         "ticker": "CHAS",
         "display_name": "Chaos",

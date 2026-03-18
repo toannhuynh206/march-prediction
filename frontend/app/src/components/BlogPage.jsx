@@ -1571,39 +1571,58 @@ The ratio is what matters.`}
             <Prose>
               <p>
                 Instead of generating random brackets, we generate <strong style={{ color: 'var(--text-primary)' }}>206 million targeted brackets</strong> using
-                a funnel-shaped portfolio strategy. Each bracket gets a 6% mutation X-factor —
-                any coin-flip game (40-60% probability) can randomly flip, modeling the chaos
-                of buzzer beaters and off nights.
+                a diversified portfolio strategy. Like an investment portfolio, we spread our
+                budget across different "market scenarios" — from chalk favorites to strategic
+                upsets to full chaos.
               </p>
               <p>
-                We split our budget into two clusters:
+                Five strategy profiles, each with a different temperature setting that controls
+                how much the bracket leans toward favorites vs. upsets:
               </p>
             </Prose>
           </Reveal>
 
           <Reveal delay={0.05}>
             <div className="flex gap-2 my-6 items-end">
-              <div className="flex-[6] rounded-t-lg" style={{ height: 80, background: 'var(--cyan)', opacity: 0.8 }}>
+              <div className="flex-[30] rounded-t-lg" style={{ height: 80, background: 'var(--cyan)', opacity: 0.8 }}>
                 <div className="p-2 text-center">
-                  <span className="font-display text-lg text-black">BASELINE — 60%</span>
-                  <span className="block text-[10px] text-black/70 font-mono">Average upsets, warm later rounds</span>
+                  <span className="font-display text-sm text-black">CHALK — 30%</span>
+                  <span className="block text-[9px] text-black/70 font-mono">Heavy favorites</span>
                 </div>
               </div>
-              <div className="flex-[4] rounded-t-lg" style={{ height: 80, background: 'var(--orange)', opacity: 0.8 }}>
+              <div className="flex-[35] rounded-t-lg" style={{ height: 80, background: '#64748B', opacity: 0.8 }}>
                 <div className="p-2 text-center">
-                  <span className="font-display text-base text-black">GAMBLE — 40%</span>
-                  <span className="block text-[10px] text-black/70 font-mono">R64 upsets cascade into unique paths</span>
+                  <span className="font-display text-sm text-black">STANDARD — 35%</span>
+                  <span className="block text-[9px] text-black/70 font-mono">True probabilities</span>
+                </div>
+              </div>
+              <div className="flex-[10] rounded-t-lg" style={{ height: 80, background: '#22C55E', opacity: 0.8 }}>
+                <div className="p-2 text-center">
+                  <span className="font-display text-[11px] text-black">SMART — 10%</span>
+                  <span className="block text-[8px] text-black/70 font-mono">Targeted flips</span>
+                </div>
+              </div>
+              <div className="flex-[15] rounded-t-lg" style={{ height: 80, background: 'var(--orange)', opacity: 0.8 }}>
+                <div className="p-2 text-center">
+                  <span className="font-display text-sm text-black">CINDERELLA — 15%</span>
+                  <span className="block text-[8px] text-black/70 font-mono">1 wild region</span>
+                </div>
+              </div>
+              <div className="flex-[10] rounded-t-lg" style={{ height: 80, background: '#EF4444', opacity: 0.8 }}>
+                <div className="p-2 text-center">
+                  <span className="font-display text-[11px] text-white">CHAOS — 10%</span>
+                  <span className="block text-[8px] text-white/70 font-mono">Max variance</span>
                 </div>
               </div>
             </div>
           </Reveal>
 
-          <CalloutCard accent="var(--cyan)" icon="🧬" title="The X-Factor: 6% Mutation Rate">
-            Every game where the probability falls between 40-60% has a 6% chance of being
-            randomly flipped — regardless of what the model says. This isn't noise. It's
-            modeling reality: in March, <em>anything</em> can happen in a coin-flip game.
-            The mutation ensures our portfolio contains brackets that no deterministic model
-            would ever produce.
+          <CalloutCard accent="#22C55E" icon="🎯" title="Smart Upset: The Edge">
+            The key innovation. Most bracket pools are either all-chalk or random chaos.
+            Our Smart Upset profile stays chalky overall but strategically targets <strong>coin-flip games</strong> —
+            the 8v9, 7v10, 5v12, and 6v11 matchups where Vegas spreads are under 5 points
+            and upsets happen 35-52% of the time. These are the games where picking the right
+            upset separates winners from the field.
           </CalloutCard>
 
           <DataTable

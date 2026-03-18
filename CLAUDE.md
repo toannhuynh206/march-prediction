@@ -182,14 +182,55 @@ march-prediction/
 
 ## Database Rules
 
-- Every table has `tournament_year INT NOT NULL DEFAULT 2025`
-- Brackets table is **partitioned by region** (4 partitions × 51.5M rows each)
+- Every table has `tournament_year INT NOT NULL DEFAULT 2026`
 - Matchup cache uses canonical ordering: `team_a_id < team_b_id` enforced by CHECK constraint
-- Pruning is a **single SQL UPDATE with bitwise operator** — never Python-side filtering
-- All pruning queries must use the partial index `WHERE is_alive = TRUE`
-- Use `EXPLAIN ANALYZE` to verify partition pruning on every UPDATE query
 - UNIQUE constraint on `game_results(tournament_year, region, round, game_number)` — idempotency
 - Use PostgreSQL COPY for all bulk inserts (not execute_many)
+
+### Validity Bitmap Pruning (CRITICAL — replaces old UPDATE approach)
+
+**NEVER modify the `full_brackets` table after generation.** It is immutable for audit proof.
+
+Pruning uses 5 tiny "alive outcome" tables instead:
+```
+alive_outcomes_south    (max 32,768 rows — shrinks with each game)
+alive_outcomes_east     (max 32,768 rows)
+alive_outcomes_west     (max 32,768 rows)
+alive_outcomes_midwest  (max 32,768 rows)
+alive_outcomes_f4       (max 8 rows)
+```
+
+**How pruning works:**
+1. Game result comes in → compute which bit must be 0 or 1
+2. DELETE from the tiny alive table: `DELETE FROM alive_outcomes_south WHERE (outcome_value >> bit) & 1 != expected`
+3. A bracket is alive if ALL 5 of its outcome values exist in the alive tables (checked via JOIN)
+4. Stats cache refreshed via 5-way JOIN (gets faster as tournament progresses)
+
+**Prune speed: < 50ms** (operates on 32K rows, not 206M)
+
+### Required Indexes on full_brackets
+- `idx_fb_south_outcomes`, `idx_fb_east_outcomes`, `idx_fb_west_outcomes`, `idx_fb_midwest_outcomes`, `idx_fb_f4_outcomes` — for alive table JOINs
+- `idx_fb_prob` — for probability-sorted browsing
+- `idx_fb_champion` — for champion name filtering
+- `full_brackets_pkey` — for bracket detail lookup
+
+### Proof Tables
+- `generation_proof` — SHA-256 hash + timestamp proving pre-tournament generation
+- `prune_log` — audit trail of every prune operation
+- `stats_cache` — pre-computed counts, champion odds, upset distribution (refreshed after each prune)
+
+### Portfolio Strategy Profiles
+```
+chalk (30%)        — T=0.5, heavy favorites, ~14 upsets per bracket
+standard (35%)     — T=1.0, true model probabilities, ~17 upsets
+smart_upset (10%)  — T=0.7/2.0, chalk structure with targeted coin-flip upsets
+cinderella (15%)   — T=1.0/2.5, ~1 region goes wild, rest normal
+chaos (10%)        — T=1.8/3.0, multiple upset regions, ~20 upsets
+```
+
+### Auto-Advance Rules
+- 1-seeds and 2-seeds: P=1.0 in R64 (hard lock — zero 16-over-1 or 15-over-2 upsets)
+- Enforced in `simulation/historical_patterns.py` calibrate_r64_probabilities()
 
 ## React/Frontend Conventions
 

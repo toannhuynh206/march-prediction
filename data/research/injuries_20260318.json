@@ -1,0 +1,465 @@
+{
+  "date": "2026-03-18",
+  "last_updated": "2026-03-18T18:00:00Z",
+  "notes": "MARCH 18, 2026 — DAY BEFORE R1 OPENS (March 19). Two major status downgrades confirmed via ESPN and Fox Sports: Duke's Patrick Ngongba downgraded to DOUBTFUL/OUT for R1 vs Siena (ESPN headline: 'Duke likely without Ngongba for tourney opener' — David Hale); Louisville's Mikel Brown Jr. confirmed OUT for first week of tournament (Fox Sports: 'Louisville Star Mikel Brown Jr. Out 1st Week'; ESPN: 'Louisville to be without star Brown against USF' — Jeff Borzello/Alaina Getzenberg). First Four March 17 results: Texas 68, NC State 66 (Texas advances to play No. 1 seed in West Region); Howard 86, UMBC 83 (Howard advances in historic first tourney win). First Four March 18 games in progress: SMU vs Miami OH; Prairie View A&M vs Lehigh. Sources: ESPN, Fox Sports, CBS Sports.",
+  "changes_since_march_16": [
+    "CRITICAL UPDATE — Duke's Patrick Ngongba II: ESPN article by David Hale (March 18, ~4 hours before update): 'Duke likely without Ngongba for tourney opener.' This represents a de facto DOWNGRADE from QUESTIONABLE (trending positive) to DOUBTFUL/OUT for R1 vs Siena (March 19). The foot soreness has not resolved sufficiently in the final 48 hours. Status changed from QUESTIONABLE to DOUBTFUL.",
+    "CRITICAL UPDATE — Louisville's Mikel Brown Jr.: Fox Sports and ESPN (Jeff Borzello/Alaina Getzenberg, March 18): 'Louisville to be without star Brown against USF.' Fox Sports additionally reports 'Out 1st Week' — meaning Brown is OUT for both R1 (March 19 vs USF) and potentially R2 if Louisville advances. Back injury has worsened or failed to clear. Status changed from QUESTIONABLE to OUT.",
+    "First Four RESULT (March 17): Texas 68, NC State 66. Tramon Mark hit clutch winner with 1.1 seconds left. Texas advances to Round 1 (West Region, plays No. 1 seed). NC State is eliminated. No new injuries reported in game.",
+    "First Four RESULT (March 17): Howard 86, UMBC 83. Bryce Harris had 19 pts/14 reb. Howard wins first-ever NCAA Tournament game in program history. Howard advances to Round 1 (Midwest Region). No new injuries reported in game.",
+    "First Four (March 18, IN PROGRESS): SMU vs Miami OH — SMU listed as -7.5 favorite despite BJ Edwards injury concerns. Edwards' status for this game (PROBABLE as of March 16) not yet confirmed as played or sat. Corey Washington (QUESTIONABLE) also uncertain. Game underway as of this report.",
+    "First Four (March 18, IN PROGRESS): Prairie View A&M vs Lehigh — Lehigh -3.5 favorite. Game underway. No injury news.",
+    "UConn's Silas Demary Jr.: Status upgraded from PROBABLE to AVAILABLE. Per March 16-17 reporting, X-ray negative, out of walking boot, walking normally, Hurley confirmed 'very mild sprain with no swelling.' With 5+ days since Big East Tournament injury, cleared for R1 vs Furman (March 19-20).",
+    "Michigan's Yaxel Lendeborg: PROBABLE status holding. No change from March 16. Has had 3 additional days of rest since Big Ten Championship ankle sprain (March 15). Michigan R1 vs opponent TBD from preliminary games. Expected to play.",
+    "Wisconsin's Nolan Winter: Status upgraded from PROBABLE to AVAILABLE. Coach Gard on March 16: 'definitely' available for NCAA Tournament. Winter confirmed missed four straight games but all medical tests were positive. Wisconsin R1 opponent TBD.",
+    "Duke's Patrick Ngongba II: NOTE — Duke R1 is vs Siena (16-seed) on March 19. Even if Ngongba is out for R1, Scheyer indicated possibility of return for R2 or Sweet 16 if foot soreness manageable. Duke should still be massive favorite vs Siena even without Ngongba.",
+    "Tennessee's Nate Ament: No new update. Has had full rest since SEC Tournament elimination (March 14). Extra recovery days should benefit high ankle sprain. Status remains PROBABLE but trending to AVAILABLE.",
+    "Kentucky's Kam Williams: Mark Pope confirmed 'peak-level performance' trajectory. Has had 5+ days since SEC Tournament (last played March 13-15). Running with minimal pain. Status upgraded from QUESTIONABLE to PROBABLE.",
+    "Alabama's Aden Holloway: No change in suspension status. Remains removed from team. UA investigation ongoing. Not expected to return for tournament.",
+    "Gonzaga's Braden Huff: No change from March 16. Still OUT for R1/R2. Mark Few confirmed 'jogging and shooting' but cannot play. Earliest possible return Sweet 16 (March 27-28) if Gonzaga advances."
+  ],
+  "first_four_results": [
+    {
+      "date": "2026-03-17",
+      "matchup": "Texas vs NC State",
+      "region": "West",
+      "result": "Texas 68, NC State 66",
+      "winner": "Texas",
+      "notes": "Tramon Mark hit game-winner with 1.1 seconds left. Texas advances to Round 1 in West Region to play No. 1 seed Florida. NC State eliminated."
+    },
+    {
+      "date": "2026-03-17",
+      "matchup": "Howard vs UMBC",
+      "region": "Midwest",
+      "result": "Howard 86, UMBC 83",
+      "winner": "Howard",
+      "notes": "Howard wins first-ever NCAA Tournament game in program history. Bryce Harris 19 pts/14 reb. DJ Armstrong Jr. (UMBC) had 17 pts/6 reb in loss. Howard advances to Round 1 in Midwest Region."
+    },
+    {
+      "date": "2026-03-18",
+      "matchup": "SMU vs Miami OH",
+      "region": "Midwest",
+      "result": "IN PROGRESS",
+      "winner": null,
+      "notes": "SMU -7.5 favorite. BJ Edwards (ankle, PROBABLE) and Corey Washington (shoulder, QUESTIONABLE) statuses uncertain. Game underway at UD Arena, Dayton, OH on truTV."
+    },
+    {
+      "date": "2026-03-18",
+      "matchup": "Prairie View A&M vs Lehigh",
+      "region": "South",
+      "result": "IN PROGRESS",
+      "winner": null,
+      "notes": "Lehigh -3.5 favorite. Game underway at UD Arena, Dayton, OH on truTV."
+    }
+  ],
+  "injuries": [
+    {
+      "team": "Alabama",
+      "player": "Aden Holloway",
+      "injury_type": "Suspended / arrested (felony drug charges)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Remains removed from team pending UA Office of Student Conduct investigation. Arrested March 16 by West Alabama Narcotics Task Force on first-degree possession of marijuana (2.1+ lbs) and failure to affix tax stamp. Second-leading scorer (16.8 PPG). Alabama is No. 4 seed in Midwest, plays Hofstra Friday March 20."
+    },
+    {
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "injury_type": "Right foot fracture (surgery March 9)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending surgery March 9. Earliest possible return: Final Four if Duke advances. Cayden Boozer handling PG duties. Duke is No. 1 overall seed, plays Siena R1 March 19."
+    },
+    {
+      "team": "Duke",
+      "player": "Patrick Ngongba II",
+      "injury_type": "Right foot soreness",
+      "status": "DOUBTFUL",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "DOWNGRADED from QUESTIONABLE to DOUBTFUL. ESPN headline by David Hale (March 18): 'Duke likely without Ngongba for tourney opener.' Despite trending well on March 14-15, foot soreness has not resolved in final 48 hours before R1 vs Siena (March 19). Scheyer had said decision would come 'a few days from now' on March 14-15. That decision appears to be he will NOT play. Return possible for R2 (March 22-23) if Duke advances and foot responds to treatment this week. 6-11 sophomore, 10.7 PPG, 6.0 RPG, 32 blocks. Duke should still be enormous favorite vs 16-seed Siena without him. Impact rating HIGH but manageable for R1."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Caleb Wilson",
+      "injury_type": "Broken right thumb (surgery completed)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. Leading scorer (19.8 PPG) and rebounder (9.4 RPG) out for season. UNC is No. 6 seed in South Region, plays No. 11 VCU in R1 March 19."
+    },
+    {
+      "team": "Michigan",
+      "player": "L.J. Cason",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. Surgery delayed until after season. Michigan is No. 1 seed in Midwest."
+    },
+    {
+      "team": "Michigan",
+      "player": "Yaxel Lendeborg",
+      "injury_type": "Low ankle sprain",
+      "status": "PROBABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change from March 16. Has had 3 additional days of rest since Big Ten Championship ankle sprain (March 15). Lendeborg told reporters he expects to play. Michigan R1 opponent TBD after First Four results. Status PROBABLE — expected available."
+    },
+    {
+      "team": "Arizona",
+      "player": "Koa Peat",
+      "injury_type": "Lower leg muscle strain (recovered)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully recovered. Arizona is No. 1 seed in South Region."
+    },
+    {
+      "team": "Arizona",
+      "player": "Dwayne Aristode",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Has not played since Feb 9. Over 5 weeks out with undisclosed issue. No update."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Braden Huff",
+      "injury_type": "Left knee injury (dislocated kneecap)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change from March 16. Mark Few confirmed out for R1/R2. Few: 'He is not going to be able to play this weekend or anything, but he is jogging and shooting.' Injured Jan 15, now 9+ weeks post-injury. Earliest possible return: Sweet 16 (March 27-28) if Gonzaga advances. Gonzaga is No. 3 seed in West Region, plays Kennesaw State R1 in Portland."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Jalen Warley",
+      "injury_type": "Quad contusion (recovered)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully recovered. Available for NCAA Tournament."
+    },
+    {
+      "team": "Tennessee",
+      "player": "Nate Ament",
+      "injury_type": "High ankle sprain + knee tweak (right leg)",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "Trending toward AVAILABLE. Has had 4-5 days of full rest since SEC Tournament elimination (March 14 vs Vanderbilt). Rick Barnes had ankle management plan in place. Rest days should significantly aid recovery. Projected top-10 NBA draft pick: 17.4 PPG, 6.4 RPG, 2.4 APG. Tennessee R1 game March 19-20. Expect near-full availability."
+    },
+    {
+      "team": "Arkansas",
+      "player": "Darius Acuff Jr.",
+      "injury_type": "Ankle (nagging, previously in walking boot between games)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully available. Ankle held up through 3 SEC Tournament games (37 pts vs Oklahoma, 30 pts/11 ast in championship win). SEC Player of the Year: 22.2 PPG, 6.4 AST."
+    },
+    {
+      "team": "BYU",
+      "player": "Richie Saunders",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. Senior guard was one-third of BYU's starting trio alongside AJ Dybantsa and Robert Wright III."
+    },
+    {
+      "team": "BYU",
+      "player": "Dawson Baker",
+      "injury_type": "Torn ACL",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Nate Pickens",
+      "injury_type": "Knee injury",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "KJ Perry",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Brody Kozlowski",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "BYU",
+      "player": "Xavion Staton",
+      "injury_type": "Undisclosed",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "JT Toppin",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. All-America candidate: 21.8 PPG, 10.8 RPG, 1.7 BPG. Suffered torn ACL February 17."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "Christian Anderson",
+      "injury_type": "Muscle strain (groin area)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Cleared for NCAA Tournament. Multiple days of rest since March 12 injury. Expected fully available for R1."
+    },
+    {
+      "team": "Clemson",
+      "player": "Carter Welling",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. Tore ACL in ACC Tournament second round vs Wake Forest. 10.2 PPG, 5.4 RPG."
+    },
+    {
+      "team": "Villanova",
+      "player": "Matthew Hodge",
+      "injury_type": "Torn ACL (right knee)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending. 9.2 PPG, 3.6 RPG. Villanova is No. 8 seed in West Region, plays No. 9 Utah State R1 in San Diego (March 20). Malachi Palmer starting as replacement."
+    },
+    {
+      "team": "USC",
+      "player": "Chad Baker-Mazara",
+      "injury_type": "Dismissed from program",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Permanent. Leading scorer (18.5 PPG) dismissed March 1. Team discipline issue."
+    },
+    {
+      "team": "USC",
+      "player": "Rodney Rice",
+      "injury_type": "Right shoulder injury",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Has not played since mid-December. 20.3 PPG before injury."
+    },
+    {
+      "team": "Louisville",
+      "player": "Mikel Brown Jr.",
+      "injury_type": "Lower back injury (chronic)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "DOWNGRADED from QUESTIONABLE to OUT. Fox Sports confirmed: 'Louisville Star Mikel Brown Jr. Out 1st Week.' ESPN (Jeff Borzello/Alaina Getzenberg): 'Louisville to be without star Brown against USF.' Brown had told reporters March 16 he 'absolutely' expects to play and felt 'great,' but back injury failed to clear in final evaluations. Will miss R1 vs USF (March 19) and likely R2 if Louisville advances. Potential Sweet 16 return if Louisville reaches second weekend. 5-star freshman: 18.2 PPG, 4.7 APG in 21 games played. Massive blow to Louisville's tournament ceiling — he IS their offense."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Jaland Lowe",
+      "injury_type": "Shoulder injury (surgery)",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Season-ending."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Kam Williams",
+      "injury_type": "Broken foot (surgery Jan 21)",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from QUESTIONABLE to PROBABLE. Mark Pope confirmed Williams heading toward 'peak-level performance' for Big Dance and doors open for 'a real week of practice with full-contact work.' Played in SEC Tournament (combined 37 minutes, pair of 3-pointers). Running with minimal pain. Has had 3-5 additional days of recovery since last game. Expected available for Kentucky R1."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Jayden Quaintance",
+      "injury_type": "Right knee injury",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Has not played since Jan 7. Pope: 'much more intensive ramp up' needed — further behind than Kam Williams. Earliest possible return: Sweet 16 (March 27-28) if Kentucky advances. Star freshman, projected lottery pick."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Malachi Moreno",
+      "injury_type": "Right leg soreness",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from PROBABLE to AVAILABLE. Several days of rest since SEC Tournament. Pope said he would be fine with a few days of rest. Starting 7-footer now expected fully available for R1."
+    },
+    {
+      "team": "SMU",
+      "player": "B.J. Edwards",
+      "injury_type": "Ankle injury",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Status PROBABLE — expected to play in First Four game vs Miami OH (March 18, TODAY — game in progress). Coach Enfield: 'may not be 100%' but 'we expect him to help us.' SMU's best all-around player: 12.7 PPG, 5.9 RPG, 4.9 APG, 2.3 SPG. SMU is -7.5 favorite in First Four game.",
+      "game_note": "First Four game vs Miami OH is in progress as of this report (March 18). Actual participation not yet confirmed."
+    },
+    {
+      "team": "SMU",
+      "player": "Corey Washington",
+      "injury_type": "Shoulder injury",
+      "status": "QUESTIONABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No new update since March 11 ACC Tournament injury. Shoulder injury occurred when SMU led 58-57 vs Louisville with 1:32 left. SMU lost 62-58 after his exit. Status uncertain for First Four game vs Miami OH (TODAY — game in progress). Actual participation not yet confirmed.",
+      "game_note": "First Four game vs Miami OH is in progress as of this report (March 18)."
+    },
+    {
+      "team": "UConn",
+      "player": "Silas Demary Jr.",
+      "injury_type": "Left ankle sprain",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from PROBABLE to AVAILABLE. X-ray negative, out of walking boot, walking normally per March 16 reporting. Dan Hurley: 'very mild sprain with no swelling.' Injured Big East Tournament Championship (March 14). Now 4-5 days post-injury with additional rest. Cleared for R1 vs Furman (March 19-20). 10.9 PPG, 4.5 RPG, 6.2 APG, 1.6 SPG. UConn is No. 2 seed."
+    },
+    {
+      "team": "Saint Louis",
+      "player": "Robbie Avila",
+      "injury_type": "Plantar fasciitis (chronic)",
+      "status": "QUESTIONABLE",
+      "impact_rating": "HIGH",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Chronic condition will not fully resolve. Will play through pain — played 30+ minutes in A-10 Tournament. SLU plays Georgia in R1. A-10 Player of the Year: 13 PPG, 4.4 APG. Hub of the offense — SLU significantly better when he plays effectively."
+    },
+    {
+      "team": "Illinois",
+      "player": "Andrej Stojakovic",
+      "injury_type": "Flu / illness + prior high ankle sprain (recovered)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully available for NCAA Tournament."
+    },
+    {
+      "team": "Illinois",
+      "player": "Keaton Wagler",
+      "injury_type": "Back stiffness / left shoulder injury (recovered)",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully available for NCAA Tournament."
+    },
+    {
+      "team": "Illinois",
+      "player": "Kylan Boswell",
+      "injury_type": "Fractured hand (recovered) / undisclosed lingering",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Fully available for NCAA Tournament."
+    },
+    {
+      "team": "UCF",
+      "player": "Jeremy Foumena",
+      "injury_type": "Ankle injury",
+      "status": "QUESTIONABLE",
+      "impact_rating": "MODERATE",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Missed 6 of last 12 games. UCF plays No. 7 UCLA in R1. No definitive clearance reported. Game-time decision.",
+      "game_note": "UCF R1 is Friday March 20 — one more day before status must be determined."
+    },
+    {
+      "team": "Florida",
+      "player": "Thomas Haugh",
+      "injury_type": "Undisclosed",
+      "status": "PROBABLE",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-18",
+      "notes": "No change. Florida is No. 1 seed in West Region. Full roster otherwise healthy. Texas (First Four winner) is their R1 opponent."
+    },
+    {
+      "team": "UCLA",
+      "player": "Tyler Bilodeau",
+      "injury_type": "Mild right knee strain (non-contact)",
+      "status": "AVAILABLE",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from PROBABLE to AVAILABLE. Source close to school confirmed expected to play (reported March 16). Medical testing showed no structural damage. Bilodeau: 'I'm good.' Has had additional rest days since Big Ten quarterfinal injury (March 13). UCLA's leading scorer (17.6 PPG) and rebounder (5.6 RPG). UCLA plays UCF in R1 Friday March 20."
+    },
+    {
+      "team": "UCLA",
+      "player": "Donovan Dent",
+      "injury_type": "Calf strain",
+      "status": "AVAILABLE",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from PROBABLE to AVAILABLE. Cronin: injury 'not serious.' Source close to school confirmed expected back for NCAA Tournament (reported March 16). Has had additional rest days since Big Ten Tournament semifinal injury (March 14). Key backcourt: 15.9 PPG, Big Ten Tournament triple-double history. UCLA plays UCF in R1 Friday."
+    },
+    {
+      "team": "Wisconsin",
+      "player": "Nolan Winter",
+      "injury_type": "Left ankle injury",
+      "status": "AVAILABLE",
+      "impact_rating": "LOW",
+      "date_updated": "2026-03-18",
+      "notes": "UPGRADED from PROBABLE to AVAILABLE. Coach Gard (March 16): 'definitely' available for NCAA Tournament R1. Winter: 'I'll be ready to go next week.' Medical tests confirmed positive results. Has had 2+ weeks since initial injury (March 4 vs Maryland) plus missed four straight games. Team's star big man and rebounding leader."
+    },
+    {
+      "team": "Texas",
+      "player": "Tramon Mark",
+      "injury_type": "None — First Four participant",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "NEW ENTRY. Texas advanced from First Four (beat NC State 68-66 on March 17). Tramon Mark hit game-winning basket with 1.1 seconds left (17 pts). Texas now plays No. 1 seed in West Region R1 (March 19-20 in Portland vs Florida). No injuries reported in First Four game."
+    },
+    {
+      "team": "Howard",
+      "player": "Bryce Harris",
+      "injury_type": "None — First Four participant",
+      "status": "AVAILABLE",
+      "impact_rating": "MINIMAL",
+      "date_updated": "2026-03-18",
+      "notes": "NEW ENTRY. Howard advanced from First Four (beat UMBC 86-83 on March 17). Bryce Harris had 19 pts/14 reb. Howard wins first-ever NCAA Tournament game in program history. Howard now plays in Midwest Region R1. No injuries reported in First Four game."
+    }
+  ],
+  "model_adjustment_notes": {
+    "critical_power_index_changes": [
+      "Duke: Ngongba DOUBTFUL for R1 — apply (QUESTIONABLE, HIGH) penalty for R1 matchup probability calculation vs Siena. If he plays in R2, revert penalty for R2+.",
+      "Louisville: Brown confirmed OUT for entire first week — apply (OUT, CRITICAL) penalty of -5.0 power index points for all R1 and R2 matchup calculations. Massive impact.",
+      "UConn: Demary upgraded to AVAILABLE — remove any (PROBABLE, HIGH) penalty previously applied. UConn probability should increase slightly for R1 vs Furman.",
+      "Wisconsin: Winter upgraded to AVAILABLE — remove any pending injury penalty. Full roster available.",
+      "UCLA: Bilodeau AND Dent both upgraded to AVAILABLE — remove any PROBABLE penalties. UCLA full strength for R1 vs UCF.",
+      "Kentucky: Moreno upgraded to AVAILABLE — full 7-footer available for R1.",
+      "Kentucky: Kam Williams upgraded to PROBABLE — reduce penalty from (QUESTIONABLE, HIGH) to (PROBABLE, HIGH) for R1 calculation.",
+      "Alabama: Holloway remains OUT with CRITICAL impact — (-5.0) penalty continues to apply."
+    ],
+    "first_four_bracket_updates": [
+      "West Region: Texas (not NC State) advances. Update bracket to show Texas as No. 16 seed opponent... wait — Texas was in First Four as what seed? Verify: Texas vs NC State in West Region suggests these were likely No. 11 or No. 16 seeds competing. Texas now plays in West R1.",
+      "Midwest Region: Howard (not UMBC) advances. Howard now plays in Midwest R1.",
+      "South Region: Prairie View A&M vs Lehigh — winner TBD (game in progress).",
+      "Midwest Region: SMU vs Miami OH — winner TBD (game in progress)."
+    ]
+  }
+}

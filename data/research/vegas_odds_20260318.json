@@ -1,0 +1,718 @@
+{
+  "date": "2026-03-18",
+  "source": "DraftKings / FanDuel / BetMGM / Caesars / ESPN Bet (aggregated)",
+  "last_updated": "2026-03-18T20:00:00-04:00",
+  "notes": "March 18 update — First Four Day 2. Key changes since March 16: (1) Howard beat UMBC 86-83, Texas beat NC State 68-66 on March 17 — R64 lines for those matchups now posted (Michigan -31.5 vs Howard; BYU -1.5 vs Texas, tightened from -2.5). (2) MAJOR INJURY: Louisville PG Mikel Brown Jr. ruled OUT for opening weekend with back injury — spread vs South Florida dropped from -6.5 (March 16) to -5.5 (some books show -5 after announcement). (3) Championship futures: Duke drifted slightly to +300–+360 range across books (public consensus widening); Michigan drifted to +350 DK; Arizona stable +380–+425. (4) SMU vs Miami OH and Lehigh vs Prairie View A&M First Four games played tonight March 18 — R64 lines for those matchups TBD until winners confirmed. (5) BYU dropped from -2.5 to -1.5 vs Texas after Texas win over NC State.",
+
+  "championship_futures": [
+    {"team": "Duke", "seed": 1, "region": "East", "odds": "+300", "implied_prob": 0.250, "fair_prob": 0.264, "dk": "+360", "fd": "+370", "mgm": "+300", "caesars": "+315", "espn_bet": "+325", "movement": "drifted at DK/FD from +330 opening to +360/+370 — public action not matching sharp money; BetMGM tightened to +300"},
+    {"team": "Michigan", "seed": 1, "region": "Midwest", "odds": "+350", "implied_prob": 0.222, "fair_prob": 0.235, "dk": "+350", "fd": "+325", "mgm": "+325", "caesars": "+325", "espn_bet": "+375", "movement": "drifted at DK from +340 to +350; stable elsewhere"},
+    {"team": "Arizona", "seed": 1, "region": "West", "odds": "+400", "implied_prob": 0.200, "fair_prob": 0.211, "dk": "+400", "fd": "+380", "mgm": "+425", "caesars": "+425", "espn_bet": "+400", "movement": "stable across books"},
+    {"team": "Florida", "seed": 1, "region": "South", "odds": "+650", "implied_prob": 0.133, "fair_prob": 0.141, "dk": "+650", "fd": "+625", "mgm": "+650", "caesars": "+600", "espn_bet": "+700", "movement": "tightened slightly at DK/FD from +700"},
+    {"team": "Houston", "seed": 2, "region": "South", "odds": "+1000", "implied_prob": 0.091, "fair_prob": 0.096, "dk": "+1000", "fd": "+1000", "mgm": "+1000", "caesars": "+1100", "espn_bet": "+1000", "movement": "stable"},
+    {"team": "Iowa State", "seed": 2, "region": "Midwest", "odds": "+1500", "implied_prob": 0.063, "fair_prob": 0.066, "dk": "+2000", "fd": "+1500", "mgm": "+2000", "caesars": "+2000", "espn_bet": "+1500", "movement": "stable since March 16"},
+    {"team": "Illinois", "seed": 3, "region": "South", "odds": "+1900", "implied_prob": 0.050, "fair_prob": 0.053, "dk": "+2200", "fd": "+1700", "mgm": "+1900", "caesars": "+2000", "espn_bet": "+1900", "movement": "stable"},
+    {"team": "UConn", "seed": 2, "region": "East", "odds": "+2000", "implied_prob": 0.048, "fair_prob": 0.050, "dk": "+2000", "fd": "+1700", "mgm": "+1700", "caesars": "+1700", "espn_bet": "+2500", "movement": "stable"},
+    {"team": "Purdue", "seed": 2, "region": "West", "odds": "+2500", "implied_prob": 0.038, "fair_prob": 0.041, "dk": "+4500", "fd": "+2500", "mgm": "+3500", "caesars": "+3500", "espn_bet": "+2500", "movement": "stable since March 16; large FD whale bet noted"},
+    {"team": "Michigan State", "seed": 3, "region": "East", "odds": "+4000", "implied_prob": 0.024, "fair_prob": 0.026, "dk": "+4000", "fd": "+3500", "mgm": "+4500", "caesars": "+5000", "espn_bet": "+4000", "movement": "stable"},
+    {"team": "Gonzaga", "seed": 3, "region": "West", "odds": "+4000", "implied_prob": 0.024, "fair_prob": 0.026, "dk": "+5500", "fd": "+4000", "mgm": "+4000", "caesars": "+5000", "espn_bet": "+4000", "movement": "stable"},
+    {"team": "Kansas", "seed": 4, "region": "East", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021, "dk": "+5000", "fd": "+5000", "mgm": "+6000", "caesars": "+6000", "espn_bet": "+6000", "movement": "stable"},
+    {"team": "Arkansas", "seed": 4, "region": "West", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021, "dk": "+5000", "fd": "+5000", "mgm": "+6000", "caesars": "+6000", "espn_bet": "+6000", "movement": "stable"},
+    {"team": "St. John's", "seed": 5, "region": "East", "odds": "+5000", "implied_prob": 0.019, "fair_prob": 0.021, "dk": "+5000", "fd": "+5000", "mgm": "+6000", "caesars": "+6000", "espn_bet": "+6000", "movement": "stable"},
+    {"team": "Virginia", "seed": 3, "region": "Midwest", "odds": "+6000", "implied_prob": 0.016, "fair_prob": 0.017, "dk": "+6000", "fd": "+6000", "mgm": "+7500", "caesars": "+7500", "espn_bet": "+7500", "movement": "stable"},
+    {"team": "Vanderbilt", "seed": 5, "region": "South", "odds": "+6500", "implied_prob": 0.015, "fair_prob": 0.016, "dk": "+6500", "fd": "+6500", "mgm": "+7500", "caesars": "+7500", "espn_bet": "+7500", "movement": "stable"},
+    {"team": "Wisconsin", "seed": 5, "region": "West", "odds": "+7000", "implied_prob": 0.014, "fair_prob": 0.015, "dk": "+7000", "fd": "+7000", "mgm": "+8000", "caesars": "+8000", "espn_bet": "+8000", "movement": "stable"},
+    {"team": "Alabama", "seed": 4, "region": "Midwest", "odds": "+8000", "implied_prob": 0.012, "fair_prob": 0.013, "dk": "+7000", "fd": "+10000", "mgm": "+8000", "caesars": "+8000", "espn_bet": "+18000", "movement": "stable since March 16"},
+    {"team": "Tennessee", "seed": 6, "region": "Midwest", "odds": "+9000", "implied_prob": 0.011, "fair_prob": 0.012, "dk": "+9000", "fd": "+9000", "mgm": "+12000", "caesars": "+12000", "espn_bet": "+12000", "movement": "stable"},
+    {"team": "Nebraska", "seed": 4, "region": "South", "odds": "+10000", "implied_prob": 0.0099, "fair_prob": 0.010, "dk": "+10000", "fd": "+10000", "mgm": "+10000", "caesars": "+10000", "espn_bet": "+10000", "movement": "stable"},
+    {"team": "Kentucky", "seed": 7, "region": "Midwest", "odds": "+10000", "implied_prob": 0.0099, "fair_prob": 0.010, "dk": "+10000", "fd": "+10000", "mgm": "+10000", "caesars": "+10000", "espn_bet": "+20000", "movement": "stable"},
+    {"team": "North Carolina", "seed": 6, "region": "South", "odds": "+11000", "implied_prob": 0.0090, "fair_prob": 0.010, "dk": "+11000", "fd": "+11000", "mgm": "+12000", "caesars": "+12000", "espn_bet": "+25000", "movement": "stable"},
+    {"team": "Texas Tech", "seed": 5, "region": "Midwest", "odds": "+11000", "implied_prob": 0.0090, "fair_prob": 0.010, "dk": "+11000", "fd": "+11000", "mgm": "+13000", "caesars": "+13000", "espn_bet": "+13000", "movement": "stable"},
+    {"team": "Louisville", "seed": 6, "region": "East", "odds": "+14000", "implied_prob": 0.0070, "fair_prob": 0.007, "dk": "+15000", "fd": "+14000", "mgm": "+14000", "caesars": "+15000", "espn_bet": "+14000", "movement": "LENGTHENED from +11000 to +14000–+15000 across books after Mikel Brown Jr. ruled OUT for opening weekend (back injury)"},
+    {"team": "UCLA", "seed": 7, "region": "East", "odds": "+13000", "implied_prob": 0.0077, "fair_prob": 0.008, "dk": "+13000", "fd": "+13000", "mgm": "+15000", "caesars": "+15000", "espn_bet": "+15000", "movement": "stable"},
+    {"team": "BYU", "seed": 6, "region": "West", "odds": "+13000", "implied_prob": 0.0077, "fair_prob": 0.008, "dk": "+13000", "fd": "+13000", "mgm": "+15000", "caesars": "+15000", "espn_bet": "+25000", "movement": "stable"},
+    {"team": "Iowa", "seed": 9, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005, "dk": "+20000", "fd": "+20000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+30000", "movement": "stable"},
+    {"team": "Clemson", "seed": 8, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005, "dk": "+20000", "fd": "+20000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+25000", "movement": "stable"},
+    {"team": "Texas A&M", "seed": 10, "region": "South", "odds": "+20000", "implied_prob": 0.0050, "fair_prob": 0.005, "dk": "+20000", "fd": "+20000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+35000", "movement": "stable"},
+    {"team": "Texas", "seed": 11, "region": "West", "odds": "+35000", "implied_prob": 0.0029, "fair_prob": 0.003, "dk": "+35000", "fd": "+35000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+50000", "movement": "shortened from +40000 — Texas beat NC State to advance to R64 vs BYU"},
+    {"team": "Howard", "seed": 16, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "listed now that Howard beat UMBC in First Four"},
+    {"team": "NC State", "seed": 11, "region": "West", "odds": null, "implied_prob": null, "fair_prob": null, "dk": null, "fd": null, "mgm": null, "caesars": null, "espn_bet": null, "movement": "ELIMINATED — lost to Texas 66-68 in First Four on March 17"},
+    {"team": "UMBC", "seed": 16, "region": "Midwest", "odds": null, "implied_prob": null, "fair_prob": null, "dk": null, "fd": null, "mgm": null, "caesars": null, "espn_bet": null, "movement": "ELIMINATED — lost to Howard 83-86 in First Four on March 17"},
+    {"team": "Saint Mary's", "seed": 7, "region": "South", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+30000", "caesars": "+30000", "espn_bet": "+30000", "movement": "stable"},
+    {"team": "Ohio State", "seed": 8, "region": "East", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+25000", "movement": "stable"},
+    {"team": "Miami FL", "seed": 7, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+25000", "caesars": "+30000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "Villanova", "seed": 8, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+25000", "movement": "stable"},
+    {"team": "Utah State", "seed": 9, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+25000", "caesars": "+30000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "Missouri", "seed": 10, "region": "West", "odds": "+25000", "implied_prob": 0.0040, "fair_prob": 0.004, "dk": "+25000", "fd": "+25000", "mgm": "+25000", "caesars": "+25000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "Georgia", "seed": 8, "region": "Midwest", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.003, "dk": "+30000", "fd": "+30000", "mgm": "+30000", "caesars": "+30000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "UCF", "seed": 10, "region": "East", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.003, "dk": "+30000", "fd": "+30000", "mgm": "+30000", "caesars": "+30000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "TCU", "seed": 9, "region": "East", "odds": "+30000", "implied_prob": 0.0033, "fair_prob": 0.003, "dk": "+30000", "fd": "+30000", "mgm": "+30000", "caesars": "+30000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "SMU", "seed": 11, "region": "Midwest", "odds": "+35000", "implied_prob": 0.0029, "fair_prob": 0.003, "dk": "+35000", "fd": "+35000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+50000", "movement": "stable — pending First Four result vs Miami OH tonight"},
+    {"team": "Miami OH", "seed": 11, "region": "Midwest", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001, "dk": "+100000", "fd": "+100000", "mgm": "+100000", "caesars": "+100000", "espn_bet": "+200000", "movement": "stable — pending First Four result vs SMU tonight"},
+    {"team": "Santa Clara", "seed": 10, "region": "Midwest", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003, "dk": "+40000", "fd": "+40000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+50000", "movement": "stable"},
+    {"team": "VCU", "seed": 11, "region": "South", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003, "dk": "+40000", "fd": "+40000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+50000", "movement": "stable"},
+    {"team": "Saint Louis", "seed": 9, "region": "Midwest", "odds": "+40000", "implied_prob": 0.0025, "fair_prob": 0.003, "dk": "+40000", "fd": "+40000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+40000", "movement": "stable"},
+    {"team": "South Florida", "seed": 11, "region": "East", "odds": "+40000", "implied_prob": 0.0020, "fair_prob": 0.002, "dk": "+40000", "fd": "+40000", "mgm": "+40000", "caesars": "+40000", "espn_bet": "+40000", "movement": "shortened from +50000 — Mikel Brown Jr. injury drives more action on South Florida upset"},
+    {"team": "Akron", "seed": 12, "region": "Midwest", "odds": "+50000", "implied_prob": 0.0020, "fair_prob": 0.002, "dk": "+50000", "fd": "+50000", "mgm": "+50000", "caesars": "+50000", "espn_bet": "+75000", "movement": "stable"},
+    {"team": "Northern Iowa", "seed": 12, "region": "East", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001, "dk": "+150000", "fd": "+100000", "mgm": "+100000", "caesars": "+100000", "espn_bet": "+100000", "movement": "stable"},
+    {"team": "Penn", "seed": 14, "region": "South", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001, "dk": "+100000", "fd": "+100000", "mgm": "+100000", "caesars": "+100000", "espn_bet": "+150000", "movement": "stable"},
+    {"team": "McNeese", "seed": 12, "region": "South", "odds": "+100000", "implied_prob": 0.0010, "fair_prob": 0.001, "dk": "+150000", "fd": "+100000", "mgm": "+100000", "caesars": "+100000", "espn_bet": "+100000", "movement": "stable"},
+    {"team": "Hawaii", "seed": 13, "region": "West", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001, "dk": "+150000", "fd": "+150000", "mgm": "+150000", "caesars": "+150000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Troy", "seed": 13, "region": "South", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001, "dk": "+150000", "fd": "+150000", "mgm": "+150000", "caesars": "+150000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "High Point", "seed": 12, "region": "West", "odds": "+150000", "implied_prob": 0.0007, "fair_prob": 0.001, "dk": "+200000", "fd": "+150000", "mgm": "+150000", "caesars": "+150000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Hofstra", "seed": 13, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Cal Baptist", "seed": 13, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Siena", "seed": 16, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Queens", "seed": 15, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Lehigh", "seed": 16, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable — pending First Four result tonight"},
+    {"team": "Prairie View A&M", "seed": 16, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable — pending First Four result tonight"},
+    {"team": "North Dakota State", "seed": 14, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Wright State", "seed": 14, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Kennesaw State", "seed": 14, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Furman", "seed": 15, "region": "East", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Tennessee State", "seed": 15, "region": "Midwest", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "Idaho", "seed": 15, "region": "South", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"},
+    {"team": "LIU", "seed": 16, "region": "West", "odds": "+200000", "implied_prob": 0.0005, "fair_prob": 0.001, "dk": "+200000", "fd": "+200000", "mgm": "+200000", "caesars": "+200000", "espn_bet": "+200000", "movement": "stable"}
+  ],
+
+  "final_four_odds": {
+    "source": "BetMGM / FanDuel / ESPN (updated March 18 — minor drift from March 16, no structural changes)",
+    "East": [
+      {"team": "Duke", "seed": 1, "odds": "-175"},
+      {"team": "UConn", "seed": 2, "odds": "+450"},
+      {"team": "Kansas", "seed": 4, "odds": "+1000"},
+      {"team": "Michigan State", "seed": 3, "odds": "+1150"},
+      {"team": "St. John's", "seed": 5, "odds": "+1300"},
+      {"team": "Louisville", "seed": 6, "odds": "+3000", "notes": "lengthened from +2500 after Mikel Brown Jr. ruled OUT"},
+      {"team": "UCLA", "seed": 7, "odds": "+5000"},
+      {"team": "Ohio State", "seed": 8, "odds": "+7100"},
+      {"team": "UCF", "seed": 10, "odds": "+10000"},
+      {"team": "TCU", "seed": 9, "odds": "+12500"},
+      {"team": "South Florida", "seed": 11, "odds": "+15000", "notes": "shortened from +17500 — Mikel Brown Jr. injury"},
+      {"team": "Northern Iowa", "seed": 12, "odds": "+25000"},
+      {"team": "Cal Baptist", "seed": 13, "odds": "+50000"},
+      {"team": "North Dakota State", "seed": 14, "odds": "+50000"},
+      {"team": "Furman", "seed": 15, "odds": "+50000"},
+      {"team": "Siena", "seed": 16, "odds": "+50000"}
+    ],
+    "Midwest": [
+      {"team": "Michigan", "seed": 1, "odds": "-160", "notes": "slightly shortened from -181 on March 16"},
+      {"team": "Iowa State", "seed": 2, "odds": "+450"},
+      {"team": "Virginia", "seed": 3, "odds": "+2000"},
+      {"team": "Tennessee", "seed": 6, "odds": "+2100"},
+      {"team": "Alabama", "seed": 4, "odds": "+2200"},
+      {"team": "Kentucky", "seed": 7, "odds": "+3000"},
+      {"team": "Texas Tech", "seed": 5, "odds": "+3300"},
+      {"team": "Howard", "seed": 16, "odds": "+50000", "notes": "now listed — won First Four vs UMBC"},
+      {"team": "Saint Louis", "seed": 9, "odds": "+10000"},
+      {"team": "Georgia", "seed": 8, "odds": "+15000"},
+      {"team": "Santa Clara", "seed": 10, "odds": "+20000"},
+      {"team": "SMU", "seed": 11, "odds": "+25000", "notes": "pending First Four result vs Miami OH tonight"},
+      {"team": "Akron", "seed": 12, "odds": "+25000"},
+      {"team": "Hofstra", "seed": 13, "odds": "+25000"},
+      {"team": "Miami OH", "seed": 11, "odds": "+30000", "notes": "pending First Four result vs SMU tonight"},
+      {"team": "Wright State", "seed": 14, "odds": "+50000"},
+      {"team": "Tennessee State", "seed": 15, "odds": "+50000"}
+    ],
+    "South": [
+      {"team": "Florida", "seed": 1, "odds": "-103"},
+      {"team": "Houston", "seed": 2, "odds": "+210"},
+      {"team": "Illinois", "seed": 3, "odds": "+360"},
+      {"team": "Vanderbilt", "seed": 5, "odds": "+1400"},
+      {"team": "Nebraska", "seed": 4, "odds": "+2000"},
+      {"team": "North Carolina", "seed": 6, "odds": "+6600"},
+      {"team": "Saint Mary's", "seed": 7, "odds": "+8000"},
+      {"team": "Clemson", "seed": 8, "odds": "+8000"},
+      {"team": "Iowa", "seed": 9, "odds": "+8000"},
+      {"team": "Texas A&M", "seed": 10, "odds": "+10000"},
+      {"team": "VCU", "seed": 11, "odds": "+17500"},
+      {"team": "McNeese", "seed": 12, "odds": "+50000"},
+      {"team": "Troy", "seed": 13, "odds": "+50000"},
+      {"team": "Penn", "seed": 14, "odds": "+50000"},
+      {"team": "Idaho", "seed": 15, "odds": "+150000"},
+      {"team": "Lehigh", "seed": 16, "odds": "+150000", "notes": "pending First Four result tonight"},
+      {"team": "Prairie View A&M", "seed": 16, "odds": "+150000", "notes": "pending First Four result tonight"}
+    ],
+    "West": [
+      {"team": "Arizona", "seed": 1, "odds": "-138"},
+      {"team": "Purdue", "seed": 2, "odds": "+650"},
+      {"team": "Gonzaga", "seed": 3, "odds": "+1200"},
+      {"team": "Arkansas", "seed": 4, "odds": "+1200"},
+      {"team": "Wisconsin", "seed": 5, "odds": "+1600"},
+      {"team": "BYU", "seed": 6, "odds": "+4500", "notes": "lengthened from +5000 — now faces Texas (18-14) instead of NC State; Texas is a tougher matchup"},
+      {"team": "Texas", "seed": 11, "odds": "+8000", "notes": "shortened — advanced from First Four"},
+      {"team": "Miami FL", "seed": 7, "odds": "+6600"},
+      {"team": "NC State", "seed": 11, "odds": null, "notes": "ELIMINATED — lost First Four to Texas"},
+      {"team": "Villanova", "seed": 8, "odds": "+8000"},
+      {"team": "Missouri", "seed": 10, "odds": "+9000"},
+      {"team": "Utah State", "seed": 9, "odds": "+10000"},
+      {"team": "High Point", "seed": 12, "odds": "+25000"},
+      {"team": "Hawaii", "seed": 13, "odds": "+50000"},
+      {"team": "Queens", "seed": 15, "odds": "+50000"},
+      {"team": "LIU", "seed": 16, "odds": "+50000"},
+      {"team": "Kennesaw State", "seed": 14, "odds": "+150000"}
+    ]
+  },
+
+  "region_winner_odds": {
+    "notes": "Minor drift since March 16. Louisville injury shifts East slightly. Michigan shortened marginally in Midwest. South and West stable.",
+    "East": {"favorite": "Duke", "favorite_odds": "-175"},
+    "Midwest": {"favorite": "Michigan", "favorite_odds": "-160"},
+    "South": {"favorite": "Florida", "favorite_odds": "-103"},
+    "West": {"favorite": "Arizona", "favorite_odds": "-138"}
+  },
+
+  "first_four": [
+    {
+      "matchup": "16 Howard vs 16 UMBC",
+      "region": "Midwest",
+      "winner_plays": "1 Michigan",
+      "date": "2026-03-17",
+      "result": "Howard 86, UMBC 83 — FINAL",
+      "winner": "Howard",
+      "spread_at_tip": -1.5,
+      "favorite_at_tip": "UMBC",
+      "notes": "Howard won on Bryce Harris turnaround jumper with 13 seconds left. Harris 19 pts/14 reb. Ose Okojie led Howard with 23 pts. First NCAA Tournament win in Howard program history. Howard advances to face Michigan in R64."
+    },
+    {
+      "matchup": "11 Texas vs 11 NC State",
+      "region": "West",
+      "winner_plays": "6 BYU",
+      "date": "2026-03-17",
+      "result": "Texas 68, NC State 66 — FINAL",
+      "winner": "Texas",
+      "spread_at_tip": -1.5,
+      "favorite_at_tip": "NC State",
+      "notes": "Tramon Mark hit fadeaway from just inside 3-point line with 1.1 seconds left. Mark scored 17 pts. Texas was 19-14 entering. NC State eliminated. Texas advances to face BYU in R64."
+    },
+    {
+      "matchup": "11 SMU vs 11 Miami OH",
+      "region": "Midwest",
+      "winner_plays": "6 Tennessee",
+      "date": "2026-03-18",
+      "result": "TBD — game tonight ~9:15 PM ET",
+      "winner": null,
+      "spread": -6.5,
+      "favorite": "SMU",
+      "moneyline_fav": -310,
+      "moneyline_dog": 250,
+      "over_under": 163.5,
+      "source": "CBS Sports / FanDuel Research",
+      "movement": "SMU opened -7.5, tightened to -6.5. Miami OH went 31-1 (MAC, at-large bid). SMU lost to Syracuse in ACC Tournament first round March 10.",
+      "notes": "Winner plays Tennessee in R64. SportsLine model predicts SMU wins and then upsets Tennessee."
+    },
+    {
+      "matchup": "16 Lehigh vs 16 Prairie View A&M",
+      "region": "South",
+      "winner_plays": "1 Florida",
+      "date": "2026-03-18",
+      "result": "TBD — game tonight ~6:40 PM ET",
+      "winner": null,
+      "spread": -3.5,
+      "favorite": "Lehigh",
+      "moneyline_fav": -166,
+      "moneyline_dog": 140,
+      "over_under": 142.5,
+      "source": "CBS Sports / ESPN Bet",
+      "movement": "Lehigh spread widened from -1.5 opening to -3.5 — sharp action on Lehigh. Prairie View won SWAC Tournament.",
+      "notes": "Winner plays Florida in R64."
+    }
+  ],
+
+  "first_four_lines": [
+    {
+      "matchup": "11 SMU vs 11 Miami OH",
+      "region": "Midwest",
+      "spread": -6.5,
+      "moneyline_fav": -310,
+      "moneyline_dog": 250,
+      "favorite": "SMU",
+      "over_under": 163.5
+    },
+    {
+      "matchup": "16 Lehigh vs 16 Prairie View A&M",
+      "region": "South",
+      "spread": -3.5,
+      "moneyline_fav": -166,
+      "moneyline_dog": 140,
+      "favorite": "Lehigh",
+      "over_under": 142.5
+    }
+  ],
+
+  "r64_lines": [
+    {
+      "matchup": "1 Duke vs 16 Siena",
+      "region": "East",
+      "spread": -29.5,
+      "favorite": "Duke",
+      "moneyline_fav": -20000,
+      "moneyline_dog": 3500,
+      "over_under": 136.5,
+      "source": "ESPN Bet / CBS Sports",
+      "movement": "stable at -29.5 since March 16"
+    },
+    {
+      "matchup": "8 Ohio State vs 9 TCU",
+      "region": "East",
+      "spread": -2.5,
+      "favorite": "Ohio State",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 146.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -2.5 since March 16"
+    },
+    {
+      "matchup": "5 St. John's vs 12 Northern Iowa",
+      "region": "East",
+      "spread": -10.5,
+      "favorite": "St. John's",
+      "moneyline_fav": -600,
+      "moneyline_dog": 440,
+      "over_under": 131.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -10.5 since March 16"
+    },
+    {
+      "matchup": "4 Kansas vs 13 Cal Baptist",
+      "region": "East",
+      "spread": -14.5,
+      "favorite": "Kansas",
+      "moneyline_fav": -1200,
+      "moneyline_dog": 750,
+      "over_under": 137.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -14.5 since March 16"
+    },
+    {
+      "matchup": "6 Louisville vs 11 South Florida",
+      "region": "East",
+      "spread": -5.5,
+      "favorite": "Louisville",
+      "moneyline_fav": -225,
+      "moneyline_dog": 185,
+      "over_under": 165.5,
+      "source": "ESPN Bet / CBS Sports",
+      "movement": "MAJOR MOVEMENT: Louisville star PG Mikel Brown Jr. (18.2 ppg, 4.7 apg) ruled OUT for opening weekend with back injury (March 18 announcement). Spread dropped from -6.5 (March 16) to -5.5. Some books showing -5 post-announcement. South Florida is now a live upset play — brackets shifting hard to USF.",
+      "injury_flag": "Mikel Brown Jr. OUT — back injury — ruled out for R64 and potential R32"
+    },
+    {
+      "matchup": "3 Michigan State vs 14 North Dakota State",
+      "region": "East",
+      "spread": -16.5,
+      "favorite": "Michigan State",
+      "moneyline_fav": -1800,
+      "moneyline_dog": 1000,
+      "over_under": 143.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -16.5 since March 16"
+    },
+    {
+      "matchup": "7 UCLA vs 10 UCF",
+      "region": "East",
+      "spread": -5.5,
+      "favorite": "UCLA",
+      "moneyline_fav": -245,
+      "moneyline_dog": 200,
+      "over_under": 152.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -5.5 since March 16"
+    },
+    {
+      "matchup": "2 UConn vs 15 Furman",
+      "region": "East",
+      "spread": -20.5,
+      "favorite": "UConn",
+      "moneyline_fav": -4500,
+      "moneyline_dog": 1700,
+      "over_under": 137.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -20.5 since March 16"
+    },
+    {
+      "matchup": "1 Arizona vs 16 LIU",
+      "region": "West",
+      "spread": -31.5,
+      "favorite": "Arizona",
+      "moneyline_fav": -100000,
+      "moneyline_dog": 5000,
+      "over_under": 151.5,
+      "source": "ESPN Bet",
+      "movement": "stable — largest spread in tournament"
+    },
+    {
+      "matchup": "8 Villanova vs 9 Utah State",
+      "region": "West",
+      "spread": 2.5,
+      "favorite": "Utah State",
+      "moneyline_fav": -135,
+      "moneyline_dog": 114,
+      "over_under": 147.5,
+      "source": "ESPN Bet",
+      "movement": "stable — 9-seed Utah State favored since opening"
+    },
+    {
+      "matchup": "5 Wisconsin vs 12 High Point",
+      "region": "West",
+      "spread": -9.5,
+      "favorite": "Wisconsin",
+      "moneyline_fav": -470,
+      "moneyline_dog": 360,
+      "over_under": 164.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -9.5 since March 16 drop from -12.5"
+    },
+    {
+      "matchup": "4 Arkansas vs 13 Hawaii",
+      "region": "West",
+      "spread": -15.5,
+      "favorite": "Arkansas",
+      "moneyline_fav": -1350,
+      "moneyline_dog": 800,
+      "over_under": 160.5,
+      "source": "ESPN Bet",
+      "movement": "stable"
+    },
+    {
+      "matchup": "6 BYU vs 11 Texas",
+      "region": "West",
+      "spread": -1.5,
+      "favorite": "BYU",
+      "moneyline_fav": -148,
+      "moneyline_dog": 124,
+      "over_under": 159.5,
+      "source": "ESPN Bet / NBC Sports / Heartland College Sports",
+      "movement": "LINE NOW POSTED — Texas won First Four vs NC State on March 17. BYU opened -2.5 vs generic First Four winner, dropped to -1.5 after Texas emerged. Total dropped from 160.5 to 159.5. Near-coin-flip game — BYU 23-11, Texas 19-14.",
+      "notes": "Texas upset NC State with last-second shot. Longhorns had lost 5 of 6 entering tournament."
+    },
+    {
+      "matchup": "3 Gonzaga vs 14 Kennesaw State",
+      "region": "West",
+      "spread": -20.5,
+      "favorite": "Gonzaga",
+      "moneyline_fav": -3200,
+      "moneyline_dog": 1400,
+      "over_under": 154.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -20.5 since March 16"
+    },
+    {
+      "matchup": "7 Miami FL vs 10 Missouri",
+      "region": "West",
+      "spread": -1.5,
+      "favorite": "Miami FL",
+      "moneyline_fav": -130,
+      "moneyline_dog": 110,
+      "over_under": 147.5,
+      "source": "ESPN Bet",
+      "movement": "stable — tightest game in field"
+    },
+    {
+      "matchup": "2 Purdue vs 15 Queens",
+      "region": "West",
+      "spread": -25.5,
+      "favorite": "Purdue",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 163.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -25.5 since March 16"
+    },
+    {
+      "matchup": "1 Michigan vs 16 Howard",
+      "region": "Midwest",
+      "spread": -31.5,
+      "favorite": "Michigan",
+      "moneyline_fav": -50000,
+      "moneyline_dog": 4000,
+      "over_under": 152.5,
+      "source": "DraftKings / Sportsbookreview",
+      "movement": "LINE NOW POSTED — Howard beat UMBC 86-83 in First Four on March 17. Michigan opened around -28 vs generic 16-seed; landed at -31.5 after Howard confirmed. Michigan's O/U of 152.5 reflects higher pace vs Howard."
+    },
+    {
+      "matchup": "8 Georgia vs 9 Saint Louis",
+      "region": "Midwest",
+      "spread": -2.5,
+      "favorite": "Georgia",
+      "moneyline_fav": -162,
+      "moneyline_dog": 136,
+      "over_under": 169.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -2.5 since March 16"
+    },
+    {
+      "matchup": "5 Texas Tech vs 12 Akron",
+      "region": "Midwest",
+      "spread": -7.5,
+      "favorite": "Texas Tech",
+      "moneyline_fav": -325,
+      "moneyline_dog": 260,
+      "over_under": 156.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -7.5 since March 16"
+    },
+    {
+      "matchup": "4 Alabama vs 13 Hofstra",
+      "region": "Midwest",
+      "spread": -12.5,
+      "favorite": "Alabama",
+      "moneyline_fav": -950,
+      "moneyline_dog": 625,
+      "over_under": 159.5,
+      "source": "ESPN Bet",
+      "movement": "stable"
+    },
+    {
+      "matchup": "6 Tennessee vs 11 SMU/Miami OH",
+      "region": "Midwest",
+      "spread": null,
+      "favorite": "Tennessee",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD — First Four winner (SMU vs Miami OH) plays Tennessee. Line posts after tonight's game. SMU expected -7 to -8 vs Tennessee if they win; Miami OH expected -4 to -5 vs Tennessee if they win (as bigger underdog)."
+    },
+    {
+      "matchup": "3 Virginia vs 14 Wright State",
+      "region": "Midwest",
+      "spread": -18.5,
+      "favorite": "Virginia",
+      "moneyline_fav": -2400,
+      "moneyline_dog": 1200,
+      "over_under": 145.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -18.5 since March 16"
+    },
+    {
+      "matchup": "7 Kentucky vs 10 Santa Clara",
+      "region": "Midwest",
+      "spread": -3.5,
+      "favorite": "Kentucky",
+      "moneyline_fav": -166,
+      "moneyline_dog": 140,
+      "over_under": 160.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -3.5 since March 16"
+    },
+    {
+      "matchup": "2 Iowa State vs 15 Tennessee State",
+      "region": "Midwest",
+      "spread": -25.5,
+      "favorite": "Iowa State",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 149.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -25.5 since March 16"
+    },
+    {
+      "matchup": "1 Florida vs 16 Lehigh/Prairie View A&M",
+      "region": "South",
+      "spread": null,
+      "favorite": "Florida",
+      "moneyline_fav": null,
+      "moneyline_dog": null,
+      "over_under": null,
+      "notes": "TBD — First Four winner (Lehigh -3.5 vs Prairie View) plays Florida. Line posts after tonight's game. Lehigh expected to be ~-33 to -35 vs Florida; Prairie View expected ~-36 to -38."
+    },
+    {
+      "matchup": "8 Clemson vs 9 Iowa",
+      "region": "South",
+      "spread": 2.5,
+      "favorite": "Iowa",
+      "moneyline_fav": -135,
+      "moneyline_dog": 114,
+      "over_under": 129.5,
+      "source": "ESPN Bet",
+      "movement": "stable — 9-seed Iowa still favored; lowest total in tournament"
+    },
+    {
+      "matchup": "5 Vanderbilt vs 12 McNeese",
+      "region": "South",
+      "spread": -11.5,
+      "favorite": "Vanderbilt",
+      "moneyline_fav": -625,
+      "moneyline_dog": 455,
+      "over_under": 150.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -11.5 since March 16"
+    },
+    {
+      "matchup": "4 Nebraska vs 13 Troy",
+      "region": "South",
+      "spread": -12.5,
+      "favorite": "Nebraska",
+      "moneyline_fav": -1000,
+      "moneyline_dog": 650,
+      "over_under": 137.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -12.5 since March 16"
+    },
+    {
+      "matchup": "6 North Carolina vs 11 VCU",
+      "region": "South",
+      "spread": -2.5,
+      "favorite": "North Carolina",
+      "moneyline_fav": -142,
+      "moneyline_dog": 120,
+      "over_under": 154.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -2.5 since March 16"
+    },
+    {
+      "matchup": "3 Illinois vs 14 Penn",
+      "region": "South",
+      "spread": -24.5,
+      "favorite": "Illinois",
+      "moneyline_fav": -6500,
+      "moneyline_dog": 2000,
+      "over_under": 150.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -24.5 since March 16"
+    },
+    {
+      "matchup": "7 Saint Mary's vs 10 Texas A&M",
+      "region": "South",
+      "spread": -3.5,
+      "favorite": "Saint Mary's",
+      "moneyline_fav": -162,
+      "moneyline_dog": 136,
+      "over_under": 147.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -3.5 since March 16"
+    },
+    {
+      "matchup": "2 Houston vs 15 Idaho",
+      "region": "South",
+      "spread": -23.5,
+      "favorite": "Houston",
+      "moneyline_fav": -8000,
+      "moneyline_dog": 2200,
+      "over_under": 136.5,
+      "source": "ESPN Bet",
+      "movement": "stable at -23.5 since March 16"
+    }
+  ],
+
+  "first_four_results": {
+    "completed_march_17": [
+      {
+        "matchup": "16 Howard vs 16 UMBC",
+        "result": "Howard 86, UMBC 83",
+        "winner": "Howard",
+        "summary": "Bryce Harris hit turnaround jumper with 13 seconds left; Ose Okojie led Howard with 23 pts. First NCAA Tournament win in Howard history. Howard faces Michigan R64."
+      },
+      {
+        "matchup": "11 Texas vs 11 NC State",
+        "result": "Texas 68, NC State 66",
+        "winner": "Texas",
+        "summary": "Tramon Mark (17 pts) hit fadeaway with 1.1 seconds left. Texas was 19-14 entering. NC State eliminated. Texas faces BYU R64."
+      }
+    ],
+    "pending_march_18": [
+      {
+        "matchup": "11 SMU vs 11 Miami OH",
+        "tip_time": "~9:15 PM ET",
+        "winner": null
+      },
+      {
+        "matchup": "16 Lehigh vs 16 Prairie View A&M",
+        "tip_time": "~6:40 PM ET",
+        "winner": null
+      }
+    ]
+  },
+
+  "injury_updates_march_18": [
+    {
+      "team": "Louisville",
+      "player": "Mikel Brown Jr.",
+      "position": "PG",
+      "injury_type": "Back",
+      "status": "OUT",
+      "games_affected": "R64 and R32 (opening weekend — 2 games)",
+      "impact_rating": "CRITICAL",
+      "stats": "18.2 ppg, 4.7 apg — second leading scorer; Louisville 16-5 with him, 7-5 without",
+      "date_announced": "2026-03-18",
+      "line_impact": "Louisville spread vs South Florida dropped from -6.5 (March 16) to -5.5 (some books -5); championship odds lengthened +11000 to +14000–+15000"
+    }
+  ],
+
+  "betting_handle_data": {
+    "notes": "Updated handle percentages March 18. Handle leader shifted with First Four bracket hype.",
+    "top_teams": [
+      {"team": "Duke", "handle_pct": 14.1, "movement": "stable from March 16"},
+      {"team": "Michigan", "handle_pct": 14.0, "movement": "up from 12.8 — Howard matchup drives casual bracket handle"},
+      {"team": "Arizona", "handle_pct": 14.4, "movement": "up significantly — now leads handle per search results"},
+      {"team": "Florida", "handle_pct": 10.6, "movement": "up from 10.5"},
+      {"team": "Houston", "handle_pct": 11.2, "movement": "stable"}
+    ]
+  },
+
+  "upset_watch_games": [
+    {"matchup": "6 Louisville vs 11 South Florida", "region": "East", "spread": -5.5, "notes": "HIGHEST ALERT — Mikel Brown Jr. ruled OUT. Spread down from -6.5 to -5.5. South Florida 24-8, 15-3 in AAC. Expert models project South Florida upset win."},
+    {"matchup": "7 Miami FL vs 10 Missouri", "region": "West", "spread": -1.5, "notes": "Still tightest game in field — near pick'em"},
+    {"matchup": "6 BYU vs 11 Texas", "region": "West", "spread": -1.5, "notes": "NEW — Texas won First Four on last-second shot. BYU -1.5 is a coin flip. Texas riding adrenaline."},
+    {"matchup": "8 Clemson vs 9 Iowa", "region": "South", "spread": 2.5, "notes": "9-seed Iowa still favored. Lowest total in tournament (129.5) suggests grind-it-out game."},
+    {"matchup": "8 Villanova vs 9 Utah State", "region": "West", "spread": 2.5, "notes": "9-seed Utah State still favored. Stable line."},
+    {"matchup": "8 Ohio State vs 9 TCU", "region": "East", "spread": -2.5, "notes": "Stable — tight game, TCU drawing action"},
+    {"matchup": "7 Saint Mary's vs 10 Texas A&M", "region": "South", "spread": -3.5, "notes": "Texas A&M live underdog play"},
+    {"matchup": "7 Kentucky vs 10 Santa Clara", "region": "Midwest", "spread": -3.5, "notes": "Blue blood vs mid-major — Santa Clara upset watch"},
+    {"matchup": "6 North Carolina vs 11 VCU", "region": "South", "spread": -2.5, "notes": "VCU remains live upset pick"},
+    {"matchup": "5 Wisconsin vs 12 High Point", "region": "West", "spread": -9.5, "notes": "12-seed candidate — dropped 3 points from opening"}
+  ],
+
+  "line_movement_summary": {
+    "date": "2026-03-18",
+    "vs_march_16": {
+      "biggest_story": "Mikel Brown Jr. injury at Louisville — single biggest line mover of the pre-tournament period",
+      "new_lines_posted": [
+        "Michigan -31.5 vs Howard (First Four winner confirmed — Howard beat UMBC)",
+        "BYU -1.5 vs Texas (First Four winner confirmed — Texas beat NC State, dropped from -2.5)"
+      ],
+      "spread_moves": [
+        "Louisville vs South Florida: -6.5 to -5.5 (some books -5) — Mikel Brown Jr. OUT",
+        "BYU vs Texas: -2.5 to -1.5 — Texas got in hot via buzzer-beater, getting action"
+      ],
+      "futures_moves": [
+        "Louisville championship odds: +11000 to +14000–+15000 (injury effect)",
+        "South Florida championship odds: +50000 to +40000 (benefiting from injury)",
+        "Texas championship odds: +40000 to +35000 (advanced from First Four)",
+        "Howard listed for first time at +200000 (eliminated UMBC)",
+        "NC State delisted — eliminated",
+        "UMBC delisted — eliminated",
+        "Duke drifted at DK/FD: +330 to +360/+370 (public action not sharp)"
+      ],
+      "stable_markets": "All other R64 spreads, totals, championship odds unchanged from March 16"
+    }
+  },
+
+  "key_observations": {
+    "biggest_story_march_18": "Mikel Brown Jr. OUT for Louisville — the single biggest news item of pre-tournament week. Second-leading scorer, best playmaker. Books moved the line immediately. Bracket picks shifting heavily to South Florida.",
+    "first_four_drama": "Texas won on buzzer-beater vs NC State. Howard got first-ever NCAA tourney win over UMBC. Both results confirmed — BYU and Michigan lines now posted.",
+    "biggest_favorites": [
+      "Arizona -31.5 vs LIU (largest spread in tournament)",
+      "Michigan -31.5 vs Howard (tied for largest — Howard is the pluckiest 16 seed ever listed)",
+      "Duke -29.5 vs Siena",
+      "Iowa State -25.5 vs Tennessee State",
+      "Purdue -25.5 vs Queens",
+      "Illinois -24.5 vs Penn"
+    ],
+    "tightest_games": [
+      "Miami FL -1.5 vs Missouri (tightest — stable coin flip)",
+      "BYU -1.5 vs Texas (NEW entry — First Four drama elevates this game)",
+      "Iowa -2.5 vs Clemson (9-seed favored)",
+      "Utah State -2.5 vs Villanova (9-seed favored)",
+      "Ohio State -2.5 vs TCU",
+      "North Carolina -2.5 vs VCU",
+      "Georgia -2.5 vs Saint Louis",
+      "Kentucky -3.5 vs Santa Clara"
+    ],
+    "south_region_competitive": "South remains most open region. Florida barely favored at -103 to win it. Houston (+210) and Illinois (+360) credible. Florida's championship odds at +650 are still longest of any 1-seed.",
+    "east_region_injury_watch": "Louisville injury injects major uncertainty in the bottom half of East bracket. Duke (-175) remains overwhelming East favorite. Injury helps Duke's path if Louisville was a potential Sweet 16 spoiler.",
+    "midwest_region_michigan": "Michigan -160 (shortened slightly from -181). Howard winning First Four adds emotional narrative but Michigan remains massive favorite at -31.5. SMU/Miami OH winner creates interesting 6-11 matchup vs Tennessee.",
+    "west_region_coin_flip": "Arizona dominant at -138. West has the most chaos in mid-bracket: BYU -1.5 vs Texas is essentially a pick, Miami FL -1.5 vs Missouri another near-pick. Wisconsin-High Point sharp money on 12-seed.",
+    "championship_futures_dispersion": "Futures odds are widening across sportsbooks — DK drifting public favorites (Duke +360, Michigan +350) while MGM holds tighter (Duke +300). Sharp/square split visible. Arizona leads in handle percentage at 14.4%."
+  }
+}

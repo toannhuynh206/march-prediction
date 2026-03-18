@@ -21,7 +21,7 @@ function BracketRow({ bracket, isExpanded, onToggle, index, gameResults }) {
     <>
       <div
         onClick={onToggle}
-        className="grid grid-cols-[40px_1fr_60px_40px] sm:grid-cols-[50px_1fr_90px_80px_80px_50px] items-center px-2 sm:px-4 py-3 cursor-pointer transition-all duration-150 glass-hover"
+        className="grid grid-cols-[72px_1fr_60px_40px] sm:grid-cols-[85px_1fr_90px_80px_80px_50px] items-center px-2 sm:px-4 py-3 cursor-pointer transition-all duration-150 glass-hover"
         style={{
           borderBottom: '1px solid var(--border-subtle)',
           animationDelay: `${index * 30}ms`,
@@ -239,14 +239,14 @@ export default function ExplorerPage() {
       <div className="glass rounded-xl overflow-hidden">
         {/* Header */}
         <div
-          className="grid grid-cols-[40px_1fr_60px_40px] sm:grid-cols-[50px_1fr_90px_80px_80px_50px] items-center px-2 sm:px-4 py-3 text-[10px] font-mono uppercase tracking-widest"
+          className="grid grid-cols-[72px_1fr_60px_40px] sm:grid-cols-[85px_1fr_90px_80px_80px_50px] items-center px-2 sm:px-4 py-3 text-[10px] font-mono uppercase tracking-widest"
           style={{
             color: 'var(--text-muted)',
             background: 'rgba(255,255,255,0.02)',
             borderBottom: '1px solid var(--border-subtle)',
           }}
         >
-          <span>Rank</span>
+          <span>Bracket</span>
           <span>Champion</span>
           <span className="text-right">Prob</span>
           <span className="text-right hidden sm:block">Weight</span>

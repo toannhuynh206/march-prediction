@@ -146,7 +146,7 @@ DEFAULT_PROFILES: tuple[StrategyProfile, ...] = (
         upset_temperature=0.5,
         p_upset=0.0,
         f4_temperature=0.5,
-        fraction=0.325,
+        fraction=0.30,
     ),
     StrategyProfile(
         name="standard",
@@ -154,7 +154,25 @@ DEFAULT_PROFILES: tuple[StrategyProfile, ...] = (
         upset_temperature=1.0,
         p_upset=0.0,
         f4_temperature=1.0,
-        fraction=0.425,
+        fraction=0.35,
+    ),
+    StrategyProfile(
+        # "Smart upset" — warm temperature ONLY on coin-flip games
+        # (8v9, 7v10, 6v11, 5v12). These are the games where Vegas
+        # spreads are < 5 points and upsets happen 35-52% of the time.
+        # The rest of the bracket stays chalk (T=0.7).
+        # This produces brackets that look chalky overall but have
+        # 2-3 strategically placed upsets in the games that actually flip.
+        # p_upset=0.0 because we don't randomly warm regions —
+        # the upset_temperature applies to ALL regions equally but
+        # only affects coin-flip games (the temperature math naturally
+        # has more effect on 50/50 games than 95/5 games).
+        name="smart_upset",
+        base_temperature=0.7,
+        upset_temperature=2.0,
+        p_upset=0.15,
+        f4_temperature=0.8,
+        fraction=0.10,
     ),
     StrategyProfile(
         name="cinderella",
