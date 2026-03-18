@@ -692,9 +692,73 @@ def load_matchups(year: int, name_to_id: dict[str, int]) -> None:
 # Main
 # =========================================================================
 
+def full_refresh(year: int) -> None:
+    """Full end-to-end pipeline: load all data, recompute power index, recompute probabilities.
+
+    This is the one command to run after dropping in fresh research JSONs:
+      1. Load teams from bracket JSON
+      2. Load Vegas odds (most recent vegas_odds_*.json)
+      3. Load KenPom stats (most recent kenpom_*.json)
+      4. Load R64 matchups with p_market from odds
+      5. Recompute 9-factor power index (reads injuries + coaching + stats)
+      6. Recompute matchup probabilities (p_stats, p_matchup, p_factors, p_final)
+
+    After this, the DB is fully ready for simulation.
+    """
+    from research.power_index import compute_power_indices
+    from research.probability import compute_matchup_probabilities
+
+    print(f"\n{'='*70}")
+    print(f" FULL DATA REFRESH — {year}")
+    print(f" Research JSON → DB → Power Index → Matchup Probabilities")
+    print(f"{'='*70}")
+
+    # Step 1-4: Load raw data
+    print(f"\n[1/6] Loading teams...")
+    name_to_id = load_teams(year)
+
+    print(f"\n[2/6] Loading Vegas odds...")
+    load_odds(year, name_to_id)
+
+    print(f"\n[3/6] Loading KenPom stats...")
+    load_stats(year, name_to_id)
+
+    print(f"\n[4/6] Loading R64 matchups...")
+    load_matchups(year, name_to_id)
+
+    # Step 5: Recompute power index from fresh stats + injuries
+    print(f"\n[5/6] Recomputing 9-factor power index...")
+    pi_results = compute_power_indices(year)
+    top_5 = sorted(pi_results.items(), key=lambda x: x[1], reverse=True)[:5]
+    print(f"  Top 5: {', '.join(f'{n} ({v:.1f})' for n, v in top_5)}")
+
+    # Step 6: Recompute matchup probabilities using updated power index
+    print(f"\n[6/6] Recomputing matchup probabilities (4-layer blend)...")
+    matchup_results = compute_matchup_probabilities(year)
+    print(f"  Updated {len(matchup_results)} matchups")
+
+    print(f"\n{'='*70}")
+    print(f" REFRESH COMPLETE — {year}")
+    print(f" {len(name_to_id)} teams, {len(pi_results)} power indices,")
+    print(f" {len(matchup_results)} matchup probabilities")
+    print(f" DB is ready for simulation.")
+    print(f"{'='*70}\n")
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Load tournament data into PostgreSQL")
+    parser = argparse.ArgumentParser(
+        description="Load tournament data into PostgreSQL",
+        epilog=(
+            "Examples:\n"
+            "  python -m data.loader --year 2026                  # load raw data only\n"
+            "  python -m data.loader --year 2026 --full-refresh   # full pipeline (recommended)\n"
+            "  python -m data.loader --year 2026 --stats-only     # reload KenPom only\n"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     parser.add_argument("--year", type=int, default=2026, help="Tournament year")
+    parser.add_argument("--full-refresh", action="store_true",
+                        help="Full pipeline: load data + recompute power index + recompute probabilities")
     parser.add_argument("--teams-only", action="store_true", help="Load only teams")
     parser.add_argument("--odds-only", action="store_true", help="Load only odds")
     parser.add_argument("--stats-only", action="store_true", help="Load only team stats")
@@ -707,6 +771,10 @@ def main() -> None:
         load_dotenv(PROJECT_ROOT / ".env")
     except ImportError:
         pass
+
+    if args.full_refresh:
+        full_refresh(args.year)
+        return
 
     # Single-phase flags require teams already in DB
     if args.odds_only or args.stats_only or args.matchups_only:

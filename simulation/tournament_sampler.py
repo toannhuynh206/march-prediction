@@ -223,10 +223,19 @@ def _cap_low_seed_regional_champions(
 # Weight capping for ESS health
 # =========================================================================
 
+# DELIBERATE BIAS/VARIANCE TRADE-OFF:
 # Cap weights at WEIGHT_CAP_PERCENTILE × WEIGHT_CAP_MULTIPLIER.
 # This prevents a handful of extreme-weight brackets from dominating
 # all weighted statistics. Sacrifices strict unbiasedness for dramatically
 # improved effective sample size (ESS).
+#
+# Without capping: unbiased but ESS can drop below 1% of N when tail
+# brackets get 1000x+ weights, making all statistics unreliable.
+# With capping: introduces small bias (under-represents extreme tails)
+# but ESS stays healthy (typically 30-60% of N).
+#
+# The 99th percentile × 5 threshold keeps the max/min ratio under ~500:1
+# while preserving 99%+ of the probability mass.
 WEIGHT_CAP_PERCENTILE = 99.0
 WEIGHT_CAP_MULTIPLIER = 5.0
 

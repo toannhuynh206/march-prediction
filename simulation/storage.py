@@ -41,7 +41,7 @@ def insert_brackets_copy(
 
     Args:
         packed_outcomes: Shape (N,), dtype int16. Packed 15-bit outcomes.
-        probabilities: Shape (N,), dtype float32. Bracket probabilities.
+        probabilities: Shape (N,), dtype float64. Bracket probabilities.
         weights: Scalar or shape (N,). Importance sampling weight.
         region: Region name (South, East, West, Midwest).
         stratum_id: Stratum ID from strata table.

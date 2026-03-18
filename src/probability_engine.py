@@ -41,8 +41,11 @@ SEED_UPSET_RATES = {
 # 2025 R1 consensus opening spreads (verified: Yahoo, CBS, FOX, FanDuel)
 # Positive = higher seed favored by that many points
 # Negative = lower seed favored (upset line)
-# TODO: Make configurable by year. For 2026, populate from The Odds API
-# or a data/spreads/2026_r1_spreads.json file on Selection Sunday.
+#
+# NOTE: This module is in src/ (legacy/prototype path). The production
+# pipeline (simulation/) reads spreads from the PostgreSQL matchups table,
+# populated by research/market.py from The Odds API.
+# For 2026, update the DB via: python -m research.agent --year 2026 --phase matchups
 R1_SPREADS_2025 = {
     # South
     ("Auburn", "Alabama State"): 32.5,

@@ -203,7 +203,7 @@ def _compute_bracket_probabilities(
     P(bracket) = product of P(game outcome) across all 15 games.
 
     Returns:
-        probabilities: Shape (N,), dtype float32.
+        probabilities: Shape (N,), dtype float64.
     """
     n = r64_outcomes.shape[0]
     log_prob = np.zeros(n, dtype=np.float64)
@@ -265,7 +265,7 @@ def _compute_bracket_probabilities(
         np.log(np.maximum(1.0 - p_a_wins, 1e-15)),
     )
 
-    return np.exp(log_prob).astype(np.float32)
+    return np.exp(log_prob)  # float64 — no downcast to preserve tail precision
 
 
 # =========================================================================
@@ -292,7 +292,7 @@ def simulate_world(
 
     Returns:
         packed_outcomes: Shape (target_count,), dtype int16.
-        probabilities: Shape (target_count,), dtype float32.
+        probabilities: Shape (target_count,), dtype float64.
         weight: Importance sampling weight for this world.
     """
     target = world.target_count
@@ -378,7 +378,7 @@ def simulate_world(
         all_probs = np.concatenate(accepted_probs)[:target]
     else:
         all_packed = np.empty(0, dtype=np.int16)
-        all_probs = np.empty(0, dtype=np.float32)
+        all_probs = np.empty(0, dtype=np.float64)
 
     world.actual_count = len(all_packed)
 
