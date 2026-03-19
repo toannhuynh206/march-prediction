@@ -1,0 +1,16 @@
+.git
+.venv
+__pycache__
+*.pyc
+node_modules
+.env
+.claude
+agents
+tests
+*.md
+frontend
+nginx
+docker-compose*.yml
+deploy.sh
+.gitignore
+.dockerignore

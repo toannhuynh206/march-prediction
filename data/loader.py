@@ -199,7 +199,10 @@ def load_championship_futures(
             skipped.append(team_name)
             continue
 
-        odds_str = entry["odds"]
+        odds_str = entry.get("odds")
+        if odds_str is None:
+            skipped.append(f"{team_name} (no odds)")
+            continue
         odds_int = _parse_american_odds(odds_str)
 
         records.append(Odds(

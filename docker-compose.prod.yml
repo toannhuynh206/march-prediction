@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mm-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-marchmadness}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bracketbuster2026}
+      POSTGRES_DB: ${POSTGRES_DB:-march_madness}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-marchmadness}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    shm_size: 128mb
+    command:
+      - "postgres"
+      - "-c"
+      - "shared_buffers=256MB"
+      - "-c"
+      - "work_mem=32MB"
+      - "-c"
+      - "maintenance_work_mem=128MB"
+      - "-c"
+      - "effective_cache_size=768MB"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mm-api
+    restart: unless-stopped
+    ports:
+      - "8082:8000"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-marchmadness}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bracketbuster2026}
+      POSTGRES_DB: ${POSTGRES_DB:-march_madness}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-changeme}
+      TOURNAMENT_YEAR: ${TOURNAMENT_YEAR:-2026}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+    driver: local
