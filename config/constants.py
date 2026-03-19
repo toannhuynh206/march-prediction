@@ -27,13 +27,13 @@ R64_SEED_MATCHUPS = (
 # =========================================================================
 
 POWER_INDEX_WEIGHTS = {
-    "adj_em":           0.50,   # AdjEM (KenPom) — dominant predictor
+    "adj_em":           0.53,   # AdjEM (KenPom) — dominant predictor
     "def_efficiency":   0.08,   # Defensive efficiency premium
     "nonconf_sos":      0.08,   # Non-conference SOS
     "experience":       0.08,   # Experience score (Bart Torvik)
     "luck":             0.06,   # Luck adjustment
     "ft_rate":          0.06,   # Free throw rate index
-    "coaching":         0.06,   # Coaching tournament score
+    "coaching":         0.03,   # Coaching tournament score (capped — penalizes young coaches too much)
     "injuries":         0.05,   # Key injuries (hard point adjustment)
     "three_pt_var":     0.03,   # 3-point variance flag
 }
