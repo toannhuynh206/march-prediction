@@ -24,49 +24,37 @@ docker compose -f docker-compose.prod.yml build --quiet api
 docker compose -f docker-compose.prod.yml up -d
 sleep 5
 
-# Step 3: Run migration for alive tables + indexes
-echo "[3/9] Running database migrations..."
-docker compose -f docker-compose.prod.yml exec -T api python3 -c "
+# Step 3+4: Create tables + clear everything (combined to avoid race conditions)
+echo "[3/9] Migrations + clearing database..."
+docker compose -f docker-compose.prod.yml exec -T api python3 << 'PYEOF'
 from db.connection import get_engine
 from sqlalchemy import text
-e = get_engine()
-with e.connect() as c:
-    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_south (outcome_value SMALLINT PRIMARY KEY)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_east (outcome_value SMALLINT PRIMARY KEY)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_west (outcome_value SMALLINT PRIMARY KEY)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_midwest (outcome_value SMALLINT PRIMARY KEY)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_f4 (outcome_value SMALLINT PRIMARY KEY)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS stats_cache (tournament_year INT PRIMARY KEY, total_brackets BIGINT NOT NULL DEFAULT 0, alive_brackets BIGINT NOT NULL DEFAULT 0, champion_odds JSONB, upset_distribution JSONB)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS prune_log (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, pruned_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), games_submitted INT, game_details JSONB, brackets_before BIGINT, brackets_deleted BIGINT, brackets_remaining BIGINT, prune_duration_ms INT)'))
-    c.execute(text('CREATE TABLE IF NOT EXISTS generation_proof (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, generated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), total_brackets BIGINT NOT NULL, sha256_hash TEXT, strategy_breakdown JSONB, champion_distribution JSONB)'))
-    c.commit()
-print('Migrations complete')
-"
 
-# Step 4: Clear everything
-echo "[4/9] Clearing database..."
-docker compose -f docker-compose.prod.yml exec -T api python3 -c "
-from db.connection import get_engine
-from sqlalchemy import text
 e = get_engine()
-tables_to_clear = [
-    'TRUNCATE full_brackets',
-    'DELETE FROM game_results WHERE tournament_year = 2026',
-    'DELETE FROM prune_log WHERE tournament_year = 2026',
-    'DELETE FROM stats_cache WHERE tournament_year = 2026',
-]
-for sql in tables_to_clear:
-    try:
-        with e.begin() as c:
-            c.execute(text(sql))
-    except Exception as ex:
-        print(f'  Skipped: {sql.split()[2]} ({ex.__class__.__name__})')
+
+# Create all tables first
 with e.begin() as c:
-    for idx in ['idx_fb_south_outcomes', 'idx_fb_east_outcomes', 'idx_fb_west_outcomes',
-                'idx_fb_midwest_outcomes', 'idx_fb_f4_outcomes', 'idx_fb_prob', 'idx_fb_champion']:
-        c.execute(text(f'DROP INDEX IF EXISTS {idx}'))
-print('Database cleared, indexes dropped')
-"
+    c.execute(text("CREATE TABLE IF NOT EXISTS alive_outcomes_south (outcome_value SMALLINT PRIMARY KEY)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS alive_outcomes_east (outcome_value SMALLINT PRIMARY KEY)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS alive_outcomes_west (outcome_value SMALLINT PRIMARY KEY)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS alive_outcomes_midwest (outcome_value SMALLINT PRIMARY KEY)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS alive_outcomes_f4 (outcome_value SMALLINT PRIMARY KEY)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS stats_cache (tournament_year INT PRIMARY KEY, total_brackets BIGINT NOT NULL DEFAULT 0, alive_brackets BIGINT NOT NULL DEFAULT 0, champion_odds JSONB, upset_distribution JSONB)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS prune_log (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, pruned_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), games_submitted INT, game_details JSONB, brackets_before BIGINT, brackets_deleted BIGINT, brackets_remaining BIGINT, prune_duration_ms INT)"))
+    c.execute(text("CREATE TABLE IF NOT EXISTS generation_proof (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, generated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), total_brackets BIGINT NOT NULL, sha256_hash TEXT, strategy_breakdown JSONB, champion_distribution JSONB)"))
+print("Tables created")
+
+# Now clear everything
+with e.begin() as c:
+    c.execute(text("TRUNCATE full_brackets"))
+    c.execute(text("DELETE FROM game_results WHERE tournament_year = 2026"))
+    c.execute(text("DELETE FROM prune_log WHERE tournament_year = 2026"))
+    c.execute(text("DELETE FROM stats_cache WHERE tournament_year = 2026"))
+    for idx in ["idx_fb_south_outcomes", "idx_fb_east_outcomes", "idx_fb_west_outcomes",
+                "idx_fb_midwest_outcomes", "idx_fb_f4_outcomes", "idx_fb_prob", "idx_fb_champion"]:
+        c.execute(text(f"DROP INDEX IF EXISTS {idx}"))
+print("Database cleared, indexes dropped")
+PYEOF
 
 # Step 5: Load teams + First Four resolution
 echo "[5/9] Loading teams and fixing First Four..."
