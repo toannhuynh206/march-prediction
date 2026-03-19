@@ -29,15 +29,16 @@ echo "[3/9] Running database migrations..."
 docker compose -f docker-compose.prod.yml exec -T api python3 -c "
 from db.connection import get_engine
 from sqlalchemy import text
-from pathlib import Path
-
-migration = Path('db/migrations/006_alive_tables.sql').read_text()
 e = get_engine()
 with e.connect() as c:
-    for stmt in migration.split(';'):
-        stmt = stmt.strip()
-        if stmt and not stmt.startswith('--'):
-            c.execute(text(stmt))
+    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_south (outcome_value SMALLINT PRIMARY KEY)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_east (outcome_value SMALLINT PRIMARY KEY)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_west (outcome_value SMALLINT PRIMARY KEY)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_midwest (outcome_value SMALLINT PRIMARY KEY)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS alive_outcomes_f4 (outcome_value SMALLINT PRIMARY KEY)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS stats_cache (tournament_year INT PRIMARY KEY, total_brackets BIGINT NOT NULL DEFAULT 0, alive_brackets BIGINT NOT NULL DEFAULT 0, champion_odds JSONB, upset_distribution JSONB)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS prune_log (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, pruned_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), games_submitted INT, game_details JSONB, brackets_before BIGINT, brackets_deleted BIGINT, brackets_remaining BIGINT, prune_duration_ms INT)'))
+    c.execute(text('CREATE TABLE IF NOT EXISTS generation_proof (id SERIAL PRIMARY KEY, tournament_year INT NOT NULL, generated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), total_brackets BIGINT NOT NULL, sha256_hash TEXT, strategy_breakdown JSONB, champion_distribution JSONB)'))
     c.commit()
 print('Migrations complete')
 "
@@ -51,8 +52,14 @@ e = get_engine()
 with e.connect() as c:
     c.execute(text('TRUNCATE full_brackets'))
     c.execute(text('DELETE FROM game_results WHERE tournament_year = 2026'))
-    c.execute(text('DELETE FROM prune_log WHERE tournament_year = 2026'))
-    c.execute(text('DELETE FROM stats_cache WHERE tournament_year = 2026'))
+    try:
+        c.execute(text('DELETE FROM prune_log WHERE tournament_year = 2026'))
+    except Exception:
+        pass
+    try:
+        c.execute(text('DELETE FROM stats_cache WHERE tournament_year = 2026'))
+    except Exception:
+        pass
     for idx in ['idx_fb_south_outcomes', 'idx_fb_east_outcomes', 'idx_fb_west_outcomes',
                 'idx_fb_midwest_outcomes', 'idx_fb_f4_outcomes', 'idx_fb_prob', 'idx_fb_champion']:
         c.execute(text(f'DROP INDEX IF EXISTS {idx}'))
