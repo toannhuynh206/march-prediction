@@ -101,9 +101,10 @@ results = compute_matchup_probabilities(2026)
 print(f'Matchup probabilities: {len(results)} matchups computed')
 "
 
-# Step 7: Generate 1M brackets
-echo "[7/9] Generating 1,000,000 brackets..."
-docker compose -f docker-compose.prod.yml exec -T api python3 -m simulation.simulate --full-tournament --count 1000000 --year 2026
+# Step 7: Generate brackets (default 1K for low-RAM droplets, override with BRACKET_COUNT env var)
+BRACKET_COUNT="${BRACKET_COUNT:-1000}"
+echo "[7/9] Generating $BRACKET_COUNT brackets..."
+docker compose -f docker-compose.prod.yml exec -T api python3 -m simulation.simulate --full-tournament --count "$BRACKET_COUNT" --year 2026
 
 # Step 8: Rebuild indexes
 echo "[8/9] Rebuilding indexes..."
