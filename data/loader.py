@@ -245,7 +245,10 @@ def load_final_four_odds(
                 skipped.append(f"{team_name} ({region})")
                 continue
 
-            odds_str = entry["odds"]
+            odds_str = entry.get("odds")
+            if odds_str is None:
+                skipped.append(f"{team_name} ({region}, no odds)")
+                continue
             odds_int = _parse_american_odds(odds_str)
             implied = _american_to_implied_prob(odds_int)
 
