@@ -1,0 +1,132 @@
+{
+  "source": "ESPN/RotoWire/CBS Sports — March 19, 2026",
+  "date": "2026-03-19",
+  "injuries": [
+    {
+      "team": "Duke",
+      "player": "Caleb Foster",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Broken foot (regular-season finale)",
+      "notes": "Starter. Will miss at least first two tournament games."
+    },
+    {
+      "team": "Duke",
+      "player": "Patrick Ngongba",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "MODERATE",
+      "injury": "Undisclosed",
+      "notes": "Rotation player. Not expected to play vs Siena."
+    },
+    {
+      "team": "North Carolina",
+      "player": "Caleb Wilson",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Season-ending thumb injury (March 5)",
+      "notes": "Star player. Was averaging 19.8/9.4/2.7. Massive loss."
+    },
+    {
+      "team": "Texas Tech",
+      "player": "JT Toppin",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Torn ACL (February)",
+      "notes": "All-America. 21.8 PPG, 10.8 RPG. Season over."
+    },
+    {
+      "team": "BYU",
+      "player": "Richie Saunders",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Season-ending knee injury (mid-February)",
+      "notes": "Star. One of BYU big three with Dybantsa and Wright."
+    },
+    {
+      "team": "Louisville",
+      "player": "Mikel Brown Jr.",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Back injury",
+      "notes": "Starter. OUT for today's game vs South Florida."
+    },
+    {
+      "team": "Gonzaga",
+      "player": "Braden Huff",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Dislocated kneecap",
+      "notes": "Starter. 17.8 PPG. Out for opening weekend."
+    },
+    {
+      "team": "Alabama",
+      "player": "Aden Holloway",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Suspended (felony marijuana arrest)",
+      "notes": "2nd-leading scorer 16.8 PPG. Removed from team."
+    },
+    {
+      "team": "Clemson",
+      "player": "Welling",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Torn ACL",
+      "notes": "10.2 PPG, 5.4 RPG. Season over."
+    },
+    {
+      "team": "Kentucky",
+      "player": "Kerr Lowe",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "injury": "Shoulder surgery",
+      "notes": "Plus Quaintance OUT (knee), Williams QUESTIONABLE."
+    },
+    {
+      "team": "Villanova",
+      "player": "Hodge",
+      "position": "F",
+      "status": "OUT",
+      "impact_rating": "CRITICAL",
+      "injury": "Torn ACL",
+      "notes": "9.2 PPG starting forward. Season over."
+    },
+    {
+      "team": "Michigan",
+      "player": "Cason",
+      "position": "G",
+      "status": "OUT",
+      "impact_rating": "HIGH",
+      "injury": "Torn ACL",
+      "notes": "Plus Lendeborg PROBABLE (ankle)."
+    },
+    {
+      "team": "Kansas",
+      "player": "Dickinson",
+      "position": "C",
+      "status": "QUESTIONABLE",
+      "impact_rating": "CRITICAL",
+      "injury": "Back injury",
+      "notes": "Limited in conference tourney."
+    },
+    {
+      "team": "Tennessee",
+      "player": "Ament",
+      "position": "G",
+      "status": "PROBABLE",
+      "impact_rating": "HIGH",
+      "injury": "High ankle sprain",
+      "notes": "17.4 PPG. Struggled in SEC tourney."
+    }
+  ]
+}

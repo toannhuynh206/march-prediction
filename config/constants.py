@@ -27,13 +27,13 @@ R64_SEED_MATCHUPS = (
 # =========================================================================
 
 POWER_INDEX_WEIGHTS = {
-    "adj_em":           0.40,   # AdjEM (KenPom)
-    "def_efficiency":   0.10,   # Defensive efficiency premium
-    "nonconf_sos":      0.10,   # Non-conference SOS
-    "experience":       0.10,   # Experience score (Bart Torvik)
-    "luck":             0.08,   # Luck adjustment
-    "ft_rate":          0.07,   # Free throw rate index
-    "coaching":         0.07,   # Coaching tournament score
+    "adj_em":           0.50,   # AdjEM (KenPom) — dominant predictor
+    "def_efficiency":   0.08,   # Defensive efficiency premium
+    "nonconf_sos":      0.08,   # Non-conference SOS
+    "experience":       0.08,   # Experience score (Bart Torvik)
+    "luck":             0.06,   # Luck adjustment
+    "ft_rate":          0.06,   # Free throw rate index
+    "coaching":         0.06,   # Coaching tournament score
     "injuries":         0.05,   # Key injuries (hard point adjustment)
     "three_pt_var":     0.03,   # 3-point variance flag
 }
@@ -59,10 +59,10 @@ BLEND_TIERS = {
     },
     "coin_flip": {
         "condition": lambda spread: abs(spread) < 5,
-        "w_market": 0.30,
+        "w_market": 0.40,
         "w_stats": 0.25,
-        "w_matchup": 0.25,
-        "w_factors": 0.20,
+        "w_matchup": 0.20,
+        "w_factors": 0.15,
     },
 }
 

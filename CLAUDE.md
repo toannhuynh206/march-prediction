@@ -39,15 +39,17 @@ Every database table has a `tournament_year INT NOT NULL` column. Switching year
 ### Power Index Formula (9 factors, specific weights)
 | Factor | Weight |
 |--------|--------|
-| AdjEM (KenPom) | 40% |
-| Defensive Efficiency Premium | 10% |
-| Non-Conference SOS | 10% |
-| Experience Score (Bart Torvik) | 10% |
-| Luck Adjustment | 8% |
-| Free Throw Rate Index | 7% |
-| Coaching Tournament Score | 7% |
+| AdjEM (KenPom) | 50% |
+| Defensive Efficiency Premium | 8% |
+| Non-Conference SOS | 8% |
+| Experience Score (Bart Torvik) | 8% |
+| Luck Adjustment | 6% |
+| Free Throw Rate Index | 6% |
+| Coaching Tournament Score | 6% |
 | Key Injuries (hard point adj.) | 5% |
 | 3-Point Variance Flag | 3% |
+Note: AdjEM boosted to 50% (from 40%) after audit showed secondary factors
+causing rank inversions (Houston over Duke despite lower AdjEM).
 **DO NOT** include: raw seed, standalone AdjO/AdjD, recent form (last 10 games)
 
 ### Win Probability Blend (4-layer, spread-adaptive)
@@ -59,7 +61,9 @@ Weights adapt based on spread magnitude (spread-adaptive tiers):
 |------|-----------|----------|---------|-----------|-----------|
 | locks | \|spread\| > 15 | 0.60 | 0.20 | 0.10 | 0.10 |
 | lean | \|spread\| 5–15 | 0.45 | 0.25 | 0.15 | 0.15 |
-| coin_flip | \|spread\| < 5 | 0.30 | 0.25 | 0.25 | 0.20 |
+| coin_flip | \|spread\| < 5 | 0.40 | 0.25 | 0.20 | 0.15 |
+Note: coin_flip market weight boosted to 40% (from 30%) to prevent
+seed-history prior from overriding actual Vegas line direction in 8v9 games.
 
 - P_market: de-vigged moneyline / spread from The Odds API
 - P_stats: logistic function from power index differential

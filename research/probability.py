@@ -131,7 +131,8 @@ def _compute_p_matchup(
         inj_b = INJURY_IMPACTS_2026.get(name_b, 0.0)
         # Injury impacts are negative. Team A advantage = B is more injured.
         # inj_b more negative → B is worse off → advantage to A
-        injury_factor = np.clip((inj_b - inj_a) * 0.5, -0.03, 0.03)
+        # Star-level injuries (-0.10) can shift P by up to 7%
+        injury_factor = np.clip((inj_b - inj_a) * 0.7, -0.07, 0.07)
 
     # --- Sub-factor 5: Rivalry/familiarity ---
     rivalry_factor = 0.0
@@ -434,6 +435,16 @@ def compute_matchup_probabilities(year: int) -> list[dict[str, Any]]:
 
         # Blended final probability
         p_final = blend_probabilities(p_market, p_stats, p_matchup, p_factors, spread)
+
+        # Sharpening: auto-advance for 1-seeds and 2-seeds in R64
+        # Per CLAUDE.md: "1-seeds and 2-seeds: P=1.0 in R64 (hard lock)"
+        higher_seed_val = min(seed_a or 99, seed_b or 99)
+        if higher_seed_val <= 2:
+            # Force P(higher seed wins) = 1.0
+            if (seed_a or 99) < (seed_b or 99):
+                p_final = 1.0
+            else:
+                p_final = 0.0
 
         results.append({
             "matchup_id": m_id,

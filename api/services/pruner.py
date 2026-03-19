@@ -253,10 +253,17 @@ def refresh_stats_cache(year: int = TOURNAMENT_YEAR) -> None:
     t = time.time()
 
     with engine.connect() as conn:
+        # Total brackets = immutable count from full_brackets table.
+        # Try cache first (fast), fall back to COUNT(*) on first run.
         total = conn.execute(
             text("SELECT total_brackets FROM stats_cache WHERE tournament_year = :year"),
             {"year": year},
         ).scalar() or 0
+        if total == 0:
+            total = conn.execute(
+                text("SELECT COUNT(*) FROM full_brackets WHERE tournament_year = :year"),
+                {"year": year},
+            ).scalar() or 0
 
         # Count alive brackets via 5-way JOIN
         alive = conn.execute(

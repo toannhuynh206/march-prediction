@@ -224,6 +224,30 @@ def simulate_full_tournament(
     print(f" ({total_inserted / max(t_total, 0.001):,.0f} brackets/s)")
     print(f"{'='*70}")
 
+    # Reset alive tables, game results, prune log, and refresh stats cache.
+    # Every generation starts clean — old prune state doesn't apply to new brackets.
+    print(f"\n[POST] Resetting alive tables and stats cache...")
+    from db.connection import get_engine
+    from sqlalchemy import text as sa_text
+    engine = get_engine()
+    with engine.begin() as conn:
+        conn.execute(sa_text("DELETE FROM game_results WHERE tournament_year = :y"), {"y": year})
+        conn.execute(sa_text("DELETE FROM prune_log WHERE tournament_year = :y"), {"y": year})
+        for r in ("south", "east", "west", "midwest"):
+            conn.execute(sa_text(f"DELETE FROM alive_outcomes_{r}"))
+            conn.execute(sa_text(
+                f"INSERT INTO alive_outcomes_{r} (outcome_value) "
+                f"SELECT generate_series(0, 32767)"
+            ))
+        conn.execute(sa_text("DELETE FROM alive_outcomes_f4"))
+        conn.execute(sa_text(
+            "INSERT INTO alive_outcomes_f4 (outcome_value) "
+            "SELECT generate_series(0, 7)"
+        ))
+    from api.services.pruner import refresh_stats_cache
+    refresh_stats_cache(year)
+    print(f"  Done — {total_inserted:,} brackets alive, ready for pruning.")
+
     return {
         "total_brackets": total_inserted,
         "elapsed_seconds": t_total,
