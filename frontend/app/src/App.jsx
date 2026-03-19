@@ -116,7 +116,7 @@ export default function App() {
             <div className="flex items-center justify-center gap-3 mb-2">
               <div className="h-[1px] w-16" style={{ background: 'linear-gradient(90deg, transparent, var(--orange))' }} />
               <span className="text-xs font-mono tracking-[0.3em] uppercase" style={{ color: 'var(--orange)' }}>
-                2025 NCAA Tournament
+                2026 NCAA Tournament
               </span>
               <div className="h-[1px] w-16" style={{ background: 'linear-gradient(270deg, transparent, var(--orange))' }} />
             </div>
