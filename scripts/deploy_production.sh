@@ -49,21 +49,22 @@ docker compose -f docker-compose.prod.yml exec -T api python3 -c "
 from db.connection import get_engine
 from sqlalchemy import text
 e = get_engine()
-with e.connect() as c:
-    c.execute(text('TRUNCATE full_brackets'))
-    c.execute(text('DELETE FROM game_results WHERE tournament_year = 2026'))
+tables_to_clear = [
+    'TRUNCATE full_brackets',
+    'DELETE FROM game_results WHERE tournament_year = 2026',
+    'DELETE FROM prune_log WHERE tournament_year = 2026',
+    'DELETE FROM stats_cache WHERE tournament_year = 2026',
+]
+for sql in tables_to_clear:
     try:
-        c.execute(text('DELETE FROM prune_log WHERE tournament_year = 2026'))
-    except Exception:
-        pass
-    try:
-        c.execute(text('DELETE FROM stats_cache WHERE tournament_year = 2026'))
-    except Exception:
-        pass
+        with e.begin() as c:
+            c.execute(text(sql))
+    except Exception as ex:
+        print(f'  Skipped: {sql.split()[2]} ({ex.__class__.__name__})')
+with e.begin() as c:
     for idx in ['idx_fb_south_outcomes', 'idx_fb_east_outcomes', 'idx_fb_west_outcomes',
                 'idx_fb_midwest_outcomes', 'idx_fb_f4_outcomes', 'idx_fb_prob', 'idx_fb_champion']:
         c.execute(text(f'DROP INDEX IF EXISTS {idx}'))
-    c.commit()
 print('Database cleared, indexes dropped')
 "
 
