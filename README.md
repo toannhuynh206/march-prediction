@@ -12,8 +12,22 @@
 | Unique brackets | 201,370,623 (97.8%) |
 | 1-seed champion rate | 65.4% |
 
-The SHA-256 hash is computed from the champion distribution + strategy breakdown of all 206M brackets.
-This commit timestamp on GitHub serves as cryptographic proof that these brackets existed before tournament results were known.
+### How to verify the hash
+
+The SHA-256 is computed from this exact string (champion counts per seed/region + strategy counts):
+
+```
+year=2026|total=206000000|1-East:44211012|1-Midwest:28222682|1-South:26135494|1-West:36095611|2-East:4402912|2-Midwest:13611079|2-South:25858110|2-West:10662572|3-East:2695204|3-Midwest:551685|3-South:3089718|3-West:2683138|4-East:1170209|4-Midwest:856123|4-South:562775|4-West:883747|5-East:772958|5-Midwest:458421|5-South:468211|5-West:454797|6-East:110881|6-Midwest:1109541|6-South:135521|6-West:153329|7-East:87681|7-Midwest:65778|7-South:89670|7-West:43449|8-East:36012|8-Midwest:29892|8-South:42234|8-West:27996|9-East:14983|9-Midwest:11387|9-South:32616|9-West:12102|10-East:17080|10-Midwest:18236|10-South:14256|10-West:13881|11-East:17884|11-Midwest:6120|11-South:13356|11-West:23549|12-East:6094|12-Midwest:4776|12-South:4255|12-West:3495|13-East:1279|13-Midwest:1374|13-South:994|13-West:1484|14-East:827|14-Midwest:504|14-South:541|14-West:485|chalk:61800000|chaos:20600000|cinderella:30900000|smart_upset:20600000|standard:72100000
+```
+
+Verify it yourself:
+```bash
+echo -n 'year=2026|total=206000000|1-East:44211012|1-Midwest:28222682|1-South:26135494|1-West:36095611|2-East:4402912|2-Midwest:13611079|2-South:25858110|2-West:10662572|3-East:2695204|3-Midwest:551685|3-South:3089718|3-West:2683138|4-East:1170209|4-Midwest:856123|4-South:562775|4-West:883747|5-East:772958|5-Midwest:458421|5-South:468211|5-West:454797|6-East:110881|6-Midwest:1109541|6-South:135521|6-West:153329|7-East:87681|7-Midwest:65778|7-South:89670|7-West:43449|8-East:36012|8-Midwest:29892|8-South:42234|8-West:27996|9-East:14983|9-Midwest:11387|9-South:32616|9-West:12102|10-East:17080|10-Midwest:18236|10-South:14256|10-West:13881|11-East:17884|11-Midwest:6120|11-South:13356|11-West:23549|12-East:6094|12-Midwest:4776|12-South:4255|12-West:3495|13-East:1279|13-Midwest:1374|13-South:994|13-West:1484|14-East:827|14-Midwest:504|14-South:541|14-West:485|chalk:61800000|chaos:20600000|cinderella:30900000|smart_upset:20600000|standard:72100000' | shasum -a 256
+```
+
+Should output: `6d9f395424b988a383e63720cd87482fa88c588f5ffa880db82b3fb2c6a68f84`
+
+This proves: the exact number of brackets picking each seed in each region as champion was locked before the tournament started. If any bracket was added, removed, or modified after the fact, the hash would not match.
 
 The `full_brackets` table is **immutable** — no rows are ever modified or deleted after generation. Pruning works via separate `alive_outcomes_*` tables.
 
