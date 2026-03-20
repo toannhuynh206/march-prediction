@@ -1,127 +1,78 @@
 # March Madness Bracket Prediction Engine
 
-An agentic AI system that generates 10 million unique, highly probable March Madness bracket scenarios using a multi-signal probability model driven primarily by Vegas betting lines.
+## Generation Proof — 2026 NCAA Tournament
+
+**206,000,000 brackets generated BEFORE the first game.**
+
+| Field | Value |
+|-------|-------|
+| Generated | **March 19, 2026 at 3:54 PM UTC** |
+| Total brackets | 206,000,000 |
+| SHA-256 | `6d9f395424b988a383e63720cd87482fa88c588f5ffa880db82b3fb2c6a68f84` |
+| Unique brackets | 201,370,623 (97.8%) |
+| 1-seed champion rate | 65.4% |
+
+The SHA-256 hash is computed from the champion distribution + strategy breakdown of all 206M brackets.
+This commit timestamp on GitHub serves as cryptographic proof that these brackets existed before tournament results were known.
+
+The `full_brackets` table is **immutable** — no rows are ever modified or deleted after generation. Pruning works via separate `alive_outcomes_*` tables.
+
+---
 
 ## How It Works
 
-The engine uses a **4-component log-odds blend** to compute win probabilities for every possible tournament matchup:
+An agentic AI system that generates 206 million stratified importance-sampled March Madness brackets using a multi-signal probability model.
+
+### 4-Layer Probability Blend
 
 ```
-P_final = sigmoid(w_m * logit(P_market) + w_s * logit(P_stats) + w_x * logit(P_matchup) + w_f * logit(P_factors))
+P_final = sigmoid(w_m × logit(P_market) + w_s × logit(P_stats) + w_x × logit(P_matchup) + w_f × logit(P_factors))
 ```
 
-| Component | Weight | Source |
-|-----------|--------|--------|
-| P_market (Vegas lines) | **0.55** | De-vigged moneylines + spreads from multiple sportsbooks |
-| P_stats (Power ratings) | 0.25 | KenPom/Bart Torvik adjusted efficiency margins |
-| P_matchup (Style fit) | 0.12 | Tempo, size, pace differentials |
-| P_factors (Sentiment) | 0.08 | ESPN pick %, expert consensus, YouTube analyst sentiment |
+Weights adapt based on spread magnitude:
 
-Vegas lines carry the highest weight because the market aggregates information from thousands of sharp bettors and is the single most accurate predictor of tournament outcomes.
+| Tier | Condition | Market | Stats | Matchup | Factors |
+|------|-----------|--------|-------|---------|---------|
+| locks | \|spread\| > 15 | 0.60 | 0.20 | 0.10 | 0.10 |
+| lean | \|spread\| 5–15 | 0.45 | 0.25 | 0.15 | 0.15 |
+| coin_flip | \|spread\| < 5 | 0.40 | 0.25 | 0.20 | 0.15 |
 
-### Weight Tiers
+### 9-Factor Power Index
 
-Weights shift based on data availability:
-- **Pre-tournament (futures only):** Market 0.40, Stats 0.35, Matchup 0.15, Factors 0.10
-- **Game lines available:** Market 0.55, Stats 0.25, Matchup 0.12, Factors 0.08
-- **Live tournament:** Market 0.60, Stats 0.18, Matchup 0.14, Factors 0.08
+| Factor | Weight |
+|--------|--------|
+| AdjEM (KenPom) | 53% |
+| Defensive Efficiency | 8% |
+| Non-Conference SOS | 8% |
+| Experience (Bart Torvik) | 8% |
+| Luck Adjustment | 6% |
+| Free Throw Rate | 6% |
+| Coaching Tournament Score | 3% |
+| Key Injuries | 5% |
+| 3-Point Variance | 3% |
 
-## Architecture
+### 5 Strategy Profiles
 
-### Bracket Generation (10M unique brackets)
+| Strategy | Allocation | Temperature | Description |
+|----------|-----------|-------------|-------------|
+| chalk | 30% | T=0.5 | Conservative — all regions favor top seeds |
+| standard | 35% | T=1.0 | True probability — unmodified model |
+| smart_upset | 10% | T=0.7/2.0 | Targeted coin-flip upsets |
+| cinderella | 15% | T=1.0/2.5 | ~1 region gets chaos |
+| chaos | 10% | T=1.8/3.0 | Multiple upset regions |
 
-1. **Exhaustive regional enumeration** — 2^15 = 32,768 possible brackets per region. Every single one is scored.
-2. **Final Four scenario generation** — Top regional brackets combined into plausible championship scenarios.
-3. **Stratified systematic sampling** — 10M full brackets selected proportionally to scenario probability (Neyman allocation).
-4. **63-bit encoding** — Each bracket stored as an 8-byte packed integer for efficient storage (~500MB for 10M brackets).
+### Validity Bitmap Pruning
 
-### Live Updating
-
-As the tournament progresses:
-- Dead brackets are hard-pruned (weight → 0)
-- Surviving brackets reweighted based on margin of victory
-- New odds fetched for upcoming rounds
-- Market weight increases (lines get sharper as tournament progresses)
-
-### Agentic Research Pipeline
-
-The system uses specialized AI agents to collaboratively research and refine predictions:
-- **Sports Analyst** — Team data collection, top 30 factors, YouTube transcript sentiment analysis
-- **Betting Agent** — Odds de-vigging, line movement signals, sharp vs public money splits
-- **Math Agent** — Probability formulas, bracket encoding, enumeration scoring
-- **Biology Agent** — Evolutionary algorithms for bracket population optimization
-
-This is an iterative process: code → run → analyze with agents → adjust → repeat.
+The 206M bracket table is **immutable**. Pruning uses 5 tiny alive-outcome tables (32,768 rows each). A bracket is alive if all 5 of its packed outcome values exist in the alive tables. Prune speed: < 50ms per game.
 
 ## Tech Stack
 
-- **Python 3.12+** — Core engine
-- **SQLite** — Team data, stats, odds, 10M bracket storage
-- **React** — Frontend for tracking bracket survival day-by-day
-- **Claude Code Agent Teams** — Multi-agent research and strategy coordination
+- **Python 3.12** + NumPy — Simulation engine
+- **PostgreSQL 16** — 206M bracket storage (35 GB)
+- **FastAPI** — REST API
+- **React + Vite** — Live tournament tracker
+- **Claude Code Agent Teams** — Multi-agent research pipeline
 
-## Project Structure
+## Live Site
 
-```
-march-prediction/
-├── src/
-│   ├── math_primitives.py    # Core probability functions (de-vig, blend, encode)
-│   └── database.py           # SQLite schema, import, queries
-├── data/
-│   └── march_madness.db      # SQLite database (generated, gitignored)
-├── agents/
-│   ├── reports/              # Agent research deliverables
-│   │   ├── math-model-spec.md
-│   │   ├── betting-model-spec.md
-│   │   ├── sports-analyst-spec.md
-│   │   ├── 2025-bracket.json
-│   │   ├── 2025-team-stats.json
-│   │   ├── 2025-first-round-matchups.json
-│   │   ├── 2025-field-analysis.json
-│   │   └── 2025-injuries.json
-│   ├── biology-agent.md
-│   └── status/
-├── CLAUDE.md
-└── README.md
-```
-
-## Key Research Findings
-
-- **Vegas lines are the best single predictor** — closing moneylines explain ~28% of variance alone
-- **H2H history is display-only** — too sparse to be a reliable model input
-- **Matchup styles have minimal predictive value** — max +/- 0.8 pts adjustment (research-backed)
-- **Temporal adaptation is inverted** — R1 chaos predicts R2 regression to mean, not more chaos
-- **2025 is a chalk-heavy year** — FCI ~0.62, all four 1-seeds with AdjEM > +35 (historically dominant)
-- **Top 30 factors only** — more factors = more noise, not more signal
-
-## Phased Development
-
-| Phase | Description | Status |
-|-------|-------------|--------|
-| 1 | Teams + data into database | In progress |
-| 2 | Win probability engine | Planned |
-| 3 | Regional bracket generation (iterative with agents) | Planned |
-| 4 | Full bracket assembly + 10M generation | Planned |
-| 5 | Live updating + React website | Planned |
-
-## Setup
-
-```bash
-# Install Python 3.12+
-brew install python@3.12
-
-# Initialize database with 2025 team data
-python3 src/database.py
-
-# Database will be created at data/march_madness.db
-```
-
-## Data Sources
-
-| Source | Data | Cost |
-|--------|------|------|
-| Bart Torvik | Team ratings, efficiency, tempo, experience | Free |
-| The Odds API | Moneylines, spreads, futures (500 req/mo free) | Free tier |
-| ESPN Tournament Challenge | Public bracket pick percentages | Free |
-| YouTube Transcripts | Expert analyst sentiment via auto-captions | Free |
-| KenPom | Advanced stats (AdjEM, AdjO, AdjD) | $20/year |
+[marchmadnesschallenge.store](https://marchmadnesschallenge.store)
