@@ -6,6 +6,7 @@ import StatsPage from './components/StatsPage'
 import AdminPage from './components/AdminPage'
 import BlogPage from './components/BlogPage'
 import PortfolioPage from './components/PortfolioPage'
+import ResultsPage from './components/ResultsPage'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,6 +19,7 @@ const queryClient = new QueryClient({
 
 // Admin tab hidden from public nav — accessible via Ctrl+Shift+A
 const TABS = [
+  { id: 'Results', label: 'RESULTS', icon: '🏆' },
   { id: 'Explorer', label: 'BRACKETS', icon: '🏀' },
   { id: 'Statistics', label: 'STATS', icon: '📊' },
   { id: 'Portfolio', label: 'PORTFOLIO', icon: '💼' },
@@ -25,6 +27,7 @@ const TABS = [
 ]
 
 const TAB_COMPONENTS = {
+  Results: ResultsPage,
   Explorer: ExplorerPage,
   Statistics: StatsPage,
   Portfolio: PortfolioPage,
@@ -84,7 +87,7 @@ function BracketCountPill() {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('Explorer')
+  const [activeTab, setActiveTab] = useState('Results')
   const ActiveComponent = TAB_COMPONENTS[activeTab]
 
   // Secret keyboard shortcut: Ctrl+Shift+A opens Admin panel
