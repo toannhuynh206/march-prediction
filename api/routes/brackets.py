@@ -174,30 +174,60 @@ async def list_brackets(
 
         where = " AND ".join(conditions)
 
-        # JOIN against alive tables to filter only surviving brackets
-        alive_joins = (
-            "JOIN alive_outcomes_south   ao_s ON fb.south_outcomes   = ao_s.outcome_value "
-            "JOIN alive_outcomes_east    ao_e ON fb.east_outcomes    = ao_e.outcome_value "
-            "JOIN alive_outcomes_west    ao_w ON fb.west_outcomes    = ao_w.outcome_value "
-            "JOIN alive_outcomes_midwest ao_m ON fb.midwest_outcomes = ao_m.outcome_value "
-            "JOIN alive_outcomes_f4      ao_f ON fb.f4_outcomes      = ao_f.outcome_value "
-        ) if status == "alive" else ""
+        if status == "alive":
+            # Query from materialized alive_bracket_ids (rebuilt after each prune)
+            # This table has its own indexes — no need to touch 206M rows
+            alive_sort_col = "abi.weight" if sort == "score" else "abi.probability"
 
-        rows = conn.execute(
-            text(
-                f"SELECT fb.id, fb.weight, fb.probability, fb.champion_seed, "
-                f"  fb.champion_region, fb.total_upsets, TRUE as is_alive, t.name "
-                f"FROM full_brackets fb "
-                f"{alive_joins}"
-                f"LEFT JOIN teams t ON t.seed = fb.champion_seed "
-                f"  AND t.region = fb.champion_region "
-                f"  AND t.tournament_year = fb.tournament_year "
-                f"WHERE {where} "
-                f"ORDER BY {sort_col} DESC, fb.id ASC "
-                f"LIMIT :lim"
-            ),
-            params,
-        ).fetchall()
+            alive_conditions = ["TRUE"]
+            if cursor:
+                parts = cursor.split("_", 1)
+                if len(parts) == 2:
+                    cursor_val = float(parts[0])
+                    cursor_id = int(parts[1])
+                    alive_conditions.append(
+                        f"({alive_sort_col} < :cursor_val "
+                        f"OR ({alive_sort_col} = :cursor_val AND abi.id > :cursor_id))"
+                    )
+                    params["cursor_val"] = cursor_val
+                    params["cursor_id"] = cursor_id
+
+            if champion:
+                alive_conditions.append(
+                    "abi.champion_seed = :champ_seed AND abi.champion_region = :champ_region"
+                )
+
+            alive_where = " AND ".join(alive_conditions)
+
+            rows = conn.execute(
+                text(
+                    f"SELECT abi.id, abi.weight, abi.probability, abi.champion_seed, "
+                    f"  abi.champion_region, abi.total_upsets, TRUE as is_alive, t.name "
+                    f"FROM alive_bracket_ids abi "
+                    f"LEFT JOIN teams t ON t.seed = abi.champion_seed "
+                    f"  AND t.region = abi.champion_region "
+                    f"  AND t.tournament_year = :year "
+                    f"WHERE {alive_where} "
+                    f"ORDER BY {alive_sort_col} DESC, abi.id ASC "
+                    f"LIMIT :lim"
+                ),
+                params,
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                text(
+                    f"SELECT fb.id, fb.weight, fb.probability, fb.champion_seed, "
+                    f"  fb.champion_region, fb.total_upsets, TRUE as is_alive, t.name "
+                    f"FROM full_brackets fb "
+                    f"LEFT JOIN teams t ON t.seed = fb.champion_seed "
+                    f"  AND t.region = fb.champion_region "
+                    f"  AND t.tournament_year = fb.tournament_year "
+                    f"WHERE {where} "
+                    f"ORDER BY {sort_col} DESC, fb.id ASC "
+                    f"LIMIT :lim"
+                ),
+                params,
+            ).fetchall()
 
         has_more = len(rows) > limit
         rows = rows[:limit]

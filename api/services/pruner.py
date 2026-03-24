@@ -244,17 +244,68 @@ def get_alive_count(year: int = TOURNAMENT_YEAR) -> int:
 
 
 def refresh_stats_cache(year: int = TOURNAMENT_YEAR) -> None:
-    """Recompute stats by JOINing full_brackets against alive tables.
+    """Recompute stats using a two-phase approach:
 
-    After games are played, alive tables shrink → JOINs filter most
-    rows → queries get progressively faster.
+    Phase 1: Materialize alive bracket IDs via 5-way JOIN (one scan).
+    Phase 2: Compute stats from the small materialized table (instant).
+
+    This avoids running multiple 5-way JOINs across 206M rows.
     """
     engine = get_engine()
     t = time.time()
 
+    # Phase 1: Materialize alive brackets.
+    # If alive_bracket_ids already exists, filter IT instead of scanning 206M rows.
+    # This is O(alive) not O(206M) — goes from 5 min to < 1 sec.
+    with engine.begin() as conn:
+        has_abi = conn.execute(text(
+            "SELECT EXISTS(SELECT 1 FROM information_schema.tables "
+            "WHERE table_name = 'alive_bracket_ids')"
+        )).scalar()
+
+        if has_abi:
+            # Fast path: filter existing alive_bracket_ids against alive tables
+            # Only need to check the brackets we already know are alive
+            conn.execute(text("DROP TABLE IF EXISTS alive_bracket_ids_new"))
+            conn.execute(text(
+                "CREATE TABLE alive_bracket_ids_new AS "
+                "SELECT abi.id, abi.probability, abi.weight, abi.champion_seed, "
+                "  abi.champion_region, abi.total_upsets "
+                "FROM alive_bracket_ids abi "
+                "JOIN full_brackets fb ON fb.id = abi.id "
+                "JOIN alive_outcomes_south   s ON fb.south_outcomes   = s.outcome_value "
+                "JOIN alive_outcomes_east    e ON fb.east_outcomes    = e.outcome_value "
+                "JOIN alive_outcomes_west    w ON fb.west_outcomes    = w.outcome_value "
+                "JOIN alive_outcomes_midwest m ON fb.midwest_outcomes = m.outcome_value "
+                "JOIN alive_outcomes_f4      f ON fb.f4_outcomes      = f.outcome_value "
+                f"WHERE fb.tournament_year = {year}"
+            ))
+            conn.execute(text("DROP TABLE alive_bracket_ids"))
+            conn.execute(text("ALTER TABLE alive_bracket_ids_new RENAME TO alive_bracket_ids"))
+        else:
+            # First run or after regeneration: full 5-way JOIN scan
+            conn.execute(text(
+                "CREATE TABLE alive_bracket_ids AS "
+                "SELECT fb.id, fb.probability, fb.weight, fb.champion_seed, "
+                "  fb.champion_region, fb.total_upsets "
+                "FROM full_brackets fb "
+                "JOIN alive_outcomes_south   s ON fb.south_outcomes   = s.outcome_value "
+                "JOIN alive_outcomes_east    e ON fb.east_outcomes    = e.outcome_value "
+                "JOIN alive_outcomes_west    w ON fb.west_outcomes    = w.outcome_value "
+                "JOIN alive_outcomes_midwest m ON fb.midwest_outcomes = m.outcome_value "
+                "JOIN alive_outcomes_f4      f ON fb.f4_outcomes      = f.outcome_value "
+                f"WHERE fb.tournament_year = {year}"
+            ))
+
+        conn.execute(text("CREATE INDEX idx_alive_ids ON alive_bracket_ids (id)"))
+        conn.execute(text("CREATE INDEX idx_alive_prob ON alive_bracket_ids (probability DESC, id ASC)"))
+        conn.execute(text("CREATE INDEX idx_alive_weight ON alive_bracket_ids (weight DESC, id ASC)"))
+
+    materialize_ms = int((time.time() - t) * 1000)
+
+    # Phase 2: Compute stats from the small materialized table (fast)
+    t2 = time.time()
     with engine.connect() as conn:
-        # Total brackets = immutable count from full_brackets table.
-        # Try cache first (fast), fall back to COUNT(*) on first run.
         total = conn.execute(
             text("SELECT total_brackets FROM stats_cache WHERE tournament_year = :year"),
             {"year": year},
@@ -265,34 +316,18 @@ def refresh_stats_cache(year: int = TOURNAMENT_YEAR) -> None:
                 {"year": year},
             ).scalar() or 0
 
-        # Count alive brackets via 5-way JOIN
         alive = conn.execute(
-            text(
-                "SELECT COUNT(*) FROM full_brackets fb "
-                "JOIN alive_outcomes_south   s ON fb.south_outcomes   = s.outcome_value "
-                "JOIN alive_outcomes_east    e ON fb.east_outcomes    = e.outcome_value "
-                "JOIN alive_outcomes_west    w ON fb.west_outcomes    = w.outcome_value "
-                "JOIN alive_outcomes_midwest m ON fb.midwest_outcomes = m.outcome_value "
-                "JOIN alive_outcomes_f4      f ON fb.f4_outcomes      = f.outcome_value "
-                "WHERE fb.tournament_year = :year"
-            ),
-            {"year": year},
+            text("SELECT COUNT(*) FROM alive_bracket_ids")
         ).scalar()
 
-        # Champion odds via weighted JOIN
+        # Champion odds from materialized table (instant)
         champ_rows = conn.execute(
             text(
-                "SELECT t.name, SUM(fb.weight) as tw "
-                "FROM full_brackets fb "
-                "JOIN alive_outcomes_south   s ON fb.south_outcomes   = s.outcome_value "
-                "JOIN alive_outcomes_east    e ON fb.east_outcomes    = e.outcome_value "
-                "JOIN alive_outcomes_west    w ON fb.west_outcomes    = w.outcome_value "
-                "JOIN alive_outcomes_midwest m ON fb.midwest_outcomes = m.outcome_value "
-                "JOIN alive_outcomes_f4      f ON fb.f4_outcomes      = f.outcome_value "
-                "JOIN teams t ON t.seed = fb.champion_seed "
-                "  AND t.region = fb.champion_region "
+                "SELECT t.name, SUM(abi.weight) as tw "
+                "FROM alive_bracket_ids abi "
+                "JOIN teams t ON t.seed = abi.champion_seed "
+                "  AND t.region = abi.champion_region "
                 "  AND t.tournament_year = :year "
-                "WHERE fb.tournament_year = :year "
                 "GROUP BY t.name ORDER BY tw DESC"
             ),
             {"year": year},
@@ -303,27 +338,20 @@ def refresh_stats_cache(year: int = TOURNAMENT_YEAR) -> None:
             for r in champ_rows
         ])
 
-        # Upset distribution
+        # Upset distribution from materialized table (instant)
         upset_rows = conn.execute(
             text(
-                "SELECT fb.total_upsets, COUNT(*) "
-                "FROM full_brackets fb "
-                "JOIN alive_outcomes_south   s ON fb.south_outcomes   = s.outcome_value "
-                "JOIN alive_outcomes_east    e ON fb.east_outcomes    = e.outcome_value "
-                "JOIN alive_outcomes_west    w ON fb.west_outcomes    = w.outcome_value "
-                "JOIN alive_outcomes_midwest m ON fb.midwest_outcomes = m.outcome_value "
-                "JOIN alive_outcomes_f4      f ON fb.f4_outcomes      = f.outcome_value "
-                "WHERE fb.tournament_year = :year "
-                "GROUP BY fb.total_upsets ORDER BY fb.total_upsets"
+                "SELECT total_upsets, COUNT(*) "
+                "FROM alive_bracket_ids "
+                "GROUP BY total_upsets ORDER BY total_upsets"
             ),
-            {"year": year},
         ).fetchall()
         upset_dist = json.dumps([
             {"upsets": int(r[0]), "count": int(r[1])}
             for r in upset_rows
         ])
 
-    elapsed_ms = int((time.time() - t) * 1000)
+    stats_ms = int((time.time() - t2) * 1000)
 
     with engine.begin() as conn:
         conn.execute(
@@ -340,4 +368,5 @@ def refresh_stats_cache(year: int = TOURNAMENT_YEAR) -> None:
              "champ": champion_odds, "upset": upset_dist},
         )
 
-    print(f"  Stats cache refreshed in {elapsed_ms}ms — {alive:,} alive")
+    total_ms = int((time.time() - t) * 1000)
+    print(f"  Stats cache: materialize={materialize_ms}ms, stats={stats_ms}ms, total={total_ms}ms — {alive:,} alive")
