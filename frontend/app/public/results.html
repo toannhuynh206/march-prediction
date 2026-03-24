@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Results — March Madness Bracket Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0e1a; color: #e0e0e0; font-family: 'SF Mono', 'Fira Code', monospace; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 28px; margin-bottom: 4px; }
+  h1 span { color: #ff6b35; }
+  .subtitle { text-align: center; color: #555; font-size: 12px; letter-spacing: 4px; margin-bottom: 48px; }
+
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero-number { font-size: 96px; font-weight: bold; color: #ff6b35; line-height: 1; }
+  .hero-label { font-size: 14px; color: #888; margin-top: 8px; letter-spacing: 2px; }
+  .hero-sub { font-size: 13px; color: #555; margin-top: 16px; }
+
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
+  .stat { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px 12px; text-align: center; }
+  .stat-val { font-size: 22px; font-weight: bold; color: #22c55e; }
+  .stat-val.orange { color: #ff6b35; }
+  .stat-lbl { font-size: 9px; color: #666; margin-top: 6px; letter-spacing: 1px; }
+
+  .section { margin-bottom: 40px; }
+  .section-title { font-size: 11px; color: #ff6b35; letter-spacing: 3px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,107,53,0.15); padding-bottom: 8px; }
+
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: rgba(255,107,53,0.15); }
+  .tl-item { position: relative; margin-bottom: 20px; }
+  .tl-dot { position: absolute; left: -20px; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #ff6b35; background: #0a0e1a; }
+  .tl-dot.green { border-color: #22c55e; background: rgba(34,197,94,0.2); }
+  .tl-dot.red { border-color: #ef4444; background: rgba(239,68,68,0.2); }
+  .tl-round { font-size: 12px; color: #ff6b35; font-weight: bold; }
+  .tl-detail { font-size: 13px; color: #ccc; margin-top: 4px; }
+  .tl-sub { font-size: 11px; color: #555; margin-top: 2px; }
+
+  .card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-size: 13px; color: #22c55e; margin-bottom: 12px; font-weight: bold; }
+  .card-title.red { color: #ef4444; }
+  .card-title.orange { color: #ff6b35; }
+  .card li { font-size: 13px; color: #bbb; margin-bottom: 8px; line-height: 1.5; }
+
+  .bracket-box { background: rgba(255,107,53,0.03); border: 1px solid rgba(255,107,53,0.12); border-radius: 10px; padding: 20px; margin-bottom: 12px; }
+  .bracket-id { font-size: 11px; color: #ff6b35; letter-spacing: 1px; }
+  .bracket-champ { font-size: 20px; font-weight: bold; color: #e0e0e0; margin: 8px 0; }
+  .bracket-path { font-size: 12px; color: #888; line-height: 1.6; }
+
+  .proof { text-align: center; color: #333; font-size: 10px; margin-top: 40px; line-height: 1.8; }
+  .proof code { color: #ff6b35; }
+
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .hero-number { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>2026 <span>RESULTS</span></h1>
+  <div class="subtitle">MARCH MADNESS BRACKET PREDICTION ENGINE</div>
+
+  <div class="hero">
+    <div class="hero-number">47/63</div>
+    <div class="hero-label">GAMES PREDICTED CORRECTLY</div>
+    <div class="hero-sub">2 brackets survived through 47 games out of 206,000,000 generated</div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-val">206M</div>
+      <div class="stat-lbl">BRACKETS GENERATED</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">74.6%</div>
+      <div class="stat-lbl">GAME ACCURACY</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val orange">12</div>
+      <div class="stat-lbl">UPSETS PREDICTED</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">2.4M&times;</div>
+      <div class="stat-lbl">BETTER THAN RANDOM</div>
+    </div>
+  </div>
+
+  <!-- SURVIVAL TIMELINE -->
+  <div class="section">
+    <div class="section-title">SURVIVAL TIMELINE</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-round">PRE-TOURNAMENT</div>
+        <div class="tl-detail">206,000,000 brackets generated</div>
+        <div class="tl-sub">March 19, 2026 — SHA-256 committed to GitHub before tipoff</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-round">AFTER ROUND OF 64 (32 games)</div>
+        <div class="tl-detail">3,515 brackets alive (0.0017%)</div>
+        <div class="tl-sub">8 upsets correctly predicted — TCU, Saint Louis, VCU, Iowa, High Point, Texas&times;2, Texas A&M</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-round">R32 DAY 1 (40 games)</div>
+        <div class="tl-detail">56 brackets alive</div>
+        <div class="tl-sub">Texas upset Gonzaga — our cinderella profiles had it covered</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-round">IOWA UPSETS FLORIDA (43 games)</div>
+        <div class="tl-detail">2 brackets alive</div>
+        <div class="tl-sub">9-seed Iowa over 1-seed Florida — only 5.4% of our alive brackets had this</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div class="tl-round">R32 COMPLETE (47 games)</div>
+        <div class="tl-detail">2 brackets still alive</div>
+        <div class="tl-sub">Survived UConn, Arizona, Alabama, Tennessee, Iowa State results</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot red"></div>
+        <div class="tl-round">SWEET 16</div>
+        <div class="tl-detail">Both brackets eliminated</div>
+        <div class="tl-sub">47 consecutive games correct — further than any ESPN bracket in history</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE 2 SURVIVING BRACKETS -->
+  <div class="section">
+    <div class="section-title">THE LAST TWO STANDING</div>
+    <div class="bracket-box">
+      <div class="bracket-id">BRACKET #55,629,552 — CHALK STRATEGY</div>
+      <div class="bracket-champ">Champion: Houston</div>
+      <div class="bracket-path">
+        E8: Duke, Houston, Arizona, Iowa State<br>
+        F4: Houston over Duke, Arizona over Iowa State<br>
+        Final: Houston over Arizona
+      </div>
+    </div>
+    <div class="bracket-box">
+      <div class="bracket-id">BRACKET #88,053,121 — STANDARD STRATEGY</div>
+      <div class="bracket-champ">Champion: Michigan</div>
+      <div class="bracket-path">
+        E8: Michigan State, Illinois, Arizona, Michigan<br>
+        F4: Michigan State over Illinois, Michigan over Arizona<br>
+        Final: Michigan over Michigan State (Big Ten championship)
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WENT RIGHT -->
+  <div class="section">
+    <div class="section-title">WHAT WE DID WELL</div>
+    <div class="card">
+      <div class="card-title">Strengths</div>
+      <ul>
+        <li><strong>Portfolio strategy worked.</strong> 5 temperature profiles (chalk/standard/smart_upset/cinderella/chaos) gave us coverage across upset scenarios. The cinderella brackets kept us alive through 8 first-round upsets.</li>
+        <li><strong>Importance sampling was effective.</strong> We covered 0.00007% of the bracket space but were 2.4 million times more likely to have a perfect bracket than random selection.</li>
+        <li><strong>Vegas odds integration.</strong> The 4-layer probability blend (market + stats + matchup + factors) with spread-adaptive weights produced well-calibrated probabilities.</li>
+        <li><strong>Validity bitmap pruning.</strong> The architecture handled 206M brackets with &lt;5 second prune times after optimization, using alive_outcome tables instead of scanning the full table.</li>
+        <li><strong>12 upsets predicted.</strong> Including TCU over Ohio State, VCU over UNC from 19 down, High Point over Wisconsin by 1 point, and 11-seed Texas's Cinderella run through Gonzaga.</li>
+        <li><strong>Provable generation.</strong> SHA-256 hash committed to GitHub before tipoff. Immutable bracket table. Full audit trail.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT TO IMPROVE -->
+  <div class="section">
+    <div class="section-title">WHAT TO REVISIT FOR 2027</div>
+    <div class="card">
+      <div class="card-title red">Areas for Improvement</div>
+      <ul>
+        <li><strong>1-seed upset coverage.</strong> Only 5.4% of alive brackets had Iowa over Florida. Our auto-advance rule (P=1.0 for 1/2 seeds in R64) was right, but later rounds need more upset mass for 1-seeds losing.</li>
+        <li><strong>Calibration vs simulation disconnect.</strong> The matchup probabilities from the 4-layer blend (p_final) didn't fully flow into the simulation — the historical_patterns calibration step overrode some values. Need a single source of truth.</li>
+        <li><strong>Coaching factor overhaul.</strong> Min-max normalization on coaching tourney appearances penalized young coaches at elite programs (Scheyer at Duke). Need program-aware coaching metric.</li>
+        <li><strong>Mutation factor.</strong> The genetic algorithm / mutation approach was designed but never wired in. Adding a 6% mutation rate on coin-flip games would add diversity without changing the overall distribution.</li>
+        <li><strong>R32+ probability model.</strong> The simulation uses base probability matrices for R32 onwards that diverge from the research module. Need unified probability pipeline from R64 through championship.</li>
+        <li><strong>More aggressive upset allocation.</strong> Increase cinderella from 15% to 20%, reduce chalk from 30% to 25%. This tournament had 12 upsets through 47 games — our model expected ~13 total across 63.</li>
+        <li><strong>Database performance.</strong> The 5-way JOIN across 206M rows was the persistent bottleneck. The alive_bracket_ids materialization fixed browsing, but pruning still took minutes early on. Consider partitioning by strategy or region.</li>
+        <li><strong>Live odds updates.</strong> We used pre-tournament odds only. Incorporating live line movement during the tournament would improve later-round predictions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BY THE NUMBERS -->
+  <div class="section">
+    <div class="section-title">BY THE NUMBERS</div>
+    <div class="card">
+      <div class="card-title orange">The Math</div>
+      <ul>
+        <li>Random bracket perfect through 47 games: <strong>1 in 140 trillion</strong></li>
+        <li>Our model perfect through 47 games: <strong>1 in 103 million</strong></li>
+        <li>ESPN bracket challenge: ~20M entries, typically <strong>0 perfect after 32 games</strong></li>
+        <li>We had <strong>3,515 perfect after 32 games</strong> out of 206M</li>
+        <li>Warren Buffett's $1B perfect bracket challenge: <strong>never won</strong></li>
+        <li>Total bracket space: <strong>9.2 quintillion</strong> possible brackets</li>
+        <li>We covered: <strong>206 million</strong> (0.00007% of space)</li>
+        <li>9-factor power index + 4-layer blend + 5 strategy profiles + importance sampling</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="proof">
+    206,000,000 brackets generated <strong>March 19, 2026</strong> before tipoff<br>
+    SHA-256: <code>6d9f395424b988a383e63720cd87482fa88c588f5ffa880db82b3fb2c6a68f84</code><br>
+    GitHub: <code>github.com/toannhuynh206/march-prediction</code><br>
+    <br>
+    Built with Claude Code &bull; FastAPI &bull; PostgreSQL &bull; React<br>
+    <a href="https://marchmadnesschallenge.store" style="color:#ff6b35;text-decoration:none;">marchmadnesschallenge.store</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfect Bracket Odds — March Madness 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0e1a; color: #e0e0e0; font-family: 'SF Mono', 'Fira Code', monospace; padding: 40px 20px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { text-align: center; color: #ff6b35; font-size: 32px; margin-bottom: 4px; letter-spacing: 2px; }
+  .subtitle { text-align: center; color: #555; font-size: 13px; margin-bottom: 48px; letter-spacing: 4px; }
+
+  .big-number-section { margin-bottom: 56px; }
+  .big-number-title { text-align: center; font-size: 11px; color: #888; letter-spacing: 3px; margin-bottom: 24px; }
+
+  .number-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; margin-bottom: 20px; text-align: center; position: relative; overflow: hidden; }
+  .number-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+  .number-card.red::before { background: linear-gradient(90deg, transparent, #ef4444, transparent); }
+  .number-card.green::before { background: linear-gradient(90deg, transparent, #22c55e, transparent); }
+  .number-card.orange::before { background: linear-gradient(90deg, transparent, #ff6b35, transparent); }
+
+  .number-label { font-size: 12px; color: #666; letter-spacing: 2px; margin-bottom: 16px; }
+  .number-main { font-size: 18px; color: #888; margin-bottom: 8px; }
+  .number-main .huge { font-size: clamp(18px, 4vw, 42px); font-weight: bold; letter-spacing: -1px; word-break: break-all; }
+  .number-main .huge.red { color: #ef4444; }
+  .number-main .huge.green { color: #22c55e; }
+  .number-main .huge.orange { color: #ff6b35; }
+  .number-written { font-size: 13px; color: #555; margin-top: 8px; font-style: italic; }
+  .number-sub { font-size: 11px; color: #444; margin-top: 12px; }
+
+  .vs-row { display: flex; gap: 20px; margin-bottom: 20px; }
+  .vs-row > div { flex: 1; }
+  @media (max-width: 700px) { .vs-row { flex-direction: column; } }
+
+  .ring-section { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 48px; }
+  .ring-card { text-align: center; }
+  .ring-label { font-size: 11px; color: #888; letter-spacing: 2px; margin-bottom: 12px; }
+  .ring-container { position: relative; width: 180px; height: 180px; }
+  .ring-svg { transform: rotate(-90deg); }
+  .ring-bg { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 10; }
+  .ring-fill { fill: none; stroke-width: 10; stroke-linecap: round; }
+  .ring-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+  .ring-big { font-size: 32px; font-weight: bold; color: #ff6b35; }
+  .ring-of { font-size: 10px; color: #555; margin-top: 2px; }
+  .ring-pct { font-size: 11px; color: #22c55e; margin-top: 4px; }
+  .ring-games { font-size: 11px; color: #ff6b35; margin-top: 10px; }
+
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,107,53,0.3), transparent); margin: 48px 0; }
+
+  .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+  .fact { background: rgba(255,107,53,0.03); border: 1px solid rgba(255,107,53,0.08); border-radius: 10px; padding: 20px; text-align: center; }
+  .fact-val { font-size: 24px; font-weight: bold; color: #ff6b35; }
+  .fact-lbl { font-size: 10px; color: #666; margin-top: 6px; letter-spacing: 1px; }
+
+  .proof { text-align: center; color: #333; font-size: 10px; margin-top: 32px; line-height: 1.8; }
+  .proof code { color: #ff6b35; font-size: 9px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>PERFECT BRACKET ODDS</h1>
+  <div class="subtitle">HOW HARD IS IT REALLY?</div>
+
+  <!-- THE BIG NUMBERS -->
+  <div class="big-number-section">
+    <div class="big-number-title">TOTAL POSSIBLE BRACKETS IN A 64-TEAM TOURNAMENT</div>
+    <div class="number-card red">
+      <div class="number-label">2 outcomes &times; 63 games</div>
+      <div class="number-main">1 in <span class="huge red">9,223,372,036,854,775,808</span></div>
+      <div class="number-written">Nine quintillion, two hundred twenty-three quadrillion</div>
+      <div class="number-sub">That's 9.2 &times; 10&sup1;&sup8; &mdash; more than the grains of sand on Earth</div>
+    </div>
+  </div>
+
+  <div class="big-number-section">
+    <div class="big-number-title">PERFECT ROUND OF 64 (32 GAMES)</div>
+    <div class="vs-row">
+      <div class="number-card red">
+        <div class="number-label">RANDOM PICKS</div>
+        <div class="number-main">1 in <span class="huge red">4,294,967,296</span></div>
+        <div class="number-written">Four billion, two hundred ninety-four million</div>
+      </div>
+      <div class="number-card green">
+        <div class="number-label">OUR MODEL</div>
+        <div class="number-main">1 in <span class="huge green">58,605</span></div>
+        <div class="number-written">Fifty-eight thousand, six hundred five</div>
+        <div class="number-sub">73,295&times; better than random</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-number-section">
+    <div class="big-number-title">PERFECT THROUGH ROUND OF 32 (48 GAMES)</div>
+    <div class="vs-row">
+      <div class="number-card red">
+        <div class="number-label">RANDOM PICKS</div>
+        <div class="number-main">1 in <span class="huge red">281,474,976,710,656</span></div>
+        <div class="number-written">Two hundred eighty-one trillion</div>
+      </div>
+      <div class="number-card green">
+        <div class="number-label">OUR MODEL</div>
+        <div class="number-main">1 in <span class="huge green">12,117,647</span></div>
+        <div class="number-written">Twelve million, one hundred seventeen thousand</div>
+        <div class="number-sub">23,228,517&times; better than random</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-number-section">
+    <div class="big-number-title">PERFECT THROUGH SWEET 16 (56 GAMES)</div>
+    <div class="vs-row">
+      <div class="number-card red">
+        <div class="number-label">RANDOM PICKS</div>
+        <div class="number-main">1 in <span class="huge red">72,057,594,037,927,936</span></div>
+        <div class="number-written">Seventy-two quadrillion</div>
+      </div>
+      <div class="number-card green">
+        <div class="number-label">OUR MODEL</div>
+        <div class="number-main">1 in <span class="huge green">TBD</span></div>
+        <div class="number-written">Sweet 16 starts March 26</div>
+        <div class="number-sub">Currently 37 alive &mdash; need to survive 8 more games</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="big-number-section">
+    <div class="big-number-title">"EXPERT" PERFECT BRACKET (COMMONLY CITED)</div>
+    <div class="number-card orange">
+      <div class="number-label">ASSUMING ~70% ACCURACY PER GAME</div>
+      <div class="number-main">1 in <span class="huge orange">120,000,000,000</span></div>
+      <div class="number-written">One hundred twenty billion</div>
+      <div class="number-sub">Warren Buffett offered $1 billion for this &mdash; never paid out</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RING CHARTS -->
+  <div class="big-number-title" style="margin-bottom:24px;">OUR 206 MILLION BRACKETS</div>
+  <div class="ring-section">
+    <div class="ring-card">
+      <div class="ring-label">AFTER ROUND OF 64</div>
+      <div class="ring-container">
+        <svg class="ring-svg" width="180" height="180" viewBox="0 0 180 180">
+          <circle class="ring-bg" cx="90" cy="90" r="75"/>
+          <circle class="ring-fill" cx="90" cy="90" r="75"
+            stroke="#22c55e" stroke-dasharray="0.81 471" stroke-linecap="round"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-big">3,515</div>
+          <div class="ring-of">of 206,000,000</div>
+          <div class="ring-pct">0.0017%</div>
+        </div>
+      </div>
+      <div class="ring-games">32 games &bull; 8 upsets</div>
+    </div>
+
+    <div class="ring-card">
+      <div class="ring-label">AFTER ROUND OF 32</div>
+      <div class="ring-container">
+        <svg class="ring-svg" width="180" height="180" viewBox="0 0 180 180">
+          <circle class="ring-bg" cx="90" cy="90" r="75"/>
+          <circle class="ring-fill" cx="90" cy="90" r="75"
+            stroke="#22c55e" stroke-dasharray="0.004 471" stroke-linecap="round"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-big">17</div>
+          <div class="ring-of">of 206,000,000</div>
+          <div class="ring-pct">0.0000083%</div>
+        </div>
+      </div>
+      <div class="ring-games">48 games &bull; best case</div>
+    </div>
+
+    <div class="ring-card">
+      <div class="ring-label">PERFECT BRACKET</div>
+      <div class="ring-container">
+        <svg class="ring-svg" width="180" height="180" viewBox="0 0 180 180">
+          <circle class="ring-bg" cx="90" cy="90" r="75"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-big" style="color:#ff6b35;">?</div>
+          <div class="ring-of">of 206,000,000</div>
+          <div class="ring-pct" style="color:#ff6b35;">in progress</div>
+        </div>
+      </div>
+      <div class="ring-games">63 games &bull; 15 remaining</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FACTS -->
+  <div class="fact-grid">
+    <div class="fact">
+      <div class="fact-val">206,000,000</div>
+      <div class="fact-lbl">BRACKETS GENERATED</div>
+    </div>
+    <div class="fact">
+      <div class="fact-val">37</div>
+      <div class="fact-lbl">STILL PERFECT (43 GAMES)</div>
+    </div>
+    <div class="fact">
+      <div class="fact-val">2.4 MILLION &times;</div>
+      <div class="fact-lbl">BETTER THAN RANDOM</div>
+    </div>
+    <div class="fact">
+      <div class="fact-val">0.00007%</div>
+      <div class="fact-lbl">OF BRACKET SPACE COVERED</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;background:rgba(34,197,94,0.04);border:1px solid rgba(34,197,94,0.12);border-radius:10px;padding:24px;margin-bottom:32px;">
+    <div style="font-size:15px;color:#22c55e;line-height:1.7;">
+      We covered <strong>0.00007%</strong> of all possible brackets<br>
+      and still have <strong>37</strong> that predicted every single game correctly<br>
+      &mdash; including <strong>8 upsets</strong>.
+    </div>
+  </div>
+
+  <div class="proof">
+    All 206,000,000 brackets generated <strong>March 19, 2026</strong> before the first game<br>
+    SHA-256: <code>6d9f395424b988a383e63720cd87482fa88c588f5ffa880db82b3fb2c6a68f84</code><br>
+    GitHub commit <code>9628a86</code> &mdash; timestamp verified by GitHub's servers<br><br>
+    <a href="https://marchmadnesschallenge.store" style="color:#ff6b35;text-decoration:none;">marchmadnesschallenge.store</a>
+  </div>
+</div>
+</body>
+</html>
